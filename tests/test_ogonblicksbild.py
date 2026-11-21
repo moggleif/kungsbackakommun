@@ -1,4 +1,5 @@
-"""Krav: K77. Kod: src/kommunhandlingar/konvertering/ och skrivning.py.
+"""Krav: K77. Kod: src/kommunhandlingar/konvertering/ och
+src/kommunhandlingar/skrivning.py.
 
 PDF-fixturerna och facit-utdragen konverteras, och `.md`, med
 kvalitetsfälten utom `pipeline` som front matter, och varje CSV jämförs
@@ -44,7 +45,8 @@ def kvalitet(resultat: Resultat) -> str:
     with mock.patch(VERSIONER, return_value=[]):
         falt = kvalitetsfalt("", resultat)
     del falt["pipeline"]
-    rader = [f"{namn}: {frontmatter.varde_av(v)}" for namn, v in falt.items()]
+    namn = [n for n in frontmatter.FALT if n in falt]
+    rader = [f"{n}: {frontmatter.varde_av(falt[n])}" for n in namn]
     return "---\n" + "\n".join(rader) + "\n---\n"
 
 
@@ -67,8 +69,9 @@ class Ogonblicksbild(unittest.TestCase):
             self.jamfor(namn, pdf)
 
     def test_bilden_har_inga_kvarlamnade_dokument(self):
-        sparade = sorted(md.stem for md in BILD.glob("*.md"))
-        self.assertEqual(sparade, sorted(pdfer()))
+        for monster in ("*.md", "*.tabeller"):
+            sparade = {fil.name.split(".")[0] for fil in BILD.glob(monster)}
+            self.assertLessEqual(sparade, set(pdfer()), monster)
 
     def jamfor(self, namn: str, pdf: Path) -> None:
         kropp, tabeller = konverterad(namn, pdf)
