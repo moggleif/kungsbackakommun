@@ -1,4 +1,5 @@
-"""Krav: K48 i docs/02-KRAV.md, ADR-0071. Test: tests/test_arenden.py.
+"""Krav: K48 och K81 i docs/02-KRAV.md, ADR-0071.
+Test: tests/test_arenden.py och tests/test_poolkommandon.py.
 
 `arenden` i ett protokoll är paragrafernas diarienummer, sorterade och
 utan dubbletter: `[]` när protokollet har paragrafer men inga

@@ -2341,7 +2341,8 @@ Issue [#354](https://github.com/moggleif/kungsbackakommun/issues/354).
 
 ## K81 — De övriga kommandona prövas genom sin ingång
 
-Prövas i `tests/test_kommandon.py` utan nät, i temporära kataloger.
+Prövas i `tests/test_kommandon.py` och `tests/test_poolkommandon.py` utan
+nät, i temporära kataloger.
 Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
 
 - **Givet** ett urval med ett dokument och en `matt.csv` med en äldre rad

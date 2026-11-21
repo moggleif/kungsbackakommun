@@ -1,4 +1,5 @@
-"""Krav: K73 i docs/02-KRAV.md, ADR-0100. Test: tests/test_kand_inlasning.py.
+"""Krav: K73 och K81 i docs/02-KRAV.md, ADR-0100.
+Test: tests/test_kand_inlasning.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.kand_inlasning <data>` skriver, per kommun, hur
 många av poolens sidor som har känd inläsning, alltså inte är
