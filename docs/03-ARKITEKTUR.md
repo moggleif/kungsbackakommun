@@ -960,7 +960,12 @@ nattkörningen checkar inte in något
   utan att vara samma tecken, eftersom texten då inte går att läsa i
   ordning ([ADR-0038](decisions/0038-text-i-oordning-ger-obekraftade-tal.md)).
   Tecken på högkant utanför tabellerna räknas inte, varken ensamma eller
-  ovanpå annan text: de läses för sig ([Text på högkant](#text-på-högkant),
+  ovanpå annan text, när de går att läsa entydigt: varje tecken är vridet
+  en kvarts varv utan spegling (vridningen under 1 % av teckenstorleken),
+  varje rad på högkant står på en linje (spridningen i sidled högst en
+  tiondel av teckenstorleken), och inga tecken i en rad ligger mer än
+  till hälften över varandra. Annars gör de sidans tal obekräftade
+  ([Text på högkant](#text-på-högkant),
   [ADR-0103](decisions/0103-hogkant-utanfor-tabellerna-ger-bekraftade-tal.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en
   innehåller. Det säger ingenting om vilken cell de hör
@@ -1454,7 +1459,7 @@ rad på högkant per stycke (`konvertering/hogkant.py`).
   mellanslag, och mer än två teckenstorlekar skiljer två stämplar åt.
   Tecken på högkant inne i en tabell står kvar i tabellen, och sidans tal
   är då obekräftade (ADR-0038). Text på högkant bara utanför tabellerna
-  gör inte talen obekräftade (ADR-0103).
+  gör inte talen obekräftade när den går att läsa entydigt (ADR-0103).
 - **OCR:** ett ord i Tesseracts TSV med minst fyra tecken som är minst
   dubbelt så högt som brett står på högkant. Hela Tesseract-raden med
   ett sådant ord räknas till stämpeln, så att också korta ord som `Dnr`

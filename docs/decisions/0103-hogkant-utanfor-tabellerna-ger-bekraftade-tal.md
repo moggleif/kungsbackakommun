@@ -31,21 +31,35 @@ Behöver den fortfarande göra sidans tal obekräftade
 
 ## Considered Options
 
-* A – Tecken på högkant utanför tabellerna räknas inte; inne i en
-  tabell gör de sidans tal obekräftade som förut
+* A – Tecken på högkant utanför tabellerna räknas inte när de går att
+  läsa entydigt; inne i en tabell gör de sidans tal obekräftade som förut
 * B – Tecken på högkant räknas bara när något av dem är en siffra
 * C – Regeln står kvar som i ADR-0038
 
 ## Decision Outcome
 
 Valt: A, eftersom det är precis den text som K41 redan läser för sig.
-Tecken på högkant utanför tabellerna tas bort innan regeln prövas, och
-därmed också innan överlappet prövas. De kan alltså inte heller göra
-sidan obekräftad genom att stå ovanpå upprätt text, för de skrivs inte i
-samma rad. Inne i en tabell står tecknen kvar i cellerna, och där gör ett
-tecken på högkant sidans tal obekräftade som förut. Tabellerna är både de
-med linjer och de utan. Text ritad ovanpå annan upprätt text ger
-obekräftade tal som förut. Regeln står i `konvertering/ordning.py`.
+Tecken på högkant utanför tabellerna tas bort innan regeln för text
+ritad ovanpå annan text prövas, eftersom de inte skrivs i samma rad som
+den upprätta texten. Men de räknas bara bort när K41 läser dem
+entydigt:
+
+* varje tecken är vridet en kvarts varv, utan spegling;
+* varje rad på högkant står på en linje, så att två rader inte ligger
+  närmare än en teckenstorlek och läses ihop. En rad med årtalen `2010`
+  och `2011` sju punkter isär blir annars `22001101`;
+* inga tecken i en rad ligger mer än till hälften över varandra, som två
+  stämplar på samma ställe.
+
+Annars gör texten på högkant sidans tal obekräftade som förut. Inne i en
+tabell står tecknen kvar i cellerna, och där gör ett tecken på högkant
+sidans tal obekräftade som förut. Tabellerna är både de med linjer och
+de utan. Text ritad ovanpå annan upprätt text ger obekräftade tal som
+förut. Reglerna står i `konvertering/ordning.py` och
+`konvertering/hogkant.py`. Gränserna för vridning (1 %) och linje (en
+tiondel av teckenstorleken) är satta, inte uppmätta. I stickprovet var
+vridningen exakt och raderna utan spridning, utom på fyra sidor som
+fortsätter vara märkta.
 
 Poolens version höjs till 0.15.0, så att sidorna kommer med i
 omkonverteringen ([#84](https://github.com/moggleif/kommunhandlingar/issues/84)).
@@ -55,20 +69,21 @@ Granskade dokument konverteras inte om
 ### Consequences
 
 * Bra, eftersom ett stickprov på 169 märkta sidor ur 18 handlingar från
-  kungsbacka.se släpper 161 med den nya
+  kungsbacka.se släpper 157 med den nya
   regeln. Alla 18 hade samma sha256 som i poolen. De
-  161 sidorna hade text på högkant bara utanför tabellerna: axeltitlar,
+  157 sidorna hade text på högkant bara utanför tabellerna: axeltitlar,
   axlarnas årtal och åldrar, koordinater på kartor och en filrad i
   marginalen. Kontrollen mot den ritade sidan visar att talen står rätt,
   till exempel åldersaxeln 0–99, årtalen 2010–2032 och `6377000`.
-  Räknat på hela poolen blir det ungefär 7 200 sidor färre, från 11,0 %
-  till cirka 8,4 %. Stickprovet tog bara levande dokument.
-* Bra, eftersom de åtta sidorna med verklig oordning står kvar: text
+  Räknat på hela poolen blir det ungefär 7 100 sidor färre, från 11,0 %
+  till cirka 8,5 %. Stickprovet tog bara levande dokument.
+* Bra, eftersom de tolv sidorna som inte går att läsa entydigt står kvar: text
   ritad ovanpå annan text, eller tecken på högkant i en tabell.
 * Dåligt, eftersom en siffra på högkant utanför tabellerna, som ett
   axelvärde, räknas som bekräftad, fast det är K41:s läsriktning som
-  avgör den. Läsriktningen prövas i `tests/test_hogkant.py`, och den
-  stämde på varje sida i stickprovet.
+  avgör den. Läsriktningen och entydigheten prövas i
+  `tests/test_hogkant.py`, och läsningen stämde på varje släppt sida i
+  stickprovet.
 * Neutralt, eftersom text som står snett eller upp och ned, som gatunamn
   på en karta, märks lika lite som förut.
 * Neutralt, eftersom ändringen syns först när ett dokument konverteras
@@ -76,6 +91,8 @@ Granskade dokument konverteras inte om
 
 ### Confirmation
 
+`tests/test_hogkant.py` prövar entydigheten med påhittade tecken: täta
+rader, tecken över varandra och speglade tecken.
 `tests/test_ordning.py` prövar regeln med påhittade tecken, och sidorna 1
 och 3 i `tests/fixtures/pdf/hogkant.pdf`: ett diarienummer på högkant i
 marginalen ger bekräftade tal, och en kolumnrubrik på högkant i en tabell
@@ -100,7 +117,7 @@ ger obekräftade.
 ### C – Regeln står kvar
 
 * Bra, eftersom ingenting ändras.
-* Dåligt, eftersom ungefär 7 200 sidor vars tal är rätt lästa inte kan
+* Dåligt, eftersom ungefär 7 100 sidor vars tal är rätt lästa inte kan
   användas som data.
 
 ## More Information
@@ -121,3 +138,9 @@ visa vad som faktiskt utlöser märkningen, och att talen på de sidor som
 släpps står rätt. B prövades i samma stickprov och släppte för lite.
 B skyddar inte heller tabellerna, där oordningen verkligen kan flytta ett
 tal.
+
+Den oberoende granskningen (fas 6) hittade att K41 läser ihop rader på
+högkant som ligger tätt, och att speglade tecken, som inte heller är
+upprätta, läses i fel ordning. Regeln skärptes därför så att bara text som K41 läser
+entydigt räknas bort. Det kostade fyra sidor i stickprovet. Ett tal på
+dem kan ha lästs ihop med ett annat, och de står därför kvar.

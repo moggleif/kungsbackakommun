@@ -202,11 +202,18 @@ kunna läggas till utan kodändring.
 
 - **Givet** ett textlager där text på högkant står bara utanför
   tabellerna, som en axeltitel, ett diarienummer i marginalen eller
-  koordinater på en karta, och där resten av sidan går att läsa i ordning
+  koordinater på en karta, där varje rad på högkant går att läsa för sig
+  och resten av sidan går att läsa i ordning
   (issue [#399](https://github.com/moggleif/kungsbackakommun/issues/399))
 - **När** dokumentet konverteras
 - **Så** står sidan inte bland sidorna med obekräftade tal, eftersom
   texten på högkant läses för sig enligt K41.
+
+- **Givet** ett textlager med text på högkant utanför tabellerna som
+  inte går att läsa entydigt: rader så tätt att de läses ihop, tecken
+  ovanpå varandra eller speglade tecken
+- **När** dokumentet konverteras
+- **Så** står sidan bland sidorna med obekräftade tal.
 
 - **Givet** ett textlager med styrtecken, till exempel NUL där en
   punktlistas tecken skulle stå
