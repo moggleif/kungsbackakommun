@@ -75,13 +75,6 @@ class TestOrdning(unittest.TestCase):
         n = vriden("N", 50)
         self.assertFalse(i_oordning(sida(*STOD, n), [(300, 120, 400, 150)]))
 
-    def test_hogkant_ovanpa_uppratt_text(self):
-        """Text på högkant ritad ovanpå en rad kan flytta talen i den."""
-        self.assertTrue(i_oordning(sida(*STOD, vriden("N", 425.8)), []))
-
-    def test_hogkant_bredvid_uppratt_text_raknas_inte(self):
-        self.assertFalse(i_oordning(sida(*STOD, vriden("N", 440)), []))
-
     def test_siffra_pa_hogkant_utanfor_tabellerna(self):
         """Två årtal på högkant så tätt att K41 läser ihop dem till
         `22001101`: en siffra på högkant blir aldrig bekräftad."""
@@ -137,5 +130,11 @@ class TestSidan(unittest.TestCase):
         with pdfplumber.open(PDF / "tabell-hogkant.pdf") as pdf:
             sida = pdf.pages[0]
             self.assertTrue(textsida(sida).tal_obekraftade)
-            with patch.object(las_sida, "flyttar", return_value=False):
+            with patch.object(las_sida.hogkant, "staende", side_effect=lambda s: s):
                 self.assertFalse(textsida(sida).tal_obekraftade)
+
+    def test_hogkant_som_tar_bort_osakra_talrader(self):
+        """talrad-hogkant.pdf: utan `Not` är talraderna osäkra; med det
+        läses de som löptext."""
+        with pdfplumber.open(PDF / "talrad-hogkant.pdf") as pdf:
+            self.assertTrue(textsida(pdf.pages[0]).tal_obekraftade)

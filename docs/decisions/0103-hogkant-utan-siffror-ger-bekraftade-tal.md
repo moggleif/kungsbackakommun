@@ -44,16 +44,20 @@ med textlager får obekräftade tal när något tecken på högkant
 
 * står inne i en tabell, som förut;
 * är en siffra, var det än står;
-* skär rutan kring ett upprätt tecken, eftersom det då kan vara ritat
-  ovanpå en rad med tal;
-* gör att tabellerna hittas annorlunda. Tabellerna hittas en gång till
-  utan texten på högkant, och rutorna ska bli desamma. Ett ord på högkant
-  intill en tabell utan linjer kan annars få tabellen att tappa en rad i
-  tysthet. Prövningen görs bara på sidor med text på högkant.
+* ändrar hur resten av sidan läses. En sida med text på högkant läses en
+  gång till utan den texten, och allt utom texten på högkant ska bli
+  likadant: sidans kvalitet (så att en talrad inte tappar märkningen
+  `tabell-osaker`), tabellerna cell för cell, figuren, raderna som avgör
+  om en tabell fortsätter på nästa sida, och texten fram till texten på
+  högkant. Ett ord på högkant intill en tabell utan linjer kan annars få
+  tabellen att tappa en rad i tysthet.
 
 Text ritad ovanpå annan upprätt text ger obekräftade tal som förut.
-Reglerna står i `konvertering/ordning.py` och, för tabellerna, i
-`konvertering/las_sida.py`.
+Reglerna står i `konvertering/ordning.py` och `textsida` i
+`konvertering/las_sida.py`. Raderna för tabeller över flera sidor
+(ADR-0024) läses nu utan text på högkant, eftersom den skrivs sist på
+sidan; annars skulle varje stämpel i marginalen göra att sidan läses
+annorlunda.
 
 Granskningen hittade också ett fel i K41: en rad som läses medurs fick
 falska mellanslag, så att `11,5` blev `11 ,5`. Mellanrummet mäts nu
@@ -69,10 +73,10 @@ Granskade dokument konverteras inte om
 * Bra, eftersom inget tal på högkant räknas som bekräftat. Regeln
   bygger inte på att K41 läser rätt.
 * Bra, eftersom ett stickprov på 169 märkta sidor ur 18 handlingar från
-  kungsbacka.se, alla med samma sha256 som i poolen, släpper 78. Det är
+  kungsbacka.se, alla med samma sha256 som i poolen, släpper 81. Det är
   sidor med axeltitlar och kartor vars text på högkant saknar siffror.
-  Räknat på hela poolen blir det ungefär 3 500 sidor färre, från 11,0 %
-  till cirka 9,8 %. Stickprovet tog bara levande dokument.
+  Räknat på hela poolen blir det ungefär 3 600 sidor färre, från 11,0 %
+  till cirka 9,7 %. Stickprovet tog bara levande dokument.
 * Dåligt, eftersom sidor med diagram vars axlar har årtal på högkant,
   eller med ett diarienummer i marginalen, får obekräftade tal fast
   talen i den upprätta texten är rätt. Det var ungefär hälften av
@@ -82,6 +86,9 @@ Granskade dokument konverteras inte om
   flödet, så att `73` upp och ned blir `37`. Det fanns före det här
   beslutet och följs upp i
   [#401](https://github.com/moggleif/kungsbackakommun/issues/401).
+* Dåligt, eftersom en sida med text på högkant utan siffror läses två
+  gånger. Det gäller högst ungefär 3 % av sidorna med textlager, de som
+  i dag märks för text i oordning.
 * Neutralt, eftersom ändringen syns först när ett dokument konverteras
   om.
 
@@ -91,9 +98,10 @@ Granskade dokument konverteras inte om
 som skapas av `tests/fixtures/pdf/skapa_hogkant_ute.py`. `axeltitel.pdf`
 har en axeltitel utan siffror och får bekräftade tal. `medurs.pdf` har en
 stämpel med tal och får obekräftade tal. `tabell-hogkant.pdf` har ett ord
-på högkant som flyttar en tabell, och får obekräftade tal. Sidorna 1 och
-3 i `hogkant.pdf`, ett diarienummer och en kolumnrubrik på högkant, får
-obekräftade tal. `tests/test_hogkant.py` prövar mellanrummen åt båda
+på högkant som får en tabell att tappa en rad, och `talrad-hogkant.pdf`
+ett ord som tar bort märkningen `tabell-osaker`; båda får obekräftade
+tal. Sidorna 1 och 3 i `hogkant.pdf`, ett diarienummer och en
+kolumnrubrik på högkant, får obekräftade tal. `tests/test_hogkant.py` prövar mellanrummen åt båda
 hållen.
 
 ## Pros and Cons of the Options
@@ -112,13 +120,14 @@ hållen.
 
 * Bra, eftersom ett tecken som inte är en siffra inte kan ge ett fel tal,
   hur det än läses.
-* Bra, eftersom regeln är en rad.
+* Bra, eftersom regeln om siffror är en rad, och kontrollen av resten
+  av sidan bygger inte på att varje väg för ett fel är känd.
 * Dåligt, eftersom bara hälften så många sidor släpps som med A.
 
 ### C – Regeln står kvar
 
 * Bra, eftersom ingenting ändras.
-* Dåligt, eftersom ungefär 3 500 sidor vars tal är rätt lästa inte kan
+* Dåligt, eftersom ungefär 3 600 sidor vars tal är rätt lästa inte kan
   användas som data.
 
 ## More Information
@@ -139,7 +148,9 @@ varje släppt sida. Den oberoende granskningen prövade sedan egna PDF:er
 och hittade i fyra omgångar de fall som står under A. Efter den fjärde
 omgången valde agenten B, eftersom det följer projektägarens krav
 utan att förutsätta att alla fel är kända. Sidorna med årtal på högkant
-får vänta på en bättre läsning. Kontrollen att tabellerna hittas
-likadant och regeln om text ovanpå en rad kom från granskningen och står
-kvar i B, eftersom ett ord på högkant utan siffror ändå kan flytta en
-tabell eller dölja ett mellanrum.
+får vänta på en bättre läsning. Den femte omgången hittade ett ord
+på högkant utan siffror som tog bort märkningen `tabell-osaker` från en
+talrad. I stället för en kontroll per steg läses därför sidan om utan
+texten på högkant, och allt annat ska bli likadant. Det ersatte
+kontrollen av tabellernas rutor och regeln om text ovanpå en rad, som
+båda bara täckte en del av vägarna.

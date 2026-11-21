@@ -208,9 +208,9 @@ kunna läggas till utan kodändring.
 - **Så** står sidan inte bland sidorna med obekräftade tal, eftersom
   texten på högkant läses för sig enligt K41.
 
-- **Givet** ett textlager med en siffra på högkant var som helst, text på
-  högkant ovanpå upprätt text, eller text på högkant som ändrar var
-  tabellerna hittas
+- **Givet** ett textlager med en siffra på högkant var som helst, eller
+  text på högkant som ändrar hur resten av sidan läses: dess kvalitet,
+  tabeller, talrader eller text
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 

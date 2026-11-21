@@ -960,9 +960,11 @@ nattkörningen checkar inte in något
   utan att vara samma tecken, eftersom texten då inte går att läsa i
   ordning ([ADR-0038](decisions/0038-text-i-oordning-ger-obekraftade-tal.md)).
   Tecken på högkant utanför tabellerna räknas bara när något av dem är
-  en siffra, när något av dem skär rutan kring ett upprätt tecken, eller
-  när tabellerna hittas annorlunda utan dem, med andra rutor avrundade
-  till hela punkter
+  en siffra, eller när sidan läses annorlunda utan dem. En sida med text
+  på högkant läses en gång till utan den texten, och allt utom texten på
+  högkant ska bli likadant: sidans kvalitet, tabellerna cell för cell,
+  figuren, raderna för tabeller över flera sidor, och texten fram till
+  texten på högkant
   ([Text på högkant](#text-på-högkant),
   [ADR-0103](decisions/0103-hogkant-utan-siffror-ger-bekraftade-tal.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en
@@ -1403,7 +1405,9 @@ gäller:
    förblir två. Varje rad i marginalen som uppfyller villkoret räknas
    dock som sidhuvud eller sidfot, också en rubrik, en summa eller en
    fotnot som bara skiljer i sina siffror, och i ett dokument på två
-   sidor känns inget sidhuvud igen.
+   sidor känns inget sidhuvud igen. Text på högkant räknas inte till
+   textraderna, eftersom den skrivs sist på sidan
+   ([ADR-0103](decisions/0103-hogkant-utan-siffror-ger-bekraftade-tal.md)).
 
 Tabellerna slås ihop sida för sida, så att en tabell kan gå över många
 sidor. Fortsättningens första rad tas bort när den är exakt lika med
@@ -1458,7 +1462,9 @@ rad på högkant per stycke (`konvertering/hogkant.py`).
   skiljer två stämplar åt.
   Tecken på högkant inne i en tabell står kvar i tabellen, och sidans tal
   är då obekräftade (ADR-0038). Text på högkant bara utanför tabellerna
-  gör inte talen obekräftade när den saknar siffror (ADR-0103).
+  gör inte talen obekräftade när den saknar siffror och resten av sidan
+  läses likadant utan den
+  ([Konvertering och kvalitet](#konvertering-och-kvalitet), ADR-0103).
 - **OCR:** ett ord i Tesseracts TSV med minst fyra tecken som är minst
   dubbelt så högt som brett står på högkant. Hela Tesseract-raden med
   ett sådant ord räknas till stämpeln, så att också korta ord som `Dnr`

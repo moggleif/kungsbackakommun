@@ -5,8 +5,9 @@ en tabell, eller tecken på samma rad som ritats ovanpå varandra, som en
 kolumn som flyter in i nästa. pdfplumber blandar ihop dem till rader som
 `aktivitetsstö2d0225-05-21`, och sidans tal räknas då inte som
 bekräftade (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet). Text på
-högkant utanför tabellerna läses för sig (K41) och räknas bara när den
-har en siffra eller står ovanpå upprätt text (ADR-0103).
+högkant utanför tabellerna läses för sig (K41) och räknas här bara när
+den har en siffra (ADR-0103); `las_sida.textsida` prövar att den inte
+ändrar hur resten av sidan läses.
 """
 
 from collections import defaultdict
@@ -22,22 +23,11 @@ def i_oordning(sida: Page, rutor: list[tuple]) -> bool:
     pa_hogkant = [c for _, c in tecken if not c["upright"]]
     if any(c["text"].isdigit() or i_tabell(c, rutor) for c in pa_hogkant):
         return True
-    upprata = [c for c in sida.chars if c["upright"]]
-    if any(over(h, c) for h in pa_hogkant for c in upprata):
-        return True
     rader = defaultdict(list)
     for i, c in (t for t in tecken if t[1]["upright"]):
         rader[round(c["top"])].append((i, c))
     i_lage = [sorted(r, key=lambda t: t[1]["x0"]) for r in rader.values()]
     return any(tacker(a, b) for r in i_lage for a, b in pairwise(r))
-
-
-def over(a: dict, b: dict) -> bool:
-    """Två teckens rutor som skär varandra, som text på högkant ritad
-    ovanpå en rad."""
-    sidled = min(a["x1"], b["x1"]) - max(a["x0"], b["x0"])
-    hojdled = min(a["bottom"], b["bottom"]) - max(a["top"], b["top"])
-    return sidled > 0 and hojdled > 0
 
 
 def tacker(vanster: tuple[int, dict], hoger: tuple[int, dict]) -> bool:

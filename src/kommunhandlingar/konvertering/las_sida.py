@@ -101,6 +101,18 @@ def ej_vita(rendering: pdfium.PdfPage) -> float:
 
 
 def textsida(sida: Page) -> Sida:
+    """Text på högkant utan siffror ger obekräftade tal bara när sidan
+    läses annorlunda utan den: tabellerna, talraderna eller texten
+    (ADR-0103). Prövas bara på sidor med sådan text."""
+    last = textlagret(sida)
+    if last.tal_obekraftade or all(c["upright"] for c in sida.chars):
+        return last
+    utan = textlagret(hogkant.staende(sida))
+    andrar = replace(utan, text="") != replace(last, text="")
+    return replace(last, tal_obekraftade=andrar or not last.text.startswith(utan.text))
+
+
+def textlagret(sida: Page) -> Sida:
     sida = utan_mellanslag_i_tal(sida)
     hittade, fallda = med_linjer(sida)
     rutor = [ruta for ruta, _, _ in hittade]
@@ -113,27 +125,14 @@ def textsida(sida: Page) -> Sida:
     hittade.sort(key=lambda t: (round(t[0][1]), t[0][0]))
     return Sida(
         "tabell-osaker" if osaker else "ok",
-        olasliga(sida) > 0 or i_oordning(sida, rutor) or flyttar(sida, rutor),
+        olasliga(sida) > 0 or i_oordning(sida, rutor),
         text,
         [rader for _, rader, _ in hittade],
         figurer.har_figur(sida, rutor),
-        skarv(utanfor, [(ruta, kanter) for ruta, _, kanter in hittade]),
+        skarv(
+            hogkant.staende(utanfor), [(ruta, kanter) for ruta, _, kanter in hittade]
+        ),
     )
-
-
-def flyttar(sida: Page, rutor: list[tuple]) -> bool:
-    """Text på högkant som ändrar var tabellerna hittas, så att en rad kan
-    falla ur en tabell (ADR-0103). Prövas bara på sidor med sådan text."""
-    if all(c["upright"] for c in sida.chars):
-        return False
-    staende = hogkant.staende(sida)
-    utan = [ruta for ruta, _, _ in med_linjer(staende)[0]]
-    utan += [t.bbox for t in olinjerade.tabeller(staende, utan)]
-    return avrundade(utan) != avrundade(rutor)
-
-
-def avrundade(rutor: list[tuple]) -> list[tuple]:
-    return sorted(tuple(round(v) for v in ruta) for ruta in rutor)
 
 
 def sidans_text(utanfor: Page) -> tuple[str, bool]:
