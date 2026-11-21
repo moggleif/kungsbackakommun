@@ -12,14 +12,14 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
 from kommunhandlingar.webbplats.bygg import bygg
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.partier import former, star_pa
 from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import INITIATIV
 from tests.aren import aren
+from tests.poolfall import dokumenten, mall, skriv, tillfallig_pool
 from tests.test_mal import ROT
-from tests.test_webbplats import FIXTURER, REPO, TID, dokument, exempelby
+from tests.test_webbplats import FIXTURER, REPO, TID, exempelby
 
 RUBRIK = "organ,arende,ar,fas,varde,text,kalla,tolkad\n"
 VACKT = "fsn/2024/2024-03-14/protokoll.md"
@@ -52,22 +52,13 @@ RADER = (
 )
 
 
-def skriv_pool(data: Path) -> None:
-    for fil, text in ((VACKT, VACKTS), (BESLUT, BESLUTETS), (ANDRAS, ANDRAS_TEXT)):
-        organ, _, datum, _ = fil.split("/")
-        (data / fil).parent.mkdir(parents=True)
-        (data / fil).write_text(
-            dokument(organ, datum, text=text, per_sida="[ok, ok]"), encoding="utf-8"
-        )
+POOL = dokumenten({VACKT: VACKTS, BESLUT: BESLUTETS, ANDRAS: ANDRAS_TEXT}, "[ok, ok]")
 
 
 @contextmanager
 def lasta(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en initiativfil mot en pool med två organs dokument."""
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(rubrik + rader, encoding="utf-8")
-        skriv_pool(data)
+    with tillfallig_pool(rubrik, rader, POOL) as (fil, data):
         yield spar.las(fil, exempelby(), data, INITIATIV)
 
 
@@ -120,7 +111,7 @@ class TestSidan(unittest.TestCase):
     def sida(self) -> str:
         with lasta() as stegen:
             vy = Vy(INITIATIV, exempelby(), aren(stegen)["exempelby"])
-            return sparsida(Mall([exempelby()], REPO, TID), vy, stegen)
+            return sparsida(mall(), vy, stegen)
 
     def test_ett_arende_per_rad_med_avsandaren(self):
         html = self.sida()
@@ -154,7 +145,7 @@ class TestBygg(unittest.TestCase):
         rot, ut = tmp / "repo", tmp / "ut"
         (rot / "kommuner").mkdir(parents=True)
         shutil.copy(FIXTURER / "exempelby.toml", rot / "kommuner")
-        skriv_pool(rot / "data" / "exempelby")
+        skriv(rot / "data" / "exempelby", POOL)
         (rot / "initiativ").mkdir()
         (rot / "initiativ" / "exempelby.csv").write_text(RUBRIK + RADER)
         bygg(rot, ut, REPO, TID)

@@ -11,6 +11,7 @@ from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import projekt, spar
 from kommunhandlingar.webbplats.sparkort import projektet
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
+from tests.poolfall import tillfallig_pool
 from tests.test_detaljplaner import ROT, sida
 from tests.test_webbplats import dokument, exempelby
 
@@ -27,17 +28,16 @@ def kommunen():
 
 # Varje fil som namn i poolen och filnamn i källans adress.
 def las(rader: str, filer: dict[str, str] | None = None) -> dict[str, projekt.Projekt]:
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + rader, encoding="utf-8")
-        for nr, (namn, filnamn) in enumerate((filer or {}).items(), 1):
-            stalle = data / f"fsn/2024/2024-0{nr}-01/handlingar-{namn}.md"
-            stalle.parent.mkdir(parents=True, exist_ok=True)
-            url = f"https://exempelby.se/download/18.c{nr}/1/{filnamn}"
-            text = dokument(
-                datum=f"2024-0{nr}-01", typ="handlingar", namn=namn, url=url
-            )
-            stalle.write_text(text, encoding="utf-8")
+    texter = {
+        f"fsn/2024/2024-0{nr}-01/handlingar-{namn}.md": dokument(
+            datum=f"2024-0{nr}-01",
+            typ="handlingar",
+            namn=namn,
+            url=f"https://exempelby.se/download/18.c{nr}/1/{filnamn}",
+        )
+        for nr, (namn, filnamn) in enumerate((filer or {}).items(), 1)
+    }
+    with tillfallig_pool(RUBRIK, rader, texter) as (fil, data):
         return projekt.las(fil, kommunen(), data)
 
 
