@@ -2317,3 +2317,24 @@ och klocka. Issue
 - **Givet** en kommunfil som inte följer schemat
 - **När** kommandot körs
 - **Så** stoppas det med "Stoppad: " och felet, och en felkod.
+
+## K80 — Steg 1:s kommando gör det nattkörningen räknar med
+
+Prövas i `tests/test_upptack_kommando.py` utan nät, med en påhittad klient.
+Issue [#354](https://github.com/moggleif/kungsbackakommun/issues/354).
+
+- **Givet** en kommunfil och en arbetskatalog utanför repot
+- **När** `python -m kommunhandlingar.upptack` körs
+- **Så** skrivs kandidatlistan till `<kommun>.kandidater.json` och
+  sammanfattningen ut; med `--arkiv` skrivs i stället arkivets lista till
+  `<kommun>.arkiv.kandidater.json`, och arkivets noteringar står i
+  sammanfattningen (K2, K16).
+
+- **Givet** en källsida som inte svarar
+- **När** kommandot körs
+- **Så** står "Stoppad: " och adressen på standard ut, och slutkoden är 3,
+  som nattkörningen går vidare vid (ADR-0061).
+
+- **Givet** en arbetskatalog i repot
+- **När** kommandot körs
+- **Så** stoppas det med "Stoppad: " och felet, och en annan felkod än 3.
