@@ -2394,3 +2394,22 @@ Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
   `maska_poolen`
 - **När** kommandot körs
 - **Så** stoppas det med kommandots användningstext.
+
+## K82 — Webbplatsens kommando har en ingång som går att pröva
+
+Prövas i `tests/test_webbplats_kommando.py`, i temporära kataloger.
+Issue [#356](https://github.com/moggleif/kungsbackakommun/issues/356).
+
+- **Givet** modulen `kommunhandlingar.webbplats.__main__`
+- **När** den importeras
+- **Så** byggs ingenting.
+
+- **Givet** en arbetskatalog med en kommunfil och en tom avvikelsefil
+- **När** `python -m kommunhandlingar.webbplats <utkatalog> <repoadress> <avvikelsefil>`
+  körs i den, som ett datarepo kör det
+- **Så** skrivs kommunens översikt och sidan med avvikelserna i
+  utkatalogen (K14, K33).
+
+- **Givet** fel antal argument
+- **När** kommandot körs
+- **Så** stoppas det med kommandots användningstext.

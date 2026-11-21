@@ -228,8 +228,8 @@ namn (K74):
 - `python -m kommunhandlingar.datakontroll <data>`, med slutkoden 1 vid
   fel.
 - `python -m kommunhandlingar.webbplats <utkatalog> <repoadress> <avvikelsefil>`,
-  körd i repots rot. Argumenten låses av test när modulen får en `main`
-  (#356).
+  körd i repots rot; argumenten låses i `tests/test_webbplats_kommando.py`
+  (K82).
 - `from kommunhandlingar.konfiguration import las`.
 - Katalogerna: kommunfilen ligger i en katalog i repots rot, och
   `hamtning.toml` och `data/` ligger i roten.
