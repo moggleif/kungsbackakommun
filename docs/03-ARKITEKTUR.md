@@ -224,7 +224,8 @@ namn (K74):
   källan stoppade.
 - `python -m kommunhandlingar.hamta <kommunfil> <arbetskatalog>` med
   `--arkiv`, `--start`, `--del <minuter>` och `--utan-omkonvertering`,
-  och slutkoden 4 när delen tog slut.
+  och slutkoden 4 när delen tog slut. Vad kommandot gör med dem prövas i
+  `tests/test_hamta_kommando.py` (K79).
 - `python -m kommunhandlingar.datakontroll <data>`, med slutkoden 1 vid
   fel.
 - `python -m kommunhandlingar.webbplats <utkatalog> <repoadress> <avvikelsefil>`,
