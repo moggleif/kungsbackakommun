@@ -43,7 +43,7 @@ def stycken(tecken: list[dict]) -> list[str]:
     i_ordning = sorted(tecken, key=lambda c: c["top"], reverse=uppat(tecken[0]))
     delar = [i_ordning[0]["text"]]
     for fore, c in pairwise(i_ordning):
-        lucka = abs(c["top"] - fore["top"]) - (c["bottom"] - c["top"])
+        lucka = max(c["top"], fore["top"]) - min(c["bottom"], fore["bottom"])
         if lucka > STYCKESLUCKA * storlek(c):
             delar.append("")
         elif lucka > ORDLUCKA * storlek(c):

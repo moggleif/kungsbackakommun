@@ -191,13 +191,28 @@ kunna läggas till utan kodändring.
 
 - **Givet** en sida vars tal inte är bekräftade – en sida som lästs med
   OCR, en sida som inte gick att konvertera, ett textlager med oläsliga
-  tecken, eller ett textlager med text på högkant eller text ritad ovanpå
-  annan text (issue [#119](https://github.com/moggleif/kommunhandlingar/issues/119))
+  tecken, eller ett textlager med text på högkant inne i en tabell eller
+  text ritad ovanpå annan text (issue
+  [#119](https://github.com/moggleif/kommunhandlingar/issues/119))
 - **När** dokumentet konverteras
 - **Så** listas sidan bland dokumentets sidor med obekräftade tal. Text
   och tal märks var för sig: talen på en sida går att använda som data
   när sidan inte står i listan, oavsett textens kvalitet, och alla
   dokumentets tal när listan är tom.
+
+- **Givet** ett textlager där text på högkant utan siffror står bara
+  utanför tabellerna, som en axeltitel, och resten av sidan går att läsa
+  i ordning (issue
+  [#399](https://github.com/moggleif/kungsbackakommun/issues/399))
+- **När** dokumentet konverteras
+- **Så** står sidan inte bland sidorna med obekräftade tal, eftersom
+  texten på högkant läses för sig enligt K41.
+
+- **Givet** ett textlager med en siffra på högkant var som helst, eller
+  text på högkant som ändrar hur resten av sidan läses: dess kvalitet,
+  tabeller, talrader, figur, raderna kring tabellerna eller text
+- **När** dokumentet konverteras
+- **Så** står sidan bland sidorna med obekräftade tal.
 
 - **Givet** ett textlager med styrtecken, till exempel NUL där en
   punktlistas tecken skulle stå

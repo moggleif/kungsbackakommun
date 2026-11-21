@@ -954,11 +954,19 @@ nattkörningen checkar inte in något
   `ej-konverterad`, eftersom talen på den inte är lästa, och varje sida
   med textlager där något tecken är oläsligt, eftersom tecknet kan ha
   varit en siffra. Det gäller också en sida med textlager där något
-  tecken står på högkant (inte `upright` i pdfplumber), eller där två
-  tecken på samma rad täcker mer än halva det smalare av dem utan att
-  stå intill varandra i textlagret, mellanslag oräknade, och utan att
-  vara samma tecken, eftersom texten då inte går att läsa i ordning
-  ([ADR-0038](decisions/0038-text-i-oordning-ger-obekraftade-tal.md)).
+  tecken inne i en tabell står på högkant (inte `upright` i pdfplumber),
+  eller där två tecken på samma rad täcker mer än halva det smalare av
+  dem utan att stå intill varandra i textlagret, mellanslag oräknade, och
+  utan att vara samma tecken, eftersom texten då inte går att läsa i
+  ordning ([ADR-0038](decisions/0038-text-i-oordning-ger-obekraftade-tal.md)).
+  Tecken på högkant utanför tabellerna räknas bara när något av dem är
+  en siffra, eller när sidan läses annorlunda utan dem. En sida med text
+  på högkant läses en gång till utan den texten, och allt utom texten på
+  högkant ska bli likadant: sidans kvalitet, tabellerna cell för cell,
+  figuren, raderna för tabeller över flera sidor, och texten fram till
+  texten på högkant, där det som följer inte har några siffror
+  ([Text på högkant](#text-på-högkant),
+  [ADR-0103](decisions/0103-hogkant-utan-siffror-ger-bekraftade-tal.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en
   innehåller. Det säger ingenting om vilken cell de hör
   till; det avgörs av reglerna för tabeller nedan. Talen på en sida som
@@ -1397,7 +1405,9 @@ gäller:
    förblir två. Varje rad i marginalen som uppfyller villkoret räknas
    dock som sidhuvud eller sidfot, också en rubrik, en summa eller en
    fotnot som bara skiljer i sina siffror, och i ett dokument på två
-   sidor känns inget sidhuvud igen.
+   sidor känns inget sidhuvud igen. Text på högkant räknas inte till
+   textraderna, eftersom den skrivs sist på sidan
+   ([ADR-0103](decisions/0103-hogkant-utan-siffror-ger-bekraftade-tal.md)).
 
 Tabellerna slås ihop sida för sida, så att en tabell kan gå över många
 sidor. Fortsättningens första rad tas bort när den är exakt lika med
@@ -1447,10 +1457,14 @@ rad på högkant per stycke (`konvertering/hogkant.py`).
   sidan. De delas i rader efter läget i sidled, och varje rad läses i sin
   riktning: uppåt när tecknen är vridna moturs, med raderna från vänster,
   nedåt när de är vridna medurs, med raderna från höger. Ett mellanrum
-  längs raden på mer än en femtedel av teckenstorleken blir ett
-  mellanslag, och mer än två teckenstorlekar skiljer två stämplar åt.
-  Tecken på högkant inne i en tabell står kvar i tabellen. Sidans tal är
-  fortfarande obekräftade (ADR-0038).
+  längs raden, mellan två tecknens rutor, på mer än en femtedel av
+  teckenstorleken blir ett mellanslag, och mer än två teckenstorlekar
+  skiljer två stämplar åt.
+  Tecken på högkant inne i en tabell står kvar i tabellen, och sidans tal
+  är då obekräftade (ADR-0038). Text på högkant bara utanför tabellerna
+  gör inte talen obekräftade när den saknar siffror och resten av sidan
+  läses likadant utan den
+  ([Konvertering och kvalitet](#konvertering-och-kvalitet), ADR-0103).
 - **OCR:** ett ord i Tesseracts TSV med minst fyra tecken som är minst
   dubbelt så högt som brett står på högkant. Hela Tesseract-raden med
   ett sådant ord räknas till stämpeln, så att också korta ord som `Dnr`

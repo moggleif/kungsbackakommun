@@ -1,6 +1,7 @@
 """Krav: K4, K5, K6, K15, K17, K19, K41, K72 och K73 i docs/02-KRAV.md, ADR-0005,
 ADR-0016, ADR-0017, ADR-0022, ADR-0024, ADR-0028, ADR-0033, ADR-0034,
-ADR-0036, ADR-0038, ADR-0063, ADR-0064 och ADR-0099. Test: tests/test_konvertering.py,
+ADR-0036, ADR-0038, ADR-0063, ADR-0064, ADR-0099 och ADR-0103.
+Test: tests/test_konvertering.py,
 tests/test_maska_poolen.py, tests/test_skarvar.py, tests/test_delade.py,
 tests/test_kvarvarande.py, tests/test_avskurna.py, tests/test_mellanslag.py,
 tests/test_ordning.py, tests/test_spalter.py, tests/test_hogkant.py och
@@ -100,23 +101,39 @@ def ej_vita(rendering: pdfium.PdfPage) -> float:
 
 
 def textsida(sida: Page) -> Sida:
+    """Text på högkant utan siffror ger obekräftade tal bara när sidan
+    läses annorlunda utan den: tabellerna, talraderna eller texten
+    (ADR-0103). Prövas bara på sidor med sådan text."""
+    last = lasning(sida)
+    if last.tal_obekraftade or all(c["upright"] for c in sida.chars):
+        return last
+    utan = lasning(hogkant.staende(sida))
+    andrar = replace(utan, text="") != replace(last, text="")
+    tillagt = last.text.removeprefix(utan.text)
+    lika = last.text.startswith(utan.text) and not any(t.isnumeric() for t in tillagt)
+    return replace(last, tal_obekraftade=andrar or not lika)
+
+
+def lasning(sida: Page) -> Sida:
     sida = utan_mellanslag_i_tal(sida)
     hittade, fallda = med_linjer(sida)
     rutor = [ruta for ruta, _, _ in hittade]
     utan_linjer = olinjerade.tabeller(sida, rutor)
     rutor += [t.bbox for t in utan_linjer]
-    utanfor = sida.filter(lambda o: not i_tabell(o, rutor))
+    utanfor = sida.filter(lambda o: not tabeller.i_tabell(o, rutor))
     text, i_texten = sidans_text(utanfor)
     osaker = i_texten or osakra_tal(sida, fallda, rutor)
     hittade += [(t.bbox, t.rader, t.kanter) for t in utan_linjer]
     hittade.sort(key=lambda t: (round(t[0][1]), t[0][0]))
     return Sida(
         "tabell-osaker" if osaker else "ok",
-        olasliga(sida) > 0 or i_oordning(sida),
+        olasliga(sida) > 0 or i_oordning(sida, rutor),
         text,
         [rader for _, rader, _ in hittade],
         figurer.har_figur(sida, rutor),
-        skarv(utanfor, [(ruta, kanter) for ruta, _, kanter in hittade]),
+        skarv(
+            hogkant.staende(utanfor), [(ruta, kanter) for ruta, _, kanter in hittade]
+        ),
     )
 
 
@@ -155,10 +172,6 @@ def osakra_tal(sida: Page, fallda: list[tuple], rutor: list[tuple]) -> bool:
 def olast_siffra(tecken: dict, fallda: list[tuple], rutor: list[tuple]) -> bool:
     """En siffra i en fälld tabell med linjer som inte lästs i någon tabell."""
     i_fallda = any(tabeller.inom(tabeller.mitt(tecken), f) for f in fallda)
-    return tecken["text"].isdigit() and i_fallda and not i_tabell(tecken, rutor)
-
-
-def i_tabell(objekt: dict, rutor: list[tuple]) -> bool:
-    if objekt.get("object_type") != "char":
-        return False
-    return any(tabeller.inom(tabeller.mitt(objekt), ruta) for ruta in rutor)
+    return (
+        tecken["text"].isdigit() and i_fallda and not tabeller.i_tabell(tecken, rutor)
+    )
