@@ -112,6 +112,22 @@ class TestTextlagret(unittest.TestCase):
         sida = SimpleNamespace(chars=tva + ett)
         self.assertEqual(hogkant.textlagret(sida), ["ETT", "TVA"])
 
+    def test_olika_breda_tecken_at_bada_hallen(self):
+        """Ett brett tecken följt av ett smalt får inget mellanslag, åt
+        något håll (ADR-0103)."""
+        hojder = [9, 3, 6, 3]
+        for uppat, steg in ((True, -1), (False, 1)):
+            tecknen, top = [], 400.0
+            for t, h in zip("m1,5", hojder, strict=True):
+                if steg < 0:
+                    top -= h
+                c = dict(tecken(t, 40, top, uppat=uppat), bottom=top + h)
+                tecknen.append(c)
+                if steg > 0:
+                    top += h
+            sida = SimpleNamespace(chars=tecknen)
+            self.assertEqual(hogkant.textlagret(sida), ["m1,5"], uppat)
+
 
 class TestOcr(unittest.TestCase):
     def test_ord_pa_hogkant_kanns_igen(self):

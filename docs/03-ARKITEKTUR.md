@@ -967,8 +967,8 @@ nattkörningen checkar inte in något
   skala), varje rad på högkant står på en linje (spridningen i sidled
   högst en tiondel av teckenstorleken) och läses åt ett håll, inga tecken
   i en rad ligger till hälften eller mer över varandra, och inget tecken
-  på högkant står ovanpå ett upprätt tecken. Annars gör de sidans tal
-  obekräftade
+  på högkant står ovanpå ett upprätt tecken, och tabellerna hittas
+  likadant utan dem. Annars gör de sidans tal obekräftade
   ([Text på högkant](#text-på-högkant),
   [ADR-0103](decisions/0103-hogkant-utanfor-tabellerna-ger-bekraftade-tal.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en
@@ -1459,8 +1459,9 @@ rad på högkant per stycke (`konvertering/hogkant.py`).
   sidan. De delas i rader efter läget i sidled, och varje rad läses i sin
   riktning: uppåt när tecknen är vridna moturs, med raderna från vänster,
   nedåt när de är vridna medurs, med raderna från höger. Ett mellanrum
-  längs raden på mer än en femtedel av teckenstorleken blir ett
-  mellanslag, och mer än två teckenstorlekar skiljer två stämplar åt.
+  längs raden, mellan två tecknens rutor, på mer än en femtedel av
+  teckenstorleken blir ett mellanslag, och mer än två teckenstorlekar
+  skiljer två stämplar åt.
   Tecken på högkant inne i en tabell står kvar i tabellen, och sidans tal
   är då obekräftade (ADR-0038). Text på högkant bara utanför tabellerna
   gör inte talen obekräftade när den går att läsa entydigt (ADR-0103).

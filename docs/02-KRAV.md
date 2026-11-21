@@ -212,8 +212,8 @@ kunna läggas till utan kodändring.
 - **Givet** ett textlager med text på högkant utanför tabellerna som
   inte går att läsa entydigt: rader så tätt att de läses ihop, två
   läsriktningar på samma linje, tecken ovanpå varandra, tecken ovanpå
-  upprätt text, eller tecken som inte är vridna precis en kvarts varv,
-  som speglade tecken
+  upprätt text, tecken som inte är vridna precis en kvarts varv, som
+  speglade tecken, eller text som ändrar var tabellerna hittas
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 

@@ -55,7 +55,17 @@ entydigt:
   högkant över mellanrummet i `12 34` kan annars göra raden till
   `1234`. Därför räknar inte heller mellanslagsregeln i
   [ADR-0036](0036-mellanslag-inne-i-en-siffra-tas-bort.md) siffror på
-  högkant.
+  högkant;
+* tabellerna hittas likadant utan texten på högkant. Ett `2024` på
+  högkant intill en tabell utan linjer kan annars få tabellen att tappa
+  en rad. Prövningen görs bara på sidor med text på högkant.
+
+Mellanrummen längs en rad som läses medurs mäts nu mellan tecknens
+rutor, som moturs. Förut drogs det nuvarande tecknets höjd av i stället
+för det föregåendes, och ett smalt tecken efter ett brett fick ett falskt
+mellanslag: `11,5` blev `11 ,5`. Det är en rättelse av
+[ADR-0064](0064-text-pa-hogkant-skrivs-sist.md), som inte ändrar
+moturs.
 
 Annars gör texten på högkant sidans tal obekräftade som förut. Inne i en
 tabell står tecknen kvar i cellerna, och där gör ett tecken på högkant
@@ -102,7 +112,10 @@ Granskade dokument konverteras inte om
 
 `tests/test_hogkant.py` prövar entydigheten med påhittade tecken: täta
 rader, två läsriktningar på samma linje, tecken över varandra och
-speglade tecken. `tests/test_mellanslag.py` prövar att en siffra på
+speglade tecken, och mellanrummen åt båda hållen med olika breda tecken.
+`medurs.pdf` och `tabell-hogkant.pdf`, skapade av
+`tests/fixtures/pdf/skapa_hogkant_ute.py`, prövar en stämpel medurs och
+en tabell som text på högkant flyttar. `tests/test_mellanslag.py` prövar att en siffra på
 högkant inte tar bort ett mellanslag.
 `tests/test_ordning.py` prövar regeln med påhittade tecken, och sidorna 1
 och 3 i `tests/fixtures/pdf/hogkant.pdf`: ett diarienummer på högkant i
@@ -155,6 +168,8 @@ högkant som ligger tätt, och att speglade tecken, som inte heller är
 upprätta, läses i fel ordning. Regeln skärptes därför så att bara text som K41 läser
 entydigt räknas bort. En andra granskning hittade att en siffra på
 högkant ovanpå en rad kan flytta talen i den, och att två läsriktningar
-på samma linje läses baklänges; också de märks. Det kostade sju sidor i
+på samma linje läses baklänges; också de märks. En tredje hittade de
+falska mellanslagen medurs, som rättades, och att text på högkant kan
+flytta en tabell utan linjer, som nu märks. Det kostade sju sidor i
 stickprovet. Ett tal på
 dem kan ha lästs ihop med ett annat, och de står därför kvar.

@@ -113,12 +113,27 @@ def textsida(sida: Page) -> Sida:
     hittade.sort(key=lambda t: (round(t[0][1]), t[0][0]))
     return Sida(
         "tabell-osaker" if osaker else "ok",
-        olasliga(sida) > 0 or i_oordning(sida, rutor),
+        olasliga(sida) > 0 or i_oordning(sida, rutor) or flyttar(sida, rutor),
         text,
         [rader for _, rader, _ in hittade],
         figurer.har_figur(sida, rutor),
         skarv(utanfor, [(ruta, kanter) for ruta, _, kanter in hittade]),
     )
+
+
+def flyttar(sida: Page, rutor: list[tuple]) -> bool:
+    """Text på högkant som ändrar var tabellerna hittas, så att en rad kan
+    falla ur en tabell (ADR-0103). Prövas bara på sidor med sådan text."""
+    if all(c["upright"] for c in sida.chars):
+        return False
+    staende = hogkant.staende(sida)
+    utan = [ruta for ruta, _, _ in med_linjer(staende)[0]]
+    utan += [t.bbox for t in olinjerade.tabeller(staende, utan)]
+    return avrundade(utan) != avrundade(rutor)
+
+
+def avrundade(rutor: list[tuple]) -> list[tuple]:
+    return sorted(tuple(round(v) for v in ruta) for ruta in rutor)
 
 
 def sidans_text(utanfor: Page) -> tuple[str, bool]:

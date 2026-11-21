@@ -1,0 +1,38 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 556 >>
+stream
+BT /F1 10 Tf 1 0 0 1 60 700 Tm (Ett stycke lopande text utan tal rad 0.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60 686 Tm (Ett stycke lopande text utan tal rad 1.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60 672 Tm (Ett stycke lopande text utan tal rad 2.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60 658 Tm (Ett stycke lopande text utan tal rad 3.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60 644 Tm (Ett stycke lopande text utan tal rad 4.) Tj ET
+BT /F1 10 Tf 1 0 0 1 60 630 Tm (Ett stycke lopande text utan tal rad 5.) Tj ET
+BT /F1 10 Tf 0 -1 1 0 560 780 Tm (Belopp 11,5 mnkr, 1.200 kr, dnr 2024/0123) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000848 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+945
+%%EOF

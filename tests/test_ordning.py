@@ -117,3 +117,16 @@ class TestSidan(unittest.TestCase):
         """Sida 3 i hogkant.pdf: en tabell vars kolumnrubrik står på högkant."""
         with pdfplumber.open(HOGKANT) as pdf:
             self.assertTrue(textsida(pdf.pages[2]).tal_obekraftade)
+
+    def test_stampel_medurs_lases_utan_falska_mellanslag(self):
+        """medurs.pdf: en stämpel med tal på högkant, vriden medurs."""
+        with pdfplumber.open(PDF / "medurs.pdf") as pdf:
+            las = textsida(pdf.pages[0])
+        self.assertIn("Belopp 11,5 mnkr, 1.200 kr, dnr 2024/0123", las.text)
+        self.assertFalse(las.tal_obekraftade)
+
+    def test_hogkant_som_flyttar_en_tabell(self):
+        """tabell-hogkant.pdf: `2024` på högkant intill första radens tal
+        får tabellen utan linjer att tappa raden."""
+        with pdfplumber.open(PDF / "tabell-hogkant.pdf") as pdf:
+            self.assertTrue(textsida(pdf.pages[0]).tal_obekraftade)

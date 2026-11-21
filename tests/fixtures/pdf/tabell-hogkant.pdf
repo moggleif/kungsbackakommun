@@ -1,0 +1,45 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 709 >>
+stream
+BT /F1 10 Tf 1 0 0 1 60 760 Tm (Resultatet for perioden framgar av tabellen nedan.) Tj ET
+BT /F1 10 Tf 1 0 0 1 180 700 Tm (Inkomster) Tj ET
+BT /F1 10 Tf 1 0 0 1 280.54 700 Tm (10,0) Tj ET
+BT /F1 10 Tf 1 0 0 1 330.54 700 Tm (11,5) Tj ET
+BT /F1 10 Tf 1 0 0 1 180 680 Tm (Utgifter) Tj ET
+BT /F1 10 Tf 1 0 0 1 282.77 680 Tm (-2,0) Tj ET
+BT /F1 10 Tf 1 0 0 1 327.21 680 Tm (-14,8) Tj ET
+BT /F1 10 Tf 1 0 0 1 180 660 Tm (Netto) Tj ET
+BT /F1 10 Tf 1 0 0 1 286.1 660 Tm (8,0) Tj ET
+BT /F1 10 Tf 1 0 0 1 332.77 660 Tm (-3,3) Tj ET
+BT /F1 10 Tf 1 0 0 1 180 640 Tm (Prognos) Tj ET
+BT /F1 10 Tf 1 0 0 1 286.1 640 Tm (1,0) Tj ET
+BT /F1 10 Tf 1 0 0 1 336.1 640 Tm (2,0) Tj ET
+BT /F1 10 Tf 0 -1 1 0 357 709.5 Tm (2024) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001001 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1098
+%%EOF
