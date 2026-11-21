@@ -936,7 +936,9 @@ nattkörningen checkar inte in något
   inga tabeller;
   hela sidans text är OCR-text, och den läses för sammanhangets skull,
   inte som data. Talen i OCR-texten står omärkta i texten; att de inte är
-  bekräftade syns bara i `tal_obekraftade`. Två fel som Tesseract gör
+  bekräftade syns bara i `tal_obekraftade`. Hur väg H ska kunna bekräfta
+  dem mäts först ([Väg H och kalibreringen](#väg-h-och-kalibreringen)).
+  Två fel som Tesseract gör
   i protokollen rättas i OCR-texten
   ([ADR-0055](decisions/0055-granskade-dokument-konverteras-inte-om.md)):
   ett eller flera `$` som står intill en siffra, med högst ett mellanslag
@@ -1145,6 +1147,61 @@ karta eller ett diagram inte är lästa. En `ointressant` sida får ingen
 text, står inte i `figurer` och inte i `tal_obekraftade`, eftersom den
 inte har några tal som lagras. En sida blir `ej-konverterad` här bara
 när Tesseract fallerar eller inte blir klar.
+
+### Väg H och kalibreringen
+
+Varför står i
+[ADR-0105](decisions/0105-vag-h-kalibreras-mot-textlagersidor.md) (K84).
+Väg H är ännu inte inbyggd i konverteringen. Den mäts först, och
+skannade sidor märks som förut.
+
+**Läsningen** (`konvertering/radlasning.py`). Sidan renderas i 300 dpi i
+gråskala, som en OCR-sida. RapidOCR, med sina förvalda modeller ur
+PP-OCRv6, hittar raderna och läser dem. Tesseract läser hela sidan, och
+varje ord hör till den rad som har ordets mittpunkt. En rad där någon av
+de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
+(`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
+tankstreck blivit bindestreck. Är de två eniga är raden bekräftad. Annars
+läses raden, med 15 pixlar marginal, av den latinska modellen ur
+PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
+av de två, och minst ett.
+
+**Skyddet mot upphöjda tecken** (`upphojt.py`) gäller före avgörandet.
+Radens bild delas i sammanhängande mörka delar, och delar som överlappar
+i sidled blir ett tecken, så att pricken i i och ringen i å hör till sin
+bokstav. Baslinjen är medianen av tecknens underkanter, och radens höjd
+räknas från baslinjen till överkanten hos den tiondel av tecknen som når
+högst. Ett tecken som är högst sju tiondelar av radens höjd och slutar
+minst en fjärdedel av den ovanför baslinjen är upphöjt, utom när det är
+lägre än en femtedel, som ett bindestreck. En rad som RapidOCR hittat är
+upphöjd när den står bredvid en rad som är minst en fjärdedel högre och
+slutar en fjärdedel av den radens höjd ovanför dess underkant. En rad med
+ett upphöjt tecken och en upphöjd rad bekräftas aldrig.
+
+**Sidan** är bekräftad när varje rad med tal är det och inget tal i
+Tesseracts ord står utanför raderna.
+
+**Kalibreringen** (`kalibrering/`). `urval.py` väljer sidor med `ok`, utan
+obekräftade tal och med minst 15 tal i poolens text, ur dokument som är
+en enda PDF på högst 20 MB. Dokumenten blandas med fröet och högst tre
+sidor tas ur varje. PDF:en hämtas med poolens hämtning (K10), och en PDF
+med annan sha256 än i front matter mäts inte. `matning.py` jämför varje
+rad med talen i textlagrets ord vars mittpunkt ligger i radens ruta:
+
+| Utfall       | Raden                                                          |
+| ------------ | -------------------------------------------------------------- |
+| `ratt`       | bekräftad, med textlagrets tal                                 |
+| `fel`        | bekräftad, med andra tal                                       |
+| `utan-facit` | bekräftad, men rör en bild, vars tal textlagret saknar         |
+| `obekraftad` | inte bekräftad; orsaken står i `hur`                           |
+| `missad`     | ingen läsning har ett tal, men textlagret har det              |
+| `utanfor`    | textlagrets tal utanför alla rader och bilder, en rad per sida |
+
+En `fel`, `missad` eller `utanfor` på en bekräftad sida är en falsk
+bekräftelse. `rapport.md` räknar utfallen och listar varje falsk
+bekräftelse, och kommandot avslutas då med kod 1. `rader.csv` har varje
+rad med sina läsningar. Arbetsflödet `kalibrering.yml` körs för hand och
+i varje PR som ändrar regeln eller mätningen, och sparar båda filerna.
 
 ### Känd inläsning
 

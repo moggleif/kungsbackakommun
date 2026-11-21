@@ -17,14 +17,15 @@ git clone https://github.com/moggleif/kungsbackakommun.git
 cd kungsbackakommun
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[utveckling]"
+pip install -e ".[utveckling,ocr]"
 npm install
 ```
 
 `pip install -e .` gör paketet i `src/kommunhandlingar/` importerbart, så
 att testerna når det, och drar in markdown-it-py, som webbplatsen och
 testerna renderar Markdown med. `[utveckling]` tar med ruff,
-pip-audit och coverage, i de versioner som
+pip-audit och coverage, och `[ocr]` RapidOCR och onnxruntime för väg H
+(K84), i de versioner som
 står i `pyproject.toml`, samma som CI installerar; ruffs förhandsregler
 kan ändras mellan versioner. Med
 [uv](https://docs.astral.sh/uv/) går samma ruff att köra utan
@@ -166,6 +167,20 @@ python3 -m kommunhandlingar.facit --spara    # och raden i matt.csv
 Ändrar en ändring måtten skrivs raden om med `--spara` i samma ändring.
 Hur måtten räknas och hur ett nytt dokument läggs till i urvalet står under
 "Facit för konverteringen" i [03-ARKITEKTUR.md](03-ARKITEKTUR.md).
+
+## Kalibreringen av väg H
+
+Väg H mäts på textlagersidor ur poolen, med textlagret som facit (K84).
+Den hämtar PDF:erna, så den behöver nät:
+
+```sh
+python3 -m kommunhandlingar.kalibrering data /tmp/kalibrering --antal 300
+```
+
+Resultatet står i `rapport.md` och `rader.csv` i utkatalogen. Samma
+körning går i Actions under "Kalibrering av väg H", för hand och i varje
+PR som ändrar regeln. RapidOCR hämtar den latinska modellen vid första
+körningen.
 
 ## Ögonblicksbilden av konverteringen
 
