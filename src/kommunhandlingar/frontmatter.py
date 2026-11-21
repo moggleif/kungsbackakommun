@@ -1,11 +1,14 @@
-"""Krav: K4, K6, K14, K15 och K34 i docs/02-KRAV.md. Test: tests/test_hamta.py,
-tests/test_webbplats.py.
+"""Krav: K4, K6, K14, K15 och K34 i docs/02-KRAV.md. Test:
+tests/test_frontmatter.py, tests/test_hamta.py och tests/test_webbplats.py.
 
 Front matter så som schemat i docs/03-ARKITEKTUR.md#front-matter skriver den:
 varje fält på en egen rad, i schemats ordning, listor inom hakparenteser.
+Bara här delas en `.md` i front matter och brödtext (#360).
 """
 
 from datetime import date
+
+GRANS = "---\n"
 
 FALT = (
     "kommun",
@@ -34,13 +37,23 @@ FALT = (
 )
 
 
+def dela(text: str) -> tuple[dict[str, str], str]:
+    _, huvud, kropp = text.split(GRANS, 2)
+    return dict(rad.split(": ", 1) for rad in huvud.splitlines()), kropp
+
+
 def las(text: str) -> dict[str, str]:
-    huvud = text.split("---\n")[1]
-    return dict(rad.split(": ", 1) for rad in huvud.splitlines())
+    return dela(text)[0]
 
 
 def brodtext(text: str) -> str:
-    return text.split("---\n", 2)[2]
+    return dela(text)[1]
+
+
+def andrad(text: str, nya: dict) -> str:
+    """Fälten i `nya` får nya värden; övriga fält och brödtexten står kvar."""
+    falt, kropp = dela(text)
+    return huvud(falt | nya) + kropp
 
 
 def lista(varde: str) -> list[str]:
@@ -55,8 +68,13 @@ def adresser(kalla_url: str) -> list[str]:
 
 
 def skriv(falt: dict) -> str:
-    rader = [f"{namn}: {varde_av(falt[namn])}" for namn in FALT]
-    return "---\n" + "\n".join(rader) + "\n---\n"
+    return huvud({namn: falt[namn] for namn in FALT})
+
+
+def huvud(falt: dict) -> str:
+    """Front matter med fälten i den ordning de står i `falt`."""
+    rader = "".join(f"{namn}: {varde_av(varde)}\n" for namn, varde in falt.items())
+    return GRANS + rader + GRANS
 
 
 def varde_av(varde) -> str:

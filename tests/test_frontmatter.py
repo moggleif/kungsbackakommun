@@ -1,0 +1,68 @@
+"""Krav: K4 i docs/02-KRAV.md. Kod: src/kommunhandlingar/frontmatter.py."""
+
+import unittest
+from datetime import date
+
+from kommunhandlingar import frontmatter
+
+FALT = dict.fromkeys(frontmatter.FALT, "null") | {"organ": "ks", "typ": "protokoll"}
+BRODTEXT = "<!-- sida 1 -->\nFöre linjen\n\n---\n\nEfter linjen\n"
+
+
+class TestLasOchSkriv(unittest.TestCase):
+    def setUp(self):
+        self.text = frontmatter.skriv(FALT) + BRODTEXT
+
+    def test_falten_i_schemats_ordning_ett_per_rad(self):
+        rader = frontmatter.skriv(FALT).splitlines()
+        self.assertEqual((rader[0], rader[-1]), ("---", "---"))
+        self.assertEqual(rader[1:3], ["kommun: null", "organ: ks"])
+        self.assertEqual(len(rader), len(frontmatter.FALT) + 2)
+
+    def test_las_ger_tillbaka_falten(self):
+        self.assertEqual(frontmatter.las(self.text), FALT)
+
+    def test_brodtext_med_egen_linje(self):
+        self.assertEqual(frontmatter.brodtext(self.text), BRODTEXT)
+
+    def test_dela_ger_falt_och_brodtext(self):
+        self.assertEqual(frontmatter.dela(self.text), (FALT, BRODTEXT))
+
+
+class TestAndrad(unittest.TestCase):
+    def test_bara_de_nya_falten_andras(self):
+        text = frontmatter.skriv(FALT) + BRODTEXT
+        ny = frontmatter.andrad(text, {"arenden": ["KS-2025-1", "KS-2025-2"]})
+        vantad = text.replace(
+            "\narenden: null\n", "\narenden: [KS-2025-1, KS-2025-2]\n"
+        )
+        self.assertEqual(ny, vantad)
+
+    def test_ordningen_i_filen_behalls(self):
+        text = "---\ntyp: protokoll\narenden: null\n---\n" + BRODTEXT
+        ny = frontmatter.andrad(text, {"arenden": []})
+        self.assertEqual(ny, "---\ntyp: protokoll\narenden: []\n---\n" + BRODTEXT)
+
+
+class TestVarden(unittest.TestCase):
+    def test_varde_av(self):
+        self.assertEqual(frontmatter.varde_av(None), "null")
+        self.assertEqual(frontmatter.varde_av(date(2025, 4, 22)), "2025-04-22")
+        self.assertEqual(frontmatter.varde_av(["a", None]), "[a, null]")
+        self.assertEqual(frontmatter.varde_av(3), "3")
+
+    def test_lista(self):
+        self.assertEqual(frontmatter.lista("null"), [])
+        self.assertEqual(frontmatter.lista("[]"), [])
+        self.assertEqual(frontmatter.lista("[a, b]"), ["a", "b"])
+
+    def test_adresser(self):
+        self.assertEqual(frontmatter.adresser("https://a/1.pdf"), ["https://a/1.pdf"])
+        delar = "[https://a/1.pdf, https://a/2.pdf]"
+        self.assertEqual(
+            frontmatter.adresser(delar), ["https://a/1.pdf", "https://a/2.pdf"]
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()
