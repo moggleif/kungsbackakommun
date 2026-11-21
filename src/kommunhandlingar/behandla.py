@@ -99,7 +99,7 @@ def samma_kalla(falt: dict[str, str], kandidat: Kandidat) -> bool:
 
 
 def aktuell(steg: Steg2, falt: dict[str, str]) -> bool:
-    orord = falt["granskad"] != "null" or falt["kvalitet"] == "full"  # K72
+    orord = frontmatter.granskad(falt) or falt["kvalitet"] == "full"  # K72
     if not steg.omkonvertera or orord:
         return True
     return falt["pipeline"].split(" / ")[0] == steg.version
@@ -183,7 +183,7 @@ def samma_original(gammal: dict | None, kandidat: Kandidat, sha256) -> bool:
     """Ett granskat dokument behåller sin text också under en ny källnyckel."""
     if gammal is None or gammal["sha256"] != frontmatter.varde_av(sha256):
         return False
-    return gammal["kallnyckel"] == kandidat.kallnyckel or gammal["granskad"] != "null"
+    return gammal["kallnyckel"] == kandidat.kallnyckel or frontmatter.granskad(gammal)
 
 
 def ny_adress(steg: Steg2, dokument: Dokument) -> str:

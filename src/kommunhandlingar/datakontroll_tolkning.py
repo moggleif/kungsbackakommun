@@ -40,12 +40,12 @@ TALEN = re.compile(
 
 def dokumentfel(falt: dict[str, str], text: str) -> list[str]:
     figurer, tolkade = falt["figurer"], falt["tolkade"]
-    if (figurer == "null") != (tolkade == "null"):
+    if frontmatter.saknas(figurer) != frontmatter.saknas(tolkade):
         return ["figurer och tolkade är inte null samtidigt"]
     sidor = frontmatter.lista(tolkade)
     if sidor != [s for s in frontmatter.lista(figurer) if s in sidor]:
         return ["tolkade är inte sidor ur figurer, i ordning"]
-    if figurer == "null":
+    if frontmatter.saknas(figurer):
         return []
     antal = len(frontmatter.lista(falt["kvalitet_per_sida"]))
     finns = [str(n) for n in range(1, antal + 1)]

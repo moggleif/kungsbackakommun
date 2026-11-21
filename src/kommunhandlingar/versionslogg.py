@@ -9,6 +9,7 @@ import csv
 from datetime import datetime
 from pathlib import Path
 
+from kommunhandlingar import frontmatter
 from kommunhandlingar.pool import Pool
 
 FRONT_MATTER = ("organ", "datum", "typ", "kallnyckel", "kalla_url")
@@ -40,7 +41,7 @@ def nya(
 
 def sha256(falt: dict[str, str]) -> str:
     """Tomt när dokumentet inte gick att hämta."""
-    return "" if falt["sha256"] == "null" else falt["sha256"]
+    return "" if frontmatter.saknas(falt["sha256"]) else falt["sha256"]
 
 
 def skriv(fil: Path, rader: list[list[str]]) -> None:

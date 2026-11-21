@@ -6,7 +6,8 @@ varje fält på en egen rad, i schemats ordning, listor inom hakparenteser.
 Bara här delas en `.md` i front matter och brödtext (#360). `las`,
 `brodtext` och `efter_huvudet` delar vid `---\n`, också i slutet av en
 rad; `otolkad` vid en rad `---` och utan att tolka fälten, så att
-maskningen klarar front matter som inte går att läsa.
+maskningen klarar front matter som inte går att läsa. Bara här jämförs
+ett fält med `null` (#361).
 """
 
 from datetime import date
@@ -68,8 +69,21 @@ def andrad(text: str, namn: str, varde: str) -> str:
     return text.replace(gammal, f"\n{namn}: {varde}\n", 1)
 
 
+def saknas(varde: str) -> bool:
+    """Ett fält utan värde står som `null`: tomt, inte noll."""
+    return varde == "null"
+
+
+def granskad(falt: dict[str, str]) -> bool:
+    return not saknas(falt["granskad"])
+
+
+def ar(falt: dict[str, str]) -> int:
+    return int(falt["datum"][:4])
+
+
 def lista(varde: str) -> list[str]:
-    if varde == "null":
+    if saknas(varde):
         return []
     return [del_ for del_ in varde.strip("[]").split(", ") if del_]
 

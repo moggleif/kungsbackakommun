@@ -19,6 +19,7 @@ from pathlib import Path
 from kommunhandlingar import datakontroll_tolkning, frontmatter
 from kommunhandlingar.arenden import ratt_varde
 from kommunhandlingar.datakontroll_tabeller import tabellfel
+from kommunhandlingar.frontmatter import saknas
 from kommunhandlingar.kandidat import TYPORDNING
 from kommunhandlingar.konvertering.kvalitet import KVALITETER, SIDKVALITETER
 from kommunhandlingar.konvertering.las_sida import STYRTECKEN
@@ -85,7 +86,7 @@ def dokumentfel(relativ: Path, text: str) -> list[str]:
         return ["front matter går inte att läsa"]
     if tuple(falt) != frontmatter.FALT:
         return ["front matter har inte schemats fält i schemats ordning"]
-    fel = [f"{namn} är null" for namn in ALLTID if falt[namn] == "null"]
+    fel = [f"{namn} är null" for namn in ALLTID if saknas(falt[namn])]
     if fel:
         return fel
     fel = vardefel(falt) + sokvagsfel(relativ, falt) + statusfel(falt)
@@ -105,14 +106,14 @@ def vardefel(falt: dict[str, str]) -> list[str]:
     sidor = frontmatter.lista(falt["kvalitet_per_sida"])
     fel += [f"okänd sidkvalitet {s!r}" for s in sidor if s not in SIDKVALITETER]
     for namn in ("datum", "granskad"):
-        if falt[namn] != "null" and not DATUM.fullmatch(falt[namn]):
+        if not saknas(falt[namn]) and not DATUM.fullmatch(falt[namn]):
             fel.append(f"{namn} {falt[namn]!r} är inte ÅÅÅÅ-MM-DD")
     return fel
 
 
 def sokvagsfel(relativ: Path, falt: dict[str, str]) -> list[str]:
     def med(grund: str, tillagg: str) -> str:
-        return grund if tillagg == "null" else f"{grund}-{tillagg}"
+        return grund if saknas(tillagg) else f"{grund}-{tillagg}"
 
     vantad = Path(
         falt["kommun"],
@@ -126,12 +127,12 @@ def sokvagsfel(relativ: Path, falt: dict[str, str]) -> list[str]:
 
 def statusfel(falt: dict[str, str]) -> list[str]:
     if falt["kvalitet"] == "ej-hamtad":
-        fel = [f"{n} ska vara null" for n in EJ_HAMTAD_NULL if falt[n] != "null"]
-        return fel + (["fel saknas"] if falt["fel"] == "null" else [])
+        fel = [f"{n} ska vara null" for n in EJ_HAMTAD_NULL if not saknas(falt[n])]
+        return fel + (["fel saknas"] if saknas(falt["fel"]) else [])
     sidor = frontmatter.lista(falt["kvalitet_per_sida"])
-    if falt["sidor"] not in ("null", str(len(sidor))):
+    if not saknas(falt["sidor"]) and falt["sidor"] != str(len(sidor)):
         return ["sidor stämmer inte med kvalitet_per_sida"]
-    if falt["granskad"] != "null":
+    if frontmatter.granskad(falt):
         return []  # granskningen tar själv bort de sidor vars tal den bekräftat
     obekraftade = set(frontmatter.lista(falt["tal_obekraftade"]))
     return [

@@ -327,6 +327,7 @@ src/kommunhandlingar/
   plats.py         sökvägen och namnet för ett nytt dokument (ADR-0003)
   skrivning.py     `.md` och tabellkatalog, tabellerna först och `.md` sist
   frontmatter.py   front matter läses, skrivs och ändras; bara här delas texten
+                   och tolkas `null` och året
   paragrafer.py    ett protokoll delat per paragraf (K48), med paragrafinnehall.py
                    och diarienummer.py
   arenden.py       `arenden` ur paragraferna, och kommandot som fyller poolen

@@ -5,7 +5,7 @@ tests/test_initiativ.py."""
 from collections import defaultdict
 from html import escape
 
-from kommunhandlingar.frontmatter import adresser, lista
+from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.flikar import SAMMANTRADEN, flikar
 from kommunhandlingar.webbplats.luckor import motesnamn
@@ -37,11 +37,11 @@ def organsida(mall: Mall, kommun: Kommun, rad: Organrad, dokument: list[dict]) -
 # Det första sammanträdet en dag har inget löpnummer, nästa har 2 (ADR-0003).
 def ordning(mote: Mote) -> tuple[str, int]:
     datum, lopnr = mote
-    return datum, int(lopnr.replace("null", "1"))
+    return datum, 1 if frontmatter.saknas(lopnr) else int(lopnr)
 
 
 def dokumentrubrik(d: dict) -> str:
-    return d["typ"] + ("" if d["namn"] == "null" else f" – {d['namn']}")
+    return d["typ"] + ("" if frontmatter.saknas(d["namn"]) else f" – {d['namn']}")
 
 
 # Rubriken länkar till sammanträdets sida när den finns (K54).
@@ -62,12 +62,12 @@ def motesavsnitt(rubrik: str, dokument: list[dict], saknas: tuple[str, ...]) -> 
 
 def dokumentpost(d: dict) -> str:
     rader = [f"kvalitet {d['kvalitet']}"]
-    if obekraftade := len(lista(d["tal_obekraftade"])):
+    if obekraftade := len(frontmatter.lista(d["tal_obekraftade"])):
         rader.append(f"obekräftade tal på {obekraftade} sidor")
     post = f'<a href="{escape(d["adress"])}">{escape(dokumentrubrik(d))}</a>: '
     post += escape(", ".join(rader))
-    if d["fel"] != "null":
+    if not frontmatter.saknas(d["fel"]):
         post += f", fel {escape(d['fel'])}, " + lank(
-            adresser(d["kalla_url"])[0], "källan"
+            frontmatter.adresser(d["kalla_url"])[0], "källan"
         )
     return post
