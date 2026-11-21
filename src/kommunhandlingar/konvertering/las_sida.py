@@ -1,6 +1,7 @@
 """Krav: K4, K5, K6, K15, K17, K19, K41, K72 och K73 i docs/02-KRAV.md, ADR-0005,
 ADR-0016, ADR-0017, ADR-0022, ADR-0024, ADR-0028, ADR-0033, ADR-0034,
-ADR-0036, ADR-0038, ADR-0063, ADR-0064 och ADR-0099. Test: tests/test_konvertering.py,
+ADR-0036, ADR-0038, ADR-0063, ADR-0064, ADR-0099 och ADR-0103.
+Test: tests/test_konvertering.py,
 tests/test_maska_poolen.py, tests/test_skarvar.py, tests/test_delade.py,
 tests/test_kvarvarande.py, tests/test_avskurna.py, tests/test_mellanslag.py,
 tests/test_ordning.py, tests/test_spalter.py, tests/test_hogkant.py och
@@ -112,7 +113,7 @@ def textsida(sida: Page) -> Sida:
     hittade.sort(key=lambda t: (round(t[0][1]), t[0][0]))
     return Sida(
         "tabell-osaker" if osaker else "ok",
-        olasliga(sida) > 0 or i_oordning(sida),
+        olasliga(sida) > 0 or i_oordning(sida, rutor),
         text,
         [rader for _, rader, _ in hittade],
         figurer.har_figur(sida, rutor),

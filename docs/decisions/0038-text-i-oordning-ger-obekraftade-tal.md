@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: "superseded by ADR-0103"
 date: 2026-10-13
 decision-makers: projektägaren
 consulted: AI-agenten
