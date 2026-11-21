@@ -34,8 +34,8 @@ Valt alternativ: "coverage i CI, rapport i sammanfattningen och ett golv
 för totalen", eftersom det både syns per modul och stoppar ett tappat
 test utan att fälla en ren flytt.
 
-Golvet är 96 %, en procentenhet under den uppmätta totalen (97,4 % med
-Tesseract, 2026-11-21). Testissuerna under #347 höjer täckningen; golvet
+Golvet är 96 %, knappt en och en halv procentenhet under den uppmätta
+totalen (97,4 % med Tesseract, 2026-11-21). Testissuerna under #347 höjer täckningen; golvet
 höjs i samma ändring när det går.
 
 ### Consequences
@@ -43,6 +43,7 @@ höjs i samma ändring när det går.
 * Bra, eftersom varje körning visar modulerna under 90 % först.
 * Bra, eftersom ett tappat test för en modul av några hundra rader fäller
   kontrollen.
+* Bra, eftersom rapporten skrivs också när ett test har fallit.
 * Dåligt, eftersom ett nytt utvecklingsberoende tillkommer (coverage).
 * Dåligt, eftersom testerna tar ungefär tio procent längre tid under
   mätningen.
@@ -84,11 +85,12 @@ Steget "Testerna, med täckningen i sammanfattningen" i
 
 Issue #349 lämnade öppet om CI ska falla och under vilken gräns.
 AI-agenten rekommenderade ett golv för totalen strax under den uppmätta
-nivån: en invändning var att ett golv precis på nivån fäller en ändring
-som bara tar bort testad, död kod, vilket #347 uttryckligen vill ha. En
-procentenhet motsvarar ungefär 75 satser, mer än en liten modul men
-mindre än ett tappat testfall för en av de stora. Projektägaren godkände
-på förhand att agentens rekommendationer i #347 följs.
+nivån, i hela procent: en invändning var att ett golv precis på nivån
+fäller en ändring som bara tar bort testad, död kod, vilket #347
+uttryckligen vill ha. En procentenhet motsvarar ungefär 75 satser och
+grenar; marginalen är ungefär 105, mer än en liten modul. Projektägaren
+gav uppdraget att arbeta igenom #347 och godkände där på förhand att
+agentens rekommendationer följs och att PR:erna mergas vid grön CI.
 
 Den första mätningen räknade inte datakontrollens arbetsprocesser:
 `with Pool()` stoppar dem med `terminate`, och då hinner coverage inte

@@ -19,7 +19,6 @@ dependencies = [
 
 [project.optional-dependencies]
 # Samma versioner i CI och lokalt; Dependabot håller dem uppdaterade.
-# coverage mäter testernas täckning i CI (K75, ADR-0102).
 utveckling = ["ruff==0.17.4", "pip-audit==2.10.1", "coverage==7.17.4"]
 
 # Webbplatsens skript och stilar följer med paketet, så att ett datarepo som
@@ -27,17 +26,13 @@ utveckling = ["ruff==0.17.4", "pip-audit==2.10.1", "coverage==7.17.4"]
 [tool.setuptools.package-data]
 "kommunhandlingar.webbplats" = ["*.js", "*.css"]
 
-# Täckningen mäts i CI (K75, ADR-0102). Datakontrollen kör i flera
-# processer, som räknas med `concurrency` och slås ihop med `coverage combine`.
+# Täckningen i CI (K75, ADR-0102).
 [tool.coverage.run]
 branch = true
 source = ["src/kommunhandlingar", "scripts"]
 concurrency = ["multiprocessing"]
-parallel = true
 
 [tool.coverage.report]
-# Golvet ligger under dagens 97,4 % så att en flytt av kod inte fäller
-# kontrollen, men ett tappat test gör det (ADR-0102).
 fail_under = 96
 
 [tool.ruff.lint]
