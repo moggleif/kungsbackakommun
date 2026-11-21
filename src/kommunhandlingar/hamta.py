@@ -1,7 +1,7 @@
-"""Krav: K4–K6, K8, K9, K11, K13, K16, K52 och K53 i docs/02-KRAV.md, ADR-0004,
-ADR-0018, ADR-0019, ADR-0075, ADR-0077 och ADR-0088. Test: tests/test_hamta.py,
-tests/test_omkonvertering.py, tests/test_tidsbudget.py och
-tests/test_versionslogg.py.
+"""Krav: K4–K6, K8, K9, K11, K13, K16, K52, K53 och K79 i docs/02-KRAV.md,
+ADR-0004, ADR-0018, ADR-0019, ADR-0075, ADR-0077 och ADR-0088. Test:
+tests/test_hamta.py, tests/test_hamta_kommando.py, tests/test_omkonvertering.py,
+tests/test_tidsbudget.py och tests/test_versionslogg.py.
 
 Steg 2: `python -m kommunhandlingar.hamta <kommunfil> <arbetskatalog>
 [--arkiv] [--start N] [--del MINUTER] [--utan-omkonvertering]`. Läser

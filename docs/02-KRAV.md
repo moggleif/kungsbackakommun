@@ -2290,3 +2290,30 @@ Issue [#352](https://github.com/moggleif/kungsbackakommun/issues/352).
 - **När** någon skriver om ögonblicksbilden med kommandot i
   [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-webbplatsen)
 - **Så** syns varje ändrat tecken i diffen.
+
+## K79 — Steg 2:s kommando gör det nattkörningen räknar med
+
+Prövas i `tests/test_hamta_kommando.py` utan nät, med en påhittad klient
+och klocka. Issue
+[#353](https://github.com/moggleif/kungsbackakommun/issues/353).
+
+- **Givet** en kandidatlista i en arbetskatalog
+- **När** `python -m kommunhandlingar.hamta` körs
+- **Så** skrivs utfallet ut, ett antal per rad, och `versioner/<kommun>.csv`
+  får en rad per nytt dokument, men ingen rad med `--arkiv` (K53).
+
+- **Givet** en körning med `--del` där delens minuter tar slut medan
+  kandidater väntar inom budgeten
+- **När** delen slutar
+- **Så** är slutkoden 4, de provade kandidaternas källnycklar står i
+  `.provade`-filen, och nästa del tar bara de som väntar (K11, ADR-0088).
+  När inga kandidater väntar är slutkoden 0.
+
+- **Givet** `omkonvertera` i kommunfilen
+- **När** steg 2 startas med eller utan `--utan-omkonvertering`
+- **Så** har steg 2 omkonverteringen påslagen bara när kommunfilen
+  säger det och flaggan saknas (K8, K53).
+
+- **Givet** en kommunfil som inte följer schemat
+- **När** kommandot körs
+- **Så** stoppas det med "Stoppad: " och felet, och en felkod.
