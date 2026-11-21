@@ -20,7 +20,24 @@ HOGKANT = PDF / "hogkant.pdf"
 
 
 def tecken(text: str, x0: float, bredd: float = 5.6, upright: bool = True) -> dict:
-    return {"text": text, "x0": x0, "x1": x0 + bredd, "top": 134, "upright": upright}
+    return {
+        "object_type": "char",
+        "text": text,
+        "x0": x0,
+        "x1": x0 + bredd,
+        "top": 134,
+        "upright": upright,
+    }
+
+
+def vriden(text: str, x0: float, top: float = 134) -> dict:
+    """Ett tecken vridet en kvarts varv moturs, som i tests/test_hogkant.py."""
+    return dict(
+        tecken(text, x0, 9, upright=False),
+        top=top,
+        bottom=top + 6,
+        matrix=(0, 9, -9, 0, 0, 0),
+    )
 
 
 def sida(*tecken_: dict) -> SimpleNamespace:
@@ -50,18 +67,22 @@ class TestOrdning(unittest.TestCase):
         self.assertFalse(i_oordning(sida(*fet), []))
 
     def test_hogkant_i_en_tabell(self):
-        n = dict(tecken("N", 50, upright=False), bottom=140)
-        self.assertTrue(i_oordning(sida(*STOD, n), [(40, 120, 70, 150)]))
+        self.assertTrue(i_oordning(sida(*STOD, vriden("N", 50)), [(40, 120, 70, 150)]))
 
     def test_hogkant_utanfor_tabellerna_raknas_inte(self):
         """Den läses för sig och skrivs sist på sidan (K41)."""
-        n = dict(tecken("N", 50, upright=False), bottom=140)
+        n = vriden("N", 50)
         self.assertFalse(i_oordning(sida(*STOD, n), [(300, 120, 400, 150)]))
 
     def test_hogkant_ovanpa_annan_text_raknas_inte(self):
-        """Tecknet på högkant utanför tabellerna är inte med alls."""
-        n = dict(tecken("N", 425.8, upright=False), bottom=140)
-        self.assertFalse(i_oordning(sida(*STOD, n), []))
+        """Tecknet på högkant utanför tabellerna läses inte i raden."""
+        self.assertFalse(i_oordning(sida(*STOD, vriden("N", 425.8)), []))
+
+    def test_hogkant_som_inte_gar_att_lasa_entydigt(self):
+        """Två årtal på högkant så tätt att de läses ihop till `22001101`."""
+        tatt = [vriden(t, 40, 80 - 6 * i) for i, t in enumerate("2010")]
+        tatt += [vriden(t, 47, 80 - 6 * i) for i, t in enumerate("2011")]
+        self.assertTrue(i_oordning(sida(*STOD, *tatt), []))
 
 
 class TestRader(unittest.TestCase):

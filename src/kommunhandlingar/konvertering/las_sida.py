@@ -106,7 +106,7 @@ def textsida(sida: Page) -> Sida:
     rutor = [ruta for ruta, _, _ in hittade]
     utan_linjer = olinjerade.tabeller(sida, rutor)
     rutor += [t.bbox for t in utan_linjer]
-    utanfor = sida.filter(lambda o: not i_tabell(o, rutor))
+    utanfor = sida.filter(lambda o: not tabeller.i_tabell(o, rutor))
     text, i_texten = sidans_text(utanfor)
     osaker = i_texten or osakra_tal(sida, fallda, rutor)
     hittade += [(t.bbox, t.rader, t.kanter) for t in utan_linjer]
@@ -156,10 +156,6 @@ def osakra_tal(sida: Page, fallda: list[tuple], rutor: list[tuple]) -> bool:
 def olast_siffra(tecken: dict, fallda: list[tuple], rutor: list[tuple]) -> bool:
     """En siffra i en fälld tabell med linjer som inte lästs i någon tabell."""
     i_fallda = any(tabeller.inom(tabeller.mitt(tecken), f) for f in fallda)
-    return tecken["text"].isdigit() and i_fallda and not i_tabell(tecken, rutor)
-
-
-def i_tabell(objekt: dict, rutor: list[tuple]) -> bool:
-    if objekt.get("object_type") != "char":
-        return False
-    return any(tabeller.inom(tabeller.mitt(objekt), ruta) for ruta in rutor)
+    return (
+        tecken["text"].isdigit() and i_fallda and not tabeller.i_tabell(tecken, rutor)
+    )

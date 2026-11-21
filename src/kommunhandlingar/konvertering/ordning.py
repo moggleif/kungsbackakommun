@@ -5,7 +5,8 @@ en tabell, eller tecken på samma rad som ritats ovanpå varandra, som en
 kolumn som flyter in i nästa. pdfplumber blandar ihop dem till rader som
 `aktivitetsstö2d0225-05-21`, och sidans tal räknas då inte som
 bekräftade (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet). Text på
-högkant utanför tabellerna läses för sig (K41) och räknas inte.
+högkant utanför tabellerna läses för sig (K41) och räknas bara när den
+inte går att läsa entydigt.
 """
 
 from collections import defaultdict
@@ -13,27 +14,20 @@ from itertools import pairwise
 
 from pdfplumber.page import Page
 
-from kommunhandlingar.konvertering import tabeller
+from kommunhandlingar.konvertering import hogkant
+from kommunhandlingar.konvertering.tabeller import i_tabell
 
 
 def i_oordning(sida: Page, rutor: list[tuple]) -> bool:
-    tecken = [(i, c) for i, c in synliga(sida) if c["upright"] or i_tabell(c, rutor)]
-    if not all(c["upright"] for _, c in tecken):
+    tecken = list(enumerate(c for c in sida.chars if not c["text"].isspace()))
+    pa_hogkant = [c for _, c in tecken if not c["upright"]]
+    if any(i_tabell(c, rutor) for c in pa_hogkant) or not hogkant.entydig(pa_hogkant):
         return True
     rader = defaultdict(list)
-    for i, c in tecken:
+    for i, c in (t for t in tecken if t[1]["upright"]):
         rader[round(c["top"])].append((i, c))
     i_lage = [sorted(r, key=lambda t: t[1]["x0"]) for r in rader.values()]
     return any(tacker(a, b) for r in i_lage for a, b in pairwise(r))
-
-
-def synliga(sida: Page) -> list[tuple[int, dict]]:
-    """Tecknen utom mellanslag, numrerade i textlagrets ordning."""
-    return list(enumerate(c for c in sida.chars if not c["text"].isspace()))
-
-
-def i_tabell(tecken: dict, rutor: list[tuple]) -> bool:
-    return any(tabeller.inom(tabeller.mitt(tecken), ruta) for ruta in rutor)
 
 
 def tacker(vanster: tuple[int, dict], hoger: tuple[int, dict]) -> bool:

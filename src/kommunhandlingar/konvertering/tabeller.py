@@ -128,6 +128,13 @@ def inom(punkt: tuple[float, float], ruta: tuple) -> bool:
     return ruta[0] <= punkt[0] <= ruta[2] and ruta[1] <= punkt[1] <= ruta[3]
 
 
+def i_tabell(objekt: dict, rutor: list[tuple]) -> bool:
+    """Ett tecken vars mitt ligger i någon av tabellernas rutor."""
+    if objekt.get("object_type") != "char":
+        return False
+    return any(inom(mitt(objekt), ruta) for ruta in rutor)
+
+
 def kanter(tabell: Table) -> tuple[float, ...]:
     """Kolumnernas vänsterkanter och tabellens högerkant."""
     return (*(k.bbox[0] for k in tabell.columns), tabell.bbox[2])
