@@ -2222,3 +2222,25 @@ Issue [#349](https://github.com/moggleif/kungsbackakommun/issues/349).
   täckningen hamnar under golvet i `pyproject.toml`
 - **När** kontrollen körs
 - **Så** faller den.
+
+## K76 — Allt över målen i Ren kod går att lista
+
+Hur listan tas fram står under
+[Över målen](01-BIDRA.md#över-målen) i 01-BIDRA.md. Issue
+[#350](https://github.com/moggleif/kungsbackakommun/issues/350).
+
+- **Givet** målen i "Ren kod – strikt" i `AGENTS.md`
+- **När** någon kör `scripts/kontrollera_storlek.py --mal`
+- **Så** listas varje fil över 150 rader och varje funktion över
+  15 rader, den längsta först, och en funktion med `# undantag: <skäl>`
+  listas inte.
+
+- **Givet** samma mål
+- **När** någon kör `ruff check --config mal.toml`
+- **Så** listas varje funktion med fler än 3 parametrar, fler än 2
+  nästlingsnivåer eller en cyklomatisk komplexitet över 5.
+
+- **Givet** filer och funktioner över målen men inom de hårda gränserna
+- **När** kontrollen körs utan `--mal`, som i CI
+- **Så** godkänns de som förut, och med `--mal` är slutkoden alltid 0,
+  eftersom listan är till för att läsas.

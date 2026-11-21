@@ -1,0 +1,10 @@
+# Målen i "Ren kod – strikt" i AGENTS.md (K76); hur de körs står i
+# docs/01-BIDRA.md. CI håller de hårda gränserna i pyproject.toml.
+extend = "pyproject.toml"
+
+[lint.mccabe]
+max-complexity = 5
+
+[lint.pylint]
+max-args = 3
+max-nested-blocks = 2

@@ -61,6 +61,26 @@ letar efter kända sårbarheter i projektets beroenden, och Dependabot
 pip-audit och coverage och av Actions. CI
 kontrollerar också att inga binärer är incheckade.
 
+## Över målen
+
+CI håller de hårda gränserna. Målen i "Ren kod – strikt" prövas i
+granskningen, och allt som ligger över dem listas med (K76):
+
+```sh
+python3 scripts/kontrollera_storlek.py --mal
+ruff check --config mal.toml --statistics
+```
+
+Det första listar filer och funktioner över målen för rader, den längsta
+först; det andra parametrar, nästling och komplexitet över målen, med
+ruffs inställningar i `mal.toml` ovanpå `pyproject.toml`. Ett undantag
+(se [Undantag](#undantag)) räknas som mot de hårda gränserna. Båda är
+till för att läsas: `--mal` har alltid slutkoden 0, och ruff ger 1 så
+länge något ligger över. Kommandona körs från repots rot. Antalet före
+och efter en refaktorisering är antalet rader i den första listan och
+summan i ruffs "Found N errors". Båda räknar också `tests/`, som den
+hårda kontrollen.
+
 ## Webbplatsen
 
 Webbplatsen byggs lokalt, från repots rot, till en katalog som öppnas i

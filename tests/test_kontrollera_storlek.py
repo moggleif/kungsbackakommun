@@ -1,14 +1,19 @@
 """Krav: "Ren kod – strikt" i AGENTS.md. Kod: scripts/kontrollera_storlek.py."""
 
+import contextlib
+import io
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from scripts.kontrollera_storlek import (
+    MAL,
     MAX_RADER_FIL,
     MAX_RADER_FUNKTION,
     ROT,
     brott_i_fil,
+    main,
     pythonfiler,
 )
 
@@ -18,12 +23,29 @@ def funktion(rader: int, huvud: str = "def f():") -> str:
     return f"{huvud}\n{kropp}"
 
 
+def kontrollera(kallkod: str, *granser) -> list[tuple[int, str]]:
+    with tempfile.TemporaryDirectory() as katalog:
+        fil = Path(katalog) / "modul.py"
+        fil.write_text(kallkod, encoding="utf-8")
+        return brott_i_fil(fil, *granser)
+
+
+def kor(argv: list[str], filer: dict[str, str]) -> tuple[int, list[str]]:
+    with tempfile.TemporaryDirectory() as katalog:
+        sokvagar = [Path(katalog) / namn for namn in filer]
+        for sokvag, kallkod in zip(sokvagar, filer.values(), strict=True):
+            sokvag.write_text(kallkod, encoding="utf-8")
+        with (
+            mock.patch("scripts.kontrollera_storlek.pythonfiler", lambda: sokvagar),
+            contextlib.redirect_stdout(io.StringIO()) as utdata,
+        ):
+            slutkod = main(argv)
+    return slutkod, [rad.split(": ", 1)[1] for rad in utdata.getvalue().splitlines()]
+
+
 class TestKontrolleraStorlek(unittest.TestCase):
-    def kontrollera(self, kallkod: str) -> list[str]:
-        with tempfile.TemporaryDirectory() as katalog:
-            fil = Path(katalog) / "modul.py"
-            fil.write_text(kallkod, encoding="utf-8")
-            return brott_i_fil(fil)
+    def kontrollera(self, kallkod: str) -> list[tuple[int, str]]:
+        return kontrollera(kallkod)
 
     def test_funktion_vid_gransen_godkanns(self):
         self.assertEqual(self.kontrollera(funktion(MAX_RADER_FUNKTION)), [])
@@ -59,6 +81,41 @@ class TestKontrolleraStorlek(unittest.TestCase):
 
     def test_src_kontrolleras(self):
         self.assertIn(ROT / "src" / "kommunhandlingar" / "monster.py", pythonfiler())
+
+    def test_vanlig_korning_med_brott_har_slutkoden_ett(self):
+        filer = {"a.py": funktion(MAX_RADER_FUNKTION + 1), "b.py": "x = 1\n"}
+        self.assertEqual(kor([], filer), (1, ["f har 31 rader"]))
+
+
+class TestKontrolleraStorlekMal(unittest.TestCase):
+    """K76."""
+
+    def test_funktion_vid_malet_listas_inte(self):
+        self.assertEqual(kontrollera(funktion(MAL.funktion), MAL), [])
+
+    def test_funktion_over_malet_listas(self):
+        fynd = kontrollera(funktion(MAL.funktion + 1), MAL)
+        self.assertEqual([antal for antal, _ in fynd], [MAL.funktion + 1])
+
+    def test_fil_vid_malet_listas_inte(self):
+        self.assertEqual(kontrollera("x = 1\n" * MAL.fil, MAL), [])
+
+    def test_fil_over_malet_listas(self):
+        fynd = kontrollera("x = 1\n" * (MAL.fil + 1), MAL)
+        self.assertEqual([antal for antal, _ in fynd], [MAL.fil + 1])
+
+    def test_undantag_med_skal_listas_inte(self):
+        kallkod = funktion(MAL.funktion + 1, "def f():  # undantag: tabell")
+        self.assertEqual(kontrollera(kallkod, MAL), [])
+
+    def test_listan_har_slutkoden_noll_och_langst_forst(self):
+        filer = {
+            "kort.py": funktion(MAL.funktion + 1),
+            "lang.py": funktion(MAX_RADER_FUNKTION + 1, "def g():"),
+        }
+        self.assertEqual(
+            kor(["--mal"], filer), (0, ["g har 31 rader", "f har 16 rader"])
+        )
 
 
 if __name__ == "__main__":
