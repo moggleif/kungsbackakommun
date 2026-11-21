@@ -1,5 +1,5 @@
 """Krav: K15, K34 och K81 i docs/02-KRAV.md, ADR-0017 och ADR-0055.
-Test: tests/test_figurer.py och tests/test_kommandon.py.
+Test: tests/test_figurer.py och tests/test_tolkning_kommando.py.
 
 Verktygen för den som tolkar figurerna (docs/03-ARKITEKTUR.md#tolkade-figurer):
 

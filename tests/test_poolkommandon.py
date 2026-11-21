@@ -2,39 +2,20 @@
 Kod: src/kommunhandlingar/kand_inlasning.py, arenden.py och maska_poolen.py.
 
 Poolens kommandon körs som moduler, med `sys.argv` som på kommandoraden,
-mot en pool i en temporär katalog.
+mot en pool i en temporär katalog. Alla nummer här är påhittade.
 """
 
-import contextlib
-import io
-import runpy
-import sys
 import unittest
-import warnings
 from itertools import product
-from unittest import mock
 
+from kommunhandlingar import frontmatter
+from tests.kommandofall import Katalogfall, kor_modulen
 from tests.test_kand_inlasning import dokument
-from tests.test_kommandon import Katalogfall
+
+PROTOKOLL = "§ 4 Dnr KS-2025-00001\nSökanden 121212-1212\n"
 
 
-def kor_modulen(modul: str, *argument: str) -> tuple[object, str]:
-    """Slutkoden, eller None, och det som skrevs på standard ut."""
-    with (
-        warnings.catch_warnings(),
-        mock.patch.object(sys, "argv", [modul, *argument]),
-        contextlib.redirect_stdout(io.StringIO()) as utskrift,
-    ):
-        # runpy varnar när modulen redan är importerad.
-        warnings.simplefilter("ignore", RuntimeWarning)
-        try:
-            runpy.run_module(f"kommunhandlingar.{modul}", run_name="__main__")
-        except SystemExit as stopp:
-            return stopp.code, utskrift.getvalue()
-    return None, utskrift.getvalue()
-
-
-class TestPoolkommandona(Katalogfall):
+class TestPoolensKommandon(Katalogfall):
     def test_kand_inlasning_skriver_en_rad_per_kommun_i_ordning(self):
         dokument(self.rot / "ostby" / "ks", "a", "[ok]")
         dokument(self.rot / "exempelby" / "kf", "b", "[ok, ej-konverterad]")
@@ -46,11 +27,15 @@ class TestPoolkommandona(Katalogfall):
         self.assertTrue(rader[0].startswith("exempelby: 1 av 2 sidor"))
 
     def test_arenden_och_maska_poolen_raknar_det_som_andrades(self):
-        utfall = {
-            "arenden": "0 dokument fick nya ärenden.\n",
-            "maska_poolen": "0 filer maskades.\n",
-        }
-        for modul, rad in utfall.items():
+        md = self.rot / "exempelby/ks/2025/2025-04-22/protokoll.md"
+        md.parent.mkdir(parents=True)
+        falt = dict.fromkeys(frontmatter.FALT, "null") | {"typ": "protokoll"}
+        md.write_text(frontmatter.skriv(falt) + PROTOKOLL, encoding="utf-8")
+        utfall = [
+            ("arenden", "1 dokument fick nya ärenden.\n"),
+            ("maska_poolen", "1 filer maskades.\n"),
+        ]
+        for modul, rad in utfall:
             with self.subTest(modul):
                 self.assertEqual(kor_modulen(modul, str(self.rot)), (None, rad))
 
