@@ -2338,3 +2338,30 @@ Issue [#354](https://github.com/moggleif/kungsbackakommun/issues/354).
 - **Givet** en arbetskatalog i repot
 - **När** kommandot körs
 - **Så** stoppas det med "Stoppad: " och felet, och en annan felkod än 3.
+
+## K81 — De övriga kommandona prövas genom sin ingång
+
+Prövas i `tests/test_kommandon.py` utan nät, i temporära kataloger.
+Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
+
+- **Givet** ett urval med ett dokument och en `matt.csv` med en äldre rad
+- **När** `python -m kommunhandlingar.facit --spara` körs
+- **Så** står måtten för dokumentet och totalt på standard ut, och raden
+  för poolens version läggs till i `matt.csv` medan den äldre står kvar
+  (K20).
+
+- **Givet** sidorna `3,5` eller `0` till `tolkning rendera --sidor`
+- **När** argumenten tolkas
+- **Så** blir det sidorna 3 och 5, respektive ett fel om att sidorna räknas
+  från 1; `tolkning lista` skriver arbetslistan (K15), och ett ändrat
+  original eller ett hämtfel stoppar `rendera` med "Stoppad: " och felet.
+
+- **Givet** en pool med två kommuner
+- **När** `python -m kommunhandlingar.kand_inlasning` körs
+- **Så** skrivs en rad per kommun, i namnordning (K73).
+
+- **Givet** fel antal argument till `kand_inlasning`, `arenden` eller
+  `maska_poolen`
+- **När** kommandot körs
+- **Så** stoppas det med kommandots användningstext; med en pool skriver
+  `arenden` och `maska_poolen` hur många filer som ändrades (K48, K17).
