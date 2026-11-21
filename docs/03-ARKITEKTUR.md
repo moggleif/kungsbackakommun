@@ -1734,7 +1734,7 @@ byggtid, och jämför varje fil i utkatalogen med
   Startsidan för flera kommuner ligger utanför bilden och prövas i
   `tests/test_webbplats.py`.
 - **Hela filerna** sparas, inte kontrollsummor, så att diffen visar vad
-  som ändrats. Bilden är ett halvt MB. En sida med lång rad, som
+  som ändrats. En sida med lång rad, som
   kalendern, visar raden i sin helhet.
 - **Bygget beror inte på** var poolen ligger, klockan eller
   `PYTHONHASHSEED`; byggtiden är testets. En fil som tillkommer eller

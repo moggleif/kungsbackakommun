@@ -1,8 +1,8 @@
 # Exempelby kommun för ögonblicksbilden av webbplatsen (K78). Organen och
 # källan är de i tests/fixtures/exempelby.toml, som testerna ändrar i sina
 # egna kopior. Här har fsn sammanträdessidor och källan en lista med
-# projekt; mönstren för att hitta dokument och rättelserna behövs inte för
-# att bygga webbplatsen och står inte med.
+# projekt. Mönstret för protokoll med § och rättelserna behövs inte för att
+# bygga webbplatsen och står inte med; det första mönstret kräver kommunfilen.
 namn = "Exempelby kommun"
 
 [[organ]]
