@@ -150,6 +150,19 @@ python3 -m kommunhandlingar.facit --spara    # och raden i matt.csv
 Hur måtten räknas och hur ett nytt dokument läggs till i urvalet står under
 "Facit för konverteringen" i [03-ARKITEKTUR.md](03-ARKITEKTUR.md).
 
+## Ögonblicksbilden av konverteringen
+
+Hela konverteringens utdata för fixturerna är låst i
+`tests/fixtures/ogonblicksbild/` (K77). Ska en ändring ändra utdatan
+skrivs bilden om, och diffen granskas som en del av ändringen:
+
+```sh
+python3 -m tests.test_ogonblicksbild --skriv-om
+```
+
+Hur jämförelsen görs står under "Ögonblicksbilden av konverteringen" i
+[03-ARKITEKTUR.md](03-ARKITEKTUR.md).
+
 ## Figurerna
 
 Sidor med figurer tolkas för hand av en Claude-session, i omgångar, enligt

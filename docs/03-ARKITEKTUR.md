@@ -1689,6 +1689,25 @@ prövar också att varje tal i en facittabell står bland sidans `tal`, att
 facittabellernas rader har lika många fält, och att textlagret i utdragen inte
 har något som maskas enligt [Personuppgifter](#personuppgifter).
 
+## Ögonblicksbilden av konverteringen
+
+Facit räknar mått; ögonblicksbilden låser hela utdatan (K77). Testet
+`tests/test_ogonblicksbild.py` konverterar PDF-fixturerna i
+`tests/fixtures/pdf/` och facit-utdragen och jämför texten efter front
+matter (`skrivning.kropp`) och varje CSV (`skrivning.tabellfiler`) med
+`tests/fixtures/ogonblicksbild/`, tecken för tecken.
+
+- **Formen** är poolens: `<namn>.md` och bredvid den `<namn>.tabeller/`,
+  skrivna med `skrivning.skriv`. Namnet är PDF:ens, och för ett
+  facit-utdrag katalogens.
+- **OCR-sidor** ligger utanför. Vad Tesseract läser beror på dess
+  version, så testet ersätter läsningen av en sida som går till OCR med
+  en fast text. Att sidan gick till OCR, och allt på de andra sidorna,
+  jämförs ändå.
+- **En avsiktlig ändring** av utdatan skriver om bilden med kommandot i
+  [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-konverteringen), och
+  diffen följer med ändringen.
+
 ## Tolkade figurer
 
 Hur och varför står i
