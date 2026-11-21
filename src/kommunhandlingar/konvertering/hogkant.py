@@ -19,11 +19,6 @@ MINSTA_ORD = 4
 HOJD_MOT_BREDD = 2
 ORDLUCKA = 0.2
 STYCKESLUCKA = 2
-# Satta, inte uppmätta: i stickprovet för ADR-0103 var tecknens vridning
-# exakt och raderna utan spridning. VRIDNING jämförs med matrisens skala,
-# LINJE med teckenstorleken.
-VRIDNING = 0.01
-LINJE = 0.1
 
 
 def staende(sida: Page) -> Page:
@@ -32,55 +27,14 @@ def staende(sida: Page) -> Page:
 
 def textlagret(sida: Page) -> list[str]:
     """Raderna på högkant i läsordning, med tecknen i läsriktningen."""
-    rader_ = sorted(rader([c for c in sida.chars if not c["upright"]]), key=lasordning)
-    return [" ".join(t.split()) for r in rader_ for t in stycken(r) if t.strip()]
-
-
-def rader(tecken: list[dict]) -> list[list[dict]]:
-    """Tecknen på högkant delade i rader efter läget i sidled."""
-    rader_: list[list[dict]] = []
-    for c in sorted(tecken, key=lambda c: c["x0"]):
-        if rader_ and c["x0"] - rader_[-1][0]["x0"] < storlek(c):
-            rader_[-1].append(c)
+    rader: list[list[dict]] = []
+    for c in sorted((c for c in sida.chars if not c["upright"]), key=lambda c: c["x0"]):
+        if rader and c["x0"] - rader[-1][0]["x0"] < storlek(c):
+            rader[-1].append(c)
         else:
-            rader_.append([c])
-    return rader_
-
-
-def entydig(tecken: list[dict]) -> bool:
-    """Texten på högkant läses rätt av `textlagret` (ADR-0103): varje tecken
-    är vridet en kvarts varv utan spegling, varje rad står på en linje och
-    läses åt ett håll, och inga tecken i en rad ligger över varandra."""
-    if not all(kvarts_varv(c) for c in tecken):
-        return False
-    return all(entydig_rad(r) for r in rader(tecken))
-
-
-def entydig_rad(rad: list[dict]) -> bool:
-    en_riktning = len({uppat(c) for c in rad}) == 1
-    return en_riktning and pa_en_linje(rad) and utan_overlapp(rad)
-
-
-def kvarts_varv(tecken: dict) -> bool:
-    a, b, c, d = tecken["matrix"][:4]
-    return abs(a) + abs(d) < VRIDNING * abs(b) and abs(b + c) < VRIDNING * abs(b)
-
-
-def pa_en_linje(rad: list[dict]) -> bool:
-    spridning = max(c["x0"] for c in rad) - min(c["x0"] for c in rad)
-    return spridning <= LINJE * storlek(rad[0])
-
-
-def utan_overlapp(rad: list[dict]) -> bool:
-    i_ordning = sorted(rad, key=lambda c: c["top"])
-    return all(
-        fore["bottom"] - c["top"] < min(hojd(fore), hojd(c)) / 2
-        for fore, c in pairwise(i_ordning)
-    )
-
-
-def hojd(tecken: dict) -> float:
-    return tecken["bottom"] - tecken["top"]
+            rader.append([c])
+    rader.sort(key=lasordning)
+    return [" ".join(t.split()) for r in rader for t in stycken(r) if t.strip()]
 
 
 def stycken(tecken: list[dict]) -> list[str]:

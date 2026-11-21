@@ -5,8 +5,10 @@ Körs för hand, bara med standardbiblioteket:
 
 - `medurs.pdf`: sex rader löptext och en stämpel med tal på högkant,
   vriden medurs, i högra marginalen.
-- `tabell-hogkant.pdf`: en tabell utan linjer med fyra rader och `2024`
+- `tabell-hogkant.pdf`: en tabell utan linjer med fyra rader och `Not`
   på högkant, vriden medurs, intill första radens sista tal.
+- `axeltitel.pdf`: sex rader löptext med tal och en axeltitel utan
+  siffror på högkant, vriden moturs, i vänstra marginalen.
 """
 
 from pathlib import Path
@@ -71,4 +73,7 @@ rader = [
     for i in range(6)
 ]
 pdf("medurs.pdf", [*rader, medurs(560, 780, STAMPEL)])
-pdf("tabell-hogkant.pdf", [*tabell(), medurs(357, 709.5, "2024")])
+pdf("tabell-hogkant.pdf", [*tabell(), medurs(357, 709.5, "Not")])
+TAL = "Kommunen hade 84 512 invanare den 31 december 2023, rad {}."
+tal = [text(60, 700 - 14 * i, TAL.format(i)) for i in range(6)]
+pdf("axeltitel.pdf", [*tal, text(40, 560, "Antal invanare", "0 1 -1 0")])

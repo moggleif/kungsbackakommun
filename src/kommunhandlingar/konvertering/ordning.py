@@ -6,7 +6,7 @@ kolumn som flyter in i nästa. pdfplumber blandar ihop dem till rader som
 `aktivitetsstö2d0225-05-21`, och sidans tal räknas då inte som
 bekräftade (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet). Text på
 högkant utanför tabellerna läses för sig (K41) och räknas bara när den
-inte går att läsa entydigt eller står ovanpå upprätt text.
+har en siffra eller står ovanpå upprätt text (ADR-0103).
 """
 
 from collections import defaultdict
@@ -14,14 +14,13 @@ from itertools import pairwise
 
 from pdfplumber.page import Page
 
-from kommunhandlingar.konvertering import hogkant
 from kommunhandlingar.konvertering.tabeller import i_tabell
 
 
 def i_oordning(sida: Page, rutor: list[tuple]) -> bool:
     tecken = list(enumerate(c for c in sida.chars if not c["text"].isspace()))
     pa_hogkant = [c for _, c in tecken if not c["upright"]]
-    if any(i_tabell(c, rutor) for c in pa_hogkant) or not hogkant.entydig(pa_hogkant):
+    if any(c["text"].isdigit() or i_tabell(c, rutor) for c in pa_hogkant):
         return True
     upprata = [c for c in sida.chars if c["upright"]]
     if any(over(h, c) for h in pa_hogkant for c in upprata):

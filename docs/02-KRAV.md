@@ -200,20 +200,17 @@ kunna läggas till utan kodändring.
   när sidan inte står i listan, oavsett textens kvalitet, och alla
   dokumentets tal när listan är tom.
 
-- **Givet** ett textlager där text på högkant står bara utanför
-  tabellerna, som en axeltitel, ett diarienummer i marginalen eller
-  koordinater på en karta, där varje rad på högkant går att läsa för sig
-  och resten av sidan går att läsa i ordning
-  (issue [#399](https://github.com/moggleif/kungsbackakommun/issues/399))
+- **Givet** ett textlager där text på högkant utan siffror står bara
+  utanför tabellerna, som en axeltitel, och resten av sidan går att läsa
+  i ordning (issue
+  [#399](https://github.com/moggleif/kungsbackakommun/issues/399))
 - **När** dokumentet konverteras
 - **Så** står sidan inte bland sidorna med obekräftade tal, eftersom
   texten på högkant läses för sig enligt K41.
 
-- **Givet** ett textlager med text på högkant utanför tabellerna som
-  inte går att läsa entydigt: rader så tätt att de läses ihop, två
-  läsriktningar på samma linje, tecken ovanpå varandra, tecken ovanpå
-  upprätt text, tecken som inte är vridna precis en kvarts varv, som
-  speglade tecken, eller text som ändrar var tabellerna hittas
+- **Givet** ett textlager med en siffra på högkant var som helst, text på
+  högkant ovanpå upprätt text, eller text på högkant som ändrar var
+  tabellerna hittas
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 

@@ -40,45 +40,6 @@ def tecken(text: str, x0: float, top: float, uppat: bool = True) -> dict:
     }
 
 
-class TestEntydig(unittest.TestCase):
-    """ADR-0103: text på högkant som `textlagret` läser rätt."""
-
-    def test_en_rad_pa_en_linje(self):
-        tecknen = [tecken(t, 40, 80 - 6 * i) for i, t in enumerate("2010")]
-        self.assertTrue(hogkant.entydig(tecknen))
-
-    def test_tata_rader_laser_ihop(self):
-        """`2010` och `2011` närmare än en teckenstorlek blir en rad."""
-        tecknen = [tecken(t, 40, 80 - 6 * i) for i, t in enumerate("2010")]
-        tecknen += [tecken(t, 47, 80 - 6 * i) for i, t in enumerate("2011")]
-        self.assertEqual(
-            hogkant.textlagret(SimpleNamespace(chars=tecknen)), ["22001101"]
-        )
-        self.assertFalse(hogkant.entydig(tecknen))
-
-    def test_tecken_over_varandra(self):
-        """Två stämplar ritade på samma ställe."""
-        tecknen = [tecken(t, 40, 80 - 6 * i) for i, t in enumerate("12")]
-        tecknen += [tecken(t, 40, 79 - 6 * i) for i, t in enumerate("34")]
-        self.assertFalse(hogkant.entydig(tecknen))
-
-    def test_speglade_tecken(self):
-        speglade = [
-            dict(tecken(t, 40 + 9 * i, 80), matrix=(-9, 0, 0, 9, 0, 0))
-            for i, t in enumerate("123")
-        ]
-        self.assertFalse(hogkant.entydig(speglade))
-
-    def test_tva_lasriktningar_pa_samma_linje(self):
-        """`2010` moturs och `345` medurs på samma linje läses baklänges."""
-        tecknen = [tecken(t, 40, 80 - 6 * i) for i, t in enumerate("2010")]
-        tecknen += [tecken(t, 40, 20 + 6 * i, uppat=False) for i, t in enumerate("345")]
-        self.assertFalse(hogkant.entydig(tecknen))
-
-    def test_ingen_text_pa_hogkant(self):
-        self.assertTrue(hogkant.entydig([]))
-
-
 class TestTextlagret(unittest.TestCase):
     def test_vriden_moturs_lases_uppat(self):
         tecknen = [tecken(t, 40, 80 - 6 * i) for i, t in enumerate("OKTOBER")]

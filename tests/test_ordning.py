@@ -76,17 +76,18 @@ class TestOrdning(unittest.TestCase):
         self.assertFalse(i_oordning(sida(*STOD, n), [(300, 120, 400, 150)]))
 
     def test_hogkant_ovanpa_uppratt_text(self):
-        """En siffra på högkant ritad ovanpå en rad kan flytta talen i den."""
-        self.assertTrue(i_oordning(sida(*STOD, vriden("5", 425.8)), []))
+        """Text på högkant ritad ovanpå en rad kan flytta talen i den."""
+        self.assertTrue(i_oordning(sida(*STOD, vriden("N", 425.8)), []))
 
     def test_hogkant_bredvid_uppratt_text_raknas_inte(self):
-        self.assertFalse(i_oordning(sida(*STOD, vriden("5", 440)), []))
+        self.assertFalse(i_oordning(sida(*STOD, vriden("N", 440)), []))
 
-    def test_hogkant_som_inte_gar_att_lasa_entydigt(self):
-        """Två årtal på högkant så tätt att de läses ihop till `22001101`."""
+    def test_siffra_pa_hogkant_utanfor_tabellerna(self):
+        """Två årtal på högkant så tätt att K41 läser ihop dem till
+        `22001101`: en siffra på högkant blir aldrig bekräftad."""
         tatt = [vriden(t, 40, 80 - 6 * i) for i, t in enumerate("2010")]
         tatt += [vriden(t, 47, 80 - 6 * i) for i, t in enumerate("2011")]
-        self.assertTrue(i_oordning(sida(*STOD, *tatt), []))
+        self.assertTrue(i_oordning(sida(*tatt), []))
 
 
 class TestRader(unittest.TestCase):
@@ -108,9 +109,14 @@ class TestSidan(unittest.TestCase):
             with patch.object(las_sida, "i_oordning", return_value=True):
                 self.assertTrue(textsida(sida).tal_obekraftade)
 
-    def test_diarienummer_pa_hogkant_ger_bekraftade_tal(self):
+    def test_diarienummer_pa_hogkant_ger_obekraftade_tal(self):
         """Sida 1 i hogkant.pdf: ett stycke och ett diarienummer på högkant."""
         with pdfplumber.open(HOGKANT) as pdf:
+            self.assertTrue(textsida(pdf.pages[0]).tal_obekraftade)
+
+    def test_axeltitel_pa_hogkant_ger_bekraftade_tal(self):
+        """axeltitel.pdf: löptext med tal och en axeltitel utan siffror."""
+        with pdfplumber.open(PDF / "axeltitel.pdf") as pdf:
             self.assertFalse(textsida(pdf.pages[0]).tal_obekraftade)
 
     def test_kolumnrubrik_pa_hogkant_ger_obekraftade_tal(self):
@@ -123,10 +129,13 @@ class TestSidan(unittest.TestCase):
         with pdfplumber.open(PDF / "medurs.pdf") as pdf:
             las = textsida(pdf.pages[0])
         self.assertIn("Belopp 11,5 mnkr, 1.200 kr, dnr 2024/0123", las.text)
-        self.assertFalse(las.tal_obekraftade)
+        self.assertTrue(las.tal_obekraftade)
 
     def test_hogkant_som_flyttar_en_tabell(self):
-        """tabell-hogkant.pdf: `2024` på högkant intill första radens tal
+        """tabell-hogkant.pdf: `Not` på högkant intill första radens tal
         får tabellen utan linjer att tappa raden."""
         with pdfplumber.open(PDF / "tabell-hogkant.pdf") as pdf:
-            self.assertTrue(textsida(pdf.pages[0]).tal_obekraftade)
+            sida = pdf.pages[0]
+            self.assertTrue(textsida(sida).tal_obekraftade)
+            with patch.object(las_sida, "flyttar", return_value=False):
+                self.assertFalse(textsida(sida).tal_obekraftade)

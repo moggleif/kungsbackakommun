@@ -61,9 +61,9 @@ Regler för det här repot, utöver MADR:
 | 0033 | [Talrader i linje som inte blev någon tabell märker sidan osäker](0033-talrader-i-linje-marker-sidan-osaker.md) | accepted |
 | 0034 | [En tabell med linjer som bara ramar in en del av sig själv fälls](0034-en-avskuren-tabell-med-linjer-falls.md) | accepted |
 | 0035 | [Avsnittsrubriker och årtal håller ihop en tabell utan lodräta linjer](0035-avsnittsrubriker-och-artal-i-tabeller-utan-linjer.md) | accepted |
-| 0036 | [Ett mellanslag som börjar inne i en siffra tas bort innan texten läses](0036-mellanslag-inne-i-en-siffra-tas-bort.md) | accepted (0103 räknar inte siffror på högkant) |
+| 0036 | [Ett mellanslag som börjar inne i en siffra tas bort innan texten läses](0036-mellanslag-inne-i-en-siffra-tas-bort.md) | accepted |
 | 0037 | [Rubrikrader, radavstånd och sidfot i tabeller utan lodräta linjer](0037-rubrikrader-och-sidfot-i-tabeller-utan-linjer.md) | accepted |
-| 0038 | [Text som inte går att läsa i ordning ger obekräftade tal](0038-text-i-oordning-ger-obekraftade-tal.md) | accepted (0103 räknar inte text på högkant utanför tabellerna som går att läsa entydigt) |
+| 0038 | [Text som inte går att läsa i ordning ger obekräftade tal](0038-text-i-oordning-ger-obekraftade-tal.md) | accepted (0103 räknar inte text på högkant utan siffror utanför tabellerna) |
 | 0039 | [Episerver-generationerna läses ur arkivet med organens mappar och mönster för sökvägen, och ett sammanträde får inte samma typ från två plattformar](0039-episerver-ur-arkivet-med-mappar-och-monster.md) | accepted (0048 låter högst kvalitet avgöra mellan plattformarna, 0049 slår ihop ett mötes filer) |
 | 0040 | [Rubriker över flera kolumner och på flera textrader i tabeller utan lodräta linjer](0040-rubriker-over-flera-kolumner-och-textrader.md) | accepted |
 | 0041 | [Varje avvikelse i källan blir ett eget issue efter en mall](0041-avvikelser-ett-issue-per-avvikelse.md) | accepted |
@@ -87,7 +87,7 @@ Regler för det här repot, utöver MADR:
 | 0061 | [Ett tillfälligt fel på `robots.txt` försöks igen och stoppar inte arkivet, och körningen går två gånger om dygnet tills arkivet är ikapp](0061-korningen-tal-tillfalliga-fel-pa-robots.md) | accepted |
 | 0062 | [I arkivet gäller filnamnets datum under ett annat möte samma år, ett tvåsiffrigt år är 2000-talets, och statussidan visar år utan dokument](0062-arkivets-datum-och-ar-utan-dokument.md) | accepted |
 | 0063 | [Löptext i spalter läses spalt för spalt med XY-snitt över textlagrets rader](0063-spalter-lases-spalt-for-spalt.md) | accepted |
-| 0064 | [Text på högkant tas ur flödet och skrivs sist på sidan; på en OCR-sida målas den vit och sidan läses om](0064-text-pa-hogkant-skrivs-sist.md) | accepted (0103 låter den texten ge bekräftade tal när den går att läsa entydigt) |
+| 0064 | [Text på högkant tas ur flödet och skrivs sist på sidan; på en OCR-sida målas den vit och sidan läses om](0064-text-pa-hogkant-skrivs-sist.md) | accepted (0103 låter den texten ge bekräftade tal när den saknar siffror) |
 | 0065 | [Redovisningarna följs steg för steg som handlingsplanerna, och direktiv som beställer en redovisning flyttar från målsidan](0065-redovisningarna-foljs-som-handlingsplanerna.md) | accepted |
 | 0066 | [Revisionens granskningar följs steg för steg per granskat organ, med stegen i alla organs dokument](0066-revisionens-granskningar-foljs-per-namnd.md) | accepted |
 | 0067 | [Detaljplanerna följs steg för steg som redovisningarna, med besluten i alla organs protokoll](0067-detaljplanerna-foljs-som-redovisningarna.md) | accepted |
@@ -118,4 +118,4 @@ Regler för det här repot, utöver MADR:
 | 0100 | [Säkra rader läses, och en sida utan text att lagra märks `ointressant`](0100-sakra-rader-lases-och-resten-ar-ointressant.md) | accepted |
 | 0101 | [Statussidan visar andelen känd inläsning](0101-statussidan-visar-kand-inlasning.md) | accepted |
 | 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |
-| 0103 | [Text på högkant utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utanfor-tabellerna-ger-bekraftade-tal.md) | accepted |
+| 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted |
