@@ -1631,7 +1631,8 @@ poolen är värd att konvertera om (ADR-0019).
   textlagret med `pdftotext -layout`, och pdfplumber ska ge samma
   siffergrupper; där de skiljer sig avgör sidbilden. Tabellerna skrivs
   oberoende av konverteringen och kontrolleras mot sidbilden, rad för rad.
-  Sedan sparas måtten om.
+  Sedan sparas måtten om, och ögonblicksbilden skrivs om
+  ([Ögonblicksbilden av konverteringen](#ögonblicksbilden-av-konverteringen)).
 - **Facittabellerna** heter som poolens (`<sida>[-<sista sida>]-<nr>.csv`,
   sidorna i utdraget) och skrivs i samma CSV-format, men så som tabellen
   står på sidan: varje rad med sin hela etikett, också när etiketten
