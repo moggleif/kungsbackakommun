@@ -2413,3 +2413,42 @@ Issue [#356](https://github.com/moggleif/kungsbackakommun/issues/356).
 - **Givet** fel antal argument
 - **När** kommandot körs
 - **Så** stoppas det med kommandots användningstext.
+
+## K83 — Webbplatsens skript håller samma gränser som koden och har test
+
+Skripten i `src/kommunhandlingar/webbplats/*.js` kontrolleras av ESLint
+och prövas i `tests/js/`, i jsdom. Hur står under
+[Webbplatsens skript](03-ARKITEKTUR.md#webbplatsens-skript).
+Issue [#359](https://github.com/moggleif/kungsbackakommun/issues/359).
+
+- **Givet** ett skript eller ett test i JavaScript med en funktion över
+  30 rader, en fil över 250 rader, fler än 4 parametrar, nästling över 3
+  eller komplexitet över 8
+- **När** kontrollen körs i CI
+- **Så** faller den och pekar ut raden, som för Python ("Ren kod –
+  strikt" i AGENTS.md).
+
+- **Givet** samma skript
+- **När** någon kör ESLint med `eslint.mal.config.mjs`
+- **Så** listas allt över målen (15, 150, 3, 2 och 5), som för Python
+  (K76).
+
+- **Givet** kalendern i ögonblicksbilden av webbplatsen (K78) och en fast
+  klocka
+- **När** `kalender.js` körs på den
+- **Så** visas innevarande månad, eller den första eller sista när
+  klockan ligger utanför, listan från idag med dagens sammanträde,
+  bläddringen, tidigare sammanträden och urvalet av organ som K22 och
+  K32 säger, också när månad och dag har en siffra.
+
+- **Givet** målsidan och initiativsidan i ögonblicksbilden
+- **När** `mal.js` och `perspektiv.js` körs på dem
+- **Så** visar urvalet bara de valda målen och döljer tomma rubriker,
+  ett kommunmåls kort visas med sina fokusområden, historiken öppnas när
+  ett mål väljs, också igen, och perspektivet och året följer adressen
+  och historiken, som K29, K35 och K50 säger.
+
+- **Givet** ett skript som ändras så att ett av fallen ovan inte längre
+  stämmer
+- **När** testerna körs
+- **Så** faller ett test.

@@ -4,6 +4,8 @@
 
 - Python 3.12 eller senare
 - git
+- Node 22, 22.22.2 eller senare, som i CI, för webbplatsens skript och
+  Markdown-lint
 - Tesseract med svensk modell och modellen för sidans riktning (`osd`,
   som följer med `tesseract-ocr`), för OCR och testerna
   (`apt-get install tesseract-ocr tesseract-ocr-swe`)
@@ -16,6 +18,7 @@ cd kungsbackakommun
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -e ".[utveckling]"
+npm install
 ```
 
 `pip install -e .` gör paketet i `src/kommunhandlingar/` importerbart, så
@@ -26,6 +29,10 @@ står i `pyproject.toml`, samma som CI installerar; ruffs förhandsregler
 kan ändras mellan versioner. Med
 [uv](https://docs.astral.sh/uv/) går samma ruff att köra utan
 installation: `uvx ruff@<versionen i pyproject.toml> check .`.
+`npm install` installerar ESLint och jsdom i `node_modules/`, i de
+versioner som står i `package.json`, för webbplatsens skript (K83).
+`package-lock.json` checkas inte in, eftersom den bär
+tredjepartspaketens konto- och sponsornamn (ADR-0104).
 
 ## Allt grönt före incheckning
 
@@ -39,6 +46,8 @@ coverage erase
 coverage run -m unittest discover -s tests -t .
 coverage combine -q
 coverage report --sort=cover
+npx eslint
+npm test
 npx markdownlint-cli2@<versionen i kontroll.yml> <ändrade .md-filer>
 pip-audit .
 ```
@@ -58,8 +67,14 @@ och Node på de `.md` som ändrats, med reglerna i
 `.markdownlint-cli2.jsonc`; hela poolen tar en halvtimme. `pip-audit`
 letar efter kända sårbarheter i projektets beroenden, och Dependabot
 (`.github/dependabot.yml`) föreslår nya versioner av beroendena, av ruff,
-pip-audit och coverage och av Actions. CI
+pip-audit och coverage, av npm-paketen och av Actions. CI
 kontrollerar också att inga binärer är incheckade.
+
+Webbplatsens skript i `src/kommunhandlingar/webbplats/*.js` och deras
+tester i `tests/js/` kontrolleras av ESLint, med samma gränser
+(`eslint.config.mjs`). `npm test` kör testerna, som läser sidor ur
+ögonblicksbilden av webbplatsen; hur står under
+[Webbplatsens skript](03-ARKITEKTUR.md#webbplatsens-skript).
 
 ## Över målen
 
@@ -69,17 +84,19 @@ granskningen, och allt som ligger över dem listas med (K76):
 ```sh
 python3 scripts/kontrollera_storlek.py --mal
 ruff check --config mal.toml --statistics
+npx eslint --config eslint.mal.config.mjs
 ```
 
 Det första listar filer och funktioner över målen för rader, den längsta
 först; det andra parametrar, nästling och komplexitet över målen, med
-ruffs inställningar i `mal.toml` ovanpå `pyproject.toml`. Ett undantag
-(se [Undantag](#undantag)) räknas som mot de hårda gränserna. Båda är
-till för att läsas: `--mal` har alltid slutkoden 0, och ruff ger 1 så
-länge något ligger över. Kommandona körs från repots rot. Antalet före
+ruffs inställningar i `mal.toml` ovanpå `pyproject.toml`; det tredje
+allt över målen i webbplatsens skript (K83). Ett undantag
+(se [Undantag](#undantag)) räknas som mot de hårda gränserna. Alla tre är
+till för att läsas: `--mal` har alltid slutkoden 0, och ruff och ESLint
+ger 1 så länge något ligger över. Kommandona körs från repots rot. Antalet före
 och efter en refaktorisering är antalet rader i den första listan och
-summan i ruffs "Found N errors". Båda räknar också `tests/`, som den
-hårda kontrollen.
+summan i ruffs "Found N errors" och ESLints "N problems". Alla räknar
+också `tests/`, som den hårda kontrollen.
 
 ## Webbplatsen
 
@@ -174,6 +191,10 @@ diffen granskas som en del av ändringen:
 python3 -m tests.test_webbplatsbild --spara
 ```
 
+Testerna av webbplatsens skript i `tests/js/` läser sidor ur bilden och
+räknar med dess datum, år och mål (K83). Kör `npm test` efter en
+omskrivning och anpassa testerna i samma ändring.
+
 Hur jämförelsen görs står under "Ögonblicksbilden av webbplatsen" i
 [03-ARKITEKTUR.md](03-ARKITEKTUR.md).
 
@@ -201,6 +222,9 @@ sidkvalitet (K73, ADR-0100). Vad som räknas står under "Känd inläsning" i
 - Rader per funktion: `# undantag: <skäl>` på `def`-raden. En fil har
   inget undantag; blir den för lång delas den.
 - Ruffs gränser: `# noqa: <regel>  # undantag: <skäl>` på raden ruff pekar ut.
+- ESLints gränser: `// eslint-disable-next-line <regel> -- undantag: <skäl>`
+  på raden före den ESLint pekar ut. Det tystar regeln för den raden,
+  också mot målen. En fil har inget undantag, som i Python.
 
 ## Avvikelser i källan
 
