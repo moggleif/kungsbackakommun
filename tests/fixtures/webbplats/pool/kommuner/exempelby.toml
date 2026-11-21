@@ -1,0 +1,36 @@
+# Exempelby kommun för ögonblicksbilden av webbplatsen (K78). Organen och
+# källan är de i tests/fixtures/exempelby.toml, som testerna ändrar i sina
+# egna kopior. Här har fsn sammanträdessidor och källan en lista med
+# projekt. Mönstret för protokoll med § och rättelserna behövs inte för att
+# bygga webbplatsen och står inte med; det första mönstret kräver kommunfilen.
+namn = "Exempelby kommun"
+
+[[organ]]
+id = "bun"
+namn = ["Barn- och ungdomsnämnden"]
+till = 2022-12-31
+
+[[organ]]
+id = "fsn"
+namn = ["Förskole- och skolnämnden"]
+fran = 2023-01-01
+foregangare = ["bun"]
+sammantradessidor = 2024
+
+[[kalla]]
+adapter = "sitevision"
+manader = [
+  "januari", "februari", "mars", "april", "maj", "juni",
+  "juli", "augusti", "september", "oktober", "november", "december",
+]
+rubrik = '^(?P<dag>\d{1,2}) (?P<manad>[a-zåäö]+) (?P<ar>\d{4})'
+
+[[kalla.monster]]
+regex = '(?i)(?P<typ>kallelse|protokoll).*?(?P<ar>\d{4})-(?P<manad>\d{2})-(?P<dag>\d{2})'
+
+[kalla.sidor]
+bun = "https://exempelby.se/bun"
+fsn = "https://exempelby.se/fsn"
+
+[kalla.projekt]
+fsn = "https://exempelby.se/projekt"

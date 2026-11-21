@@ -163,6 +163,20 @@ python3 -m tests.test_ogonblicksbild --spara
 Hur jämförelsen görs står under "Ögonblicksbilden av konverteringen" i
 [03-ARKITEKTUR.md](03-ARKITEKTUR.md).
 
+## Ögonblicksbilden av webbplatsen
+
+Allt som webbplatsbygget skriver ur en liten pool är låst i
+`tests/fixtures/webbplats/ogonblicksbild/` (K78). En ren flytt av kod
+lämnar bilden orörd. Ska en ändring ändra sidorna skrivs bilden om, och
+diffen granskas som en del av ändringen:
+
+```sh
+python3 -m tests.test_webbplatsbild --spara
+```
+
+Hur jämförelsen görs står under "Ögonblicksbilden av webbplatsen" i
+[03-ARKITEKTUR.md](03-ARKITEKTUR.md).
+
 ## Figurerna
 
 Sidor med figurer tolkas för hand av en Claude-session, i omgångar, enligt

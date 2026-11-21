@@ -2267,3 +2267,26 @@ Issue [#351](https://github.com/moggleif/kungsbackakommun/issues/351).
 - **När** någon skriver om ögonblicksbilden med kommandot i
   [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-konverteringen)
 - **Så** syns varje ändrat tecken i diffen.
+
+## K78 — En ändring av webbplatsbygget syns sida för sida
+
+Hur det prövas står under
+[Ögonblicksbilden av webbplatsen](03-ARKITEKTUR.md#ögonblicksbilden-av-webbplatsen).
+Issue [#352](https://github.com/moggleif/kungsbackakommun/issues/352).
+
+- **Givet** en liten påhittad pool med dokument, kalender, mål,
+  uppföljningar, varje slags spår, projekt och avvikelser, och webbplatsen
+  byggd ur den med en fast byggtid och sparad som en ögonblicksbild
+- **När** en ändring av koden flyttar, lägger till eller tar bort ett
+  enda tecken i någon fil som bygget skriver, eller en fil tillkommer
+  eller försvinner
+- **Så** faller ett test och visar filen som skiljer och var.
+
+- **Givet** en ändring som bara flyttar kod
+- **När** testet körs
+- **Så** är det grönt utan att ögonblicksbilden skrivs om.
+
+- **Givet** en ändring som ska ändra sidorna
+- **När** någon skriver om ögonblicksbilden med kommandot i
+  [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-webbplatsen)
+- **Så** syns varje ändrat tecken i diffen.
