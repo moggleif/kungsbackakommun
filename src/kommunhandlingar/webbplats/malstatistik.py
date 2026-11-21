@@ -13,6 +13,7 @@ bredvid grafen, och tabellen är hopfälld under dem.
 
 from dataclasses import dataclass
 
+from kommunhandlingar import frontmatter
 from kommunhandlingar.konvertering.kvalitet import UTAN_TEXT
 from kommunhandlingar.webbplats.mal import SLAG, Mal
 from kommunhandlingar.webbplats.malgraf import graf
@@ -100,7 +101,7 @@ def arets_ruta(
 # Uppföljningarna i protokollen räknas bara år med ett protokoll med text.
 def protokollar(organets: list[dict]) -> set[int]:
     return {
-        int(d["datum"][:4])
+        frontmatter.ar(d)
         for d in organets
         if d["typ"] == "protokoll" and d["kvalitet"] not in UTAN_TEXT
     }

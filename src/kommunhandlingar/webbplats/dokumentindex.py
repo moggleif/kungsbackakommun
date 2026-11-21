@@ -7,7 +7,7 @@ front matter som JSON-typer och var dokumentet och dess tabeller finns.
 import json
 from pathlib import Path
 
-from kommunhandlingar.frontmatter import FALT, lista
+from kommunhandlingar.frontmatter import FALT, lista, saknas
 
 TAL = {"lopnr", "bytes", "sidor", "tal_obekraftade", "figurer", "tolkade"}
 
@@ -35,7 +35,7 @@ def platser(falt: dict[str, str], katalog: Path) -> dict[str, str]:
 
 
 def varde(namn: str, text: str) -> str | int | list | None:
-    if text == "null":
+    if saknas(text):
         return None
     tolka = int if namn in TAL else str
     if text.startswith("["):
