@@ -2225,8 +2225,8 @@ Issue [#349](https://github.com/moggleif/kungsbackakommun/issues/349).
 
 ## K76 — Allt över målen i Ren kod går att lista
 
-Hur listan tas fram står under "Allt grönt före incheckning" i
-[01-BIDRA.md](01-BIDRA.md). Issue
+Hur listan tas fram står under
+[Över målen](01-BIDRA.md#över-målen) i 01-BIDRA.md. Issue
 [#350](https://github.com/moggleif/kungsbackakommun/issues/350).
 
 - **Givet** målen i "Ren kod – strikt" i `AGENTS.md`
@@ -2240,7 +2240,7 @@ Hur listan tas fram står under "Allt grönt före incheckning" i
 - **Så** listas varje funktion med fler än 3 parametrar, fler än 2
   nästlingsnivåer eller en cyklomatisk komplexitet över 5.
 
-- **Givet** en körning utan `--mal`
-- **När** inga filer eller funktioner är över de hårda gränserna
-- **Så** blir slutkoden 0 som förut, och `--mal` ändrar den inte: listan
-  är till för att läsas och har alltid slutkoden 0.
+- **Givet** filer och funktioner över målen men inom de hårda gränserna
+- **När** kontrollen körs utan `--mal`, som i CI
+- **Så** godkänns de som förut, och med `--mal` är slutkoden alltid 0,
+  eftersom listan är till för att läsas.

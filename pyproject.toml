@@ -38,6 +38,7 @@ fail_under = 96
 [tool.ruff.lint]
 # Vanliga felkontroller plus gränserna i "Ren kod – strikt" i AGENTS.md.
 # Rader per funktion och fil kontrolleras av scripts/kontrollera_storlek.py.
+# Målen, som är lägre, listas med mal.toml (K76).
 preview = true
 explicit-preview-rules = true
 select = [

@@ -31,7 +31,8 @@ Små, enkla filer och funktioner. Den hårda gränsen kontrolleras i CI
 (se `docs/01-BIDRA.md`). Ett undantag kräver ett skäl i koden; hur det
 skrivs står i `docs/01-BIDRA.md`. Målet prövas i granskningen (fas 6): en
 funktion eller fil som tillkommer eller ändras och hamnar över målet
-behöver ett skäl i PR-texten. Befintlig kod prövas när den ändras.
+behöver ett skäl i PR-texten. Befintlig kod prövas när den ändras. Hur
+allt över målet listas står i `docs/01-BIDRA.md`.
 
 | Mått                         | Mål   | Hård gräns |
 | ---------------------------- | ----- | ---------- |
