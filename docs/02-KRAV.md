@@ -2205,3 +2205,20 @@ paketet och kör dess kommandon.
   paketdata som ett datarepo använder
 - **När** testerna körs i det här repot
 - **Så** faller ett test, innan ett datarepo höjer sin version.
+
+## K75 — Testernas täckning syns i varje körning
+
+Hur och varför står i
+[ADR-0102](decisions/0102-tackningen-mats-i-ci-med-ett-golv.md).
+Issue [#349](https://github.com/moggleif/kungsbackakommun/issues/349).
+
+- **Givet** en körning av kontrollen "Ren kod och tester"
+- **När** testerna körs
+- **Så** står täckningen per modul, med grenar, i körningens
+  sammanfattning, sorterad med den lägsta först, och också de rader som
+  körs i datakontrollens arbetsprocesser räknas.
+
+- **Givet** en ändring som tappar så många tester att den totala
+  täckningen hamnar under golvet i `pyproject.toml`
+- **När** kontrollen körs
+- **Så** faller den.

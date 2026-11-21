@@ -30,7 +30,12 @@ jobs:
       - run: ruff check .
       - run: ruff format --check .
       - run: python scripts/kontrollera_storlek.py
-      - run: python -m unittest discover -s tests -t .
+      - name: Testerna, med täckningen i sammanfattningen (K75, ADR-0102)
+        run: |
+          set -o pipefail
+          coverage run -m unittest discover -s tests -t .
+          coverage combine -q
+          coverage report --format=markdown --sort=cover | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Markdown-lint på ändrade filer (ADR-0021)
         if: github.event_name == 'pull_request'
         # HEAD är PR:ens merge-commit; dess första förälder är basen. En stor
