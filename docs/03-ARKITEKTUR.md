@@ -1714,6 +1714,31 @@ för tecken.
   [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-konverteringen), och
   diffen följer med ändringen.
 
+## Ögonblicksbilden av webbplatsen
+
+Testerna av webbplatsen prövar enskilda texter och länkar;
+ögonblicksbilden låser allt bygget skriver (K78). Testet
+`tests/test_webbplatsbild.py` bygger webbplatsen som
+`python -m kommunhandlingar.webbplats` gör, med `bygg.bygg` och sidan med
+avvikelserna, ur poolen i `tests/fixtures/webbplats/pool/` och med en fast
+byggtid, och jämför varje fil i utkatalogen med
+`tests/fixtures/webbplats/ogonblicksbild/`, tecken för tecken.
+
+- **Poolen** är påhittad och liten: Exempelby med en föregångare,
+  sammanträdessidor från 2024, kallelse, handlingar och protokoll med
+  paragrafer, en tabell, ett namngivet dokument i ett projekt och några
+  rader i var och en av `kalender/`, `mal/`, `uppfoljningar/`, `initiativ/`,
+  `detaljplaner/` och `projekt/`, och en avvikelse. Den täcker varje
+  sidbyggare, men inte varje gren.
+- **Hela filerna** sparas, inte kontrollsummor, så att diffen visar vad
+  som ändrats. Bilden är ett par hundra kB.
+- **Bygget beror inte på** var poolen ligger, klockan eller
+  `PYTHONHASHSEED`; byggtiden är testets. En fil som tillkommer eller
+  försvinner får testet att falla.
+- **En avsiktlig ändring** av sidorna skriver om bilden med kommandot i
+  [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-webbplatsen), och diffen
+  följer med ändringen.
+
 ## Tolkade figurer
 
 Hur och varför står i
