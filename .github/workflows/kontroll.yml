@@ -27,9 +27,17 @@ jobs:
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
       - run: pip install -e ".[utveckling]"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: Webbplatsens skript, ESLint och jsdom (K83, ADR-0104)
+        run: npm install --no-fund --no-audit
       - run: ruff check .
       - run: ruff format --check .
       - run: python scripts/kontrollera_storlek.py
+      - run: npx eslint
+      - name: Webbplatsens skript på ögonblicksbildens sidor (K83)
+        run: npm test
       - name: Testerna under täckningsmätning (K75, ADR-0102)
         run: coverage run -m unittest discover -s tests -t .
       - name: Täckningen i sammanfattningen, också när ett test fallit

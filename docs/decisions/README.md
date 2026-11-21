@@ -119,3 +119,4 @@ Regler för det här repot, utöver MADR:
 | 0101 | [Statussidan visar andelen känd inläsning](0101-statussidan-visar-kand-inlasning.md) | accepted |
 | 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |
 | 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted |
+| 0104 | [Webbplatsens skript kontrolleras med ESLint och prövas i jsdom mot ögonblicksbilden](0104-webbplatsens-skript-med-eslint-och-jsdom.md) | accepted |

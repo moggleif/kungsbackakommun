@@ -1757,6 +1757,34 @@ byggtid, och jämför varje fil i utkatalogen med
   [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-webbplatsen), och diffen
   följer med ändringen.
 
+## Webbplatsens skript
+
+Sidorna har tre små skript, `kalender.js`, `mal.js` och `perspektiv.js`
+i `webbplats/`, som bäddas in i sidan när den byggs. Hur och varför de
+kontrolleras står i
+[ADR-0104](decisions/0104-webbplatsens-skript-med-eslint-och-jsdom.md)
+(K83).
+
+- **ESLint** håller de hårda gränserna i "Ren kod – strikt" för skripten
+  och deras tester, med `eslint.config.mjs`, och JavaScripts vanliga
+  felkontroller. Ett skript räknas som Python: varje rad i en funktion,
+  också tomma och kommentarer. Funktionen som omsluter ett helt skript
+  räknas inte, som modulnivån i Python. `eslint.mal.config.mjs` lägger
+  målen ovanpå, som `mal.toml`. ESLints komplexitet räknar också `&&`,
+  `||` och `?:`, vilket ruffs inte gör, så skripten mäts något strängare.
+  Skriptens rubriker pekar ännu bara på Python-testerna, och
+  `perspektiv.js` säger att beteendet prövas för hand; rubriken bäddas in
+  i sidan och står i den låsta bilden, så den rättas när skripten ändras
+  nästa gång.
+- **Testerna** i `tests/js/` körs med Nodes testkörare. De läser en sida
+  ur ögonblicksbilden av webbplatsen (K78) i jsdom, kör skriptet så som
+  det står i `src/`, inte sidans inbäddade kopia, och klickar som en
+  läsare. Klockan är fast. Ett fall som bilden saknar, som ett bytt mål
+  eller ett fokusområde, ställs upp genom att sidan ändras före skriptet.
+- **Versionerna** står exakt i `package.json`, som CI installerar med
+  `npm install`. `package-lock.json` checkas inte in (ADR-0104). Paketet
+  som datarepona installerar påverkas inte.
+
 ## Tolkade figurer
 
 Hur och varför står i
