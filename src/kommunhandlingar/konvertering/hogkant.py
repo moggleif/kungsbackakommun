@@ -20,7 +20,8 @@ HOJD_MOT_BREDD = 2
 ORDLUCKA = 0.2
 STYCKESLUCKA = 2
 # Satta, inte uppmätta: i stickprovet för ADR-0103 var tecknens vridning
-# exakt och raderna utan spridning.
+# exakt och raderna utan spridning. VRIDNING jämförs med matrisens skala,
+# LINJE med teckenstorleken.
 VRIDNING = 0.01
 LINJE = 0.1
 
@@ -48,11 +49,16 @@ def rader(tecken: list[dict]) -> list[list[dict]]:
 
 def entydig(tecken: list[dict]) -> bool:
     """Texten på högkant läses rätt av `textlagret` (ADR-0103): varje tecken
-    är vridet en kvarts varv utan spegling, varje rad står på en linje, och
-    inga tecken i en rad ligger över varandra."""
+    är vridet en kvarts varv utan spegling, varje rad står på en linje och
+    läses åt ett håll, och inga tecken i en rad ligger över varandra."""
     if not all(kvarts_varv(c) for c in tecken):
         return False
-    return all(pa_en_linje(r) and utan_overlapp(r) for r in rader(tecken))
+    return all(entydig_rad(r) for r in rader(tecken))
+
+
+def entydig_rad(rad: list[dict]) -> bool:
+    en_riktning = len({uppat(c) for c in rad}) == 1
+    return en_riktning and pa_en_linje(rad) and utan_overlapp(rad)
 
 
 def kvarts_varv(tecken: dict) -> bool:
@@ -68,7 +74,7 @@ def pa_en_linje(rad: list[dict]) -> bool:
 def utan_overlapp(rad: list[dict]) -> bool:
     i_ordning = sorted(rad, key=lambda c: c["top"])
     return all(
-        fore["bottom"] - c["top"] <= min(hojd(fore), hojd(c)) / 2
+        fore["bottom"] - c["top"] < min(hojd(fore), hojd(c)) / 2
         for fore, c in pairwise(i_ordning)
     )
 

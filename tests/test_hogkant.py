@@ -69,6 +69,12 @@ class TestEntydig(unittest.TestCase):
         ]
         self.assertFalse(hogkant.entydig(speglade))
 
+    def test_tva_lasriktningar_pa_samma_linje(self):
+        """`2010` moturs och `345` medurs på samma linje läses baklänges."""
+        tecknen = [tecken(t, 40, 80 - 6 * i) for i, t in enumerate("2010")]
+        tecknen += [tecken(t, 40, 20 + 6 * i, uppat=False) for i, t in enumerate("345")]
+        self.assertFalse(hogkant.entydig(tecknen))
+
     def test_ingen_text_pa_hogkant(self):
         self.assertTrue(hogkant.entydig([]))
 

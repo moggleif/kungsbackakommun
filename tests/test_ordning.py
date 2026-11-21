@@ -26,6 +26,7 @@ def tecken(text: str, x0: float, bredd: float = 5.6, upright: bool = True) -> di
         "x0": x0,
         "x1": x0 + bredd,
         "top": 134,
+        "bottom": 140,
         "upright": upright,
     }
 
@@ -74,9 +75,12 @@ class TestOrdning(unittest.TestCase):
         n = vriden("N", 50)
         self.assertFalse(i_oordning(sida(*STOD, n), [(300, 120, 400, 150)]))
 
-    def test_hogkant_ovanpa_annan_text_raknas_inte(self):
-        """Tecknet på högkant utanför tabellerna läses inte i raden."""
-        self.assertFalse(i_oordning(sida(*STOD, vriden("N", 425.8)), []))
+    def test_hogkant_ovanpa_uppratt_text(self):
+        """En siffra på högkant ritad ovanpå en rad kan flytta talen i den."""
+        self.assertTrue(i_oordning(sida(*STOD, vriden("5", 425.8)), []))
+
+    def test_hogkant_bredvid_uppratt_text_raknas_inte(self):
+        self.assertFalse(i_oordning(sida(*STOD, vriden("5", 440)), []))
 
     def test_hogkant_som_inte_gar_att_lasa_entydigt(self):
         """Två årtal på högkant så tätt att de läses ihop till `22001101`."""

@@ -1,12 +1,18 @@
-"""Krav: K4, ADR-0036. Kod: src/kommunhandlingar/konvertering/mellanslag.py."""
+"""Krav: K4, ADR-0036, ADR-0103.
+Kod: src/kommunhandlingar/konvertering/mellanslag.py.
+"""
 
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 
 import pdfplumber
 
 from kommunhandlingar.konvertering.las_sida import textsida
-from kommunhandlingar.konvertering.mellanslag import mellanslag_i_siffra
+from kommunhandlingar.konvertering.mellanslag import (
+    mellanslag_i_siffra,
+    utan_mellanslag_i_tal,
+)
 
 FACIT = Path(__file__).parent / "fixtures" / "facit"
 
@@ -30,6 +36,19 @@ class TestInneI(unittest.TestCase):
 
     def test_annat_tecken_an_mellanslag_star_kvar(self):
         self.assertFalse(mellanslag_i_siffra(tecken("7", 307.0, 308.9), [FYRA]))
+
+
+class TestHogkant(unittest.TestCase):
+    def test_siffra_pa_hogkant_tar_inte_bort_mellanslaget(self):
+        """En `5` på högkant ritad över mellanrummet i `12 34` (ADR-0103)."""
+        tecknen = [
+            dict(tecken(" ", 307.0, 309.0), object_type="char", upright=True),
+            dict(tecken("5", 306.0, 312.0), object_type="char", upright=False),
+        ]
+        sida = SimpleNamespace(
+            chars=tecknen, filter=lambda villkor: list(filter(villkor, tecknen))
+        )
+        self.assertEqual(utan_mellanslag_i_tal(sida), tecknen)
 
 
 class TestSidan(unittest.TestCase):

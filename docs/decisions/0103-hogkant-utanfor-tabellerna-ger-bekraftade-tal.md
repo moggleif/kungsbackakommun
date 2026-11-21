@@ -48,18 +48,24 @@ entydigt:
 * varje rad på högkant står på en linje, så att två rader inte ligger
   närmare än en teckenstorlek och läses ihop. En rad med årtalen `2010`
   och `2011` sju punkter isär blir annars `22001101`;
-* inga tecken i en rad ligger mer än till hälften över varandra, som två
-  stämplar på samma ställe.
+* varje rad läses åt ett håll, inte moturs och medurs på samma linje;
+* inga tecken i en rad ligger till hälften eller mer över varandra, som
+  två stämplar på samma ställe;
+* inget tecken på högkant står ovanpå ett upprätt tecken. En `5` på
+  högkant över mellanrummet i `12 34` kan annars göra raden till
+  `1234`. Därför räknar inte heller mellanslagsregeln i
+  [ADR-0036](0036-mellanslag-inne-i-en-siffra-tas-bort.md) siffror på
+  högkant.
 
 Annars gör texten på högkant sidans tal obekräftade som förut. Inne i en
 tabell står tecknen kvar i cellerna, och där gör ett tecken på högkant
 sidans tal obekräftade som förut. Tabellerna är både de med linjer och
 de utan. Text ritad ovanpå annan upprätt text ger obekräftade tal som
 förut. Reglerna står i `konvertering/ordning.py` och
-`konvertering/hogkant.py`. Gränserna för vridning (1 %) och linje (en
-tiondel av teckenstorleken) är satta, inte uppmätta. I stickprovet var
-vridningen exakt och raderna utan spridning, utom på fyra sidor som
-fortsätter vara märkta.
+`konvertering/hogkant.py`. Gränserna för vridning (1 % av matrisens
+skala) och linje (en tiondel av teckenstorleken) är satta, inte
+uppmätta. I stickprovet var vridningen exakt och raderna utan spridning,
+utom på fyra sidor som fortsätter vara märkta.
 
 Poolens version höjs till 0.15.0, så att sidorna kommer med i
 omkonverteringen ([#84](https://github.com/moggleif/kommunhandlingar/issues/84)).
@@ -69,30 +75,35 @@ Granskade dokument konverteras inte om
 ### Consequences
 
 * Bra, eftersom ett stickprov på 169 märkta sidor ur 18 handlingar från
-  kungsbacka.se släpper 157 med den nya
+  kungsbacka.se släpper 154 med den nya
   regeln. Alla 18 hade samma sha256 som i poolen. De
-  157 sidorna hade text på högkant bara utanför tabellerna: axeltitlar,
+  154 sidorna hade text på högkant bara utanför tabellerna: axeltitlar,
   axlarnas årtal och åldrar, koordinater på kartor och en filrad i
   marginalen. Kontrollen mot den ritade sidan visar att talen står rätt,
   till exempel åldersaxeln 0–99, årtalen 2010–2032 och `6377000`.
-  Räknat på hela poolen blir det ungefär 7 100 sidor färre, från 11,0 %
+  Räknat på hela poolen blir det ungefär 6 900 sidor färre, från 11,0 %
   till cirka 8,5 %. Stickprovet tog bara levande dokument.
-* Bra, eftersom de tolv sidorna som inte går att läsa entydigt står kvar: text
+* Bra, eftersom de femton sidorna som inte går att läsa entydigt står kvar: text
   ritad ovanpå annan text, eller tecken på högkant i en tabell.
 * Dåligt, eftersom en siffra på högkant utanför tabellerna, som ett
   axelvärde, räknas som bekräftad, fast det är K41:s läsriktning som
   avgör den. Läsriktningen och entydigheten prövas i
   `tests/test_hogkant.py`, och läsningen stämde på varje släppt sida i
   stickprovet.
-* Neutralt, eftersom text som står snett eller upp och ned, som gatunamn
-  på en karta, märks lika lite som förut.
+* Dåligt, eftersom text som står snett eller upp och ned märks lika lite
+  som förut. pdfminer räknar den som upprätt, och den läses in i
+  flödet, så att `73` upp och ned blir `37`. Det fanns före det här
+  beslutet och följs upp i
+  [#401](https://github.com/moggleif/kungsbackakommun/issues/401).
 * Neutralt, eftersom ändringen syns först när ett dokument konverteras
   om.
 
 ### Confirmation
 
 `tests/test_hogkant.py` prövar entydigheten med påhittade tecken: täta
-rader, tecken över varandra och speglade tecken.
+rader, två läsriktningar på samma linje, tecken över varandra och
+speglade tecken. `tests/test_mellanslag.py` prövar att en siffra på
+högkant inte tar bort ett mellanslag.
 `tests/test_ordning.py` prövar regeln med påhittade tecken, och sidorna 1
 och 3 i `tests/fixtures/pdf/hogkant.pdf`: ett diarienummer på högkant i
 marginalen ger bekräftade tal, och en kolumnrubrik på högkant i en tabell
@@ -117,7 +128,7 @@ ger obekräftade.
 ### C – Regeln står kvar
 
 * Bra, eftersom ingenting ändras.
-* Dåligt, eftersom ungefär 7 100 sidor vars tal är rätt lästa inte kan
+* Dåligt, eftersom ungefär 6 900 sidor vars tal är rätt lästa inte kan
   användas som data.
 
 ## More Information
@@ -142,5 +153,8 @@ tal.
 Den oberoende granskningen (fas 6) hittade att K41 läser ihop rader på
 högkant som ligger tätt, och att speglade tecken, som inte heller är
 upprätta, läses i fel ordning. Regeln skärptes därför så att bara text som K41 läser
-entydigt räknas bort. Det kostade fyra sidor i stickprovet. Ett tal på
+entydigt räknas bort. En andra granskning hittade att en siffra på
+högkant ovanpå en rad kan flytta talen i den, och att två läsriktningar
+på samma linje läses baklänges; också de märks. Det kostade sju sidor i
+stickprovet. Ett tal på
 dem kan ha lästs ihop med ett annat, och de står därför kvar.

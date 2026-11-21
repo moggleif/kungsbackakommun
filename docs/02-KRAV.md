@@ -210,8 +210,10 @@ kunna läggas till utan kodändring.
   texten på högkant läses för sig enligt K41.
 
 - **Givet** ett textlager med text på högkant utanför tabellerna som
-  inte går att läsa entydigt: rader så tätt att de läses ihop, tecken
-  ovanpå varandra eller speglade tecken
+  inte går att läsa entydigt: rader så tätt att de läses ihop, två
+  läsriktningar på samma linje, tecken ovanpå varandra, tecken ovanpå
+  upprätt text, eller tecken som inte är vridna precis en kvarts varv,
+  som speglade tecken
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 

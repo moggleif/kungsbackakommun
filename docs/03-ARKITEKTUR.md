@@ -869,11 +869,13 @@ Text och tabeller läses med pdfplumber. OCR görs med Tesseract och svensk
 modell på sidor renderade med pypdfium2.
 
 Innan textlagret läses tas varje mellanslag bort som börjar inne i en
-siffra på samma rad och till mer än hälften täcks av den
+upprätt siffra på samma rad och till mer än hälften täcks av den
 ([ADR-0036](decisions/0036-mellanslag-inne-i-en-siffra-tas-bort.md)). Ett
 kalkylark lägger sådana mellanslag som utfyllnad i cellerna, och de
 delar annars talet: `4 76,7` i stället för `476,7`. Ett mellanslag som
-börjar före siffran skiljer den från texten framför och står kvar.
+börjar före siffran skiljer den från texten framför och står kvar. En
+siffra på högkant räknas inte, eftersom den läses för sig
+([ADR-0103](decisions/0103-hogkant-utanfor-tabellerna-ger-bekraftade-tal.md)).
 
 Text och tal märks var för sig. `kvalitet` och `kvalitet_per_sida` säger
 hur texten lästes; `tal_obekraftade` säger på vilka sidor talen inte är
@@ -961,10 +963,12 @@ nattkörningen checkar inte in något
   ordning ([ADR-0038](decisions/0038-text-i-oordning-ger-obekraftade-tal.md)).
   Tecken på högkant utanför tabellerna räknas inte, varken ensamma eller
   ovanpå annan text, när de går att läsa entydigt: varje tecken är vridet
-  en kvarts varv utan spegling (vridningen under 1 % av teckenstorleken),
-  varje rad på högkant står på en linje (spridningen i sidled högst en
-  tiondel av teckenstorleken), och inga tecken i en rad ligger mer än
-  till hälften över varandra. Annars gör de sidans tal obekräftade
+  en kvarts varv utan spegling (matrisens upprätta del under 1 % av dess
+  skala), varje rad på högkant står på en linje (spridningen i sidled
+  högst en tiondel av teckenstorleken) och läses åt ett håll, inga tecken
+  i en rad ligger till hälften eller mer över varandra, och inget tecken
+  på högkant står ovanpå ett upprätt tecken. Annars gör de sidans tal
+  obekräftade
   ([Text på högkant](#text-på-högkant),
   [ADR-0103](decisions/0103-hogkant-utanfor-tabellerna-ger-bekraftade-tal.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en

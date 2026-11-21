@@ -5,7 +5,8 @@ hälften täcks av den, som utfyllnaden i en cell ur ett kalkylark, tas
 bort innan sidan läses. Det sorteras efter siffran och delar annars talet
 där, så att `476,7` blir `4 76,7`
 (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet). Ett mellanslag som
-börjar före siffran skiljer den från texten framför och står kvar.
+börjar före siffran skiljer den från texten framför och står kvar. En
+siffra på högkant räknas inte: den läses för sig (K41, ADR-0103).
 """
 
 from collections import defaultdict
@@ -16,7 +17,7 @@ from pdfplumber.page import Page
 def utan_mellanslag_i_tal(sida: Page) -> Page:
     siffror = defaultdict(list)
     for c in sida.chars:
-        if c["text"].isdigit():
+        if c["text"].isdigit() and c["upright"]:
             siffror[round(c["top"])].append(c)
     return sida.filter(
         lambda o: (
