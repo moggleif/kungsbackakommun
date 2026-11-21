@@ -25,9 +25,6 @@ class TestLasOchSkriv(unittest.TestCase):
     def test_brodtext_med_egen_linje(self):
         self.assertEqual(frontmatter.brodtext(self.text), BRODTEXT)
 
-    def test_dela_ger_falt_och_brodtext(self):
-        self.assertEqual(frontmatter.dela(self.text), (FALT, BRODTEXT))
-
 
 class TestOtolkad(unittest.TestCase):
     def test_huvudet_som_det_star_ocksa_nar_det_inte_gar_att_lasa(self):
@@ -39,25 +36,22 @@ class TestOtolkad(unittest.TestCase):
             with self.subTest(text):
                 self.assertEqual(frontmatter.otolkad(text), ("", text))
 
-    def test_las_och_dela_stoppar_utan_front_matter(self):
-        for funktion in (frontmatter.las, frontmatter.dela):
-            with self.subTest(funktion.__name__):
-                self.assertRaises(IndexError, funktion, "Bara text\n")
+    def test_las_stoppar_utan_front_matter(self):
+        self.assertRaises(IndexError, frontmatter.las, "Bara text\n")
 
 
 class TestAndrad(unittest.TestCase):
-    def test_bara_de_nya_falten_andras(self):
-        text = frontmatter.skriv(FALT) + BRODTEXT
-        ny = frontmatter.andrad(text, {"arenden": ["KS-2025-1", "KS-2025-2"]})
+    def test_bara_faltets_rad_byts(self):
+        text = "\ufeff" + frontmatter.skriv(FALT) + BRODTEXT
+        ny = frontmatter.andrad(text, "arenden", ["KS-2025-1", "KS-2025-2"])
         vantad = text.replace(
             "\narenden: null\n", "\narenden: [KS-2025-1, KS-2025-2]\n"
         )
         self.assertEqual(ny, vantad)
 
-    def test_ordningen_i_filen_behalls(self):
-        text = "---\ntyp: protokoll\narenden: null\n---\n" + BRODTEXT
-        ny = frontmatter.andrad(text, {"arenden": []})
-        self.assertEqual(ny, "---\ntyp: protokoll\narenden: []\n---\n" + BRODTEXT)
+    def test_ett_falt_som_saknas_stoppar(self):
+        text = "---\ntyp: protokoll\n---\n" + BRODTEXT
+        self.assertRaises(KeyError, frontmatter.andrad, text, "arenden", [])
 
 
 class TestVarden(unittest.TestCase):

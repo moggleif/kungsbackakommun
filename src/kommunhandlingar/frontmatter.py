@@ -3,7 +3,9 @@ tests/test_frontmatter.py, tests/test_hamta.py och tests/test_webbplats.py.
 
 Front matter så som schemat i docs/03-ARKITEKTUR.md#front-matter skriver den:
 varje fält på en egen rad, i schemats ordning, listor inom hakparenteser.
-Bara här delas en `.md` i front matter och brödtext (#360).
+Bara här delas en `.md` i front matter och brödtext (#360): `las` och
+`brodtext` vid raderna `---`, `otolkad` utan att tolka fälten, som
+maskningen behöver också när de inte går att läsa.
 """
 
 from datetime import date
@@ -46,10 +48,6 @@ def brodtext(text: str) -> str:
     return text.split(GRANS, 2)[2]
 
 
-def dela(text: str) -> tuple[dict[str, str], str]:
-    return las(text), brodtext(text)
-
-
 def otolkad(text: str) -> tuple[str, str]:
     """Front matter som den står, och resten. Fälten tolkas inte, så det går
     också när de inte går att läsa. Huvudet slutar med första raden `---`
@@ -58,10 +56,10 @@ def otolkad(text: str) -> tuple[str, str]:
     return (huvud + grans, resten) if grans else ("", text)
 
 
-def andrad(text: str, nya: dict) -> str:
-    """Fälten i `nya` får nya värden; övriga fält och brödtexten står kvar."""
-    falt, kropp = dela(text)
-    return huvud(falt | nya) + kropp
+def andrad(text: str, namn: str, varde) -> str:
+    """Bara fältets rad byts; allt annat står som det stod."""
+    gammal = f"\n{namn}: {las(text)[namn]}\n"
+    return text.replace(gammal, f"\n{namn}: {varde_av(varde)}\n", 1)
 
 
 def lista(varde: str) -> list[str]:
@@ -76,13 +74,8 @@ def adresser(kalla_url: str) -> list[str]:
 
 
 def skriv(falt: dict) -> str:
-    return huvud({namn: falt[namn] for namn in FALT})
-
-
-def huvud(falt: dict) -> str:
-    """Front matter med fälten i den ordning de står i `falt`."""
-    rader = "".join(f"{namn}: {varde_av(varde)}\n" for namn, varde in falt.items())
-    return GRANS + rader + GRANS
+    rader = [f"{namn}: {varde_av(falt[namn])}" for namn in FALT]
+    return GRANS + "\n".join(rader) + "\n" + GRANS
 
 
 def varde_av(varde) -> str:

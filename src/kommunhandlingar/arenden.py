@@ -38,7 +38,7 @@ def fyll(data: Path) -> int:
         text = fil.read_text(encoding="utf-8")
         gammal = frontmatter.las(text)["arenden"]
         if (ny := ratt_varde(text)) != gammal:
-            skriv_md(fil, frontmatter.andrad(text, {"arenden": ny}))
+            skriv_md(fil, frontmatter.andrad(text, "arenden", ny))
             andrade += 1
     return andrade
 
