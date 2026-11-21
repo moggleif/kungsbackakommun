@@ -104,15 +104,17 @@ def textsida(sida: Page) -> Sida:
     """Text på högkant utan siffror ger obekräftade tal bara när sidan
     läses annorlunda utan den: tabellerna, talraderna eller texten
     (ADR-0103). Prövas bara på sidor med sådan text."""
-    last = textlagret(sida)
+    last = lasning(sida)
     if last.tal_obekraftade or all(c["upright"] for c in sida.chars):
         return last
-    utan = textlagret(hogkant.staende(sida))
+    utan = lasning(hogkant.staende(sida))
     andrar = replace(utan, text="") != replace(last, text="")
-    return replace(last, tal_obekraftade=andrar or not last.text.startswith(utan.text))
+    tillagt = last.text.removeprefix(utan.text)
+    lika = last.text.startswith(utan.text) and not any(t.isnumeric() for t in tillagt)
+    return replace(last, tal_obekraftade=andrar or not lika)
 
 
-def textlagret(sida: Page) -> Sida:
+def lasning(sida: Page) -> Sida:
     sida = utan_mellanslag_i_tal(sida)
     hittade, fallda = med_linjer(sida)
     rutor = [ruta for ruta, _, _ in hittade]

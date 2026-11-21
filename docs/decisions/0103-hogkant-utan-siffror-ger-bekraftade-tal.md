@@ -49,7 +49,7 @@ med textlager får obekräftade tal när något tecken på högkant
   likadant: sidans kvalitet (så att en talrad inte tappar märkningen
   `tabell-osaker`), tabellerna cell för cell, figuren, raderna som avgör
   om en tabell fortsätter på nästa sida, och texten fram till texten på
-  högkant. Ett ord på högkant intill en tabell utan linjer kan annars få
+  högkant, där det som följer inte har några siffror. Ett ord på högkant intill en tabell utan linjer kan annars få
   tabellen att tappa en rad i tysthet.
 
 Text ritad ovanpå annan upprätt text ger obekräftade tal som förut.

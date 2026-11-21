@@ -21,7 +21,7 @@ from kommunhandlingar.konvertering.tabeller import i_tabell
 def i_oordning(sida: Page, rutor: list[tuple]) -> bool:
     tecken = list(enumerate(c for c in sida.chars if not c["text"].isspace()))
     pa_hogkant = [c for _, c in tecken if not c["upright"]]
-    if any(c["text"].isdigit() or i_tabell(c, rutor) for c in pa_hogkant):
+    if any(c["text"].isnumeric() or i_tabell(c, rutor) for c in pa_hogkant):
         return True
     rader = defaultdict(list)
     for i, c in (t for t in tecken if t[1]["upright"]):

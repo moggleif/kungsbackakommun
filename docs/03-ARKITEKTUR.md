@@ -964,7 +964,7 @@ nattkörningen checkar inte in något
   på högkant läses en gång till utan den texten, och allt utom texten på
   högkant ska bli likadant: sidans kvalitet, tabellerna cell för cell,
   figuren, raderna för tabeller över flera sidor, och texten fram till
-  texten på högkant
+  texten på högkant, där det som följer inte har några siffror
   ([Text på högkant](#text-på-högkant),
   [ADR-0103](decisions/0103-hogkant-utan-siffror-ger-bekraftade-tal.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en

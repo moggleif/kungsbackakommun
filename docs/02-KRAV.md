@@ -210,7 +210,7 @@ kunna läggas till utan kodändring.
 
 - **Givet** ett textlager med en siffra på högkant var som helst, eller
   text på högkant som ändrar hur resten av sidan läses: dess kvalitet,
-  tabeller, talrader eller text
+  tabeller, talrader, figur, raderna kring tabellerna eller text
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 
