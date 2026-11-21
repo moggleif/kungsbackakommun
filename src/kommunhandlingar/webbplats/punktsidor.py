@@ -9,8 +9,8 @@ Sammanfattningen är tjänsteskrivelsens avsnitt om ärendet, som det står.
 import re
 
 from kommunhandlingar.diarienummer import MED_ETIKETT, normaliserat
+from kommunhandlingar.sidmarkor import sidorna
 from kommunhandlingar.webbplats.dagordning import Punkt, fogat
-from kommunhandlingar.webbplats.text import SIDA
 
 SAMMANFATTNING = re.compile(r"^Sammanfattning(?: av ärendet)?$")
 # Det som avslutar sammanfattningen: tjänsteskrivelsens rubriker efter den,
@@ -23,8 +23,7 @@ SLUT = re.compile(
 
 
 def sidor(text: str) -> dict[int, str]:
-    delar = SIDA.split(text)
-    return {int(nr): sida for nr, sida in zip(delar[1::2], delar[2::2], strict=True)}
+    return {int(nr): sida for nr, sida in sidorna(text).items()}
 
 
 def diarienummer(sida: str) -> list[str]:

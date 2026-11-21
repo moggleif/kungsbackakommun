@@ -326,6 +326,7 @@ src/kommunhandlingar/
   pool.py          poolens front matter, uppslagen på källnyckel och sökväg
   plats.py         sökvägen och namnet för ett nytt dokument (ADR-0003)
   skrivning.py     `.md` och tabellkatalog, tabellerna först och `.md` sist
+  sidmarkor.py     sidmarkören `<!-- sida N -->`: skrivs, läses och delar texten
   frontmatter.py   front matter läses, skrivs och ändras; bara här delas texten
                    och tolkas `null` och året
   paragrafer.py    ett protokoll delat per paragraf (K48), med paragrafinnehall.py
@@ -1483,6 +1484,8 @@ riktig Markdown: CommonMark med GFM:s tabeller och genomstrykning, och
 GitHubs formler med `$`. Efter front matter följer sidorna i ordning.
 Varje sida börjar med kommentaren `<!-- sida N -->`, så att en sida i
 `kvalitet_per_sida` eller `tal_obekraftade` går att hitta i texten.
+Markören räknas bara som en egen rad, och den skrivs och läses bara i
+`sidmarkor.py`.
 
 - **Texten** är textlagret med bevarad uppställning (pdfplumber,
   `layout=True`). Raderna skrivs utan indrag, men mellanrummen inne i

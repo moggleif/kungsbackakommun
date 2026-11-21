@@ -12,12 +12,12 @@ import re
 from pathlib import Path
 
 from kommunhandlingar import frontmatter
+from kommunhandlingar.konvertering.markdown import utan_escapning
+from kommunhandlingar.sidmarkor import SIDA, sidorna
 
 TOLKNING = "<!-- tolkning:"
 MARKERING = re.compile(r"<!-- tolkning: [^,\n]+, \d{4}-\d{2}-\d{2} -->")
-SIDA = re.compile(r"<!-- sida (\d+) -->")
 LANK = re.compile(r"\[[^\]]*\]\([^)]*\)")
-ESCAPAT = re.compile(r"\\([!-/:-@\[-`{-~])")
 SIFFRA = re.compile(r"\d")
 KOLUMN = re.compile(" {2,}")
 # Två siffergrupper som kan vara ett tal delat över en radbrytning eller
@@ -65,16 +65,11 @@ def antalfel(nr: str, sida: str, tolkade: list[str]) -> list[str]:
     return []
 
 
-def sidorna(md: str) -> dict[str, str]:
-    delar = SIDA.split(md)
-    return dict(zip(delar[1::2], delar[2::2], strict=True))
-
-
 def sidans_text(md: str, sida: int) -> str:
     """Sidans text i `.md` före tolkningen, utan länkarna till tabellerna
     och utan Markdowns escapning (ADR-0021), som den stod i PDF:en."""
     text = sidorna(frontmatter.efter_huvudet(md)).get(str(sida), "")
-    return ESCAPAT.sub(r"\1", LANK.sub("", text.split(TOLKNING)[0]))
+    return utan_escapning(LANK.sub("", text.split(TOLKNING)[0]))
 
 
 def talfel(fil: Path, md: Path, sida: int) -> list[str]:
