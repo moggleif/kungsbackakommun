@@ -1,0 +1,11 @@
+# Målen i "Ren kod – strikt" i AGENTS.md, för hand (K76):
+# ruff check --config mal.toml
+# CI håller de hårda gränserna i pyproject.toml.
+extend = "pyproject.toml"
+
+[lint.mccabe]
+max-complexity = 5
+
+[lint.pylint]
+max-args = 3
+max-nested-blocks = 2
