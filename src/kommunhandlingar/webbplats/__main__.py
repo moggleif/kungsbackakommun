@@ -14,11 +14,6 @@ from kommunhandlingar.webbplats import avvikelser
 from kommunhandlingar.webbplats.avvikelsesida import avvikelsesida
 from kommunhandlingar.webbplats.bygg import bygg
 
-ANVANDNING = (
-    "Användning: python -m kommunhandlingar.webbplats"
-    " <utkatalog> <repoadress> <avvikelsefil>"
-)
-
 
 def main(ut: Path, repo: str, avvikelsefil: Path) -> None:
     mall = bygg(Path.cwd(), ut, repo, datetime.now(UTC))
@@ -28,5 +23,8 @@ def main(ut: Path, repo: str, avvikelsefil: Path) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        sys.exit(ANVANDNING)
+        sys.exit(
+            "Användning: python -m kommunhandlingar.webbplats"
+            " <utkatalog> <repoadress> <avvikelsefil>"
+        )
     main(Path(sys.argv[1]), sys.argv[2], Path(sys.argv[3]))

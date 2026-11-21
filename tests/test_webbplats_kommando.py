@@ -25,6 +25,7 @@ class Webbplatskommandot(Katalogfall):
         self.enterContext(contextlib.chdir(self.rot))
 
     def test_importen_bygger_ingenting(self):
+        # Med testkörarens argv kunde den gamla modulen ha byggt.
         sys.modules.pop("kommunhandlingar.webbplats.__main__", None)
         with mock.patch.object(sys, "argv", ["webbplats"]):
             importlib.import_module("kommunhandlingar.webbplats.__main__")
@@ -35,7 +36,8 @@ class Webbplatskommandot(Katalogfall):
     def test_bygger_oversikten_och_avvikelserna_som_ett_datarepo_kor_det(self):
         kod, _ = kor_modulen("webbplats", "_site", REPO, "avvikelser.jsonl")
         self.assertIsNone(kod)
-        self.assertTrue((self.rot / "_site" / "index.html").is_file())
+        oversikten = (self.rot / "_site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn(REPO, oversikten)
         self.assertTrue((self.rot / "_site" / "avvikelser.html").is_file())
 
     def test_fel_antal_argument_ger_anvandningstexten(self):
