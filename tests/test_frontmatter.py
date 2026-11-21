@@ -29,6 +29,22 @@ class TestLasOchSkriv(unittest.TestCase):
         self.assertEqual(frontmatter.dela(self.text), (FALT, BRODTEXT))
 
 
+class TestOtolkad(unittest.TestCase):
+    def test_huvudet_som_det_star_ocksa_nar_det_inte_gar_att_lasa(self):
+        huvud = "---\ntitel:\ntyp: protokoll\n---\n"
+        self.assertEqual(frontmatter.otolkad(huvud + BRODTEXT), (huvud, BRODTEXT))
+
+    def test_utan_front_matter_ar_huvudet_tomt(self):
+        for text in ("Bara text\n", "---\ntyp: protokoll\nIngen avslutning\n"):
+            with self.subTest(text):
+                self.assertEqual(frontmatter.otolkad(text), ("", text))
+
+    def test_las_och_dela_stoppar_utan_front_matter(self):
+        for funktion in (frontmatter.las, frontmatter.dela):
+            with self.subTest(funktion.__name__):
+                self.assertRaises(IndexError, funktion, "Bara text\n")
+
+
 class TestAndrad(unittest.TestCase):
     def test_bara_de_nya_falten_andras(self):
         text = frontmatter.skriv(FALT) + BRODTEXT

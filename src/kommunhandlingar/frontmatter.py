@@ -37,17 +37,25 @@ FALT = (
 )
 
 
-def dela(text: str) -> tuple[dict[str, str], str]:
-    _, huvud, kropp = text.split(GRANS, 2)
-    return dict(rad.split(": ", 1) for rad in huvud.splitlines()), kropp
-
-
 def las(text: str) -> dict[str, str]:
-    return dela(text)[0]
+    rader = text.split(GRANS)[1]
+    return dict(rad.split(": ", 1) for rad in rader.splitlines())
 
 
 def brodtext(text: str) -> str:
-    return dela(text)[1]
+    return text.split(GRANS, 2)[2]
+
+
+def dela(text: str) -> tuple[dict[str, str], str]:
+    return las(text), brodtext(text)
+
+
+def otolkad(text: str) -> tuple[str, str]:
+    """Front matter som den står, och resten. Fälten tolkas inte, så det går
+    också när de inte går att läsa. Huvudet slutar med första raden `---`
+    som inte står först i texten; finns ingen är huvudet tomt."""
+    huvud, grans, resten = text.partition("\n" + GRANS)
+    return (huvud + grans, resten) if grans else ("", text)
 
 
 def andrad(text: str, nya: dict) -> str:

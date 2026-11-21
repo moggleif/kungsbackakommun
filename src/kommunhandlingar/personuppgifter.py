@@ -50,13 +50,9 @@ def utan_epost(text: str) -> str:
 
 
 def maskad_md(text: str) -> str:
-    """Brödtexten maskas; front matter rörs inte. En text vars front matter
-    inte går att läsa lämnas som den är, och datakontrollen säger varför."""
-    try:
-        falt, brodtext = frontmatter.dela(text)
-    except ValueError:
-        return text
-    return frontmatter.huvud(falt) + maska(brodtext)
+    """Brödtexten maskas; front matter rörs inte."""
+    huvud, brodtext = frontmatter.otolkad(text)
+    return huvud + maska(brodtext) if huvud else text
 
 
 def maskade_celler(text: str) -> list[list[str]] | None:
