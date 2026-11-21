@@ -1631,7 +1631,8 @@ poolen är värd att konvertera om (ADR-0019).
   textlagret med `pdftotext -layout`, och pdfplumber ska ge samma
   siffergrupper; där de skiljer sig avgör sidbilden. Tabellerna skrivs
   oberoende av konverteringen och kontrolleras mot sidbilden, rad för rad.
-  Sedan sparas måtten om.
+  Sedan sparas måtten om, och ögonblicksbilden skrivs om
+  ([Ögonblicksbilden av konverteringen](#ögonblicksbilden-av-konverteringen)).
 - **Facittabellerna** heter som poolens (`<sida>[-<sista sida>]-<nr>.csv`,
   sidorna i utdraget) och skrivs i samma CSV-format, men så som tabellen
   står på sidan: varje rad med sin hela etikett, också när etiketten
@@ -1688,6 +1689,30 @@ raden för den installerade versionen stämmer med en ny körning. Testet
 prövar också att varje tal i en facittabell står bland sidans `tal`, att
 facittabellernas rader har lika många fält, och att textlagret i utdragen inte
 har något som maskas enligt [Personuppgifter](#personuppgifter).
+
+## Ögonblicksbilden av konverteringen
+
+Facit räknar mått; ögonblicksbilden låser hela utdatan (K77). Testet
+`tests/test_ogonblicksbild.py` konverterar PDF-fixturerna i
+`tests/fixtures/pdf/` och facit-utdragen och jämför kvalitetsfälten
+(`kvalitetsfalt`), texten (`skrivning.kropp`) och varje CSV
+(`skrivning.tabellfiler`) med `tests/fixtures/ogonblicksbild/`, tecken
+för tecken.
+
+- **Formen** är poolens: `<namn>.md` och bredvid den `<namn>.tabeller/`,
+  skrivna med `skrivning.skriv`. Namnet är PDF:ens, och för ett
+  facit-utdrag katalogens. Front matter har bara kvalitetsfälten, utan
+  `pipeline`, vars versioner byts när ett verktyg uppdateras; fälten om
+  källan och hämtningen kommer inte från konverteringen.
+- **OCR-sidor** ligger utanför. Vad Tesseract läser beror på dess
+  version, så testet ersätter läsningen av en sida som går till OCR med
+  en fast text och kvaliteten `ocr`. Att sidan gick till OCR, och allt
+  på de andra sidorna, jämförs ändå.
+- **Ett dokument i bilden** som inte längre konverteras, till exempel när
+  ett facit-utdrag byter namn, får testet att falla.
+- **En avsiktlig ändring** av utdatan skriver om bilden med kommandot i
+  [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-konverteringen), och
+  diffen följer med ändringen.
 
 ## Tolkade figurer
 

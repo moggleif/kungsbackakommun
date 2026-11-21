@@ -2244,3 +2244,26 @@ Hur listan tas fram står under
 - **När** kontrollen körs utan `--mal`, som i CI
 - **Så** godkänns de som förut, och med `--mal` är slutkoden alltid 0,
   eftersom listan är till för att läsas.
+
+## K77 — En omkörning av konverteringen ändrar inte ett enda tecken
+
+Hur det prövas står under
+[Ögonblicksbilden av konverteringen](03-ARKITEKTUR.md#ögonblicksbilden-av-konverteringen).
+Issue [#351](https://github.com/moggleif/kungsbackakommun/issues/351).
+
+- **Givet** PDF-fixturerna och facit-utdragen och deras sparade
+  ögonblicksbild: kvalitetsfälten i front matter, `.md` och varje CSV
+- **När** en ändring av koden flyttar, lägger till eller tar bort ett
+  enda tecken i någon av dem, också ett blanktecken eller ordningen
+  mellan två tabeller
+- **Så** faller ett test och visar raden som skiljer.
+
+- **Givet** en sida som läses med OCR
+- **När** testet körs, med eller utan Tesseract och i vilken version som
+  helst
+- **Så** jämförs bara att sidan gick till OCR, inte vad Tesseract läste.
+
+- **Givet** en ändring som ska ändra utdatan
+- **När** någon skriver om ögonblicksbilden med kommandot i
+  [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-konverteringen)
+- **Så** syns varje ändrat tecken i diffen.
