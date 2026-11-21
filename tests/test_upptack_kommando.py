@@ -37,6 +37,7 @@ class Kommandofall(unittest.TestCase):
         (self.rot / "kommuner").mkdir(parents=True)
         self.kommunfil = self.rot / "kommuner" / "exempelby.toml"
         text = EXEMPELBY.read_text("utf-8").replace("\n[[kalla.monster]]", WAYBACK, 1)
+        self.assertIn(WAYBACK, text, "exempelby.toml har ändrat form")
         self.kommunfil.write_text(text, "utf-8")
         shutil.copy(REPO / "hamtning.toml", self.rot)
         self.arbete = Path(katalog.name) / "arbete"
@@ -64,15 +65,13 @@ class TestListorna(Kommandofall):
 
     def test_arkivet_skriver_sin_lista_och_noteringarna(self):
         utskrift = self.kor(arkivet(), "--arkiv")
-        self.assertEqual(len(self.nycklar(arkiv=True)), 2)
+        self.assertEqual(self.nycklar(arkiv=True), ["a2", "a1"])
         self.assertFalse(lista(self.arbete, "exempelby", False).exists())
         notering = "Arkivet: arkivets lista för https://exempelby.se/fsn: anslutning"
         self.assertIn(notering, utskrift.splitlines())
 
 
 class TestSlutkoderna(Kommandofall):
-    """ADR-0061: nattkörningen går vidare vid kod 3 och stoppar vid andra."""
-
     def kor_modulen(self, klient, arbete: Path) -> tuple[object, str]:
         argv = ["upptack", str(self.kommunfil), str(arbete)]
         with (
@@ -91,9 +90,11 @@ class TestSlutkoderna(Kommandofall):
         kod, utskrift = self.kor_modulen(Klient({}), self.arbete)
         self.assertEqual(kod, upptack.KALLAN_STOPPADE)
         self.assertEqual(utskrift, "Stoppad: https://exempelby.se/bun: http-404\n")
+        self.assertFalse(self.arbete.exists())
 
     def test_ett_konfigurationsfel_ger_annan_felkod(self):
-        kod, utskrift = self.kor_modulen(Klient(LEVANDE), self.rot / "arbete")
+        kod, utskrift = self.kor_modulen(Klient({}), self.rot / "arbete")
+        self.assertNotEqual(kod, upptack.KALLAN_STOPPADE)
         self.assertRegex(str(kod), r"^Stoppad: arbetskatalogen .* ligger i repot$")
         self.assertEqual(utskrift, "")
 
