@@ -73,7 +73,7 @@ def sidorna(md: str) -> dict[str, str]:
 def sidans_text(md: str, sida: int) -> str:
     """Sidans text i `.md` före tolkningen, utan länkarna till tabellerna
     och utan Markdowns escapning (ADR-0021), som den stod i PDF:en."""
-    text = sidorna(frontmatter.otolkad(md)[1]).get(str(sida), "")
+    text = sidorna(frontmatter.efter_huvudet(md)).get(str(sida), "")
     return ESCAPAT.sub(r"\1", LANK.sub("", text.split(TOLKNING)[0]))
 
 

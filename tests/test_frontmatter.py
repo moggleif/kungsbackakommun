@@ -36,6 +36,11 @@ class TestOtolkad(unittest.TestCase):
             with self.subTest(text):
                 self.assertEqual(frontmatter.otolkad(text), ("", text))
 
+    def test_efter_huvudet_utan_front_matter_ar_resten(self):
+        text = "<!-- sida 1 -->\nA\n---\n<!-- sida 2 -->\nB\n---\nC\n"
+        self.assertEqual(frontmatter.efter_huvudet(text), "C\n")
+        self.assertEqual(frontmatter.efter_huvudet("Bara text\n"), "Bara text\n")
+
     def test_las_stoppar_utan_front_matter(self):
         self.assertRaises(IndexError, frontmatter.las, "Bara text\n")
 
@@ -43,7 +48,7 @@ class TestOtolkad(unittest.TestCase):
 class TestAndrad(unittest.TestCase):
     def test_bara_faltets_rad_byts(self):
         text = "\ufeff" + frontmatter.skriv(FALT) + BRODTEXT
-        ny = frontmatter.andrad(text, "arenden", ["KS-2025-1", "KS-2025-2"])
+        ny = frontmatter.andrad(text, "arenden", "[KS-2025-1, KS-2025-2]")
         vantad = text.replace(
             "\narenden: null\n", "\narenden: [KS-2025-1, KS-2025-2]\n"
         )
@@ -51,7 +56,7 @@ class TestAndrad(unittest.TestCase):
 
     def test_ett_falt_som_saknas_stoppar(self):
         text = "---\ntyp: protokoll\n---\n" + BRODTEXT
-        self.assertRaises(KeyError, frontmatter.andrad, text, "arenden", [])
+        self.assertRaises(KeyError, frontmatter.andrad, text, "arenden", "[]")
 
 
 class TestVarden(unittest.TestCase):
