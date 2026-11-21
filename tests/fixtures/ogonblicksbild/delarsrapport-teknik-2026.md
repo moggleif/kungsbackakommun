@@ -1,3 +1,12 @@
+---
+sidor: 2
+kvalitet: full
+fel: null
+kvalitet_per_sida: [ok, ok]
+tal_obekraftade: []
+figurer: []
+tolkade: []
+---
 
 <!-- sida 1 -->
 

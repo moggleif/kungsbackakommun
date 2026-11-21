@@ -1,3 +1,12 @@
+---
+sidor: 4
+kvalitet: ocr
+fel: null
+kvalitet_per_sida: [ok, ocr, ok, tabell-osaker]
+tal_obekraftade: [2]
+figurer: []
+tolkade: []
+---
 
 <!-- sida 1 -->
 

@@ -157,7 +157,7 @@ Hela konverteringens utdata för fixturerna är låst i
 skrivs bilden om, och diffen granskas som en del av ändringen:
 
 ```sh
-python3 -m tests.test_ogonblicksbild --skriv-om
+python3 -m tests.test_ogonblicksbild --spara
 ```
 
 Hur jämförelsen görs står under "Ögonblicksbilden av konverteringen" i

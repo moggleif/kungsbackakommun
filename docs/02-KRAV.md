@@ -2252,7 +2252,7 @@ Hur det prövas står under
 Issue [#351](https://github.com/moggleif/kungsbackakommun/issues/351).
 
 - **Givet** PDF-fixturerna och facit-utdragen och deras sparade
-  ögonblicksbild, `.md` och varje CSV
+  ögonblicksbild: kvalitetsfälten i front matter, `.md` och varje CSV
 - **När** en ändring av koden flyttar, lägger till eller tar bort ett
   enda tecken i någon av dem, också ett blanktecken eller ordningen
   mellan två tabeller

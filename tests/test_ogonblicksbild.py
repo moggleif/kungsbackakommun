@@ -1,10 +1,11 @@
 """Krav: K77. Kod: src/kommunhandlingar/konvertering/ och skrivning.py.
 
-PDF-fixturerna och facit-utdragen konverteras, och `.md` och varje CSV
-jämförs tecken för tecken med ögonblicksbilden i
-tests/fixtures/ogonblicksbild/. En sida som går till OCR läses inte av
-Tesseract, vars version styr texten, utan får en fast text. Bilden skrivs
-om med `python3 -m tests.test_ogonblicksbild --skriv-om`.
+PDF-fixturerna och facit-utdragen konverteras, och `.md`, med
+kvalitetsfälten utom `pipeline` som front matter, och varje CSV jämförs
+tecken för tecken med ögonblicksbilden i tests/fixtures/ogonblicksbild/.
+En sida som går till OCR läses inte av Tesseract, vars version styr texten
+och verktygsversionerna, utan får en fast text. Bilden skrivs om med
+`python3 -m tests.test_ogonblicksbild --spara`.
 """
 
 import sys
@@ -12,13 +13,14 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from kommunhandlingar import skrivning
-from kommunhandlingar.konvertering.dokument import konvertera
+from kommunhandlingar import frontmatter, skrivning
+from kommunhandlingar.konvertering.dokument import Resultat, konvertera, kvalitetsfalt
 from kommunhandlingar.konvertering.las_sida import Sida
 
 FIXTURER = Path(__file__).parent / "fixtures"
 BILD = FIXTURER / "ogonblicksbild"
 PDF = ["sidor", "delade", "rutor", "skarvar", "spalter", "hogkant", "kort"]
+VERSIONER = "kommunhandlingar.konvertering.dokument.versioner"
 OCR_SIDA = Sida("ocr", True, "OCR-sidan ligger utanför ögonblicksbilden.")
 
 
@@ -31,9 +33,19 @@ def pdfer() -> dict[str, Path]:
 def konverterad(namn: str, pdf: Path) -> tuple[str, dict[str, str]]:
     ersatt = "kommunhandlingar.konvertering.las_sida.ocr_sida"
     with mock.patch(ersatt, return_value=OCR_SIDA):
-        sidor = konvertera(pdf).sidor
+        resultat = konvertera(pdf)
     md = BILD / f"{namn}.md"
-    return skrivning.kropp(md, sidor), skrivning.tabellfiler(sidor or [])
+    text = kvalitet(resultat) + skrivning.kropp(md, resultat.sidor)
+    return text, skrivning.tabellfiler(resultat.sidor)
+
+
+def kvalitet(resultat: Resultat) -> str:
+    """Kvalitetsfälten som front matter, utan `pipeline` och dess versioner."""
+    with mock.patch(VERSIONER, return_value=[]):
+        falt = kvalitetsfalt("", resultat)
+    del falt["pipeline"]
+    rader = [f"{namn}: {frontmatter.varde_av(v)}" for namn, v in falt.items()]
+    return "---\n" + "\n".join(rader) + "\n---\n"
 
 
 def sparad(namn: str) -> tuple[str, dict[str, str]]:
@@ -54,9 +66,9 @@ class Ogonblicksbild(unittest.TestCase):
         for namn, pdf in pdfer().items():
             self.jamfor(namn, pdf)
 
-    def test_ocr_sidorna_ar_med_som_sidor(self):
-        kropp, _ = sparad("sidor")
-        self.assertIn(OCR_SIDA.text, kropp)
+    def test_bilden_har_inga_kvarlamnade_dokument(self):
+        sparade = sorted(md.stem for md in BILD.glob("*.md"))
+        self.assertEqual(sparade, sorted(pdfer()))
 
     def jamfor(self, namn: str, pdf: Path) -> None:
         kropp, tabeller = konverterad(namn, pdf)
@@ -69,14 +81,14 @@ class Ogonblicksbild(unittest.TestCase):
                 self.assertEqual(innehall, sparade.get(fil))
 
 
-def skriv_om() -> None:
+def spara() -> None:
     for namn, pdf in pdfer().items():
         kropp, tabeller = konverterad(namn, pdf)
         skrivning.skriv(BILD / f"{namn}.md", kropp, tabeller)
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] == ["--skriv-om"]:
-        skriv_om()
+    if sys.argv[1:] == ["--spara"]:
+        spara()
     else:
         unittest.main()

@@ -1,3 +1,12 @@
+---
+sidor: 17
+kvalitet: ocr
+fel: null
+kvalitet_per_sida: [ok, ok, ok, tom, ocr, ocr, ocr, ok, ocr, tom, ocr, ok, tabell-osaker, ok, tabell-osaker, ok, ok]
+tal_obekraftade: [5, 6, 7, 9, 11]
+figurer: [17]
+tolkade: []
+---
 
 <!-- sida 1 -->
 

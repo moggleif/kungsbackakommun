@@ -1,3 +1,12 @@
+---
+sidor: 10
+kvalitet: text-utan-tabeller
+fel: null
+kvalitet_per_sida: [ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker]
+tal_obekraftade: []
+figurer: []
+tolkade: []
+---
 
 <!-- sida 1 -->
 

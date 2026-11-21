@@ -1,3 +1,12 @@
+---
+sidor: 1
+kvalitet: text-utan-tabeller
+fel: null
+kvalitet_per_sida: [tabell-osaker]
+tal_obekraftade: []
+figurer: []
+tolkade: []
+---
 
 <!-- sida 1 -->
 
