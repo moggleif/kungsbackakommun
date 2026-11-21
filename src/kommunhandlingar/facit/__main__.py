@@ -1,4 +1,5 @@
-"""Krav: K20 i docs/02-KRAV.md, ADR-0025. Test: tests/test_facit.py.
+"""Krav: K20 och K81 i docs/02-KRAV.md, ADR-0025.
+Test: tests/test_facit.py och tests/test_facit_kommando.py.
 
 `python -m kommunhandlingar.facit [--spara]` konverterar urvalet och skriver
 måtten per dokument, med en not per avvikelse, och totalt; med `--spara`

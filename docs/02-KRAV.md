@@ -2353,3 +2353,44 @@ Issue [#354](https://github.com/moggleif/kungsbackakommun/issues/354).
 - **Givet** en arbetskatalog i repot
 - **När** kommandot körs
 - **Så** stoppas det med "Stoppad: " och felet, och en annan felkod än 3.
+
+## K81 — Facit, figurtolkningen och poolens kommandon prövas genom sin ingång
+
+Kommandona `facit`, `tolkning`, `kand_inlasning`, `arenden` och
+`maska_poolen` prövas i `tests/test_facit_kommando.py`,
+`tests/test_tolkning_kommando.py` och `tests/test_poolkommandon.py`, utan
+nät och i temporära kataloger.
+Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
+
+- **Givet** ett urval med ett dokument och en `matt.csv` med en äldre rad
+- **När** `python -m kommunhandlingar.facit --spara` körs
+- **Så** står måtten för dokumentet och totalt på standard ut, och raden
+  för poolens version läggs till i `matt.csv` medan den äldre står kvar
+  (K20).
+
+- **Givet** `--sidor 3,5` eller `--sidor 0` till `tolkning rendera`
+- **När** argumenten tolkas
+- **Så** blir det sidorna 3 och 5, respektive ett fel om att sidorna
+  räknas från 1.
+
+- **Givet** en pool med ett dokument som har otolkade figurer
+- **När** `python -m kommunhandlingar.tolkning lista` körs
+- **Så** skrivs dokumentet och de otolkade sidorna (K15).
+
+- **Givet** ett original som har ändrats eller inte går att hämta
+- **När** `python -m kommunhandlingar.tolkning rendera` körs
+- **Så** stoppas det med "Stoppad: " och felet.
+
+- **Givet** en pool med två kommuner
+- **När** `python -m kommunhandlingar.kand_inlasning` körs
+- **Så** skrivs en rad per kommun, i namnordning (K73).
+
+- **Givet** ett protokoll med ett diarienummer som saknas i `arenden` och
+  ett personnummer i texten
+- **När** `arenden` och sedan `maska_poolen` körs
+- **Så** skriver vart och ett att ett dokument ändrades (K48, K17).
+
+- **Givet** fel antal argument till `kand_inlasning`, `arenden` eller
+  `maska_poolen`
+- **När** kommandot körs
+- **Så** stoppas det med kommandots användningstext.

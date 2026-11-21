@@ -1,4 +1,5 @@
-"""Krav: K17 i docs/02-KRAV.md, ADR-0022. Test: tests/test_maska_poolen.py.
+"""Krav: K17 och K81 i docs/02-KRAV.md, ADR-0022.
+Test: tests/test_maska_poolen.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.maska_poolen <data>` maskar personuppgifterna
 i text och tabeller som en äldre version skrivit, utan att hämta PDF:en.
