@@ -1,4 +1,4 @@
-"""Krav: K79 i docs/02-KRAV.md, med K11, K16, K53 och ADR-0088.
+"""Krav: K79 i docs/02-KRAV.md, med K8, K11, K53 och ADR-0088.
 Kod: src/kommunhandlingar/hamta.py.
 
 Steg 2:s kommando som nattkörningen anropar, i en temporär arbetskatalog
@@ -8,6 +8,7 @@ hoppas över, eftersom fixturen har ett textlager.
 
 import argparse
 import contextlib
+import csv
 import io
 import runpy
 import shutil
@@ -23,11 +24,13 @@ from unittest import mock
 from kommunhandlingar import hamta, konfiguration, provade
 from kommunhandlingar.kandidat import lista
 from kommunhandlingar.upptack import skriv
+from tests.test_granssnitt import tolkat
 from tests.test_hamta import TID, Klient, kandidat
 
 REPO = Path(__file__).parent.parent
 EXEMPELBY = Path(__file__).parent / "fixtures" / "exempelby.toml"
 TYPER = ("protokoll", "kallelse", "handlingar")
+DEL = 15  # minuter
 KANDIDATER = [kandidat(f"s:{n}", f"u{n}", typ) for n, typ in enumerate(TYPER, 1)]
 
 
@@ -46,9 +49,7 @@ class Kommandofall(unittest.TestCase):
         self.klient.filer = {k.url: "kort.pdf" for k in KANDIDATER}
 
     def argument(self, *flaggor: str) -> argparse.Namespace:
-        rader = [str(self.kommunfil), str(self.arbete), *flaggor]
-        with mock.patch.object(sys, "argv", ["hamta", *rader]):
-            return hamta.argument()
+        return tolkat(hamta, str(self.kommunfil), str(self.arbete), *flaggor)
 
     def kor(self, *flaggor: str, klocka=lambda: TID) -> tuple[int, str]:
         arkiv = "--arkiv" in flaggor
@@ -64,8 +65,8 @@ class Kommandofall(unittest.TestCase):
         return kod, utskrift.getvalue()
 
     def efter_forsta(self) -> datetime:
-        """Klockan passerar delens 15 minuter när det första dokumentet hämtats."""
-        return TID + timedelta(minutes=20 if self.klient.anrop else 0)
+        """Klockan passerar delens minuter när det första dokumentet hämtats."""
+        return TID + timedelta(minutes=DEL + 5 if self.klient.anrop else 0)
 
     def logg(self) -> Path:
         return self.rot / "versioner" / "exempelby.csv"
@@ -75,8 +76,9 @@ class TestKommandot(Kommandofall):
     def test_utfallet_skrivs_ut_och_versionsloggen_far_raderna(self):
         kod, utskrift = self.kor()
         self.assertEqual((kod, utskrift), (0, "3 konverterad\n"))
-        rader = self.logg().read_text(encoding="utf-8").splitlines()
-        self.assertEqual([r.split(",")[4] for r in rader[1:]], ["s:1", "s:2", "s:3"])
+        with self.logg().open(encoding="utf-8") as fil:
+            nycklar = [rad["kallnyckel"] for rad in csv.DictReader(fil)]
+        self.assertEqual(nycklar, ["s:1", "s:2", "s:3"])
 
     def test_arkivet_skriver_ingen_versionslogg(self):
         kod, utskrift = self.kor("--arkiv")
@@ -86,13 +88,13 @@ class TestKommandot(Kommandofall):
 
 class TestDelar(Kommandofall):
     def test_en_del_skriver_de_provade_och_nasta_tar_inte_om_dem(self):
-        kod, utskrift = self.kor("--del", "15", klocka=self.efter_forsta)
+        kod, utskrift = self.kor("--del", str(DEL), klocka=self.efter_forsta)
         self.assertEqual(kod, hamta.MER_I_NASTA_DEL)
         self.assertEqual(utskrift, "1 konverterad\n2 väntar på nästa körning\n")
         provfil = provade.fil(lista(self.arbete, "exempelby", False))
         self.assertEqual(provfil.read_text(encoding="utf-8"), "s:1\n")
         self.klient.anrop.clear()
-        self.assertEqual(self.kor("--del", "15")[0], 0)
+        self.assertEqual(self.kor("--del", str(DEL))[0], 0)
         self.assertEqual(self.klient.anrop, ["u2", "u3"])
         self.assertEqual(provfil.read_text(encoding="utf-8"), "s:1\ns:2\ns:3\n")
 
@@ -117,10 +119,11 @@ class TestKonfigurationsfel(Kommandofall):
         with (
             warnings.catch_warnings(),
             mock.patch.object(sys, "argv", argv),
-            mock.patch("kommunhandlingar.konvertering.ocr.kontrollera"),
+            mock.patch.object(hamta.ocr, "kontrollera"),
             self.assertRaises(SystemExit) as stopp,
         ):
-            warnings.simplefilter("ignore", RuntimeWarning)  # hamta är redan importerad
+            # runpy varnar när modulen redan är importerad.
+            warnings.simplefilter("ignore", RuntimeWarning)
             runpy.run_module("kommunhandlingar.hamta", run_name="__main__")
         self.assertRegex(str(stopp.exception.code), r"^Stoppad: .*okant")
 

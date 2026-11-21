@@ -2306,13 +2306,13 @@ och klocka. Issue
   kandidater väntar inom budgeten
 - **När** delen slutar
 - **Så** är slutkoden 4, de provade kandidaternas källnycklar står i
-  `.provade`-filen, och nästa del tar bara de som väntar (K11, ADR-0088);
-  annars är slutkoden 0.
+  `.provade`-filen, och nästa del tar bara de som väntar (K11, ADR-0088).
+  När inga kandidater väntar är slutkoden 0.
 
 - **Givet** `omkonvertera` i kommunfilen
-- **När** steg 2 körs med eller utan `--utan-omkonvertering`
-- **Så** konverteras poolen om bara när kommunfilen säger det och flaggan
-  saknas.
+- **När** steg 2 startas med eller utan `--utan-omkonvertering`
+- **Så** har steg 2 omkonverteringen påslagen bara när kommunfilen
+  säger det och flaggan saknas (K8, K53).
 
 - **Givet** en kommunfil som inte följer schemat
 - **När** kommandot körs
