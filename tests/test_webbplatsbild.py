@@ -47,7 +47,7 @@ class Webbplatsbild(unittest.TestCase):
             bygg_webbplatsen(Path(tmp))
             byggda = filer(Path(tmp))
         sparade = filer(BILD)
-        self.assertEqual(sorted(byggda), sorted(sparade))
+        self.assertEqual(list(byggda), list(sparade))
         for namn, text in byggda.items():
             with self.subTest(namn):
                 self.assertEqual(text, sparade[namn])

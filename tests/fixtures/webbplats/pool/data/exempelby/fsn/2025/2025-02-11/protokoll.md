@@ -6,7 +6,7 @@ lopnr: null
 typ: protokoll
 namn: null
 kallnyckel: sitevision:18.a6
-tidigare_kallnycklar: []
+tidigare_kallnycklar: [sitevision:18.gammal]
 arenden: null
 kalla_url: https://exempelby.se/download/18.a6/1/protokoll.pdf
 sha256: 3f9aa6
@@ -19,9 +19,9 @@ kvalitet: full
 fel: null
 kvalitet_per_sida: [ok, ok]
 tal_obekraftade: []
-figurer: null
-tolkade: null
-granskad: null
+figurer: [2]
+tolkade: [2]
+granskad: 2026-10-23
 ---
 
 <!-- sida 1 -->

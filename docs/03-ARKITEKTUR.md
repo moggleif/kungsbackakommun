@@ -1726,12 +1726,16 @@ byggtid, och jämför varje fil i utkatalogen med
 
 - **Poolen** är påhittad och liten: Exempelby med en föregångare,
   sammanträdessidor från 2024, kallelse, handlingar och protokoll med
-  paragrafer, en tabell, ett namngivet dokument i ett projekt och några
-  rader i var och en av `kalender/`, `mal/`, `uppfoljningar/`, `initiativ/`,
-  `detaljplaner/` och `projekt/`, och en avvikelse. Den täcker varje
-  sidbyggare, men inte varje gren.
+  paragrafer, en tabell, ett dokument som inte gick att hämta, ett med
+  tolkade figurer och granskning, ett namngivet dokument i ett projekt,
+  några rader i `kalender/`, `mal/`, `uppfoljningar/` och `projekt/` och
+  i varje slags spår, och en avvikelse. Den täcker inte varje gren.
+- **En kommun**, som webbplatserna i drift: översikten är `index.html`.
+  Startsidan för flera kommuner ligger utanför bilden och prövas i
+  `tests/test_webbplats.py`.
 - **Hela filerna** sparas, inte kontrollsummor, så att diffen visar vad
-  som ändrats. Bilden är ett par hundra kB.
+  som ändrats. Bilden är ett halvt MB. En sida med lång rad, som
+  kalendern, visar raden i sin helhet.
 - **Bygget beror inte på** var poolen ligger, klockan eller
   `PYTHONHASHSEED`; byggtiden är testets. En fil som tillkommer eller
   försvinner får testet att falla.

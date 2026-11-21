@@ -2275,12 +2275,12 @@ Hur det prövas står under
 Issue [#352](https://github.com/moggleif/kungsbackakommun/issues/352).
 
 - **Givet** en liten påhittad pool med dokument, kalender, mål,
-  uppföljningar, två slags spår, projekt och avvikelser, och webbplatsen
+  uppföljningar, varje slags spår, projekt och avvikelser, och webbplatsen
   byggd ur den med en fast byggtid och sparad som en ögonblicksbild
 - **När** en ändring av koden flyttar, lägger till eller tar bort ett
   enda tecken i någon fil som bygget skriver, eller en fil tillkommer
   eller försvinner
-- **Så** faller ett test och visar filen och raden som skiljer.
+- **Så** faller ett test och visar filen som skiljer och var.
 
 - **Givet** en ändring som bara flyttar kod
 - **När** testet körs
