@@ -117,3 +117,4 @@ Regler för det här repot, utöver MADR:
 | 0099 | [Inskannade bilder märks som bild, bildytor maskas, och vridna sidor vänds](0099-inskannade-bilder-markas-och-vridna-sidor-vands.md) | accepted (0100 läser säkra rader före bild, och en sida som inte är bild eller tom blir `ointressant`) |
 | 0100 | [Säkra rader läses, och en sida utan text att lagra märks `ointressant`](0100-sakra-rader-lases-och-resten-ar-ointressant.md) | accepted |
 | 0101 | [Statussidan visar andelen känd inläsning](0101-statussidan-visar-kand-inlasning.md) | accepted |
+| 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |

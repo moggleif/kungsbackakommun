@@ -38,6 +38,10 @@ def fel_i(data: Path) -> list[str]:
     filer = [fil for fil in sorted(data.rglob("*")) if fil.is_file()]
     with Pool() as pool:
         fel = pool.map(partial(fel_i_fil, data), filer, chunksize=64)
+        # Arbetarna avslutas själva i stället för att stoppas, så att
+        # täckningsmätningen hinner spara deras del (K75).
+        pool.close()
+        pool.join()
     return [rad for filens in fel for rad in filens]
 
 
