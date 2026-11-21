@@ -26,7 +26,7 @@ def brott_i_fil(fil: Path, granser: Granser = HARDA) -> list[tuple[int, str]]:
     text = fil.read_text(encoding="utf-8")
     rader = text.split("\n")
     antal = text.count("\n")
-    fynd = [(antal, f"{fil}: har {antal} rader")] if antal > granser.fil else []
+    fynd = [(antal, f"{fil}: över {granser.fil} rader")] if antal > granser.fil else []
     for nod in ast.walk(ast.parse(text)):
         if not isinstance(nod, ast.FunctionDef | ast.AsyncFunctionDef):
             continue
@@ -44,7 +44,7 @@ def main(argv: list[str]) -> int:
     granser = MAL if "--mal" in argv else HARDA
     fynd = [brott for fil in pythonfiler() for brott in brott_i_fil(fil, granser)]
     if granser is MAL:
-        print("\n".join(text for _, text in sorted(fynd, key=lambda f: -f[0])))
+        print("\n".join(text for _, text in sorted(fynd, key=lambda f: (-f[0], f[1]))))
         return 0
     print("\n".join(text for _, text in fynd) or "Inga brott mot storleksgränserna.")
     return 1 if fynd else 0

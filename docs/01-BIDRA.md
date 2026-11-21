@@ -76,8 +76,10 @@ först; det andra parametrar, nästling och komplexitet över målen, med
 ruffs inställningar i `mal.toml` ovanpå `pyproject.toml`. Ett undantag
 (se [Undantag](#undantag)) räknas som mot de hårda gränserna. Båda är
 till för att läsas: `--mal` har alltid slutkoden 0, och ruff ger 1 så
-länge något ligger över. Antalet före och efter en refaktorisering är
-antalet rader i listan.
+länge något ligger över. Kommandona körs från repots rot. Antalet före
+och efter en refaktorisering är antalet rader i den första listan och
+summan i ruffs "Found N errors". Båda räknar också `tests/`, som den
+hårda kontrollen.
 
 ## Webbplatsen
 
