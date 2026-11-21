@@ -203,9 +203,9 @@ def behall(steg: Steg2, dokument: Dokument) -> str:
 
 def andra_falt(steg: Steg2, sokvag: PurePosixPath, nya: dict) -> None:
     md = steg.data / sokvag
-    _, huvud, kropp = md.read_text(encoding="utf-8").split("---\n", 2)
-    falt = frontmatter.las(f"---\n{huvud}---\n") | nya
-    text = frontmatter.skriv(falt) + kropp
+    gammal = md.read_text(encoding="utf-8")
+    falt = frontmatter.las(gammal) | nya
+    text = frontmatter.skriv(falt) + frontmatter.brodtext(gammal)
     with utan_avbrott():
         skrivning.skriv_md(md, text)
     steg.pool.satt(sokvag, frontmatter.las(text))

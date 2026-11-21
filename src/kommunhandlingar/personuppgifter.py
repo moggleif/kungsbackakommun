@@ -10,6 +10,8 @@ import csv
 import io
 import re
 
+from kommunhandlingar import frontmatter
+
 # Tio siffror utan bindestreck finns bland beloppen och räknas inte.
 PERSONNUMMER = re.compile(
     r"(?<![\w-])(?:(?:19|20)(\d{6})-?|(\d{6})[-+])(\d{4})(?![\w-])"
@@ -49,8 +51,8 @@ def utan_epost(text: str) -> str:
 
 def maskad_md(text: str) -> str:
     """Brödtexten maskas; front matter rörs inte."""
-    huvud, slut, brodtext = text.partition("\n---\n")
-    return huvud + slut + maska(brodtext) if slut else text
+    huvud, brodtext = frontmatter.otolkad(text)
+    return huvud + maska(brodtext) if huvud else text
 
 
 def maskade_celler(text: str) -> list[list[str]] | None:
