@@ -3,19 +3,17 @@ sparslag.py."""
 
 import csv
 import re
-import tempfile
 import unittest
-from pathlib import Path
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import REDOVISNINGAR
 from tests.aren import aren
+from tests.poolfall import dokumenten, mall, tillfallig_pool
 from tests.test_mal import ROT
-from tests.test_webbplats import REPO, TID, dokument, exempelby
+from tests.test_webbplats import exempelby
 
 RUBRIK = "organ,redovisning,ar,fas,varde,text,kalla,tolkad\n"
 BUDGET = "fsn/2024/2024-01-17/handlingar.md"
@@ -35,22 +33,14 @@ BESTALLNING = re.compile(r"(Redovisning|Utredning|Information)\b")
 
 
 def steg() -> list:
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + RADER, encoding="utf-8")
-        for dok, text in TEXTER.items():
-            organ, _, datum, _ = dok.split("/")
-            (data / dok).parent.mkdir(parents=True, exist_ok=True)
-            (data / dok).write_text(
-                dokument(organ, datum, text=text, per_sida="[ok]"), encoding="utf-8"
-            )
+    with tillfallig_pool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
         return spar.las(fil, exempelby(), data, REDOVISNINGAR)
 
 
 def sida() -> str:
     stegen = steg()
     vy = Vy(REDOVISNINGAR, exempelby(), aren(stegen)["exempelby"])
-    return sparsida(Mall([exempelby()], REPO, TID), vy, stegen)
+    return sparsida(mall(), vy, stegen)
 
 
 class TestSidan(unittest.TestCase):

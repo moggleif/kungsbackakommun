@@ -9,9 +9,9 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.webbplats import mal
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
+from tests.poolfall import mall, tillfallig_pool
 from tests.test_mal import RUBRIK
 from tests.test_webbplats import dokument, exempelby, protokoll
-from tests.testpool import mall, testpool
 
 BUDGET = "fsn/2024/2024-05-02/handlingar.md"
 AR = "fsn/2025/2025-04-08/handlingar.md"
@@ -63,7 +63,7 @@ def pool(rader: str = RADER):
         kalla: dokument(text=text, typ="handlingar", per_sida="[ok, ok]")
         for kalla, text in ((BUDGET, BUDGETTEXT), (AR, ARTEXT))
     }
-    with testpool(RUBRIK, rader, texter) as (fil, data):
+    with tillfallig_pool(RUBRIK, rader, texter) as (fil, data):
         yield mal.las(fil, exempelby(), data)
 
 

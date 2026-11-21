@@ -18,7 +18,7 @@ from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.kalenderfarger import farger
 from kommunhandlingar.webbplats.kalendersida import kalendersida
 from kommunhandlingar.webbplats.mall import Mall
-from tests.testpool import testpool
+from tests.poolfall import tillfallig_pool
 
 FIXTURER = Path(__file__).parent / "fixtures"
 ROT = Path(__file__).parent.parent
@@ -48,7 +48,7 @@ def kommun():
 def pool(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en kalenderfil mot en pool med protokollet, i en temporär katalog."""
     texter = dict.fromkeys((PROTOKOLL, KALLELSE, NASTA), "---\n---\n")
-    with testpool(rubrik, rader, texter) as (fil, data):
+    with tillfallig_pool(rubrik, rader, texter) as (fil, data):
         yield kalender.las(fil, kommun(), data)
 
 

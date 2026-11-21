@@ -10,9 +10,9 @@ from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from tests.aren import aren
+from tests.poolfall import dokumenten, mall, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import exempelby
-from tests.testpool import dokumenten, mall, testpool
 
 RUBRIK = "organ,detaljplan,ar,fas,varde,text,kalla,tolkad\n"
 NAMND = "bun/2024/2024-03-14/protokoll.md"
@@ -30,7 +30,7 @@ RADER = (
 
 
 def sida(projekten: dict | None = None) -> str:
-    with testpool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
+    with tillfallig_pool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
         stegen = spar.las(fil, exempelby(), data, DETALJPLANER)
     vy = replace(
         Vy(DETALJPLANER, exempelby(), aren(stegen)["exempelby"]),

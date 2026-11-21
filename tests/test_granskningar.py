@@ -1,20 +1,18 @@
 """Krav: K43 i docs/02-KRAV.md, ADR-0066. Kod: src/kommunhandlingar/webbplats/
 granskningsslag.py."""
 
-import tempfile
 import unittest
-from pathlib import Path
 
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
 from kommunhandlingar.webbplats.granskningsslag import GRANSKNINGAR
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from tests.aren import aren
+from tests.poolfall import dokumenten, mall, tillfallig_pool
 from tests.test_mal import ROT
-from tests.test_webbplats import REPO, TID, dokument, exempelby
+from tests.test_webbplats import exempelby
 
 RUBRIK = "organ,granskning,ar,fas,varde,text,kalla,tolkad\n"
 REVISION = "fsn/2025/2025-10-27/protokoll.md"
@@ -46,22 +44,14 @@ def bedomning(varde: str) -> str:
 
 
 def las(rader: str) -> list[spar.Steg]:
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + rader, encoding="utf-8")
-        for dok, text in TEXTER.items():
-            organ, _, datum, _ = dok.split("/")
-            (data / dok).parent.mkdir(parents=True, exist_ok=True)
-            (data / dok).write_text(
-                dokument(organ, datum, text=text, per_sida="[ok]"), encoding="utf-8"
-            )
+    with tillfallig_pool(RUBRIK, rader, dokumenten(TEXTER, "[ok]")) as (fil, data):
         return spar.las(fil, exempelby(), data, GRANSKNINGAR)
 
 
 def sida() -> str:
     stegen = las(RAPPORT + bedomning("inte") + SVAR)
     vy = Vy(GRANSKNINGAR, exempelby(), aren(stegen)["exempelby"])
-    return sparsida(Mall([exempelby()], REPO, TID), vy, stegen)
+    return sparsida(mall(), vy, stegen)
 
 
 class TestSidan(unittest.TestCase):

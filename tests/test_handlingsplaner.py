@@ -10,9 +10,9 @@ from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import HANDLINGSPLANER
 from tests.aren import aren
+from tests.poolfall import dokumenten, mall, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import exempelby
-from tests.testpool import dokumenten, mall, testpool
 
 RUBRIK = "organ,plan,ar,fas,varde,text,kalla,tolkad\n"
 HANDLINGAR = "fsn/2024/2024-03-14/handlingar.md"
@@ -42,7 +42,7 @@ RADER = (
 def lasta():
     """Läser en fil med handlingsplaner mot en pool med två dokument."""
     texter = {HANDLINGAR: HANDLINGARNAS, PROTOKOLL: PROTOKOLLETS}
-    with testpool(RUBRIK, RADER, dokumenten(texter, "[ok, ok]")) as (fil, data):
+    with tillfallig_pool(RUBRIK, RADER, dokumenten(texter, "[ok, ok]")) as (fil, data):
         yield spar.las(fil, exempelby(), data, HANDLINGSPLANER)
 
 

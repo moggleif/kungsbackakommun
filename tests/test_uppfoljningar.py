@@ -14,9 +14,9 @@ from kommunhandlingar.webbplats import uppfoljningar
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
+from tests.poolfall import mall, tillfallig_pool
 from tests.test_mal import BUDGET, HANDLINGAR, ROT, budget, pool
 from tests.test_webbplats import FIXTURER, REPO, TID, exempelby, protokoll
-from tests.testpool import mall, testpool
 
 RUBRIK = "organ,datum,paragraf,slag,rubrik,kalla\n"
 RADER = (
@@ -29,7 +29,7 @@ RADER = (
 def lasta(rader: str = RADER):
     """Läser en uppföljningsfil mot en pool med mötets protokoll och handlingar."""
     texter = {BUDGET: budget(), HANDLINGAR: budget()}
-    with testpool(RUBRIK, rader, texter) as (fil, data):
+    with tillfallig_pool(RUBRIK, rader, texter) as (fil, data):
         yield uppfoljningar.las(fil, exempelby(), data)
 
 

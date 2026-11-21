@@ -16,8 +16,8 @@ from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.malkort import kallank
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
+from tests.poolfall import mall, tillfallig_pool
 from tests.test_webbplats import FIXTURER, REPO, TID, dokument, exempelby, protokoll
-from tests.testpool import mall, testpool
 
 ROT = Path(__file__).parent.parent
 RUBRIK = (
@@ -61,7 +61,7 @@ def budget() -> str:
 def pool(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en målfil mot en pool med ett dokument, i en temporär katalog."""
     texter = {BUDGET: budget(), HANDLINGAR: budget()}
-    with testpool(rubrik, rader, texter) as (fil, data):
+    with tillfallig_pool(rubrik, rader, texter) as (fil, data):
         yield mal.las(fil, exempelby(), data)
 
 

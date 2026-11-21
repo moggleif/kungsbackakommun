@@ -11,8 +11,10 @@ from tests.test_webbplats import REPO, TID, dokument, exempelby
 
 
 @contextmanager
-def testpool(rubrik: str, rader: str, texter: dict[str, str]) -> Iterator:
-    """Ger filen med rubriken och raderna och data/ med texterna."""
+def tillfallig_pool(
+    rubrik: str, rader: str, texter: dict[str, str]
+) -> Iterator[tuple[Path, Path]]:
+    """Ger exempelby.csv och data/ bredvid; texternas nycklar är sökvägar i data/."""
     with tempfile.TemporaryDirectory() as tmp:
         fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
         fil.write_text(rubrik + rader, encoding="utf-8")

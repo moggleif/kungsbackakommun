@@ -11,9 +11,9 @@ from kommunhandlingar.webbplats.maltidslinje import arets
 from kommunhandlingar.webbplats.mandatperiod import start
 from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 from tests.aren import aren
+from tests.poolfall import mall
 from tests.test_mal import BUDGET, RADER, pool
 from tests.test_webbplats import exempelby, protokoll
-from tests.testpool import mall
 
 # Trygga miljöer 2022 och 2025 byter rubrik till Läsfrämjande 2026; direktivet
 # Läsfrämjande står 2024 och 2025.

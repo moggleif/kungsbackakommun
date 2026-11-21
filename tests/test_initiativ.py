@@ -17,9 +17,9 @@ from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import INITIATIV
 from tests.aren import aren
+from tests.poolfall import dokumenten, mall, skriv, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import FIXTURER, REPO, TID, exempelby
-from tests.testpool import dokumenten, mall, skriv, testpool
 
 RUBRIK = "organ,arende,ar,fas,varde,text,kalla,tolkad\n"
 VACKT = "fsn/2024/2024-03-14/protokoll.md"
@@ -58,7 +58,7 @@ POOL = dokumenten({VACKT: VACKTS, BESLUT: BESLUTETS, ANDRAS: ANDRAS_TEXT}, "[ok,
 @contextmanager
 def lasta(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en initiativfil mot en pool med två organs dokument."""
-    with testpool(rubrik, rader, POOL) as (fil, data):
+    with tillfallig_pool(rubrik, rader, POOL) as (fil, data):
         yield spar.las(fil, exempelby(), data, INITIATIV)
 
 
