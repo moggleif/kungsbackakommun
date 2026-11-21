@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mål och direktiv – Förskole- och skolnämnden – Exempelby kommun</title>
+<link rel="stylesheet" href="/giffa/sajter.css">
+<script src="/giffa/tema.js"></script>
+<script src="/giffa/sajter.js" defer></script>
+<style>
+:root { color-scheme: light dark;
+  --text: light-dark(#1a1a1a, #e4e6ea); --bakgrund: light-dark(#fff, #15171b);
+  --kant: light-dark(#999, #5f6672); --yta: light-dark(#f5f6f8, #22262d);
+  --linje: light-dark(#d9dde5, #3a404b); --dampad: light-dark(#5b6475, #a8b0bd);
+  --accent: light-dark(#1d5d73, #7cc4dc); --band: light-dark(#e3eef2, #1e3942);
+  --uppnatt: light-dark(#1a6b2a, #72d083); --delvis: light-dark(#8a5a00, #e6b552);
+  --ej: light-dark(#b00020, #ff8a94); }
+@supports not (color: light-dark(black, white)) {
+  :root { color-scheme: light; --text: #1a1a1a; --bakgrund: #fff; --kant: #999;
+    --yta: #f5f6f8; --linje: #d9dde5; --dampad: #5b6475; --accent: #1d5d73;
+    --band: #e3eef2; --uppnatt: #1a6b2a; --delvis: #8a5a00; --ej: #b00020; } }
+:root { --sajtaccent: var(--accent); --sajtyta: var(--bakgrund); --sajtkant: 0; }
+body { font-family: system-ui, sans-serif; max-width: 72rem; margin: 0 auto;
+       padding: 0 1rem; line-height: 1.5; color: var(--text);
+       background: var(--bakgrund); }
+/* En bred tabell rullar i sin egen ruta, aldrig hela sidan; det som ligger
+   absolut i tabellen stannar i rutan (K14). */
+.tabell, .sida { overflow-x: auto; position: relative; }
+table { border-collapse: collapse; margin-bottom: 2rem; }
+th, td { border: 1px solid var(--kant); padding: 0.25rem 0.6rem; vertical-align: top; }
+th[scope="row"] { text-align: left; }
+td.tal { text-align: right; font-variant-numeric: tabular-nums; }
+dl.harkomst { display: grid; grid-template-columns: max-content 1fr; gap: 0 1rem; }
+dl.harkomst dd { margin: 0; overflow-wrap: anywhere; }
+.sida { border-top: 1px solid var(--kant); margin-top: 2rem; }
+.sida p { white-space: pre-wrap; }
+.markering { font-weight: bold; }
+pre { background: var(--yta); padding: 0.5rem; overflow-x: auto; }
+.status { display: inline-block; padding: 0.1em; line-height: 0;
+          border: 1px solid transparent; border-radius: 0.3em; cursor: help; }
+.status.prognos { border: 1px dashed currentColor; }
+.status.uppnatt { color: var(--uppnatt); } .status.delvis { color: var(--delvis); }
+.status.ej { color: var(--ej); }
+.status.ingen, .status.beslutat { color: var(--dampad); }
+.flikar ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem;
+             border-bottom: 2px solid var(--text); margin: 0 0 1.5rem; }
+.flikar a { display: block; padding: 0.35rem 0.8rem; border: 1px solid var(--kant);
+            border-bottom: none; border-radius: 0.4rem 0.4rem 0 0;
+            background: var(--yta); }
+.flikar a[aria-current] { background: var(--text); color: var(--bakgrund);
+                          border-color: var(--text); }
+.oversikt td { text-align: center; }
+.dold { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
+.oversikt tr.grupp th { background: var(--yta); text-align: left; }
+.oversikt th.utskott { padding-left: 1.8rem; font-weight: normal; }
+footer { border-top: 1px solid var(--kant); margin-top: 3rem; padding: 1rem 0;
+         overflow-wrap: anywhere; }
+h1, h2 { overflow-wrap: break-word; hyphens: auto; }
+</style>
+</head>
+<body>
+<nav class="sajtmeny" aria-label="Webbplatsen"><a class="sajtnamn" href="../../index.html">Exempelby kommun</a><ul><li><a href="../../index.html">Handlingar och protokoll</a></li><li><a href="../../exempelby/kalender.html">Kalender</a></li><li><details><summary>Organen</summary><ul><li><a href="../../exempelby/bun.html">Barn- och ungdomsnämnden</a></li><li><a href="../../exempelby/fsn.html">Förskole- och skolnämnden</a></li></ul></details></li><li><details><summary>Om poolen</summary><ul><li><a href="../../exempelby/status.html">Poolens status</a></li><li><a href="../../avvikelser.html">Avvikelser</a></li></ul></details></li></ul></nav>
+<main>
+<h1>Mål och direktiv – Förskole- och skolnämnden</h1>
+<nav class="flikar" aria-label="Organets sidor"><ul><li><a href="../fsn.html">Sammanträden</a></li><li><a href="../fsn/mal-och-direktiv.html" aria-current="page">Mål och direktiv</a></li><li><a href="../fsn/initiativ.html">Initiativ och motioner</a></li><li><a href="../fsn/detaljplaner.html">Detaljplaner</a></li></ul></nav><style>/* Krav: K29, K35 och K50 i docs/02-KRAV.md, ADR-0050, ADR-0051, ADR-0056 och
+   ADR-0073. Stilen för sidan om ett organs mål och direktiv: sammandraget,
+   väljarna, tidslinjen, ett år i taget och korten. Färgerna står i sidmallen. */
+[hidden] { display: none !important; }
+details { margin-bottom: 1rem; }
+summary { cursor: pointer; }
+.teckenforklaring { list-style: none; padding: 0; display: flex;
+                    flex-wrap: wrap; gap: 0.25rem 1.5rem; color: var(--dampad); }
+.sammandrag { display: grid; gap: 1rem; margin-bottom: 1rem;
+              grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.ruta { border: 1px solid var(--linje); border-radius: 8px; padding: 1rem; }
+.ruta h3 { margin: 0 0 0.5rem; }
+.siffror { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
+           margin: 0; }
+.siffror div { display: flex; flex-direction: column-reverse; }
+.siffror dd { margin: 0; font-size: 2rem; font-weight: 600; line-height: 1.1;
+              font-variant-numeric: tabular-nums; }
+.siffror dt { color: var(--dampad); font-size: 0.85rem; }
+svg.graf { width: 100%; height: auto; }
+.urval, .perspektiv, .arval { display: flex; flex-wrap: wrap; gap: 0.4rem;
+                             margin: 1.5rem 0 0.5rem; }
+.urval button, .perspektiv button, .arval button {
+  font: inherit; border: 1px solid var(--linje); background: var(--bakgrund);
+  color: inherit; border-radius: 999px; padding: 0.2rem 0.9rem; cursor: pointer; }
+.urval button[aria-pressed="true"], .perspektiv button[aria-pressed="true"],
+.arval button[aria-pressed="true"] { border-color: var(--accent);
+                                     background: var(--band); color: var(--accent); }
+.perspektiv button { font-weight: 600; }
+.arval button { font-variant-numeric: tabular-nums; padding: 0.1rem 0.6rem; }
+.aret { margin-bottom: 2rem; }
+.aret > .ruta { margin-bottom: 1rem; }
+table.tidslinje { border-collapse: separate; border-spacing: 0; table-layout: fixed;
+                  width: 100%; min-width: 46rem; }
+table.tidslinje th, table.tidslinje td { border: none; padding: 0.15rem 0; }
+table.tidslinje thead th { font-weight: normal; color: var(--dampad);
+                           border-bottom: 1px solid var(--linje); }
+table.tidslinje col.rubrik { width: 16rem; }
+table.tidslinje thead th:first-child { text-align: left; }
+table.tidslinje col.skuggad { background: var(--yta); }
+table.tidslinje tr.perioder th { font-size: 0.75rem; border-bottom: none;
+                                 letter-spacing: 0.04em; }
+table.tidslinje th[scope="row"] { font-weight: normal; padding-right: 1rem;
+                                  font-size: 0.9rem; line-height: 1.3; }
+table.tidslinje th[scope="row"] a { color: inherit;
+                                    text-decoration-color: var(--linje); }
+table.tidslinje th[scope="row"] a:hover { text-decoration-color: currentColor; }
+table.tidslinje th.lucka, table.tidslinje td.saknas {
+  background: repeating-linear-gradient(45deg, var(--yta) 0 4px, transparent 4px 8px); }
+table.tidslinje tr.slag th { text-align: left; padding-top: 1rem; font-size: 0.8rem;
+                             letter-spacing: 0.06em; text-transform: uppercase;
+                             color: var(--dampad); }
+table.tidslinje td { text-align: center; vertical-align: middle; position: relative; }
+table.tidslinje td.band::before { content: ""; position: absolute; left: 0; right: 0;
+                                  top: 50%; height: 1.7rem; margin-top: -0.85rem;
+                                  background: var(--band); }
+table.tidslinje td.start::before { left: 8%; border-radius: 999px 0 0 999px; }
+table.tidslinje td.slut::before { right: 8%; border-radius: 0 999px 999px 0; }
+table.tidslinje td.start.slut::before { border-radius: 999px; }
+table.tidslinje td .status { position: relative; }
+table.tidslinje tr[data-mal]:hover { background: var(--yta); }
+table.tidslinje th[scope="row"]:has(.byte) { padding-left: 0.9rem; position: relative; }
+.byte { position: absolute; left: 0; color: var(--accent); }
+table.tidslinje th.fokus { padding-left: 1.2rem; font-size: 0.85rem; }
+table.tidslinje th.fokus:has(.byte) { padding-left: 2.1rem; }
+th.fokus .byte { left: 1.2rem; }
+.byten { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-top: 0;
+         color: var(--dampad); }
+.ny-formulering { display: inline-block; width: 0.5rem; height: 0.5rem;
+                  border-radius: 50%; background: var(--accent); }
+td .ny-formulering { position: absolute; top: 50%; left: 14%; margin-top: -0.25rem; }
+.godkand, .dragning { display: inline-block; width: 0.65rem; height: 0.65rem;
+                      margin: 1px; vertical-align: middle; }
+.godkand { background: var(--accent); transform: rotate(45deg) scale(0.85); }
+.dragning { border: 2px solid var(--accent); border-radius: 50%; }
+.namnden th { padding-top: 1rem !important; }
+.namnden td { padding-top: 1rem !important; color: var(--dampad); line-height: 1; }
+.malkort { display: grid; gap: 1rem;
+           grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+.malkort article { border: 1px solid var(--linje); border-radius: 8px; padding: 1rem;
+                   display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+.malkort article:target { border-color: var(--accent); box-shadow: 0 0 0 2px var(--band); }
+.malkort article[data-aktiv="nej"] { background: var(--yta); }
+.malkort h3, .malkort h4, .malkort p, .malkort blockquote { margin: 0; }
+.malkort article:has(.fokusomraden) { grid-column: 1 / -1; }
+.fokusomraden { display: grid; gap: 0.75rem; margin-top: 0.5rem;
+                grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
+.fokusomraden h4 { grid-column: 1 / -1; font-size: 0.9rem; color: var(--dampad); }
+.markor span { font-size: 0.75rem; padding: 0.05rem 0.5rem; border-radius: 999px;
+               background: var(--band); color: var(--accent); }
+.tidigare { font-size: 0.85rem; color: var(--dampad); }
+.malkort blockquote { font-style: italic; }
+.remsa { list-style: none; padding: 0; margin: 0.25rem 0 0; display: grid;
+         grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; }
+.remsa li { display: flex; flex-direction: column; align-items: center;
+            justify-content: flex-end; min-height: 2.6rem; background: var(--yta);
+            border-radius: 3px; }
+.remsa li.tom { background: none; border: 1px dashed var(--linje); }
+.remsa li.lucka { background: repeating-linear-gradient(45deg, var(--yta) 0 4px,
+                  transparent 4px 8px); }
+.remsa small { font-size: 0.65rem; color: var(--dampad);
+               font-variant-numeric: tabular-nums; }
+.dold { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
+.malkort details { margin: 0; }
+.malkort details ol, .malkort ol.rader { list-style: none; padding: 0; display: grid; gap: 0.6rem;
+                                         font-size: 0.9rem; }
+@media (max-width: 40rem) {
+  table.tidslinje col.rubrik { width: 9rem; }
+}
+</style><p>Organets egna mål och direktiv år för år, ur budgetarna, delårsrapporterna och årsredovisningarna i poolen. Välj ett mål i tidslinjen för att se hela dess historik.</p><details><summary>Om sidan</summary><p>Målen är lästa ur poolens dokument och skrivna ordagrant, med dokumentet och sidan som källa. Bygget prövar att texten står på den sidan. Bara det organet självt beslutat står med, så en nämnds sida har inte kommunfullmäktiges mål eller direktiv. Säger protokollet något annat än handlingarna till samma möte, gäller protokollet.</p><p>Ett mål som bytt rubrik har en rad per rubrik i tidslinjen, i den ordning de först står, och ett kort med de tidigare rubrikerna under den senaste. Ett år då samma rubrik får en ny formulering är markerat. Där källan inte själv säger att det är samma mål, och formuleringen inte är densamma, är kopplingen en bedömning och rubriken märkt tolkad.</p><p>Statusen är en ikon för uppföljningens bedömning, med källans egen formulering i pekrutan och i kortets historik. En delårsrapport ger en prognos, som har en streckad ram. Ett år utan dokument i poolen är en lucka i poolen, inte ett år utan mål, också före organets första dokument i poolen.</p><p>Åren är desamma på alla kommunens sidor över tid, så att de går att jämföra: från poolens första år, eller ett äldre år som någon rad har, till i år, eller ett senare år som någon rad har, som en budget för nästa år. Ett år utan rader står tomt.</p><p>Hur och varför står i <a href="https://github.com/moggleif/kungsbackakommun/blob/main/docs/decisions/0044-namndens-mal-och-direktiv-las-ur-dokumenten-och-skrivs-for-hand.md">ADR-0044</a>, <a href="https://github.com/moggleif/kungsbackakommun/blob/main/docs/decisions/0045-omdopta-mal-grupperas-protokollet-gar-fore-och-status-blir-ikoner.md">ADR-0045</a>, <a href="https://github.com/moggleif/kungsbackakommun/blob/main/docs/decisions/0050-malsidan-visas-som-tidslinje-och-malkort.md">ADR-0050</a>, <a href="https://github.com/moggleif/kungsbackakommun/blob/main/docs/decisions/0051-tidslinjen-visar-varje-rubrik-och-nya-formuleringar.md">ADR-0051</a> och <a href="https://github.com/moggleif/kungsbackakommun/blob/main/docs/decisions/0056-kommunfullmaktiges-mal-med-fokusomraden-och-farg.md">ADR-0056</a>.</p></details><h2 id="antal">Antal per år</h2><div class="sammandrag"><div class="ruta"><h3>2025</h3><dl class="siffror"><div><dt>nämndmål</dt><dd>1</dd></div><div><dt>direktiv</dt><dd>1</dd></div><div><dt>uppföljningar i protokollen</dt><dd>0</dd></div><div><dt>dragningar om målen</dt><dd>0</dd></div></dl></div><div class="ruta"><svg class="graf" viewBox="0 0 640 260" role="img" aria-label="Antal per år; talen står i tabellen under." font-size="12" fill="currentColor"><line x1="40.0" x2="624" y1="230.0" y2="230.0" style="stroke: var(--linje)"/><text x="34.0" y="234.0" text-anchor="end">0</text><line x1="40.0" x2="624" y1="36.0" y2="36.0" style="stroke: var(--linje)"/><text x="34.0" y="40.0" text-anchor="end">1</text><text x="40.0" y="248.0" text-anchor="middle">2022</text><text x="186.0" y="248.0" text-anchor="middle">2023</text><text x="332.0" y="248.0" text-anchor="middle">2024</text><text x="478.0" y="248.0" text-anchor="middle">2025</text><text x="624.0" y="248.0" text-anchor="middle">2026</text><polyline points="332.0,230.0 478.0,36.0" fill="none" stroke="currentColor" stroke-width="2" /><circle cx="332.0" cy="230.0" r="4" style="fill: currentColor" stroke="currentColor"/><circle cx="478.0" cy="36.0" r="4" style="fill: currentColor" stroke="currentColor"/><line x1="40" x2="70" y1="14" y2="14" stroke="currentColor" stroke-width="2" /><circle cx="55" cy="14" r="4" style="fill: currentColor" stroke="currentColor"/><text x="78" y="18">Nämndmål</text><polyline points="332.0,36.0 478.0,36.0" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/><circle cx="332.0" cy="36.0" r="4" style="fill: var(--bakgrund)" stroke="currentColor"/><circle cx="478.0" cy="36.0" r="4" style="fill: var(--bakgrund)" stroke="currentColor"/><line x1="180" x2="210" y1="14" y2="14" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4"/><circle cx="195" cy="14" r="4" style="fill: var(--bakgrund)" stroke="currentColor"/><text x="218" y="18">Direktiv</text></svg></div></div><details><summary>Tabell över antal per år</summary><div class="tabell"><table><thead><tr><th scope="col">År</th><th scope="col">Nämndmål</th><th scope="col">Direktiv</th><th scope="col">Uppföljningar med målen</th><th scope="col">Med bedömning</th><th scope="col">Uppföljningar i protokollen</th><th scope="col">Dragningar om målen</th></tr></thead><tbody><tr><th scope="row">2022</th><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td></tr><tr><th scope="row">2023</th><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td></tr><tr><th scope="row">2024</th><td class="tal">0</td><td class="tal">1</td><td class="tal">1</td><td class="tal">1</td><td class="tal">1</td><td class="tal">1</td></tr><tr><th scope="row">2025</th><td class="tal">1</td><td class="tal">1</td><td class="tal">0</td><td class="tal">0</td><td class="tal">0</td><td class="tal">0</td></tr><tr><th scope="row">2026</th><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td><td class="tal">–</td></tr></tbody></table></div><p>Varje mål räknas en gång per år, också när det har två rubriker. Uppföljningarna är de delårsrapporter, årsredovisningar och andra rapporter som målen är lästa ur; en uppföljning som inte gått att hämta till poolen räknas inte. Ett år utan mål står som –, eftersom dokumenten kan saknas i poolen. Uppföljningar i protokollen och dragningar om målen är paragraferna i mötets protokoll där organet godkänner eller tar emot en uppföljning, som årsredovisningen, delårsrapporten eller uppföljningen per april, eller noterar en dragning om målen, och räknas på mötets år. Ett år utan protokoll i poolen står som –, och protokoll kan saknas också andra år.</p></details><div class="urval" role="group" aria-label="Visa" data-sista="2025" hidden><button type="button" data-urval="alla">Alla</button><button type="button" data-urval="aktiv">Gäller 2025</button><button type="button" data-urval="nämndmål">Nämndmål</button><button type="button" data-urval="direktiv">Direktiv</button><button type="button" data-urval="bytt">Har bytt rubrik</button></div><div class="perspektiv" role="group" aria-label="Perspektiv" hidden><button type="button" data-vy="tidslinje">Tidslinje</button><button type="button" data-vy="ar">Ett år i taget</button><button type="button" data-vy="kort">Målkort</button></div><section data-vy="tidslinje"><h2 id="tidslinje">Tidslinje</h2><ul class="teckenforklaring"><li><span class="status uppnatt" role="img" title="uppnått" aria-label="uppnått"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M4.5 8.5l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span> uppnått</li><li><span class="status delvis" role="img" title="delvis uppnått eller på väg" aria-label="delvis uppnått eller på väg"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M8 1.5a6.5 6.5 0 0 0 0 13z" fill="currentColor"/></svg></span> delvis uppnått eller på väg</li><li><span class="status ej" role="img" title="ej uppnått" aria-label="ej uppnått"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span> ej uppnått</li><li><span class="status ingen" role="img" title="ingen bedömning i källan" aria-label="ingen bedömning i källan"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/></svg></span> ingen bedömning i källan</li><li><span class="status ingen prognos" role="img" title="prognos" aria-label="prognos"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/></svg></span> prognos (streckad ram)</li><li><span class="status beslutat" role="img" title="beslutat" aria-label="beslutat"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="2.5" fill="currentColor"/></svg></span> beslutat, utan uppföljning</li></ul><p class="byten"><span><span aria-hidden="true">↳</span> ny rubrik för samma mål</span> <span><span class="ny-formulering"></span> ny formulering under samma rubrik</span></p><div class="tabell"><table class="tidslinje"><colgroup><col class="rubrik"><col span="1"><col span="4" class="skuggad"></colgroup><thead><tr class="perioder"><td></td><th scope="colgroup" colspan="1">Mandatperiod 2019–2022</th><th scope="colgroup" colspan="4">Mandatperiod 2023–2026</th></tr><tr><th scope="col">Mål eller direktiv</th><th scope="col" class="lucka">2022<br><small>lucka</small></th><th scope="col" class="lucka">2023<br><small>lucka</small></th><th scope="col">2024</th><th scope="col">2025</th><th scope="col" class="lucka">2026<br><small>lucka</small></th></tr></thead><tbody><tr class="slag"><th scope="colgroup" colspan="6">Nämndmål</th></tr><tr data-mal="1" data-slag="nämndmål" data-sista="2025" data-bytt="nej"><th scope="row"><a href="#mal-1">Trygga miljöer</a></th><td></td><td></td><td></td><td class="band start slut"><span class="status beslutat" role="img" title="beslutat, utan uppföljning" aria-label="beslutat, utan uppföljning"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="2.5" fill="currentColor"/></svg></span></td><td></td></tr></tbody><tbody><tr class="slag"><th scope="colgroup" colspan="6">Direktiv</th></tr><tr data-mal="0" data-slag="direktiv" data-sista="2025" data-bytt="nej"><th scope="row"><a href="#mal-0">Läsfrämjande</a></th><td></td><td></td><td class="band start"><span class="status delvis prognos" role="img" title="delvis uppnått eller på väg: Delvis uppnått (prognos)" aria-label="delvis uppnått eller på väg: Delvis uppnått (prognos)"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M8 1.5a6.5 6.5 0 0 0 0 13z" fill="currentColor"/></svg></span></td><td class="band slut"><span class="status beslutat" role="img" title="beslutat, utan uppföljning" aria-label="beslutat, utan uppföljning"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="2.5" fill="currentColor"/></svg></span></td><td></td></tr></tbody><tbody class="namnden"><tr><th scope="row">Protokollen om målen<br><small><span class="godkand"></span> godkänd uppföljning</small><br><small><span class="dragning"></span> dragning om målen</small></th><td class="saknas" title="Inga protokoll med text i poolen">–</td><td class="saknas" title="Inga protokoll med text i poolen">–</td><td><span class="godkand" role="img" aria-label="2024-05-02 § 5: Trygga miljöer" title="2024-05-02 § 5: Trygga miljöer"></span> <span class="dragning" role="img" aria-label="2024-05-02 § 6: Läsfrämjande" title="2024-05-02 § 6: Läsfrämjande"></span></td><td></td><td class="saknas" title="Inga protokoll med text i poolen">–</td></tr></tbody></table></div></section><section data-vy="ar"><h2 id="aren">Ett år i taget</h2><div class="arval" role="group" aria-label="År" data-forval="2025" hidden><button type="button" data-ar="2022">2022</button><button type="button" data-ar="2023">2023</button><button type="button" data-ar="2024">2024</button><button type="button" data-ar="2025">2025</button><button type="button" data-ar="2026">2026</button></div><section class="aret" data-ar="2026"><h3>2026</h3><p>Lucka i poolen: inga dokument från organet 2026.</p></section><section class="aret" data-ar="2025"><div class="ruta"><h3>2025</h3><dl class="siffror"><div><dt>nämndmål</dt><dd>1</dd></div><div><dt>direktiv</dt><dd>1</dd></div><div><dt>uppföljningar i protokollen</dt><dd>0</dd></div><div><dt>dragningar om målen</dt><dd>0</dd></div></dl></div><p>Inget mål försvann sedan 2024.</p><div class="malkort"><article data-mal="1" data-slag="nämndmål" data-sista="2025" data-bytt="nej"><p class="markor"><span>nämndmål</span> <span>nytt</span></p><h4>Trygga miljöer</h4><blockquote><q>Alla ska känna sig trygga.</q></blockquote><ol class="rader"><li>Beslutat<br>Källa: <a href="2024/2024-05-02/protokoll.html#sida-1">protokoll 2024-05-02, sida 1</a></li></ol></article><article data-mal="0" data-slag="direktiv" data-sista="2025" data-bytt="nej"><p class="markor"><span>direktiv</span></p><h4>Läsfrämjande</h4><ol class="rader"><li>Beslutat<br>Källa: <a href="2024/2024-05-02/protokoll.html#sida-3">protokoll 2024-05-02, sida 3</a></li></ol></article></div><p>Protokollen 2025 tar inte upp målen.</p></section><section class="aret" data-ar="2024"><div class="ruta"><h3>2024</h3><dl class="siffror"><div><dt>nämndmål</dt><dd>0</dd></div><div><dt>direktiv</dt><dd>1</dd></div><div><dt>uppföljningar i protokollen</dt><dd>1</dd></div><div><dt>dragningar om målen</dt><dd>1</dd></div></dl></div><p>Det första året med mål på sidan.</p><div class="malkort"><article data-mal="0" data-slag="direktiv" data-sista="2025" data-bytt="nej"><p class="markor"><span>direktiv</span></p><h4>Läsfrämjande</h4><ol class="rader"><li>Status: <span class="status delvis prognos" role="img" title="delvis uppnått eller på väg: Delvis uppnått (prognos)" aria-label="delvis uppnått eller på väg: Delvis uppnått (prognos)"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M8 1.5a6.5 6.5 0 0 0 0 13z" fill="currentColor"/></svg></span> Delvis uppnått (prognos)<br>Källa: <a href="2024/2024-05-02/protokoll.html#sida-2">protokoll 2024-05-02, sida 2</a></li></ol></article></div><h4>Protokollen om målen 2024</h4><ul><li>2024-05-02 § 5, uppföljning: Trygga miljöer (<a href="2024/2024-05-02/protokoll.html#sida-1">protokoll 2024-05-02, sida 1</a>)</li><li>2024-05-02 § 6, dragning: Läsfrämjande (<a href="2024/2024-05-02/protokoll.html#sida-2">protokoll 2024-05-02, sida 2</a>)</li></ul></section><section class="aret" data-ar="2023"><h3>2023</h3><p>Lucka i poolen: inga dokument från organet 2023.</p></section><section class="aret" data-ar="2022"><h3>2022</h3><p>Lucka i poolen: inga dokument från organet 2022.</p></section></section><section data-vy="kort"><h2 id="malen">Målen</h2><div class="malkort"><article id="mal-1" data-mal="1" data-slag="nämndmål" data-sista="2025" data-bytt="nej"><p class="markor"><span>nämndmål</span> <span>2025</span></p><h3>Trygga miljöer</h3><blockquote><q>Alla ska känna sig trygga.</q> (2025)</blockquote><ol class="remsa" aria-label="År för år"><li class="lucka" title="2022: lucka i poolen"><small><span class="dold">20</span>22</small></li><li class="lucka" title="2023: lucka i poolen"><small><span class="dold">20</span>23</small></li><li class="tom" title="2024"><small><span class="dold">20</span>24</small></li><li title="2025"><span class="status beslutat" role="img" title="beslutat, utan uppföljning" aria-label="beslutat, utan uppföljning"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="2.5" fill="currentColor"/></svg></span><small><span class="dold">20</span>25</small></li><li class="lucka" title="2026: lucka i poolen"><small><span class="dold">20</span>26</small></li></ol><details><summary>Hela historiken, 1 rad</summary><ol><li><b>2025</b> Trygga miljöer<br><q>Alla ska känna sig trygga.</q><br>Källa: <a href="2024/2024-05-02/protokoll.html#sida-1">protokoll 2024-05-02, sida 1</a></li></ol></details></article><article id="mal-0" data-mal="0" data-slag="direktiv" data-sista="2025" data-bytt="nej"><p class="markor"><span>direktiv</span> <span>2024–2025</span></p><h3>Läsfrämjande</h3><ol class="remsa" aria-label="År för år"><li class="lucka" title="2022: lucka i poolen"><small><span class="dold">20</span>22</small></li><li class="lucka" title="2023: lucka i poolen"><small><span class="dold">20</span>23</small></li><li title="2024"><span class="status delvis prognos" role="img" title="delvis uppnått eller på väg: Delvis uppnått (prognos)" aria-label="delvis uppnått eller på väg: Delvis uppnått (prognos)"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M8 1.5a6.5 6.5 0 0 0 0 13z" fill="currentColor"/></svg></span><small><span class="dold">20</span>24</small></li><li title="2025"><span class="status beslutat" role="img" title="beslutat, utan uppföljning" aria-label="beslutat, utan uppföljning"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="2.5" fill="currentColor"/></svg></span><small><span class="dold">20</span>25</small></li><li class="lucka" title="2026: lucka i poolen"><small><span class="dold">20</span>26</small></li></ol><details><summary>Hela historiken, 2 rader</summary><ol><li><b>2025</b> läsfrämjande<br>Källa: <a href="2024/2024-05-02/protokoll.html#sida-3">protokoll 2024-05-02, sida 3</a></li><li><b>2024</b> Läsfrämjande<br>Status: <span class="status delvis prognos" role="img" title="delvis uppnått eller på väg: Delvis uppnått (prognos)" aria-label="delvis uppnått eller på väg: Delvis uppnått (prognos)"><svg viewBox="0 0 16 16" width="1.25em" height="1.25em" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor"/><path d="M8 1.5a6.5 6.5 0 0 0 0 13z" fill="currentColor"/></svg></span> Delvis uppnått (prognos)<br>Källa: <a href="2024/2024-05-02/protokoll.html#sida-2">protokoll 2024-05-02, sida 2</a></li></ol></details></article></div></section><script>// Krav: K29, K35 och K50 i docs/02-KRAV.md, ADR-0050, ADR-0056 och ADR-0073.
+// Test: tests/test_malkort.py och tests/test_fokusomraden.py.
+// Visar bara de mål som valts med en knapp, i tidslinjen, bland korten och
+// i målsidans Ett år i taget, och döljer ett slags rubrik i tidslinjen när inget av dess mål visas.
+// Öppnar historiken på kortet för ett mål som väljs i tidslinjen, också
+// när samma mål väljs igen. Ett kommunmåls kort visas när ett av dess
+// fokusområden visas.
+// Utan skriptet står allt och historiken är hopfälld.
+(function () {
+  var urval = document.querySelector(".urval");
+  var knappar = urval.querySelectorAll("button");
+
+  function passar(mal, val) {
+    if (val === "alla") return true;
+    if (val === "aktiv") return mal.dataset.sista === urval.dataset.sista;
+    if (val === "bytt") return mal.dataset.bytt === "ja";
+    return mal.dataset.slag.split(" ").indexOf(val) >= 0;
+  }
+
+  function valj(val) {
+    knappar.forEach(function (knapp) {
+      knapp.setAttribute("aria-pressed", knapp.dataset.urval === val);
+    });
+    document.querySelectorAll("[data-mal]").forEach(function (mal) {
+      mal.hidden = !passar(mal, val);
+    });
+    document.querySelectorAll(".fokusomraden [data-mal]:not([hidden])").forEach(function (fokus) {
+      fokus.parentNode.closest("article").hidden = false;
+    });
+    document.querySelectorAll("tr.slag").forEach(function (rubrik) {
+      rubrik.hidden = !rubrik.parentNode.querySelector("[data-mal]:not([hidden])");
+    });
+  }
+
+  function oppna() {
+    var kort = document.getElementById(location.hash.slice(1));
+    if (kort && kort.tagName === "ARTICLE") kort.querySelector(":scope > details").open = true;
+  }
+
+  knappar.forEach(function (knapp) {
+    knapp.addEventListener("click", function () {
+      valj(knapp.dataset.urval);
+    });
+  });
+  window.addEventListener("hashchange", oppna);
+  document.querySelectorAll("tr[data-mal] a").forEach(function (lank) {
+    lank.addEventListener("click", function () {
+      setTimeout(oppna);
+    });
+  });
+  urval.hidden = false;
+  valj("alla");
+  oppna();
+})();
+</script><script>// Krav: K50 i docs/02-KRAV.md, ADR-0073. Test: tests/test_malar.py prövar att
+// skriptet och väljarna står på sidan; hur det beter sig prövas för hand.
+// Står på målsidan. Visar ett perspektiv i taget, och i Ett år i taget ett
+// år, efter adressen: ?vy=tidslinje, ?vy=ar&ar=2025 eller ?vy=kort. Utan val
+// är det tidslinjen och det senaste valda året, först målens senaste år, och
+// en adress till ett kort (#mal-3) visar korten. Varje val läggs i
+// webbläsarens historik. Ett mål som väljs visar korten redan i
+// klickhanteraren, så att webbläsaren kan gå till kortet. Utan skriptet står
+// alla perspektiv.
+(function () {
+  var perspektiv = document.querySelector(".perspektiv");
+  var arval = document.querySelector(".arval");
+  var valt = null;
+  var aren = Array.prototype.map.call(arval.querySelectorAll("button"), function (knapp) {
+    return knapp.dataset.ar;
+  });
+
+  // Adressen kan vara skriven för hand; ett okänt val ger förvalet.
+  function lage() {
+    var fraga = new URLSearchParams(location.search);
+    var vy = /^#mal-/.test(location.hash) ? "kort" : fraga.get("vy");
+    if (!perspektiv.querySelector('[data-vy="' + vy + '"]')) vy = "tidslinje";
+    var onskat = fraga.get("ar") || valt;
+    var ar = aren.indexOf(onskat) >= 0 ? onskat : arval.dataset.forval;
+    return { vy: vy, ar: ar };
+  }
+
+  function markera(grupp, falt, varde) {
+    grupp.querySelectorAll("button").forEach(function (knapp) {
+      knapp.setAttribute("aria-pressed", knapp.dataset[falt] === varde);
+    });
+  }
+
+  function visaVy(vy) {
+    document.querySelectorAll("section[data-vy]").forEach(function (sektion) {
+      sektion.hidden = sektion.dataset.vy !== vy;
+    });
+    markera(perspektiv, "vy", vy);
+  }
+
+  function visa() {
+    var nu = lage();
+    valt = nu.ar;
+    visaVy(nu.vy);
+    document.querySelectorAll("section.aret").forEach(function (sektion) {
+      sektion.hidden = sektion.dataset.ar !== nu.ar;
+    });
+    markera(arval, "ar", nu.ar);
+  }
+
+  function ga(vy, ar) {
+    history.pushState(null, "", "?vy=" + vy + (vy === "ar" ? "&ar=" + ar : ""));
+    visa();
+  }
+
+  perspektiv.querySelectorAll("button").forEach(function (knapp) {
+    knapp.addEventListener("click", function () {
+      ga(knapp.dataset.vy, lage().ar);
+    });
+  });
+  arval.querySelectorAll("button").forEach(function (knapp) {
+    knapp.addEventListener("click", function () {
+      ga("ar", knapp.dataset.ar);
+    });
+  });
+  window.addEventListener("popstate", visa);
+  document.querySelectorAll("a[href^='#mal-']").forEach(function (lank) {
+    lank.addEventListener("click", function () {
+      visaVy("kort");
+      setTimeout(function () {
+        history.replaceState(null, "", "?vy=kort" + location.hash);
+        visa();
+      });
+    });
+  });
+  perspektiv.hidden = false;
+  arval.hidden = false;
+  visa();
+})();
+</script>
+</main>
+<footer><p>Data: <a href="https://github.com/exempel/kommunhandlingar">https://github.com/exempel/kommunhandlingar</a>. Källkod: <a href="https://github.com/moggleif/kungsbackakommun">https://github.com/moggleif/kungsbackakommun</a>. Sidan byggdes 2026-10-07 20:15 UTC.</p></footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handlingar och protokoll – Exempelby kommun</title>
+<link rel="stylesheet" href="/giffa/sajter.css">
+<script src="/giffa/tema.js"></script>
+<script src="/giffa/sajter.js" defer></script>
+<style>
+:root { color-scheme: light dark;
+  --text: light-dark(#1a1a1a, #e4e6ea); --bakgrund: light-dark(#fff, #15171b);
+  --kant: light-dark(#999, #5f6672); --yta: light-dark(#f5f6f8, #22262d);
+  --linje: light-dark(#d9dde5, #3a404b); --dampad: light-dark(#5b6475, #a8b0bd);
+  --accent: light-dark(#1d5d73, #7cc4dc); --band: light-dark(#e3eef2, #1e3942);
+  --uppnatt: light-dark(#1a6b2a, #72d083); --delvis: light-dark(#8a5a00, #e6b552);
+  --ej: light-dark(#b00020, #ff8a94); }
+@supports not (color: light-dark(black, white)) {
+  :root { color-scheme: light; --text: #1a1a1a; --bakgrund: #fff; --kant: #999;
+    --yta: #f5f6f8; --linje: #d9dde5; --dampad: #5b6475; --accent: #1d5d73;
+    --band: #e3eef2; --uppnatt: #1a6b2a; --delvis: #8a5a00; --ej: #b00020; } }
+:root { --sajtaccent: var(--accent); --sajtyta: var(--bakgrund); --sajtkant: 0; }
+body { font-family: system-ui, sans-serif; max-width: 72rem; margin: 0 auto;
+       padding: 0 1rem; line-height: 1.5; color: var(--text);
+       background: var(--bakgrund); }
+/* En bred tabell rullar i sin egen ruta, aldrig hela sidan; det som ligger
+   absolut i tabellen stannar i rutan (K14). */
+.tabell, .sida { overflow-x: auto; position: relative; }
+table { border-collapse: collapse; margin-bottom: 2rem; }
+th, td { border: 1px solid var(--kant); padding: 0.25rem 0.6rem; vertical-align: top; }
+th[scope="row"] { text-align: left; }
+td.tal { text-align: right; font-variant-numeric: tabular-nums; }
+dl.harkomst { display: grid; grid-template-columns: max-content 1fr; gap: 0 1rem; }
+dl.harkomst dd { margin: 0; overflow-wrap: anywhere; }
+.sida { border-top: 1px solid var(--kant); margin-top: 2rem; }
+.sida p { white-space: pre-wrap; }
+.markering { font-weight: bold; }
+pre { background: var(--yta); padding: 0.5rem; overflow-x: auto; }
+.status { display: inline-block; padding: 0.1em; line-height: 0;
+          border: 1px solid transparent; border-radius: 0.3em; cursor: help; }
+.status.prognos { border: 1px dashed currentColor; }
+.status.uppnatt { color: var(--uppnatt); } .status.delvis { color: var(--delvis); }
+.status.ej { color: var(--ej); }
+.status.ingen, .status.beslutat { color: var(--dampad); }
+.flikar ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem;
+             border-bottom: 2px solid var(--text); margin: 0 0 1.5rem; }
+.flikar a { display: block; padding: 0.35rem 0.8rem; border: 1px solid var(--kant);
+            border-bottom: none; border-radius: 0.4rem 0.4rem 0 0;
+            background: var(--yta); }
+.flikar a[aria-current] { background: var(--text); color: var(--bakgrund);
+                          border-color: var(--text); }
+.oversikt td { text-align: center; }
+.dold { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
+.oversikt tr.grupp th { background: var(--yta); text-align: left; }
+.oversikt th.utskott { padding-left: 1.8rem; font-weight: normal; }
+footer { border-top: 1px solid var(--kant); margin-top: 3rem; padding: 1rem 0;
+         overflow-wrap: anywhere; }
+h1, h2 { overflow-wrap: break-word; hyphens: auto; }
+</style>
+</head>
+<body>
+<nav class="sajtmeny" aria-label="Webbplatsen"><a class="sajtnamn" href="index.html" aria-current="page">Exempelby kommun</a><ul><li><a href="index.html" aria-current="page">Handlingar och protokoll</a></li><li><a href="exempelby/kalender.html">Kalender</a></li><li><details><summary>Organen</summary><ul><li><a href="exempelby/bun.html">Barn- och ungdomsnämnden</a></li><li><a href="exempelby/fsn.html">Förskole- och skolnämnden</a></li></ul></details></li><li><details><summary>Om poolen</summary><ul><li><a href="exempelby/status.html">Poolens status</a></li><li><a href="avvikelser.html">Avvikelser</a></li></ul></details></li></ul></nav>
+<main>
+<h1>Handlingar och protokoll</h1>
+<p>7 dokument från 2022-02-10 till 2025-03-20. Välj ett organ, eller gå direkt till en av dess sidor över tid. Ett streck betyder att organet inte har sidan.</p><div class="tabell"><table class="oversikt"><thead><tr><th scope="col">Organ</th><th scope="col">Sammanträden</th><th scope="col">Mål och direktiv</th><th scope="col">Initiativ och motioner</th><th scope="col">Detaljplaner</th></tr></thead><tbody><tr><th scope="row"><a href="exempelby/bun.html">Barn- och ungdomsnämnden</a></th><td><a href="exempelby/bun.html">1</a></td><td class="tom">–<span class="dold"> saknas</span></td><td class="tom">–<span class="dold"> saknas</span></td><td class="tom">–<span class="dold"> saknas</span></td></tr><tr><th scope="row"><a href="exempelby/fsn.html">Förskole- och skolnämnden</a></th><td><a href="exempelby/fsn.html">4</a></td><td><a href="exempelby/fsn/mal-och-direktiv.html">2 mål</a></td><td><a href="exempelby/fsn/initiativ.html">2 ärenden</a></td><td><a href="exempelby/fsn/detaljplaner.html">1 planer</a></td></tr></tbody></table></div>
+</main>
+<footer><p>Data: <a href="https://github.com/exempel/kommunhandlingar">https://github.com/exempel/kommunhandlingar</a>. Källkod: <a href="https://github.com/moggleif/kungsbackakommun">https://github.com/moggleif/kungsbackakommun</a>. Sidan byggdes 2026-10-07 20:15 UTC.</p></footer>
+</body>
+</html>

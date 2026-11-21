@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Förskole- och skolnämnden 2024-05-02 – Exempelby kommun</title>
+<link rel="stylesheet" href="/giffa/sajter.css">
+<script src="/giffa/tema.js"></script>
+<script src="/giffa/sajter.js" defer></script>
+<style>
+:root { color-scheme: light dark;
+  --text: light-dark(#1a1a1a, #e4e6ea); --bakgrund: light-dark(#fff, #15171b);
+  --kant: light-dark(#999, #5f6672); --yta: light-dark(#f5f6f8, #22262d);
+  --linje: light-dark(#d9dde5, #3a404b); --dampad: light-dark(#5b6475, #a8b0bd);
+  --accent: light-dark(#1d5d73, #7cc4dc); --band: light-dark(#e3eef2, #1e3942);
+  --uppnatt: light-dark(#1a6b2a, #72d083); --delvis: light-dark(#8a5a00, #e6b552);
+  --ej: light-dark(#b00020, #ff8a94); }
+@supports not (color: light-dark(black, white)) {
+  :root { color-scheme: light; --text: #1a1a1a; --bakgrund: #fff; --kant: #999;
+    --yta: #f5f6f8; --linje: #d9dde5; --dampad: #5b6475; --accent: #1d5d73;
+    --band: #e3eef2; --uppnatt: #1a6b2a; --delvis: #8a5a00; --ej: #b00020; } }
+:root { --sajtaccent: var(--accent); --sajtyta: var(--bakgrund); --sajtkant: 0; }
+body { font-family: system-ui, sans-serif; max-width: 72rem; margin: 0 auto;
+       padding: 0 1rem; line-height: 1.5; color: var(--text);
+       background: var(--bakgrund); }
+/* En bred tabell rullar i sin egen ruta, aldrig hela sidan; det som ligger
+   absolut i tabellen stannar i rutan (K14). */
+.tabell, .sida { overflow-x: auto; position: relative; }
+table { border-collapse: collapse; margin-bottom: 2rem; }
+th, td { border: 1px solid var(--kant); padding: 0.25rem 0.6rem; vertical-align: top; }
+th[scope="row"] { text-align: left; }
+td.tal { text-align: right; font-variant-numeric: tabular-nums; }
+dl.harkomst { display: grid; grid-template-columns: max-content 1fr; gap: 0 1rem; }
+dl.harkomst dd { margin: 0; overflow-wrap: anywhere; }
+.sida { border-top: 1px solid var(--kant); margin-top: 2rem; }
+.sida p { white-space: pre-wrap; }
+.markering { font-weight: bold; }
+pre { background: var(--yta); padding: 0.5rem; overflow-x: auto; }
+.status { display: inline-block; padding: 0.1em; line-height: 0;
+          border: 1px solid transparent; border-radius: 0.3em; cursor: help; }
+.status.prognos { border: 1px dashed currentColor; }
+.status.uppnatt { color: var(--uppnatt); } .status.delvis { color: var(--delvis); }
+.status.ej { color: var(--ej); }
+.status.ingen, .status.beslutat { color: var(--dampad); }
+.flikar ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem;
+             border-bottom: 2px solid var(--text); margin: 0 0 1.5rem; }
+.flikar a { display: block; padding: 0.35rem 0.8rem; border: 1px solid var(--kant);
+            border-bottom: none; border-radius: 0.4rem 0.4rem 0 0;
+            background: var(--yta); }
+.flikar a[aria-current] { background: var(--text); color: var(--bakgrund);
+                          border-color: var(--text); }
+.oversikt td { text-align: center; }
+.dold { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
+.oversikt tr.grupp th { background: var(--yta); text-align: left; }
+.oversikt th.utskott { padding-left: 1.8rem; font-weight: normal; }
+footer { border-top: 1px solid var(--kant); margin-top: 3rem; padding: 1rem 0;
+         overflow-wrap: anywhere; }
+h1, h2 { overflow-wrap: break-word; hyphens: auto; }
+</style>
+</head>
+<body>
+<nav class="sajtmeny" aria-label="Webbplatsen"><a class="sajtnamn" href="../../../index.html">Exempelby kommun</a><ul><li><a href="../../../index.html">Handlingar och protokoll</a></li><li><a href="../../../exempelby/kalender.html">Kalender</a></li><li><details><summary>Organen</summary><ul><li><a href="../../../exempelby/bun.html">Barn- och ungdomsnämnden</a></li><li><a href="../../../exempelby/fsn.html">Förskole- och skolnämnden</a></li></ul></details></li><li><details><summary>Om poolen</summary><ul><li><a href="../../../exempelby/status.html">Poolens status</a></li><li><a href="../../../avvikelser.html">Avvikelser</a></li></ul></details></li></ul></nav>
+<main>
+<h1>Förskole- och skolnämnden 2024-05-02</h1>
+<nav aria-label="Här är du"><p><a href="../../../exempelby.html">Handlingar och protokoll</a> › <a href="../../../exempelby/fsn.html">Förskole- och skolnämnden</a></p></nav><style>/* Krav: K29, K35 och K50 i docs/02-KRAV.md, ADR-0050, ADR-0051, ADR-0056 och
+   ADR-0073. Stilen för sidan om ett organs mål och direktiv: sammandraget,
+   väljarna, tidslinjen, ett år i taget och korten. Färgerna står i sidmallen. */
+[hidden] { display: none !important; }
+details { margin-bottom: 1rem; }
+summary { cursor: pointer; }
+.teckenforklaring { list-style: none; padding: 0; display: flex;
+                    flex-wrap: wrap; gap: 0.25rem 1.5rem; color: var(--dampad); }
+.sammandrag { display: grid; gap: 1rem; margin-bottom: 1rem;
+              grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+.ruta { border: 1px solid var(--linje); border-radius: 8px; padding: 1rem; }
+.ruta h3 { margin: 0 0 0.5rem; }
+.siffror { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;
+           margin: 0; }
+.siffror div { display: flex; flex-direction: column-reverse; }
+.siffror dd { margin: 0; font-size: 2rem; font-weight: 600; line-height: 1.1;
+              font-variant-numeric: tabular-nums; }
+.siffror dt { color: var(--dampad); font-size: 0.85rem; }
+svg.graf { width: 100%; height: auto; }
+.urval, .perspektiv, .arval { display: flex; flex-wrap: wrap; gap: 0.4rem;
+                             margin: 1.5rem 0 0.5rem; }
+.urval button, .perspektiv button, .arval button {
+  font: inherit; border: 1px solid var(--linje); background: var(--bakgrund);
+  color: inherit; border-radius: 999px; padding: 0.2rem 0.9rem; cursor: pointer; }
+.urval button[aria-pressed="true"], .perspektiv button[aria-pressed="true"],
+.arval button[aria-pressed="true"] { border-color: var(--accent);
+                                     background: var(--band); color: var(--accent); }
+.perspektiv button { font-weight: 600; }
+.arval button { font-variant-numeric: tabular-nums; padding: 0.1rem 0.6rem; }
+.aret { margin-bottom: 2rem; }
+.aret > .ruta { margin-bottom: 1rem; }
+table.tidslinje { border-collapse: separate; border-spacing: 0; table-layout: fixed;
+                  width: 100%; min-width: 46rem; }
+table.tidslinje th, table.tidslinje td { border: none; padding: 0.15rem 0; }
+table.tidslinje thead th { font-weight: normal; color: var(--dampad);
+                           border-bottom: 1px solid var(--linje); }
+table.tidslinje col.rubrik { width: 16rem; }
+table.tidslinje thead th:first-child { text-align: left; }
+table.tidslinje col.skuggad { background: var(--yta); }
+table.tidslinje tr.perioder th { font-size: 0.75rem; border-bottom: none;
+                                 letter-spacing: 0.04em; }
+table.tidslinje th[scope="row"] { font-weight: normal; padding-right: 1rem;
+                                  font-size: 0.9rem; line-height: 1.3; }
+table.tidslinje th[scope="row"] a { color: inherit;
+                                    text-decoration-color: var(--linje); }
+table.tidslinje th[scope="row"] a:hover { text-decoration-color: currentColor; }
+table.tidslinje th.lucka, table.tidslinje td.saknas {
+  background: repeating-linear-gradient(45deg, var(--yta) 0 4px, transparent 4px 8px); }
+table.tidslinje tr.slag th { text-align: left; padding-top: 1rem; font-size: 0.8rem;
+                             letter-spacing: 0.06em; text-transform: uppercase;
+                             color: var(--dampad); }
+table.tidslinje td { text-align: center; vertical-align: middle; position: relative; }
+table.tidslinje td.band::before { content: ""; position: absolute; left: 0; right: 0;
+                                  top: 50%; height: 1.7rem; margin-top: -0.85rem;
+                                  background: var(--band); }
+table.tidslinje td.start::before { left: 8%; border-radius: 999px 0 0 999px; }
+table.tidslinje td.slut::before { right: 8%; border-radius: 0 999px 999px 0; }
+table.tidslinje td.start.slut::before { border-radius: 999px; }
+table.tidslinje td .status { position: relative; }
+table.tidslinje tr[data-mal]:hover { background: var(--yta); }
+table.tidslinje th[scope="row"]:has(.byte) { padding-left: 0.9rem; position: relative; }
+.byte { position: absolute; left: 0; color: var(--accent); }
+table.tidslinje th.fokus { padding-left: 1.2rem; font-size: 0.85rem; }
+table.tidslinje th.fokus:has(.byte) { padding-left: 2.1rem; }
+th.fokus .byte { left: 1.2rem; }
+.byten { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin-top: 0;
+         color: var(--dampad); }
+.ny-formulering { display: inline-block; width: 0.5rem; height: 0.5rem;
+                  border-radius: 50%; background: var(--accent); }
+td .ny-formulering { position: absolute; top: 50%; left: 14%; margin-top: -0.25rem; }
+.godkand, .dragning { display: inline-block; width: 0.65rem; height: 0.65rem;
+                      margin: 1px; vertical-align: middle; }
+.godkand { background: var(--accent); transform: rotate(45deg) scale(0.85); }
+.dragning { border: 2px solid var(--accent); border-radius: 50%; }
+.namnden th { padding-top: 1rem !important; }
+.namnden td { padding-top: 1rem !important; color: var(--dampad); line-height: 1; }
+.malkort { display: grid; gap: 1rem;
+           grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+.malkort article { border: 1px solid var(--linje); border-radius: 8px; padding: 1rem;
+                   display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+.malkort article:target { border-color: var(--accent); box-shadow: 0 0 0 2px var(--band); }
+.malkort article[data-aktiv="nej"] { background: var(--yta); }
+.malkort h3, .malkort h4, .malkort p, .malkort blockquote { margin: 0; }
+.malkort article:has(.fokusomraden) { grid-column: 1 / -1; }
+.fokusomraden { display: grid; gap: 0.75rem; margin-top: 0.5rem;
+                grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); }
+.fokusomraden h4 { grid-column: 1 / -1; font-size: 0.9rem; color: var(--dampad); }
+.markor span { font-size: 0.75rem; padding: 0.05rem 0.5rem; border-radius: 999px;
+               background: var(--band); color: var(--accent); }
+.tidigare { font-size: 0.85rem; color: var(--dampad); }
+.malkort blockquote { font-style: italic; }
+.remsa { list-style: none; padding: 0; margin: 0.25rem 0 0; display: grid;
+         grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; }
+.remsa li { display: flex; flex-direction: column; align-items: center;
+            justify-content: flex-end; min-height: 2.6rem; background: var(--yta);
+            border-radius: 3px; }
+.remsa li.tom { background: none; border: 1px dashed var(--linje); }
+.remsa li.lucka { background: repeating-linear-gradient(45deg, var(--yta) 0 4px,
+                  transparent 4px 8px); }
+.remsa small { font-size: 0.65rem; color: var(--dampad);
+               font-variant-numeric: tabular-nums; }
+.dold { position: absolute; width: 1px; height: 1px; overflow: hidden;
+        clip-path: inset(50%); white-space: nowrap; }
+.malkort details { margin: 0; }
+.malkort details ol, .malkort ol.rader { list-style: none; padding: 0; display: grid; gap: 0.6rem;
+                                         font-size: 0.9rem; }
+@media (max-width: 40rem) {
+  table.tidslinje col.rubrik { width: 9rem; }
+}
+/* Krav: K54 i docs/02-KRAV.md, ADR-0078. Sammanträdets punkter, en i
+   taget, som målkorten (mal.css). */
+.malkort.punkter { grid-template-columns: 1fr; max-width: 52rem; }
+.punkter h4 { margin-top: 0.6rem; }
+.punkter blockquote { margin: 0; padding: 0 0 0.3rem 0.6rem;
+                      border-left: 3px solid var(--linje); font-style: italic; }
+.punkter details { margin-top: 0.5rem; }
+</style><h2>Sammanträdets dokument</h2><ul><li><a href="../../../exempelby/fsn/2024/2024-05-02/protokoll.html">Protokoll</a> <small>3 sidor</small></li><li><a href="../../../exempelby/fsn/2024/2024-05-02/kallelse.html">Kallelse</a> <small>2 sidor</small></li><li><a href="../../../exempelby/fsn/2024/2024-05-02/handlingar.html">Handlingar</a> <small>3 sidor</small></li></ul><h2>Dagordningen, 3 punkter</h2><p>Varje punkt med förslaget ur kallelsen, handlingens sidor, beslutet i protokollet och historiken i alla organ med samma diarienummer, som det står i källan. Handlingen hittades för 1 av 3.</p><div class="malkort punkter"><article id="punkt-1"><p class="markor"><span>Punkt 1</span><span>Dnr FSN-2024-00012</span></p><h3>Ny skola i Exempelby</h3><h4>Förslag till beslut</h4><blockquote>Nämnden godkänner lokalbehovet.</blockquote><details><summary>Sammanfattning ur tjänsteskrivelsen</summary><p>Skolan behöver fler platser.</p></details><p>Handlingen: <a href="../../../exempelby/fsn/2024/2024-05-02/handlingar.html#sida-2">sidorna 2–3 i handlingarna</a></p><h4>Beslut</h4><p><a href="../../../exempelby/fsn/2024/2024-05-02/protokoll.html#sida-1">§ 4</a>: Nämnden godkänner lokalbehovet.</p><details><summary>Historik: 1 paragraf, 2 kort</summary><ul><li>Följs på <a href="../../../exempelby/fsn/initiativ.html#sak-0">Initiativ och motioner, Förskole- och skolnämnden: Öppettider</a></li><li>Följs på <a href="../../../exempelby/fsn/initiativ.html#sak-1">Initiativ och motioner, Förskole- och skolnämnden: Simskola</a></li></ul><ol><li><b>2024-03-01</b> Förskole- och skolnämnden <a href="../../../exempelby/fsn/2024/2024-03-01/protokoll.html#sida-1">§ 9</a> Lokalbehovet anmäls</li></ol></details></article><article id="punkt-2"><p class="markor"><span>Punkt 2</span><span>Dnr FSN-2024-00004</span></p><h3>Information</h3><p>Inget förslag till beslut i kallelsen.</p><p>Handlingen: ingen egen handling hittad för punkten.</p><h4>Beslut</h4><p><a href="../../../exempelby/fsn/2024/2024-05-02/protokoll.html#sida-2">§ 5</a>: Nämnden noterar informationen.</p><p>Historik: inga andra paragrafer med diarienumret i poolen.</p></article><article id="punkt-3"><p class="markor"><span>Punkt 3</span><span>Dnr FSN-2024-00020</span></p><h3>Budget för 2025</h3><p>Förslaget gick inte att läsa ur kallelsen.</p><p>Handlingen: ingen egen handling hittad för punkten.</p><h4>Beslut</h4><p><a href="../../../exempelby/fsn/2024/2024-05-02/protokoll.html#sida-3">§ 6</a>: Nämnden antar budgeten.</p><p>Historik: inga andra paragrafer med diarienumret i poolen.</p></article></div>
+</main>
+<footer><p>Data: <a href="https://github.com/exempel/kommunhandlingar">https://github.com/exempel/kommunhandlingar</a>. Källkod: <a href="https://github.com/moggleif/kungsbackakommun">https://github.com/moggleif/kungsbackakommun</a>. Sidan byggdes 2026-10-07 20:15 UTC.</p></footer>
+</body>
+</html>

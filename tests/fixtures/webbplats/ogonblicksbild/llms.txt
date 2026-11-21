@@ -1,0 +1,37 @@
+# kommunhandlingar
+
+> Kommunernas politiska handlingar – kallelser, handlingar och protokoll –
+> konverterade från PDF till Markdown, med tabellerna som CSV och källan och
+> kvaliteten i varje dokument.
+
+Varje dokument börjar med front matter: varifrån det kom, när det hämtades
+och hur väl konverteringen lyckades. Fälten förklaras i
+[arkitekturen](https://github.com/moggleif/kungsbackakommun/blob/main/docs/03-ARKITEKTUR.md#front-matter).
+`kvalitet` säger hur texten lästes. Tal på sidorna i `tal_obekraftade` är
+inte bekräftade och ska inte användas som data. Ett fält utan värde är
+`null`; tomt är inte noll. Poolen återger källan och drar inga slutsatser.
+
+Indexet har en rad per dokument i JSON Lines, med hela front matter.
+`fil` är sökvägen i repot, och Markdown-filen finns på
+`https://github.com/exempel/kommunhandlingar/raw/main/<fil>`. `sida` är dokumentets sida på den här webbplatsen,
+och tabellerna i `tabeller` ligger bredvid den i
+`<sida utan .html>.tabeller/`.
+
+Paragraferna har en rad per paragraf i protokollen, med rubriken,
+diarienumren, beslutet och sidan där paragrafen börjar. `beslut` är `null`
+när paragrafen saknar rubriken Beslut eller beslutet når sidans slut;
+läs det då på sidan. `arenden` i indexet är protokollets alla diarienummer.
+
+## Exempelby kommun
+
+- [Index över dokumenten](exempelby/index.jsonl)
+- [Protokollens paragrafer](exempelby/paragrafer.jsonl)
+- [Översikt](exempelby.html)
+- [Barn- och ungdomsnämnden](exempelby/bun.html)
+- [Förskole- och skolnämnden](exempelby/fsn.html)
+- [Kalendern](https://github.com/exempel/kommunhandlingar/raw/main/kalender/exempelby.csv): skriven för hand
+- [Mål och direktiv](https://github.com/exempel/kommunhandlingar/raw/main/mal/exempelby.csv): skriven för hand
+- [Uppföljningar av målen](https://github.com/exempel/kommunhandlingar/raw/main/uppfoljningar/exempelby.csv): skriven för hand
+- [Initiativ och motioner](https://github.com/exempel/kommunhandlingar/raw/main/initiativ/exempelby.csv): skriven för hand
+- [Detaljplaner](https://github.com/exempel/kommunhandlingar/raw/main/detaljplaner/exempelby.csv): skriven för hand
+- [Detaljplanernas projekt](https://github.com/exempel/kommunhandlingar/raw/main/projekt/exempelby.csv): skriven för hand
