@@ -12,11 +12,11 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import uppfoljningar
 from kommunhandlingar.webbplats.bygg import bygg
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
 from tests.test_mal import BUDGET, HANDLINGAR, ROT, budget, pool
 from tests.test_webbplats import FIXTURER, REPO, TID, exempelby, protokoll
+from tests.testpool import mall, testpool
 
 RUBRIK = "organ,datum,paragraf,slag,rubrik,kalla\n"
 RADER = (
@@ -28,12 +28,8 @@ RADER = (
 @contextmanager
 def lasta(rader: str = RADER):
     """Läser en uppföljningsfil mot en pool med mötets protokoll och handlingar."""
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + rader, encoding="utf-8")
-        (data / BUDGET).parent.mkdir(parents=True)
-        for dokument in (BUDGET, HANDLINGAR):
-            (data / dokument).write_text(budget(), encoding="utf-8")
+    texter = {BUDGET: budget(), HANDLINGAR: budget()}
+    with testpool(RUBRIK, rader, texter) as (fil, data):
         yield uppfoljningar.las(fil, exempelby(), data)
 
 
@@ -66,14 +62,8 @@ class TestLasning(unittest.TestCase):
 class TestTabellen(unittest.TestCase):
     def tabell(self, organets: list[dict]) -> dict[str, list[str]]:
         with pool() as malen, lasta() as uppfoljda:
-            mall = Mall(
-                [exempelby()],
-                REPO,
-                TID,
-                uppfoljningar={"exempelby": uppfoljda},
-                aren=aren(malen),
-            )
-            html = malsida(mall, exempelby(), malen, organets)
+            vald = mall(uppfoljningar={"exempelby": uppfoljda}, aren=aren(malen))
+            html = malsida(vald, exempelby(), malen, organets)
         tabell = html[html.index('id="antal"') : html.index('id="tidslinje"')]
         rader = re.findall(r'<tr><th scope="row">(\d+)</th>(.*?)</tr>', tabell)
         return {ar: re.findall(r'"tal">(.*?)<', celler) for ar, celler in rader}

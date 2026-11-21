@@ -1,20 +1,18 @@
 """Krav: K38 i docs/02-KRAV.md, ADR-0059. Kod: src/kommunhandlingar/webbplats/
 spar.py, sparslag.py, sparsida.py, sparkort.py och bygg.py."""
 
-import tempfile
 import unittest
 from contextlib import contextmanager
-from pathlib import Path
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import HANDLINGSPLANER
 from tests.aren import aren
 from tests.test_mal import ROT
-from tests.test_webbplats import REPO, TID, dokument, exempelby
+from tests.test_webbplats import exempelby
+from tests.testpool import dokumenten, mall, testpool
 
 RUBRIK = "organ,plan,ar,fas,varde,text,kalla,tolkad\n"
 HANDLINGAR = "fsn/2024/2024-03-14/handlingar.md"
@@ -43,16 +41,8 @@ RADER = (
 @contextmanager
 def lasta():
     """Läser en fil med handlingsplaner mot en pool med två dokument."""
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + RADER, encoding="utf-8")
-        for dok, text in ((HANDLINGAR, HANDLINGARNAS), (PROTOKOLL, PROTOKOLLETS)):
-            organ, _, datum, _ = dok.split("/")
-            (data / dok).parent.mkdir(parents=True, exist_ok=True)
-            (data / dok).write_text(
-                dokument(organ, datum, text=text, per_sida="[ok, ok]"),
-                encoding="utf-8",
-            )
+    texter = {HANDLINGAR: HANDLINGARNAS, PROTOKOLL: PROTOKOLLETS}
+    with testpool(RUBRIK, RADER, dokumenten(texter, "[ok, ok]")) as (fil, data):
         yield spar.las(fil, exempelby(), data, HANDLINGSPLANER)
 
 
@@ -60,7 +50,7 @@ class TestSidan(unittest.TestCase):
     def sida(self) -> str:
         with lasta() as stegen:
             vy = Vy(HANDLINGSPLANER, exempelby(), aren(stegen)["exempelby"])
-            return sparsida(Mall([exempelby()], REPO, TID), vy, stegen)
+            return sparsida(mall(), vy, stegen)
 
     def test_en_plan_utan_avsandare_far_ingen(self):
         html = self.sida()

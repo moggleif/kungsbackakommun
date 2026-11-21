@@ -14,10 +14,10 @@ from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import mal
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.malkort import kallank
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
 from tests.test_webbplats import FIXTURER, REPO, TID, dokument, exempelby, protokoll
+from tests.testpool import mall, testpool
 
 ROT = Path(__file__).parent.parent
 RUBRIK = (
@@ -60,12 +60,8 @@ def budget() -> str:
 @contextmanager
 def pool(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en målfil mot en pool med ett dokument, i en temporär katalog."""
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(rubrik + rader, encoding="utf-8")
-        (data / BUDGET).parent.mkdir(parents=True)
-        (data / BUDGET).write_text(budget(), encoding="utf-8")
-        (data / HANDLINGAR).write_text(budget(), encoding="utf-8")
+    texter = {BUDGET: budget(), HANDLINGAR: budget()}
+    with testpool(rubrik, rader, texter) as (fil, data):
         yield mal.las(fil, exempelby(), data)
 
 
@@ -157,8 +153,9 @@ class TestLasning(unittest.TestCase):
 class TestSidan(unittest.TestCase):
     def sida(self, dokumentar: set[int] = frozenset({2023, 2025})) -> str:
         with pool() as malen:
-            mall = Mall([exempelby()], REPO, TID, aren=aren(malen))
-            return malsida(mall, exempelby(), malen, protokoll(*dokumentar))
+            return malsida(
+                mall(aren=aren(malen)), exempelby(), malen, protokoll(*dokumentar)
+            )
 
     def test_ett_spar_per_rad_och_ett_ar_per_kolumn_med_mal(self):
         html = self.sida()

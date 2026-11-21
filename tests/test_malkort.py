@@ -6,14 +6,14 @@ import re
 import unittest
 from dataclasses import replace
 
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.malsida import malsida
 from kommunhandlingar.webbplats.maltidslinje import arets
 from kommunhandlingar.webbplats.mandatperiod import start
 from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 from tests.aren import aren
 from tests.test_mal import BUDGET, RADER, pool
-from tests.test_webbplats import REPO, TID, exempelby, protokoll
+from tests.test_webbplats import exempelby, protokoll
+from tests.testpool import mall
 
 # Trygga miljöer 2022 och 2025 byter rubrik till Läsfrämjande 2026; direktivet
 # Läsfrämjande står 2024 och 2025.
@@ -33,14 +33,8 @@ UPPFOLJDA = [
 
 def sida(dokumentar: tuple[int, ...] = (2022, 2024), uppfoljda=()) -> str:
     with pool(GRUPPER) as malen:
-        mall = Mall(
-            [exempelby()],
-            REPO,
-            TID,
-            uppfoljningar={"exempelby": uppfoljda},
-            aren=aren(malen),
-        )
-        return malsida(mall, exempelby(), malen, protokoll(*dokumentar))
+        vald = mall(uppfoljningar={"exempelby": uppfoljda}, aren=aren(malen))
+        return malsida(vald, exempelby(), malen, protokoll(*dokumentar))
 
 
 def rad(html: str, nr: int, rubrik: str) -> list[str]:
@@ -87,7 +81,7 @@ class TestTidslinjen(unittest.TestCase):
         )
         with pool(rader) as malen:
             html = malsida(
-                Mall([exempelby()], REPO, TID, aren=aren(malen)),
+                mall(aren=aren(malen)),
                 exempelby(),
                 malen,
                 protokoll(2022),
@@ -103,7 +97,7 @@ class TestTidslinjen(unittest.TestCase):
         )
         with pool(rader) as malen:
             html = malsida(
-                Mall([exempelby()], REPO, TID, aren=aren(malen)),
+                mall(aren=aren(malen)),
                 exempelby(),
                 malen,
                 protokoll(2022),
@@ -155,7 +149,7 @@ class TestTidslinjen(unittest.TestCase):
         rader = GRUPPER + f"fsn,2027,direktiv,Trygga miljöer,,,,,{BUDGET}#sida-1,,,\n"
         with pool(rader) as malen:
             html = malsida(
-                Mall([exempelby()], REPO, TID, aren=aren(malen)),
+                mall(aren=aren(malen)),
                 exempelby(),
                 malen,
                 protokoll(2022),
@@ -217,7 +211,7 @@ class TestKorten(unittest.TestCase):
         self.assertIn('data-urval="bytt">Har bytt rubrik', html)
         with pool(RADER.replace("direktiv", "nämndmål")) as malen:
             bara = malsida(
-                Mall([exempelby()], REPO, TID, aren=aren(malen)),
+                mall(aren=aren(malen)),
                 exempelby(),
                 malen,
                 protokoll(2024),

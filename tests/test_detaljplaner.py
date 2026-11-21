@@ -1,20 +1,18 @@
 """Krav: K44 i docs/02-KRAV.md, ADR-0067. Kod: src/kommunhandlingar/webbplats/
 sparslag.py."""
 
-import tempfile
 import unittest
 from dataclasses import replace
-from pathlib import Path
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from tests.aren import aren
 from tests.test_mal import ROT
-from tests.test_webbplats import REPO, TID, dokument, exempelby
+from tests.test_webbplats import exempelby
+from tests.testpool import dokumenten, mall, testpool
 
 RUBRIK = "organ,detaljplan,ar,fas,varde,text,kalla,tolkad\n"
 NAMND = "bun/2024/2024-03-14/protokoll.md"
@@ -32,21 +30,13 @@ RADER = (
 
 
 def sida(projekten: dict | None = None) -> str:
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + RADER, encoding="utf-8")
-        for dok, text in TEXTER.items():
-            organ, _, datum, _ = dok.split("/")
-            (data / dok).parent.mkdir(parents=True, exist_ok=True)
-            (data / dok).write_text(
-                dokument(organ, datum, text=text, per_sida="[ok]"), encoding="utf-8"
-            )
+    with testpool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
         stegen = spar.las(fil, exempelby(), data, DETALJPLANER)
     vy = replace(
         Vy(DETALJPLANER, exempelby(), aren(stegen)["exempelby"]),
         projekt=projekten or {},
     )
-    return sparsida(Mall([exempelby()], REPO, TID), vy, stegen)
+    return sparsida(mall(), vy, stegen)
 
 
 class TestSidan(unittest.TestCase):

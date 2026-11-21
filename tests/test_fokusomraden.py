@@ -2,18 +2,16 @@
 src/kommunhandlingar/webbplats/mal.py, malkontroll.py, malspar.py,
 maltidslinje.py, malkort.py, malstatistik.py och malsida.py."""
 
-import tempfile
 import unittest
 from contextlib import contextmanager
-from pathlib import Path
 
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.webbplats import mal
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
 from tests.test_mal import RUBRIK
-from tests.test_webbplats import REPO, TID, dokument, exempelby, protokoll
+from tests.test_webbplats import dokument, exempelby, protokoll
+from tests.testpool import mall, testpool
 
 BUDGET = "fsn/2024/2024-05-02/handlingar.md"
 AR = "fsn/2025/2025-04-08/handlingar.md"
@@ -61,22 +59,19 @@ RADER = (
 
 @contextmanager
 def pool(rader: str = RADER):
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(RUBRIK + rader, encoding="utf-8")
-        for kalla, text in ((BUDGET, BUDGETTEXT), (AR, ARTEXT)):
-            (data / kalla).parent.mkdir(parents=True)
-            (data / kalla).write_text(
-                dokument(text=text, typ="handlingar", per_sida="[ok, ok]"),
-                encoding="utf-8",
-            )
+    texter = {
+        kalla: dokument(text=text, typ="handlingar", per_sida="[ok, ok]")
+        for kalla, text in ((BUDGET, BUDGETTEXT), (AR, ARTEXT))
+    }
+    with testpool(RUBRIK, rader, texter) as (fil, data):
         yield mal.las(fil, exempelby(), data)
 
 
 def sida(rader: str = RADER) -> str:
     with pool(rader) as malen:
-        mall = Mall([exempelby()], REPO, TID, aren=aren(malen))
-        return malsida(mall, exempelby(), malen, protokoll(2024, 2025))
+        return malsida(
+            mall(aren=aren(malen)), exempelby(), malen, protokoll(2024, 2025)
+        )
 
 
 class TestLasning(unittest.TestCase):

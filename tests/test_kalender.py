@@ -18,6 +18,7 @@ from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.kalenderfarger import farger
 from kommunhandlingar.webbplats.kalendersida import kalendersida
 from kommunhandlingar.webbplats.mall import Mall
+from tests.testpool import testpool
 
 FIXTURER = Path(__file__).parent / "fixtures"
 ROT = Path(__file__).parent.parent
@@ -46,12 +47,8 @@ def kommun():
 @contextmanager
 def pool(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en kalenderfil mot en pool med protokollet, i en temporär katalog."""
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(rubrik + rader, encoding="utf-8")
-        for dokument in (PROTOKOLL, KALLELSE, NASTA):
-            (data / dokument).parent.mkdir(parents=True, exist_ok=True)
-            (data / dokument).write_text("---\n---\n", encoding="utf-8")
+    texter = dict.fromkeys((PROTOKOLL, KALLELSE, NASTA), "---\n---\n")
+    with testpool(rubrik, rader, texter) as (fil, data):
         yield kalender.las(fil, kommun(), data)
 
 

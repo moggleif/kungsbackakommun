@@ -12,13 +12,13 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
 from kommunhandlingar.webbplats.bygg import bygg
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.sparkort import Vy, kalla
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import LOKALBEHOV
 from tests.aren import aren
 from tests.test_mal import BUDGET, ROT
-from tests.test_webbplats import FIXTURER, REPO, TID, dokument, exempelby
+from tests.test_webbplats import FIXTURER, REPO, TID, exempelby
+from tests.testpool import dokumenten, mall, skriv, testpool
 
 RUBRIK = "organ,behov,ar,fas,varde,text,kalla,tolkad\n"
 ANDRAS = "bun/2025/2025-06-10/protokoll.md"
@@ -49,22 +49,13 @@ RADER = (
 )
 
 
-def skriv_pool(data: Path) -> None:
-    for fil, text in ((BUDGET, NAMNDENS), (ANDRAS, BUDGETENS)):
-        organ, _, datum, _ = fil.split("/")
-        (data / fil).parent.mkdir(parents=True)
-        (data / fil).write_text(
-            dokument(organ, datum, text=text, per_sida="[ok, ok]"), encoding="utf-8"
-        )
+POOL = dokumenten({BUDGET: NAMNDENS, ANDRAS: BUDGETENS}, "[ok, ok]")
 
 
 @contextmanager
 def lasta(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en lokalbehovsfil mot en pool med två organs dokument."""
-    with tempfile.TemporaryDirectory() as tmp:
-        fil, data = Path(tmp) / "exempelby.csv", Path(tmp) / "data"
-        fil.write_text(rubrik + rader, encoding="utf-8")
-        skriv_pool(data)
+    with testpool(rubrik, rader, POOL) as (fil, data):
         yield spar.las(fil, exempelby(), data, LOKALBEHOV)
 
 
@@ -109,7 +100,7 @@ class TestSidan(unittest.TestCase):
     def sida(self) -> str:
         with lasta() as stegen:
             vy = Vy(LOKALBEHOV, exempelby(), aren(stegen)["exempelby"])
-            return sparsida(Mall([exempelby()], REPO, TID), vy, stegen)
+            return sparsida(mall(), vy, stegen)
 
     def test_ett_behov_per_rad_och_ett_ar_per_kolumn(self):
         html = self.sida()
@@ -146,7 +137,7 @@ class TestSidan(unittest.TestCase):
         with lasta() as stegen:
             utan = [s for s in stegen if s.fas != "lokalbehov"]
             vy = Vy(LOKALBEHOV, exempelby(), aren(utan)["exempelby"])
-            html = sparsida(Mall([exempelby()], REPO, TID), vy, utan)
+            html = sparsida(mall(), vy, utan)
         self.assertNotIn('data-urval="senaste"', html)
         self.assertIn("<script>", html)
 
@@ -162,7 +153,7 @@ class TestBygg(unittest.TestCase):
         rot, ut = tmp / "repo", tmp / "ut"
         (rot / "kommuner").mkdir(parents=True)
         shutil.copy(FIXTURER / "exempelby.toml", rot / "kommuner")
-        skriv_pool(rot / "data" / "exempelby")
+        skriv(rot / "data" / "exempelby", POOL)
         if rader is not None:
             (rot / "lokalbehov").mkdir()
             (rot / "lokalbehov" / f"{namn}.csv").write_text(
