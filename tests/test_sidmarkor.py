@@ -11,10 +11,15 @@ class TestSidmarkor(unittest.TestCase):
         self.assertEqual(traff[1], "7")
 
     def test_tre_sidor_ges_efter_sitt_nummer(self):
-        text = "\n\n".join(
-            ["huvud", sidmarkor.markor(1), "ett", sidmarkor.markor(2)]
-            + [sidmarkor.markor(3), "tre"]
-        )
+        delar = [
+            "huvud",
+            sidmarkor.markor(1),
+            "ett",
+            sidmarkor.markor(2),
+            sidmarkor.markor(3),
+            "tre",
+        ]
+        text = "\n\n".join(delar)
         self.assertEqual(
             sidmarkor.sidorna(text),
             {"1": "\n\nett\n\n", "2": "\n\n", "3": "\n\ntre"},
