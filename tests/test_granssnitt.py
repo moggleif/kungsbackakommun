@@ -63,8 +63,8 @@ class Kommandona(unittest.TestCase):
         self.assertIn("kvar.tmp", kontroll.stdout)
 
     def test_webbplatsen_ar_ett_kommando(self):
-        # Modulen bygger när den importeras; argumenten låses när den får en
-        # main (#356).
+        # Argumenten och hur kommandot körs låses i
+        # tests/test_webbplats_kommando.py (K82).
         spec = importlib.util.find_spec("kommunhandlingar.webbplats.__main__")
         self.assertIsNotNone(spec)
 
