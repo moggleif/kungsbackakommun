@@ -1,6 +1,6 @@
-"""Krav: K2, K13, K16, K23, K45 och K57 i docs/02-KRAV.md, ADR-0013, ADR-0018,
-ADR-0039, ADR-0068 och ADR-0080.
-Test: tests/test_upptack.py.
+"""Krav: K2, K13, K16, K23, K45, K57 och K80 i docs/02-KRAV.md, ADR-0013,
+ADR-0018, ADR-0039, ADR-0061, ADR-0068 och ADR-0080.
+Test: tests/test_upptack.py och tests/test_upptack_kommando.py.
 
 Steg 1: `python -m kommunhandlingar.upptack <kommunfil> <arbetskatalog>
 [--arkiv] [--start N]`. Hämtar kommunens källsidor, kör adaptern och
