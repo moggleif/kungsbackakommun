@@ -59,6 +59,22 @@ class TestAndrad(unittest.TestCase):
         self.assertRaises(KeyError, frontmatter.andrad, text, "arenden", "[]")
 
 
+class TestNull(unittest.TestCase):
+    def test_saknas_bara_for_null(self):
+        self.assertTrue(frontmatter.saknas("null"))
+        for varde in ("", "0", "[]", "Null", "nullnull"):
+            with self.subTest(varde):
+                self.assertFalse(frontmatter.saknas(varde))
+
+    def test_granskad(self):
+        self.assertFalse(frontmatter.granskad(FALT))
+        self.assertTrue(frontmatter.granskad(FALT | {"granskad": "2026-11-01"}))
+
+    def test_ar_ur_datum(self):
+        self.assertEqual(frontmatter.ar({"datum": "2025-04-22"}), 2025)
+        self.assertRaises(ValueError, frontmatter.ar, {"datum": "null"})
+
+
 class TestVarden(unittest.TestCase):
     def test_varde_av(self):
         self.assertEqual(frontmatter.varde_av(None), "null")
