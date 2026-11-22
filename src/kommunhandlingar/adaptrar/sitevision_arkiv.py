@@ -14,51 +14,47 @@ from urllib.parse import urlsplit
 from kommunhandlingar.adaptrar import sitevision, wayback
 from kommunhandlingar.adaptrar.sitevision_html import NEDLADDNING, forekomster
 from kommunhandlingar.fel import Hamtfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.hamtning.hamtare import Lasare
+from kommunhandlingar.kandidat import Avvisad, Fynd
 
 
-def upptack(
-    kalla: sitevision.Kalla, klient
-) -> tuple[list[Kandidat], list[Avvisad], list[str]]:
+def upptack(kalla: sitevision.Kalla, klient: Lasare) -> Fynd:
     try:
         filer = nyaste_kopior(klient, kalla)
     except Hamtfel as fel:
-        return [], [], [str(fel)]
+        return Fynd(noteringar=[str(fel)])
     sidor, noteringar = [], []
     for organ in kalla.wayback:
         bilder, fel = ogonblicksbilder(klient, kalla.sidor[organ])
         sidor += [(organ, bild, html) for bild, html in bilder]
         noteringar += fel
-    kandidater, avvisade = sitevision.las(replace(kalla, arkiv=True), sidor)
-    med_kopior = [med_kopia(k, filer) for k in kandidater]
-    return (
-        [k for k in med_kopior if isinstance(k, Kandidat)],
-        avvisade + [a for a in med_kopior if isinstance(a, Avvisad)],
-        noteringar,
-    )
+    lasta = sitevision.las(replace(kalla, arkiv=True), sidor)
+    return med_kopior(lasta, filer) + Fynd(noteringar=noteringar)
 
 
-def nyaste_kopior(klient, kalla: sitevision.Kalla) -> dict[str, wayback.Kopia]:
+def nyaste_kopior(klient: Lasare, kalla: sitevision.Kalla) -> dict[str, wayback.Kopia]:
     vardar = sorted({urlsplit(adress).netloc for adress in kalla.sidor.values()})
     kopior = [
         kopia
         for vard in vardar
-        for kopia in wayback.fraga(klient, f"{vard}/download/", "application/pdf", True)
+        for kopia in wayback.fraga_under(klient, f"{vard}/download/", "application/pdf")
         if NEDLADDNING.match(kopia.original)
     ]
-    basta: dict[str, wayback.Kopia] = {}
-    for kopia in sorted(kopior, key=rang):
-        basta[f"sitevision:{NEDLADDNING.match(kopia.original)[1]}"] = kopia
-    return basta
+    return wayback.basta(kopior, nyckel, rang)
+
+
+def nyckel(kopia: wayback.Kopia) -> str:
+    return f"sitevision:{NEDLADDNING.match(kopia.original)[1]}"
 
 
 def rang(kopia: wayback.Kopia) -> tuple[int, int, int]:
     """Nyaste versionen, sedan största kopian, och vid lika den äldsta."""
-    version = int(NEDLADDNING.match(kopia.original)[2])
-    return version, kopia.langd, -int(kopia.tidsstampel)
+    return int(NEDLADDNING.match(kopia.original)[2]), *wayback.storst(kopia)
 
 
-def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], list[str]]:
+def ogonblicksbilder(
+    klient: Lasare, sidadress: str
+) -> tuple[list[tuple[str, str]], list[str]]:
     """Den sista ögonblicksbilden per år, den nyaste först, med sin HTML."""
     try:
         kopior = wayback.fraga(klient, sidadress, "text/html")
@@ -68,19 +64,36 @@ def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], lis
         return [], [f"{sidadress}: ingen kopia av mötessidan i arkivet"]
     bilder, fel = [], []
     for adress in map(wayback.adress, wayback.sista_per_ar(kopior)):
-        try:
-            html = klient.text(adress)
-            forekomster(html, adress)  # en kapad sida går inte att läsa
-            bilder.append((adress, html))
-        except Hamtfel as hamtfel:
-            fel.append(f"{adress}: {hamtfel.orsak}")
-        except ValueError:
-            fel.append(f"{adress}: sidan går inte att läsa")
+        lasta, olasta = bild(klient, adress)
+        bilder += lasta
+        fel += olasta
     return bilder, fel
 
 
-def med_kopia(kandidat: Kandidat, filer: dict[str, wayback.Kopia]):
-    kopia = filer.get(kandidat.kallnyckel)
-    if kopia is None:
-        return Avvisad(kandidat.kalla, kandidat.filnamn, "ingen kopia i arkivet")
-    return replace(kandidat, url=wayback.adress(kopia))
+def bild(klient: Lasare, adress: str) -> tuple[list[tuple[str, str]], list[str]]:
+    """Ögonblicksbilden med sin HTML, eller varför den inte går att läsa."""
+    try:
+        html = klient.text(adress)
+        forekomster(html, adress)  # en kapad sida går inte att läsa
+    except Hamtfel as fel:
+        return [], [f"{adress}: {fel.orsak}"]
+    except ValueError:
+        return [], [f"{adress}: sidan går inte att läsa"]
+    return [(adress, html)], []
+
+
+def med_kopior(fynd: Fynd, filer: dict[str, wayback.Kopia]) -> Fynd:
+    """En kandidat utan kopia i arkivet blir en fil utan kandidat."""
+    kopior = [(k, filer.get(k.kallnyckel)) for k in fynd.kandidater]
+    return replace(
+        fynd,
+        kandidater=[
+            replace(k, url=wayback.adress(c)) for k, c in kopior if c is not None
+        ],
+        avvisade=fynd.avvisade
+        + [
+            Avvisad(k.kalla, k.filnamn, "ingen kopia i arkivet")
+            for k, c in kopior
+            if c is None
+        ],
+    )

@@ -5,6 +5,7 @@ from datetime import date
 
 from kommunhandlingar.adaptrar.sitevision_projekt import upptack
 from kommunhandlingar.fel import Hamtfel
+from kommunhandlingar.kandidat import Fynd
 
 LISTA = "https://exempelby.se/bygga/projekt"
 # 23.30 i UTC är nästa dag i svensk sommartid.
@@ -53,7 +54,8 @@ def hamta(adress: str) -> str:
 class TestProjektsidorna(unittest.TestCase):
     def setUp(self):
         HAMTADE.clear()
-        self.kandidater, self.avvisade = upptack({"bun-projekt": LISTA}, hamta)
+        fynd = upptack({"bun-projekt": LISTA}, hamta)
+        self.kandidater, self.avvisade = fynd.kandidater, fynd.avvisade
 
     def test_varje_fil_pa_alla_listans_sidor(self):
         self.assertEqual(
@@ -89,10 +91,10 @@ class TestProjektsidorna(unittest.TestCase):
         self.assertIn("http-404", self.avvisade[0].orsak)
 
     def test_en_listsida_som_inte_svarar_star_i_sammanfattningen(self):
-        kandidater, avvisade = upptack({"o": "https://exempelby.se/saknas"}, hamta)
-        self.assertEqual(kandidater, [])
+        fynd = upptack({"o": "https://exempelby.se/saknas"}, hamta)
+        self.assertEqual(fynd.kandidater, [])
         self.assertIn(
-            "listan: https://exempelby.se/saknas: http-404", avvisade[0].orsak
+            "listan: https://exempelby.se/saknas: http-404", fynd.avvisade[0].orsak
         )
 
     def test_en_projektsida_som_inte_gar_att_lasa_hoppas_over(self):
@@ -101,10 +103,10 @@ class TestProjektsidorna(unittest.TestCase):
         def med_trasig(adress: str) -> str:
             return trasig if adress.endswith("/va-i-by") else hamta(adress)
 
-        kandidater, avvisade = upptack({"o": LISTA}, med_trasig)
-        self.assertEqual(len(kandidater), 2)
+        fynd = upptack({"o": LISTA}, med_trasig)
+        self.assertEqual(len(fynd.kandidater), 2)
         self.assertEqual(
-            [a.kalla for a in avvisade], [f"{LISTA}/va-i-by", f"{LISTA}/borta"]
+            [a.kalla for a in fynd.avvisade], [f"{LISTA}/va-i-by", f"{LISTA}/borta"]
         )
 
     def test_listans_forsta_sida_hamtas_en_gang(self):
@@ -112,7 +114,7 @@ class TestProjektsidorna(unittest.TestCase):
         self.assertNotIn(f"{LISTA}?sida=1", HAMTADE)
 
     def test_utan_projekt_hamtas_inget(self):
-        self.assertEqual(upptack({}, hamta), ([], []))
+        self.assertEqual(upptack({}, hamta), Fynd())
 
 
 PROJEKTET = f"{LISTA}/arena"
@@ -144,7 +146,8 @@ class TestSidorUnderEttProjekt(unittest.TestCase):
                 raise Hamtfel("http-404", adress)
             return UNDER[adress]
 
-        self.kandidater, self.avvisade = upptack({"o": LISTA}, under)
+        fynd = upptack({"o": LISTA}, under)
+        self.kandidater, self.avvisade = fynd.kandidater, fynd.avvisade
 
     def test_sidan_under_ar_ett_eget_projekt_fore_listans_nasta(self):
         self.assertEqual(

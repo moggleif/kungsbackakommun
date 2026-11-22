@@ -11,6 +11,7 @@ from kommunhandlingar.adaptrar.sitevision import las as las_sidor
 from kommunhandlingar.adaptrar.sitevision_arkiv import upptack
 from kommunhandlingar.adaptrar.wayback import CDX
 from kommunhandlingar.fel import Hamtfel
+from kommunhandlingar.kandidat import Fynd
 from kommunhandlingar.konfiguration import las
 from tests.test_konfiguration import FIXTURER
 from tests.test_sitevision import lank, sida
@@ -95,7 +96,7 @@ class TestArkivetsUpptackt(unittest.TestCase):
         return upptack(self.kalla, self.klient)
 
     def test_nyaste_versionen_och_storsta_kopian(self):
-        kandidater, _, _ = self.upptack()
+        kandidater = self.upptack().kandidater
         adresser = {k.kallnyckel: k.url for k in kandidater}
         self.assertEqual(
             adresser,
@@ -106,13 +107,13 @@ class TestArkivetsUpptackt(unittest.TestCase):
         )
 
     def test_den_nyaste_ogonblicksbilden_galler(self):
-        kandidater, _, _ = self.upptack()
+        kandidater = self.upptack().kandidater
         protokoll = next(k for k in kandidater if k.kallnyckel == "sitevision:18.a1")
         self.assertEqual(str(protokoll.datum), "2022-05-02")
         self.assertEqual(protokoll.kalla, bild("20231201000000", BUN))
 
     def test_fil_utan_kopia_blir_ingen_kandidat(self):
-        _, avvisade, _ = self.upptack()
+        avvisade = self.upptack().avvisade
         self.assertEqual(
             [(a.filnamn, a.orsak, a.kalla) for a in avvisade],
             [
@@ -126,10 +127,10 @@ class TestArkivetsUpptackt(unittest.TestCase):
 
     def test_obesvarade_fragor_hoppas_over(self):
         del self.sidor[bild("20221115000000", BUN)]
-        kandidater, _, obesvarade = self.upptack()
-        self.assertEqual(len(kandidater), 2)
+        fynd = self.upptack()
+        self.assertEqual(len(fynd.kandidater), 2)
         self.assertEqual(
-            obesvarade,
+            fynd.noteringar,
             [
                 f"{bild('20221115000000', BUN)}: http-404",
                 f"arkivets lista för {FSN}: anslutning",
@@ -140,28 +141,28 @@ class TestArkivetsUpptackt(unittest.TestCase):
         self.cdx[FILER] = Hamtfel("tidsgrans")
         self.assertEqual(
             self.upptack(),
-            ([], [], ["arkivets lista för exempelby.se/download/: tidsgrans"]),
+            Fynd(noteringar=["arkivets lista för exempelby.se/download/: tidsgrans"]),
         )
 
     def test_bara_organen_i_wayback_fragas(self):
         self.kalla = replace(self.kalla, wayback=("bun",))
-        kandidater, _, noteringar = self.upptack()
-        self.assertEqual(len(kandidater), 2)
-        self.assertEqual(noteringar, [])
+        fynd = self.upptack()
+        self.assertEqual(len(fynd.kandidater), 2)
+        self.assertEqual(fynd.noteringar, [])
 
     def test_en_motessida_utan_kopior_noteras(self):
         self.cdx[(FSN, "mimetype:text/html")] = []
-        _, _, noteringar = self.upptack()
+        noteringar = self.upptack().noteringar
         self.assertEqual(noteringar, [f"{FSN}: ingen kopia av mötessidan i arkivet"])
 
     def test_en_kapad_ogonblicksbild_noteras(self):
         self.sidor[bild("20221115000000", BUN)] = (
             '<script>AppRegistry.registerInitialState(\'12.1\',{"files":[{"id"'
         )
-        kandidater, _, noteringar = self.upptack()
-        self.assertEqual(len(kandidater), 2)
+        fynd = self.upptack()
+        self.assertEqual(len(fynd.kandidater), 2)
         self.assertIn(
-            f"{bild('20221115000000', BUN)}: sidan går inte att läsa", noteringar
+            f"{bild('20221115000000', BUN)}: sidan går inte att läsa", fynd.noteringar
         )
 
 
@@ -174,7 +175,9 @@ class TestDatumIArkivet(unittest.TestCase):
         return las_sidor(replace(kalla, arkiv=True), [("bun", BUN, html)])
 
     def test_filnamnet_galler_under_ett_annat_mote_samma_ar(self):
-        kandidater, _ = self.arkivet("14 december 2022", "Protokoll%202022-09-21.pdf")
+        kandidater = self.arkivet(
+            "14 december 2022", "Protokoll%202022-09-21.pdf"
+        ).kandidater
         self.assertEqual(kandidater[0].datum, date(2022, 9, 21))
 
     def test_en_vecka_eller_ett_annat_ar_ger_ingen_kandidat(self):
@@ -185,4 +188,4 @@ class TestDatumIArkivet(unittest.TestCase):
         }
         for orsak, (rubrik, filnamn) in fall.items():
             with self.subTest(orsak):
-                self.assertEqual(self.arkivet(rubrik, filnamn)[0], [])
+                self.assertEqual(self.arkivet(rubrik, filnamn).kandidater, [])

@@ -12,12 +12,12 @@ import re
 from pathlib import Path
 
 from kommunhandlingar import frontmatter
+from kommunhandlingar.konvertering.markdown import utan_escapning
+from kommunhandlingar.sidmarkor import SIDA, sidorna
 
 TOLKNING = "<!-- tolkning:"
 MARKERING = re.compile(r"<!-- tolkning: [^,\n]+, \d{4}-\d{2}-\d{2} -->")
-SIDA = re.compile(r"<!-- sida (\d+) -->")
 LANK = re.compile(r"\[[^\]]*\]\([^)]*\)")
-ESCAPAT = re.compile(r"\\([!-/:-@\[-`{-~])")
 SIFFRA = re.compile(r"\d")
 KOLUMN = re.compile(" {2,}")
 # Två siffergrupper som kan vara ett tal delat över en radbrytning eller
@@ -40,12 +40,12 @@ TALEN = re.compile(
 
 def dokumentfel(falt: dict[str, str], text: str) -> list[str]:
     figurer, tolkade = falt["figurer"], falt["tolkade"]
-    if (figurer == "null") != (tolkade == "null"):
+    if frontmatter.saknas(figurer) != frontmatter.saknas(tolkade):
         return ["figurer och tolkade är inte null samtidigt"]
     sidor = frontmatter.lista(tolkade)
     if sidor != [s for s in frontmatter.lista(figurer) if s in sidor]:
         return ["tolkade är inte sidor ur figurer, i ordning"]
-    if figurer == "null":
+    if frontmatter.saknas(figurer):
         return []
     antal = len(frontmatter.lista(falt["kvalitet_per_sida"]))
     finns = [str(n) for n in range(1, antal + 1)]
@@ -65,16 +65,11 @@ def antalfel(nr: str, sida: str, tolkade: list[str]) -> list[str]:
     return []
 
 
-def sidorna(md: str) -> dict[str, str]:
-    delar = SIDA.split(md)
-    return dict(zip(delar[1::2], delar[2::2], strict=True))
-
-
 def sidans_text(md: str, sida: int) -> str:
     """Sidans text i `.md` före tolkningen, utan länkarna till tabellerna
     och utan Markdowns escapning (ADR-0021), som den stod i PDF:en."""
-    text = sidorna(md.split("---\n", 2)[-1]).get(str(sida), "")
-    return ESCAPAT.sub(r"\1", LANK.sub("", text.split(TOLKNING)[0]))
+    text = sidorna(frontmatter.efter_huvudet(md)).get(str(sida), "")
+    return utan_escapning(LANK.sub("", text.split(TOLKNING)[0]))
 
 
 def talfel(fil: Path, md: Path, sida: int) -> list[str]:

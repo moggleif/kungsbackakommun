@@ -20,9 +20,10 @@ from pathlib import Path
 
 import pypdfium2 as pdfium
 
-from kommunhandlingar import frontmatter, original
+from kommunhandlingar import frontmatter, original, pool
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.hamtning import installningar
+from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.hamtning.klient import Klient
 
 SKALA = 2
@@ -39,15 +40,14 @@ def otolkade(falt: dict[str, str]) -> list[int]:
 
 def arbetslista(data: Path) -> list[str]:
     rader = []
-    for md in sorted(data.rglob("*.md")):
-        sidor = otolkade(frontmatter.las(md.read_text(encoding="utf-8")))
-        if sidor:
+    for md, falt, _ in pool.dokumenten(data):
+        if sidor := otolkade(falt):
             rader.append(f"{md.relative_to(data).as_posix()}: {sidor}")
     return rader
 
 
 def rendera(
-    md: Path, katalog: Path, klient: Klient, sidor: list[int] | None = None
+    md: Path, katalog: Path, klient: Hamtare, sidor: list[int] | None = None
 ) -> list[Path]:
     falt = frontmatter.las(md.read_text(encoding="utf-8"))
     sidor = sidor or otolkade(falt)

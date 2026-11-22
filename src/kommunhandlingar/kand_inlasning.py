@@ -9,30 +9,26 @@ utan sidor, som inte gick att hämta eller öppna, räknas för sig
 samma andel (K14).
 """
 
-import sys
 from collections import Counter
 from pathlib import Path
 
-from kommunhandlingar import frontmatter
-from kommunhandlingar.konvertering.kvalitet import SIDKVALITETER
-
-OLAST = "ej-konverterad"
+from kommunhandlingar import frontmatter, pool
+from kommunhandlingar.kommando import datakatalog
+from kommunhandlingar.konvertering.kvalitet import EJ_KONVERTERAD, SIDKVALITETER
 
 
 def rakna(kommun: Path) -> tuple[Counter, int]:
     """Sidorna per kvalitet och antalet dokument utan sidor."""
     sidor, utan_sidor = Counter(), 0
-    for md in kommun.rglob("*.md"):
-        per_sida = frontmatter.lista(
-            frontmatter.las(md.read_text(encoding="utf-8"))["kvalitet_per_sida"]
-        )
+    for _, falt, _ in pool.dokumenten(kommun):
+        per_sida = frontmatter.lista(falt["kvalitet_per_sida"])
         sidor.update(per_sida)
         utan_sidor += not per_sida
     return sidor, utan_sidor
 
 
 def kanda(sidor: Counter) -> int:
-    return sidor.total() - sidor[OLAST]
+    return sidor.total() - sidor[EJ_KONVERTERAD]
 
 
 def andel(sidor: Counter) -> str:
@@ -54,6 +50,4 @@ def main(data: Path) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.kand_inlasning <data>")
-    main(Path(sys.argv[1]))
+    main(datakatalog("kand_inlasning"))

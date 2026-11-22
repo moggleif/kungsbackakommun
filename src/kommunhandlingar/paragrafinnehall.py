@@ -9,7 +9,8 @@ signaturens första rad, som signeringstjänsten skriver längst ner.
 import re
 from itertools import takewhile
 
-SIDA = re.compile(r"^<!-- sida (\d+) -->$")
+from kommunhandlingar.sidmarkor import SIDA
+
 DNR_FORST = re.compile(r"^\s*(?i:Dnr|Diarienr|Diarienummer)")
 AVSNITT = {
     "Beslut",

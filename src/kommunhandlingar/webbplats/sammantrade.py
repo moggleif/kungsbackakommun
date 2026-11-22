@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from functools import cached_property
 from pathlib import Path, PurePosixPath
 
+from kommunhandlingar import frontmatter
 from kommunhandlingar.kandidat import TYPORDNING
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.dagordning import Punkt, dagordning
@@ -98,7 +99,7 @@ def ordnade(dokument: list[dict]) -> list[dict]:
 
 
 def namnet(d: dict) -> tuple[bool, str]:
-    return d["namn"] != "null", d["namn"]
+    return not frontmatter.saknas(d["namn"]), d["namn"]
 
 
 # Sammanträdets katalog med `.html`, i kommunens katalog: `ks/2026/2026-10-20.html`.
@@ -111,7 +112,7 @@ def har_sida(kommun: Kommun, dokument: list[dict]) -> bool:
     organ = next(o for o in kommun.organ if o.id == forsta["organ"])
     fran = organ.sammantradessidor
     kallelse = any(d["typ"] == "kallelse" for d in dokument)
-    return fran is not None and int(forsta["datum"][:4]) >= fran and kallelse
+    return fran is not None and frontmatter.ar(forsta) >= fran and kallelse
 
 
 def arenden(mote: Mote, underlag: Underlag) -> list[Arende]:

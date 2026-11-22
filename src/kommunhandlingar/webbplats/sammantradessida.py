@@ -8,6 +8,7 @@ sammanträdets katalog. Stilen är målkortens (`mal.css`) och `mote.css`.
 from html import escape
 from pathlib import Path
 
+from kommunhandlingar import frontmatter
 from kommunhandlingar.webbplats.kortkoppling import organnamn
 from kommunhandlingar.webbplats.luckor import motesnamn
 from kommunhandlingar.webbplats.mall import Mall, rot, sida, stig
@@ -72,6 +73,6 @@ def handlingarna(kommun_id: str, dokument: list[dict]) -> str:
 
 
 def sidantal(d: dict) -> str:
-    if d["sidor"] == "null":
+    if frontmatter.saknas(d["sidor"]):
         return ""
     return f" <small>{antal(int(d['sidor']), 'sida', 'sidor')}</small>"

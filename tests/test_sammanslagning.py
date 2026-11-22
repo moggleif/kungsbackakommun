@@ -28,7 +28,7 @@ class TestMotenIDelar(unittest.TestCase):
             ["20140703000000", f"{G}/Handlingar/2014/H%20140219%20del%202.pdf", "9"],
             ["20140703000000", f"{G}/Protokoll/2014/Protokoll%20140219.pdf", "9"],
         ]
-        kandidater, _, _ = upptack(kalla(), Klient({(MAPP, PDF): svar}, {}))
+        kandidater = upptack(kalla(), Klient({(MAPP, PDF): svar}, {})).kandidater
         handlingar = next(k for k in kandidater if k.typ == "handlingar")
         self.assertEqual(len(kandidater), 2)
         self.assertEqual(
@@ -52,12 +52,12 @@ class TestMotenIDelar(unittest.TestCase):
             },
             {},
         )
-        kandidater, _, _ = upptack(kalla(mappar={"bun": [MAPP, andra]}), klient)
+        kandidater = upptack(kalla(mappar={"bun": [MAPP, andra]}), klient).kandidater
         self.assertEqual([k.delar for k in kandidater], [(), ()])
 
     def test_en_ensam_fil_har_inga_delar(self):
         svar = [["20140703000000", f"{G}/Protokoll/2014/Protokoll%20140219.pdf", "9"]]
-        kandidater, _, _ = upptack(kalla(), Klient({(MAPP, PDF): svar}, {}))
+        kandidater = upptack(kalla(), Klient({(MAPP, PDF): svar}, {})).kandidater
         self.assertEqual(kandidater[0].delar, ())
 
 

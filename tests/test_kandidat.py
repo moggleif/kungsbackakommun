@@ -5,7 +5,7 @@ import random
 import unittest
 from datetime import date
 
-from kommunhandlingar.kandidat import Kandidat, ordna, ordna_bakat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat, ordna, ordna_bakat
 
 
 def kandidat(organ: str, typ: str, datum: str, nod: str) -> Kandidat:
@@ -55,6 +55,24 @@ class TestArkivetsOrdning(unittest.TestCase):
             blandad = forvantad[:]
             random.Random(fro).shuffle(blandad)
             self.assertEqual(ordna_bakat(blandad, ["ga", "kf"]), forvantad)
+
+
+class TestFynden(unittest.TestCase):
+    def test_tva_fynd_laggs_ihop_i_ordning(self):
+        forsta = Fynd(FORVANTAD[:2], [Avvisad("k", "a", "x")], ["en"])
+        andra = Fynd(FORVANTAD[2:3], [Avvisad("k", "b", "y")], ["två"])
+        self.assertEqual(
+            forsta + andra,
+            Fynd(
+                FORVANTAD[:3],
+                [Avvisad("k", "a", "x"), Avvisad("k", "b", "y")],
+                ["en", "två"],
+            ),
+        )
+
+    def test_fynden_summeras_fran_inga_fynd(self):
+        delar = [Fynd(FORVANTAD[:1]), Fynd(noteringar=["n"]), Fynd(FORVANTAD[1:2])]
+        self.assertEqual(sum(delar, Fynd()), Fynd(FORVANTAD[:2], [], ["n"]))
 
 
 if __name__ == "__main__":

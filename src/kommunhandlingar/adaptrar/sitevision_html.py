@@ -67,3 +67,7 @@ def forekomster(html: str, sidadress: str) -> list[Forekomst]:
     sida.feed(html)
     sida.close()
     return sida.forekomster
+
+
+def kallnyckel(forekomst: Forekomst) -> str:
+    return f"sitevision:{forekomst.nodid}"

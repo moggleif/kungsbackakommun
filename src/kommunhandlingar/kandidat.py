@@ -1,6 +1,9 @@
-"""Krav: K2, K13, K16, K31 och K45 i docs/02-KRAV.md. Test: tests/test_kandidat.py."""
+"""Krav: K2, K13, K16, K31 och K45 i docs/02-KRAV.md. Test: tests/test_kandidat.py
+och, för listan som steg 1 skriver och steg 2 läser, tests/test_upptack.py och
+tests/test_hamta.py."""
 
-from dataclasses import dataclass
+import json
+from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
 
@@ -30,10 +33,36 @@ class Kandidat:
 
 
 @dataclass(frozen=True)
+class Kallsida:
+    """Sidan där adaptern hittar filerna och organet de hör till."""
+
+    organ: str
+    adress: str
+
+
+@dataclass(frozen=True)
 class Avvisad:
     kalla: str
     filnamn: str
     orsak: str
+
+
+@dataclass(frozen=True)
+class Fynd:
+    """Det en upptäckt ger. Noteringarna är det som hoppades över utan att
+    vara en fil: en fråga arkivet inte svarade på, en sida som inte gick att
+    läsa eller en tidsbudget som tog slut."""
+
+    kandidater: list[Kandidat] = field(default_factory=list)
+    avvisade: list[Avvisad] = field(default_factory=list)
+    noteringar: list[str] = field(default_factory=list)
+
+    def __add__(self, andra: "Fynd") -> "Fynd":
+        return Fynd(
+            self.kandidater + andra.kandidater,
+            self.avvisade + andra.avvisade,
+            self.noteringar + andra.noteringar,
+        )
 
 
 def ordna(kandidater: list[Kandidat], organordning: list[str]) -> list[Kandidat]:
@@ -65,3 +94,17 @@ def ordna_bakat(kandidater: list[Kandidat], organordning: list[str]) -> list[Kan
 def lista(arbetskatalog: Path, kommun: str, arkiv: bool) -> Path:
     slag = ".arkiv" if arkiv else ""
     return arbetskatalog / f"{kommun}{slag}.kandidater.json"
+
+
+def skriv(kandidater: list[Kandidat], fil: Path) -> None:
+    poster = [asdict(k) | {"datum": k.datum.isoformat()} for k in kandidater]
+    fil.write_text(json.dumps(poster, ensure_ascii=False, indent=1) + "\n", "utf-8")
+
+
+def las(fil: Path) -> list[Kandidat]:
+    poster = json.loads(fil.read_text(encoding="utf-8"))
+    return [Kandidat(**p | lasta(p)) for p in poster]
+
+
+def lasta(post: dict) -> dict:
+    return {"datum": date.fromisoformat(post["datum"]), "delar": tuple(post["delar"])}

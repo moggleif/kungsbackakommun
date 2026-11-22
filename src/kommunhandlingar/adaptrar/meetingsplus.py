@@ -7,19 +7,19 @@ datumet mötets, utom i samlingsmötena, där ett "möte" rymmer ett helt
 """
 
 import re
-from collections.abc import Callable
-from dataclasses import dataclass
+from collections.abc import Callable, Iterator
+from dataclasses import dataclass, replace
 from datetime import date
 from urllib.parse import urlsplit
 
 from kommunhandlingar import monster, schema
-from kommunhandlingar.adaptrar import meetingsplus_html, sitevision
+from kommunhandlingar.adaptrar import meetingsplus_html
+from kommunhandlingar.adaptrar.gemensamt import organsidor
 from kommunhandlingar.adaptrar.meetingsplus_html import Fil
 from kommunhandlingar.fel import Hamtfel, IngenKandidat, Konfigurationsfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kallsida, Kandidat
 
 FALT = {"adapter", "sidor", "samlingsmoten", "monster"}
-MONSTERGRUPPER = {"ar", "manad", "dag", "typ"}
 # Länktexten slutar på .pdf; adressens sista del på pdf, ibland med ett löpnummer.
 PDF = re.compile(r"(?i)pdf(-\d+)?$")
 
@@ -33,7 +33,7 @@ class Kalla:
 
 def kalla_av(post: dict, organ_id: list[str], var: str) -> Kalla:
     schema.kontrollera_falt(post, FALT, var)
-    sidor = sitevision.sidor(schema.varde(post, "sidor", dict, var), organ_id, var)
+    sidor = organsidor(schema.varde(post, "sidor", dict, var), organ_id, var)
     samlingar = tuple(
         samlingsmote(a, sidor, var)
         for a in schema.textlista(post, "samlingsmoten", var)
@@ -42,7 +42,7 @@ def kalla_av(post: dict, organ_id: list[str], var: str) -> Kalla:
     return Kalla(
         sidor,
         samlingar,
-        tuple(monster.kompilera(p, MONSTERGRUPPER, f"{var}, mönster") for p in poster),
+        monster.filnamnsmonster(poster, var),
     )
 
 
@@ -54,24 +54,26 @@ def samlingsmote(adress: str, sidor: dict[str, str], var: str) -> str:
     return adress.rstrip("/")
 
 
-def upptack(
-    kalla: Kalla, hamta_sida: Callable[[str], str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def upptack(kalla: Kalla, hamta_sida: Callable[[str], str]) -> Fynd:
     """En mötessida som inte går att hämta stoppar inte de andra (ADR-0080)."""
-    kandidater: list[Kandidat] = []
-    avvisade: list[Avvisad] = []
+    fynd = Fynd()
     missade: set[tuple[str, date]] = set()
+    for sida in moten(kalla, hamta_sida):
+        try:
+            html = hamta_sida(sida.adress)
+        except Hamtfel as fel:
+            missade.add((sida.organ, motesdatum(sida.adress)))
+            fynd += Fynd(avvisade=[Avvisad(sida.adress, "mötessidan", fel.orsak)])
+            continue
+        fynd += las_mote(kalla, sida, html)
+    return replace(fynd, kandidater=utan_missade_dagar(fynd.kandidater, missade))
+
+
+def moten(kalla: Kalla, hamta_sida: Callable[[str], str]) -> Iterator[Kallsida]:
+    """Organ för organ: organets sida hämtas när dess möten står på tur."""
     for organ, organsida in kalla.sidor.items():
         for motessida in egna_moten(kalla, organ, hamta_sida(organsida)):
-            try:
-                html = hamta_sida(motessida)
-            except Hamtfel as fel:
-                missade.add((organ, motesdatum(motessida)))
-                avvisade.append(Avvisad(motessida, "mötessidan", fel.orsak))
-                continue
-            nya, bort = las_mote(kalla, organ, motessida, html)
-            kandidater, avvisade = kandidater + nya, avvisade + bort
-    return utan_missade_dagar(kandidater, missade), avvisade
+            yield Kallsida(organ, motessida)
 
 
 def egna_moten(kalla: Kalla, organ: str, html: str) -> list[str]:
@@ -89,17 +91,15 @@ def utan_missade_dagar(
     return [k for k in kandidater if (k.organ, k.datum) not in missade]
 
 
-def las_mote(
-    kalla: Kalla, organ: str, motessida: str, html: str
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def las_mote(kalla: Kalla, sida: Kallsida, html: str) -> Fynd:
     kandidater: list[Kandidat] = []
     avvisade: list[Avvisad] = []
-    for fil in motets_filer(meetingsplus_html.filer(html, motessida)):
+    for fil in motets_filer(meetingsplus_html.filer(html, sida.adress)):
         try:
-            kandidater.append(kandidat(kalla, organ, motessida, fil))
+            kandidater.append(kandidat(kalla, sida, fil))
         except IngenKandidat as fel:
-            avvisade.append(Avvisad(motessida, fil.filnamn, str(fel)))
-    return kandidater, avvisade
+            avvisade.append(Avvisad(sida.adress, fil.filnamn, str(fel)))
+    return Fynd(kandidater, avvisade)
 
 
 def motets_filer(filer: list[Fil]) -> list[Fil]:
@@ -113,16 +113,16 @@ def motets_filer(filer: list[Fil]) -> list[Fil]:
     ]
 
 
-def kandidat(kalla: Kalla, organ: str, motessida: str, fil: Fil) -> Kandidat:
+def kandidat(kalla: Kalla, sida: Kallsida, fil: Fil) -> Kandidat:
     if not PDF.search(fil.filnamn):
         raise IngenKandidat("inte en PDF")
-    typ, datum = typ_och_datum(kalla, motessida, fil)
+    typ, datum = typ_och_datum(kalla, sida.adress, fil)
     return Kandidat(
-        organ=organ,
+        organ=sida.organ,
         datum=datum,
         typ=typ,
         url=fil.adress,
-        kalla=motessida,
+        kalla=sida.adress,
         kallnyckel=f"meetingsplus:{fil.sokvag}",
         filnamn=fil.filnamn,
     )

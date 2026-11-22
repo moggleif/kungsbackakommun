@@ -1,6 +1,6 @@
-"""Krav: K6, K11, K15, K17, K34 och K48 i docs/02-KRAV.md, ADR-0006, ADR-0017,
-ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
-tests/test_granskning.py och tests/test_arenden.py.
+"""Krav: K6, K11, K15, K17, K34, K48 och K81 i docs/02-KRAV.md, ADR-0006,
+ADR-0017, ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
+tests/test_granskning.py, tests/test_arenden.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.datakontroll <data>` prövar varje fil under
 `data/` mot schemat i docs/03-ARKITEKTUR.md: front matter, sökvägen,
@@ -19,8 +19,10 @@ from pathlib import Path
 from kommunhandlingar import datakontroll_tolkning, frontmatter
 from kommunhandlingar.arenden import ratt_varde
 from kommunhandlingar.datakontroll_tabeller import tabellfel
+from kommunhandlingar.frontmatter import saknas
 from kommunhandlingar.kandidat import TYPORDNING
-from kommunhandlingar.konvertering.kvalitet import KVALITETER, SIDKVALITETER
+from kommunhandlingar.kommando import datakatalog
+from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.las_sida import STYRTECKEN
 from kommunhandlingar.personuppgifter import maskad_md, maskade_celler
 
@@ -30,7 +32,6 @@ EJ_HAMTAD_NULL = ("sha256", "bytes", "sidor", "konverterad")
 EJ_HAMTAD_NULL += ("kvalitet_per_sida", "tal_obekraftade", "figurer", "tolkade")
 EJ_HAMTAD_NULL += ("granskad",)
 DATUM = re.compile(r"\d{4}-\d{2}-\d{2}")
-OBEKRAFTADE = {"ocr", "bild", "ej-konverterad"}
 
 
 def fel_i(data: Path) -> list[str]:
@@ -85,7 +86,7 @@ def dokumentfel(relativ: Path, text: str) -> list[str]:
         return ["front matter går inte att läsa"]
     if tuple(falt) != frontmatter.FALT:
         return ["front matter har inte schemats fält i schemats ordning"]
-    fel = [f"{namn} är null" for namn in ALLTID if falt[namn] == "null"]
+    fel = [f"{namn} är null" for namn in ALLTID if saknas(falt[namn])]
     if fel:
         return fel
     fel = vardefel(falt) + sokvagsfel(relativ, falt) + statusfel(falt)
@@ -100,19 +101,21 @@ def arendefel(falt: dict[str, str], text: str) -> list[str]:
 
 def vardefel(falt: dict[str, str]) -> list[str]:
     fel = [] if falt["typ"] in TYPORDNING else [f"okänd typ {falt['typ']!r}"]
-    if falt["kvalitet"] not in KVALITETER:
+    if falt["kvalitet"] not in kvalitet.KVALITETER:
         fel.append(f"okänd kvalitet {falt['kvalitet']!r}")
     sidor = frontmatter.lista(falt["kvalitet_per_sida"])
-    fel += [f"okänd sidkvalitet {s!r}" for s in sidor if s not in SIDKVALITETER]
+    fel += [
+        f"okänd sidkvalitet {s!r}" for s in sidor if s not in kvalitet.SIDKVALITETER
+    ]
     for namn in ("datum", "granskad"):
-        if falt[namn] != "null" and not DATUM.fullmatch(falt[namn]):
+        if not saknas(falt[namn]) and not DATUM.fullmatch(falt[namn]):
             fel.append(f"{namn} {falt[namn]!r} är inte ÅÅÅÅ-MM-DD")
     return fel
 
 
 def sokvagsfel(relativ: Path, falt: dict[str, str]) -> list[str]:
     def med(grund: str, tillagg: str) -> str:
-        return grund if tillagg == "null" else f"{grund}-{tillagg}"
+        return grund if saknas(tillagg) else f"{grund}-{tillagg}"
 
     vantad = Path(
         falt["kommun"],
@@ -125,25 +128,23 @@ def sokvagsfel(relativ: Path, falt: dict[str, str]) -> list[str]:
 
 
 def statusfel(falt: dict[str, str]) -> list[str]:
-    if falt["kvalitet"] == "ej-hamtad":
-        fel = [f"{n} ska vara null" for n in EJ_HAMTAD_NULL if falt[n] != "null"]
-        return fel + (["fel saknas"] if falt["fel"] == "null" else [])
+    if falt["kvalitet"] == kvalitet.EJ_HAMTAD:
+        fel = [f"{n} ska vara null" for n in EJ_HAMTAD_NULL if not saknas(falt[n])]
+        return fel + (["fel saknas"] if saknas(falt["fel"]) else [])
     sidor = frontmatter.lista(falt["kvalitet_per_sida"])
-    if falt["sidor"] not in ("null", str(len(sidor))):
+    if not saknas(falt["sidor"]) and falt["sidor"] != str(len(sidor)):
         return ["sidor stämmer inte med kvalitet_per_sida"]
-    if falt["granskad"] != "null":
+    if frontmatter.granskad(falt):
         return []  # granskningen tar själv bort de sidor vars tal den bekräftat
     obekraftade = set(frontmatter.lista(falt["tal_obekraftade"]))
     return [
         f"sidan {nr} är {s} men står inte i tal_obekraftade"
         for nr, s in enumerate(sidor, 1)
-        if s in OBEKRAFTADE and str(nr) not in obekraftade
+        if s in kvalitet.OBEKRAFTADE and str(nr) not in obekraftade
     ]
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.datakontroll <data>")
-    hittade = fel_i(Path(sys.argv[1]))
+    hittade = fel_i(datakatalog("datakontroll"))
     print("\n".join(hittade) or "Datakontrollerna gick igenom.")
     sys.exit(1 if hittade else 0)

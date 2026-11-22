@@ -1,8 +1,7 @@
-"""Krav: K4, K6, K8, K9, K16, K23, K30, K34, K48, K52 och K72 i docs/02-KRAV.md,
-ADR-0003, ADR-0004, ADR-0018, ADR-0019, ADR-0039, ADR-0048, ADR-0055, ADR-0071,
-ADR-0075, ADR-0076 och ADR-0099. Test i tests/: test_hamta.py, test_hamta_arkiv.py,
-test_omkonvertering.py, test_plattformar.py, test_granskning.py och
-test_tidsbudget.py.
+"""Krav: K4, K6, K16, K23, K30, K34, K52 och K72 i docs/02-KRAV.md, ADR-0003,
+ADR-0018, ADR-0039, ADR-0048, ADR-0055, ADR-0075, ADR-0076 och ADR-0099. Test i
+tests/: test_hamta.py, test_hamta_arkiv.py, test_omkonvertering.py,
+test_plattformar.py, test_granskning.py och test_tidsbudget.py.
 
 Steg 2 för en kandidat: hoppa över det som redan finns, annars hämta, konvertera
 och skriv. Ett misslyckat försök skriver aldrig över en fullständig `.md`. En
@@ -10,88 +9,46 @@ kandidat ur ett arkiv fyller bara luckor, så att en äldre kopia aldrig ersätt
 ett dokument i poolen; har sammanträdet typen från en annan plattform står den
 med högst kvalitet kvar. Med omkonverteringen påslagen räknas ett dokument från
 en annan version av poolen, också i arkivet, inte som befintligt, utom när det
-är granskat för hand eller redan `full`. Skrivningen avbryts aldrig av
-tidsgränsen (K11).
+är granskat för hand eller redan `full`. Var kandidaten hamnar står i
+`placering.py`, fälten och skrivningen i `poolskrivning.py` och utfallen i
+`utfall.py`.
 """
 
 import tempfile
-from collections.abc import Callable
-from dataclasses import dataclass, replace
-from datetime import datetime
-from pathlib import Path, PurePosixPath
+from dataclasses import replace
+from pathlib import Path
 
-from kommunhandlingar import frontmatter, original, skrivning, tidsbudget
-from kommunhandlingar.arenden import arenden
-from kommunhandlingar.arkivluckor import (
-    forlorar,
-    hel,
-    ingen_lucka,
-    levande,
-    motstandare,
-    tas_over,
-)
+from kommunhandlingar import frontmatter, original, tidsbudget, utfall
+from kommunhandlingar.arkivluckor import forlorar, hel, ingen_lucka, levande
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.kandidat import Kandidat
+from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.dokument import Resultat, konvertera, kvalitetsfalt
-from kommunhandlingar.konvertering.kvalitet import UTAN_TEXT
-from kommunhandlingar.plats import grundplats, ledigt_for
-from kommunhandlingar.pool import Pool
-from kommunhandlingar.tidsbudget import utan_avbrott
+from kommunhandlingar.placering import motstandare_for, valj_plats
+from kommunhandlingar.poolskrivning import (
+    Dokument,
+    Steg2,
+    behall,
+    filfalt,
+    ny_adress,
+    skriv,
+)
+from kommunhandlingar.utfall import Utfall
 
 
-@dataclass(frozen=True)
-class Steg2:
-    data: Path
-    kommun: str
-    pool: Pool
-    klient: object  # har fil(url, mal), som hamtning.klient.Klient
-    nycklar: frozenset[str]
-    tid: Callable[[], datetime]
-    version: str
-    arkiv: bool = False
-    omkonvertera: bool = False
-    ensamma: frozenset[str] = frozenset()  # arkivluckor.ensamma
-
-
-@dataclass(frozen=True)
-class Dokument:
-    kandidat: Kandidat
-    sokvag: PurePosixPath
-    befintlig: dict[str, str] | None
-    namn: str | None = None
-
-
-def behandla(steg: Steg2, kandidat: Kandidat) -> str:
+def behandla(steg: Steg2, kandidat: Kandidat) -> Utfall:
     if kandidat.kallnyckel in steg.pool.tidigare:
-        return "tidigare källnyckel"
+        return utfall.TIDIGARE
     sokvag = steg.pool.efter_nyckel.get(kandidat.kallnyckel)
     rival = motstandare_for(steg, kandidat) if sokvag is None else None
-    if rival:
-        dokument = Dokument(kandidat, rival, steg.pool.efter_sokvag[rival])
-    elif sokvag is None:
-        dokument = placera(steg, kandidat)
-    else:
-        dokument = Dokument(kandidat, sokvag, steg.pool.efter_sokvag[sokvag])
+    dokument = valj_plats(steg, kandidat, sokvag or rival)
     gammal = dokument.befintlig
     luckor = steg.arkiv and not rival and not bara_omkonvertering(steg, kandidat)
     if luckor and ingen_lucka(steg.pool, steg.kommun, kandidat, gammal):
-        return "finns redan; arkivet fyller bara luckor"
+        return utfall.LUCKOR
     if sokvag and samma_kalla(gammal, kandidat) and aktuell(steg, gammal):
-        return "oförändrad"
-    with tempfile.TemporaryDirectory() as katalog:
-        pdf = Path(katalog) / "original.pdf"
-        hamtad = steg.tid()
-        try:
-            hamtat = original.hamta(steg.klient, kandidat.adresser(), pdf, steg.arkiv)
-        except Hamtfel as fel:
-            return misslyckad(steg, dokument, fel.orsak, hamtad)
-        return hamtad_fil(steg, dokument, hamtat, hamtad)
-
-
-def motstandare_for(steg: Steg2, kandidat: Kandidat) -> PurePosixPath | None:
-    if not steg.arkiv or kandidat.kallnyckel not in steg.ensamma:
-        return None
-    return motstandare(steg.pool, steg.kommun, kandidat)
+        return utfall.OFORANDRAD
+    return hamta(steg, dokument)
 
 
 def samma_kalla(falt: dict[str, str], kandidat: Kandidat) -> bool:
@@ -99,7 +56,7 @@ def samma_kalla(falt: dict[str, str], kandidat: Kandidat) -> bool:
 
 
 def aktuell(steg: Steg2, falt: dict[str, str]) -> bool:
-    orord = falt["granskad"] != "null" or falt["kvalitet"] == "full"  # K72
+    orord = frontmatter.granskad(falt) or falt["kvalitet"] == kvalitet.FULL  # K72
     if not steg.omkonvertera or orord:
         return True
     return falt["pipeline"].split(" / ")[0] == steg.version
@@ -111,138 +68,75 @@ def bara_omkonvertering(steg: Steg2, kandidat: Kandidat) -> bool:
     return bool(gammal) and samma_kalla(gammal, kandidat) and not aktuell(steg, gammal)
 
 
-def placera(steg: Steg2, kandidat: Kandidat) -> Dokument:
-    plats = grundplats(kandidat)
-    sokvag = plats.sokvag(steg.kommun)
-    upptagen = steg.pool.efter_sokvag.get(sokvag)
-    if upptagen is None:
-        return Dokument(kandidat, sokvag, None, plats.namn)
-    if upptagen["kallnyckel"] not in steg.nycklar or tas_over(upptagen, kandidat):
-        return Dokument(kandidat, sokvag, upptagen)
-
-    def finns(forslag: str) -> bool:
-        return (
-            replace(plats, namn=forslag).sokvag(steg.kommun) in steg.pool.efter_sokvag
-        )
-
-    plats = replace(plats, namn=ledigt_for(kandidat, finns))
-    return Dokument(kandidat, plats.sokvag(steg.kommun), None, plats.namn)
+def hamta(steg: Steg2, dokument: Dokument) -> Utfall:
+    with tempfile.TemporaryDirectory() as katalog:
+        pdf = Path(katalog) / "original.pdf"
+        dokument = replace(dokument, hamtad=steg.tid())
+        adresser = dokument.kandidat.adresser()
+        try:
+            hamtat = original.hamta(steg.klient, adresser, pdf, steg.arkiv)
+        except Hamtfel as fel:
+            return misslyckad(steg, dokument, fel.orsak)
+        return hamtad_fil(steg, dokument, hamtat)
 
 
-def misslyckad(steg: Steg2, dokument: Dokument, orsak: str, hamtad: datetime) -> str:
+def misslyckad(steg: Steg2, dokument: Dokument, orsak: str) -> Utfall:
+    if orort := orort_vid_hamtfel(steg, dokument, orsak):
+        return orort
+    gammal = dokument.befintlig
+    hamtad = gammal["hamtad"] if gammal else dokument.hamtad.isoformat()
+    falt = {"hamtad": hamtad, "pipeline": steg.version, "fel": orsak}
+    skriv(steg, dokument, falt | {"kvalitet": kvalitet.EJ_HAMTAD}, None)
+    return utfall.ej_hamtad(orsak)
+
+
+def orort_vid_hamtfel(steg: Steg2, dokument: Dokument, orsak: str) -> Utfall | None:
     gammal = dokument.befintlig
     if gammal and hel(gammal):
-        return f"ej hämtad ({orsak}), fullständig .md orörd"
+        return utfall.ej_hamtad(orsak, utfall.ORORD)
     adress = frontmatter.varde_av(dokument.kandidat.kalla_url())
     if gammal and (gammal["fel"], gammal["kalla_url"]) == (orsak, adress):
-        return f"ej hämtad ({orsak}), oförändrad"
+        return utfall.ej_hamtad(orsak, "oförändrad")
     if steg.arkiv and gammal and levande(gammal):
         # Annars skriver den levande källan och arkivet om filen varannan gång.
-        return f"ej hämtad ({orsak}), den levande källans försök orört"
-    falt = grundfalt(steg, dokument) | {
-        "hamtad": gammal["hamtad"] if gammal else hamtad.isoformat(),
-        "pipeline": steg.version,
-        "kvalitet": "ej-hamtad",
-        "fel": orsak,
-    }
-    spara(steg, dokument.sokvag, frontmatter.skriv(falt), {})
-    return f"ej hämtad ({orsak})"
+        return utfall.ej_hamtad(orsak, "den levande källans försök orört")
+    return None
 
 
-def hamtad_fil(
-    steg: Steg2, dokument: Dokument, hamtat: original.Original, hamtad: datetime
-) -> str:
+def hamtad_fil(steg: Steg2, dokument: Dokument, hamtat: original.Original) -> Utfall:
     gammal = dokument.befintlig
     samma_fil = samma_original(gammal, dokument.kandidat, hamtat.sha256)
     if samma_fil and aktuell(steg, gammal):
         return ny_adress(steg, dokument)
-    resultat = (
-        Resultat("ej-konverterad", hamtat.fel) if hamtat.fel else konvertera(hamtat.pdf)
-    )
+    resultat = konverterat(hamtat)
     if resultat.fel == tidsbudget.FEL and samma_fil and har_text(gammal):
-        return f"ej konverterad ({tidsbudget.FEL}), fullständig .md orörd"
+        return utfall.ej_konverterad(tidsbudget.FEL, utfall.ORORD)
     if steg.arkiv and forlorar(gammal, dokument.kandidat, resultat.kvalitet):
         return behall(steg, dokument)
-    falt = grundfalt(steg, dokument) | kvalitetsfalt(steg.version, resultat)
-    falt |= {"sha256": hamtat.sha256, "bytes": hamtat.bytes}
-    falt |= {"hamtad": hamtad.isoformat(), "konverterad": steg.tid().isoformat()}
-    kropp = skrivning.kropp(steg.data / dokument.sokvag, resultat.sidor)
-    falt["arenden"] = arenden(falt["typ"], kropp)
-    text = frontmatter.skriv(falt) + kropp
-    spara(steg, dokument.sokvag, text, skrivning.tabellfiler(resultat.sidor or []))
+    falt = kvalitetsfalt(steg.version, resultat) | filfalt(dokument, hamtat)
+    falt["konverterad"] = steg.tid().isoformat()
+    skriv(steg, dokument, falt, resultat.sidor)
+    return konverteringens_utfall(resultat, samma_fil)
+
+
+def konverterat(hamtat: original.Original) -> Resultat:
+    if hamtat.fel:
+        return Resultat(kvalitet.EJ_KONVERTERAD, hamtat.fel)
+    return konvertera(hamtat.pdf)
+
+
+def konverteringens_utfall(resultat: Resultat, samma_fil: bool) -> Utfall:
     if resultat.fel == tidsbudget.FEL:
-        return f"ej konverterad ({tidsbudget.FEL})"
-    return "konverterad om" if samma_fil else "konverterad"
+        return utfall.ej_konverterad(tidsbudget.FEL)
+    return utfall.KONVERTERAD_OM if samma_fil else utfall.KONVERTERAD
 
 
 def har_text(falt: dict[str, str]) -> bool:
-    return falt["kvalitet"] not in UTAN_TEXT
+    return falt["kvalitet"] not in kvalitet.UTAN_TEXT
 
 
 def samma_original(gammal: dict | None, kandidat: Kandidat, sha256) -> bool:
     """Ett granskat dokument behåller sin text också under en ny källnyckel."""
     if gammal is None or gammal["sha256"] != frontmatter.varde_av(sha256):
         return False
-    return gammal["kallnyckel"] == kandidat.kallnyckel or gammal["granskad"] != "null"
-
-
-def ny_adress(steg: Steg2, dokument: Dokument) -> str:
-    k = dokument.kandidat
-    nya = {"kallnyckel": k.kallnyckel, "tidigare_kallnycklar": tidigare(dokument)}
-    andra_falt(steg, dokument.sokvag, nya | {"kalla_url": k.kalla_url()})
-    return "ny adress, samma innehåll"
-
-
-def behall(steg: Steg2, dokument: Dokument) -> str:
-    """Kandidaten blir en tidigare källnyckel, så att den inte hämtas igen."""
-    nycklar = frontmatter.lista(dokument.befintlig["tidigare_kallnycklar"])
-    nycklar.append(dokument.kandidat.kallnyckel)
-    andra_falt(steg, dokument.sokvag, {"tidigare_kallnycklar": nycklar})
-    return "lika eller lägre kvalitet; det befintliga behålls"
-
-
-def andra_falt(steg: Steg2, sokvag: PurePosixPath, nya: dict) -> None:
-    md = steg.data / sokvag
-    _, huvud, kropp = md.read_text(encoding="utf-8").split("---\n", 2)
-    falt = frontmatter.las(f"---\n{huvud}---\n") | nya
-    text = frontmatter.skriv(falt) + kropp
-    with utan_avbrott():
-        skrivning.skriv_md(md, text)
-    steg.pool.satt(sokvag, frontmatter.las(text))
-
-
-def grundfalt(steg: Steg2, dokument: Dokument) -> dict:
-    return (
-        dict.fromkeys(frontmatter.FALT)
-        | platsfalt(dokument)
-        | {
-            "kommun": steg.kommun,
-            "kallnyckel": dokument.kandidat.kallnyckel,
-            "tidigare_kallnycklar": tidigare(dokument),
-            "kalla_url": dokument.kandidat.kalla_url(),
-        }
-    )
-
-
-def platsfalt(dokument: Dokument) -> dict:
-    gammal = dokument.befintlig
-    if gammal:
-        return {f: gammal[f] for f in ("organ", "datum", "lopnr", "typ", "namn")}
-    k = dokument.kandidat
-    return {"organ": k.organ, "datum": k.datum, "typ": k.typ, "namn": dokument.namn}
-
-
-def tidigare(dokument: Dokument) -> list[str]:
-    gammal = dokument.befintlig
-    if not gammal:
-        return []
-    nycklar = frontmatter.lista(gammal["tidigare_kallnycklar"])
-    if gammal["kallnyckel"] != dokument.kandidat.kallnyckel:
-        nycklar.append(gammal["kallnyckel"])
-    return nycklar
-
-
-def spara(steg: Steg2, sokvag: PurePosixPath, text: str, tabeller: dict) -> None:
-    with utan_avbrott():
-        skrivning.skriv(steg.data / sokvag, text, tabeller)
-    steg.pool.satt(sokvag, frontmatter.las(text))
+    return gammal["kallnyckel"] == kandidat.kallnyckel or frontmatter.granskad(gammal)

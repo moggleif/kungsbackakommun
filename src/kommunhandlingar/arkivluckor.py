@@ -13,13 +13,13 @@ from kommunhandlingar import frontmatter
 from kommunhandlingar.adaptrar import wayback
 from kommunhandlingar.frontmatter import lista
 from kommunhandlingar.kandidat import Kandidat
-from kommunhandlingar.konvertering.kvalitet import KVALITETER
+from kommunhandlingar.konvertering.kvalitet import EJ_HAMTAD, KVALITETER
 from kommunhandlingar.plats import grundplats
 from kommunhandlingar.pool import Pool
 
 
 def hel(falt: dict[str, str]) -> bool:
-    return falt["kvalitet"] != "ej-hamtad"
+    return falt["kvalitet"] != EJ_HAMTAD
 
 
 def ingen_lucka(pool: Pool, kommun: str, kandidat: Kandidat, gammal) -> bool:

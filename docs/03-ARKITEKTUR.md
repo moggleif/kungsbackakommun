@@ -306,33 +306,55 @@ Kommun ── Organ (KF, KS, nämnd, utskott)    giltighetsperiod, föregångare
 ```text
 src/kommunhandlingar/
   konfiguration.py kommunfilen läses och kontrolleras
+  organ.py         organen i kommunfilen och deras kontroller
   schema.py        kontrollerna av fält och värden i kommunfilen
   fel.py           konfigurationsfel och "ingen kandidat"
-  monster.py       mönstren: typ och datum ur en text
-  kandidat.py      kandidaten, ordningen (K13, K16) och listans sökväg
+  monster.py       mönstren: typ och datum ur en text, och mönstrens grupper
+  kandidat.py      kandidaten, upptäcktens fynd (kandidater, avvisade och
+                   noteringar), ordningen (K13, K16) och listan: sökväg, skriv, läs
   adaptrar/        en modul per publiceringsplattform (sitevision, ciceron, …)
                    eller arkiv (wayback);
-                   sitevision_html.py läser mötessidan, sitevision.py tolkar den,
+                   gemensamt.py sidans länkar och kontrollen av tabellen
+                   organ → sida, som fler plattformar använder,
+                   wayback.py Internet Archive: frågorna, valet av bästa
+                   kopia, kopians adress och kontrollen av kapade kopior,
+                   sitevision_html.py läser mötessidan och ger källnyckeln,
+                   sitevision.py tolkar den,
                    sitevision_arkiv.py läser sidorna och filerna ur arkivet,
                    sitevision_projekt.py listan med projekt och projektsidorna,
                    meetingsplus_html.py läser Meetings Plus sidor,
                    meetingsplus.py tolkar dem
   upptack.py       steg 1: hämtar källsidorna och skriver kandidatlistan
   hamtning/        artig HTTP-klient: robots.txt, intervall och nya försök
+                   klient.py håller intervallet, robots.txt och försöken,
+                   svar.py läser svaret och översätter fel till nytt försök
+                   eller Hamtfel, hamtare.py det anroparna behöver
+                   (Lasare för sidor, Hamtare för filer), robots.py
+                   tolkar robots.txt, installningar.py läser hamtning.toml
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
-  behandla.py      steg 2 för en kandidat: hoppa över, hämta, konvertera, skriva
+  behandla.py      steg 2 för en kandidat: hoppa över, hämta eller konvertera
+  utfall.py        vad steg 2 gjorde med en kandidat: text och om det loggas,
+                   och körningens räkning av utfallen
+  placering.py     var kandidaten hamnar: egen plats, en rivals eller en ny
+  poolskrivning.py stegets typer (Steg2, Dokument), dokumentets fält och
+                   skrivningen till poolen
   original.py      originalet hämtas, ett dokument i delar slås ihop (ADR-0049)
-  pool.py          poolens front matter, uppslagen på källnyckel och sökväg
+  pool.py          poolens dokument i ordning; front matter uppslagen på källnyckel
+                   och sökväg. Bara här gås poolens `.md` igenom
   plats.py         sökvägen och namnet för ett nytt dokument (ADR-0003)
   skrivning.py     `.md` och tabellkatalog, tabellerna först och `.md` sist
-  frontmatter.py   front matter läses och skrivs
+  sidmarkor.py     sidmarkören `<!-- sida N -->`: skrivs, läses och delar texten
+  frontmatter.py   front matter läses, skrivs och ändras; bara här delas texten
+                   och tolkas `null` och året
   paragrafer.py    ett protokoll delat per paragraf (K48), med paragrafinnehall.py
                    och diarienummer.py
   arenden.py       `arenden` ur paragraferna, och kommandot som fyller poolen
   tidsbudget.py    budgetens hårda gräns, som inte avbryter en skrivning,
                    och dokumentets egen gräns (ADR-0075)
   datakontroll*.py datakontrollerna av allt under data/ (K11)
+  kommando.py      läser `<data>` åt kommandona som tar en enda katalog, eller
+                   stoppar med användningstexten
   tolkning.py      arbetslistan och renderingen av figurerna (K15)
   konvertering/    pdf → md: sidans väg, text, tabeller och kvalitet
   facit/           konverteringen mätt mot facit för ett urval (K20)
@@ -877,7 +899,8 @@ börjar före siffran skiljer den från texten framför och står kvar.
 
 Text och tal märks var för sig. `kvalitet` och `kvalitet_per_sida` säger
 hur texten lästes; `tal_obekraftade` säger på vilka sidor talen inte är
-bekräftade och därför inte ska användas som data.
+bekräftade och därför inte ska användas som data. Värdena, och mängderna
+av dem som koden använder, står som konstanter i `konvertering/kvalitet.py`.
 
 Varje sida får en kvalitet:
 
@@ -1541,6 +1564,8 @@ riktig Markdown: CommonMark med GFM:s tabeller och genomstrykning, och
 GitHubs formler med `$`. Efter front matter följer sidorna i ordning.
 Varje sida börjar med kommentaren `<!-- sida N -->`, så att en sida i
 `kvalitet_per_sida` eller `tal_obekraftade` går att hitta i texten.
+Markören räknas bara som en egen rad, och den skrivs och läses bara i
+`sidmarkor.py`.
 
 - **Texten** är textlagret med bevarad uppställning (pdfplumber,
   `layout=True`). Raderna skrivs utan indrag, men mellanrummen inne i

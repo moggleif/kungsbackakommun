@@ -16,6 +16,7 @@ import pypdfium2 as pdfium
 
 from kommunhandlingar.adaptrar import wayback
 from kommunhandlingar.fel import Hamtfel
+from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.konvertering.dokument import oppningsfel
 
 
@@ -27,7 +28,7 @@ class Original:
     fel: str | None = None
 
 
-def hamta(klient, adresser: list[str], pdf: Path, arkiv: bool) -> Original:
+def hamta(klient: Hamtare, adresser: list[str], pdf: Path, arkiv: bool) -> Original:
     if len(adresser) == 1:
         sha256, storlek = hamta_del(klient, adresser[0], pdf, arkiv)
         return Original(sha256, storlek, pdf)
@@ -39,7 +40,7 @@ def hamta(klient, adresser: list[str], pdf: Path, arkiv: bool) -> Original:
     return Original(sha256, storlekar, pdf, sla_ihop(delar, pdf))
 
 
-def hamta_del(klient, adress: str, mal: Path, arkiv: bool) -> tuple[str, int]:
+def hamta_del(klient: Hamtare, adress: str, mal: Path, arkiv: bool) -> tuple[str, int]:
     klient.fil(adress, mal)
     if arkiv and wayback.kapad(mal):
         raise Hamtfel("kapad", adress)

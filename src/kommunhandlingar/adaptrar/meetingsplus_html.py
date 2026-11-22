@@ -9,8 +9,9 @@ och bara den första läses.
 
 import re
 from dataclasses import dataclass
-from html.parser import HTMLParser
-from urllib.parse import unquote, urljoin, urlsplit
+from urllib.parse import unquote, urlsplit
+
+from kommunhandlingar.adaptrar.gemensamt import lankar
 
 OPPNA = "downloadMode=open"
 FILSOKVAG = re.compile(r"/(?P<flik>agenda|protocol)/(?P<fil>[^/]+)$")
@@ -26,34 +27,6 @@ class Fil:
     filnamn: str
     # kallelse, protokoll, bilaga eller protokollets bilaga
     del_: str
-
-
-class Lankar(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.lankar: list[tuple[str, str]] = []
-        self.adress: str | None = None
-        self.text = ""
-
-    def handle_starttag(self, tagg, attribut):
-        if tagg == "a":
-            self.adress, self.text = dict(attribut).get("href"), ""
-
-    def handle_endtag(self, tagg):
-        if tagg == "a" and self.adress is not None:
-            self.lankar.append((self.adress, " ".join(self.text.split())))
-            self.adress = None
-
-    def handle_data(self, data):
-        if self.adress is not None:
-            self.text += data
-
-
-def lankar(html: str, sidadress: str) -> list[tuple[str, str]]:
-    tolk = Lankar()
-    tolk.feed(html)
-    tolk.close()
-    return [(urljoin(sidadress, a), t) for a, t in tolk.lankar]
 
 
 def moten(html: str, organsida: str) -> list[str]:

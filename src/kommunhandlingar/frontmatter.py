@@ -1,11 +1,18 @@
-"""Krav: K4, K6, K14, K15 och K34 i docs/02-KRAV.md. Test: tests/test_hamta.py,
-tests/test_webbplats.py.
+"""Krav: K4, K6, K14, K15 och K34 i docs/02-KRAV.md. Test:
+tests/test_frontmatter.py, tests/test_hamta.py och tests/test_webbplats.py.
 
 Front matter så som schemat i docs/03-ARKITEKTUR.md#front-matter skriver den:
 varje fält på en egen rad, i schemats ordning, listor inom hakparenteser.
+Bara här delas en `.md` i front matter och brödtext (#360). `las`,
+`brodtext` och `efter_huvudet` delar vid `---\n`, också i slutet av en
+rad; `otolkad` vid en rad `---` och utan att tolka fälten, så att
+maskningen klarar front matter som inte går att läsa. Bara här jämförs
+ett fält med `null` (#361).
 """
 
 from datetime import date
+
+GRANS = "---\n"
 
 FALT = (
     "kommun",
@@ -35,16 +42,48 @@ FALT = (
 
 
 def las(text: str) -> dict[str, str]:
-    huvud = text.split("---\n")[1]
+    huvud = text.split(GRANS)[1]
     return dict(rad.split(": ", 1) for rad in huvud.splitlines())
 
 
 def brodtext(text: str) -> str:
-    return text.split("---\n", 2)[2]
+    return text.split(GRANS, 2)[2]
+
+
+def efter_huvudet(text: str) -> str:
+    """Som `brodtext`, men utan front matter blir det resten av texten."""
+    return text.split(GRANS, 2)[-1]
+
+
+def otolkad(text: str) -> tuple[str, str]:
+    """Front matter som den står, och resten. Fälten tolkas inte, så det går
+    också när de inte går att läsa. Huvudet slutar med första raden `---`
+    som inte står först i texten; finns ingen är huvudet tomt."""
+    huvud, grans, resten = text.partition("\n" + GRANS)
+    return (huvud + grans, resten) if grans else ("", text)
+
+
+def andrad(text: str, namn: str, varde: str) -> str:
+    """Bara fältets rad byts; allt annat står som det stod."""
+    gammal = f"\n{namn}: {las(text)[namn]}\n"
+    return text.replace(gammal, f"\n{namn}: {varde}\n", 1)
+
+
+def saknas(varde: str) -> bool:
+    """Ett fält utan värde står som `null`: tomt, inte noll."""
+    return varde == "null"
+
+
+def granskad(falt: dict[str, str]) -> bool:
+    return not saknas(falt["granskad"])
+
+
+def ar(falt: dict[str, str]) -> int:
+    return int(falt["datum"][:4])
 
 
 def lista(varde: str) -> list[str]:
-    if varde == "null":
+    if saknas(varde):
         return []
     return [del_ for del_ in varde.strip("[]").split(", ") if del_]
 
@@ -56,7 +95,7 @@ def adresser(kalla_url: str) -> list[str]:
 
 def skriv(falt: dict) -> str:
     rader = [f"{namn}: {varde_av(falt[namn])}" for namn in FALT]
-    return "---\n" + "\n".join(rader) + "\n---\n"
+    return GRANS + "\n".join(rader) + "\n" + GRANS
 
 
 def varde_av(varde) -> str:

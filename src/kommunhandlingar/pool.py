@@ -1,9 +1,12 @@
-"""Krav: K8, K9 och K12 i docs/02-KRAV.md, ADR-0004. Test: tests/test_hamta.py.
+"""Krav: K8, K9 och K12 i docs/02-KRAV.md, ADR-0004. Test: tests/test_hamta.py
+och tests/test_pool.py.
 
 Poolen är tillståndet: front matter i varje `.md` under `data/<kommun>/`,
-uppslagen på källnyckel, tidigare källnycklar och sökväg.
+uppslagen på källnyckel, tidigare källnycklar och sökväg. Bara här gås
+poolens `.md` igenom (#364): `dokumenten` ger dem i sökvägarnas ordning.
 """
 
+from collections.abc import Iterator
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
 
@@ -24,9 +27,15 @@ class Pool:
         self.tidigare.update(frontmatter.lista(falt["tidigare_kallnycklar"]))
 
 
+def dokumenten(katalog: Path) -> Iterator[tuple[Path, dict[str, str], str]]:
+    """Varje dokument under katalogen: sökvägen, front matter och hela texten."""
+    for fil in sorted(katalog.rglob("*.md")):
+        text = fil.read_text(encoding="utf-8")
+        yield fil, frontmatter.las(text), text
+
+
 def las(data: Path, kommun: str) -> Pool:
     pool = Pool()
-    for fil in sorted((data / kommun).rglob("*.md")):
-        falt = frontmatter.las(fil.read_text(encoding="utf-8"))
+    for fil, falt, _ in dokumenten(data / kommun):
         pool.satt(PurePosixPath(fil.relative_to(data).as_posix()), falt)
     return pool

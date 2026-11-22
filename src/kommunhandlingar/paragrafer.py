@@ -11,7 +11,8 @@ from dataclasses import dataclass
 from itertools import dropwhile, takewhile
 
 from kommunhandlingar.diarienummer import i_huvudet
-from kommunhandlingar.paragrafinnehall import SIDA, beslut, dnr_rader, rubrik
+from kommunhandlingar.paragrafinnehall import beslut, dnr_rader, rubrik
+from kommunhandlingar.sidmarkor import SIDA
 
 RUBRIKRAD = re.compile(r"^\s*(?:[A-ZÅÄÖ]{2,4}\s*)?§\s*(\d+)(.*)$")
 FORTS = re.compile(r"^[\s,./]*forts", re.IGNORECASE)

@@ -11,10 +11,10 @@ en äldre version konverterat, och i granskade dokument, utan att hämta
 PDF:en. Bara raden `arenden` ändras, och en andra körning ändrar ingenting.
 """
 
-import sys
 from pathlib import Path
 
-from kommunhandlingar import frontmatter
+from kommunhandlingar import frontmatter, pool
+from kommunhandlingar.kommando import datakatalog
 from kommunhandlingar.paragrafer import paragrafer
 from kommunhandlingar.skrivning import skriv_md
 
@@ -34,17 +34,12 @@ def ratt_varde(text: str) -> str:
 
 def fyll(data: Path) -> int:
     andrade = 0
-    for fil in sorted(data.rglob("*.md")):
-        text = fil.read_text(encoding="utf-8")
-        gammal = frontmatter.las(text)["arenden"]
-        if (ny := ratt_varde(text)) != gammal:
-            rad = f"\narenden: {gammal}\n"
-            skriv_md(fil, text.replace(rad, f"\narenden: {ny}\n", 1))
+    for fil, falt, text in pool.dokumenten(data):
+        if (ny := ratt_varde(text)) != falt["arenden"]:
+            skriv_md(fil, frontmatter.andrad(text, "arenden", ny))
             andrade += 1
     return andrade
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.arenden <data>")
-    print(f"{fyll(Path(sys.argv[1]))} dokument fick nya ärenden.")
+    print(f"{fyll(datakatalog('arenden'))} dokument fick nya ärenden.")

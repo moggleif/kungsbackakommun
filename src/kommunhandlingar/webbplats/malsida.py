@@ -14,6 +14,7 @@ from collections import defaultdict
 from html import escape
 from pathlib import Path
 
+from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.flikar import MAL, flikar
 from kommunhandlingar.webbplats.mal import SLAG, Mal
@@ -109,7 +110,7 @@ def malsida(mall: Mall, kommun: Kommun, malen: list[Mal], organets: list[dict]) 
     spar = sparen(malen)
     malar = {m.ar for m in malen}
     ar = mall.aren[kommun.id]
-    dokumentar = {int(d["datum"][:4]) for d in organets}
+    dokumentar = {frontmatter.ar(d) for d in organets}
     luckor = set(range(ar[0], mall.byggd.year + 1)) - dokumentar - malar
     innehall = (
         flikar(mall, kommun.id, organ, MAL)

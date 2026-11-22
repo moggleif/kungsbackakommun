@@ -6,7 +6,6 @@ och försöker igen vid 429, 5xx, tidsgräns och svar som bryts av; för
 robots.txt också vid omdirigering och när värden inte går att nå.
 """
 
-import shutil
 import time
 from collections.abc import Callable
 from http.client import HTTPException
@@ -18,20 +17,13 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.hamtning import robots
 from kommunhandlingar.hamtning.installningar import Installningar
+from kommunhandlingar.hamtning.svar import NyttForsok, http_fel, las_text, natfel, spara
 
 FORSOK = 4
 FORSTA_VANTAN = 5
-LANGSTA_VANTAN = 300
 TIDSGRANS = 60
-BLOCK = 1 << 20
 # Har visat sig gå över för robots.txt (ADR-0061).
 TILLFALLIGA_PA_ROBOTS = ("http-3", "anslutning")
-
-
-class NyttForsok(Exception):
-    def __init__(self, orsak: str, vantan: int | None = None):
-        super().__init__(orsak)
-        self.orsak, self.vantan = orsak, vantan
 
 
 class IngenOmdirigering(HTTPRedirectHandler):
@@ -68,10 +60,7 @@ class Klient:
     def robotregler(self, url: str) -> tuple[robots.Regel, ...]:
         varden = vard(url)
         if varden not in self.regler:
-            try:
-                self.regler[varden] = self.las_robots(varden)
-            except Hamtfel as fel:
-                raise Hamtfel(f"robots-{fel.orsak}") from fel
+            self.regler[varden] = self.las_robots(varden)
         return self.regler[varden]
 
     def las_robots(self, varden: str) -> tuple[robots.Regel, ...]:
@@ -80,19 +69,21 @@ class Klient:
                 f"{varden}/robots.txt", las_text, TILLFALLIGA_PA_ROBOTS
             )
         except Hamtfel as fel:
-            if not fel.orsak.startswith("http-4") or fel.orsak == "http-429":
-                raise
-            return ()
+            if fel.orsak.startswith("http-4") and fel.orsak != "http-429":
+                return ()
+            raise Hamtfel(f"robots-{fel.orsak}") from fel
         return robots.tolka(text, produkt(self.installningar.user_agent))
 
     def med_forsok(self, url: str, las: Callable, tillfalliga: tuple[str, ...] = ()):
-        for forsok in range(FORSOK):
+        for forsok in range(FORSOK - 1):
             try:
                 return self.anrop(url, las, tillfalliga)
             except NyttForsok as fel:
-                if forsok == FORSOK - 1:
-                    raise Hamtfel(fel.orsak) from fel
                 self.sov(fel.vantan or FORSTA_VANTAN * 2**forsok)
+        try:
+            return self.anrop(url, las, tillfalliga)
+        except NyttForsok as fel:
+            raise Hamtfel(fel.orsak) from fel
 
     def anrop(self, url: str, las: Callable, tillfalliga: tuple[str, ...]):
         try:
@@ -122,43 +113,6 @@ class Klient:
             kvar = self.senast[varden] + self.installningar.intervall - self.klocka()
             if kvar > 0:
                 self.sov(kvar)
-
-
-def las_text(svar) -> str:
-    try:
-        return svar.read().decode(svar.headers.get_content_charset() or "utf-8")
-    except (LookupError, UnicodeDecodeError) as fel:
-        raise Hamtfel("teckenkodning") from fel
-
-
-def spara(svar, mal: Path) -> None:
-    with mal.open("wb") as fil:
-        shutil.copyfileobj(svar, fil, BLOCK)
-    # http.client ger tomt i stället för IncompleteRead när en läsning i
-    # bitar bryts av, så längden jämförs med vad servern lovade.
-    langd = svar.headers.get("Content-Length")
-    if langd is not None and mal.stat().st_size != int(langd):
-        raise NyttForsok("avbrutet-svar")
-
-
-def http_fel(fel: HTTPError) -> Exception:
-    orsak = f"http-{fel.code}"
-    if fel.code == 429 or fel.code >= 500:
-        efter = fel.headers.get("Retry-After", "")
-        return NyttForsok(
-            orsak, min(int(efter), LANGSTA_VANTAN) if efter.isdigit() else None
-        )
-    return Hamtfel(orsak)
-
-
-def natfel(fel: URLError | ConnectionError | TimeoutError) -> Exception:
-    # urllib slår in fel vid sändningen i URLError, men inte vid svaret.
-    grund = fel.reason if isinstance(fel, URLError) else fel
-    if isinstance(grund, ConnectionResetError):
-        return NyttForsok("tomt-svar")
-    if isinstance(grund, TimeoutError):
-        return NyttForsok("tidsgrans")
-    return Hamtfel("anslutning")
 
 
 def vard(url: str) -> str:

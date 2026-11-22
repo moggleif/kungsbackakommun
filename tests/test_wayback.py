@@ -10,9 +10,12 @@ from kommunhandlingar.adaptrar.wayback import (
     CDX,
     Kopia,
     adress,
+    basta,
     fraga,
+    fraga_under,
     kapad,
     sista_per_ar,
+    storst,
 )
 from kommunhandlingar.fel import Hamtfel
 
@@ -32,7 +35,7 @@ class TestCdx(unittest.TestCase):
             '[["timestamp","original","length"],'
             '["20230101000000","https://k.se/download/18.a/1/P.pdf","812"]]'
         )
-        kopior = fraga(klient, "k.se/download/", "application/pdf", prefix=True)
+        kopior = fraga_under(klient, "k.se/download/", "application/pdf")
         self.assertEqual(
             kopior, [Kopia("20230101000000", "https://k.se/download/18.a/1/P.pdf", 812)]
         )
@@ -81,6 +84,25 @@ class TestCdx(unittest.TestCase):
             [k.tidsstampel for k in sista_per_ar(kopior)],
             ["20240601", "20231105", "20221201"],
         )
+
+
+class TestBasta(unittest.TestCase):
+    def test_storsta_kopian_per_fil_och_vid_lika_den_aldsta(self):
+        kopior = [
+            Kopia("2022", "a", 5),
+            Kopia("2024", "a", 9),
+            Kopia("2023", "a", 9),
+            Kopia("2021", "b", 1),
+        ]
+        valda = basta(kopior, lambda k: k.original, storst)
+        self.assertEqual(
+            valda, {"a": Kopia("2023", "a", 9), "b": Kopia("2021", "b", 1)}
+        )
+
+    def test_rangordningen_ar_ett_argument(self):
+        kopior = [Kopia("2022", "a", 5), Kopia("2023", "a", 9)]
+        valda = basta(kopior, lambda k: k.original, lambda k: -k.langd)
+        self.assertEqual(valda, {"a": Kopia("2022", "a", 5)})
 
 
 class TestKapad(unittest.TestCase):

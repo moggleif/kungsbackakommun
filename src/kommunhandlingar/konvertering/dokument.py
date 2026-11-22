@@ -23,7 +23,7 @@ from kommunhandlingar.konvertering.las_sida import Sida, las_sida
 VERKTYG = ("pdfplumber", "pdfminer.six")
 PDF_BORJAN = b"%PDF-"
 TECKENTAK = 500_000
-TUNG_SIDA = Sida("ej-konverterad", True, figur=True)
+TUNG_SIDA = Sida(kvalitet.EJ_KONVERTERAD, True, figur=True)
 
 
 @dataclass(frozen=True)
@@ -65,7 +65,7 @@ def kvalitetsfalt(poolens_version: str, resultat: Resultat) -> dict:
 def versioner(resultat: Resultat) -> list[str]:
     lasta = [f"{namn} {version(namn)}" for namn in VERKTYG]
     kvaliteter = set(resultat.kvalitet_per_sida or [])
-    lasta_med_ocr = kvaliteter & {"ocr", "bild", "ointressant", "ej-konverterad"}
+    lasta_med_ocr = kvaliteter & kvalitet.MED_OCR
     return lasta + (ocr.verktyg() if lasta_med_ocr else [])
 
 
@@ -78,21 +78,21 @@ def konvertera(pdf: Path) -> Resultat:
     with pdf.open("rb") as fil:
         borjan = fil.read(1024)
     if PDF_BORJAN not in borjan:
-        return Resultat("ej-konverterad", "inte-pdf")
+        return Resultat(kvalitet.EJ_KONVERTERAD, "inte-pdf")
     try:
         with tidsbudget.hogst(tidsbudget.DOKUMENT):
             sidor = las_sidor(pdf)
     except tidsbudget.Dokumentgrans:
-        return Resultat("ej-konverterad", tidsbudget.FEL)
+        return Resultat(kvalitet.EJ_KONVERTERAD, tidsbudget.FEL)
     except pdfium.PdfiumError as fel:
-        return Resultat("ej-konverterad", oppningsfel(fel))
+        return Resultat(kvalitet.EJ_KONVERTERAD, oppningsfel(fel))
     except Exception as fel:
         # pdfminer kastar godtyckliga undantag (TypeError, IndexError, …) för
         # trasiga filer. En fil får inte stoppa körningen; orsaken syns i loggen.
         print(f"{pdf.name}: {type(fel).__name__}: {fel}", file=sys.stderr)
-        return Resultat("ej-konverterad", "trasig-pdf")
+        return Resultat(kvalitet.EJ_KONVERTERAD, "trasig-pdf")
     if not sidor:
-        return Resultat("ej-konverterad", "trasig-pdf")
+        return Resultat(kvalitet.EJ_KONVERTERAD, "trasig-pdf")
     return Resultat(kvalitet.dokumentets([s.kvalitet for s in sidor]), sidor=sidor)
 
 

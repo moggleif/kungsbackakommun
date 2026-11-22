@@ -15,10 +15,10 @@ from pathlib import Path
 
 from kommunhandlingar import frontmatter
 from kommunhandlingar.datakontroll_tolkning import talfel
+from kommunhandlingar.konvertering.kvalitet import TEXTLAGER
 
 NAMN = re.compile(r"([1-9]\d*)-(?:([1-9]\d*)-)?([1-9]\d*)(\.tolkad)?\.csv")
 NAMNEN = "<sida>-<nr>.csv, <sida>-<sista sida>-<nr>.csv eller <sida>-<nr>.tolkad.csv"
-TEXTLAGER = {"ok", "tabell-osaker"}
 
 
 def tabellfel(fil: Path) -> list[str]:

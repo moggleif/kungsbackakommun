@@ -51,7 +51,7 @@ class Arkivbas(unittest.TestCase):
 
     def kor(self, *kandidater: Kandidat, arkiv: bool = True) -> list[str]:
         steg = self.steg(list(kandidater), arkiv)
-        return [behandla(steg, k) for k in kandidater]
+        return [behandla(steg, k).text for k in kandidater]
 
     def md(self, namn: str = "protokoll") -> Path:
         return self.data / "exempelby/ks/2025/2025-04-22" / f"{namn}.md"

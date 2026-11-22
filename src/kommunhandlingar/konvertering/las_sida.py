@@ -27,6 +27,7 @@ from kommunhandlingar.konvertering import (
     delade,
     figurer,
     hogkant,
+    kvalitet,
     kvarvarande,
     markdown,
     olinjerade,
@@ -60,7 +61,7 @@ class Sida:
 def las_sida(sida: Page, rendering: pdfium.PdfPage) -> Sida:
     match vag(sida, lambda: ej_vita(rendering)):
         case "tom":
-            return Sida("tom", False)
+            return Sida(kvalitet.TOM, False)
         case "ocr":
             last = ocr_sida(rendering, figurer.har_figur(sida, []))
         case _:
@@ -85,13 +86,13 @@ def ocr_sida(rendering: pdfium.PdfPage, figur: bool) -> Sida:
     skannad_ = skannad.las(rendering)
     figur = figur or skannad_.figur
     match skannad_.kvalitet:
-        case "ocr":
+        case kvalitet.OCR:
             rader = [markdown.rad(r) for r in skannad_.text.splitlines()]
-            return Sida("ocr", True, komprimera(rader), figur=figur)
-        case "tom" | "ointressant":
+            return Sida(kvalitet.OCR, True, komprimera(rader), figur=figur)
+        case kvalitet.TOM | kvalitet.OINTRESSANT:
             return Sida(skannad_.kvalitet, False)
-        case kvalitet:
-            return Sida(kvalitet, True, figur=figur)
+        case annan:
+            return Sida(annan, True, figur=figur)
 
 
 def ej_vita(rendering: pdfium.PdfPage) -> float:
@@ -126,7 +127,7 @@ def lasning(sida: Page) -> Sida:
     hittade += [(t.bbox, t.rader, t.kanter) for t in utan_linjer]
     hittade.sort(key=lambda t: (round(t[0][1]), t[0][0]))
     return Sida(
-        "tabell-osaker" if osaker else "ok",
+        kvalitet.TABELL_OSAKER if osaker else kvalitet.OK,
         olasliga(sida) > 0 or i_oordning(sida, rutor),
         text,
         [rader for _, rader, _ in hittade],

@@ -3,13 +3,15 @@ och ADR-0068.
 Test: tests/test_sitevision.py."""
 
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass
 from datetime import date, timedelta
 
 from kommunhandlingar import monster, schema
-from kommunhandlingar.adaptrar.sitevision_html import Forekomst, forekomster
+from kommunhandlingar.adaptrar.gemensamt import organsidor
+from kommunhandlingar.adaptrar.sitevision_html import Forekomst, forekomster, kallnyckel
 from kommunhandlingar.fel import IngenKandidat, Konfigurationsfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kallsida, Kandidat
 
 FALT = {
     "adapter",
@@ -21,7 +23,6 @@ FALT = {
     "wayback",
     "projekt",
 }
-MONSTERGRUPPER = {"ar", "manad", "dag", "typ"}
 # Ett möte som flyttas, flyttas några dagar (ADR-0062).
 FLYTTAT_MOTE = timedelta(days=7)
 
@@ -43,20 +44,17 @@ class Kalla:
 def kalla_av(post: dict, organ_id: list[str], var: str) -> Kalla:
     schema.kontrollera_falt(post, FALT, var)
     monsterposter = schema.varde(post, "monster", list, var)
-    motessidor = sidor(schema.varde(post, "sidor", dict, var), organ_id, var)
+    motessidor = organsidor(schema.varde(post, "sidor", dict, var), organ_id, var)
     return Kalla(
         motessidor,
         monster.datummonster(schema.varde(post, "rubrik", str, var), "rubrik", var),
-        tuple(
-            monster.kompilera(p, MONSTERGRUPPER, f"{var}, mönster")
-            for p in monsterposter
-        ),
+        monster.filnamnsmonster(monsterposter, var),
         monster.manader(post, var),
         monster.rattelser(
             schema.valfritt(post, "rattelser", dict, var) or {}, "sitevision", var
         ),
         arkivorgan(schema.textlista(post, "wayback", var), motessidor, var),
-        sidor(schema.valfritt(post, "projekt", dict, var) or {}, organ_id, var),
+        organsidor(schema.valfritt(post, "projekt", dict, var) or {}, organ_id, var),
     )
 
 
@@ -68,56 +66,42 @@ def arkivorgan(
     return organ
 
 
-def sidor(tabell: dict, organ_id: list[str], var: str) -> dict[str, str]:
-    for organ, adress in tabell.items():
-        if organ not in organ_id or not isinstance(adress, str):
-            raise Konfigurationsfel(f"{var}: sidan för {organ!r}")
-    return tabell
-
-
-def upptack(
-    kalla: Kalla, html_per_sida: dict[str, str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def upptack(kalla: Kalla, html_per_sida: dict[str, str]) -> Fynd:
     return las(kalla, [(o, a, html_per_sida[a]) for o, a in kalla.sidor.items()])
 
 
-def las(
-    kalla: Kalla, sidor: list[tuple[str, str, str]]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def las(kalla: Kalla, sidor: list[tuple[str, str, str]]) -> Fynd:
     """Sidorna som organ, adress och HTML; den första sidan med en fil gäller."""
     kandidater: dict[str, Kandidat] = {}
     avvisade: dict[str, Avvisad] = {}
-    for organ, adress, html in sidor:
-        for forekomst in forekomster(html, adress):
-            nyckel = kallnyckel(forekomst)
-            if nyckel in kandidater:
-                continue
-            try:
-                kandidater[nyckel] = kandidat(kalla, organ, adress, forekomst)
-                avvisade.pop(nyckel, None)
-            except IngenKandidat as fel:
-                avvisade.setdefault(
-                    nyckel, Avvisad(adress, forekomst.filnamn, str(fel))
-                )
-    return list(kandidater.values()), list(avvisade.values())
+    for sida, fil in filerna(sidor):
+        nyckel = kallnyckel(fil)
+        if nyckel in kandidater:
+            continue
+        try:
+            kandidater[nyckel] = kandidat(kalla, sida, fil)
+            avvisade.pop(nyckel, None)
+        except IngenKandidat as fel:
+            avvisade.setdefault(nyckel, Avvisad(sida.adress, fil.filnamn, str(fel)))
+    return Fynd(list(kandidater.values()), list(avvisade.values()))
 
 
-def kallnyckel(forekomst: Forekomst) -> str:
-    return f"sitevision:{forekomst.nodid}"
+def filerna(sidor: list[tuple[str, str, str]]) -> Iterator[tuple[Kallsida, Forekomst]]:
+    return ((Kallsida(o, a), f) for o, a, html in sidor for f in forekomster(html, a))
 
 
-def kandidat(kalla: Kalla, organ: str, adress: str, forekomst: Forekomst) -> Kandidat:
+def kandidat(kalla: Kalla, sida: Kallsida, forekomst: Forekomst) -> Kandidat:
     nyckel = kallnyckel(forekomst)
     tolkning = monster.tolka(kalla.monster, forekomst.filnamn, kalla.manader)
     datum = kalla.rattelser.get(nyckel) or motesdatum(
         kalla, tolkning.datum, forekomst.rubrik
     )
     return Kandidat(
-        organ=organ,
+        organ=sida.organ,
         datum=datum,
         typ=tolkning.typ,
         url=forekomst.adress,
-        kalla=adress,
+        kalla=sida.adress,
         kallnyckel=nyckel,
         filnamn=forekomst.filnamn,
     )

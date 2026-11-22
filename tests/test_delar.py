@@ -25,7 +25,7 @@ class TestDelar(unittest.TestCase):
     def test_kod_4_bara_nar_delen_slutar_fore_budgeten(self):
         delen = TID + timedelta(hours=1)
         budget = tidsbudget.mjuk_grans(TID)
-        vantar, klart = Counter({hamta.VANTAR: 3}), Counter({"konverterad": 3})
+        vantar, klart = Counter({hamta.VANTAR.text: 3}), Counter({"konverterad": 3})
         self.assertEqual(hamta.slutkod(vantar, TID, delen), hamta.MER_I_NASTA_DEL)
         self.assertEqual(hamta.slutkod(vantar, TID, budget), 0)
         self.assertEqual(hamta.slutkod(klart, TID, delen), 0)
