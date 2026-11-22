@@ -59,7 +59,7 @@ POOL = dokumenten({VACKT: VACKTS, BESLUT: BESLUTETS, ANDRAS: ANDRAS_TEXT}, "[ok,
 def lasta(rader: str = RADER, rubrik: str = RUBRIK):
     """Läser en initiativfil mot en pool med två organs dokument."""
     with tillfallig_pool(rubrik, rader, POOL) as (fil, data):
-        yield spar.las(fil, exempelby(), data, INITIATIV)
+        yield spar.lasare(INITIATIV)(fil, exempelby(), data)
 
 
 class TestLasning(unittest.TestCase):
@@ -160,7 +160,7 @@ class TestKungsbacka(unittest.TestCase):
     def test_filen_gar_ihop_med_kommunfilen_och_poolen(self):
         kungsbacka = las_kommun(ROT / "kommuner" / "kungsbacka.toml")
         fil = ROT / "initiativ" / "kungsbacka.csv"
-        stegen = spar.las(fil, kungsbacka, ROT / "data" / "kungsbacka", INITIATIV)
+        stegen = spar.lasare(INITIATIV)(fil, kungsbacka, ROT / "data" / "kungsbacka")
         self.assertEqual(
             {s.organ for s in stegen},
             {

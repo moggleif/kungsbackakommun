@@ -11,7 +11,6 @@ inte tar `asa-restaurangstrak-del-2`:s dokument när båda står i filen
 får en länk till projektsidan och en lista med dokumenten.
 """
 
-import csv
 import re
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
@@ -21,6 +20,7 @@ from kommunhandlingar import frontmatter, pool
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.plats import namn_av
+from kommunhandlingar.webbplats import radfil
 from kommunhandlingar.webbplats.spar import Steg
 
 KOLUMNER = ["organ", "detaljplan", "projekt", "tolkad"]
@@ -39,16 +39,9 @@ class Projekt:
 
 
 def las(fil: Path, kommun: Kommun, data: Path) -> dict[str, Projekt]:
-    with fil.open(encoding="utf-8", newline="") as f:
-        rubrik, *rader = list(csv.reader(f)) or [[]]
-    if rubrik != KOLUMNER:
-        raise Datafel(f"{fil}: rubrikerna är inte {','.join(KOLUMNER)}")
     listor = {o: a for k in kommun.kallor for o, a in k.projekt.items()}
-    planerna = set()
-    for nr, rad in enumerate(rader, 2):
-        if fel := radfel(rad, listor, planerna):
-            raise Datafel(f"{fil}, rad {nr}: {fel}")
-        planerna.add(rad[1])
+    planerna: set[str] = set()
+    rader = radfil.las(fil, KOLUMNER, lambda rad: provad_rad(rad, listor, planerna))
     namnen = {forled(r[2]) for r in rader}
     per_organ = {organ: organets(data, organ) for organ in {r[0] for r in rader}}
     return {
@@ -61,19 +54,21 @@ def las(fil: Path, kommun: Kommun, data: Path) -> dict[str, Projekt]:
     }
 
 
-def radfel(rad: list[str], listor: dict[str, str], planerna: set[str]) -> str:
-    if len(rad) != len(KOLUMNER):
-        return f"{len(rad)} fält, inte {len(KOLUMNER)}"
+# Raden står kvar som den är. Planen prövas mot de tidigare raderna här, inte
+# med radfil.unika: meddelandet har planens namn och kommer före projektet.
+def provad_rad(rad: list[str], listor: dict[str, str], planerna: set[str]) -> list[str]:
     organ, plan, projekt, tolkad = rad
     if organ not in listor:
-        return f"organet {organ!r} har ingen lista med projekt i kommunfilen"
+        raise ValueError(f"organet {organ!r} har ingen lista med projekt i kommunfilen")
     if not plan or plan in planerna:
-        return f"planen {plan!r} är tom eller står redan i filen"
+        raise ValueError(f"planen {plan!r} är tom eller står redan i filen")
     if not re.fullmatch(r"[a-z0-9-]+(/[a-z0-9-]+)?", projekt):
-        return f"projektet {projekt!r} är inte en eller två delar av en adress"
-    if tolkad not in ("", "ja"):
-        return f"tolkad {tolkad!r} är varken tom eller ja"
-    return ""
+        raise ValueError(
+            f"projektet {projekt!r} är inte en eller två delar av en adress"
+        )
+    radfil.tolkad(tolkad)
+    planerna.add(plan)
+    return rad
 
 
 # Dokumentens namn börjar med projektsidans sista del, också för en sida

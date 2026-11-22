@@ -6,7 +6,6 @@ Läser `mal/<kommun>.csv` och stoppar bygget med raden när den inte går
 ihop med kommunfilen och poolen (docs/03-ARKITEKTUR.md#mål-och-direktiv).
 """
 
-import csv
 import re
 from collections.abc import Callable
 from dataclasses import dataclass
@@ -17,6 +16,7 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.konvertering.markdown import utan_escapning
 from kommunhandlingar.sidmarkor import sidorna
+from kommunhandlingar.webbplats import radfil
 from kommunhandlingar.webbplats.malkontroll import Kontroll
 
 KOLUMNER = [
@@ -87,20 +87,14 @@ class Mal:
 
 
 def las(fil: Path, kommun: Kommun, data: Path) -> list[Mal]:
-    with fil.open(encoding="utf-8", newline="") as f:
-        rader = list(csv.reader(f))
-    if not rader or rader[0] != KOLUMNER:
-        raise Datafel(f"{fil}: rubrikerna är inte {','.join(KOLUMNER)}")
-    organ = {o.id for o in kommun.organ}
-    sidtext = sidlasare(data)
-    malen, kontroll = [], Kontroll()
-    for nr, rad in enumerate(rader[1:], 2):
-        try:
-            mal = tolka(rad, organ, sidtext)
-            kontroll.prova(mal)
-        except ValueError as fel:
-            raise Datafel(f"{fil}, rad {nr}: {fel}") from None
-        malen.append(mal)
+    organ, sidtext, kontroll = radfil.organen(kommun), sidlasare(data), Kontroll()
+
+    def tolka_och_prova(rad: list[str]) -> Mal:
+        mal = tolka(rad, organ, sidtext)
+        kontroll.prova(mal)
+        return mal
+
+    malen = radfil.las(fil, KOLUMNER, tolka_och_prova)
     try:
         kontroll.grupperna()
     except ValueError as fel:
@@ -109,13 +103,8 @@ def las(fil: Path, kommun: Kommun, data: Path) -> list[Mal]:
 
 
 def tolka(rad: list[str], organ: set[str], sidtext: Sidtext) -> Mal:
-    if len(rad) != len(KOLUMNER):
-        raise ValueError(f"{len(rad)} fält, inte {len(KOLUMNER)}")
-    if not re.fullmatch(r"\d{4}", rad[1]):
-        raise ValueError(f"året {rad[1]!r} är inte fyra siffror")
-    mal = Mal(rad[0], int(rad[1]), *rad[2:])
-    if mal.organ not in organ:
-        raise ValueError(f"organet {mal.organ!r} står inte i kommunfilen")
+    mal = Mal(rad[0], radfil.ar(rad[1]), *rad[2:])
+    radfil.i_kommunfilen(mal.organ, organ)
     if mal.slag not in SLAG:
         raise ValueError(f"slaget {mal.slag!r} är varken {' eller '.join(SLAG)}")
     if (mal.slag == "fokusområde") != bool(mal.huvudmal):

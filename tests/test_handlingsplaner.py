@@ -43,7 +43,7 @@ def lasta():
     """Läser en fil med handlingsplaner mot en pool med två dokument."""
     texter = {HANDLINGAR: HANDLINGARNAS, PROTOKOLL: PROTOKOLLETS}
     with tillfallig_pool(RUBRIK, RADER, dokumenten(texter, "[ok, ok]")) as (fil, data):
-        yield spar.las(fil, exempelby(), data, HANDLINGSPLANER)
+        yield spar.lasare(HANDLINGSPLANER)(fil, exempelby(), data)
 
 
 class TestSidan(unittest.TestCase):
@@ -75,7 +75,9 @@ class TestKungsbacka(unittest.TestCase):
     def test_filen_gar_ihop_med_kommunfilen_och_poolen(self):
         kungsbacka = las_kommun(ROT / "kommuner" / "kungsbacka.toml")
         fil = ROT / "handlingsplaner" / "kungsbacka.csv"
-        stegen = spar.las(fil, kungsbacka, ROT / "data" / "kungsbacka", HANDLINGSPLANER)
+        stegen = spar.lasare(HANDLINGSPLANER)(
+            fil, kungsbacka, ROT / "data" / "kungsbacka"
+        )
         self.assertEqual(
             {s.organ for s in stegen},
             {

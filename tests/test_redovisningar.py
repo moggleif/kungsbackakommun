@@ -34,7 +34,7 @@ BESTALLNING = re.compile(r"(Redovisning|Utredning|Information)\b")
 
 def steg() -> list:
     with tillfallig_pool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
-        return spar.las(fil, exempelby(), data, REDOVISNINGAR)
+        return spar.lasare(REDOVISNINGAR)(fil, exempelby(), data)
 
 
 def sida() -> str:
@@ -56,7 +56,9 @@ class TestKungsbacka(unittest.TestCase):
     def test_filen_gar_ihop_med_kommunfilen_och_poolen(self):
         kungsbacka = las_kommun(ROT / "kommuner" / "kungsbacka.toml")
         fil = ROT / "redovisningar" / "kungsbacka.csv"
-        stegen = spar.las(fil, kungsbacka, ROT / "data" / "kungsbacka", REDOVISNINGAR)
+        stegen = spar.lasare(REDOVISNINGAR)(
+            fil, kungsbacka, ROT / "data" / "kungsbacka"
+        )
         self.assertEqual(
             {s.organ for s in stegen},
             {

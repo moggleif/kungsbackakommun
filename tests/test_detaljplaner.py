@@ -31,7 +31,7 @@ RADER = (
 
 def sida(projekten: dict | None = None) -> str:
     with tillfallig_pool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
-        stegen = spar.las(fil, exempelby(), data, DETALJPLANER)
+        stegen = spar.lasare(DETALJPLANER)(fil, exempelby(), data)
     vy = replace(
         Vy(DETALJPLANER, exempelby(), aren(stegen)["exempelby"]),
         projekt=projekten or {},
@@ -52,6 +52,6 @@ class TestKungsbacka(unittest.TestCase):
     def test_filen_gar_ihop_med_kommunfilen_och_poolen(self):
         kungsbacka = las_kommun(ROT / "kommuner" / "kungsbacka.toml")
         fil = ROT / "detaljplaner" / "kungsbacka.csv"
-        stegen = spar.las(fil, kungsbacka, ROT / "data" / "kungsbacka", DETALJPLANER)
+        stegen = spar.lasare(DETALJPLANER)(fil, kungsbacka, ROT / "data" / "kungsbacka")
         self.assertEqual({s.organ for s in stegen}, {"bygg"})
         self.assertEqual(fil.read_bytes().count(b"\r"), 0)
