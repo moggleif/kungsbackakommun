@@ -6,17 +6,13 @@ Läser `mal/<kommun>.csv` och stoppar bygget med raden när den inte går
 ihop med kommunfilen och poolen (docs/03-ARKITEKTUR.md#mål-och-direktiv).
 """
 
-import re
-from collections.abc import Callable
 from dataclasses import dataclass
-from functools import cache
 from pathlib import Path
 
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.konvertering.markdown import utan_escapning
-from kommunhandlingar.sidmarkor import sidorna
 from kommunhandlingar.webbplats import radfil
+from kommunhandlingar.webbplats.kallprov import Sidlasare, Sidtext, star_pa
 from kommunhandlingar.webbplats.malkontroll import Kontroll
 
 KOLUMNER = [
@@ -32,18 +28,6 @@ FALTEN = (
     ("status", "statusen"),
     ("huvudmal", "huvudmålet"),
 )
-# Ett dokument ligger på <organ>/<år>/<datum>/<namn>.md (ADR-0003). Ett
-# mål som fortsätter på nästa sida har sidorna, till exempel `#sida-14-15`.
-KALLA = re.compile(
-    r"(?P<dokument>(?P<organ>[^/]+)/\d{4}/[^/]+/[^/]+\.md)"
-    r"#sida-(?P<forsta>\d+)(?:-(?P<sista>\d+))?"
-)
-PUNKT = re.compile(r"^[ \t]*[-•*][ \t]*", re.MULTILINE)
-# Mellanrum, mjuka bindestreck, ett ord delat i en tabellcell och
-# trendkolumnens pilar och tankstreck, som hamnar mitt i texten (ADR-0056).
-UTFYLLNAD = re.compile(r"-<br>|<br>|[\s\u00ad\u2013\u2014\u2190-\u21ff\ue000-\uf8ff]")
-
-Sidtext = Callable[[str, str], str]
 
 
 @dataclass(frozen=True)
@@ -87,7 +71,7 @@ class Mal:
 
 
 def las(fil: Path, kommun: Kommun, data: Path) -> list[Mal]:
-    organ, sidtext, kontroll = radfil.organen(kommun), sidlasare(data), Kontroll()
+    organ, sidtext, kontroll = radfil.organen(kommun), Sidlasare(data), Kontroll()
 
     def tolka_och_prova(rad: list[str]) -> Mal:
         mal = tolka(rad, organ, sidtext)
@@ -114,48 +98,3 @@ def tolka(rad: list[str], organ: set[str], sidtext: Sidtext) -> Mal:
         if not star_pa(getattr(mal, falt), sida):
             raise ValueError(f"{namn} står inte på {mal.kalla}")
     return mal
-
-
-# Versalerna räknas, utom när källan sätter hela texten i versaler.
-def star_pa(text: str, sida: str) -> bool:
-    provad = provbar(text)
-    return provad in sida or provad.upper() in sida
-
-
-def sidlasare(data: Path) -> Sidtext:
-    sidor = cache(lambda dokument: las_sidor(data / dokument))
-
-    def sidtext(kalla: str, organ: str) -> str:
-        traff = KALLA.fullmatch(kalla)
-        if not traff or traff["organ"] != organ:
-            raise ValueError(f"källan {kalla!r} är ingen sida i organets dokument")
-        if not (data / traff["dokument"]).is_file():
-            raise ValueError(f"källan {kalla!r} är inget dokument i poolen")
-        dokumentet = sidor(traff["dokument"])
-        nr = sidnummer(traff)
-        if not nr or any(n not in dokumentet for n in nr):
-            raise ValueError(f"källan {kalla!r} är ingen sida i dokumentet")
-        return "".join(dokumentet[n] for n in nr)
-
-    return sidtext
-
-
-def sidnummer(traff: re.Match) -> list[str]:
-    forsta = int(traff["forsta"])
-    sista = int(traff["sista"] or forsta)
-    return [str(n) for n in range(forsta, sista + 1)]
-
-
-def las_sidor(fil: Path) -> dict[str, str]:
-    sidor = sidorna(fil.read_text(encoding="utf-8"))
-    return {nr: provbar(text) for nr, text in sidor.items()}
-
-
-# Radbrytningarna ur PDF:en, punkterna först i en rad och
-# Markdown-escapningen (ADR-0021) räknas inte.
-def jamforbar(text: str) -> str:
-    return " ".join(PUNKT.sub("", utan_escapning(text)).split())
-
-
-def provbar(text: str) -> str:
-    return UTFYLLNAD.sub("", jamforbar(text))

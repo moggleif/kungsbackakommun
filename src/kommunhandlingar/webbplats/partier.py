@@ -10,7 +10,7 @@ parti kan sakna ledamot i nämnden eller vid mötet. Partilös står där som
 står där när var och en gör det. Andra avsändare prövas som andra värden.
 """
 
-from kommunhandlingar.webbplats.mal import provbar
+from kommunhandlingar.webbplats.kallprov import provbar
 
 NAMN = {
     "S": ("Socialdemokrat",),

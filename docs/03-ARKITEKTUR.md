@@ -2418,7 +2418,9 @@ filen (K26), länkad från organets sida.
   sida eller sidor som finns i ett av organets dokument i poolen,
   rubriken, formuleringen eller statusen inte står på sidorna, eller
   samma organ, slag och rubrik står två gånger med samma källa (den
-  kontrollen och de följande står i `webbplats/malkontroll.py`). Bygget
+  kontrollen och de följande står i `webbplats/malkontroll.py`; prövningen
+  mot källans sidor, som spåren och uppföljningarna delar, står i
+  `webbplats/kallprov.py`). Bygget
   stoppas också om uppföljningen eller bedömningen är okänd, en rad utan
   uppföljning har en bedömning eller status, en uppföljning saknar
   bedömning, `tolkad` är något annat än tomt eller `ja` i en grupp, samma
