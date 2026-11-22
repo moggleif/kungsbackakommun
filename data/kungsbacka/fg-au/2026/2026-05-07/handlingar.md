@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1587654f19ddca7e89d7c423/1777959573
 sha256: 7ec563aa305bbd0f8e69043e232099b83d7fb9081aa4c19a9734b0640e21395d
 bytes: 7050812
 sidor: 121
-hamtad: 2026-11-22T09:29:14+00:00
-konverterad: 2026-11-22T09:33:54+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T22:45:44+00:00
+konverterad: 2026-11-22T22:55:31+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
+tal_obekraftade: [1, 2, 3, 4, 5, 9, 11, 12, 16, 18, 19, 20, 21, 23, 28, 29, 31, 37, 39, 47, 48, 50, 52, 53, 54, 55, 60, 64, 69, 70, 74, 78, 81, 88, 93, 96, 104, 107, 110, 111, 112, 113, 114, 116, 118]
 figurer: [11, 18, 43, 44, 47, 75, 110, 111, 112, 116, 117, 118]
 tolkade: []
 granskad: null
@@ -312,7 +312,7 @@ www.kungsbacka.se
 KUNGSBACKA KOMMUN
 2 (6)
 
-\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 5090 uppskattningsvis, en del av dessa har fått
+\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 50% uppskattningsvis, en del av dessa har fått
 återkoppling att bli bättre på systematiken kring hot o våld, anpassningar och även andra lokala behov
 
 \- Sveriges lärare och kommunal påtalar att de gärna ser att arbetsgivaren inbjuder till samverkan till de
@@ -670,7 +670,7 @@ www.kungsbacka.se
 KUNGSBACKA KOMMUN
 2 (6)
 
-\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 5090 uppskattningsvis, en del av dessa har fått
+\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 50% uppskattningsvis, en del av dessa har fått
 återkoppling att bli bättre på systematiken kring hot o våld, anpassningar och även andra lokala behov
 
 \- Sveriges lärare och kommunal påtalar att de gärna ser att arbetsgivaren inbjuder till samverkan till de
@@ -1155,7 +1155,7 @@ www.kungsbacka.se
 <!-- sida 22 -->
 
 KUNGSBACKA KOMMUN
-202\)
+2 (2)
 
 ökats på så vis att fördelningen innebär att varannan lektion kan bedrivas i halvklass, vidare har
 fortbildningsinsatser initierats och nytt gemensamt material för utveckla undervisningen
@@ -1417,18 +1417,18 @@ möjliggöra samundervisning i matematik.
 
 Vi räknar med att en åk 5 lärare har ca 1200 min undervisning i veckan.
 Matematik är ca 240 min/vecka, dvs en heltidslärare kan ta 1200/240= 5 st
-matematik-grupper/Klasser. I skolpengen finns redan 5094 tilldelning för
-halvklass, så vi ersätter alltså 1094 lärartjänst per år för varje klass som
+matematik-grupper/Klasser. I skolpengen finns redan 50% tilldelning för
+halvklass, så vi ersätter alltså 10% lärartjänst per år för varje klass som
 deltar.
 
 Schablonkostnaden för en lärartjänst på helår i årskurs 5 är 734 805 kr.
-9 klasser, 1094 tjänst per klass ger en,
+9 klasser, 10% tjänst per klass ger en,
 
 Total kostnad utökad lärarresurs: 734 805 x 9 x 2 x 0,1= ca 1 330 000 kr
 Årskurs 8:
 
 Schablonkostnaden för en lärartjänst på helår i årskurs 8 är 758 280 kr.
-3 klasser, 2094 tjänst per klass ger en,
+3 klasser, 20% tjänst per klass ger en,
 
 Total kostnad utökad lärarresurs: 758 280 x 3 x 2 x 0,2 = ca 910 000 kr
 
@@ -1854,7 +1854,7 @@ www.kungsbacka.se
 <!-- sida 38 -->
 
 KUNGSBACKA KOMMUN
-202\)
+2 (2)
 
 Stigert Pettersson Frida Byrsten
 Förvaltningschef Verksamhetschef Myndighet & Stöd
@@ -2025,7 +2025,7 @@ elever från andra kommuner tas emot i mån av plats.
 För elever som bor växelvis hos vårdnadshavare i olika kommuner är det
 folkbokföringsadressen som avgör bosättningskommun.
 
-Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 28
+Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 2 §
 (asylsökande, papperslösa, fri rörlighet enligt EU/EES, tidsbegränsat
 uppehållstillstånd samt stadigvarande vistas enligt skolförordningen 2011:185) har
 samma rätt till skolplacering och ska likställas med barn som är folkbokförda i
@@ -2336,7 +2336,7 @@ Beslutet skickas till
 
 Stigert Pettersson Frida Byrsten
 Förvaltningschef Verksamhetschef Myndighet & Stöd
-I (1)
+1 (1)
 FG Myndighet & Stöd Kungsbacka kommun
 Frida Byrsten 434 81 Kungsbacka
 Verksamhetschef Besöksadress
@@ -2573,7 +2573,7 @@ www.kungsbacka.se
 <!-- sida 56 -->
 
 KUNGSBACKA KOMMUN
-20\)
+2 (3)
 
 Elever med funktionsnedsättning kan beviljas stödinsatser via individ- och familjeomsorgen enligt
 lagen om stöd och service till vissa funktionshindrade (LSS) eller socialtjänstlagen. Insatserna kan
@@ -2652,7 +2652,7 @@ Kontakt:
 
 Titel: Regler för skolskjuts
 
-Nämnden för Förskola & Grundskola 2026-05-20, 8 xx
+Nämnden för Förskola & Grundskola 2026-05-20, §xx
 2026-XX-XX
 
 Förskola & Grundskola
@@ -2912,7 +2912,7 @@ Om elev flyttar eller byter skola
 
 För elever som flyttar eller byter skola så sker en förnyad prövning om rätten till
 skolskjuts som utgår ifrån elevens nya folkbokföringsadress. Vårdnadshavare ska
-göra en ny ansökan. Enligt skollagen 10 kap 38 8 har en elev som har tagits emot i
+göra en ny ansökan. Enligt skollagen 10 kap 38 § har en elev som har tagits emot i
 en kommuns grundskola ett visst läsår rätt att gå kvar hela läsåret, även om de
 förhållanden som låg till grund för mottagandet ändras under läsåret. Om det för
 eleven återstår endast en årskurs, har eleven också rätt att gå kvar sista årskursen.
@@ -3166,7 +3166,7 @@ Kontakt:
 
 Titel: Regler för skolskjuts
 
-Nämnden för Förskola & Grundskola 2026-05-20, 8 xx
+Nämnden för Förskola & Grundskola 2026-05-20, §xx
 2026-XX-XX
 
 Förskola & Grundskola
@@ -3432,7 +3432,7 @@ Om elev flyttar eller byter skola
 
 För elever som flyttar eller byter skola så sker en förnyad prövning om rätten till
 skolskjuts som utgår ifrån elevens nya folkbokföringsadress. Vårdnadshavare ska
-göra en ny ansökan. Enligt skollagen 10 kap 38 8 har en elev som har tagits emot i
+göra en ny ansökan. Enligt skollagen 10 kap 38 § har en elev som har tagits emot i
 en kommuns grundskola ett visst läsår rätt att gå kvar hela läsåret, även om de
 förhållanden som låg till grund för mottagandet ändras under läsåret. Om det för
 eleven återstår endast en årskurs, har eleven också rätt att gå kvar sista årskursen.
@@ -3729,7 +3729,7 @@ www.kungsbacka.se
 <!-- sida 79 -->
 
 KUNGSBACKA KOMMUN
-22\)
+2 (2)
 
 Beslutet skickas till
 
@@ -4056,7 +4056,7 @@ de extra anpassningar som skolans personal har bedömt att eleverna är i
 behov av. För perioden den 9 februari till den 8 maj 2026 ska rektorn
 redovisa: vilka behov som eleverna som riskerar att inte nå minst betyget
 E har, vilka elever som har behov av extra anpassningar samt vilka
-anpassningar som de har fått. (3 kap. 5 8 skollagen).
+anpassningar som de har fått. (3 kap. 5 § skollagen).
 
 1\. Ange tydligt vilka åtgärder som vidtagits för att avhjälpa respektive
 påtalad brist. Ange följande:
@@ -4074,7 +4074,7 @@ a) Vad som har gjorts och hur det har gjorts
 
 Med anledning av Skolinspektionens beslut har Särö skola 6-9 genomfört ett riktat arbete
 för att säkerställa att elever som är i behov av extra anpassningar identifieras och ges
-sådana inom ramen för ordinarie undervisning, i enlighet med 3 kap. 5 8 skollagen samt
+sådana inom ramen för ordinarie undervisning, i enlighet med 3 kap. 5 § skollagen samt
 Skolverkets allmänna råd.
 
 Arbetet har haft fokus på att skapa en gemensam förståelse i personalgruppen samt
@@ -4372,12 +4372,12 @@ skollagen).
 
 Avstående från ingripande
 
-Skolinspektionen avstår med stöd av 26 kap. 12 8 p. 2 skollagen från att
+Skolinspektionen avstår med stöd av 26 kap. 12 § p. 2 skollagen från att
 ingripa mot Kungsbacka kommun avseende brister rörande garanterad
 undervisningstid och särskilt stöd. Skolinspektionen avslutar därmed
 ärendet i denna del.
 
-Beslutet om avstående från ingripande får enligt 28 kap. 2 och 18 88
+Beslutet om avstående från ingripande får enligt 28 kap. 2 och 18 §§
 skollagen inte överklagas.
 
 Områden utan konstaterade brister
@@ -4651,7 +4651,7 @@ för den ordinarie undervisningen enligt 5 §, ska detta anmälas till rektorn.
 Detsamma gäller om det finns särskilda skäl att anta att sådana
 anpassningar inte skulle vara tillräckliga. (3 kap. 7 § skollagen).
 
-Av förarbetena till 3 kap. 5 8 skollagen framgår bland annat att stöd i form
+Av förarbetena till 3 kap. 5 § skollagen framgår bland annat att stöd i form
 av extra anpassningar är till exempel att hjälpa en elev med att planera och
 strukturera sina studier. Det kan till exempel ske med hjälp av ett särskilt
 schema över skoldagen, extra tydliga instruktioner eller stöd för att sätta i
@@ -5062,7 +5062,7 @@ www.kungsbacka.se
 <!-- sida 108 -->
 
 KUNGSBACKA KOMMUN
-20\)
+2 (3)
 
 Beskrivning av ärendet
 
@@ -5436,7 +5436,7 @@ Ange kvadratmeter yta som barnen får nyttja Ange barnens tillgängliga friyta u
 Kungsbacka kommun | Stadshuset, (adress borttagen), 434 81 Kungsbacka | 0300-83 40 00
 Organisationsnummer: 212000-1256 | infoQkungsbacka.se | kungsbacka.se
 
-Ärendenummer: 4273146 | Inskickat av: GUSTAF RÖNNEKLEV | Datum: 2026-04-16 13:23 Sida 2 av 3
+Ärendenummer: #273146 | Inskickat av: GUSTAF RÖNNEKLEV | Datum: 2026-04-16 13:23 Sida 2 av 3
 
 <!-- sida 118 -->
 
