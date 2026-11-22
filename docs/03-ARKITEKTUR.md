@@ -1902,10 +1902,9 @@ byggtid, och jämför varje fil i utkatalogen med
 ## Webbplatsens skript
 
 Sidorna har tre små skript, `kalender.js`, `mal.js` och `perspektiv.js`
-i `webbplats/`, som bäddas in i sidan när den byggs, liksom stilarna
-i `webbplats/*.css` (`webbplats/inbaddning.py`, som läser varje fil en
-gång). Hur och varför de
-kontrolleras står i
+i `webbplats/`, som bäddas in i sidan när den byggs. Stilarna i
+`webbplats/*.css` bäddas in på samma sätt, genom `webbplats/inbaddning.py`,
+som läser varje fil en gång. Hur och varför skripten kontrolleras står i
 [ADR-0104](decisions/0104-webbplatsens-skript-med-eslint-och-jsdom.md)
 (K83).
 

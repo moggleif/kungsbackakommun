@@ -18,7 +18,7 @@ from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import kalendervyer
 from kommunhandlingar.webbplats.inbaddning import las, skript
 from kommunhandlingar.webbplats.kalender import GRUPPMOTE, Sammantrade, gruppmoten
-from kommunhandlingar.webbplats.kalenderfarger import farger, stil
+from kommunhandlingar.webbplats.kalenderfarger import farger, organstil
 from kommunhandlingar.webbplats.mall import KALLKOD, Mall, sida
 from kommunhandlingar.webbplats.meny import kommunens
 
@@ -52,7 +52,7 @@ def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) ->
     if moten:
         namn[GRUPPMOTE] = f"Partiernas gruppmöte inför {namn[kommun.gruppmote.fore]}"
     innehall = (
-        f"<style>{las('kalender.css')}{stil(farg)}</style>"
+        f"<style>{las('kalender.css')}{organstil(farg)}</style>"
         + INLEDNING
         + kvalitet(mall, sammantraden, namn)
         + om_gruppmoten(kommun, moten, namn)

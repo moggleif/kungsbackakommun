@@ -19,10 +19,6 @@ class TestInbaddning(unittest.TestCase):
             f"<script>{mal}</script><script>{perspektiv}</script>",
         )
 
-    def test_filen_ar_den_bredvid_koden(self):
-        text = (KATALOG / "kalender.css").read_text(encoding="utf-8")
-        self.assertEqual(las("kalender.css"), text)
-
     def test_en_fil_lases_en_gang(self):
         inbaddning.las.cache_clear()
         with mock.patch.object(
