@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20241125120853id_/https://kungsbacka.se/d
 sha256: e1bec7bccd3b741ecc0702ba22bcef50cea6be0b392bbb56de1d53af5e16e9f1
 bytes: 117607133
 sidor: 548
-hamtad: 2026-11-17T02:05:28+00:00
-konverterad: 2026-11-17T02:08:39+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T01:24:26+00:00
+konverterad: 2026-11-22T01:30:03+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ej-konverterad, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [11, 221, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 373, 388, 394, 456, 537, 538, 548]
-figurer: [12, 16, 17, 19, 21, 22, 26, 29, 34, 36, 41, 43, 45, 47, 48, 52, 53, 55, 57, 58, 61, 63, 70, 72, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89, 90, 95, 98, 103, 107, 108, 116, 117, 118, 120, 123, 124, 126, 127, 128, 131, 132, 134, 135, 137, 138, 141, 142, 145, 146, 147, 149, 150, 152, 153, 156, 157, 159, 160, 162, 163, 167, 169, 171, 172, 175, 176, 177, 178, 179, 180, 182, 187, 189, 190, 191, 193, 194, 196, 209, 210, 212, 214, 215, 216, 217, 220, 230, 240, 248, 259, 261, 262, 281, 282, 283, 284, 285, 295, 296, 322, 323, 324, 325, 326, 327, 350, 353, 371, 379, 380, 393, 394, 406, 407, 408, 412, 413, 420, 421, 427, 437, 438, 439, 440, 442, 443, 444, 445, 454, 455, 457, 459, 461, 464, 479, 484]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ointressant, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [11, 221, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 322, 323, 324, 325, 326, 327, 329, 330, 331, 332, 334, 335, 336, 337, 338, 339, 340, 341, 373, 388, 394, 456, 537, 538, 548]
+figurer: [11, 12, 16, 17, 19, 21, 22, 26, 29, 34, 36, 41, 43, 45, 47, 48, 52, 53, 55, 57, 58, 61, 63, 70, 72, 77, 78, 79, 80, 81, 82, 84, 85, 86, 87, 88, 89, 90, 95, 98, 103, 107, 108, 116, 117, 118, 120, 123, 124, 126, 127, 128, 131, 132, 134, 135, 137, 138, 141, 142, 145, 146, 147, 149, 150, 152, 153, 156, 157, 159, 160, 162, 163, 167, 169, 171, 172, 175, 176, 177, 178, 179, 180, 182, 187, 189, 190, 191, 193, 194, 196, 209, 210, 212, 214, 215, 216, 217, 220, 221, 230, 240, 248, 259, 261, 262, 281, 282, 283, 284, 285, 295, 296, 315, 316, 320, 322, 323, 324, 325, 326, 327, 332, 334, 335, 338, 350, 353, 371, 379, 380, 388, 393, 394, 406, 407, 408, 412, 413, 420, 421, 427, 437, 438, 439, 440, 442, 443, 444, 445, 454, 455, 456, 457, 459, 461, 464, 479, 484, 548]
 tolkade: []
 granskad: null
 ---
@@ -2093,6 +2093,10 @@ Fokusområden                                              Trend
 I Kungsbacka finns attraktiva bostäder med inspirerande byggnadsmiljö för olika behov, generationer
 →
 och livsstilar.
+Kungsbacka har välkomnande och trygga miljöer.             -
+I Kungsbacka finns mötesplatser för samvaro, rekreation, upplevelser och kreativa utbyten. -
+
+I Kungsbacka är man trygg och får en god omsorg när man behöver stöd för att få livet att fungera. -
 
 Måluppfyllelse
 Efter ett par år där vi bedömde att fokusområdet om
@@ -2136,8 +2140,6 @@ garlöften för minskad brottslighet och ökad trygghet i
 kommunen tillsammans med näringsliv, invånare och
 polis.
 
-30 Kungsbacka kommuns årsredovisning 2022
-
 Kultur­ och fritidsverksamheter har infört arbetsmetoden
 stoppmöten som en del av prioinitiativet Ett tryggare
 Kungsbacka. Metoden går ut på att vilken aktör som
@@ -2177,12 +2179,7 @@ mötesplatser är de kommunala idrottshallarna. Där har vi
 alltmer låtit föreningarna själva fördela tiden som de vill
 använda hallarna, vilket de uppskattar.
 
-[Tabell 40-1](handlingar.tabeller/40-1.csv)
-
-| Kungsbacka har välkomnande och trygga miljöer. | - |
-| --- | --- |
-| I Kungsbacka finns mötesplatser för samvaro, rekreation, upplevelser och kreativa utbyten. | - |
-| I Kungsbacka är man trygg och får en god omsorg när man behöver stöd för att få livet att fungera. | - |
+30 Kungsbacka kommuns årsredovisning 2022
 
 <!-- sida 41 -->
 
@@ -2321,6 +2318,11 @@ EN HÅLLBAR UTVECKLING  OCH EN HÄLSOSAM  MILJÖ
 Fokusområden                                              Trend
 Kungsbacka växer med en långsiktigt hållbar ekonomi.       —
 
+Kungsbackas miljöarbete utgår ifrån de nationella miljö målen, de globala hållbarhetsmålen samt Borg-
+←
+mästaravtalet.
+Unga i Kungsbacka mår bra såväl fysiskt som psykiskt.      →
+
 Måluppfyllelse
 Måluppfyllelsen av de olika fokusområdena är oför­
 ändrad jämfört med 2021. Vi kan dock se en positiv
@@ -2366,8 +2368,6 @@ varor och innebär att våra lantbrukare får sälja sina håll­
 bart producerade varor. Vi har haft ett matsvinnsprojekt
 de senaste åren och svinnet har minskat med 22 procent
 
-34 Kungsbacka kommuns årsredovisning 2022
-
 sedan projektet startade 2019. I klimatstrategin som poli­
 tikerna beslutade om 2022 har vi nu ett konsumtionsmål
 att kommunen som organisation ska göra klimatneutrala
@@ -2412,11 +2412,7 @@ kommande generationer.
 Energiområdet är ett viktigt område att jobba med,
 speciellt utifrån ett resurs­ och klimatperspektiv men
 
-[Tabell 44-1](handlingar.tabeller/44-1.csv)
-
-| Kungsbackas miljöarbete utgår ifrån de nationella miljö målen, de globala hållbarhetsmålen samt Borg-<br>mästaravtalet. | ← |
-| --- | --- |
-| Unga i Kungsbacka mår bra såväl fysiskt som psykiskt. | → |
+34 Kungsbacka kommuns årsredovisning 2022
 
 <!-- sida 45 -->
 
@@ -2811,6 +2807,13 @@ Fokusområden                                              Trend
 I Kungsbacka skapar vi förutsättningar för invånare, kunder och företag att vara medskapande i att
 →
 utforma det goda livet.
+Invånare, företag och besökare känner sig alltid välkomna, sedda och korrekt bemötta i kontakt med
+—
+kommunen.
+Digitaliseringen gör att vi hittar smartare tjänster och effektivare arbetssätt. →
+Kungsbacka kommun är en attraktiv arbetsgivare med modiga och medskapande medarbetare och
+→
+ledare.
 
 Måluppfyllelse
 Den samlade bedömningen är att det finns en positiv
@@ -2855,8 +2858,6 @@ beslutat om en riktning där innovation och nya tekniska
 lösningar ska bidra till nya arbetssätt och nytta för
 invånare och näringsliv. Innovation och nya tekniska
 
-40 Kungsbacka kommuns årsredovisning 2022
-
 lösningar är viktiga för att lösa utmaningar i samhället
 och för att vi som kommun ska fortsätta vara relevanta.
 Det pågår ett arbete för att säkerställa resurser, styrning
@@ -2900,12 +2901,7 @@ i kommunen. Vi tar även fram en digital utbildning för
 att kommunens samtliga medarbetare ska kunna ta del av
 insatsen.
 
-[Tabell 50-1](handlingar.tabeller/50-1.csv)
-
-| Invånare, företag och besökare känner sig alltid välkomna, sedda och korrekt bemötta i kontakt med<br>kommunen. | — |
-| --- | --- |
-| Digitaliseringen gör att vi hittar smartare tjänster och effektivare arbetssätt. | → |
-| Kungsbacka kommun är en attraktiv arbetsgivare med modiga och medskapande medarbetare och<br>ledare. | → |
+40 Kungsbacka kommuns årsredovisning 2022
 
 <!-- sida 51 -->
 
@@ -5848,25 +5844,23 @@ allmänna vattentjänster.
 FINANSIELLA RAPPORTER
 
 NOTER TILL RESULTAT­ OCH BALANSRÄKNING SAMT KASSAFLÖDESANALYS Kommunen Koncernen
-belopp i miljoner kronor                      2021   2022   2021   2022
-Särredovisning har upprättats för Renhållningsverksamheten. x x
+belopp i miljoner kronor                                           2022
+Särredovisning har upprättats för Renhållningsverksamheten.
 
-Särredovisning har upprättats för Bredbandsverksamheten. x x
+Särredovisning har upprättats för Bredbandsverksamheten.
 
 Särredovisningarna återfinns under avsnittet "Särredovisningar" i årsredovis-
 ningen.
 
 Not 32 Kostnad för räkenskapsrevision
-Delårsbokslut                                  0,1    0,1     -      -
-Årsbokslut                                     0,1    0,3     -      -
-Uppskattad andel för förtroendevaldas granskning av räkenskapsrevision 0,2 0,2 - -
+Delårsbokslut                                                        -
+Årsbokslut                                                           -
+Uppskattad andel för förtroendevaldas granskning av räkenskapsrevision -
 
-```osaker-tabell
-Löpande granskning                             0,1    0,3     -      -
-Totalt                                         0,5    0,9     -      -
-Total kostnad revision                         2,9    3,1     -      -
-Varav sakkunnigt biträde                       2,0    2,1     -      -
-```
+Löpande granskning                                                   -
+Totalt                                                               -
+Total kostnad revision                                               -
+Varav sakkunnigt biträde                                             -
 
 Not 32 Effekter på jämförelseår 2021 til följd av ändrad redovisningsprincip
 avseende leasing
@@ -5893,13 +5887,32 @@ Kungsbacka kommuns årsredovisning 2022 79
 
 [Tabell 89-1](handlingar.tabeller/89-1.csv)
 
+| 2021 | 2022 | 2021 |
+| --- | --- | --- |
+| x | x |  |
+| x | x |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+| 0,1 | 0,1 | - |
+| 0,1 | 0,3 | - |
+| 0,2 | 0,2 | - |
+| 0,1 | 0,3 | - |
+| 0,5 | 0,9 | - |
+| 2,9 | 3,1 | - |
+| 2,0 | 2,1 | - |
+|  |  |  |
+
+[Tabell 89-2](handlingar.tabeller/89-2.csv)
+
 | Verksamhetens kostnader | -5 822,3 | -5 801,8 | -5 881,9 | -5 861,4 |
 | --- | --- | --- | --- | --- |
 | Avskrivningar | -373,5 | -388,8 | -457,0 | -472,3 |
 | Finansiella kostnader | -41,8 | -47,6 | -73,4 | -79,2 |
 | Årets resultat | 464,7 | 464,1 | 530,7 | 530,1 |
 
-[Tabell 89-2](handlingar.tabeller/89-2.csv)
+[Tabell 89-3](handlingar.tabeller/89-3.csv)
 
 | Långfristig leasingskuld | 126,4 | 330,3 | 126,4 | 330,3 |
 | --- | --- | --- | --- | --- |
@@ -11381,28 +11394,28 @@ Uppföljningsrapport intern kontroll 2022
 
 4.2 Risker - Ej till plan
 
-Kategorier  Risker       Anledning till att risk ej tas till plan
-Personal    Kommunövergrip Granskning avseende KS förvaltningar har genomförts med gott
-ande risk:   resultat de senaste åren.
-Bristande
-efterlevnad av
-semesterlagen
-
 7
 
 [Tabell 231-1](handlingar.tabeller/231-1.csv)
 
-| Kategorier<br>Personal | Risknumm<br>Risker Till plan<br>er<br>1 Kommunövergripande risk: Processen för avslut Ja<br>av anställning säkerställer inte att alla<br>behörigheter till system, lokaler och andra<br>tillgångar avslutas. |
-| --- | --- |
-| Ekonomi | 2 Kommunövergripande risk: Redovisning av Ja<br>representation |
-|  | 3 Kontanthantering Ja |
-|  | 4 Kommunövergripande risk: Debiteringsrutiner Ja |
-| Informationssäker<br>het,<br>administration,<br>inköp... | 5 Kommunövergripande risk: Bristande styrning av Ja<br>förändring av verksamhetsprocesser och system |
-|  | 6 Kommunövergripande risk: Inköp (granskning Ja<br>begränsas till belopp över 100.000:-) |
-|  | 7 Kommunövergripande risk: Bristande hantering Ja<br>av delegationsbeslut |
-|  | 8 Kommunövergripande risk: Ja<br>Informationsöverföring till tredje land |
-| Verksamhet | 9 Bostadsförsörjningsprogrammets målsättning Ja<br>kan ej nås |
-| Corona | 10 Kommunövergripande risk: Risk för Ja<br>anhopning/bristande leveranser avseende<br>nämndernas uppdrag med anledning av<br>Coronapandemin |
+| Kategorier |  | Risknumm<br>er | Risker | Till plan |
+| --- | --- | --- | --- | --- |
+| Personal |  | 1 | Kommunövergripande risk: Processen för avslut<br>av anställning säkerställer inte att alla<br>behörigheter till system, lokaler och andra<br>tillgångar avslutas. | Ja |
+| Ekonomi |  | 2 | Kommunövergripande risk: Redovisning av<br>representation | Ja |
+|  |  | 3 | Kontanthantering | Ja |
+|  |  | 4 | Kommunövergripande risk: Debiteringsrutiner | Ja |
+| Informationssäker<br>het,<br>administration,<br>inköp... |  | 5 | Kommunövergripande risk: Bristande styrning av<br>förändring av verksamhetsprocesser och system | Ja |
+|  |  | 6 | Kommunövergripande risk: Inköp (granskning<br>begränsas till belopp över 100.000:-) | Ja |
+|  |  | 7 | Kommunövergripande risk: Bristande hantering<br>av delegationsbeslut | Ja |
+|  |  | 8 | Kommunövergripande risk:<br>Informationsöverföring till tredje land | Ja |
+| Verksamhet |  | 9 | Bostadsförsörjningsprogrammets målsättning<br>kan ej nås | Ja |
+| Corona |  | 10 | Kommunövergripande risk: Risk för<br>anhopning/bristande leveranser avseende<br>nämndernas uppdrag med anledning av<br>Coronapandemin | Ja |
+
+[Tabell 231-2](handlingar.tabeller/231-2.csv)
+
+| Kategorier |  | Risker | Anledning till att risk ej tas till plan |
+| --- | --- | --- | --- |
+| Personal |  | Kommunövergrip<br>ande risk:<br>Bristande<br>efterlevnad av<br>semesterlagen | Granskning avseende KS förvaltningar har genomförts med gott<br>resultat de senaste åren. |
 
 <!-- sida 232 -->
 
@@ -11450,10 +11463,10 @@ kommunstyrelsens ansvar.
 
 [Tabell 232-1](handlingar.tabeller/232-1.csv)
 
-| Granskningsaktivitet<br>er | Status Åtgärder Kommentar Slutdatum<br>Avslutad med Informera om 2023-02-28<br>avvikelse rutiner |
-| --- | --- |
-| Granskning av att<br>genomförda inköp<br>följer inköpsprocessen<br>och gällande<br>styrdokument |  |
-| Granskning av<br>delegeringsbeslut | Avslutad med Förtydligande av 2023-02-28<br>avvikelse rutiner |
+| Granskningsaktivitet<br>er | Status | Åtgärder | Kommentar | Slutdatum |
+| --- | --- | --- | --- | --- |
+| Granskning av att<br>genomförda inköp<br>följer inköpsprocessen<br>och gällande<br>styrdokument | Avslutad med<br>avvikelse | Informera om<br>rutiner |  | 2023-02-28 |
+| Granskning av<br>delegeringsbeslut | Avslutad med<br>avvikelse | Förtydligande av<br>rutiner |  | 2023-02-28 |
 
 <!-- sida 233 -->
 
@@ -11566,27 +11579,28 @@ Nämndens självskattning
 
 [Tabell 236-237-1](handlingar.tabeller/236-237-1.csv)
 
-| Område<br>Uppdrag och mål | Frågor Svar, Antal 2022<br>Är mål, styrdokument, rutiner etc. kända i<br>organisationen |
-| --- | --- |
-|  | Vi har system/rutiner för att bevaka att<br>verksamheterna drivs enligt relevanta<br>lagar, förordningar och föreskrifter |
-|  | Vi har system/rutiner för hur vi följer upp<br>mål och styrdokument som beskrivs i<br>nämndens uppdrag, och i förekommande<br>fall förfrågningsunderlag/avtal |
-|  | Vi har en uppföljningsplan som beskriver<br>hur, av vem och när de olika kraven ska<br>följas upp. |
-| Kontrollmiljö | Det finns en kännedom i organisationen om<br>vad intern kontroll innebär |
-|  | Det finns en tydlig struktur och<br>ansvarsfördelning för arbetet med intern<br>kontroll på förvaltningen |
-|  | Ledningsgruppen tar ansvar för fungerande<br>kontrollmiljö |
-|  | Ledningen informeras om fel och brister i<br>organisationen |
-|  | Ansvar och befogenheter är tydliggjorda |
-|  | Vi har analyserat var risker för ekonomiska<br>oegentligheter ligger i ersättningssystem<br>och betalningsrutiner |
-|  | Vi har system/rutiner för att motverka<br>oegentligheter (bl a mutor och jäv) |
-| Riskanalys | Riskanalysen kommuniceras med<br>nämnden |
-|  | Riskanalysen är underlag för åtgärder och<br>granskningar |
-| Kontrollaktiviteter | Kontrollaktiviteter i verksamhetens<br>processer är dokumenterade (ingår i<br>rutiner) och kända |
-| Område | Frågor Svar, Antal 2022<br>Vi har system/rutiner för att förslag,<br>synpunkter och klagomål sammanställs och<br>leder till förbättringar |
-| Uppföljning | Åtgärder vidtas vid konstaterade avvikelser |
-|  | Återkoppling sker till förvaltningsledningen |
-|  | Vi återkopplar resultat av uppföljning till<br>politiskt ansvariga |
-| Information/kommunikati<br>on | Introduktion av nya chefer sker enligt<br>programmet "Kungsbackaledaren bas" |
-|  | Vi har en fungerande introduktion av nya<br>medarbetare |
+| Område | Frågor | Svar, Antal 2022 |
+| --- | --- | --- |
+| Uppdrag och mål | Är mål, styrdokument, rutiner etc. kända i<br>organisationen |  |
+|  | Vi har system/rutiner för att bevaka att<br>verksamheterna drivs enligt relevanta<br>lagar, förordningar och föreskrifter |  |
+|  | Vi har system/rutiner för hur vi följer upp<br>mål och styrdokument som beskrivs i<br>nämndens uppdrag, och i förekommande<br>fall förfrågningsunderlag/avtal |  |
+|  | Vi har en uppföljningsplan som beskriver<br>hur, av vem och när de olika kraven ska<br>följas upp. |  |
+| Kontrollmiljö | Det finns en kännedom i organisationen om<br>vad intern kontroll innebär |  |
+|  | Det finns en tydlig struktur och<br>ansvarsfördelning för arbetet med intern<br>kontroll på förvaltningen |  |
+|  | Ledningsgruppen tar ansvar för fungerande<br>kontrollmiljö |  |
+|  | Ledningen informeras om fel och brister i<br>organisationen |  |
+|  | Ansvar och befogenheter är tydliggjorda |  |
+|  | Vi har analyserat var risker för ekonomiska<br>oegentligheter ligger i ersättningssystem<br>och betalningsrutiner |  |
+|  | Vi har system/rutiner för att motverka<br>oegentligheter (bl a mutor och jäv) |  |
+| Riskanalys | Riskanalysen kommuniceras med<br>nämnden |  |
+|  | Riskanalysen är underlag för åtgärder och<br>granskningar |  |
+| Kontrollaktiviteter | Kontrollaktiviteter i verksamhetens<br>processer är dokumenterade (ingår i<br>rutiner) och kända |  |
+|  | Vi har system/rutiner för att förslag,<br>synpunkter och klagomål sammanställs och<br>leder till förbättringar |  |
+| Uppföljning | Åtgärder vidtas vid konstaterade avvikelser |  |
+|  | Återkoppling sker till förvaltningsledningen |  |
+|  | Vi återkopplar resultat av uppföljning till<br>politiskt ansvariga |  |
+| Information/kommunikati<br>on | Introduktion av nya chefer sker enligt<br>programmet "Kungsbackaledaren bas" |  |
+|  | Vi har en fungerande introduktion av nya<br>medarbetare |  |
 
 <!-- sida 237 -->
 
@@ -12001,16 +12015,17 @@ Intern kontrollplan 2022
 
 [Tabell 249-1](handlingar.tabeller/249-1.csv)
 
-| Kategorier<br>Personal | Till<br>Risker Sannolikhet Konsekvens<br>plan<br>1 Kommunövergripande 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>risk: Processen för avslut som besvärande för<br>av anställning berörda intressenter och<br>säkerställer inte att alla kommunen)<br>behörigheter till system,<br>lokaler och andra<br>tillgångar avslutas. |
-| --- | --- |
-| Ekonomi | 2 Kommunövergripande 3. Vanligt 3. Kännbar (uppfattas Ja<br>risk: Redovisning av som besvärande för<br>representation berörda intressenter och<br>kommunen) |
-|  | 3 Kontanthantering 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>som besvärande för<br>berörda intressenter och<br>kommunen) |
-|  | 4 Kommunövergripande 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>risk: Debiteringsrutiner som besvärande för<br>berörda intressenter och<br>kommunen) |
-| Informations<br>säkerhet,<br>administrati<br>on, inköp... | 5 Kommunövergripande 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>risk: Inköp (granskning som besvärande för<br>begränsas till belopp över berörda intressenter och<br>100.000:-) kommunen) |
-|  | 6 Kommunövergripande 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>risk: Bristande hantering som besvärande för<br>av delegationsbeslut berörda intressenter och<br>kommunen) |
-|  | 7 Kommunövergripande 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>risk: som besvärande för<br>Informationsöverföring till berörda intressenter och<br>tredje land kommunen) |
-| Verksamhet | 8 2. Mindre vanligt 3. Kännbar (uppfattas Ja<br>Bostadsförsörjningsprogr som besvärande för<br>ammets målsättning kan berörda intressenter och<br>ej nås kommunen) |
-| Corona | 9 Kommunövergripande 3. Vanligt 3. Kännbar (uppfattas Ja<br>risk: Risk för som besvärande för<br>anhopning/bristande berörda intressenter och<br>leveranser avseende kommunen)<br>nämndernas uppdrag<br>med anledning av<br>Coronapandemin |
+| Kategorier |  | Risker | Sannolikhet | Konsekvens | Till<br>plan |
+| --- | --- | --- | --- | --- | --- |
+| Personal |  | 1 Kommunövergripande<br>risk: Processen för avslut<br>av anställning<br>säkerställer inte att alla<br>behörigheter till system,<br>lokaler och andra<br>tillgångar avslutas. | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+| Ekonomi |  | 2 Kommunövergripande<br>risk: Redovisning av<br>representation | 3. Vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+|  |  | 3 Kontanthantering | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+|  |  | 4 Kommunövergripande<br>risk: Debiteringsrutiner | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+| Informations<br>säkerhet,<br>administrati<br>on, inköp... |  | 5 Kommunövergripande<br>risk: Inköp (granskning<br>begränsas till belopp över<br>100.000:-) | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+|  |  | 6 Kommunövergripande<br>risk: Bristande hantering<br>av delegationsbeslut | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+|  |  | 7 Kommunövergripande<br>risk:<br>Informationsöverföring till<br>tredje land | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+| Verksamhet |  | 8<br>Bostadsförsörjningsprogr<br>ammets målsättning kan<br>ej nås | 2. Mindre vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
+| Corona |  | 9 Kommunövergripande<br>risk: Risk för<br>anhopning/bristande<br>leveranser avseende<br>nämndernas uppdrag<br>med anledning av<br>Coronapandemin | 3. Vanligt | 3. Kännbar (uppfattas<br>som besvärande för<br>berörda intressenter och<br>kommunen) | Ja |
 
 <!-- sida 250 -->
 
@@ -12019,18 +12034,13 @@ Intern kontrollplan 2022
 
 5.2 Risker - Ej till plan
 
-Anledning till att
-Kategorier     Risker       Sannolikhet   Konsekvens
-risk ej tas till plan
-Personal       Kommunövergrip                  3. Kännbar Granskning
-ande risk:                   (uppfattas som avseende KS
-Bristande                    besvärande för förvaltningar har
-3\. Vanligt
-efterlevnad av                    berörda genomförts med
-semesterlagen                intressenter och gott resultat de
-kommunen) senaste åren.
-
 13
+
+[Tabell 250-1](handlingar.tabeller/250-1.csv)
+
+| Kategorier |  | Risker | Sannolikhet | Konsekvens | Anledning till att<br>risk ej tas till plan |
+| --- | --- | --- | --- | --- | --- |
+| Personal |  | Kommunövergrip<br>ande risk:<br>Bristande<br>efterlevnad av<br>semesterlagen | 3. Vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Granskning<br>avseende KS<br>förvaltningar har<br>genomförts med<br>gott resultat de<br>senaste åren. |
 
 <!-- sida 251 -->
 
@@ -12045,31 +12055,25 @@ Granskningsaktiviteter
 
 14
 
-[Tabell 251-1](handlingar.tabeller/251-1.csv)
+[Tabell 251-252-1](handlingar.tabeller/251-252-1.csv)
 
-| Risker<br>Kommunövergripande<br>risk: Redovisning av<br>representation | Kontrollmoment<br>Attest av representation | Granskningsaktiviteter Startdatum Slutdatum<br>Granskning av 2021-01-01 2021-11-30<br>representationskostnader<br>mm |
-| --- | --- | --- |
-| Kommunövergripande<br>risk: Processen för<br>avslut av anställning<br>säkerställer inte att alla<br>behörigheter till<br>system, lokaler och<br>andra tillgångar<br>avslutas. | Kontroll vid avslut av<br>anställning | Granskning av avslut av 2021-01-01 2021-11-30<br>behörigheter vid avslut av<br>anställning (eller byte av<br>tjänst) |
-| Kommunövergripande<br>risk: Debiteringsrutiner | Debiteringsrutiner | Uppföljning av 2021-01-01 2021-11-30<br>debiteringsprocessen |
-| Kommunövergripande<br>risk: Inköp (granskning<br>begränsas till belopp<br>över 100.000:-) | Beställningsgodkännande | Granskning av att 2021-01-01 2021-11-30<br>genomförda inköp följer<br>inköpsprocessen och<br>gällande styrdokument |
-| Kommunövergripande<br>risk: Bristande<br>hantering av<br>delegationsbeslut | Delegeringsrutin | Granskning av 2022-01-01 2022-11-30<br>delegeringsbeslut |
-| Kommunövergripande<br>risk:<br>Informationsöverföring<br>till tredje land | Följsamhet till lagstiftning<br>avseende integritetsskydd<br>och Schrems II-målet<br>(överföring av<br>personinformation till<br>terdjeland med<br>massövervakningslagstift<br>ning). Efterlevnad av rutin<br>för<br>informationsklassificering. | Inventering av behandling 2022-01-01 2022-11-30<br>av personinformation som<br>omfattar<br>tredjelandsöverföring |
-|  |  | Granskning av 2022-01-01 2022-11-30<br>nämndernas behandling<br>av personuppgifter och ev<br>överföring till tredjeland. |
-| Bostadsförsörjningspro<br>grammets målsättning<br>kan ej nås | Samhällsbyggnadsplanen<br>- uppföljning | Översiktlig granskning av 2022-01-01 2022-11-30<br>genomförandet av<br>Samhällsbyggnadsplanen<br>och bostadsförsörjnings-<br>programmet under året |
+|  | Risker | Kontrollmoment | Granskningsaktiviteter | Startdatum | Slutdatum |
+| --- | --- | --- | --- | --- | --- |
+|  | Kommunövergripande<br>risk: Redovisning av<br>representation | Attest av representation | Granskning av<br>representationskostnader<br>mm | 2021-01-01 | 2021-11-30 |
+|  | Kommunövergripande<br>risk: Processen för<br>avslut av anställning<br>säkerställer inte att alla<br>behörigheter till<br>system, lokaler och<br>andra tillgångar<br>avslutas. | Kontroll vid avslut av<br>anställning | Granskning av avslut av<br>behörigheter vid avslut av<br>anställning (eller byte av<br>tjänst) | 2021-01-01 | 2021-11-30 |
+|  | Kommunövergripande<br>risk: Debiteringsrutiner | Debiteringsrutiner | Uppföljning av<br>debiteringsprocessen | 2021-01-01 | 2021-11-30 |
+|  | Kommunövergripande<br>risk: Inköp (granskning<br>begränsas till belopp<br>över 100.000:-) | Beställningsgodkännande | Granskning av att<br>genomförda inköp följer<br>inköpsprocessen och<br>gällande styrdokument | 2021-01-01 | 2021-11-30 |
+|  | Kommunövergripande<br>risk: Bristande<br>hantering av<br>delegationsbeslut | Delegeringsrutin | Granskning av<br>delegeringsbeslut | 2022-01-01 | 2022-11-30 |
+|  | Kommunövergripande<br>risk:<br>Informationsöverföring<br>till tredje land | Följsamhet till lagstiftning<br>avseende integritetsskydd<br>och Schrems II-målet<br>(överföring av<br>personinformation till<br>terdjeland med<br>massövervakningslagstift<br>ning). Efterlevnad av rutin<br>för<br>informationsklassificering. | Inventering av behandling<br>av personinformation som<br>omfattar<br>tredjelandsöverföring | 2022-01-01 | 2022-11-30 |
+|  |  |  | Granskning av<br>nämndernas behandling<br>av personuppgifter och ev<br>överföring till tredjeland. | 2022-01-01 | 2022-11-30 |
+|  | Bostadsförsörjningspro<br>grammets målsättning<br>kan ej nås | Samhällsbyggnadsplanen<br>- uppföljning | Översiktlig granskning av<br>genomförandet av<br>Samhällsbyggnadsplanen<br>och bostadsförsörjnings-<br>programmet under året | 2022-01-01 | 2022-11-30 |
+|  | Kommunövergripande<br>risk: Risk för<br>anhopning/bristande<br>leveranser avseende<br>nämndernas uppdrag<br>med anledning av<br>Coronapandemin | Verksamhetsuppföljning | Uppföljning av ledning<br>och styrning | 2022-01-01 | 2022-11-30 |
 
 <!-- sida 252 -->
 
 Nämnden för Kommunstyrelsen                      Kungsbacka kommun
 Intern kontrollplan 2022
 
-Risker          Kontrollmoment    Granskningsaktiviteter Startdatum Slutdatum
-Kommunövergripande Verksamhetsuppföljning Uppföljning av ledning 2022-01-01 2022-11-30
-risk: Risk för                    och styrning
-anhopning/bristande
-leveranser avseende
-nämndernas uppdrag
-med anledning av
-Coronapandemin
 Granskning planeras i detalj i början av 2022. Vi eftersträvar att samverka och granska "åt varandra" både för att
 nyttja situationen för lärande och för att undvika att man "granskar sig själv".
 
@@ -12488,17 +12492,18 @@ Konsekvens
 
 [Tabell 262-1](handlingar.tabeller/262-1.csv)
 
-| Kategorier<br>Personal | Risker<br>Kommunövergripande risk: Bristande efterlevnad av semesterlagen<br>(Kungsbacka kommun) |
-| --- | --- |
-|  | Kommunövergripande risk: Processen för avslut av anställning säkerställer<br>inte att alla behörigheter till system, lokaler och andra tillgångar avslutas.<br>(Kungsbacka kommun) |
-| Ekonomi | Kommunövergripande risk: Redovisning av representation (Kungsbacka<br>kommun) |
-|  | Kontanthantering (Kungsbacka kommun) |
-|  | Kommunövergripande risk: Debiteringsrutiner (Kungsbacka kommun) |
-| Informationssäker<br>het,<br>administration,<br>inköp... | Kommunövergripande risk: Bristande styrning av förändring av<br>verksamhetsprocesser och system (Kungsbacka kommun) |
-|  | Kommunövergripande risk: Inköp (granskning begränsas till belopp över<br>100.000:-) (Kungsbacka kommun) |
-|  | Kommunövergripande risk: Bristande hantering av delegationsbeslut<br>(Kungsbacka kommun) |
-|  | Kommunövergripande risk: Informationsöverföring till tredje land<br>(Kungsbacka kommun) |
-| Corona | Kommunövergripande risk: Risk för anhopning/bristande leveranser<br>avseende nämndernas uppdrag med anledning av Coronapandemin<br>(Kungsbacka kommun) |
+| Kategorier |  | Risker |
+| --- | --- | --- |
+| Personal |  | Kommunövergripande risk: Bristande efterlevnad av semesterlagen<br>(Kungsbacka kommun) |
+|  |  | Kommunövergripande risk: Processen för avslut av anställning säkerställer<br>inte att alla behörigheter till system, lokaler och andra tillgångar avslutas.<br>(Kungsbacka kommun) |
+| Ekonomi |  | Kommunövergripande risk: Redovisning av representation (Kungsbacka<br>kommun) |
+|  |  | Kontanthantering (Kungsbacka kommun) |
+|  |  | Kommunövergripande risk: Debiteringsrutiner (Kungsbacka kommun) |
+| Informationssäker<br>het,<br>administration,<br>inköp... |  | Kommunövergripande risk: Bristande styrning av förändring av<br>verksamhetsprocesser och system (Kungsbacka kommun) |
+|  |  | Kommunövergripande risk: Inköp (granskning begränsas till belopp över<br>100.000:-) (Kungsbacka kommun) |
+|  |  | Kommunövergripande risk: Bristande hantering av delegationsbeslut<br>(Kungsbacka kommun) |
+|  |  | Kommunövergripande risk: Informationsöverföring till tredje land<br>(Kungsbacka kommun) |
+| Corona |  | Kommunövergripande risk: Risk för anhopning/bristande leveranser<br>avseende nämndernas uppdrag med anledning av Coronapandemin<br>(Kungsbacka kommun) |
 
 <!-- sida 263 -->
 
@@ -12861,27 +12866,28 @@ Nämndens självskattning
 
 [Tabell 271-275-1](handlingar.tabeller/271-275-1.csv)
 
-| Område<br>Uppdrag och mål | Frågor Svar, Antal 2022<br>Är mål, styrdokument, rutiner etc. kända i<br>organisationen |
-| --- | --- |
-|  | Vi har system/rutiner för att bevaka att<br>verksamheterna drivs enligt relevanta<br>lagar, förordningar och föreskrifter |
-|  | Vi har system/rutiner för hur vi följer upp<br>mål och styrdokument som beskrivs i<br>nämndens uppdrag, och i förekommande<br>fall förfrågningsunderlag/avtal |
-| Område | Frågor Svar, Antal 2022<br>Vi har en uppföljningsplan som beskriver<br>hur, av vem och när de olika kraven ska<br>följas upp. |
-| Kontrollmiljö | Ansvar och befogenheter är tydliggjorda |
-|  | Det finns en kännedom i organisationen om<br>vad intern kontroll innebär |
-|  | Det finns en tydlig struktur och<br>ansvarsfördelning för arbetet med intern<br>kontroll på förvaltningen |
-|  | Ledningsgruppen tar ansvar för fungerande<br>kontrollmiljö |
-| Område | Frågor Svar, Antal 2022<br>Ledningen informeras om fel och brister i<br>organisationen |
-|  | Vi har analyserat var risker för ekonomiska<br>oegentligheter ligger i ersättningssystem<br>och betalningsrutiner |
-|  | Vi har system/rutiner för att motverka<br>oegentligheter (bl a mutor och jäv) |
-| Riskanalys | Riskanalysen kommuniceras med<br>nämnden |
-|  | Riskanalysen är underlag för åtgärder och<br>granskningar |
-| Område<br>Kontrollaktiviteter | Frågor Svar, Antal 2022<br>Kontrollaktiviteter i verksamhetens<br>processer är dokumenterade (ingår i<br>rutiner) och kända |
-|  | Vi har system/rutiner för att förslag,<br>synpunkter och klagomål sammanställs och<br>leder till förbättringar |
-| Uppföljning | Åtgärder vidtas vid konstaterade avvikelser |
-|  | Återkoppling sker till förvaltningsledningen |
-|  | Vi återkopplar resultat av uppföljning till<br>politiskt ansvariga |
-| Område<br>Information/kommunikati<br>on | Frågor Svar, Antal 2022<br>Introduktion av nya chefer sker enligt<br>programmet "Kungsbackaledaren bas"<br>(Förvaltningen för Förskola & Grundskola<br>svarar Nej) |
-|  | Vi har en fungerande introduktion av nya<br>medarbetare |
+| Område | Frågor | Svar, Antal 2022 |
+| --- | --- | --- |
+| Uppdrag och mål | Är mål, styrdokument, rutiner etc. kända i<br>organisationen |  |
+|  | Vi har system/rutiner för att bevaka att<br>verksamheterna drivs enligt relevanta<br>lagar, förordningar och föreskrifter |  |
+|  | Vi har system/rutiner för hur vi följer upp<br>mål och styrdokument som beskrivs i<br>nämndens uppdrag, och i förekommande<br>fall förfrågningsunderlag/avtal |  |
+|  | Vi har en uppföljningsplan som beskriver<br>hur, av vem och när de olika kraven ska<br>följas upp. |  |
+| Kontrollmiljö | Ansvar och befogenheter är tydliggjorda |  |
+|  | Det finns en kännedom i organisationen om<br>vad intern kontroll innebär |  |
+|  | Det finns en tydlig struktur och<br>ansvarsfördelning för arbetet med intern<br>kontroll på förvaltningen |  |
+|  | Ledningsgruppen tar ansvar för fungerande<br>kontrollmiljö |  |
+|  | Ledningen informeras om fel och brister i<br>organisationen |  |
+|  | Vi har analyserat var risker för ekonomiska<br>oegentligheter ligger i ersättningssystem<br>och betalningsrutiner |  |
+|  | Vi har system/rutiner för att motverka<br>oegentligheter (bl a mutor och jäv) |  |
+| Riskanalys | Riskanalysen kommuniceras med<br>nämnden |  |
+|  | Riskanalysen är underlag för åtgärder och<br>granskningar |  |
+| Kontrollaktiviteter | Kontrollaktiviteter i verksamhetens<br>processer är dokumenterade (ingår i<br>rutiner) och kända |  |
+|  | Vi har system/rutiner för att förslag,<br>synpunkter och klagomål sammanställs och<br>leder till förbättringar |  |
+| Uppföljning | Åtgärder vidtas vid konstaterade avvikelser |  |
+|  | Återkoppling sker till förvaltningsledningen |  |
+|  | Vi återkopplar resultat av uppföljning till<br>politiskt ansvariga |  |
+| Information/kommunikati<br>on | Introduktion av nya chefer sker enligt<br>programmet "Kungsbackaledaren bas"<br>(Förvaltningen för Förskola & Grundskola<br>svarar Nej) |  |
+|  | Vi har en fungerande introduktion av nya<br>medarbetare |  |
 
 <!-- sida 272 -->
 
@@ -14203,6 +14209,8 @@ Lokalbehov 2024-2028 utblicksår 2029-2033 9
 
 | Löpnr | Beskrivning | Kategorisera | Budget<br>2023 | Plan<br>2024 | Plan<br>2025 | Plan<br>2026 | Plan<br>2027 | Plan<br>2028 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |
 | 136 | Skårby fullmått idrottshall | Expansion nya<br>områden | x |  |  |  |  |  |
 | 137 | Elektronen avveckling<br>ombudget | Strukturomvandlingar,<br>besparingsmöjligheter | x |  |  |  |  |  |
 | 138 | Frillesås rid- och körklubb | Kvalitets-höjningar<br>befintliga lokaler |  | x |  |  |  |  |
@@ -14228,8 +14236,10 @@ Lokalbehov 2024-2028 utblicksår 2029-2033 10
 
 [Tabell 300-1](handlingar.tabeller/300-1.csv)
 
-| Beskrivningar<br>I takt med invånarnas önskemål om nya idrotter och<br>mer åretruntidrottande och idrottande inomhus i<br>flera sporter så kan fler och anpassade lokaler för<br>detta behövas. | Kategorisera<br>Icke lagstyrd<br>verksamhet | 2029<br>x | 2030<br>x | 2031<br>x | 2032<br>x | 2033<br>x |
+| Beskrivningar | Kategorisera | 2029 | 2030 | 2031 | 2032 | 2033 |
 | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |
+| I takt med invånarnas önskemål om nya idrotter och<br>mer åretruntidrottande och idrottande inomhus i<br>flera sporter så kan fler och anpassade lokaler för<br>detta behövas. | Icke lagstyrd<br>verksamhet | x | x | x | x | x |
 | fortsatt samlokalisering av bibliotek, kulturskola,<br>mötesplatser, kulturlokaler, idrottsytor inne och ute<br>i samband med främst nya skolbyggen | Strukturomvandlingar,<br>besparingsmöjligheter | x | x | x | x | x |
 | Tillgång till fler ytor för fler, gärna utomhus, för<br>spontan rörelse utanför föreningslivet | Strukturomvandlingar,<br>besparingsmöjligheter | x | x | x | x | x |
 
@@ -14931,6 +14941,58 @@ Säljarens namnteckning bevittnas Säljarens namnteckning bevittnas
 9 (9)
 
 <!-- sida 316 -->
+
+Bila Ga /
+Vv
+
+Bygg- och miljöförvaltningen
+Geodataavdelningen
+
+backa
+
+FASTIGHET
+
+NYBYGGNADSKARTA | KOLLA 5:149
+
+ADRESS
+Månstensvägen 10
+
+x
+Xx
+Kolla 5:149
+\+ Hå + 4
+| [Nytt servitut |x +
+| för infart Moa
+| över Kolla |
+| 5:149
+x ||
+I
+Område som ska
+avstyckas från
+Kolla 5:149, ca
+4118 kvm
+H
+I
+I
+I
+I
+\|
+I
+I
+\|
+I
+I
+I 5:6
+I
+I
+I mo +
+'kPt18c 2014-07-04 RSS TEEN
+SITUATIONSPLAN och enligt bilogat dokument.
+-2022-06-360-/ NOI ARKITEKTER Rättigheter kan vara ofullständigt redovisat. Patik Stenborg, Må för
+rev. 2022-09-21 Kartan innehåller detaljer mod varierande noggrannhet. ANSYSTEN TORNA SURERKER ENISES
+SWEREF 99 12 00 RH 2000 N48/22 IP
+ANVÄRKNING REVIDERAD | SKALA
+1:400
 
 <!-- sida 317 -->
 

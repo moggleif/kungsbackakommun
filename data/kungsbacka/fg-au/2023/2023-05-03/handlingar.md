@@ -12,12 +12,12 @@ kalla_url: https://web.archive.org/web/20240217144351id_/https://kungsbacka.se/d
 sha256: b92e07a8534d96cb4a1b2f25dee946e21ea4f580d7f5bbc34281b3ab5a349476
 bytes: 7408911
 sidor: 110
-hamtad: 2026-11-17T11:40:34+00:00
-konverterad: 2026-11-17T11:41:31+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T01:10:49+00:00
+konverterad: 2026-11-22T01:11:16+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
 tal_obekraftade: [27]
 figurer: [12, 17, 22, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 62, 75, 82, 85, 87, 89, 90, 91, 93, 96]
 tolkade: []
@@ -2235,12 +2235,16 @@ per rum
 |  | 4.5.3 | Städförråd föreningar |  | 1 | 4 | 4 | A,B,C |  |
 |  | 4.5.4 | Tvättstuga |  | 1 | 5 | 5 | A,B,C | Skola/Föreningar, TT, TM utslagsback |
 |  | 4.5.5 | Miljöstation |  | 1 | 10 | 10 | A,B,C | Förvaring och sortering av avfall, kan ev placeras vid skolbyggnad |
-|  | Summa 2 026 |  |  |  |  |  |  |  |
+|  | Summa |  | 2 026 |  |  |  |  |  |
 | Övriga ytor | 4.6.1 | Elcentral |  |  | 10 | 10 | A,B,C | Entréplan, nås från utsida. |
 |  | 4.6.2 | Undercentral |  | 1 | 18 | 18 | A,B,C | Entréplan |
 |  | 4.6.3 | Fläktrum |  | 1 | 120 | 120 | A,B,C | Placering som gynnar kanaldragning ventilation. |
 |  | 4.6.4 | Hiss/trapphus |  |  |  |  | A,B | Hiss för möjlighet att frakta utrusning mellan våningsplan, trapphus för<br>utrymning ska byggas inomhus. |
-|  | Summa 148<br>Summa lokalyta 2 026 kvm<br>Kommunikationsfaktor\* 15% Påslag för korridorer, trappa mm.<br>SUMMA BRUKSAREA 2 330 kvm Nivå A<br>SUMMA BRUKSAREA 2 320 kvm Nivå B<br>SUMMA BRUKSAREA 2 205 kvm Nivå C |  |  |  |  |  |  |  |
+|  | Summa 148 |  |  |  |  |  |  |  |
+|  | Summa lokalyta 2 026 kvm<br>Kommunikationsfaktor\* 15% Påslag för korridorer, trappa mm. |  |  |  |  |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 330 kvm |  |  | Nivå A |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 320 kvm |  |  | Nivå B |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 205 kvm |  |  | Nivå C |  |  |  |
 
 <!-- sida 67 -->
 

@@ -12,12 +12,12 @@ kalla_url: https://web.archive.org/web/20240330163453id_/https://kungsbacka.se/d
 sha256: 832a6044f052419ee27dc8a9cc1b9b16659868489300f8fc9746e62da583b18a
 bytes: 8673642
 sidor: 155
-hamtad: 2026-11-17T01:48:11+00:00
-konverterad: 2026-11-17T01:48:33+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T01:06:12+00:00
+konverterad: 2026-11-22T01:06:40+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker]
 tal_obekraftade: [93]
 figurer: [19, 26, 29, 31, 33, 34, 35, 37, 40, 60, 83, 88, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 143, 144, 145, 146, 150]
 tolkade: []
@@ -413,12 +413,16 @@ per rum
 |  | 4.5.3 | Städförråd föreningar |  | 1 | 4 | 4 | A,B,C |  |
 |  | 4.5.4 | Tvättstuga |  | 1 | 5 | 5 | A,B,C | Skola/Föreningar, TT, TM utslagsback |
 |  | 4.5.5 | Miljöstation |  | 1 | 10 | 10 | A,B,C | Förvaring och sortering av avfall, kan ev placeras vid skolbyggnad |
-|  | Summa 2 026 |  |  |  |  |  |  |  |
+|  | Summa |  | 2 026 |  |  |  |  |  |
 | Övriga ytor | 4.6.1 | Elcentral |  |  | 10 | 10 | A,B,C | Entréplan, nås från utsida. |
 |  | 4.6.2 | Undercentral |  | 1 | 18 | 18 | A,B,C | Entréplan |
 |  | 4.6.3 | Fläktrum |  | 1 | 120 | 120 | A,B,C | Placering som gynnar kanaldragning ventilation. |
 |  | 4.6.4 | Hiss/trapphus |  |  |  |  | A,B | Hiss för möjlighet att frakta utrusning mellan våningsplan, trapphus för<br>utrymning ska byggas inomhus. |
-|  | Summa 148<br>Summa lokalyta 2 026 kvm<br>Kommunikationsfaktor\* 15% Påslag för korridorer, trappa mm.<br>SUMMA BRUKSAREA 2 330 kvm Nivå A<br>SUMMA BRUKSAREA 2 320 kvm Nivå B<br>SUMMA BRUKSAREA 2 205 kvm Nivå C |  |  |  |  |  |  |  |
+|  | Summa 148 |  |  |  |  |  |  |  |
+|  | Summa lokalyta 2 026 kvm<br>Kommunikationsfaktor\* 15% Påslag för korridorer, trappa mm. |  |  |  |  |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 330 kvm |  |  | Nivå A |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 320 kvm |  |  | Nivå B |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 205 kvm |  |  | Nivå C |  |  |  |
 
 <!-- sida 11 -->
 

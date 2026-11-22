@@ -12,12 +12,12 @@ kalla_url: https://web.archive.org/web/20250324035526id_/https://kungsbacka.se/d
 sha256: d6c850fe00f2e8d25e73fde035df3873925f02d7e5251518ab20d272f1a57783
 bytes: 1276682
 sidor: 17
-hamtad: 2026-11-17T01:50:53+00:00
-konverterad: 2026-11-17T01:51:00+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
-kvalitet: text-utan-tabeller
+hamtad: 2026-11-22T01:09:56+00:00
+konverterad: 2026-11-22T01:09:59+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+kvalitet: full
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
 tal_obekraftade: [3, 5]
 figurer: []
 tolkade: []
@@ -557,14 +557,6 @@ Uppföljning och prognos april 2023
 
 Drift (belopp mnkr)
 
-Jan-  Jan-           Helårs-         Budget-
-April  April Avvikelse prognos Årsbudget avvikelse Bokslut
-2022  2023  2022/2023 2023    2023    2023   2022
-Nämnden för Miljö &
--0,2   -0,4    -0,2    -1,1     -1,3    0,2   -0,8
-Hälsoskydd
-Periodens resultat -0,2  -0,4    -0,2    -1,1     -1,3    0,2   -0,8
-
 Analys och kommentar
 
 Från och med 1 januari 2020 har nämnden för Miljö och hälsoskydd endast budgetansvar för nämndens egen
@@ -580,6 +572,13 @@ Per april är bedömningen att nämnden kommer att ha ett litet överskott på +
 2024\.
 
 6
+
+[Tabell 14-1](handlingar.tabeller/14-1.csv)
+
+|  | Jan-<br>April<br>2022 | Jan-<br>April<br>2023 | Avvikelse<br>2022/2023 | Helårs-<br>prognos<br>2023 | Årsbudget<br>2023 | Budget-<br>avvikelse<br>2023 | Bokslut<br>2022 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Nämnden för Miljö &<br>Hälsoskydd | -0,2 | -0,4 | -0,2 | -1,1 | -1,3 | 0,2 | -0,8 |
+| Periodens resultat | -0,2 | -0,4 | -0,2 | -1,1 | -1,3 | 0,2 | -0,8 |
 
 <!-- sida 15 -->
 

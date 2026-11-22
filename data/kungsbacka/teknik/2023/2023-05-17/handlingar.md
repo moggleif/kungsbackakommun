@@ -12,9 +12,9 @@ kalla_url: https://web.archive.org/web/20251216064108id_/https://kungsbacka.se/d
 sha256: 85f6a1f34b79a8e91f1f8c9825b1f95e205311246f3dfd8d6087a0fffaa66145
 bytes: 4802418
 sidor: 117
-hamtad: 2026-11-15T22:59:03+00:00
-konverterad: 2026-11-15T22:59:19+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-22T01:06:40+00:00
+konverterad: 2026-11-22T01:09:33+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok]
@@ -1896,8 +1896,10 @@ Kung sbacka kommun            Lokala avfallsföreskrifter       16 (26)
 
 [Tabell 52-1](handlingar.tabeller/52-1.csv)
 
-| Typ av avfall som ska<br>sorteras ut och hållas<br>skiljt från annat avfall | Krav på<br>utsortering | Krav på<br>emballering med<br>mera | Instruktion för<br>hämtning/lämning |
+| Typ av avfall som ska | Krav på | Krav på | Instruktion för |
 | --- | --- | --- | --- |
+| sorteras ut och hållas | utsortering | emballering med | hämtning/lämning |
+| skiljt från annat avfall |  | mera |  |
 | Annat avfall än avfall<br>under kommunalt ansvar. | Detta avfall ska<br>hanteras separat från<br>avfall under<br>kommunalt ansvar<br>enligt 15 kap. 20 §<br>miljöbalken. | Fraktionerna ska<br>förvaras och<br>transporteras skilt från<br>varandra och annat<br>avfall. Ska emballeras<br>efter mottagarens<br>villkor. | Kontakta lämplig<br>entreprenör. |
 | Bygg- och rivningsavfall<br>som inte producerats i en<br>yrkesmässig verksamhet | Detta avfall ska<br>sorteras ut och<br>hanteras separat från<br>kommunalt avfall och<br>avfall under<br>kommunalt ansvar<br>enligt 15 kap. 20 §<br>miljöbalken. Avfallet<br>ska utöver<br>utsortering av farligt<br>avfall samt<br>elektronikavfall<br>sorteras i minst<br>följande fraktioner:<br>trä, mineral (som<br>består av betong,<br>tegel, klinker,<br>keramik eller sten),<br>metall, glas, plast<br>och gips. | För vissa fraktioner<br>ställs specifika krav på<br>emballering, till exempel<br>för asbest (se nedan). | Avfallet lämnas<br>utsorterat på<br>återvinningscentral<br>eller hämtas<br>fastighetsnära av<br>entreprenör som<br>ingått avtal kring<br>hämtning av bygg-<br>och rivningsavfall<br>med kommunen.<br>Annan transportör<br>godtas enligt 15a§ |
 
@@ -1919,8 +1921,10 @@ Kung sbacka kommun            Lokala avfallsföreskrifter       18 (26)
 
 [Tabell 54-55-1](handlingar.tabeller/54-55-1.csv)
 
-| Typ av avfall som ska<br>sorteras ut och hållas<br>skiljt från annat avfall | Krav på<br>utsortering | Krav på<br>emballering med<br>mera | Instruktion för<br>hämtning/lämning |
+| Typ av avfall som ska | Krav på | Krav på | Instruktion för |
 | --- | --- | --- | --- |
+| sorteras ut och hållas | utsortering | emballering med | hämtning/lämning |
+| skiljt från annat avfall |  | mera |  |
 | Farligt avfall | Följande produkter<br>eller ämnen utgör<br>exempel på vad som<br>ska hanteras som<br>farligt avfall:<br> Färg<br> Lösningsmedel<br> Kemikalier<br> Ljuskällor<br> Bensin och diesel<br> Bekämpningsmedel<br> Avfall som<br>innehåller<br>kvicksilver | Ska vara emballerat<br>och tydligt märkt med<br>uppgift om innehåll.<br>Olika typer av farligt<br>avfall får inte blandas<br>eller spädas ut med (1)<br>andra slag av farligt<br>avfall, (2) annat avfall<br>eller (3) andra ämnen<br>eller material. | Farligt avfall lämnas<br>på återvinnings-<br>central. Hämtning av<br>farligt avfall från<br>fastighet kan<br>beställas med<br>tjänster enligt<br>kommunens<br>avfallstaxa. Farligt<br>avfall som inte faller<br>under kommunalt<br>ansvar hanteras ej<br>av kommunen.<br>Annan transportör<br>godtas enligt 15a§ |
 | Asbest | Asbest utgör farligt<br>avfall. | Förpackas väl i kraftig<br>plast (minst 0,2 mm).<br>Avfallet ska vara<br>emballerat så att det är<br>dammtätt.<br>Asbest som är<br>emballerat i sopsäckar<br>tas inte emot. | Asbest från<br>privatpersoner<br>lämnas på<br>återvinningscentral<br>som tar emot den<br>typen av avfall. |
 | Spillolja | Spillolja utgör farligt<br>avfall. Spillolja ska<br>sorteras ut och<br>hanteras separat från<br>annat farligt avfall.<br>Spillolja som är<br>isolerolja ska hållas<br>åtskild från andra<br>isoleroljor och andra<br>spilloljor till dess att<br>halten av PCB-<br>produkter i isoleroljan<br>har fastställts.<br>Den som hanterar<br>spillolja ska se till att<br>spilloljan inte blandas<br>med spilloljor med<br>andra egenskaper<br>eller med andra typer<br>av avfall eller ämnen<br>på ett sätt som | Ska vara emballerat i<br>oljebeständig<br>förpackning och tydligt<br>märkt med uppgift om<br>innehåll. | Spillolja i<br>konsumentförpacknin<br>g lämnas av<br>privatpersoner på<br>återvinningscentral. |
@@ -1943,8 +1947,10 @@ Kung sbacka kommun            Lokala avfallsföreskrifter       20 (26)
 
 [Tabell 56-1](handlingar.tabeller/56-1.csv)
 
-| Typ av avfall som ska<br>sorteras ut och hållas<br>skiljt från annat avfall | Krav på<br>utsortering | Krav på<br>emballering med<br>mera | Instruktion för<br>hämtning/lämning |
+| Typ av avfall som ska | Krav på | Krav på | Instruktion för |
 | --- | --- | --- | --- |
+| sorteras ut och hållas | utsortering | emballering med | hämtning/lämning |
+| skiljt från annat avfall |  | mera |  |
 | Komposterbart<br>trädgårdsavfall<br>(Till trädgårdsavfall<br>räknas komposterbart och<br>växtavfall som<br>uppkommer vid normal<br>trädgårdsskötsel i<br>småhus, däremot inte<br>fällda träd eller avfall som<br>uppstår vid större<br>anläggningsarbeten i en<br>trädgård.) | Ska sorteras ut och<br>hållas skilt från annat<br>avfall. | På återvinnings-<br>centralen ska avfallet<br>lämnas enligt<br>instruktioner på plats.<br>För alternativ med<br>abonnemang med<br>hämtning av<br>trädgårdsavfall i kärl,<br>ska avfallet läggas löst<br>i kärlet och inte packas<br>så hårt att tömningen<br>försvåras. | Trädgårdsavfall från<br>hushållen lämnas på<br>återvinningscentral.<br>Hämtning från<br>fastighet kan<br>beställas separat<br>enligt kommunens<br>avfallstaxa.<br>Hämtning av<br>trädgårdsavfall sker<br>separat från<br>hämtning av annat<br>grovavfall.<br>För abonnemang<br>med hämtning av<br>trädgårdsavfall i kärl,<br>ska avfallet läggas<br>löst i kärlet och inte<br>packas så hårt att<br>tömningen försvåras.<br>Annan transportör<br>godtas enligt 15a§ |
 | Invasiva växter | Ska avskiljas och<br>hållas skilt från annat<br>avfall. | Emballeras i helt<br>tätslutande sopsäckar/<br>storsäckar. | Lämnas på<br>återvinningscentral<br>eller annan plats<br>som kommunen<br>hänvisar till. |
 | Latrin | Ska avskiljas och<br>hållas skilt från annat<br>avfall. | Ska samlas i tunna som<br>ska vara väl försluten<br>så att avfallet inte kan<br>spridas. | Latrintunnor<br>borttransporteras<br>från fastighet genom<br>kommunens försorg. |
@@ -1957,7 +1963,9 @@ Kung sbacka kommun            Lokala avfallsföreskrifter       21 (26)
 
 | Matavfall<br>(Exempelvis matrester,<br>kött- och fiskben, frukt-<br>och äggskal, kaffesump<br>med filter) | Ska sorteras ut och<br>hållas skilt från annat<br>avfall. | Matavfall från hushåll<br>ska läggas i påse som<br>tillhandahålls av ren-<br>hållaren.<br>Matavfall från<br>verksamheter ska av<br>avfallslämnaren<br>förpackas i särskild<br>påse som tillhanda-<br>hålls av renhållaren<br>eller lämnas i annan<br>anordning av typ som<br>godkänts av Avfall och<br>Återvinning hos<br>nämnden för Teknik. | Matavfall<br>borttransporteras<br>från fastigheten i<br>enlighet med<br>hämtningsintervall<br>som kommunen<br>tillhandahåller. |
 | --- | --- | --- | --- |
-| Typ av avfall som ska<br>sorteras ut och hållas<br>skiljt från annat avfall | Krav på<br>utsortering | Krav på<br>emballering med<br>mera | Instruktion för<br>hämtning/lämning |
+| Typ av avfall som ska | Krav på | Krav på | Instruktion för |
+| sorteras ut och hållas | utsortering | emballering med | hämtning/lämning |
+| skiljt från annat avfall |  | mera |  |
 | Avloppsfraktioner och<br>förbrukat filtermaterial<br>från små<br>avloppsanläggningar | Ska vara åtkomligt<br>för tömning i den<br>anläggning där det<br>genereras i enlighet<br>med 9 kap. 7 § MB | Filtermaterial från<br>fosforfällor och andra<br>jämförbara filter ska<br>vara förpackat eller<br>tillgängligt på ett<br>sådant sätt att<br>hämtning kan utföras<br>av fordon utrustat med<br>kran eller<br>suganordning. |  |
 | Fett från fettavskiljare |  |  | Ska vara åtkomligt<br>för tömning i den<br>anläggning där det<br>genereras. |
 | Matfetter och frityroljor |  | Ska förvaras i<br>behållare med<br>tätslutande lock. | Matfetter eller<br>frityroljor från<br>hushållen lämnas i<br>behållare på<br>återvinningscentraler.<br>Annan transportör<br>godtas enligt 15a§ |
@@ -1968,8 +1976,10 @@ Kung sbacka kommun            Lokala avfallsföreskrifter       22 (26)
 
 [Tabell 58-59-1](handlingar.tabeller/58-59-1.csv)
 
-| Typ av avfall som ska<br>sorteras ut och hållas<br>skiljt från annat avfall | Krav på<br>utsortering | Krav på<br>emballering med<br>mera | Instruktion för<br>hämtning/lämning |
+| Typ av avfall som ska | Krav på | Krav på | Instruktion för |
 | --- | --- | --- | --- |
+| sorteras ut och hållas | utsortering | emballering med | hämtning/lämning |
+| skiljt från annat avfall |  | mera |  |
 | Andra animaliska<br>biprodukter än döda<br>sällskapsdjur och<br>matavfall. Blandas före<br>detta livsmedel med<br>annat avfall utgör den<br>blandade fraktionen före<br>detta livsmedel och är<br>ABP enligt definitionen. |  | Före detta livsmedel<br>från butik ska av<br>avfallslämnaren<br>förpackas i särskild<br>påse, säck eller<br>lämnas i tank av typ<br>som godkänts av<br>avfallsansvariga<br>nämnden. |  |
 | Stickande och skärande<br>avfall under kommunalt<br>ansvar (från hushåll eller<br>uppkommet genom<br>egenvård) |  | Kanyler ska läggas i<br>speciell behållare som<br>tillhandahålls av<br>kommunen via<br>exempelvis apotek.<br>Annat stickande och<br>skärande avfall i<br>mindre volymer ska<br>paketeras väl. | Ska lämnas till<br>apotek som<br>kommunen har avtal<br>med eller på<br>återvinningscentral.<br>Hämtning av fulla<br>behållare från<br>fastighet kan<br>beställas med<br>tjänster enligt<br>kommunens<br>avfallstaxa.<br>Välpaketerat<br>stickande och<br>skärande avfall i<br>mindre volymer ska<br>läggas i behållare för<br>brännbart restavfall.<br>Annan transportör<br>godtas enligt 15a§ |
 | Förpackningar | I enlighet med<br>definitionen av<br>förpackning i<br>förordningen<br>(2018:1462) om<br>producentansvar för<br>förpackningar | Lämnas lösa i de<br>behållare/ kärl som<br>tillhandahålls/anvisas | Se sorteringskrav i 13<br>a §<br>Annan transportör<br>godtas enligt 15a§ |
@@ -1987,8 +1997,10 @@ Kung sbacka kommun            Lokala avfallsföreskrifter       24 (26)
 
 [Tabell 60-1](handlingar.tabeller/60-1.csv)
 
-| Typ av avfall som ska<br>sorteras ut och hållas<br>skiljt från annat avfall | Krav på<br>utsortering | Krav på<br>emballering med<br>mera | Instruktion för<br>hämtning/lämning |
+| Typ av avfall som ska | Krav på | Krav på | Instruktion för |
 | --- | --- | --- | --- |
+| sorteras ut och hållas | utsortering | emballering med | hämtning/lämning |
+| skiljt från annat avfall |  | mera |  |
 | Konsumentelavfall/elavfall | Skrymmande<br>konsumentelavfall/el<br>avfallska sorteras ut<br>och hållas skillt från<br>annat grovavfall.<br>Smått<br>konsumentelavfall/ela<br>vfall ska sorteras ut<br>och hållas skilt från<br>kärl- och säckavfall. |  | Konsumtenelavfall<br>lämnas vid<br>återvinningscentral<br>eller till en producent.<br>På<br>återvinningscentralen<br>ska avfallet lämnas<br>enligt instruktioner på<br>plats. Hämtning av<br>skrymmande<br>konsumentelavfall<br>kan beställas med<br>tjänster för grovavfall<br>enligt kommunens<br>avfallstaxa.<br>För verksamheter<br>gäller särskilda<br>regler.<br>Se övriga<br>bestämmelser<br>kring transport i<br>15a§. |
 | Läkemedel | I enlighet med<br>definitionen av<br>läkemedel i<br>förordningen<br>(2009:1031) om<br>producentansvar för<br>läkemedel. | Ska lämnas i<br>behållare/ påse som<br>tillhandahålls av<br>apoteket. | Lämnas till apotek. |
 

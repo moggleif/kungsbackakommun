@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20241125152908id_/https://kungsbacka.se/d
 sha256: 808af26929ae33a1ea3b9748641ebaea0ca7ddf015aa34fec6090cb1a57c4edf
 bytes: 35384413
 sidor: 244
-hamtad: 2026-11-17T01:21:08+00:00
-konverterad: 2026-11-17T01:22:55+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T00:13:27+00:00
+konverterad: 2026-11-22T00:15:25+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr]
 tal_obekraftade: [10, 11, 12, 13, 14, 15, 16, 17, 55, 164, 165, 200, 201, 202, 203, 204, 205, 206, 217, 218, 236, 237, 244]
-figurer: [10, 11, 12, 13, 14, 15, 16, 17, 25, 26, 27, 28, 29, 36, 37, 38, 39, 40, 41, 42, 158]
+figurer: [10, 11, 12, 13, 14, 15, 16, 17, 25, 26, 27, 28, 29, 36, 37, 38, 39, 40, 41, 42, 158, 202, 206, 218]
 tolkade: []
 granskad: null
 ---
