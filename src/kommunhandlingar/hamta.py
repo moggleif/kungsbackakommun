@@ -28,12 +28,13 @@ from pathlib import Path
 
 from kommunhandlingar import konfiguration, pool, provade, tidsbudget, versionslogg
 from kommunhandlingar.arkivluckor import ensamma
-from kommunhandlingar.behandla import Steg2, bara_omkonvertering, behandla
+from kommunhandlingar.behandla import bara_omkonvertering, behandla
 from kommunhandlingar.fel import Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Kandidat, lista
 from kommunhandlingar.konvertering import ocr
+from kommunhandlingar.poolskrivning import Steg2
 from kommunhandlingar.tidsbudget import Tidsgrans
 
 MER_I_NASTA_DEL = 4
