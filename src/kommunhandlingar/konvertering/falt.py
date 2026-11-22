@@ -36,14 +36,25 @@ def falt(ord_: list[dict], dela_tvetydiga: bool = False) -> list[Falt] | None:
     `dela_tvetydiga` är satt."""
     grupper = [[ord_[0]]]
     for vanster, hoger in pairwise(ord_):
-        mellanrum = hoger["x0"] - vanster["x1"]
-        hojd = max(o["bottom"] - o["top"] for o in (vanster, hoger))
-        if mellanrum <= SAMMA_FALT * hojd:
-            grupper[-1].append(hoger)
-        elif mellanrum >= NYTT_FALT * hojd or dela_tvetydiga:
+        nytt = nytt_falt(vanster, hoger, dela_tvetydiga)
+        if nytt is None:
+            return None
+        if nytt:
             grupper.append([hoger])
         else:
-            return None
+            grupper[-1].append(hoger)
     return [
         Falt(" ".join(o["text"] for o in g), g[0]["x0"], g[-1]["x1"]) for g in grupper
     ]
+
+
+def nytt_falt(vanster: dict, hoger: dict, dela_tvetydiga: bool) -> bool | None:
+    """Om mellanrummet mellan orden börjar ett nytt fält; None när det är
+    tvetydigt och inte ska delas."""
+    mellanrum = hoger["x0"] - vanster["x1"]
+    hojd = max(o["bottom"] - o["top"] for o in (vanster, hoger))
+    if mellanrum <= SAMMA_FALT * hojd:
+        return False
+    if mellanrum >= NYTT_FALT * hojd or dela_tvetydiga:
+        return True
+    return None
