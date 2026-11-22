@@ -1,4 +1,4 @@
-"""Krav: K8, K9, K13 och K72, ADR-0019 och ADR-0099.
+"""Krav: K8, K9, K13 och K86, ADR-0019 och ADR-0107.
 Kod: src/kommunhandlingar/behandla.py och hamta.py."""
 
 from dataclasses import replace
@@ -77,18 +77,46 @@ class TestOmkonvertering(Steg2Fall):
         self.assertEqual(ordna(self.steg(lista), lista), lista)
 
 
-class TestFullKonverterasInteOm(Steg2Fall):
-    """K72: ett dokument som redan är `full` kan inte bli bättre."""
+class TestVersionenBerorDokumentet(Steg2Fall):
+    """K86: bara det som en senare version kan ändra konverteras om."""
+
+    TABELL = {(0, 1, 0): frozenset({"alla"}), (0, 2, 0): frozenset({"ocr"})}
 
     def steg(self, kandidater, version: str = "kommunhandlingar 0.2.0") -> Steg2:
-        return replace(super().steg(kandidater, version), omkonvertera=True)
+        steg = super().steg(kandidater, version)
+        return replace(steg, omkonvertera=True, andringar=self.TABELL)
 
-    def test_full_i_annan_version_ar_oforandrad(self):
+    def gammal(self, *ersattningar: tuple[str, str]):
         self.klient.filer["u1"] = "kort.pdf"
         self.kor(kandidat("s:1", "u1"), version="kommunhandlingar 0.1.0")
         text = self.md().read_text()
-        self.md().write_text(
-            text.replace("kvalitet: text-utan-tabeller", "kvalitet: full", 1)
-        )
+        for fore, efter in ersattningar:
+            text = text.replace(fore, efter, 1)
+        self.md().write_text(text)
+
+    def test_ett_dokument_som_inte_beroras_ar_oforandrat(self):
+        self.gammal()
         self.assertEqual(self.kor(kandidat("s:1", "u1")), ["oförändrad"])
         self.assertEqual(self.klient.anrop, ["u1"])
+        self.assertTrue(self.falt()["pipeline"].startswith("kommunhandlingar 0.1.0 /"))
+        lista = [kandidat("s:1", "u1"), kandidat("s:2", "u2", "bilaga")]
+        self.assertEqual(ordna(self.steg(lista), lista), lista)
+
+    def test_ett_dokument_som_beroras_konverteras_om(self):
+        self.gammal(("[ok, ok, tabell-osaker, ok]", "[ok, ocr, tabell-osaker, ok]"))
+        self.assertEqual(self.kor(kandidat("s:1", "u1")), ["konverterad om"])
+        self.assertTrue(self.falt()["pipeline"].startswith("kommunhandlingar 0.2.0 /"))
+
+    def test_full_konverteras_om_nar_versionen_beror_det(self):
+        self.gammal(
+            ("kvalitet: text-utan-tabeller", "kvalitet: full"),
+            ("[ok, ok, tabell-osaker, ok]", "[ok, ocr, ok, ok]"),
+        )
+        self.assertEqual(self.kor(kandidat("s:1", "u1")), ["konverterad om"])
+
+    def test_granskat_berors_aldrig(self):
+        self.gammal(
+            ("[ok, ok, tabell-osaker, ok]", "[ok, ocr, tabell-osaker, ok]"),
+            ("granskad: null", "granskad: 2026-10-22"),
+        )
+        self.assertEqual(self.kor(kandidat("s:1", "u1")), ["oförändrad"])

@@ -6,8 +6,7 @@ Körs för hand med reportlab och pypdf, som inte är projektets beroenden:
 Fyra av sidorna i `sidor.pdf`, ritade på nytt och utan någon inskannad
 sida, så att konverteringen går fort utan OCR: en textsida, en tabell,
 en tabell vars tal inte står i linje och ett diagram. Det ger kvaliteten
-`text-utan-tabeller`, som inte är `full` och därför konverteras om (K72),
-och en figur.
+`text-utan-tabeller`, och en figur.
 `kort-begransad.pdf` har samma innehåll men en annan sha256.
 """
 

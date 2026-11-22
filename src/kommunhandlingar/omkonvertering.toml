@@ -1,0 +1,43 @@
+# Vad varje version av poolen kan ändra i ett dokument som en tidigare
+# version konverterade (K86, ADR-0107). Ett dokument konverteras om bara när
+# en version efter dess egen, fram till poolens, berör det. Varje version i
+# pyproject.toml har en rad; testerna prövar det.
+#
+# Värdena är `alla`, en sidkvalitet ur `kvalitet_per_sida` (dokumentet har en
+# sådan sida) eller `tal_obekraftade` (dokumentet har en sida med
+# obekräftade tal). Hellre ett dokument för mycket än ett för lite: går
+# ändringen inte att avgränsa ur front matter står `alla`.
+
+[versioner]
+"0.1.0" = ["alla"]
+"0.2.0" = ["alla"]
+"0.3.0" = ["alla"]
+"0.4.0" = ["alla"]
+"0.5.0" = ["alla"]
+"0.6.0" = ["alla"]
+"0.7.0" = ["alla"]
+"0.7.1" = ["alla"]
+"0.7.2" = ["alla"]
+"0.8.0" = ["alla"]
+"0.8.1" = ["alla"]
+"0.8.2" = ["alla"]
+"0.8.3" = ["alla"]
+"0.8.4" = ["alla"]
+"0.8.5" = ["alla"]
+"0.8.7" = ["alla"]
+"0.8.8" = ["alla"]
+"0.8.9" = ["alla"]
+"0.8.10" = ["alla"]
+"0.9.0" = ["alla"]
+"0.10.0" = ["alla"]
+"0.11.0" = ["alla"]
+"0.12.0" = ["alla"]
+# Inskannade bilder och vridna sidor (ADR-0099): bara sidor som läses med OCR.
+"0.13.0" = ["ocr", "ej-konverterad"]
+# Säkra rader (ADR-0100): också sidor som 0.13.0 gjorde till bild eller tom.
+"0.14.0" = ["ocr", "ej-konverterad", "bild", "tom"]
+# Text på högkant utan siffror (ADR-0103): före 0.15.0 gav all text på
+# högkant obekräftade tal.
+"0.15.0" = ["tal_obekraftade"]
+# Väg H (ADR-0106): bara sidor som läses med OCR.
+"0.16.0" = ["ocr"]

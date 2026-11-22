@@ -45,7 +45,7 @@ Regler för det här repot, utöver MADR:
 | 0016 | [Tabeller utan lodräta linjer läses ur textlagrets ord och blir CSV bara när talen står i linje](0016-tabeller-utan-lodrata-linjer.md) | accepted (0028 delar tabeller med linjer och flera tal i en cell; 0030 fäller en ombruten etikett; 0035 tar med avsnittsrubriker och årtal; 0040 läser rubriker i kolumnens fack) |
 | 0017 | [Sidor med figurer märks vid konverteringen och tolkas i efterhand av en Claude-session](0017-figurer-marks-och-tolkas-i-efterhand.md) | accepted (0055 behåller tolkningarna i granskade dokument, 0099 märker bildytor på inskannade sidor) |
 | 0018 | [Wayback hämtas sist i nattkörningen, nyast först, och fyller bara luckor](0018-wayback-sist-nyast-forst-och-bara-luckor.md) | accepted (0027 slår på arkivet per organ, 0076 konverterar om arkivets egna dokument) |
-| 0019 | [Ett dokument från en annan version av poolen hämtas igen och konverteras om, efter alla andra kandidater](0019-omkonvertering-efter-poolens-version.md) | accepted (0055 undantar granskade dokument, 0099 undantar dokument som är full) |
+| 0019 | [Ett dokument från en annan version av poolen hämtas igen och konverteras om, efter alla andra kandidater](0019-omkonvertering-efter-poolens-version.md) | accepted (0055 undantar granskade dokument, 0099 undantar dokument som är full, 0107 konverterar bara om det som en senare version kan ändra) |
 | 0020 | [Luckorna räknas fram ur poolen på statussidan och lagras inte](0020-luckor-raknas-fram-lagras-inte.md) | accepted (0062 visar år utan dokument) |
 | 0021 | [Poolens text escapas vid konverteringen så att den är riktig Markdown, och CI kör Markdown-lint](0021-texten-ar-riktig-markdown.md) | accepted |
 | 0022 | [Personnummer, mobilnummer, e-post och gatuadresser maskas vid konverteringen; namn står kvar](0022-personuppgifter-maskas-vid-konverteringen.md) | accepted |
@@ -114,7 +114,7 @@ Regler för det här repot, utöver MADR:
 | 0088 | [Nattkörningen sparar det klara var 15:e minut](0088-nattkorningen-sparar-var-femtonde-minut.md) | accepted |
 | 0089 | [Sökindex över protokollens paragrafer, i Giffås format](0089-sokindex-over-protokollens-paragrafer.md) | accepted |
 | 0098 | [Regionens fullmäktigemål är ett eget slag, regionmål](0098-regionmal-ar-ett-eget-slag.md) | accepted |
-| 0099 | [Inskannade bilder märks som bild, bildytor maskas, och vridna sidor vänds](0099-inskannade-bilder-markas-och-vridna-sidor-vands.md) | accepted (0100 läser säkra rader före bild, och en sida som inte är bild eller tom blir `ointressant`) |
+| 0099 | [Inskannade bilder märks som bild, bildytor maskas, och vridna sidor vänds](0099-inskannade-bilder-markas-och-vridna-sidor-vands.md) | accepted (0100 läser säkra rader före bild, och en sida som inte är bild eller tom blir `ointressant`; 0107 ersätter undantaget för `full`) |
 | 0100 | [Säkra rader läses, och en sida utan text att lagra märks `ointressant`](0100-sakra-rader-lases-och-resten-ar-ointressant.md) | accepted |
 | 0101 | [Statussidan visar andelen känd inläsning](0101-statussidan-visar-kand-inlasning.md) | accepted |
 | 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |
@@ -122,3 +122,4 @@ Regler för det här repot, utöver MADR:
 | 0104 | [Webbplatsens skript kontrolleras med ESLint och prövas i jsdom mot ögonblicksbilden](0104-webbplatsens-skript-med-eslint-och-jsdom.md) | accepted |
 | 0105 | [Väg H kalibreras mot textlagersidor innan den får bekräfta tal i poolen](0105-vag-h-kalibreras-mot-textlagersidor.md) | accepted |
 | 0106 | [Skannade sidor får väg H:s tal när den lagrade texten har just dem](0106-skannade-sidor-far-vag-hs-tal.md) | accepted |
+| 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |

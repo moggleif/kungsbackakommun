@@ -1,5 +1,5 @@
-"""Krav: K4, K6, K16, K23, K30, K34, K52 och K72 i docs/02-KRAV.md, ADR-0003,
-ADR-0018, ADR-0039, ADR-0048, ADR-0055, ADR-0075, ADR-0076 och ADR-0099. Test i
+"""Krav: K4, K6, K16, K23, K30, K34, K52 och K86 i docs/02-KRAV.md, ADR-0003,
+ADR-0018, ADR-0039, ADR-0048, ADR-0055, ADR-0075, ADR-0076 och ADR-0107. Test i
 tests/: test_hamta.py, test_hamta_arkiv.py, test_omkonvertering.py,
 test_plattformar.py, test_granskning.py och test_tidsbudget.py.
 
@@ -7,9 +7,9 @@ Steg 2 för en kandidat: hoppa över det som redan finns, annars hämta, konvert
 och skriv. Ett misslyckat försök skriver aldrig över en fullständig `.md`. En
 kandidat ur ett arkiv fyller bara luckor, så att en äldre kopia aldrig ersätter
 ett dokument i poolen; har sammanträdet typen från en annan plattform står den
-med högst kvalitet kvar. Med omkonverteringen påslagen räknas ett dokument från
-en annan version av poolen, också i arkivet, inte som befintligt, utom när det
-är granskat för hand eller redan `full`. Var kandidaten hamnar står i
+med högst kvalitet kvar. Med omkonverteringen påslagen räknas ett dokument som
+en senare version av poolen kan ändra, också i arkivet, inte som befintligt,
+utom när det är granskat för hand (`omkonvertering.py`). Var kandidaten hamnar står i
 `placering.py`, fälten och skrivningen i `poolskrivning.py` och utfallen i
 `utfall.py`.
 """
@@ -18,7 +18,7 @@ import tempfile
 from dataclasses import replace
 from pathlib import Path
 
-from kommunhandlingar import frontmatter, original, tidsbudget, utfall
+from kommunhandlingar import frontmatter, omkonvertering, original, tidsbudget, utfall
 from kommunhandlingar.arkivluckor import forlorar, hel, ingen_lucka, levande
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.kandidat import Kandidat
@@ -56,10 +56,9 @@ def samma_kalla(falt: dict[str, str], kandidat: Kandidat) -> bool:
 
 
 def aktuell(steg: Steg2, falt: dict[str, str]) -> bool:
-    orord = frontmatter.granskad(falt) or falt["kvalitet"] == kvalitet.FULL  # K72
-    if not steg.omkonvertera or orord:
+    if not steg.omkonvertera or frontmatter.granskad(falt):
         return True
-    return falt["pipeline"].split(" / ")[0] == steg.version
+    return not omkonvertering.berors(steg.andringar, falt, steg.version)  # K86
 
 
 def bara_omkonvertering(steg: Steg2, kandidat: Kandidat) -> bool:
