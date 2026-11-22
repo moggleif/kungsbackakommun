@@ -1184,7 +1184,10 @@ PP-OCRv6, hittar raderna och läser dem. Tesseract läser hela sidan, och
 varje ord hör till de rader vars ruta har ordets mittpunkt. En rad där
 någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
 (`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
-tankstreck blivit bindestreck. Är de två eniga är raden bekräftad. Annars
+alla sorters streck blivit bindestreck och mellanslag kring ett streck
+mellan två siffror tagits bort. En rad där en siffra står direkt intill
+en bokstav i någon av läsningarna bekräftas inte, eftersom båda motorerna
+läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
 PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
 av de två, och minst ett.
@@ -1210,7 +1213,9 @@ Dokumenten mäts i tur och ordning tills det begärda antalet sidor är
 mätt, så att en PDF som inte går att hämta ersätts av nästa. PDF:en
 hämtas med poolens hämtning (K10), och en PDF med annan sha256 än i
 front matter mäts inte. `facit.py` och `matning.py` jämför varje rad med
-talen i textlagrets ord vars mittpunkt ligger i radens ruta:
+talen i textlagrets tecken vars mittpunkt ligger i radens ruta. Mellan två
+tecken räknas ett mellanslag när textlagret har ett eller när avståndet
+syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt:
 
 | Utfall       | Raden                                                          |
 | ------------ | -------------------------------------------------------------- |

@@ -18,6 +18,10 @@ class Tal(unittest.TestCase):
 
     def test_minustecken_och_tankstreck_blir_bindestreck(self):
         self.assertEqual(tal("−1,8 och 2010–2032"), ["-1,8", "2010-2032"])
+        self.assertEqual(tal("2026‑2030 och 2026 — 2030"), ["2026-2030"] * 2)
+
+    def test_mellanslag_kring_streck_mellan_siffror(self):
+        self.assertEqual(tal("2026– 2030 och 5 -3"), ["2026-2030", "5-3"])
 
 
 class Avgor(unittest.TestCase):
@@ -32,6 +36,10 @@ class Avgor(unittest.TestCase):
     def test_tredje_lasningen_med_tesseract(self):
         svar = avgor("1845 tkr", "1 845 tkr", lambda: "1 845 tkr")
         self.assertEqual(svar, Avgorande(["1", "845"], "tredje-och-tesseract"))
+
+    def test_bokstav_intill_en_siffra(self):
+        svar = avgor("Kl. 16:05", "K1. 16:05", inte_anropad)
+        self.assertEqual(svar, Avgorande(None, "bokstav-vid-siffra"))
 
     def test_tre_olika_lasningar(self):
         svar = avgor("1845", "1 845", lambda: "1846")

@@ -1,7 +1,10 @@
 """Krav: K84 i docs/02-KRAV.md och ADR-0105. Test: tests/test_kalibrering.py.
 
-Facit för en rad som väg H läst på en renderad textlagersida: talen i de
-ord ur textlagret vars mittpunkt ligger i radens ruta. En rad som rör en
+Facit för en rad som väg H läst på en renderad textlagersida: talen i
+textlagrets tecken vars mittpunkt ligger i radens ruta, från vänster.
+Mellan två tecken står ett mellanslag när textlagret har ett, eller när
+avståndet är minst 15 % av tecknets storlek, eftersom pdfplumbers ord
+ibland läser ihop det som syns åtskilt (`2021-03-2215:33:39`). En rad som rör en
 bild på sidan har inget facit, eftersom ett tal i bilden saknas i
 textlagret. pdfplumber läser ihop en upphöjd siffra med ordet före, så
 att `118²` blir `1182`. Därför prövas tecknen för sig: raden har ett
@@ -11,6 +14,7 @@ lägsta underkant.
 """
 
 from dataclasses import dataclass
+from itertools import pairwise
 from statistics import median
 
 import pdfplumber
@@ -21,6 +25,7 @@ from kommunhandlingar.konvertering.rapid import Ruta
 SKALA = 72 / ocr.DPI
 MINDRE = 0.85
 OVER = 0.25
+MELLANRUM = 0.15
 
 
 @dataclass(frozen=True)
@@ -32,19 +37,31 @@ class Facitsida:
 
 def las(sida: pdfplumber.page.Page) -> Facitsida:
     bilder = [(b["x0"], b["top"], b["x1"], b["bottom"]) for b in sida.images]
-    tecken = [t for t in sida.chars if not t["text"].isspace()]
-    return Facitsida(sida.extract_words(), tecken, bilder)
+    return Facitsida(sida.extract_words(), list(sida.chars), bilder)
 
 
 def radens_tal(sida: Facitsida, ruta: Ruta) -> list[str] | None:
     if any(ror(b, skalad(ruta)) for b in sida.bilder):
         return None
-    ord_ = sorted((o for o in sida.ord if inom(o, skalad(ruta))), key=lambda o: o["x0"])
-    return vag_h.tal(" ".join(o["text"] for o in ord_))
+    tecken = sorted(
+        (t for t in sida.tecken if inom(t, skalad(ruta))), key=lambda t: t["x0"]
+    )
+    return vag_h.tal("".join(med_mellanrum(tecken)))
+
+
+def med_mellanrum(tecken: list[dict]) -> list[str]:
+    text = [tecken[0]["text"]] if tecken else []
+    for fore, t in pairwise(tecken):
+        if t["x0"] - fore["x1"] >= MELLANRUM * t["size"]:
+            text.append(" ")
+        text.append(t["text"])
+    return text
 
 
 def har_upphojt(sida: Facitsida, ruta: Ruta) -> bool:
-    tecken = [t for t in sida.tecken if inom(t, skalad(ruta))]
+    tecken = [
+        t for t in sida.tecken if inom(t, skalad(ruta)) and not t["text"].isspace()
+    ]
     if not tecken:
         return False
     storst = max(t["size"] for t in tecken)

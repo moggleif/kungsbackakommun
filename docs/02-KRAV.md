@@ -2476,6 +2476,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad, vad läsningarna än säger.
 
+- **Givet** en rad där en siffra står direkt intill en bokstav i någon av
+  de två läsningarna, som `K1.` för `Kl.`
+- **När** väg H avgör raden
+- **Så** är raden aldrig bekräftad.
+
 - **Givet** poolens data och ett fast frö
 - **När** `python -m kommunhandlingar.kalibrering <data> <ut>` körs
 - **Så** mäts väg H på 300 sidor med textlager och bekräftade tal, högst

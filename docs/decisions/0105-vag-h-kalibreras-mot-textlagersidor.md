@@ -60,7 +60,9 @@ Fyra delbeslut följer med:
 2. **Ett skydd mot upphöjda tecken.** En rad med ett upphöjt tecken, som
    en fotnotssiffra eller tvåan i m², bekräftas aldrig. Inte heller en rad
    som själv står upphöjd bredvid en högre rad, som när RapidOCR gett en
-   fotnotssiffra en egen rad. Hur tecknen mäts står i
+   fotnotssiffra en egen rad. Inte heller en rad där en siffra står
+   direkt intill en bokstav, eftersom båda motorerna läser `Kl.` som
+   `K1.`. Hur tecknen mäts står i
    [03-ARKITEKTUR.md](../03-ARKITEKTUR.md#väg-h-och-kalibreringen).
 3. **En sida bekräftas bara när varje rad med tal är bekräftad** och inget
    tal i Tesseracts läsning står utanför raderna. Märkningen är per sida,
@@ -142,6 +144,16 @@ falsk bekräftelse. Granskningen visade också att en understrykning, en
 siffra som nuddar bokstaven före och en siffra vid rutans överkant tog
 sig förbi den första versionen av skyddet. Det rättades före
 kalibreringen.
+
+**Den första körningen i Actions.** Den gick på koden före granskningens
+rättelser och mätte 294 sidor: 5 797 rader rätt och 8 falska
+bekräftelser. Två var `m²`, som skyddet nu stoppar. Två var `Kl.` som
+båda motorerna läste `K1.`, vilket gav regeln om en siffra intill en
+bokstav. Fyra var facit som brast: pdfplumber läste ihop ett datum och en
+tid som står åtskilda (`2021-03-2215:33:39`), och ett tankstreck följt av
+mellanslag (`2026– 2030`) blev två tal. Facit läser därför tecknen med
+synliga mellanrum, och mellanslag kring ett streck mellan två siffror
+räknas inte.
 
 **Skyddets form.** Agentens första försök mätte varje mörk del för sig.
 Det flaggade ringen i å och pricken i i som upphöjda, och 82 rader med

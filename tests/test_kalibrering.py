@@ -80,9 +80,25 @@ class Facit(unittest.TestCase):
     def sida(self, bilder=(), tecken_=()) -> facit.Facitsida:
         return facit.Facitsida(self.ORD, list(tecken_), list(bilder))
 
+    def text(self, text: str, x0: float = 60) -> list[dict]:
+        """Tecken 5 punkter breda; ett `_` blir 1,5 punkts mellanrum."""
+        tecknen, x = [], x0
+        for t in text:
+            if t == "_":
+                x += 1.5
+            elif t != " ":
+                tecknen.append(tecken(t, x))
+            x += 5 if t != "_" else 0
+        return tecknen
+
     def test_radens_tal_och_talen_utanfor(self):
-        self.assertEqual(facit.radens_tal(self.sida(), self.RUTA), ["2027"])
-        self.assertEqual(facit.tal_utanfor(self.sida(), [self.RUTA]), ["42"])
+        sida = self.sida(tecken_=self.text("Budget 2027"))
+        self.assertEqual(facit.radens_tal(sida, self.RUTA), ["2027"])
+        self.assertEqual(facit.tal_utanfor(sida, [self.RUTA]), ["42"])
+
+    def test_synligt_mellanrum_ar_mellanslag(self):
+        sida = self.sida(tecken_=self.text("2021-03-22_15:33:39"))
+        self.assertEqual(facit.radens_tal(sida, self.RUTA), ["2021-03-22", "15:33:39"])
 
     def test_en_rad_som_ror_en_bild_saknar_facit(self):
         bild = (250, 90, 350, 220)

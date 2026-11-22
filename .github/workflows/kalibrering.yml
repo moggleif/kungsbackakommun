@@ -26,6 +26,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: kalibrering-${{ github.ref }}
+  cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
