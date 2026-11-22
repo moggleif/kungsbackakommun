@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.1587654f19ddca7e89d7c423/1777959573
 sha256: 7ec563aa305bbd0f8e69043e232099b83d7fb9081aa4c19a9734b0640e21395d
 bytes: 7050812
 sidor: 121
-hamtad: 2026-11-17T23:54:16+00:00
-konverterad: 2026-11-17T23:58:53+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T09:29:14+00:00
+konverterad: 2026-11-22T09:33:54+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
-figurer: [47, 75, 110, 111, 112, 116, 117, 118]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
+figurer: [11, 18, 43, 44, 47, 75, 110, 111, 112, 116, 117, 118]
 tolkade: []
 granskad: null
 ---
@@ -1522,6 +1522,15 @@ Kungsbacka kommun | 0300-83 40 00 | infoQkungsbacka.se | www.kungsbacka.se
 
 <!-- sida 31 -->
 
+Innehåll
+2\. Förskola & Grundskolas arbete med efterlevnad av dataskyddet .... 3
+2.2 Hur dataskyddsarbetet har följts upp under året .... 3
+2.3.1 Uppföljning av föregående års utvecklingsområden .... 3
+2.3.3 Egenkontroller och systematiskt kvalitetsarbete .... 4
+2.3.4 Dataskyddsombudets granskning och åtgärder .... 4
+2.3.8 Dokumentation, rutiner och årShjUl .... 5
+Kungsbacka kommun Årsrapport dataskydd & informationssäkerhet
+
 <!-- sida 32 -->
 
 1\. Inledning
@@ -2263,6 +2272,33 @@ regelbundet.
 Kungsbacka kommun Styrande dokument 11 (11)
 
 <!-- sida 50 -->
+
+Förslag till ändring i delegeringsförteckning
+
+A 2.11
+
+9 kap. 158
+10 kap. 30 & SL
+11 kap. 29 8 SL
+
+Beslut om placering vid skolenhet som frångår vårdnadshavarnas
+önskemål.
+
+VC M
+
+Handläggare
+skolval
+
+Endast nämnden får besluta enligt 10:30 2 st p 2 och
+11 kap. 2982 st 2 p SL.
+
+Delegationen omfattar även placering då
+vårdnadshavare ej är överens för att säkerställa
+skolplikten.
+
+Beslut i enlighet med vårdnadshavarnas önskemål är
+
+verkställighet.
 
 <!-- sida 51 -->
 
@@ -3146,6 +3182,12 @@ Regler för skolskjuts
 2 (10)
 
 <!-- sida 69 -->
+
+Underlag 2026-04-29 au 2026-05-07
+nämnd 2026-05-20, med förslag till förändringar utmärkta
+Innehåll
+Val av annan kommunal skola, fristående skola eller skola i annan KOMMUN susesesseserrrrrrrreernnner rna 9
+Kungsbacka kommun Regler för skolskjuts 3 (10)
 
 <!-- sida 70 -->
 

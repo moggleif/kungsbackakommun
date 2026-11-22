@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.77ab358719eb489f94770f2/17812491716
 sha256: dcac61800a7a6efcb73d249b556dc971a7dc1abee192b0cd26734762e24c9647
 bytes: 2209253
 sidor: 18
-hamtad: 2026-11-18T03:03:54+00:00
-konverterad: 2026-11-18T03:04:30+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:42:11+00:00
+konverterad: 2026-11-22T11:42:50+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+kvalitet_per_sida: [ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+tal_obekraftade: [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 figurer: []
 tolkade: []
 granskad: null
@@ -70,6 +70,24 @@ Ordförande Annika Hedman (C)
 Protokolljusterare Annika Hamberg (M)
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+Information till nämnd: Nordhallands hembygdsmuseum berättar om sin
+Informationshanteringsplan för nämnden för Kultur & Fritid 2026 .... 6
+§ 74 Dnr KFT-2026-00145
+Information till nämnd: uppdatering kring förvaltningens arbete med social
+§ 76 Dur KFT-2026-00149
+Information till nämnd: de taktiska grupperna i Främjande Fyran .... 10
+Initiativ från Alliansen - Processer vid större investeringar i offentlig konst
+Initiativ från Sverigedemokraterna - Stärkt stöd till lokala kulturföreningar
+Initiativ från Sverigedemokraterna - Förbättrad belysning och trygghet vid
+Initiativ från Socialdemokraterna - Lyft fram Kungsbackas handelshistoria
+Anmälan av delegeringsbeslut juni 2026 s.s.ssesserssseserseserersrsrsenrsonessnrernrnrnn 15
+Information till nämnd: planeringsdag 2026 s .... 17
+Det här dokumentet är digitalt signerat
+Transaktionsidentitet: 715ABB3394480853B25433EBD99E01DE3C83A47FFB
 
 <!-- sida 3 -->
 

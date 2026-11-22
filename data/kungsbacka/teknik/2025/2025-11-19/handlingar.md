@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.6b3c9de619a7bbdb14110676/1763109230
 sha256: 46eb0cb58df4d1e43f9b04866ce8b19a022f7862fe2258c4fe4211dcedd34935
 bytes: 80181392
 sidor: 594
-hamtad: 2026-11-18T01:42:26+00:00
-konverterad: 2026-11-18T01:49:40+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T10:40:43+00:00
+konverterad: 2026-11-22T10:53:06+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ocr, ocr, ej-konverterad, ej-konverterad, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ocr, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, tabell-osaker, ok]
-tal_obekraftade: [142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 154, 155, 156, 160, 161, 162, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 306, 307, 308, 309, 310, 311, 312, 313, 342, 343, 373, 374, 375, 376, 570, 579, 580, 583, 586]
-figurer: [4, 47, 55, 57, 59, 79, 100, 109, 111, 112, 113, 128, 133, 134, 135, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 291, 295, 296, 298, 306, 307, 308, 309, 310, 311, 312, 313, 318, 326, 370, 371, 372, 373, 374, 375, 376, 377, 379, 380, 381, 383, 384, 386, 387, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 407, 408, 409, 410, 419, 420, 421, 427, 429, 431, 433, 434, 435, 438, 439, 440, 442, 443, 444, 445, 447, 448, 449, 450, 451, 453, 454, 456, 458, 459, 460, 462, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 479, 480, 482, 483, 484, 485, 486, 489, 492, 499, 500, 514, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ocr, ointressant, ocr, ointressant, ocr, ointressant, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, tabell-osaker, ok]
+tal_obekraftade: [190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 206, 209, 211, 213, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 233, 234, 235, 236, 237, 238, 240, 241, 242, 244, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 262, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 342, 373, 374, 375, 376, 570, 579, 580, 583, 586]
+figurer: [4, 47, 55, 57, 59, 79, 100, 109, 111, 112, 113, 128, 133, 134, 135, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 221, 247, 278, 287, 291, 295, 296, 298, 306, 307, 308, 309, 310, 311, 312, 313, 318, 326, 370, 371, 372, 373, 374, 375, 376, 377, 379, 380, 381, 383, 384, 386, 387, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 407, 408, 409, 410, 419, 420, 421, 427, 429, 431, 433, 434, 435, 438, 439, 440, 442, 443, 444, 445, 447, 448, 449, 450, 451, 453, 454, 456, 458, 459, 460, 462, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 479, 480, 482, 483, 484, 485, 486, 489, 492, 499, 500, 514, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570]
 tolkade: []
 granskad: null
 ---
@@ -6875,7 +6875,7 @@ tt                  tt                    o                   fftt            q
 O:\GBG\351958\G\\\_Berakningar\CPT-utvärderingar\25TY02.CPW
 2025-10-09
 
-D jup (m )
+Djup (m)
 
 [Tabell 154-1](handlingar.tabeller/154-1.csv)
 
@@ -6928,7 +6928,7 @@ Klassificering 0 10 20 30 40 50 60 0   5  10  15 0  5   10  15  200,000    0,005
 
 O:\GBG\351958\G\\\_Berakningar\CPT-utvärderingar\25TY02.CPW 2025-10-09
 
-D jup (m )
+Djup (m)
 
 [Tabell 155-1](handlingar.tabeller/155-1.csv)
 
@@ -7007,7 +7007,7 @@ Klassificering 0   50       100       150       200      250      0   10 20  30 
 
 O:\GBG\351958\G\\\_Berakningar\CPT-utvärderingar\25TY02.CPW 2025-10-09
 
-D jup (m )
+Djup (m)
 
 [Tabell 156-1](handlingar.tabeller/156-1.csv)
 
@@ -7282,7 +7282,7 @@ U
 O:\GBG\351958\G\\\_Berakningar\CPT-utvärderingar\25TY04.CPW
 2025-10-09
 
-D jup (m )
+Djup (m)
 
 [Tabell 160-1](handlingar.tabeller/160-1.csv)
 
@@ -7335,7 +7335,7 @@ Klassificering 0 5 10 15 20 25  30 0   5  10  15 0  5   10  15  200,000    0,005
 
 O:\GBG\351958\G\\\_Berakningar\CPT-utvärderingar\25TY04.CPW 2025-10-09
 
-D jup (m )
+Djup (m)
 
 [Tabell 161-1](handlingar.tabeller/161-1.csv)
 
@@ -7426,7 +7426,7 @@ Klassificering 0 20      40     60      80      100    120     140 0  5  10  15 
 
 O:\GBG\351958\G\\\_Berakningar\CPT-utvärderingar\25TY04.CPW 2025-10-09
 
-D jup (m )
+Djup (m)
 
 [Tabell 162-1](handlingar.tabeller/162-1.csv)
 
@@ -8849,6 +8849,16 @@ Ul "18 JuYasuejd 'Julleqe.r
 
 <!-- sida 202 -->
 
+CONSTANT RATE OF STRATIN
+DATUM 2000-04-05
+IGN
+SEKT/BORRHÅL : 3
+DJUP: 3.00 M
+VATTENKVOT FÖRE PROVNING: 94.0 PROC. DENSITET: 1.49 T/M3
+UDOMETER NR 2 BELASTNINGSTID: 23.3 H
+UTVÄRDERING T
+Sign
+
 <!-- sida 203 -->
 
 <!-- sida 204 -->
@@ -8856,6 +8866,15 @@ Ul "18 JuYasuejd 'Julleqe.r
 <!-- sida 205 -->
 
 <!-- sida 206 -->
+
+ÖDOMETERRESULTAT U-NR
+CONSTANT RATE OF STRAIN DÅTUM 2000-04-05
+SIGN
+SEKT/BORRHÅL : 3 DJUP: 6.00 M
+VATTENKVOT FÖRE PROVNING: 97.0 PROC. DENSITET: 1.45 T/M3
+PROVHÖJD: 20.0 MM PROVDIAMETER: 50.0 MM
+NORMALSPÄNNING KPA
+UTVÄRDERING I
 
 <!-- sida 207 -->
 
@@ -8900,6 +8919,17 @@ PORTRYCK KPA
 <!-- sida 210 -->
 
 <!-- sida 211 -->
+
+ÖDOMETERRESULTAT
+CONSTANT RATE OF STRAIN
+DATUM 2000-04-05
+SIGN
+SEKT/BORRHÅL : 3 DJUP: 10.00 M
+VATTENKVOT FÖRE PROVNING: 80.0 PROC. DENSITET: 1.50 T/M3
+ÖDOMETER NR 4 BELASTNINGSTID: 23.3 H
+PROVHÖJD: 20.0 MM PROVDIAMETER: 50.0 MM
+NORMAL SPÄNNING KPA
+UTVÄRDERING
 
 <!-- sida 212 -->
 
@@ -9187,7 +9217,36 @@ Telefax
 
 <!-- sida 217 -->
 
+Diarienr Diarieplannr
+BETECKNINGAR
+" DAT DEN -89-12-15 LITT. 18407 715 230
+"9 BORGÅS INDUSTRIOMRÅDE
+FREEPORT SHOPPINGBY
+KUNGSBACKA / CA-KONSULT AB
+53 010 23 BENGT ASKMAR EWA ANDERSSON
+” SITUATIONS-OCH BORRPLAN
+SKALA "NUMMER I BET
+
 <!-- sida 218 -->
+
+Skr
+Skr
+Let sk
+Let
+BORGÅS INDUSTRIOMRÅDE
+FREEPORT SHOPPINGBY
+KONSULT AB
+GF KONSULT AB
+TELEFON 031 - 335 50 00
+BDX 5056
+402 22 GÖTEBORG
+TELEFAX 031 - 335 89 55
+HANDLÄGGARE RITAD
+53 010 23 BENGT ASKMAR EWA ANDERSSON
+DATUM ANSVARI
+GEOTEKNISK UNDERSÖKNING
+SKALA
+NUMMER
 
 <!-- sida 219 -->
 
@@ -9578,13 +9637,50 @@ ER Grå rostfl gyttjjg TORRSKORPELERA 45 4 58
 
 <!-- sida 229 -->
 
+Densitet] Vatten- | Konflyt- | Sensiti- | Skjuvhållfasthet | Omrörd | Korrekt =
+-0.9 Grå rostfil TORRSKORPELERA 30 an
+3.0 Grå LERA 1,54 | 87 78 24 23 | 0,96 | 0,76 ae ä& mn
+4,0 Grå LERA 1,56 | 82 76 23 23 1,05 | 0,77 28
+5.0 Grå sulfidfl LERA 1,57 | 78 76 18 26 1,45 | 0,77
+6.0 Grå sulfidfi LERA 1.58 | 72 76 12 25 2.0: I 037 52 3
+7.0 Grå sulfidfl LERA 1,58 | 76 75 20 29 | 1,45 | 0,78 3 & x 3
+8.0 Grå sulfidfl LERA 1,61 | 72 | 70 | 24 32 | 1,35 | 0,80 åå IR
+10.0 Sulfidfärgad LERA 1.58 | 76 78 19 35 1,85 | 0,76 o
+Forts
+
 <!-- sida 230 -->
 
+BILAGA 2.2
+LABORATORIEUNDERSÖKNINGAR
+Kungsbacka
+Björkris
+Uppdrag
+Provtagningsdatum
+GF FÄLTGEOTEKNIK AB, BOX 5056, 402 22 GÖTEBORG
+TELEFON 031 - 335 50 00, TELEFAX 031-40 40 73
+Skr, Kv St II
+Provtagningsredskap
+
 <!-- sida 231 -->
+
+Densitet] Vatten- | Konflyt- | Sensiti- | Skjuvhållfasthet | Omrörd | Korrekt -
+-1.0 Brun mullhaltig siltig TORRSKORPELERA 19
+2,0 Grå LERA 1,67 | 80 | 84 8 20 | 24 | 074 22? 3 23 3
+4,0 Grå LERA 1.51 | 94 93 12 22 1.8 | 0,71 2» 22138
+5,0 Grå LERA 1.51 | 93 98 10 25 2,5 | 0.69
+6.0 Grå LERA 1.50 | 89 | 101 | 10 25 | 26 | 0,68 52 3
+7.0 Grå LERA 1,53 | 86 | 94 | 4 25 | 23 | 070 32) & & |3
+8.0 Grå LERA 1,52 | 84 98 10 30 | 30 | 0,69 SS IgG
 
 <!-- sida 232 -->
 
 <!-- sida 233 -->
+
+Densitet] Vatten- | Konflyt- | Sensiti- | Skjuvhållfasthet | Omrörd | Korrekt as
+GC 4 Uppmätt vy i bh 0,9 mumy (040312) ;S
+6.0 Grå LERA skalrester 1,50 | 94 | 94 | 12 22 | 18 | 070 2 l23138
+8.0 Grå LERA 1,55 86 75 20 18 0,87 0,78
+15.0 Grå sulfidfl LERA 1,59 75 74 16 26 1,65 | 0,78 2 = = S
 
 <!-- sida 234 -->
 
@@ -9635,17 +9731,152 @@ GC 2
 
 <!-- sida 236 -->
 
+CPT sondering uppmätta parametrar fn po Björkris GC-bro över Kba-ån
+: . rojekt nr
+Referens My Förborrningsdjup 1,65 m nl Kunssbackaän
+Nivå vid referens 2,65 m Förborrat material Mulljord, torrskorpa g
+Grundvattenyta — 3,85 m Utrustning CPT3 (Geotech - Memo) Borrhål GC-2
+Startdjup 1,65 m Geometri Normal Datum 040311
+Spetstryck q, (MPa) Friktion f, (kPa) Portryck u, u,, äu (kPa) Friktionskvot R, (960) Portryckskvot DPPR = Lutning (grader)
+0 Za 4 6 8 10 0 10 20 30 40 50 0 500 1000 0 S 10 0,0 0,5 1,00 § 10
+” hes
+nd mes
+I£ - >
+0 3
+
+I |
+d | JA
+2 Il
+
+\|
+
+3
+
+4
+i
+t
+
+3
+1
+
+(W) BAN
+
+\| |
+
+\| |
+| .
+
+1 ik i |
+aj ALE
+| 3 I E
+;
+
+j——
+
+IVA
+
+mi
+
+MA VDIGTMVA LLMIGEOARKIVM 84 1790 STACKIGC-2a.cpw 2004-04-15
+
+robo IF
+
+————
+
+FASEN a
+
 <!-- sida 237 -->
 
+CPT sondering uppmätta parametrar Projekt — Kungsbacka Björkris GC-port
+\- oa Projekt nr 184 179 04
+Referens My Förbormingsdjup 4,73 m Pl Pair
+Nivå vid referens 5,33 m Förborrat material Torrskorpa ats öteborgsvägen
+Grundvattenyta 4,43 m Utrustning CPT3 (Geotech - Memo) Borrhål  GC-4
+Startdjup 4,73 m Geometri Normal Datum 040311
+Spetstryck g, (MPa) Friktion f, (kPa) Portryck u, u,, 4u (kPa) Friktionskvot R, (960) Portryckskvot DPPR = Lutning (grader)
+0 2 4 6 8 10 0 10 20 30 40 50 0 500 1000 0 5 10 0,0 0,5 1,00 5 10
+5 feg FS AONESSogrond Se I
+i ,
+2 | 4
+LU dr
+;
+2 :
+a 4
+\-
+6 |
+\| -
+É
+-10
+42 je
+: ö
+” rh ji |
+
+M:lA VDIGTIA LLMYIGEOARK [VM 841790 INSTACKIGC-4.epw 2004-04-15
+
+£bojig
+
 <!-- sida 238 -->
+
+JÖRKRI
+VARLA
+VOXLOV
+BET | ANT ÄNDRINGEN AVSER SIGN DATUM
+BJÖRKRIS
+a = GF Konsult AB Tfn 031-50 70 00
+= GF = Box 8774 Fax 031-50 70 10
+"402 76 Göteborg www.gfkonsult.se
+KONSULTAB
+Besöksadress Theres Svenssons gata 11
+| UPPDRAG NR RITAD/KONSTR AV HANDLÄGGARE
+184 223 03 TOMAS BACKMAN | MIKAEL LINDSTRÖM
+BJÖRKRIS ”
+GEOTEKNIK
+SITUATIONS- OCH BORRPLAN
 
 <!-- sida 239 -->
 
 <!-- sida 240 -->
 
+BET ANT ÄNDRINGEN AVSER SIGN DATUM
+7 kPa (oreducerad) Vattenkvot w 926
+| GF Konsult AB Tfn 031-50 70 00
+Box 8774 Fax 031-50 70 10
+402 76 Göteborg www.gfkonsult.se
+y KONSULTAB
+| Besöksadress Theres Svenssons gata 11
+UPPDRAG NR RITAD/KONSTR AV | HANDLÄGGARE
+184 223 03 TOMAS, BACKMAN | MIKAEL LINDSTRÖM
+2 4 6 8 V STABILITET. KUNGSBACKAÅN
+KN | SEKTION A-B
+
 <!-- sida 241 -->
 
+SEKTION C-C
+GEOTEKNIK
+SEKTION C; BRO
+BET | ANT
+ÄNDRINGEN AVSER
+SIGN DATUM
+BJÖRKRIS
+KONSULTAB
+Besöksadress Theres Svenssons gata 11
+GF Konsult AB Tfn 031-50 70 00
+Box 8774 Fax 031-50 70 10
+402 76 Göteborg www.gfkonsult.se
+| UPPDRAG NR RITAD/KONSTR AV — | HANDLÄGGARE
+BJÖRKRIS V/
+
 <!-- sida 242 -->
+
+BET ANT ÄNDRINGEN AVSER SIGN DATUM
+GF Konsult AB Tfn 031-50 70 00
+Box 8774 Fax 031-50 70 10
+402 76 Göteborg www.gfkonsult.se
+KONSULTAB
+Besöksadress Theres Svenssons gata 11
+184 223 03 TOMAS BACKMAN | MIKAEL LINDSTRÖM
+GEOTEKNIK
+SKALA NUMMER I BET
 
 <!-- sida 243 -->
 
@@ -10186,6 +10417,13 @@ Statens geotekniska institut
 
 <!-- sida 257 -->
 
+CPT sondering uppmätta parametrar Projekt — Kungsbacka, Flede NV
+Referens my Förborrningsdjup 1.00 m Plat Hede
+Grundvattenyta — 1.20 m Utrustning Borrhå 1
+Startdjup 1.00 m Geometri Normal Datum 070206
+Spetstryck q, (MPa) Friktion f, (kPa) Portryck u, u,, Au (kPa) Friktionskvot R, (960) Portryckskvot DPPR = Lutning (grader)
+(w) dnfa
+
 <!-- sida 258 -->
 
 43
@@ -10236,6 +10474,32 @@ Statens geotekniska institut
 581 93 Linköping, telefon 013-20 18 00, fax 013-20 19 14
 
 <!-- sida 259 -->
+
+CPT sondering uppmätta parametrar Projekt — Kungsbacka, Hede NV
+| . Projekt nr 184 250 23
+Referens my Förborrningsdjup 1.00 m Plats Hed
+Nivå vid referens 0.00 m Förborrat material jr ae
+Grundvattenyta 0.00 m Utrustning Borrhål 2
+Startdjup 1.00 m Geometri Normal Datum 070207
+Spetstryck q, (MPa) Friktion f, (kPa) Portryck u, u,, Au (kPa) Friktionskvot R,; (26) Portryckskvot DPPR = Lutning (grader)
+0.5 1.0 1.5 2.0 50 100 150 0 500 1000 1500 20 40 60 1 2 3 2 4
+0 (a Å L ÅL Å Å l Å Å ÅL a Å L Rh ÅL | | Å Å ÅL ÅL ÅL Å É > ÅL ÅL Å ÅL ÅL ÅL | ÅL ÅL i" Å Å Å ÅL | Å ÅL | JL Å
+
+\|
+i
+
+\=
+.
+
+\|
+T
+T
+
+U:IUppdragWKungsbackaW Hede NVV84250GMAUTOGRAFISTACKAWIh2.cpw 2007-03-02
+
+h:h
+
+(w) dnfa
 
 <!-- sida 260 -->
 
@@ -10553,7 +10817,66 @@ kl Uppmätt vy i bh 1,20 mumy (070206)
 
 <!-- sida 281 -->
 
+Densitet] Vatten- | Konflyt- | Sensiti- | Skjuvhållfasthet | Omrörd | Korrekt. 6
+Sektion/borrhål 5 . p kvot | gräns |vitetenl.]  (oreducerad) | skjuvhållf] faktor - LILL
+Djup/nivå enämning Um? Ww Wi | konprov ty kPa ") = 'S öj '<
+NA VA S:t Tryckprov | Konprov a om Q
+0\)
+3 Uppmätt vy i bh 0,8 mumy (070207) 35
+0,0-0,2 MULLJORD enl fältprotokoll a ) | |
+-0,4 Grå rostfl mullhaltig siltig TORRSKORPELERA 20 und
+-0,8 Grå sulfidfl rostfl LERA 31
+-1,2 Grå sulfidfl rostfl LERA 43 3 £ 25ler Fl] Q
+-2,0 Grå rostfll LERA 62 | 69 0,81 ir Silxg| IE
+-3,0 Grå LERA 88 | 73 0,79 252 §lo5 38
+1,56 283 | 25:
+4,0 Grå LERA vassreser 1,54 86 72 34 17 0,51 | 0,80 335 = >! 83
+1,55 Jämn | Siu
+28 & n&
+1,53 3! Sova
+6,0 Grå sulfidfl LERA 1,51 | 92 | 78 | 23 16 | 0,70 | 0,76 3 : 218 2138
+1,50 3 88133
+» 183 138
+1,61 2) &
+8,0 Grå sulfidfi LERA 1,64 | 74 | 71 | 16 26 | 1,63 | 0,80 äl 2
+1,58
+1,62
+10,0 Grå sulfidfl LERA 1,59 76 71 15 19 1,26 0,80 - i S
+1,58 3 2
+DS D rd
+Za =
+1,63 23
+12,0 Grå sulfidfl LERA 1,60 70 69 14 74 1:22 0,81 Få 2 5
+1,62 8 S
+on 2
+38 A 3
+1,62 291 IE£ ov
+15,0 Grå sulfidfl LERA 1,65 | 69 | 72 I 10 23 | 2,42 | 0,79 zlöe2 jä:
+1,65 g cn 2:
+” z8 |A:
+1,62 <2 lår
+18,0 Grå sulfidfl LERA 1,63 69 a 15 34 2,30 0,79 Ss » 3
+1,63 ud 2
+3 O
+É 2
+Forts |
+Lediga kolumner är avsedda för resultat av specialundersökningar +) Skjuvhållfastheten, karakteristiskt värde, har utvärderats
+Nedanstående förkortningar kan t.ex. användas: enl. SGF.s laboratoriiekommitté 1984.
+Skj — = direkta skjuvförsök kom = kornfördelning Skjuvhållfastheten har ej reducerats med hänsyn till
+komp = kompressionsförsök — pack = packningsförsök avttiehalt eller konflytaräns.
+
+(TFA vIvla
+
 <!-- sida 282 -->
+
+Densitet] Vatten- | Konflyt- | Sensiti- | Skjuvhållfasthet | Omrörd | Korrekt. —
+30,0 Grå sulfidfl LERA 1,65 66 74 14 55 4,09 | 0,78 2 8 & La
+35,0 Grå sulfidfl LERA 1,66 65 76 18 61 4,09 0,78 2 18 2138
+40,0 Grå sulfidfl LERA 1,67 63 73 12 71 5,88 | 0,79
+Lediga kolumner är dda för resultat av specialundersökningar y Skjuvhållfastheten, karakteristiskt värde, har utvärderats
+Nedanstående förkortningar kan t.ex. användas: enl. SGF.s laboratoriiekommitté 1984.
+Skj = direkta skjuvförsök kom = kornfördelning Skjuvhållfasth har ej reducerats med hänsyn till
+komp = kompressionsförsök pack = packningsförsök ayttiehalt eller konflytgräns.
 
 <!-- sida 283 -->
 
@@ -10627,15 +10950,143 @@ KONS .-KOEFFICIENT CV  MxM/S
 
 <!-- sida 285 -->
 
+BIL NR 3:53
+Ramböll Sverige AB
+BORRPLATS: KBA HEDE NV
+SEKT/BORRHÅL : 3 DJUP: 15.00 M
+JORDART: LERA
+VATTENKVOT FÖRE PROVNING: 69.0 PROC. DENSITET: 1:65 T/M3
+ÖDOMETER NR 1 BELASTNINGSTID: 26.0 H
+PROVHÖJD: 20.0 MM PROVDIAMETER: 50.0 MM
+NORMALSPÄNNING KPA
+T Förkonsolideringstryck ör 6 kPa
+\+ Kompressionsmodul Mi 85 kPa
+
 <!-- sida 286 -->
+
+Ramböll Sverige AB
+Vädursgatan &
+Box 5343
+402 27 GÖTEBORG
+Tfn 031-335 33 00
+CONSTANT RATE OF STRAIN
+BIL NR 3:94
+DATUM 2007-02-16
+SIGN
+BORRPLATS: KBA HEDE NV
+JORDART: LERA
+DJUP: 35.00 M
+VATTENKVOT FÖRE PROVNING: 66,0 PROC, DENSITET: 1.66 T/M3
+ÖDOMETER NR 2 BELASTNINGSTID: 26-0 H
+PROVHÖJD: 20.0 MM PROVDIAMETER: 30.0 MM
+NORMALSPÄNNING KPA
 
 <!-- sida 287 -->
 
+GF Konsult AB ”Björkris,
+Göteborgsvägen m fl”,
+granskningshandling daterad
+2007-03-02 med uppdragsnummer
+184 239 02
+
+GF Konsult AB ”Geoteknisk
+undersökning: Anvisningar för
+planen samt översiktligt
+projekteringsunderlag för bro och
+GC-port” daterad 2005-12-20 med
+uppdragsnummer 184 223 03
+
+KM AB ”Anneberg-Fjärås,
+Anläggning av dubbelspår”
+daterad 1990-11-01 med
+uppdragsnummer 418 334
+
+Industriområde” daterad
+1988-05-04 med uppdragsnummer
+18416 237 230
+
+TS
+
+Göteborgs Förorter ”Hede 9:2 m.fl.
+
+ANMÄRKNINGAR 246738
+
+Å
+
+|D
+
+ÄNDRINGEN AVSER SN DATUM
+
+[kuncssacka
+
+434 81 KUNGSBACKA, TEL 0300-340 00, FAX 0300-347 04
+
+= =  GFKonsult AB Tfn 031-50 70 00
+
+” GF = — Box 8774 Fax 031-50 70 10
+
+\- "402 76 Göteborg www.gfkonsult.se
+KONSULTAB
+
+Besöksadress Theres Svenssons gata 11
+
+UPPDRAG NR RITAPYKONSTR AV HANDLÄGGARE
+184 25023 — | EWA ANDERSSON | HANNASOFIE JONSSON
+
+2001-03-27 TR eg
+HEDE NV NI y
+
+GEOTEKNISK UNDERSÖKNING
+SITUATIONS-OCH BORRPLAN
+
+AA. 2000 (AM) NUMMER F Bet
+1:4000 (A3))  G 101
+
+"” Göléborgsvägen 3 TT
+
+Faktorvägeny,
+
 <!-- sida 288 -->
+
+o Skr
+BET | ANT ÄNDRINGEN AVSER SIGN DATUN
+KOMMUN
+434 81 KUNGSBACKA, TEL 0300-340 00, FAX 0300-347 04
+\- GF = Box 8774 Fax 031-50 70 10
+KONSULTAB
+Besöksadress Theres Svenssons gata 11
+UPPDRAG NR RI ONSTR AV HANDLÄGGARE
+184 250 23 el ANDERSSON | HANNASOFIE JONSSON
+HEDE NV N
+GEOTEKNISK UNDERSÖKNING
 
 <!-- sida 289 -->
 
++5 Ske 2007-02-13 i +5
+= Spetstryck, ac (MPa)
+KOMMUN
+434 91 KUNGSBACKA, TEL 0300-340 00, FAX 0300-347 04
+\- GF Konsult AB Tfn 031-50 70 00
+KONSULTAB
+Besöksadress Theres Svenssons gata 11
+184 250 23 AN ANDERSSON HANNASOFIE JONSSON
+GEOTEKNISK UNDERSÖKNING
+
 <!-- sida 290 -->
+
+Spetstryck, qc (MPa)
+SEKTION C-C
+BET I ANT ÄNDRINGEN AVSER SIGN DATUM
+KUNGSBACKA
+434 81 KUNGSBACKA, TEL 0300-340 00, FAX 0300-347 04
+\- - GF Konsult AB Tfn 031-50 70 00
+= GF = Box 8774 Fax 031-50 70 10
+= 402 76 Göteborg www.gfkonsult.se
+KONSULTAB
+Besöksadress Theres Svenssons gata 11
+GEOTEKNISK UNDERSÖKNING
+SEKTION C
+SKALA 1:200 (A1) NUMMER I BET
 
 <!-- sida 291 -->
 
@@ -13388,6 +13839,29 @@ lotted: 2025-11-12 13:41:07 by Henry Larsson
 Path: O:NGBGN351958NTNYModellYSektioner.dwg
 
 <!-- sida 374 -->
+
+TYPSEKTION A-A
+2+2 VAG
+VÄSTER OM KUNGSBACKAÅN
+2+2 VAG
+BRO ÖVER KUNGSBACKAÅN
+TYPSEKTION C-C
+2+2 VAG
+ÖSTER OM KUNGSBACKAÅN
+EVENTUELL
+DIKE 2.6 17 DIKE 3,1
+KUNGSBACKAÅN
+BEFINTLIGT TRÄD
+BET ANT ÄNDRINGEN AVSER DATUM SIGN
+ARENDALSLEDEN
+FÖRSTUDIE
+UPPDRAG NR RITAD AV HANDLÄGGARE
+DATUM ANSVARIG
+TYPSEKTIONER
+2+2 VÄG
+ALTERNATIV 1
+SKALA NUMMER | BET
+lotted: 2025-11-12 13:42:12 by Henry Larsson
 
 <!-- sida 375 -->
 

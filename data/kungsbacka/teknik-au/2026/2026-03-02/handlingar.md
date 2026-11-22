@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.3fcba5dd19c985df70621c28/1772193224
 sha256: d03cecb7bb39a9601821b8ab17b6d24038f86562296403981a5d5d8e34c3c803
 bytes: 17905745
 sidor: 192
-hamtad: 2026-11-18T02:19:06+00:00
-konverterad: 2026-11-18T02:23:40+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T11:16:03+00:00
+konverterad: 2026-11-22T11:20:44+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
 kvalitet: delvis
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, tabell-osaker, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [12, 13, 14, 15, 16, 19, 23, 34, 43, 44, 49, 50, 51, 52, 53, 54, 59, 183]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, tabell-osaker, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [12, 13, 14, 15, 16, 19, 23, 34, 43, 44, 49, 50, 51, 52, 53, 54, 59]
 figurer: [2, 3, 4, 9, 10, 12, 13, 14, 15, 16, 17, 20, 21, 24, 25, 31, 35, 48, 54, 56, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67, 68, 70, 71, 72, 73, 74, 75, 77, 78, 79, 83, 86, 87, 88, 89, 90, 91, 92, 118, 119, 120, 122, 123, 124, 126, 127, 128, 129, 130, 136, 137, 139, 140, 141, 144, 145, 147, 148, 150, 157, 158, 159, 160, 161, 164, 174, 175, 176, 187, 190]
 tolkade: []
 granskad: null
@@ -613,9 +613,89 @@ KALA NUMMER | BET
 
 <!-- sida 14 -->
 
+Skr
+140 Skr Tr 180 460
+= si le Saf 2004-04-25 2/15 20/10
+PROFIL, VA 1-5-10
+Let — | ]
+PROFIL, GATA A
+ANM.
+GEOTEKNISKA BETECKNINGAR ENLIGT
+SGF:S BETECKNINGSSYSTEM, SE www.sgf.net.
+BET ANT
+ÄNDRINGEN AVSER
+SIGN DATUM
+FÖRFRÅGNINGSUNDERLAG
+KUNGSBACKA, VALLBY 77:12
+ONSALAVILLAN AB
+MAGASINSGATAN 15 434 37 KUNGSBACKA
+TFN: 0300-19140 FAX: 0300-12842
+KONSULT AB
+GF Konsult AB, Gårdavägen 2, Box 5056, 402 22 Göteborg
+Tel: 031 - 335 50 00, Fax 031 - 335 89 55, www.gfkonsult.se
+UPPDRAG NR RITAD/KONSTR AV HANDLÄGGARE
+865 047 02 Jimmy He Jimmy He
+DATUM ANSVARIG
+2004-06-21 BENGT ASKMAR
+GATU- OCH VA-ANLÄGGNING
+GEOTEKNISK UNDERSÖKNING
+PROFIL, VA 1-5-10 & GATA A
+SKALA
+NUMMER
+| BET
+
 <!-- sida 15 -->
 
+PROFIL, GATA C PROFIL, GATA B
+ANM.
+GEOTEKNISKA BETECKNINGAR ENLIGT
+SGF:S BETECKNINGSSYSTEM, SE www.sgf.net.
+BET ANT ÄNDRINGEN AVSER SIGN DATUM
+FÖRFRÅGNINGSUNDERLAG
+KUNGSBACKA, VALLBY 77:12
+ONSALAVILLAN AB
+MAGASINSGATAN 15 434 37 KUNGSBACKA
+TFN: 0300-19140 FAX: 0300-12842
+KONSULT AB
+GF Konsult AB, Gårdavägen 2, Box 5056, 402 22 Göteborg
+Tel: 031 - 335 50 00, Fax 031 - 335 89 55, www.gfkonsult.se
+UPPDRAG NR RITAD/KONSTR AV HANDLÄGGARE
+865 047 02 Jimmy He Jimmy He
+DATUM ANSVARIG
+2004-06-21 BENGT ASKMAR
+GATU- OCH VA-ANLÄGGNING
+GEOTEKNISK UNDERSÖKNING
+PROFIL, GATA B, C & VA 17-16
+SKALA | BET
+NUMMER
+
 <!-- sida 16 -->
+
+JSYA 89/10 10 20 30 10 20 30
+TVARSEKTION 0/060
+METER
+ANM.
+GEOTEKNISKA BETECKNINGAR ENLIGT
+SGF:S BETECKNINGSSYSTEM, SE www.sgf.net.
+BET ANT ÄNDRINGEN AVSER SIGN DATUM
+FÖRFRÅGNINGSUNDERLAG
+KUNGSBACKA, VALLBY 77:12
+ONSALAVILLAN AB
+MAGASINSGATAN 15 434 37 KUNGSBACKA
+TFN: 0300-19140 FAX: 0300-12842
+KONSULT AB
+GF Konsult AB, Gårdavägen 2, Box 5056, 402 22 Göt
+eborg
+Tel: 031 - 335 50 00, Fax 031 - 335 89 55, www.gfkonsult.se
+UPPDRAG NR RITAD/KONSTR AV HANDLÄGGARE
+865 047 02 Jimmy He Jimmy He
+DATUM ANSVARIG
+2004-06-21 BENGT ASKMAR
+GATU- OCH VA-ANLÄGGNING
+GEOTEKNISK UNDERSÖKNING
+TVÄRSEKTION, GATA A
+SKALA NUMMER
+| BET
 
 <!-- sida 17 -->
 

@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.b7a004018f378e8f28e32d/171517970388
 sha256: 2bdf901fe88ebd491917b1a05e2c719c89919ae1cbd65bcd599855373a35caa0
 bytes: 10895562
 sidor: 277
-hamtad: 2026-11-17T22:34:45+00:00
-konverterad: 2026-11-17T22:35:39+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T08:28:21+00:00
+konverterad: 2026-11-22T08:29:05+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom]
-tal_obekraftade: [74, 80, 91, 92, 93, 94, 95, 109, 110, 119, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 150, 151, 152, 153]
+tal_obekraftade: [74, 80, 91, 92, 93, 94, 95, 109, 110, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 150, 151, 152, 153]
 figurer: [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 53, 55, 56, 65, 69, 72, 73, 74, 77, 78, 85, 86, 88, 91, 92, 93, 95, 96, 99, 100, 103, 104, 105, 108, 110, 117, 118, 119, 121, 122, 126, 127, 128, 129, 130, 131, 132, 133, 134, 137, 139, 142, 144, 152, 153, 227]
 tolkade: []
 granskad: null

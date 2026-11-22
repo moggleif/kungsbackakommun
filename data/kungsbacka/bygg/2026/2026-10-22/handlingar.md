@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.19326c8b1a1302ccbfb7b783/1792140041
 sha256: c2b3d9bfd73480c292030bc0e32fb49bb6d86ff90a7dad0f1289bd93622a6c4f
 bytes: 63956656
 sidor: 656
-hamtad: 2026-11-18T00:27:33+00:00
-konverterad: 2026-11-18T00:33:49+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T09:49:56+00:00
+konverterad: 2026-11-22T09:56:53+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ej-konverterad, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [150, 332, 356, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 454, 455, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 564, 565, 566, 567, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648]
-figurer: [16, 63, 159, 160, 161, 164, 169, 170, 171, 181, 188, 190, 191, 193, 194, 195, 199, 200, 203, 204, 205, 206, 207, 209, 210, 246, 293, 298, 312, 313, 314, 318, 329, 332, 333, 335, 338, 339, 344, 346, 348, 350, 356, 357, 358, 359, 362, 365, 366, 367, 368, 375, 377, 378, 379, 380, 381, 399, 405, 407, 409, 410, 411, 412, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 433, 435, 437, 438, 439, 441, 442, 444, 447, 448, 449, 450, 451, 452, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 493, 497, 498, 499, 500, 504, 506, 509, 510, 511, 512, 517, 518, 519, 520, 521, 523, 529, 533, 534, 543, 544, 563, 568, 596, 597, 629, 649]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ocr, ocr, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ocr, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [150, 332, 356, 417, 418, 419, 461, 462, 472, 481, 482, 487, 564, 565, 566, 567, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648]
+figurer: [16, 63, 159, 160, 161, 164, 169, 170, 171, 181, 188, 190, 191, 193, 194, 195, 199, 200, 203, 204, 205, 206, 207, 209, 210, 246, 293, 298, 312, 313, 314, 318, 329, 332, 333, 335, 338, 339, 344, 346, 348, 350, 356, 357, 358, 359, 362, 365, 366, 367, 368, 375, 377, 378, 379, 380, 381, 399, 405, 407, 409, 410, 411, 412, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 433, 435, 437, 438, 439, 441, 442, 444, 447, 448, 449, 450, 451, 452, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 493, 497, 498, 499, 500, 504, 506, 509, 510, 511, 512, 517, 518, 519, 520, 521, 523, 529, 533, 534, 543, 544, 563, 568, 596, 597, 629, 635, 637, 649]
 tolkade: []
 granskad: null
 ---
@@ -18243,7 +18243,7 @@ BBBaaasssiiiccc WWWaaallllll [[[444444888444888444111]]]
 
 7,0
 
-BBaass iicc WW aa llll [[44448844884411 ]]
+BBaassiicc WWaallll [[44448844884411]]
 
 NWOD
 
@@ -20694,9 +20694,57 @@ Nivå (m)
 
 <!-- sida 417 -->
 
+Bilaga 2:1 |
+BANVERKET
+Denna ritning är Banverkets egendom.
+Allt obehörigt begagnande av ritningen
+beivras enligt lag.
+TOT. 5 st
+| BYGGPKT. VID | 3 103353,890 146391,049 RL
+ISOLERINGSMATTA
+20 mm TREKANTLIST ENL BB 88, 62:25 S 3
+500 L 468 283 IT teborg Telefax 031-400855 Tel: 031 — 103 200
+
 <!-- sida 418 -->
 
+Bilaga 2:2
+BANVERKET
+Denna ritning är Banverkets egendom.
+Allt obehörigt begagnande av ritningen
+beivras enligt lag.
+-2838 200 GROVBETONG |
+HÖRNFASNING OCH IMPREGNERING,
+MÅLNING MÅLNING SAMT INPREGNERING SE RITNING 43
+200 GROVBETONG
+MED SILKATFÄRG OCH SAMMANSTÄLLNING I 2
+TRÅG 2 - ARM. I "oo 24 AT
+\- - TRÅG 2 - ARM. II "725
+AV I FORMEN INLAGDA BRÄDOR MED
+OLIKA BREDD OCH DJUP. LUDVIGSON BANVERKET KUNGSBACKA
+VÄSTRA REGIONEN JÄRNVÄGSBRO ÖVER HANTVERKSGATAN
+
 <!-- sida 419 -->
+
+Bilaga 2:3
+BANVERKET
+Denna ritning är Banverkets egendom.
+Allt obehörigt begagnande av ritningen
+beivras enligt lag.
+FASNING MED
+300 20 mm TREKANTLIST HÄNVISNINGAR
+GJUTFOG SE RITN. 27, TYP 1 GROVBETONG /
+HÖRN FASAS MED 4 | VAR. 7800 - 8306 400,, 70
+PÅ BÅDA SIDOR TRÅGET S | 200 GROVBETONG | 1:20
+251 Loo 1400 | 351
+YTBEHANDLING ENL. BN 88, 62.24 OCH 62.44
+5 mm ISOLERMATTA
+15 mm MAB 4T SKYDDSLAGER
+70 100 VAR. 4500 - 4816 | VAR. 4500 - 4713 350, 70
+ATT ARBEJET UTFÖRTS
+ISOLERING 70 mm STYROFOAM
+SOLIMATE 200 EL. LIKV.
+| | Å . 950621 LEFTER GRANSKNING
+Vädursgatan 6 Telefon 031—-357400 esöksadress: Bergslagsgatan
 
 <!-- sida 420 -->
 
@@ -23484,6 +23532,18 @@ Skapad av: Elham Sokhango
 Elevation
 
 <!-- sida 487 -->
+
+Bilaga 7:1
+3\) m Å HÖJD AVSER INSIDA KANTBALK. ROBALON ROBALON
+MANTELBÄRANDE PÅLAR AV BETONG — Z)BRONS UNDERSIDA ÖSTRA SIDAN Å RUSTBÄDD UNDER STENLANDFÄSTE RITNINGSFÖRTECKNING ALLMÄNNA ANVISNINGAR
+ALLA RIKTNINGAR BRO MITT STENSKIFTEN I RESP. LANDFÄSTE 2 - HÖJDSYSTEM: RB 70
+= S jo km 28+400 - 28+520 HÖJD FIX; NR 5520, LIGGER VID VARBERGSVÄGEN, 0.3 km S OM STATIONEN,
+N | SPILLVATTEN BRUNN NIVÅ FRÅN -55.0 Cuk = 70 kPa RE (BROTTGRÄNS) PP 8028461 X=103 505.709 Y=46 420.844
+3 . | RL LUNING: FYLLNING MOT BRON OCH PACKNING SAMT UPPBYGGNAD AV KONER SKALL
+3 | | SKE MED GRUS OCH LÄTTKLINKER ENLIGT TBb/geo SAMT ENLIGT RITNING
+å L INTE SKADAS.
+22 | | EFTER URSCHAKTNING SÅ SPILLVATTEN BRUNN | 35 3747 i
+33 PLAN | ATT PÅLARNA KAN SLÅS FRITT. Å 37 3772 i
 
 <!-- sida 488 -->
 
@@ -30602,6 +30662,17 @@ Page 11 of 16
 Q
 
 <!-- sida 644 -->
+
+Skåne
+BESLUT
+Länsstyrelsen
+Förstag till Ändring av Översiktsplan 2013
+ZONERING FÖR BEBYGGELSE INOM
+RISK FÖR ÖVERSVÄMNING
+Figur 7: Planområdet markeras med rod cirkel och ligger inom ett högriskområde för översvämning från havet
+Översiktsplan 2013, sidan 33.
+enligt kommunens egen bedömning. Källa: Kristianstads kommuns utställningshandling till ändring äv
+Page 12 of 16
 
 <!-- sida 645 -->
 

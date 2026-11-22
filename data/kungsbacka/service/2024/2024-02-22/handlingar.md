@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.69662c5a18d8755e108223ca/1708355712
 sha256: 1228da53a5350bc4f8522a56fa4a1eb6c3f3edf05c8c807e78d4f1cbf5acc32c
 bytes: 6856726
 sidor: 111
-hamtad: 2026-11-18T02:32:46+00:00
-konverterad: 2026-11-18T02:34:08+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:22:49+00:00
+konverterad: 2026-11-22T11:24:08+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ej-konverterad, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ocr, ok, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok]
-tal_obekraftade: [5, 11, 13, 14, 16, 17, 19, 20, 31, 34, 35, 36, 39, 40, 41, 42, 43, 49, 78, 88, 89, 90, 97, 99, 101, 104, 105, 109]
-figurer: [3, 10, 15, 44, 75]
+kvalitet_per_sida: [ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ointressant, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ocr, ok, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok]
+tal_obekraftade: [5, 11, 13, 14, 16, 17, 19, 20, 31, 34, 36, 39, 40, 41, 42, 43, 49, 78, 88, 89, 90, 97, 99, 101, 104, 105, 109]
+figurer: [3, 10, 15, 44, 75, 88]
 tolkade: []
 granskad: null
 ---
