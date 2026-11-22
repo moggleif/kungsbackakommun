@@ -38,7 +38,7 @@ class TestMeetingsPlus(unittest.TestCase):
         ):
             mote = f"https://m.se/c/{adress}"
             sidor[mote] = motessida(mote, "protokollpdf")
-        kandidater, _ = upptack(kommun, Klient(sidor))
+        kandidater = upptack(kommun, Klient(sidor)).kandidater
         self.assertEqual(
             [(k.organ, k.datum.year) for k in kandidater],
             [("bun", 2025), ("fsn", 2024), ("bun", 2023)],
@@ -56,7 +56,7 @@ class TestMeetingsPlus(unittest.TestCase):
             "https://m.se/c/bun": f'<a href="{mote}">1</a>',
             mote: motessida(mote, "protokollpdf"),
         }
-        kandidater, _ = upptack(tolka("exempelby", data), Klient(sidor))
+        kandidater = upptack(tolka("exempelby", data), Klient(sidor)).kandidater
         self.assertEqual(
             [k.kallnyckel.split(":")[0] for k in kandidater],
             ["sitevision"] * 3 + ["meetingsplus"],

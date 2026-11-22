@@ -14,28 +14,21 @@ from urllib.parse import urlsplit
 from kommunhandlingar.adaptrar import sitevision, wayback
 from kommunhandlingar.adaptrar.sitevision_html import NEDLADDNING, forekomster
 from kommunhandlingar.fel import Hamtfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd
 
 
-def upptack(
-    kalla: sitevision.Kalla, klient
-) -> tuple[list[Kandidat], list[Avvisad], list[str]]:
+def upptack(kalla: sitevision.Kalla, klient) -> Fynd:
     try:
         filer = nyaste_kopior(klient, kalla)
     except Hamtfel as fel:
-        return [], [], [str(fel)]
+        return Fynd(noteringar=[str(fel)])
     sidor, noteringar = [], []
     for organ in kalla.wayback:
         bilder, fel = ogonblicksbilder(klient, kalla.sidor[organ])
         sidor += [(organ, bild, html) for bild, html in bilder]
         noteringar += fel
-    kandidater, avvisade = sitevision.las(replace(kalla, arkiv=True), sidor)
-    med_kopior = [med_kopia(k, filer) for k in kandidater]
-    return (
-        [k for k in med_kopior if isinstance(k, Kandidat)],
-        avvisade + [a for a in med_kopior if isinstance(a, Avvisad)],
-        noteringar,
-    )
+    lasta = sitevision.las(replace(kalla, arkiv=True), sidor)
+    return med_kopior(lasta, filer) + Fynd(noteringar=noteringar)
 
 
 def nyaste_kopior(klient, kalla: sitevision.Kalla) -> dict[str, wayback.Kopia]:
@@ -79,8 +72,15 @@ def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], lis
     return bilder, fel
 
 
-def med_kopia(kandidat: Kandidat, filer: dict[str, wayback.Kopia]):
-    kopia = filer.get(kandidat.kallnyckel)
-    if kopia is None:
-        return Avvisad(kandidat.kalla, kandidat.filnamn, "ingen kopia i arkivet")
-    return replace(kandidat, url=wayback.adress(kopia))
+def med_kopior(fynd: Fynd, filer: dict[str, wayback.Kopia]) -> Fynd:
+    """En kandidat utan kopia i arkivet blir en fil utan kandidat."""
+    utan = [k for k in fynd.kandidater if k.kallnyckel not in filer]
+    return Fynd(
+        [
+            replace(k, url=wayback.adress(filer[k.kallnyckel]))
+            for k in fynd.kandidater
+            if k.kallnyckel in filer
+        ],
+        fynd.avvisade
+        + [Avvisad(k.kalla, k.filnamn, "ingen kopia i arkivet") for k in utan],
+    )

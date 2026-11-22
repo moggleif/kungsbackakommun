@@ -8,6 +8,7 @@ daterad med dagen den lades upp och namngiven efter projektet och filen.
 
 import re
 from collections.abc import Callable
+from dataclasses import replace
 from datetime import UTC, date, datetime
 from html.parser import HTMLParser
 from pathlib import PurePosixPath
@@ -17,7 +18,7 @@ from zoneinfo import ZoneInfo
 from kommunhandlingar.adaptrar.sitevision import kallnyckel
 from kommunhandlingar.adaptrar.sitevision_html import NEDLADDNING, forekomster
 from kommunhandlingar.fel import Hamtfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 from kommunhandlingar.plats import namn_av
 
 TIDSZON = ZoneInfo("Europe/Stockholm")
@@ -73,42 +74,40 @@ def ar_projekt(ovan: str, adress: str) -> bool:
 FEL = (Hamtfel, ValueError, KeyError)
 
 
-def upptack(
-    projekt: dict[str, str], hamta: Callable[[str], str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
-    kandidater: dict[str, Kandidat] = {}
-    avvisade: list[Avvisad] = []
-    for organ, lista in projekt.items():
-        try:
-            sidor = projektsidor(lista, hamta)
-        except FEL as fel:
-            avvisade.append(Avvisad(lista, "", f"listan: {fel}"))
-            continue
-        for sida in sidor:
-            nya, bort = med_sidorna_under(organ, sida, hamta)
-            avvisade += bort
-            for kandidat in nya:
-                kandidater.setdefault(kandidat.kallnyckel, kandidat)
-    return list(kandidater.values()), avvisade
+def upptack(projekt: dict[str, str], hamta: Callable[[str], str]) -> Fynd:
+    """En fil som står på flera projektsidor är den första sidans."""
+    fynd = sum((listan(o, lista, hamta) for o, lista in projekt.items()), Fynd())
+    forsta: dict[str, Kandidat] = {}
+    for kandidat in fynd.kandidater:
+        forsta.setdefault(kandidat.kallnyckel, kandidat)
+    return replace(fynd, kandidater=list(forsta.values()))
 
 
-def med_sidorna_under(
-    organ: str, sida: str, hamta: Callable[[str], str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def listan(organ: str, lista: str, hamta: Callable[[str], str]) -> Fynd:
+    try:
+        sidor = projektsidor(lista, hamta)
+    except FEL as fel:
+        return Fynd(avvisade=[Avvisad(lista, "", f"listan: {fel}")])
+    return sum((med_sidorna_under(organ, sida, hamta) for sida in sidor), Fynd())
+
+
+def med_sidorna_under(organ: str, sida: str, hamta: Callable[[str], str]) -> Fynd:
     """Projektsidans filer och filerna på sidorna en nivå under den, som
     räknas som egna projekt. Sidor längre ner läses inte."""
-    avvisade: list[Avvisad] = []
     try:
         html = hamta(sida)
-        kandidater = kandidater_pa(organ, sida, html)
+        fynd = Fynd(kandidater_pa(organ, sida, html))
     except FEL as fel:
-        return [], [Avvisad(sida, "", f"projektsidan: {fel}")]
-    for under in dict.fromkeys(a for a in lankar(html, sida) if ar_projekt(sida, a)):
-        try:
-            kandidater += kandidater_pa(organ, under, hamta(under))
-        except FEL as fel:
-            avvisade.append(Avvisad(under, "", f"projektsidan: {fel}"))
-    return kandidater, avvisade
+        return Fynd(avvisade=[Avvisad(sida, "", f"projektsidan: {fel}")])
+    under = dict.fromkeys(a for a in lankar(html, sida) if ar_projekt(sida, a))
+    return sum((projektsidan(organ, u, hamta) for u in under), fynd)
+
+
+def projektsidan(organ: str, sida: str, hamta: Callable[[str], str]) -> Fynd:
+    try:
+        return Fynd(kandidater_pa(organ, sida, hamta(sida)))
+    except FEL as fel:
+        return Fynd(avvisade=[Avvisad(sida, "", f"projektsidan: {fel}")])
 
 
 def kandidater_pa(organ: str, sida: str, html: str) -> list[Kandidat]:

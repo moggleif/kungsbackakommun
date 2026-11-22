@@ -38,9 +38,8 @@ def kalla(post: dict = POST):
 class TestMotessidan(unittest.TestCase):
     def setUp(self):
         self.mote = f"{SJUKHUS}/mote-2026-09-30"
-        self.kandidater, self.avvisade = las_mote(
-            kalla(), "hs", self.mote, html("mote-2026-09-30.html")
-        )
+        fynd = las_mote(kalla(), "hs", self.mote, html("mote-2026-09-30.html"))
+        self.kandidater, self.avvisade = fynd.kandidater, fynd.avvisade
 
     def test_kallelse_protokoll_och_bilagor(self):
         typer = [k.typ for k in self.kandidater]
@@ -73,9 +72,9 @@ class TestMotessidan(unittest.TestCase):
 
     def test_protokollets_bilagor_bara_med_eget_filnamn(self):
         mote = f"{BAS}/driftnamnden-kollektivtrafik/mote-2023-01-20-12741"
-        kandidater, _ = las_mote(
+        kandidater = las_mote(
             kalla(), "hs", mote, html("mote-med-protokollets-bilagor.html")
-        )
+        ).kandidater
         bilagor = [k for k in kandidater if k.typ == "bilaga"]
         self.assertEqual(len(bilagor), 12)
         self.assertTrue(all("/agenda/" in k.kallnyckel for k in bilagor))
@@ -88,7 +87,7 @@ class TestMotessidan(unittest.TestCase):
             '<a href="/w/mote-2026-01-01/protocol/apdf?downloadMode=open">A.pdf</a>'
             '<a href="/w/mote-2026-01-01/protocol/bpdf?downloadMode=open">B.pdf</a>'
         )
-        kandidater, _ = las_mote(kalla(), "hs", mote, sida)
+        kandidater = las_mote(kalla(), "hs", mote, sida).kandidater
         self.assertEqual(
             [(k.typ, k.kallnyckel) for k in kandidater],
             [
@@ -99,31 +98,28 @@ class TestMotessidan(unittest.TestCase):
 
     def test_en_fil_som_inte_ar_pdf_blir_ingen_kandidat(self):
         sida = f'<a href="{BAS}/x/agenda/lista-xlsx?downloadMode=open">Lista.xlsx</a>'
-        kandidater, avvisade = las_mote(
-            kalla(), "hs", f"{SJUKHUS}/mote-2026-01-01", sida
-        )
-        self.assertEqual(kandidater, [])
+        fynd = las_mote(kalla(), "hs", f"{SJUKHUS}/mote-2026-01-01", sida)
+        self.assertEqual(fynd.kandidater, [])
         self.assertEqual(
-            [(a.filnamn, a.orsak) for a in avvisade], [("Lista.xlsx", "inte en PDF")]
+            [(a.filnamn, a.orsak) for a in fynd.avvisade],
+            [("Lista.xlsx", "inte en PDF")],
         )
 
 
 class TestSamlingsmoten(unittest.TestCase):
     def test_typ_och_datum_ur_filnamnet(self):
-        kandidater, avvisade = las_mote(
-            kalla(), "rf", SAMLING, html("samlingsmote.html")
-        )
-        self.assertEqual({k.typ for k in kandidater}, {"protokoll"})
+        fynd = las_mote(kalla(), "rf", SAMLING, html("samlingsmote.html"))
+        self.assertEqual({k.typ for k in fynd.kandidater}, {"protokoll"})
         self.assertEqual(
-            [k.datum for k in kandidater],
+            [k.datum for k in fynd.kandidater],
             [date(2014, 4, 16), date(2014, 6, 18), date(2014, 10, 8),
              date(2014, 11, 5), date(2014, 12, 10)],
         )  # fmt: skip
-        self.assertEqual(avvisade, [])
+        self.assertEqual(fynd.avvisade, [])
 
     def test_en_fil_utan_datum_blir_ingen_kandidat(self):
         sida = f'<a href="{SAMLING}x/agenda/manualpdf?downloadMode=open">Manual.pdf</a>'
-        _, avvisade = las_mote(kalla(), "rf", SAMLING, sida)
+        avvisade = las_mote(kalla(), "rf", SAMLING, sida).avvisade
         self.assertEqual([a.filnamn for a in avvisade], ["Manual.pdf"])
 
 
@@ -135,7 +131,7 @@ class TestUpptack(unittest.TestCase):
             SJUKHUS: f'<a href="{mote}">Möte</a>',
             mote: html("mote-2026-09-30.html"),
         }
-        kandidater, _ = upptack(kalla(), sidor.__getitem__)
+        kandidater = upptack(kalla(), sidor.__getitem__).kandidater
         self.assertEqual(len(kandidater), 10)
         self.assertEqual({k.organ for k in kandidater}, {"hs"})
 
@@ -154,10 +150,10 @@ class TestUpptack(unittest.TestCase):
                 raise Hamtfel("anslutning", adress)
             return sidor[adress]
 
-        kandidater, avvisade = upptack(kalla(), hamta)
-        self.assertEqual([k.datum for k in kandidater], [date(2026, 10, 1)])
+        fynd = upptack(kalla(), hamta)
+        self.assertEqual([k.datum for k in fynd.kandidater], [date(2026, 10, 1)])
         self.assertEqual(
-            [(a.kalla, a.filnamn, a.orsak) for a in avvisade],
+            [(a.kalla, a.filnamn, a.orsak) for a in fynd.avvisade],
             [(moten[0], "mötessidan", "anslutning")],
         )
 

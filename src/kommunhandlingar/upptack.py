@@ -13,6 +13,7 @@ kommunfilen ligger i.
 import argparse
 import sys
 from collections import Counter
+from dataclasses import replace
 from datetime import UTC, datetime
 from functools import partial
 from pathlib import Path
@@ -28,92 +29,64 @@ from kommunhandlingar.adaptrar import (
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.klient import Klient
-from kommunhandlingar.kandidat import (
-    Avvisad,
-    Kandidat,
-    lista,
-    ordna,
-    ordna_bakat,
-    skriv,
-)
+from kommunhandlingar.kandidat import Fynd, lista, ordna, ordna_bakat, skriv
 from kommunhandlingar.tidsbudget import Tidsgrans
 
 
-def upptack(
-    kommun: konfiguration.Kommun, klient
-) -> tuple[list[Kandidat], list[Avvisad]]:
-    kandidater: list[Kandidat] = []
-    avvisade: list[Avvisad] = []
-    for kalla in kommun.kallor:
-        html = {adress: sida(klient, adress) for adress in kalla.sidor.values()}
-        nya, bort = sitevision.upptack(kalla, html)
-        kandidater += nya
-        avvisade += bort
-    nya, bort = projekten(kommun, klient, {k.kallnyckel for k in kandidater})
-    meetingsplus_kandidater, meetingsplus_bort = meetingsplus_kallorna(kommun, klient)
+def upptack(kommun: konfiguration.Kommun, klient) -> Fynd:
+    moten = sum((motessidorna(kalla, klient) for kalla in kommun.kallor), Fynd())
+    projekt = projekten(kommun, klient, {k.kallnyckel for k in moten.kandidater})
+    hela_historiken = meetingsplus_kallorna(kommun, klient)
     organordning = [o.id for o in kommun.organ]
     # Meetings Plus har hela historiken levande: nyast först, som arkivet (ADR-0080).
-    return (
-        ordna(kandidater + nya, organordning)
-        + ordna_bakat(meetingsplus_kandidater, organordning),
-        avvisade + bort + meetingsplus_bort,
+    return Fynd(
+        ordna(moten.kandidater + projekt.kandidater, organordning)
+        + ordna_bakat(hela_historiken.kandidater, organordning),
+        moten.avvisade + projekt.avvisade + hela_historiken.avvisade,
     )
 
 
-def meetingsplus_kallorna(
-    kommun: konfiguration.Kommun, klient
-) -> tuple[list[Kandidat], list[Avvisad]]:
-    kandidater: list[Kandidat] = []
-    avvisade: list[Avvisad] = []
-    for kalla in kommun.meetingsplus_kallor:
-        nya, bort = meetingsplus.upptack(kalla, partial(sida, klient))
-        kandidater, avvisade = kandidater + nya, avvisade + bort
-    return kandidater, avvisade
+def motessidorna(kalla: sitevision.Kalla, klient) -> Fynd:
+    html = {adress: sida(klient, adress) for adress in kalla.sidor.values()}
+    return sitevision.upptack(kalla, html)
 
 
-def projekten(
-    kommun: konfiguration.Kommun, klient, moten: set[str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def meetingsplus_kallorna(kommun: konfiguration.Kommun, klient) -> Fynd:
+    hamta = partial(sida, klient)
+    kallorna = kommun.meetingsplus_kallor
+    return sum((meetingsplus.upptack(k, hamta) for k in kallorna), Fynd())
+
+
+def projekten(kommun: konfiguration.Kommun, klient, moten: set[str]) -> Fynd:
     """Projektsidornas filer; en fil som också står på en mötessida är mötets."""
-    kandidater: list[Kandidat] = []
-    avvisade: list[Avvisad] = []
-    for kalla in kommun.kallor:
-        nya, bort = sitevision_projekt.upptack(kalla.projekt, partial(sida, klient))
-        kandidater += [k for k in nya if k.kallnyckel not in moten]
-        avvisade += bort
-    return kandidater, avvisade
+    hamta = partial(sida, klient)
+    listorna = (sitevision_projekt.upptack(k.projekt, hamta) for k in kommun.kallor)
+    fynd = sum(listorna, Fynd())
+    egna = [k for k in fynd.kandidater if k.kallnyckel not in moten]
+    return replace(fynd, kandidater=egna)
 
 
-def upptack_arkiv(
-    kommun: konfiguration.Kommun, klient, start: datetime | None
-) -> tuple[list[Kandidat], list[Avvisad], list[str]]:
+def upptack_arkiv(kommun: konfiguration.Kommun, klient, start: datetime | None) -> Fynd:
     """Arkivet frågas inte efter den mjuka gränsen och avbryts vid den hårda."""
     if datetime.now(UTC) >= tidsbudget.mjuk_grans(start):
-        return [], [], ["väntar på nästa körning; tidsbudgeten är slut"]
+        return Fynd(noteringar=["väntar på nästa körning; tidsbudgeten är slut"])
     if start:
         tidsbudget.starta_hard_grans(start, datetime.now(UTC))
     try:
         return las_arkivet(kommun, klient)
     except Tidsgrans:
-        return [], [], ["avbrutet vid tidsbudgetens hårda gräns"]
+        return Fynd(noteringar=["avbrutet vid tidsbudgetens hårda gräns"])
     finally:
         tidsbudget.stoppa()
 
 
-def las_arkivet(
-    kommun: konfiguration.Kommun, klient
-) -> tuple[list[Kandidat], list[Avvisad], list[str]]:
-    kandidater: list[Kandidat] = []
-    avvisade: list[Avvisad] = []
-    noteringar: list[str] = []
+def las_arkivet(kommun: konfiguration.Kommun, klient) -> Fynd:
     lasningar = [(sitevision_arkiv.upptack, k) for k in kommun.kallor if k.wayback] + [
         (episerver_arkiv.upptack, k) for k in kommun.arkivkallor
     ]
-    for upptack_kallan, kalla in lasningar:
-        nya, bort, noterat = upptack_kallan(kalla, klient)
-        kandidater, avvisade = kandidater + nya, avvisade + bort
-        noteringar += noterat
-    return ordna_bakat(kandidater, [o.id for o in kommun.organ]), avvisade, noteringar
+    fynd = sum((upptack_kallan(k, klient) for upptack_kallan, k in lasningar), Fynd())
+    organordning = [o.id for o in kommun.organ]
+    return replace(fynd, kandidater=ordna_bakat(fynd.kandidater, organordning))
 
 
 def sida(klient, adress: str) -> str:
@@ -123,17 +96,16 @@ def sida(klient, adress: str) -> str:
         raise Hamtfel(fel.orsak, adress) from fel
 
 
-def sammanfattning(
-    kommun: konfiguration.Kommun,
-    kandidater: list[Kandidat],
-    avvisade: list[Avvisad],
-    noteringar: list[str],
-) -> str:
-    antal = Counter(k.organ for k in kandidater)
-    rader = [f"{len(kandidater)} kandidater, {len(avvisade)} filer utan kandidat"]
+def sammanfattning(kommun: konfiguration.Kommun, fynd: Fynd) -> str:
+    antal = Counter(k.organ for k in fynd.kandidater)
+    rader = [
+        f"{len(fynd.kandidater)} kandidater, {len(fynd.avvisade)} filer utan kandidat"
+    ]
     rader += [f"  {o.id}: {antal[o.id]}" for o in kommun.organ]
-    rader += [f"Ingen kandidat: {a.filnamn} ({a.orsak}) på {a.kalla}" for a in avvisade]
-    rader += [f"Arkivet: {notering}" for notering in noteringar]
+    rader += [
+        f"Ingen kandidat: {a.filnamn} ({a.orsak}) på {a.kalla}" for a in fynd.avvisade
+    ]
+    rader += [f"Arkivet: {notering}" for notering in fynd.noteringar]
     return "\n".join(rader)
 
 
@@ -149,13 +121,12 @@ def main(arg: argparse.Namespace) -> None:
     kommun = konfiguration.las(arg.kommunfil)
     klient = Klient(installningar.las(rot / "hamtning.toml"))
     if arg.arkiv:
-        kandidater, avvisade, noteringar = upptack_arkiv(kommun, klient, arg.start)
+        fynd = upptack_arkiv(kommun, klient, arg.start)
     else:
-        kandidater, avvisade = upptack(kommun, klient)
-        noteringar = []
+        fynd = upptack(kommun, klient)
     katalog.mkdir(parents=True, exist_ok=True)
-    skriv(kandidater, lista(katalog, kommun.id, arg.arkiv))
-    print(sammanfattning(kommun, kandidater, avvisade, noteringar))
+    skriv(fynd.kandidater, lista(katalog, kommun.id, arg.arkiv))
+    print(sammanfattning(kommun, fynd))
 
 
 def argument() -> argparse.Namespace:
