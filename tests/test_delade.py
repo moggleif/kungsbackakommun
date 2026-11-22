@@ -1,4 +1,5 @@
-"""Krav: K5, ADR-0028 och ADR-0029. Kod: src/kommunhandlingar/konvertering/delade.py.
+"""Krav: K5, ADR-0028 och ADR-0029. Kod: src/kommunhandlingar/konvertering/delade.py
+och delade_rader.py.
 
 En tabell med linjer där en cell rymmer mer än ett tal delas efter de
 lodräta linjer som finns i andra rader, efter talen i linje och efter

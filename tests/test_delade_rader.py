@@ -1,5 +1,5 @@
 """Krav: K5, ADR-0028 och ADR-0029. Kod:
-src/kommunhandlingar/konvertering/delade.py.
+src/kommunhandlingar/konvertering/delade_rader.py.
 
 Hur en rad i en tabell med linjer delas efter rutornas textrader
 (docs/03-ARKITEKTUR.md#tabeller-med-linjer-och-flera-tal-i-en-cell).
@@ -7,7 +7,7 @@ Hur en rad i en tabell med linjer delas efter rutornas textrader
 
 import unittest
 
-from kommunhandlingar.konvertering.delade import dela
+from kommunhandlingar.konvertering.delade_rader import dela
 from kommunhandlingar.konvertering.sammanslagna import Textrad
 
 
