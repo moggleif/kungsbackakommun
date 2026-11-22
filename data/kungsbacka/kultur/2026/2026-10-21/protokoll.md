@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.b2f02461a162fecb7a3d43/179267643337
 sha256: 006cc0f6b04604c97141ae18f0cf5fa54682053a88c7a45e1aa51bf94a9f0a62
 bytes: 5006487
 sidor: 24
-hamtad: 2026-11-18T03:04:40+00:00
-konverterad: 2026-11-18T03:06:03+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:42:50+00:00
+konverterad: 2026-11-22T11:43:58+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 figurer: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 tolkade: []
@@ -120,6 +120,36 @@ Lena Lundin, Kungsbacka Fotoklubb
 Paragrafer §§ 114-131
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+§ 114 Dnr KFT-2026-00236
+§ 115 Dnr KFT-2025-00247
+Uppdrag till förvaltning: tydligare process för arbetet med konst i det
+§ 116 Dnr KFT-2026-00240
+§ 117 Dnr KFT-2026-00211
+Information till nämnd: uppdrag ridanläggningarl .... 7
+§ 118 Dnr KFT-2026-00234
+Lokalbehovsplan 2028-2032, utblicksår 2033-2037 s .... 8
+§ 119 Dnr KFT-2026-00235
+§ 120 Dnr KFT-2026-00233
+Delårsrapportering God och nära Vård .... 11
+§ 121 Dnr KFT-2026-00210
+§ 122 Dnr KFT-2026-00253
+§ 123 Dnr KFT-2026-00225
+Samrådsutskick: Planprogram för Åsaberg i ÅSA s .... 15
+§ 124 Dnr KFT-2025-00220
+Initiativ från Sverigedemokraterna permanent utomhusscen i Badhusparken
+§ 125 Dnr KFT-2026-00249
+Initiativ från Sverigedemokraterna: Bevara Naturum Fjärås Bräcka i
+§ 126 Dnr KFT-2026-00228
+Initiativ från Socialdemokraterna - Synliggör lokalhistorien .... 19
+§ 127 Dnr KFT-2026-00227
+Initiativ från Socialdemokraterna - Lyft fram Kungsbackas mångsekellånga
+Det här dokumentet är digitalt signerat
+Transaktionsidentitet: 613CE92CA9A619556FD3938E92BD87D5BE08DFD040
+Transaktionsidentitet: 41B72C95CE7D9A8FF959701C44BA59580481E70A0D
 
 <!-- sida 3 -->
 

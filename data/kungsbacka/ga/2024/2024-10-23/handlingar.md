@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.90ecece1927166f56ae1d4b/17291744095
 sha256: 0b29c5bfa761ea449ef94fb66faff815d4d4f2f6faca8e54965c6332319cd6ba
 bytes: 24790514
 sidor: 226
-hamtad: 2026-11-17T22:37:37+00:00
-konverterad: 2026-11-17T22:38:46+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-22T08:30:23+00:00
+konverterad: 2026-11-22T08:31:14+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]

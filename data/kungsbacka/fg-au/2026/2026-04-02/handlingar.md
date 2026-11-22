@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1b24984919d24cef920956fb/1774935112
 sha256: 406aae961040ea9389f61a144b4bc1b520f1b9dffed889cd138b124827084cc4
 bytes: 18008096
 sidor: 125
-hamtad: 2026-11-17T23:52:48+00:00
-konverterad: 2026-11-17T23:54:16+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T09:27:59+00:00
+konverterad: 2026-11-22T09:29:14+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
 figurer: [7, 11, 32, 35, 36, 37, 40, 41, 42, 44, 46, 47, 49, 51, 52, 54, 56, 58, 60, 61, 63, 65, 125]
 tolkade: []
 granskad: null

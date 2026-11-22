@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.69ba44111969f9e42704c14f/1746688230
 sha256: 253e5793805bac8278af1a01cb8337e50c2308b1e19cac4ebf170fa2307a5ca6
 bytes: 16741418
 sidor: 52
-hamtad: 2026-11-18T09:26:43+00:00
-konverterad: 2026-11-18T09:30:41+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:52:52+00:00
+konverterad: 2026-11-22T11:55:38+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
-figurer: [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
+kvalitet_per_sida: [ocr, ocr, ocr, ointressant, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+tal_obekraftade: [1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
+figurer: [1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
 tolkade: []
 granskad: null
 ---

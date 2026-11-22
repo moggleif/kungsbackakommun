@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.3c017bc1995bb3caff2e2e8/17582865112
 sha256: 5557c83de738ce9a398c3cbb5e2e5637e67100438c2217126edb9ff8a08a4b5b
 bytes: 1982637
 sidor: 17
-hamtad: 2026-11-18T03:01:46+00:00
-konverterad: 2026-11-18T03:02:22+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:40:45+00:00
+konverterad: 2026-11-22T11:41:17+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 figurer: []
 tolkade: []
@@ -89,6 +89,32 @@ Daniel Svensson, Särökometerna
 Paragrafer §§ 79-91
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+Dnr KFT-2025-00178
+Information till nämnd: nya socialtjänstlaägen .... 3
+Dnr KFT-2025-00161
+Begäran om yttrande - Betänkandet "Ett nationellt förbud mot tiggeri" (KS-
+Dnr KFT-2025-00190
+Justering av avgifter på Kungsbacka teater ...........sssssessseseresersrseersonersnnrrnnen (0)
+Dnr KFT-2025-00179
+Dnr KFT-2025-00193
+SAMRÅD Detaljplan för seniorbostäder inom Skörvalla 1:116 i Särö,
+Kungsbacka kommun, sista svarsdag 30 september .... 8
+Dnr KFT-2025-00194
+SAMRÅD Detaljplan för bostäder inom Kungsbacka 6:8 i Kungsbacka
+Dnr KFT-2025-00182
+Dnr KFT-2025-00181
+Information till nämnd: diskussion nämndbudget 2026 .... 11
+Dnr KFT-2025-00184
+Dnr KFT-2025-00185
+Redovisning av inkomna skrivelser september 2025 =m.ssmmmsssssssseressssseresrsns 14
+Dnr KFT-2025-00187
+Dnr KFT-2025-00197
+Initiativ från Socialdemokraterna: Fornfyndsskydd en del av daglig
+Det här dokumentet är digitalt signerat
 
 <!-- sida 3 -->
 

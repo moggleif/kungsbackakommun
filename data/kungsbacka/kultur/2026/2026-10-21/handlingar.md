@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.664df97b1a13049acff4b085/1792051982
 sha256: 79bf03275baacf597e3bfc89d8844e5cfa88e5b361a568fe5577960385e814c8
 bytes: 89218926
 sidor: 419
-hamtad: 2026-11-18T09:45:59+00:00
-konverterad: 2026-11-18T09:50:04+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T12:05:36+00:00
+konverterad: 2026-11-22T12:09:37+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ej-konverterad, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [159, 257, 261, 264, 270, 271, 272, 280, 311, 350, 352, 353, 354, 370, 403, 417]
-figurer: [58, 59, 60, 61, 62, 63, 64, 65, 75, 79, 83, 88, 93, 98, 101, 105, 108, 112, 117, 118, 119, 120, 121, 122, 123, 124, 125, 127, 129, 130, 131, 132, 133, 136, 137, 138, 141, 144, 145, 146, 147, 148, 149, 164, 175, 180, 214, 216, 218, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 236, 240, 244, 246, 247, 248, 249, 251, 252, 254, 255, 258, 259, 262, 266, 268, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 286, 289, 290, 291, 294, 298, 299, 300, 302, 303, 304, 306, 307, 308, 309, 314, 321, 323, 325, 326, 328, 329, 332, 333, 338, 342, 344, 346, 347, 350, 351, 352, 353, 354, 355, 356, 357, 361, 362, 365, 368, 369, 370, 371, 372, 373, 374, 375, 377, 378, 380, 382, 386, 387, 388, 389, 390, 392, 393, 394, 395]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, bild, ok, ok, bild, ok, ok, ok, ok, ok, bild, bild, bild, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [159, 257, 261, 264, 270, 271, 272, 350, 352, 353, 354, 370, 417]
+figurer: [58, 59, 60, 61, 62, 63, 64, 65, 75, 79, 83, 88, 93, 98, 101, 105, 108, 112, 117, 118, 119, 120, 121, 122, 123, 124, 125, 127, 129, 130, 131, 132, 133, 136, 137, 138, 141, 144, 145, 146, 147, 148, 149, 164, 175, 180, 214, 216, 218, 220, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 236, 240, 244, 246, 247, 248, 249, 251, 252, 254, 255, 257, 258, 259, 261, 262, 264, 266, 268, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 281, 282, 286, 289, 290, 291, 294, 298, 299, 300, 302, 303, 304, 306, 307, 308, 309, 314, 321, 323, 325, 326, 328, 329, 332, 333, 338, 342, 344, 346, 347, 350, 351, 352, 353, 354, 355, 356, 357, 361, 362, 365, 368, 369, 370, 371, 372, 373, 374, 375, 377, 378, 380, 382, 386, 387, 388, 389, 390, 392, 393, 394, 395]
 tolkade: []
 granskad: null
 ---
@@ -13694,9 +13694,767 @@ Semrén & Månsson/Mareld
 
 <!-- sida 352 -->
 
+UTVÄRDERINGSMATRIS - PARALLELLT UPPDRAG SANKT GERTUD OCH BADHUSPARKEN
+
+White
+
+Sjögren / BOGL
+
+Okidoki / Sydväst
+
+Semrén & Månsson / Mareld
+
+HELHET
+
+— LL stTrRÅK
+— 3 SEPARAT CYKELSTRÅK
+
+soo0eoorss0r rr rr rr rrrrrrr SEKUNDÄRT STRÅK
+LANDMÄRKE
+REGNTRÄDGÅRD
+VÄRDEFULLA TRÄD
+GRÖNA YTOR
+VATTEN, FONTÄN MM
+
+KUNGSMÄSSAN &
+FYREN
+
+RESE-
+CENTRUM
+
+INNERSTADEN
+
+BOSTÄDER: 3582 + 580 (NORR) = 4 162 m?
+KONTOR: 2595 m?
+
+LOKALER: 837+619 = 1456 m?
+
+TOTALT: 7634 +580 = 8214 m?
+
+KUNGSMÄSSAN &
+FYREN
+
+RESE-
+CENTRUM
+
+INNERSTADEN
+
+BOSTÄDER: 5 600 m?
+KONTOR: 1 600 m?
+LOKALER: 2 300 m?
+TOTALT: 9 300 m?
+
+KUNGSMÄSSAN &
+FYREN
+
+RESE-
+CENTRUM
+
+INNERSTADEN
+
+BOSTÄDER: 5 768 + 410 (NORR) = 6 178 m?
+KONTOR: 2 258 + 210 (NORR) = 2 468 m?
+LOKALER: 1 276 m?
+
+TOTALT: 9 307 + 465 = 9 922 m?
+
+KUNGSMÄSSAN &
+FYREN
+
+RESE-
+CENTRUM
+
+INNERSTADEN
+
+BOSTÄDER: 5 050 m?
+KONTOR: 3 600 m?
+LOKALER: 1400 m?
+TOTALT: 10 050 m?
+
+Integrera Badhusparken, Inner-
+staden och Sankt Gertrud med
+varandra
+
+\+ Aktivitetsområde mot innerstaden
+\- Barriär i form av låga murar och sammanhängande
+regnträdgård mellan park och Sankt Gertrud
+
++/- Integrerar med mycket träd på båda sidor Storgatan,
+skuggigt
+
+\- Markbeläggning i form av”smulor” är fint men det bör
+vara struktur, stråk och platser i sig som håller ihop
+staden
+
+\+ Öppenhet mellan park och Sankt Gertrud och väl
+avgränsad shared space knyter samman Badhusparken,
+innerstaden och Sankt Gertrud
+
+\+ Genom att dra ut stråket genom allén i parken skapas
+Stjärnplatsen där stråk och siktlinjer möts från Badhus-
+parken, innerstaden och Sankt Gertrud
+
+\+ Aktivitetsområde mot innerstaden
+
+\+ Flexibla torgytor mot innerstaden
+
+\- Badhusparken binds ihop med Sankt Gertrud med
+öppen torgyta och modernt formspråk, med minskad
+grön yta i Badhusparken och ibland knepiga möten med
+kulturmiljö som resultat
+
+Vistas och bo
+
+« Boendetäthet - ger liv till om-
+rådet
+
+« Lekvänligt
+
+« Boendemiljö
+
++/- Hälften av bruttoarean är bostäder
+
+\+ Närlek vid Kyrkplatsen
+
+\+ Bostäder också mot huvudstråket
+
+\- Bostadsgård på markplan i minsta laget
+
+\+ 60 procent av bruttoarean är bostäder
+
+\+ Tillbyggnad av hotellet tar bort baksidemiljö
+\- Närlek har inte redovisats men kan ordnas
+
+\- Upplevelsefattiga stråk leder till otrygghet
+
+\+ Över 60 procent av bruttoarean är bostäder
+\+ Grön, trygg bostadsgård med närlek
+
+\+ Bostäder spridda i kvarteret
+
+\+ Tydligt avgränsade offentliga och privata rum
+
++/- Hälften av bruttoarean är bostäder
+
+\- Inga bostäder i den massiva byggnaden
+
+\+ Lekvänliga ytor i kvarteret
+
+\+ Vatten integrerat för lek mm
+
++/- Behöver markera bostadsgården bättre, bra från ån
+
+Trafiksäkerhet
+
+» Infart från Vallgatan
+e Bilfritt huvudstråket
+e Bilfritt mot ån
+
++/- Ingen tillfart från Vallgatan
+\+ Bilfritt mellan husen och mot ån
+\- Huvudstråket korsas av trafik till BRF-garaget
+
+\+ Infart från Vallgatan ligger mitt för Västergatan
+
++/- Bilfritt huvudstråk och kvarter, förutsätter att ingen
+markparkering sker i kvarteret
+
+\+ Bilfritt längs ån
+
+\+ Möjlig infart från Vallgatan ligger mitt för Västergatan
+
++/- Bilfritt huvudstråk inte redovisat men möjligt om om-
+rådet trafikmatas också från Vallgatan
+
+\+ Bilfritt längs ån
+
+\+ Bilfritt huvudstråk
+
+\+ Bilfritt längs ån
+
+\- Infart från Vallgatan ligger snett förskjuten från Västerga-
+tan och inte mitt för eller mer förskjutet
+
+Gång- och cykelvägnät
+« Orienterbarhet
+» Cykelstråk till resecentrum
+
+\+ Separat cykelstråk utmed Vallgatan/Storgatan
+\+ Storgatans korsning innehåller hinder/riktningsvisare i
+form av låga murar och ibland träd
+
+\+ Överskådligt kvarter
+\- Separat cykelstråklängs med Vallgatan/Storgatan saknas
+
+\+ Överskådligt och lätt att hitta mötesplatser
+\+ Separat cykelstråk längs med Vallgatan/Storgatan
+
+\+ Stadsrummet är strukturerat, det är lätt att röra sig till
+centrum/Fyren/innerstaden
+\- Separat cykelstråk längs med Vallgatan/Storgatan saknas
+
+Huvudstråket
+
+» Upplevelsevärden
+« Orienterbarhet
+
+e Kulturmiljö
+
+\+ Huvudstråket har en tydlig riktning, särskilt från söder
+
+\+ God sikt från norr till söder på huvudstråket
+
+\+ Kyrkplats med pocketpark och intim rehabträdgård
+
+\- Huvudstråket är i södra delen mer torg än stråk - rör sig
+antingen på västra eller östra sidan
+
+\- Inte utnyttjat möjlighet att ha kyrkan som fondmotiv
+
+\- Huvudstråket är hackigt och inte självklart att hitta till
+
+\- Utformning av stråket längs Vallgatan är inte redovisat
+
+\- Inte utnyttjat möjlighet att ha kyrkan som fondmotiv
+
++/- Kyrkan ligger i parkmiljö men är avskuren av bilväg,
+fint att höja upp platsen närmast kyrkan
+
+\+ Mot”kulturbron” har parkmiljö fått dominera
+
+\+ Huvudstråk är tydligt och lätt att hitta till
+
+\+ Huvudstråket har inbyggd variation med organisk karak-
+tär, små platsbildningar ger upplevelsevärden
+
+\+ Kyrkan blir fondmotiv på huvudstråket söderifrån
+
++/- Kyrkan har fått upphöjd plats, men döljer kyrkans
+sockel
+
+\- Delvis likt stråket i Valand, lite väl smalt för grönska
+
++/- Huvudstråket är delvis upplevelserikt
+
+\+ Kyrkan blir fondmotiv på huvudstråket söderifrån
+
+\- Huvudstråkets är delvis otydligt då det går över torg-
+miljö vid hotellets baksida
+
+Övriga nya stråk
+
+\+ Gent stråk mellan ån och resecentrum inom kvarteret
+\- Otrygg gränd vid den upphöjda bostadsgården
+
+\- Stråk i förlängningen av Västergatan, konkurrerar med
+stråket längs ån och huvudstråket
+\- Rak fyrkantig bilväg runt kyrkan känns omotiverad
+
++/- Alternativt stråk mot från Västergatan mot huvudstrå-
+ket, rätt utformat blir det rätt dignitet
+
++/- Alternativt stråk mot från Västergatan mot huvudstrå-
+ket, rätt utformat blir det rätt dignitet
+
 <!-- sida 353 -->
 
+BILAGA TILL UTVÄRDERING AV PARALLELLT UPPDRAG SANKT GERTUD OCH BADHUSPARKEN
+
+White
+
+Sjögren / BOGL
+
+Okidoki / Sydväst
+
+Semrén & Månsson / Mareld
+
+BADHUSPARKEN
+
+HE PAVILJONG
+BULLERSKYDD
+AKTIVITET
+REGNTRÄDGÅRD
+VÄRDEFULLA TRÄD
+GRÖNA YTOR
+VATTEN, FONTÄN MM
+
+4
+hy |
+
+Struktur på parken
+
+« Sammanhängande grönytor
+
+« Attraktionskraft
+
+« Placering av paviljong
+
+» Bullerskyddets möjligheter och
+sträckning
+
+\+ Stor öppen gräsyta med flexibel användning
+
+\+ Entréplats i sydöst omhändertagen, nytt arboretum mm
+
+\+ Nya föreslagna lekområden söder om parken har attrak-
+tionskraft för vissa målgrupper
+
+\+ Placering av paviljong nära huvudstråk genom parken
+
+Utnyttjat bullerskyddet till lek, aktivitet och avkoppling
+
+Lågt bullerskydd mot hotellet skapar barriär
+
+\+
+
+\- Grönytorna är fragmenterade
+
+\+ Plaskdamm och ministaden
+
+\+ Placering av paviljong nära huvudstråk genom parken
+\- Bullerskyddet skärmar bara del av bullerkällan
+
+\+ Tydlig och enkel disponering
+
+\+ Stora sammanhängande gräsytor
+
+\+ Blomstergatan tar upp en Kungsbackatradition
+
+\+ Nya föreslagna lekområden söder om parken har attrak-
+tionskraft för vissa målgrupper
+
++/- Paviljongens placering fungerar inte i dagsläget, annan
+placering möjlig
+
+\+ Utnyttjat bullerskyddet till blomstergata för avkoppling
+
+Parken upplevs mer hårdgjord och mindre än innan
+
+\- Bryggor/trädäck mellan innerstad och park
+
+\- Stora samlade gräsytor saknas
+
+\+ Paletten vid fontänen fungerar som en samlingsplats
+
+\+ Parkpaviljong integrerad med bullerskyddet för att få
+uteservering vänd åt sydväst samt ingen baksida
+
+\+ Bullerplanket som aktivitetsvägg för lek, klättring, trä-
+
+ning eller utställningar
+
+Tema vatten
+
+\+
+
+Vattenlek i söder och vid aktivitetsvägg
+Befintlig fontän är bevarad med central placering
+
+\+
+
+\+
+
+Friluftsbad/plaskdamm
+
+\+ Vattenlek i söder
+\+ Befintlig fontän är bevarad med central placering
+
+\+ Vattenparterren gör historien synlig
+\+ Befintlig fontän är bevarad med central placering
+
+Aktiviteter i parken
+
+» Aktiviter för små och stora
+
+» Sittplatser
+
+» Scen
+
+« Blommor och lummig grönska
+
+Mångfald av aktiviteter som kan attrahera många
+Småbarnslek centralt i parken nära paviljong
+Aktiviteter längs bullerskärm samt i söder för äldre barn
+Perennplanteringar
+
+\- Scen saknas
+
+\+
+\+
+\+
+\+
+
+Mångfald av aktiviteter som kan attrahera många
+Småbarnslek centralt i parken nära paviljong
+
+Lek för äldre barn i sydöst
+
+Möjlighet till isbana
+
+\- Scen saknas
+
+\+ + ++
+
+\+ Mångfald av aktiviteter som kan attrahera många
+
++/- Småbarnslek endast i södra delen, kan kompletteras
+\+ Lek för äldre barn i söder
+
+\+ Blomstergatan fungerar som attraktion för många
+
+\- Scen saknas
+
+\+ Mångfald av aktiviteter som kan attrahera många
+
+\+ Småbarnslek centralt i parken nära paviljong
+
+\+ Aktiviteter längs bullerskärm samt i sydöst för lite äldre
+barn
+
+\+ Möjlighet till isbana
+
++/- Paletten kan i viss mån fungera som en scen
+
+Hänsyn till kulturhistoria
+e Kulturhistoriska element
+« Platsanknytning
+
+\+ Gång genom allén istället för vid sidan om
+
+\+ Fontänen är en central del av parken
+
++/- Formspråket är modernt, troligen vinner Badhusparken
+mer på ett klassiskt formspråk i själva parken
+
+\- Knyter inte an till parkens kulturhistoriska element som
+allé och fontän
+
+\+ Kulturmiljön är väl hanterad både i funktioner och i sin
+rena enkla struktur
+
+\+ Gång genom allén som har en tydlig funktion i struktu-
+ren
+
+\+ Bevarat fontänen och gett den en bra inramning i klas-
+sisk park
+
+\+ Fontänen har central placering
+
+\- Mycket modernt formspråk där fontänen blir märkligt
+inslag på den moderna paletten mm
+
+\- De gröna ytoran i parken har minskats för att nå ett
+urbant uttryck
+
+\+ Gång genom allén istället för vid sidan om
+
+Byggkostnad & drift
+
+\+ Stora gräsytor
+\- Grön växtvägg
+
++/- Plaskdamm i rimlig storlek
+
+\+ Stora gräsytor
+
+\- Vattenparterren blir skötselkrävande nära lövfällande
+träd
+
 <!-- sida 354 -->
+
+UTVÄRDERINGSMATRIS - PARALLELLT UPPDRAG SANKT GERTUD OCH BADHUSPARKEN
+
+Sjögren / BOGL
+
+Okidoki / Sydväst
+
+Semrén & Månsson / Mareld
+
+SANKT GERTRUD
+\- EN GRÖN OCH BLÅ PUSSELBIT
+
+OFFENTLIGA PLATSER
+HALVOFFENTLIGA PLATSER
+TAKTERASSER
+
+PRIVATA PLATSER
+SIKTLINJER
+REGNTRÄDGÅRD
+VÄRDEFULLA TRÄD
+GRÖNA YTOR
+
+VATTEN, FONTÄN MM
+
+Strukturen i St Gertrud
+
+« Potential för parkkaraktär
+« Anpassning till platsen
+
+« Kommersiell potenial
+
+\+ Placerat höga huset väl, syns mindre från riksintresset
+och mer från resecentrum
+
+\+ De mindre volymerna stämmer väl med befintliga nät-
+tare volymer
+
+\- Struktur med många små byggnader ger många små
+platser och därmed fragmenterad markyta/grönska
+
+\- Gavlar mot Vallgatan ger inte ett bra handelsstråk
+
+\+ I Sankt Gertrud medger strukturen ganska stora sam-
+manhängande grönytor och siktlinjer mot grönska
+
+\- Kraftiga volymer i plan ett stämmer inte så bra med
+befintliga nättare volymer
+
+\- Bostäderna mot hotellet ligger för nära hotellrummen
+
+\- För många stråk med handel
+
+\- Alternativt stråk dränerar Vallgatans kommersiella stråk
+
+\+ Tagit hänsyn till båda kvarterens riktningar i strukturen
+
++/- Relativt grön stadsdel, gröna öarna behöver bli större
+
++/- Likt innerstadens struktur med kvarter, kräver fina men
+dyra indrag och vinklar för att inte bli för likt
+
++/- Strukturen ger en grön bostadsgård på bekostnad av
+mindre sammanhängande grönska
+
+\+ Vallgatan fungerar som handelsstråk
+
+\+ Stor samlad yta centralt i kvarteret som kan bli grönare
+än den redovisats.
+
+\+ Tagit hänsyn till båda kvarterens riktningar i strukturen
+
+\- Massiv volym möter innerstaden
+
+\+ Vallgatan fungerar som handelsstråk
+
+Grön/blå platser och gaturum
+» Siktlinjer mot grönska/å
+« Kopplingar mot ån
+
+\+ Siktlinjer mot grönska från många håll
+\+ Regnträdgårdar längs Vallgatan
+
+\+ Gröna tak och terrasser
+
+\+ Vatteninslag på stråket
+
+\+ Siktlinje mot ån via gränden
+
+\+ Dagvattenhantring väl omhändertagen
+
+\+ Siktlinjer mot grönska från många håll
+
+\+ Många träd
+
+\+ Gröna upphöjda gårdar
+
+\- Få genomsläppliga material
+
+\- Upphöjda bostadsgårdar blockerar möjliga siktlinjer och
+kontakt med ån, kan inte gå upp till/se in på gårdarna
+
+\- Blå inslag saknas
+
+\+ Siktlinjer mot grönska från många håll
+
+\+ Generösa regnträdgårdar längs Vallgatan, lummigt
+intryck
+
+\+ Gröna tak och terrasser
+
+\+ Platsen utanför Stadshuset med spegeldamm
+
+\+ Siktlinjer mot grönska från många håll
+\+ Regnträdgårdar längs Vallgatan
+
+\+ Vattendrag i Kyrkparken
+
+\+ Gröna tak och terrasser
+
+\+ Siktlinje mot ån via bostadsgård
+
+\- Torgkaraktär där grönt är möjligt
+
+Biologisk mångfald
+
+\+ Regnträdgårdar skapar förutsättningar för insekter
+\+ Nya planteringar och träd
+\- Huset i norr innebär troligen att stora träd tas ner
+
++/- Nya planteringar och träd är det enda som bidrar till
+biologisk mångfald
+
+\+ Rejäla regnträdgårdar skapar förutsättningar för insek-
+ter
+\+ Nya planteringar och träd
+
+\+ Regnträdgårdar skapar förutsättningar för insekter
+\+ Nya planteringar och träd
+
+TRAFIK SANKT I GERTRUD
+
+Parkering och angöring
+
+» Parkering och angöring/trans-
+porter till stadshuset
+
+« Parkering Vallgatan
+
+« Angöring/transporter hotellet
+
+« Angöring bostäder/kontor och
+BRF
+
++20 p utanför stadshuset, angöring ok
+
+\+ 10 platser utmed båda sidor Vallgatan
+
+\+ Angöring till handel via Vallgatan eller huvudstråket
+
++/- 6 korttidsparkeringar vid Hotellet, lite långt till entrén
+
++/- Angöring till nya bostäder/kontor och BRF kan lösas via
+gångvägar, till BRF behövs bredare gångväg
+
+\- Del av angöring till nya bostäder/kontor via den smala
+gränden
+
+\- Markparkeringar i Sankt Gertrud har inte redovisats inkl
+parkeringar till BRF som förutsatts vara kvar
+
+\+ Angöring stadshuset
+
+\- Parkeringar längs Vallgatan har inte redovisats
+
+\+ Hotellets angöring/parkering
+
+\- Tagit bort parkering till BRF Å-rummet
+
+\- Svårt att angöra till nya bostäder/kontor samt BRF
+
++/- Angöring stadshuset behöver bli något större för att
+transporter ska kunna vända, möjligt att ordna
+
+\- 17 platser utanför stadshuset, platser kommer att för-
+svinna när vändplats vid stadshusets entré görs större
+
++/- 9 platser utmed södra sidan Vallgatan
+
+\+ 3 platser vid hotellet nära entrén
+
++/- Angöring till nya bostäder/kontor och BRF kan lösas
+delvis via gång- och cykelvägar
+
+\+ 32 platser utanför stadshuset
+
+\+ 11 platser utmed båda sidor Vallgatan
+
+\+ Angöring till handel via Vallgatan
+
+\+ ”Rundsväng” för buss kan fungera som korttidparkering
+till hotellet
+
++/- Angöring till nya bostäder/kontor och BRF kan lösas via
+gångvägar, till BRF behövs bredare gångväg
+
+Buller
+
+\+ Inga bostäder placerade närmast Vallgatan
+\+ Höga huset kan få tyst sida
+
+\+ Många bostäder en bit från Vallgatan
+\- Höga huset kan få problem då tyst sida saknas
+
++/- Bostäder längs med hela Vallgatan i våning 2 och
+uppåt, kan ordna tyst sida, men hörn svåra
+\- Höga huset kan få problem då tyst sida saknas
+
+\+ Bostäder längs med hela Vallgatan i våning 2 och uppåt,
+kan ordna tyst sida
+\+ Höga huset kan få tyst sida
+
+STADSBILD I SANKT GERTRUD
+
+Stadsbild i Sankt Gertrud
+
+» Mänsklig skala/småstad
+
+» Relation till kulturmiljöer och
+befintlig bebyggelse
+
+» Höga husets silhuett
+
+\+ Lägre mänsklig skala mot innerstaden i varierande höjd
+
+\+ Trappat ner det höga husen för mänskligare skala
+
+\+ Tydligt att Sankt Gertrud är något annat än innerstaden
+
+\+ Det höga huset har slank silhuett
+
+\- Norra huset är högt och placerat nära ån i konflikt med
+bevarandevärda träd
+
+\- Det höga huset har inte trappats ner
+
+\+ Hotellet fortsatt är ett av de högsta husen i området
+
++/- Höghuset är varken slankt eller tjockt
+
++/- Frånsett höghuset är byggnaderna fyra våningar, varia-
+tion behövs för att ge liv och mänsklig skala
+
+\+
+
+Skala anpassad till kulturmiljöer och människa
+Kvarteret få en annan karaktär än innerstadens kvarter
+tack vare många förskjutningar i höjd- och sidled, ger
+spännande rum med små medel
+
+\+ Vridningen på höghuset tar ner upplevelsen av höjd
+Höghuset är lite stabbigt
+
+\+
+
+\+ Kontorsbyggnaden känns stadsmässig
+
+\+ Trappat ner kontors/handelshuset mot innerstaden
+med terrass
+
+\+ Det höga huset har slank silhuett
+
+\+ Det höga huset har trappats ner mot innerstaden där
+det behövs som mest i Västergatans siktlinje
+
+\- Kontors/handelshuset, kraftig volym nära innerstaden
+
+GENOMFÖRANDE
+
+Byggkostnad, drift & genomför-
+ande
+
+\- Stor tillbyggnad på hotellet
+\- Stor volym bostäder i norr
+
+\- Föreslår garage under mark tillsammans med BRF Å-
+rummet - inte realistiskt
+\- Mindre mängd kontor än handel, för stor yta handel
+
+Kvarterets vinklar och vrår innebär en stor byggkostnad
+\- Den upphöjda platsen runt kyrkan kallad ”brickan”
+
+\+ Enkla byggnadsvolymer
+\- BRF Å-rummets parkering har flyttats delats upp på två
+ställen, ett nära ena huset och ett nära andra huset
 
 <!-- sida 355 -->
 

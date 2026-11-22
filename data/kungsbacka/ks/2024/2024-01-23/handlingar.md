@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.1abb884718c8ab9a9f73e7b8/1705474508
 sha256: 9e2d45b2086c80a1c8fbcdc143dd95f235a952a247f40bcbcd3e0244d0b676b6
 bytes: 163597772
 sidor: 589
-hamtad: 2026-11-18T11:33:25+00:00
-konverterad: 2026-11-18T11:43:38+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T12:56:01+00:00
+konverterad: 2026-11-22T13:04:03+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [111, 115, 116, 118, 119, 123, 124, 125, 126, 127, 128, 129, 130, 134, 135, 136, 137, 138, 139, 140, 141, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 304, 306, 336, 337, 340, 341, 342, 343, 344, 454, 527, 537, 538, 545, 560, 570, 571, 589]
-figurer: [21, 30, 31, 35, 36, 42, 115, 116, 123, 124, 125, 126, 127, 128, 129, 130, 134, 135, 136, 137, 138, 139, 140, 141, 181, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 232, 236, 249, 260, 262, 263, 264, 265, 274, 275, 279, 284, 287, 320, 360, 380, 435, 437, 439, 451, 518, 527, 537, 545, 555, 560]
+kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, bild, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [111, 115, 116, 118, 119, 123, 124, 125, 126, 127, 128, 129, 130, 134, 135, 136, 137, 138, 139, 140, 141, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 304, 306, 336, 337, 340, 341, 342, 343, 344, 454, 527, 537, 538, 545, 560, 570, 571, 589]
+figurer: [21, 30, 31, 35, 36, 42, 115, 116, 123, 124, 125, 126, 127, 128, 129, 130, 134, 135, 136, 137, 138, 139, 140, 141, 158, 159, 160, 161, 162, 175, 176, 177, 178, 179, 180, 181, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 232, 236, 244, 249, 252, 254, 257, 261, 262, 263, 274, 275, 279, 284, 287, 304, 306, 320, 344, 360, 380, 435, 437, 439, 451, 518, 527, 537, 545, 555, 560, 571, 589]
 tolkade: []
 granskad: null
 ---
@@ -6590,6 +6590,78 @@ planområdet.
 
 <!-- sida 161 -->
 
+Bilaga D, Plankarta TS WT - LL c Z T V PLANBESTAÄMMELSER Markreservat för allmännyttiga ändamål
+
+u, fö - : sd
+Följande gäller inom områden med nedanstående beteckningar. oda 2 förallmännyttiga underjordiska -
+Endast angiven användning och utformning är tillåten. Där ”
+beteckning saknas gäller bestämmelsen inom hela området. Placering
+På Byggnad ska placeras minst fyra (4) meter
+= från fastighetsgräns vid ny- eller tillbyggnad.
+GRÄNSER Stä |, utfart och a : å ” =
+ängsel, utfart och annan utgån
+TA Planområdesgräns. g gang
+so H ye-0-0-0-:0-0--0-04 Utfartsförbud.
+Användningsgräns. Upohä d a
+Egetskapsgrans. Ipphävande av strandsky
+ä; > 2
+Seeeesoooooo-n- Administrativ gräns. | Strandskydd är upphävt.
+Egenskaps- och administrativ gräns. Utformning
+een neon. Illustrationsgräns. f. Inlastning får inte placeras mot Varlavägen.
+fr Byggnader som vetter mot angränsande -
+ANVÄNDNING AV MARK gatumark ska ägnas särskilt stor omsorg om
+2 gestaltning.
+Allmän platsmark : Skylt | 3 fasad får int
+a a ar som placeras på fasad får inte
+CC GATA Gata. överstiga taknock.
+Il Kvartersmark Utförande
+= En Tekniska anläggningar. bi Murar till en höjd av högst en (1) meter får
+\- Kontor. uppföras vid fastighetsgräns mot
+\- [ CC; — I Centrumändamål får uppföras i bottenplan Varlavägen. .
+samt på översta våningsplan. ba Grundläggning ska utföras så att
+AE ä tillfredsställande markstabilitet bibehålls.
+P, > Parkeringsgarage. .
+Z, "Verksamheter, undantaget sällanvaruhandel. Utnyttjandegrad
+e, Största byggnadsarea är 60 246 av >
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN fastighetsarean inom användningsområdet.
+PLATS Villkor för startbesked
+Avgränsad via egenskapsgräns och a Startbesked får inte ges för byggnation förrän
+användningsgräns markförorening ner till mindre känslig
+Upphävande av strandskydd markanvändning har avhjälpts från platsen.
+a Strandskyddet är upphävt. GENOMFÖRANDETID
+ÄN és förandetiden ä i
+EGENSKAPSBESTÄMMELSER FÖR Genomförandetiden är 10 år
+KVARTERSMARK HUVUDMANNASKAP
+Avgränsad via egenskapsgräns och Huvudmannaskapet är kommunalt för allmän plats.
+användningsgräns i
+
+Begränsning av markens utnyttjande
+Marken får inte förses med byggnad.
+
+::: Marken får endast förses med
+
+komplementbyggnad.
+Höjd på byggnadsverk
+Detaljplanen är baserad på koordinatsystemet [0] meter 100 h, Högsta nockhöjd på byggnad är 18 meter.
+SWEREF 99 1200 och höjdsystemet RH 2000 A NE 0 0 TA Sn Byggnader får inrymma högst fyra (4)
+Skala 1:1500 i A3, 1:3000 i A1 våningar exklusive parkeringsgarage. En
+
+indragen femte våning får uppföras om den är
+indragen minst två (2) meter från fasadliv.
+
+a . h; Högsta nockhöjd är 4 meter. Detaljplan för verksamheter inom | Antagandehandling
+TECKENFÖRKLARING GRUNDKARTA - Aktualitetsdatum grundkarta: 2024-xx-xx 2 a us
+ha Högsta nockhöjd är 15 meter. Varla 6:18 och 6:22. : ans
+\+ ” dd |Smacnut | BNG144
+Markens anordnande och vegetation i Kungsbacka : Te
+\- Kungsbacka kommun Kungsbocka [2022-11-00
+n, Marken skall vara tillgänglig för Upprättad 2024-01-19 Aniagandsbesut | BN.5 100
+dagvattenhantering. ERE
+Nn Parkering får uppföras. -——- Folks
+Ida Lonnartsson Magnus Björned 2020-00017 Ja
+p! Planarkitekt
+PLANKARTA = |Par2oioooomee nn | KOCX
+
 <!-- sida 162 -->
 
 Bilaga E
@@ -7379,6 +7451,84 @@ gångvägsanslutning från Varlavägen till Varla 6:22 som ska byggas ut, och ä
 planområdet.
 
 <!-- sida 178 -->
+
+Bilaga D. Plankarta SS 7) Za ; Y PLANBESTÄMMELSER Markreservat för allmännyttiga ändamål
+
+så sn a : i Markreservat för allmännytti derjordiski
+Följande gäller inom områden med nedanstående beteckningar. lednligar PAlmMAnnyligajtnderorelska
+Endast angiven användning och utformning är tillåten. Där ”
+beteckning saknas gäller bestämmelsen inom hela området. Placering
+Ps Byggnad ska placeras minst fyra (4) meter
+a från fastighetsgräns vid ny- eller tillbyggnad.
+GRÄNSER ohetsg d 2
+
+Stängsel, utfart och annan utgång
+p&-0-0-0--0-0--0-04 Utfartsförbud.
+
+re Planområdesgräns.
+
+Användningsgräns. Uoohävand dskydd
+Egenskapsgräns. Ipphävande av strandsky
+a, Zz z
+rosa oaeeeeeonn Administrativ gräns. | Strandskydd är upphävt.
+Egenskaps- och administrativ gräns. Utformning
+aan on Illustrationsgräns. f Inlastning får inte placeras mot Varlavägen.
+fa Byggnader som vetter mot angränsande
+ANVÄNDNING AV MARK gatumark ska ägnas särskilt stor omsorg om
+\> gestaltning.
+Allmän platsmark .
+GATA 7 fa Skyltar som placeras på fasad får inte -
+OO XOÖ(GATA Gata. överstiga taknock.
+Kvartersmark Utförande
+EEE Tekniska anläggningar. b, Murar till en höjd av högst en (1) meter får
+a Kontor. uppföras vid fastighetsgräns mot
+Te, i Centrumändamål får uppföras i bottenplan Varlavägen::
+samt på översta våningsplan. ba Grundläggning ska utföras så att
+EASTERN . tillfredsställande markstabilitet bibehålls.
+oCcP, > Parkeringsgarage. .
+2 Verksamheter, undantaget sällanvaruhandel. Utnyttjandegrad
+e Största byggnadsarea är 60 20 av
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN fastighetsarean inom användningsområdet.
+PLATS Villkor för startbesked
+Avgränsad via egenskapsgräns och a: Startbesked får inte ges för byggnation förrän ”
+användningsgräns markförorening ner till mindre känslig
+Upphävande av strandskydd markanvändning har avhjälpts från platsen.
+a Strandskyddet är upphävt. GENOMFÖRANDETID
+z AA G Ö tiden är 1 :
+EGENSKAPSBESTÄMMELSER FÖR ENOmförendebdenvar 10 är
+KVARTERSMARK HUVUDMANNASKAP
+Avgränsad via egenskapsgräns och Huvudmannaskapet är kommunalt för allmän plats.
+
+användningsgräns
+Begränsning av markens utnyttjande
+i Marken får inte förses med byggnad.
+
+Marken får endast förses med
+komplementbyggnad.
+
+Höjd på byggnadsverk
+
+meter 100 h; Högsta nockhöjd på byggnad är 18 meter.
+äs en Byggnader får inrymma högst fyra (4)
+Skala 1:1500 i A3, 1:3000 i A1 våningar exklusive parkeringsgarage. En
+indragen femte våning får uppföras om den är
+indragen minst två (2) meter från fasadliv.
+
+jo
+Detaljplanen är baserad på koordinatsystemet A 0)
+SWEREF 99 1200 och höjdsystemet RH 2000 N L
+
+35 - hs Högsta nockhöjd är 4 meter. Detaljplan för verksamheter inom | Antagandehandling
+TECKENFÖRKLARING GRUNDKARTA - Aktualitetsdatum grundkarta: 2024-xx-0x ? a
+ha Högsta nockhöjd är 15 meter. Varla 6:18 och 6:22. Jeenutegaro [instans =
+Markens anordnande och vegetation i Kungsbacka U sr rar
+\- Kungsbacka kommun Kungsbocke [2022-11-00
+Nn Marken skall vara tillgänglig för Upprättad 2024-01-19 Armgandebestur | BN 5000
+dagvattenhantering. GS
+na Parkering får uppföras. = bedre
+Ida Lennartsson Magnus Björnod 2020-00017
+plan Planarkitekt
+PLANKARTA | Persoiooomee — nn | O0MX
 
 <!-- sida 179 -->
 
@@ -9964,6 +10114,12 @@ säkert att alla åtgärder kan genomföras. Till hjälp för förvaltaren har d
 prioritering av åtgärderna gjorts.
 
 <!-- sida 247 -->
+
+Innehållsförteckning
+1\. Syfte med säkerställände och SKÖtSCI...sss:sssssssossensssvsessssusstessussssnensesssunensepssssnseenessenensend
+2.2 Historisk och nuvarande markanvändning samt naturförhållanden .... 5
+5\. Tillsyn, dokumentation och uppföljning .... 13
+6\. Sammanfattning och prioritering av planerade skötselåtgärder .... 13
 
 <!-- sida 248 -->
 

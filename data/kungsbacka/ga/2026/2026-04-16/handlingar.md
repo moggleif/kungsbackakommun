@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.7118072419d9a48ae7711df/17764152013
 sha256: e0a56d9c72958e220b41e0463b79a2edc445c48f2e2a36def094d8d53a625999
 bytes: 20412871
 sidor: 196
-hamtad: 2026-11-17T22:51:36+00:00
-konverterad: 2026-11-17T22:53:08+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T08:42:50+00:00
+konverterad: 2026-11-22T08:45:10+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ocr, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [32, 33, 38, 39, 40, 41, 42, 43, 44, 45, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 150, 185]
-figurer: [53, 54, 128, 130, 131, 149, 150, 168]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ocr, ok, ok, ok, ok, ointressant, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [32, 33, 42, 63, 64, 65, 66, 67, 68, 69, 71, 72, 73, 74, 75, 80, 185]
+figurer: [32, 33, 53, 54, 128, 130, 131, 149, 150, 168]
 tolkade: []
 granskad: null
 ---

@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.120e6b95196c7fa447f2b3f2/1747311904
 sha256: f9cc7bf5fa123b8e042b771c4ee5d1c8a11faf3cf583b211fb344e8cd7cf3e74
 bytes: 1575322
 sidor: 15
-hamtad: 2026-11-18T03:01:06+00:00
-konverterad: 2026-11-18T03:01:36+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:40:19+00:00
+konverterad: 2026-11-22T11:40:45+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 figurer: []
 tolkade: []
@@ -89,6 +89,21 @@ Lena Engberg, enhetschef
 Paragrafer
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+§54 Dur KFT-2025-00105
+Information till nämnd: uppdatering Biblioteken i Kungsbacka .... 3
+Kungsbacka stad 2050 - Granskning av fördjupad översiktsplan 4 mars - 31
+Granskningsutskick Detaljplan för blandad stadsbebyggelse inom sydöstra
+centrum i Kungsbacka stad. Sista svarsdag 2025-05-30 s .... 7
+Information till nämnd: de taktiska grupperna i Främjande Fyran .... 8
+Information till nämnd: återrapportering av nytt stöd till föreningar .... 10
+Redovisning av inkomna skrivelser maj 2025 s .... 12
+§63 Dur KFT-2025-00111
+Det här dokumentet är digitalt signerat
+Transaktionsidentitet: 992584D19D698FB6062AAD051872BBE145362E1DF1
 
 <!-- sida 3 -->
 

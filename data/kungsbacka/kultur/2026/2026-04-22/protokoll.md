@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.38e68eb519dd3ac48d82d0e/17773814874
 sha256: 26dd268955bc33c5d0551a117d2a84b0d7e7f2d5602978a5e163574564ad8011
 bytes: 1431861
 sidor: 13
-hamtad: 2026-11-18T03:03:01+00:00
-konverterad: 2026-11-18T03:03:28+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:41:17+00:00
+konverterad: 2026-11-22T11:41:42+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 figurer: []
 tolkade: []
@@ -85,6 +85,28 @@ Vård & Omsorg
 Paragrafer §§ 47-57
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+§47 Dnr KFT-2026-00107
+§48 Dnr KFT-2026-00116
+§49 Dnr KFT-2026-00100
+Information till nämnd: uppdatering Kungsbacka Arena och Kungsbacka
+Information till nämnd: ökade aktiviteter på boenden .... 6
+§ 51 Dnr KFT-2026-00106
+Information till nämnd: uppdatering Kulturskolan .... 7
+Begäran att få behålla budgetmedel för uppsagda lokaler .... 8
+§53 Dnr KFT-2026-00108
+Information till nämnd: Armlängds avstånd .... 9
+§ 54 Dnr KFT-2026-00098
+Information till nämnd: uppföljning målbild 2030 ss.ssssssssssssrsrsrrssenrrrnnsrns 10
+§55 Dnr KFT-2026-00109
+Anmälan av delegeringsbeslut april 2026 sisssssssssssessrseseressrsrserersnesssrnrnrnrnn 11
+Redovisning av inkomna skrivelser april 2026 .... 12
+§57 Dnr KFT-2026-00111
+Det här dokumentet är digitalt signerat
+Transaktionsidentitet: 6D5D2715244FBF65E231B33BAF7ABSCOA8D9012608
 
 <!-- sida 3 -->
 

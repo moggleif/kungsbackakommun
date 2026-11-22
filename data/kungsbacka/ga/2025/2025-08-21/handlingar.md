@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.2f7af2ed1989780f80d68f62/1755162693
 sha256: e4f0c849159d9ef272cb8bc19e88871f94a496d5ca73fb72b622118897e2dec5
 bytes: 15347371
 sidor: 168
-hamtad: 2026-11-17T22:43:57+00:00
-konverterad: 2026-11-17T22:44:45+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T08:35:23+00:00
+konverterad: 2026-11-22T08:36:10+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ocr, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok]
-tal_obekraftade: [41, 42, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 91, 98, 103, 112, 113, 114, 115, 116, 117, 134, 142, 144, 146, 147, 148, 149, 151, 152, 153, 163, 164]
-figurer: [9, 11, 12, 13, 14, 24, 36, 141, 146, 147, 148, 149, 150, 151, 152, 153, 165]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ocr, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok]
+tal_obekraftade: [41, 42, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 91, 98, 103, 112, 113, 114, 115, 116, 117, 134, 142, 144, 146, 148, 149, 151, 152, 163, 164]
+figurer: [9, 11, 12, 13, 14, 24, 36, 141, 146, 148, 149, 150, 151, 152, 165]
 tolkade: []
 granskad: null
 ---

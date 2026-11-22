@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.5689acbf1a086271040b82ab/1789363875
 sha256: e6c883c7af687ad2caaa6c64b2382df8614a63acf2baa1d0c3b80c38bd36e46f
 bytes: 12325929
 sidor: 856
-hamtad: 2026-11-18T02:43:34+00:00
-konverterad: 2026-11-18T02:45:20+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-22T11:32:56+00:00
+konverterad: 2026-11-22T11:34:18+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [162, 163, 165, 170, 171, 175, 176, 178, 210, 214, 232, 234, 258, 319, 324, 326, 336, 338, 340, 344, 370, 377, 378, 386, 387, 423, 431, 432, 433, 434, 439, 666, 671, 672, 681, 831, 832]
+tal_obekraftade: [175, 176, 210, 214, 232, 234, 319, 324, 326, 336, 338, 340, 344, 370, 377, 378, 386, 387, 423, 431, 433, 434, 671, 672, 681, 832]
 figurer: [3, 6, 8, 11, 12, 13, 87, 104, 155, 162, 163, 164, 165, 170, 171, 172, 175, 176, 178, 210, 212, 216, 217, 232, 234, 258, 308, 319, 321, 322, 324, 326, 328, 331, 336, 338, 344, 352, 354, 357, 361, 362, 371, 423, 424, 431, 432, 433, 434, 435, 439, 441, 496, 645, 651, 666, 671, 672, 681, 688, 689, 691, 692, 695, 696, 699, 700, 701, 831, 832, 844, 848]
 tolkade: []
 granskad: null
@@ -17484,9 +17484,9 @@ behovet i flyg och sjöfart, i samspel med
 vägtransporter. Effekter i LULUCF-sektorn
 finns med.
 
-SOU 2026 :33
+SOU 2026:33
 
-D rivm ede lsm arknaden – u tgångsläge och p rob lem b ild
+Drivmedelsmarknaden – utgångsläge och problembild
 
 321
 
@@ -17540,9 +17540,9 @@ antal raffinaderier om.\*
 tillgodoses med förnybar råvara.
 Källa: Egen bearbetning.
 
-D rivm ede lsm arknaden – u tgångsläge och p rob lem b ild
+Drivmedelsmarknaden – utgångsläge och problembild
 
-SOU 2026 :33
+SOU 2026:33
 
 322
 
@@ -38275,27 +38275,10 @@ DB2
 
 MÅL
 
-[Tabell 831-832-1](handlingar.tabeller/831-832-1.csv)
+[Tabell 831-1](handlingar.tabeller/831-1.csv)
 
 | FÖRKLARINGAR<br>KG KONSTGRÄS<br>A ASFALT<br>BELYSNING<br>BEF. STÄNGSEL, H:2M<br>FLÄTVERK+NYLON, H:5M (2+3)<br>DRÄNERINGSLEDNING<br>AVLOPPSLEDNING<br>UTLOPP<br>DB1<br>BEF. DAGVATTENBRUNN<br>DB2<br>NY DAGVATTENBRUNN |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  |
@@ -38337,6 +38320,28 @@ DB2
 4.0
 
 MÅL
+
+[Tabell 832-1](handlingar.tabeller/832-1.csv)
+
+| FÖRKLARINGAR<br>KG KONSTGRÄS<br>A ASFALT<br>BELYSNING<br>BEF. STÄNGSEL, H:2M<br>FLÄTVERK+NYLON, H:5M (2+3)<br>DRÄNERINGSLEDNING<br>AVLOPPSLEDNING<br>UTLOPP<br>DB1<br>BEF. DAGVATTENBRUNN<br>DB2<br>NY DAGVATTENBRUNN |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
 
 <!-- sida 833 -->
 

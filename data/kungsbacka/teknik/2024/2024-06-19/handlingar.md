@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.1722ec5a1900ff6cbab106e/17183629925
 sha256: ea03bf23deece70a621415a7d09de028991241c144f41963804cf880383d7e99
 bytes: 79332559
 sidor: 442
-hamtad: 2026-11-18T01:18:26+00:00
-konverterad: 2026-11-18T01:24:44+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T10:19:07+00:00
+konverterad: 2026-11-22T10:25:55+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ocr, ej-konverterad, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ocr, ocr, ok, ocr, ok, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ocr, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker]
-tal_obekraftade: [12, 17, 18, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 67, 76, 126, 127, 137, 139, 140, 141, 146, 152, 153, 154, 155, 158, 162, 165, 168, 171, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 189, 190, 191, 194, 205, 206, 211, 212, 233, 234, 235, 237, 239, 240, 241, 242, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 313, 339, 347, 353, 358, 390, 392, 393, 395, 397, 398, 399, 400, 401, 402, 403, 404, 405, 408, 409, 411, 412, 414, 424, 426]
-figurer: [68, 77, 78, 79, 80, 82, 83, 85, 88, 89, 90, 91, 93, 128, 129, 132, 136, 142, 145, 147, 148, 150, 160, 161, 169, 221, 223, 226, 228, 238, 250, 254, 269, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 296, 314, 351, 352, 354, 360, 394, 396, 413, 415, 416, 417, 418, 419, 420, 421, 422, 423, 425, 427, 428, 429, 430, 431, 432, 433, 434, 435]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ointressant, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ocr, ocr, ok, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker]
+tal_obekraftade: [12, 17, 18, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 67, 76, 126, 127, 137, 139, 140, 141, 146, 152, 153, 154, 155, 158, 162, 165, 168, 171, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 189, 190, 191, 194, 205, 206, 211, 212, 233, 234, 235, 237, 239, 240, 241, 242, 298, 299, 301, 303, 304, 305, 306, 307, 313, 339, 347, 353, 358, 390, 392, 393, 395, 397, 398, 399, 400, 401, 402, 403, 404, 405, 408, 409, 411, 412, 414, 424, 426]
+figurer: [68, 77, 78, 79, 80, 82, 83, 85, 88, 89, 90, 91, 93, 126, 128, 129, 132, 136, 141, 142, 145, 147, 148, 150, 160, 161, 169, 175, 176, 205, 211, 221, 223, 226, 228, 234, 237, 238, 250, 254, 269, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 296, 299, 304, 305, 306, 314, 347, 351, 352, 354, 360, 390, 392, 394, 395, 396, 399, 411, 412, 413, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 427, 428, 429, 430, 431, 432, 433, 434, 435]
 tolkade: []
 granskad: null
 ---
@@ -9397,6 +9397,105 @@ LÄS MER OM STRATEGI FÖR ÖVERSVÄMNING
 
 <!-- sida 205 -->
 
+Skärby
+
+Anneberg
+
+Stadsbebyggelse
+
+Kompletterad blandstad
+Ny blandstad
+
+2] Kompletterat bostadsområde
+Nytt bostadsområde
+
+Kompletterat område för
+näringsliv och service
+
+| Nytt område för näringsliv och
+service
+
+Kompletterad offentlig service
+IH Ny offentlig service
+Bostadsområde
+
+Trafiknät
+
+Trafikrum
+
+SZ Frirum
+
+2” Nytt frirum
+
+Z Mjuktrafiktum
+
+2" Nytt mjuktrafikrum
+/ Transportrum
+
+.”” Nytt tran sportrum
+/A Trafiktrum utreds
+
+= Kollektivtrafik förändring
+
+/ Busskörfält
+,”” Bussprioritet
+
+Gång och cykel
+
+Få Ny gång- och cykelkoppling
+överlunder barriär
+
+& Pendelcykelsträk
+Vå Gång- och cykel, huvudnät
+
+2? Gång- och cykel, huvudnät i
+blandtrafik
+
+Utredning trafik
+
+pre
+
+ii: Utredningsområden för trafik
+
+13 Utredningsområde för framtida
+station
+
+Natur och rekreation
+
+Långsiktigt säkerställda
+grönområden
+
+/” Gröna upplevelser
+
+Z Större utveckling av
+rekreationsvärden ochfeller
+biologisk mångfald
+Natur och areella näringar
+
+N Vattenhantering i grönområde
+
+MH Vatten
+
+Tekniska anläggningar
+
+HH Hammargårds
+avloppsreningsverk
+
+\$£2 Utredningsområde för yttre
+översvämningskydd
+
+/
+
+Utanför stadsgräns
+
+Landsbygd
+
+Sätinc
+
+Skala: 1:25 000 (vid A3 stående)
+
+s12s00 vass se) Markanvändningskarta
+
 <!-- sida 206 -->
 
 YTTRANDE
@@ -12815,6 +12914,19 @@ BILAGA
 87
 
 <!-- sida 298 -->
+
+Sammanställning av tabeller
+Belysningsanläggningar per anläggningsägare
+Fördelning inom pilotkommunerna
+H Överlåtes till Trafikverket H Behålls av kommunen HE Rivs av kommnunen
+Fördelning enligt SKLs kommuntyps indelning
+Fördelning över hela landet
+= Överlåtes till Trafikverket = Behålls av kommunerna = Rivs av kommunerna
+Torsby
+Landsbyggdskom
+mun med
+besöksnäring
+Årjäng
 
 <!-- sida 299 -->
 
@@ -17253,15 +17365,216 @@ Upptagningsområde
 
 <!-- sida 397 -->
 
+Karlsborg :
+Västra Hammerö och Hammerö
+Lövkojevägen
+Luktärtsvägen Kaprifolvägen
+Xx Lekplats som avvecklas
+I den södra delen av Hammerö ligger del av bebyg-
+gelse naturnära. De norra delarna har en trafikfri
+I - i området med stora skogspartier runt om. Den syd-
+västra delen av Hammerö är dåligt sammankopplad
+med övriga Hammerö då Varbergsvägen utgör en
+barriär mellan de två delarna.
+I området finns idag 6 st lekplatser varav en är
+upprustad 2021 till en områdeslekplats, Gullregns-
+vägens lekplats. Lekplatserna ligger också tätt, därav
+föreslås följande lekplatser avvecklas Kaktusvägen
+och Kaprifolvägen.
+Södra Hammerö
+Tvillinggården
+AA Lövkojevägens lekplats är i gott skick, men dess pla-
+A cering i nära anslutning till Gullregnvägens lekplats
+medför att den på sikt föreslås att avvecklas.
+Lekplatsen i sydvästra Hammerö, Lars Runebergs-
+gatan föreslås inom en 10-års period att utvecklas
+till områdeslekplats.
+Lukärtsvägen är nyligen renoverad med till-
+gängligt markmaterial, men saknar rumslighet.
+Placering vid tallskog medför att platsen upplevs
+grönskande. Platsen borde på sikt kompletteras
+med trevligare utformad vistelseyta, men är nu i
+relativt gott skick.
+Gullregnsvägen
+Lars Runebergsgatan Kaktusvägen
+
 <!-- sida 398 -->
+
+| / Lillamossen
+Skola
+Båratorp
+Hålabäck och Fors
+Flöjtvägen Violgatan
+Utveckling till områdeslekplats
+Häålabäck och Fors är naturnära bostadsområden
+med stora och varierade grönytor. Områdeslekplat-
+ser saknas men utöver lekplatser finns Forsbergen
+som bidrar till stora lek- och rekreationsvärden.
+Violgatan föreslås att bli en områdeslekplats under
+2027\. Placeringen av lekplatsen är inte central i
+området, men placeringen nära bebyggelse och
+natur gör att den är väl värd att utveckla.
+I Fors finns det en närlekplats i den södra delen,
+Flöjtvägen. Lektplatsen föreslås bli en områdeslek-
+plats under 2024. I samband med utvecklingen bör
+platsen kompletteras nya planteringar och sittplats
+etc. I Fors finns flera närlekplatser på kvartersmark
+runt om i området.
+Flöjtvägen
+Violgatan
 
 <!-- sida 399 -->
 
+Badhus I
+Fors
+Östra villastaden och Inlag
+Ringgatan
+Uddavägen
+Sjukstugegatan
+O Ekstedsväg
+Lantmannagatan
+Närlekplats
+Områdeslekplats
+Tillkommande områdeslekplats
+i exploateringsprojekt
+Området består till största delen av mindre villor på
+genomfartsgator och kategoriseras som ett trafikerat
+område. Några av villorna samt två flerfamiljshus
+angränsar till ett mindre berg med gles skog där
+lek- och utsiktsmöjligheter finns.
+Ringgatan, närlekplats, upprustades 2019. Lekplat-
+sen behöver på sikt kompletteras med växtlighet och
+rumslighet.
+Områdeslekplatsen Ekstedsväg upprustades 2016
+och behöver kompletteras med ett permanent väder-
+skydd.
+Närlekplats Uddavägen föreslås att avvecklas inom
+en 15 årsperiod.
+Närlekplats Sjukstugegatan, upprustades 2019 och
+är i gott skick. Eventuell utbyggnad av järnvägsspår
+kan påverka lekplatsens framtid.
+I Inlag planeras en stadsomvandling från verksam-
+hetsområde till bostäder och kontor. Idag finns en
+närlekplats, Lantmannagatan. Lekplatsen planeras
+att ombildas till områdeslekplats i samband med
+exploateringen.
+Uddavägen
+Lantmannagatan
+Sjukstugegatan
+Ekstedsväg
+
 <!-- sida 400 -->
+
+Östr
+Risatorpet
+Centrum och Signeskulle
+Borgmästareplatsen
+Idrottslekplatsen
+O Arnanäsallé
+Närlekplats
+Områdeslekplats
+Tillkommande områdeslekplats
+i exploateringsprojekt
+Stadslekplats
+Lekplatserna i centrum har ett högre besökstryck
+än andra de i andra delar av staden, dels av boende
+på grund av tätare beyggelsestruktur och dels av
+besökare till centrum.
+Vid Borgmästarplatsen byggdes 2019 en ny stadslek-
+plats med temat fågel, fisk eller mittimellan.
+Vid Kulturhuset Fyren finns en närlekplats. Lekut-
+rustning är endel av ett konstverk som förvaltas av
+Kultur och fritid och som också ansvarar för eventu-
+ell upprustning.
+Bergsgatans närlekplats ligger intill ett kuperat och
+lekvänligt skogsområde. Utrymmet mellan vägen
+och berget är smalt. Lekplatsen behöver på sikt
+uppr ustas.
+Valand får en ny områdeslekplats i och med exploa-
+tering.
+I Vallgatan/Badhusparken finns endast en klät-
+terkub. Lekfunktionen behöver utvecklas och om
+parkens yta på sikt utökas bör den vara en områ-
+deslekplats.
+Områdeslekplatsen Aranäsallé är behov av upp-
+rustning av gummiasfalt. Lekplatsen bör omges av
+mer friyta och kopplas samman med Teaterparkens
+gröna oas.
+Idrottslekplatsen färdigställdes 2021 och är en popu-
+lär stadslekplats och attraherar båda stora som små.
+Bergsgatan
+Aranäsallé
+Idrottslekplatsen
 
 <!-- sida 401 -->
 
+Ysbyhult
+Teaferparken
+Badhus
+Västra Villastaden, Tingberget och Kungsbackaskogen
+O Bissmarksgatan Xx Tingbergsvägen O
+Lundgrens gata
+Stadslekplats
+Områdeslekplats
+Utveckling till områdeslekplats
+Lekplats som avvecklas
+Västra Villastaden har en trafikerad bebyggelse-
+struktur med genomfartsgator.
+Mellan villakvarteren återfinns små grönområden
+och Kungsbackaåns parkrum är i nära anslutning.
+Bissmarksgatan upprustades till områdeslekplats
+2018\. Lekplatsen behöver kompletteras med växtlig-
+het för ökad biologisk mångfald och rumslighet.
+Kungsbackaskogen, är stadslekplats. Placeringen
+mitt i Kungsbackaskogen och dess utformning
+och innehåll gör att den är ett populärt besöksmål.
+Lekplatsen saknar permanent toalett, men det finns
+en portabel toalett.
+Tingberget har en trafikfri bebyggelsestruktur
+med radhus i norr och flerbostadshus i södra delen
+av området. Guldgubbegatan, är en närlekplats som
+föreslås att utvecklas till områdeslekplats. Den har
+en placering i området med omgivande gröntytor
+och nära till skogsområde.
+Närlekplatsen, Tingbergsvägen upplevs privat då den
+är placerad i anslutning till en bostadsgård.
+Lekplatsen förelås att ombildas till bostadsgård.
+Lundgrens gata, närlekplats avvecklas i samband
+med ombildning av lekplatsen på Guldgubbegatan.
+Lundgrens gata
+Guldgubbegatan
+Bissmarksgatan
+
 <!-- sida 402 -->
+
+Varla och Höögs Lid
+Kållasgårdsgatan
+Nils Ebbegårdsgatan
+Håkansgårdsgatan Närlekplats som utvecklas
+O Områdeslekplats
+Lekplats utvecklas till
+Områdeslekplats
+Området har en trafikfri bebyggelsestruktur med
+små villor utmed korta återvändsgator och likartade
+grönytor. Mellan återvändsgatorna går gångvägar
+Områdeslekplatsen på Höögs lid är upprustad med
+fokus på tillgänglighetsanpassning gällande mark-
+material och utrustning. Gummiasfalten är i behov
+vilket gör att det går lätt att ta sig till fots genom av upprusning.
+området. Topografin påverkar tillgängligheten till
+närlekplatserna. Fördelning och tillgång av lekplat-
+ser i Varla anses god.
+Lekplatserna på Källasgårdsgatan och Nils Ebbegårds- Nils Ebbegårdsgatan
+gatan är närlekplatser. Lekplatserna behöver kom-
+pletteras med grönska för att få tydligare rumslighet
+och en mer genomtänkt utformning.
+Håkansgårdsgatan är idag en närlekplats som
+föreslås utvecklas till en områdeslekplats. Den har
+en placering i området med omgivande ytor och
+en nyanlagd boulebana som gör den lämplig för en
+sådan utveckling.
+Kållasgårdsgatan
+Höögs Lid
 
 <!-- sida 403 -->
 
@@ -17343,6 +17656,34 @@ Göteborgsvägen
 utsEÖRNuUr
 
 <!-- sida 404 -->
+
+Sporthall
+Börsåsberget w
+Kolla Parkstad och Kolla
+Närlekplats som utvecklas
+Rubinvägen Områdeslekplats som
+utvecklas
+Kolla parkstad består till stora delar av storskalig
+kvartersstruktur som delas av av ett genomgående
+parkstråk. Området kategoriseras som trafikerat.
+Närlekplats Bärnstensvägen ligger i anslutning till
+en förskola. Lekplatsen upplevs privat och saknar
+tillgängligt markmaterial samt hårdgjorda tillfart-
+svägar. Lekplatsen bör kompletteras inom en 5 års
+period.
+Bärnstensvägen
+Områdeslekplatsen Rubinvägen är placerad centralt
+i parkstråket. Lekplatsen saknar rumslighet och
+lekfunktioner. Lekplatsen föreslås att upprustas och
+kompletteras med fler funktioner inom 5 års period.
+Dioritvägen en väl fungerande närlekplats. Lek-
+platsen behöver kompletteras med en sittplats inom
+lekytan.
+Rubinvägen
+Gamla Kolla har god tillgång till närlekplatser inom
+området, dock saknas en allmän områdeslekplats.
+På sikt kan behov av detta ses över.
+Nils Ebbegårdsgatan
 
 <!-- sida 405 -->
 

@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.3487527419ddc981c03d0d2e/1778506388
 sha256: 0595ff4769634a3c1efae0291d27bcd6834346f73de5f461ca95e87444609bef
 bytes: 13280112
 sidor: 166
-hamtad: 2026-11-18T10:54:23+00:00
-konverterad: 2026-11-18T10:55:26+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T12:41:50+00:00
+konverterad: 2026-11-22T12:42:38+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [5, 6, 7, 11, 16, 102, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 127, 129, 132, 134, 135, 136, 148, 149, 151]
-figurer: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 36, 42, 43, 68, 89, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 132, 133, 134, 135, 136, 140, 141, 142, 148, 149, 150, 151]
+kvalitet_per_sida: [ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [5, 6, 7, 11, 16, 102, 116, 117, 119, 120, 121, 123, 124, 125, 126, 127, 129, 132, 134, 135, 136, 148, 149, 151]
+figurer: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 36, 42, 43, 68, 89, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 132, 133, 134, 135, 136, 140, 141, 142, 148, 149, 150, 151]
 tolkade: []
 granskad: null
 ---
@@ -4090,6 +4090,31 @@ nn 3
 0\) 2 4 6 8 10 12 14 16 18 20
 
 <!-- sida 120 -->
+
+Statistik 2026-02-26
+Hälsofrämjande och förebyggande stödsamtal
+
+Kungsbacka
+
+Förebyggande teamet - Hälsofrämjande och förebyggande stödsamtal (IUB)
+
+Över 90 NEN 3
+
+81-90
+
+44
+74-80 Kn 18
+67-73 HIN 2
+Under 67 ' 0
+Antal kvinnor — lll
+Antal män — FE 29
+Avslutade uppdrag
+Pågående uppdrag Ile
+Antal GP-datun.— Hr = G=
+Antal unika uppdrag — EEE 7
+Antal unika individer — BEER 73
+
+0\) 10 20 30 40 50 60 70 80
 
 <!-- sida 121 -->
 

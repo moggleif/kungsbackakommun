@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.4114947f194a0301afe2d8ed/1737978570
 sha256: a9b10ea976aced932b1e432e4bc8a3baf0431f87e257f8a3b0736afe75ccfdb7
 bytes: 2879171
 sidor: 16
-hamtad: 2026-11-18T02:59:58+00:00
-konverterad: 2026-11-18T03:00:48+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:39:37+00:00
+konverterad: 2026-11-22T11:40:19+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 figurer: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 tolkade: []
@@ -106,6 +106,20 @@ och kommunikationschef
 Paragrafer § 1-12
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN
+Nämnden för Kultur & Fritid Datum
+Innehåll
+Information till nämnd: näringsliv och KultUur..............sssssessssssersssssore
+Information till nämnd: förvaltningsbudget..................sssssssrsssrsrsorrrst
+Slutförande av projekt LÖftaleden.............ssssssesssererererssssrerrrsnrnresrnrrrrn
+§6 Dnr KFT-2024-00328
+Information till nämnd: Platsvarumärket............ssssssesesseresrrrsorresrnrenre
+Överlämnande av arbetsuppgifter till nämndsekreterare....................
+§ 11 Dnr KFT-2025-00008
+SAMMANTRÄDESPROTOKOLL
+Förvaltningschefen INnfOrmeral.........sssssersrersererersererrrssnrnressnrrnrssrrrrrrrnn
+Det här dokumentet är digitalt signerat
 
 <!-- sida 3 -->
 
