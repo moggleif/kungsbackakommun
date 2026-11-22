@@ -16,7 +16,7 @@ from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.malkort import kallank
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
-from tests.poolfall import mall, tillfallig_pool
+from tests.poolfall import sammanhang, tillfallig_pool
 from tests.test_webbplats import FIXTURER, REPO, TID, dokument, exempelby, protokoll
 
 ROT = Path(__file__).parent.parent
@@ -153,9 +153,7 @@ class TestLasning(unittest.TestCase):
 class TestSidan(unittest.TestCase):
     def sida(self, dokumentar: set[int] = frozenset({2023, 2025})) -> str:
         with pool() as malen:
-            return malsida(
-                mall(aren=aren(malen)), exempelby(), malen, protokoll(*dokumentar)
-            )
+            return malsida(sammanhang(aren=aren(malen)), malen, protokoll(*dokumentar))
 
     def test_ett_spar_per_rad_och_ett_ar_per_kolumn_med_mal(self):
         html = self.sida()

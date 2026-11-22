@@ -1,12 +1,15 @@
 """Gemensam uppställning för testerna av webbplatsens tabeller: en CSV-fil
-och en pool med dokument i en temporär katalog, och mallen för exempelbyn."""
+och en pool med dokument i en temporär katalog, och sammanhanget för
+en kommun."""
 
 import tempfile
 from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 
+from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.mall import Mall
+from kommunhandlingar.webbplats.sammanhang import Kommununderlag, Sammanhang
 from tests.test_webbplats import REPO, TID, dokument, exempelby
 
 
@@ -38,5 +41,11 @@ def dokumenten(texter: dict[str, str], per_sida: str) -> dict[str, str]:
     }
 
 
-def mall(**val) -> Mall:
-    return Mall([exempelby()], REPO, TID, **val)
+def sammanhang(
+    kommun: Kommun | None = None, aren: range = range(0), **underlag
+) -> Sammanhang:
+    """Kommunen, som förval exempelbyn, ensam i mallen med det här underlaget."""
+    kommun = kommun or exempelby()
+    return Sammanhang(
+        Mall([kommun], REPO, TID), kommun, Kommununderlag(aren, **underlag)
+    )

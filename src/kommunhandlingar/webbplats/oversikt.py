@@ -16,6 +16,7 @@ from kommunhandlingar.webbplats.flikar import SIDOR, overtid
 from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.organordning import grupperade
 from kommunhandlingar.webbplats.rakning import Organrad
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 
 TOM = '<td class="tom">–<span class="dold"> saknas</span></td>'
 
@@ -26,10 +27,11 @@ def adresser(mall: Mall, kommun: Kommun) -> list[str]:
 
 
 def oversikt(
-    mall: Mall, kommun: Kommun, rader: list[Organrad], dokument: list[dict]
+    sammanhang: Sammanhang, rader: list[Organrad], dokument: list[dict]
 ) -> str:
+    kommun = sammanhang.kommun
     sammantraden = {rad.id: rad.sammantraden for rad in rader}
-    antal = {o.id: overtid(mall, kommun.id, o.id) for o in kommun.organ}
+    antal = {o.id: overtid(sammanhang.underlag, o.id) for o in kommun.organ}
     sidor = kommunens_sidor(antal)
     huvud = "".join(f'<th scope="col">{escape(r)}</th>' for _, r, _ in sidor)
     grupper = "".join(

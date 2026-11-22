@@ -2884,7 +2884,8 @@ en kommun, så att de går att jämföra.
   skriptet) och för förvalet i Ett år i taget (`data-forval`). Ett år i
   taget jämför inte målens första år med året innan.
 - **Bygget** räknar spannet en gång per kommun och lägger det i
-  `Mall.aren`; målsidan och spårsidornas `Vy` tar det därifrån.
+  kommunens underlag (`Kommununderlag.aren`); målsidan och spårsidornas
+  `Vy` tar det därifrån.
 
 ## Sammanträdets sida
 

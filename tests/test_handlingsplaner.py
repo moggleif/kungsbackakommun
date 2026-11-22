@@ -6,11 +6,10 @@ from contextlib import contextmanager
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
-from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import HANDLINGSPLANER
 from tests.aren import aren
-from tests.poolfall import dokumenten, mall, tillfallig_pool
+from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import exempelby
 
@@ -49,8 +48,7 @@ def lasta():
 class TestSidan(unittest.TestCase):
     def sida(self) -> str:
         with lasta() as stegen:
-            vy = Vy(HANDLINGSPLANER, exempelby(), aren(stegen)["exempelby"])
-            return sparsida(mall(), vy, stegen)
+            return sparsida(sammanhang(aren=aren(stegen)), HANDLINGSPLANER, stegen)
 
     def test_en_plan_utan_avsandare_far_ingen(self):
         html = self.sida()

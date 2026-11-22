@@ -9,7 +9,7 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.webbplats import mal
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
-from tests.poolfall import mall, tillfallig_pool
+from tests.poolfall import sammanhang, tillfallig_pool
 from tests.test_mal import RUBRIK
 from tests.test_webbplats import dokument, exempelby, protokoll
 
@@ -69,9 +69,7 @@ def pool(rader: str = RADER):
 
 def sida(rader: str = RADER) -> str:
     with pool(rader) as malen:
-        return malsida(
-            mall(aren=aren(malen)), exempelby(), malen, protokoll(2024, 2025)
-        )
+        return malsida(sammanhang(aren=aren(malen)), malen, protokoll(2024, 2025))
 
 
 class TestLasning(unittest.TestCase):

@@ -10,7 +10,7 @@ from pathlib import Path
 from kommunhandlingar.frontmatter import FALT
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.llms import handskrivna
-from kommunhandlingar.webbplats.mall import KALLKOD, Mall
+from kommunhandlingar.webbplats.mall import KALLKOD
 from tests.test_webbplats import FIXTURER, REPO, TID, dokument
 
 MOTE = Path("fsn") / "2024" / "2024-05-02"
@@ -108,19 +108,9 @@ class TestIndex(Index):
 
 class TestHandskrivna(unittest.TestCase):
     def test_alla_slag_i_ordning_och_bara_de_som_finns(self):
-        alla = {"exempelby": []}
-        mall = Mall(
-            [],
-            REPO,
-            TID,
-            kalendrar=frozenset({"exempelby"}),
-            malen=alla,
-            uppfoljningar=alla,
-            spar={"lokalbehov": alla, "granskningar": alla, "initiativ": {}},
-            projekt=alla,
-        )
+        filer = {"projekt", "granskningar", "lokalbehov", "uppfoljningar", "mal"}
         self.assertEqual(
-            [katalog for katalog, _ in handskrivna(mall, "exempelby")],
+            [katalog for katalog, _ in handskrivna(frozenset({*filer, "kalender"}))],
             [
                 "kalender",
                 "mal",
@@ -130,7 +120,7 @@ class TestHandskrivna(unittest.TestCase):
                 "projekt",
             ],
         )
-        self.assertEqual(handskrivna(mall, "annanby"), [])
+        self.assertEqual(handskrivna(frozenset()), [])
 
 
 if __name__ == "__main__":

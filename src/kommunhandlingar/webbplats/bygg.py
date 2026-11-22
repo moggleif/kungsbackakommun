@@ -11,7 +11,6 @@ per kommun och sökindex.
 """
 
 import shutil
-from dataclasses import replace
 from datetime import datetime
 from pathlib import Path
 
@@ -38,20 +37,18 @@ from kommunhandlingar.webbplats.meny import oversiktsnamn, statusadress
 from kommunhandlingar.webbplats.organsida import organsida
 from kommunhandlingar.webbplats.oversikt import adresser, oversikt
 from kommunhandlingar.webbplats.rakning import okanda, rakna
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.slagen import SLAGEN
-from kommunhandlingar.webbplats.spar import Slag
-from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import adress as sparets_adress
 from kommunhandlingar.webbplats.sparsida import sparsida
-from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 
 
 def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:  # noqa: PLR0913  # undantag: __main__ och regionens datarepo bygger genom signaturen
-    bygge = Bygge(ut, inlasning.las(rot, repo, byggd))
+    bygge = Bygge(ut, *inlasning.las(rot, repo, byggd))
     ut.mkdir(parents=True, exist_ok=True)
     if not bygge.mall.en_kommun:
         bygge.skriv("index.html", sidor.startsida(bygge.mall))
-    bygge.skriv("llms.txt", llms(bygge.mall))
+    bygge.skriv("llms.txt", llms(bygge.mall, bygge.underlagen))
     sokgrupper = []
     for kommun in bygge.mall.kommuner:
         sokgrupper.append(bygg_kommun(bygge, rot / "data" / kommun.id, kommun))
@@ -67,7 +64,7 @@ def bygg_kommun(bygge: Bygge, katalog: Path, kommun: Kommun) -> dict:
     dokumentindex.skriv(bygge.ut, dokument, katalog)
     paragrafindex.skriv(bygge.ut, stycken, katalog)
     underlag = sammantradesbygge.underlag(
-        bygge.mall, katalog, kommun, (dokument, stycken)
+        bygge.sammanhang(kommun), katalog, (dokument, stycken)
     )
     sammantradesbygge.bygg(bygge.ut, bygge.mall, underlag)
     bygge.skriv(statusadress(kommun.id), sidor.statussida(bygge.mall, kommun, dokument))
@@ -88,7 +85,7 @@ def skriv_dokumenten(
         falt["adress"] = fil.relative_to(katalog).with_suffix(".html").as_posix()
         adress = f"{kommun.id}/{falt['adress']}"
         (bygge.ut / adress).parent.mkdir(parents=True, exist_ok=True)
-        sidfil = bygge.skriv(adress, dokumentsida(bygge.mall, kommun, falt, text))
+        sidfil = bygge.skriv(adress, dokumentsida(bygge.sammanhang(kommun), falt, text))
         kopiera_tabeller(fil, sidfil)
         dokument.append(falt)
         stycken += paragrafindex.av_dokument(falt, text, katalog)
@@ -98,37 +95,30 @@ def skriv_dokumenten(
 def bygg_oversikten(bygge: Bygge, kommun: Kommun, dokument: list[dict]) -> None:
     mall = bygge.mall
     rader = rakna(kommun, dokument, mall.byggd.date())
-    innehall = oversikt(mall, kommun, rader, dokument)
+    innehall = oversikt(bygge.sammanhang(kommun), rader, dokument)
     rubrik = oversiktsnamn(mall.kommuner, kommun)
     for adress in adresser(mall, kommun):
         bygge.skriv(adress, sida(mall, adress, rubrik, innehall))
 
 
 def bygg_organen(bygge: Bygge, kommun: Kommun, dokument: list[dict]) -> None:
-    mall = bygge.mall
-    for rad in rakna(kommun, dokument, mall.byggd.date()):
+    sammanhang = bygge.sammanhang(kommun)
+    for rad in rakna(kommun, dokument, bygge.mall.byggd.date()):
         organets = [d for d in dokument if d["organ"] == rad.id]
-        html = organsida(mall, kommun, rad, organets)
+        html = organsida(sammanhang, rad, organets)
         bygge.skriv(f"{kommun.id}/{rad.id}.html", html)
-        if malen := [m for m in mall.malen.get(kommun.id, []) if m.organ == rad.id]:
-            html = malsida(mall, kommun, malen, organets)
+        if malen := [m for m in sammanhang.underlag.malen if m.organ == rad.id]:
+            html = malsida(sammanhang, malen, organets)
             bygge.skriv(malsidans_adress(kommun, rad.id), html)
-        bygg_sparen(bygge, kommun, rad.id)
+        bygg_sparen(bygge, sammanhang, rad.id)
 
 
-def bygg_sparen(bygge: Bygge, kommun: Kommun, organ: str) -> None:
+def bygg_sparen(bygge: Bygge, sammanhang: Sammanhang, organ: str) -> None:
     for slag in SLAGEN:
-        alla = bygge.mall.spar[slag.id].get(kommun.id, [])
+        alla = sammanhang.underlag.stegen(slag.id)
         if stegen := [s for s in alla if s.organ == organ]:
-            html = sparsida(bygge.mall, vy(bygge.mall, kommun, slag), stegen)
-            bygge.skriv(sparets_adress(kommun, organ, slag), html)
-
-
-def vy(mall: Mall, kommun: Kommun, slag: Slag) -> Vy:
-    vyn = Vy(slag, kommun, mall.aren[kommun.id])
-    if slag == DETALJPLANER:
-        return replace(vyn, projekt=mall.projekt.get(kommun.id, {}))
-    return vyn
+            html = sparsida(sammanhang, slag, stegen)
+            bygge.skriv(sparets_adress(sammanhang.kommun, organ, slag), html)
 
 
 def bygg_kalender(bygge: Bygge, rot: Path, kommun: Kommun) -> None:

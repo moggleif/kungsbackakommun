@@ -9,11 +9,11 @@ import json
 from pathlib import Path
 
 from kommunhandlingar import frontmatter
-from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import sammantrade
 from kommunhandlingar.webbplats.kortkoppling import kortlankar, sidindex
 from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.punktsidor import sidor
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.sammantrade import Mote, Underlag, per_nummer
 from kommunhandlingar.webbplats.sammantradessida import sammantradessida
 from kommunhandlingar.webbplats.slagen import SLAGEN
@@ -21,11 +21,12 @@ from kommunhandlingar.webbplats.slagen import SLAGEN
 
 # `lasta` är kommunens dokument och paragrafernas rader, som bygget läst.
 def underlag(
-    mall: Mall, katalog: Path, kommun: Kommun, lasta: tuple[list[dict], list[str]]
+    sammanhang: Sammanhang, katalog: Path, lasta: tuple[list[dict], list[str]]
 ) -> Underlag:
     dokument, rader = lasta
+    kommun = sammanhang.kommun
     paragraferna = [json.loads(rad) for rad in rader]
-    sparen = [(s, mall.spar[s.id].get(kommun.id, [])) for s in SLAGEN]
+    sparen = [(s, sammanhang.underlag.stegen(s.id)) for s in SLAGEN]
     kort = kortlankar(kommun, sparen, sidindex(paragraferna))
     return Underlag(
         kommun, katalog, dokument, paragraferna, per_nummer(paragraferna), kort

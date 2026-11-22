@@ -1,17 +1,13 @@
-"""Krav: K14, K18, K22, K26, K27, K28, K36, K37, K39, K51 och K60 i docs/02-KRAV.md,
+"""Krav: K14, K18, K22, K26, K27, K28, K36, K37, K39 och K51 i docs/02-KRAV.md,
 ADR-0074 och ADR-0083 för temat. Test: tests/test_webbplats.py och
 tests/test_tema.py."""
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.webbplats.mal import Mal
 from kommunhandlingar.webbplats.meny import GEMENSAM, meny, sajtnamn
-from kommunhandlingar.webbplats.projekt import Projekt
-from kommunhandlingar.webbplats.spar import Steg
-from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 
 # Varje färg har ett ljust och ett mörkt värde (ADR-0074). En webbläsare utan
 # light-dark() får de ljusa värdena. Knappen och det valda temat kommer från
@@ -79,15 +75,8 @@ class Mall:
     kommuner: list[Kommun]
     repo: str
     byggd: datetime
+    # Kommunerna med en kalender, som menyn länkar till.
     kalendrar: frozenset[str] = frozenset()
-    malen: dict[str, list[Mal]] = field(default_factory=dict)
-    uppfoljningar: dict[str, list[Uppfoljning]] = field(default_factory=dict)
-    # Stegen per spårslag och kommun, som `spar["lokalbehov"]["kungsbacka"]`.
-    spar: dict[str, dict[str, list[Steg]]] = field(default_factory=dict)
-    # Detaljplanernas projekt per kommun och plan (K46).
-    projekt: dict[str, dict[str, Projekt]] = field(default_factory=dict)
-    # Åren som sidorna över tid visar, per kommun (K60).
-    aren: dict[str, range] = field(default_factory=dict)
 
     @property
     def en_kommun(self) -> bool:

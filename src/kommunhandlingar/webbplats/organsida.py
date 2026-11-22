@@ -9,15 +9,17 @@ from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.flikar import SAMMANTRADEN, flikar
 from kommunhandlingar.webbplats.luckor import motesnamn
-from kommunhandlingar.webbplats.mall import Mall, lank, sida
+from kommunhandlingar.webbplats.mall import lank, sida
 from kommunhandlingar.webbplats.rakning import Organrad
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.sammantrade import adress as sammantradets
 from kommunhandlingar.webbplats.sammantrade import har_sida, ordnade
 
 Mote = tuple[str, str]
 
 
-def organsida(mall: Mall, kommun: Kommun, rad: Organrad, dokument: list[dict]) -> str:
+def organsida(sammanhang: Sammanhang, rad: Organrad, dokument: list[dict]) -> str:
+    kommun = sammanhang.kommun
     moten = defaultdict(list)
     for d in dokument:
         moten[(d["datum"], d["lopnr"])].append(d)
@@ -27,11 +29,11 @@ def organsida(mall: Mall, kommun: Kommun, rad: Organrad, dokument: list[dict]) -
         rubrik = moterubrik(mote, kommun, moten[mote])
         ar[mote[0][:4]].append(motesavsnitt(rubrik, moten[mote], saknas.get(mote, ())))
     adress = f"{kommun.id}/{rad.id}.html"
-    innehall = flikar(mall, kommun.id, rad.id, SAMMANTRADEN) + (
+    innehall = flikar(sammanhang.underlag, rad.id, SAMMANTRADEN) + (
         "".join(f"<h2>{escape(a)}</h2>{''.join(m)}" for a, m in ar.items())
         or "<p>Inget hämtat än.</p>"
     )
-    return sida(mall, adress, rad.namn, innehall)
+    return sida(sammanhang.mall, adress, rad.namn, innehall)
 
 
 # Det första sammanträdet en dag har inget löpnummer, nästa har 2 (ADR-0003).

@@ -1,5 +1,5 @@
 """Krav: K60 i docs/02-KRAV.md, ADR-0086. Kod:
-src/kommunhandlingar/webbplats/arspann.py, mall.py, malsida.py,
+src/kommunhandlingar/webbplats/arspann.py, inlasning.py, malsida.py,
 malstatistik.py och sparkort.py."""
 
 import re
@@ -7,18 +7,18 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from kommunhandlingar.webbplats.arspann import arspann, poolens_ar, radernas_ar
-from kommunhandlingar.webbplats.mall import Mall
+from kommunhandlingar.webbplats.arspann import arspann, poolens_ar
+from kommunhandlingar.webbplats.inlasning import kommunens
 from kommunhandlingar.webbplats.malsida import malsida
-from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import REDOVISNINGAR
+from tests.poolfall import sammanhang
 from tests.test_mal import pool
 from tests.test_malkort import GRUPPER
 from tests.test_redovisningar import steg
-from tests.test_webbplats import REPO, TID, exempelby, protokoll
+from tests.test_webbplats import protokoll
 
-KOMMUNENS = {"exempelby": range(2018, 2027)}
+KOMMUNENS = range(2018, 2027)
 
 
 def kolumner(html: str) -> list[str]:
@@ -26,10 +26,9 @@ def kolumner(html: str) -> list[str]:
     return re.findall(r'<th scope="col"( class="lucka")?>(\d{4})', tidslinje)
 
 
-def malsidan(aren: dict, dokumentar=(2022, 2024)) -> str:
+def malsidan(aren: range, dokumentar=(2022, 2024)) -> str:
     with pool(GRUPPER) as malen:
-        mall = Mall([exempelby()], REPO, TID, aren=aren)
-        return malsida(mall, exempelby(), malen, protokoll(*dokumentar))
+        return malsida(sammanhang(aren=aren), malen, protokoll(*dokumentar))
 
 
 class TestSpannet(unittest.TestCase):
@@ -43,18 +42,23 @@ class TestSpannet(unittest.TestCase):
         self.assertEqual(arspann([2026, 2019]), range(2019, 2027))
         self.assertEqual(arspann([2019, 2026, 2027]), range(2019, 2028))
 
-    def test_radernas_ar_ur_mal_uppfoljningar_och_spar(self):
+    def test_aren_ur_mal_uppfoljningar_och_spar_i_kommunen(self):
         class Rad:
             def __init__(self, ar):
                 self.ar = ar
 
-        aren = radernas_ar(
-            "exempelby",
-            {"exempelby": [Rad(2017)], "annan": [Rad(2001)]},
-            {"exempelby": [Rad(2020)]},
-            {"initiativ": {"exempelby": [Rad(2010)]}},
-        )
-        self.assertEqual(sorted(aren), [2010, 2017, 2020])
+        lasta = {
+            "mal": {"exempelby": [Rad(2017)], "annan": [Rad(2001)]},
+            "uppfoljningar": {"exempelby": [Rad(2020)]},
+            "initiativ": {"exempelby": [Rad(2010)]},
+            "projekt": {"annan": {}},
+        }
+        underlag = kommunens(lasta, "exempelby", [2012, 2026])
+        self.assertEqual(underlag.aren, range(2010, 2027))
+        self.assertEqual(underlag.filer, {"mal", "uppfoljningar", "initiativ"})
+        self.assertEqual([r.ar for r in underlag.stegen("initiativ")], [2010])
+        self.assertEqual(underlag.stegen("lokalbehov"), [])
+        self.assertEqual(underlag.projekt, {})
 
 
 class TestSidorna(unittest.TestCase):
@@ -67,12 +71,12 @@ class TestSidorna(unittest.TestCase):
         self.assertEqual(luckor, ["2018", "2019", "2020", "2021", "2023"])
 
     def test_ett_ar_efter_byggaret_ar_ingen_lucka(self):
-        html = malsidan({"exempelby": range(2018, 2028)})
+        html = malsidan(range(2018, 2028))
         self.assertEqual(kolumner(html)[-1], ("", "2027"))
         self.assertIn('<th scope="col">2027<br><small>inga mål</small></th>', html)
 
     def test_rutan_galler_och_forvalet_ar_malens_senaste_ar(self):
-        html = malsidan({"exempelby": range(2018, 2028)})
+        html = malsidan(range(2018, 2028))
         self.assertIn('<div class="ruta"><h3>2026</h3>', html)
         self.assertIn('<tr><th scope="row">2027</th><td class="tal">–</td>', html)
         self.assertIn('data-forval="2026"', html)
@@ -88,8 +92,6 @@ class TestSidorna(unittest.TestCase):
         self.assertNotIn("<span>nytt</span>", aret.split("</section>")[0])
 
     def test_sparsidan_visar_kommunens_ar(self):
-        mall = Mall([exempelby()], REPO, TID, aren=KOMMUNENS)
-        stegen = steg()
-        html = sparsida(mall, Vy(REDOVISNINGAR, exempelby(), range(2018, 2027)), stegen)
+        html = sparsida(sammanhang(aren=KOMMUNENS), REDOVISNINGAR, steg())
         aren = [ar for _, ar in kolumner(html)]
         self.assertEqual(aren, [str(a) for a in range(2018, 2027)])

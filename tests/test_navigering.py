@@ -14,6 +14,7 @@ from kommunhandlingar.webbplats.mall import Mall, sida
 from kommunhandlingar.webbplats.meny import kommunens, meny, oversiktsnamn
 from kommunhandlingar.webbplats.oversikt import adresser, oversikt
 from kommunhandlingar.webbplats.rakning import Organrad
+from kommunhandlingar.webbplats.sammanhang import Kommununderlag, Sammanhang
 from kommunhandlingar.webbplats.spar import Steg
 from tests.test_webbplats import REPO, TID, exempelby
 
@@ -41,9 +42,13 @@ def kommun_med_utskott():
 
 class TestNavigering(unittest.TestCase):
     def setUp(self):
-        spar = {"initiativ": {"exempelby": [steg("Simskola"), steg("Öppettider")]}}
-        malen = {"exempelby": [mal("Läsa", "Läsning"), mal("Läsning"), mal("Räkna")]}
-        self.mall = Mall([exempelby()], REPO, TID, malen=malen, spar=spar)
+        spar = {"initiativ": [steg("Simskola"), steg("Öppettider")]}
+        malen = [mal("Läsa", "Läsning"), mal("Läsning"), mal("Räkna")]
+        self.mall = Mall([exempelby()], REPO, TID)
+        self.underlag = Kommununderlag(range(0), malen=malen, spar=spar)
+
+    def oversikt(self, kommun, rader, dokument) -> str:
+        return oversikt(Sammanhang(self.mall, kommun, self.underlag), rader, dokument)
 
     def test_menyn_har_kommunens_sidor(self):
         html = meny([exempelby()], frozenset({"exempelby"}), "exempelby/fsn.html")
@@ -141,7 +146,7 @@ class TestNavigering(unittest.TestCase):
 
     def test_oversikten_har_en_kolumn_per_sida_kommunen_har_och_antalet(self):
         rader = [rad("bun", 0), rad("fsn", 4)]
-        html = oversikt(self.mall, exempelby(), rader, [])
+        html = self.oversikt(exempelby(), rader, [])
         self.assertIn('<a href="exempelby/fsn.html">4</a>', html)
         self.assertIn('<a href="exempelby/fsn/mal-och-direktiv.html">2 mål</a>', html)
         self.assertIn('<a href="exempelby/fsn/initiativ.html">2 ärenden</a>', html)
@@ -154,7 +159,7 @@ class TestNavigering(unittest.TestCase):
 
     def test_utskottet_star_under_sin_namnd(self):
         rader = [rad("bun", 0), rad("fsn", 4), rad("bun-au", 1)]
-        html = oversikt(self.mall, kommun_med_utskott(), rader, [])
+        html = self.oversikt(kommun_med_utskott(), rader, [])
         bun, utskott, fsn = (
             html.index(f'"exempelby/{o}.html"') for o in ("bun", "bun-au", "fsn")
         )
@@ -164,9 +169,7 @@ class TestNavigering(unittest.TestCase):
 
     def test_oversikten_borjar_med_dokumenten(self):
         dokument = [{"datum": "2024-05-02"}, {"datum": "2013-08-13"}] * 600
-        html = oversikt(
-            self.mall, exempelby(), [rad("bun", 0), rad("fsn", 0)], dokument
-        )
+        html = self.oversikt(exempelby(), [rad("bun", 0), rad("fsn", 0)], dokument)
         self.assertIn("<p>1 200 dokument från 2013-08-13 till 2024-05-02.", html)
 
     def test_organen_star_i_kommunfilens_grupper(self):
@@ -182,7 +185,7 @@ class TestNavigering(unittest.TestCase):
             ),
         )
         rader = [rad("bun", 0), rad("fsn", 4), rad("bun-au", 1)]
-        html = oversikt(self.mall, kommun, rader, [])
+        html = self.oversikt(kommun, rader, [])
         ordning = [
             html.index(t)
             for t in (
@@ -198,7 +201,7 @@ class TestNavigering(unittest.TestCase):
         self.assertEqual(html.count("<tbody>"), 2)
 
     def test_flikarna_pa_organets_sida(self):
-        html = flikar(self.mall, "exempelby", "fsn", SAMMANTRADEN)
+        html = flikar(self.underlag, "fsn", SAMMANTRADEN)
         self.assertIn('href="fsn.html" aria-current="page">Sammanträden', html)
         self.assertIn('href="fsn/mal-och-direktiv.html">Mål och direktiv', html)
         self.assertIn('href="fsn/initiativ.html">Initiativ och motioner', html)
@@ -206,10 +209,10 @@ class TestNavigering(unittest.TestCase):
         self.assertLess(html.index("Mål och direktiv"), html.index("Initiativ"))
 
     def test_flikarna_pa_en_sida_over_tid(self):
-        html = flikar(self.mall, "exempelby", "fsn", "initiativ")
+        html = flikar(self.underlag, "fsn", "initiativ")
         self.assertIn('href="../fsn.html">Sammanträden', html)
         self.assertIn('href="../fsn/initiativ.html" aria-current="page"', html)
 
     def test_organ_utan_sidor_over_tid_har_bara_sammantradena(self):
-        html = flikar(self.mall, "exempelby", "bun", SAMMANTRADEN)
+        html = flikar(self.underlag, "bun", SAMMANTRADEN)
         self.assertEqual(html.count("<li>"), 1)

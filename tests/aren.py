@@ -3,5 +3,5 @@
 from kommunhandlingar.webbplats.arspann import arspann
 
 
-def aren(rader) -> dict[str, range]:
-    return {"exempelby": arspann([r.ar for r in rader])}
+def aren(rader) -> range:
+    return arspann([r.ar for r in rader])

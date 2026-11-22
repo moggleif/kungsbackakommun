@@ -6,11 +6,11 @@ import unittest
 
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.webbplats import malgraf, statusikon
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
+from tests.poolfall import sammanhang
 from tests.test_mal import BUDGET, HANDLINGAR, RADER, pool
-from tests.test_webbplats import REPO, TID, exempelby, protokoll
+from tests.test_webbplats import protokoll
 
 
 class TestGrupper(unittest.TestCase):
@@ -83,8 +83,8 @@ class TestGruppsidan(unittest.TestCase):
 
     def sida(self) -> str:
         with pool(self.RADER) as malen:
-            mall = Mall([exempelby()], REPO, TID, aren=aren(malen))
-            return malsida(mall, exempelby(), malen, protokoll(2022))
+            vald = sammanhang(aren=aren(malen))
+            return malsida(vald, malen, protokoll(2022))
 
     def test_omdopta_rubriker_pa_samma_kort(self):
         html = self.sida()

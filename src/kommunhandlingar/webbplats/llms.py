@@ -8,6 +8,7 @@ sidor och filer skrivna för hand.
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.mall import KALLKOD, Mall
+from kommunhandlingar.webbplats.sammanhang import Kommununderlag
 from kommunhandlingar.webbplats.slagen import SLAGEN
 
 INLEDNING = """# kommunhandlingar
@@ -36,32 +37,37 @@ läs det då på sidan. `arenden` i indexet är protokollets alla diarienummer.
 """
 
 
-def llms(mall: Mall) -> str:
+# Underlaget är kommunernas, med kommunens id som nyckel.
+def llms(mall: Mall, underlagen: dict[str, Kommununderlag]) -> str:
     avsnitt = [INLEDNING.format(repo=mall.repo, kod=KALLKOD)]
-    avsnitt += [kommunavsnitt(mall, kommun) for kommun in mall.kommuner]
+    avsnitt += [
+        kommunavsnitt(mall, kommun, underlagen[kommun.id]) for kommun in mall.kommuner
+    ]
     return "\n".join(avsnitt)
 
 
-def kommunavsnitt(mall: Mall, kommun: Kommun) -> str:
+def kommunavsnitt(mall: Mall, kommun: Kommun, underlag: Kommununderlag) -> str:
     lankar = [
         f"[Index över dokumenten]({kommun.id}/index.jsonl)",
         f"[Protokollens paragrafer]({kommun.id}/paragrafer.jsonl)",
         f"[Översikt]({kommun.id}.html)",
     ]
     lankar += [f"[{o.namn[0]}]({kommun.id}/{o.id}.html)" for o in kommun.organ]
+    kalendern = {"kalender"} if kommun.id in mall.kalendrar else set()
     lankar += [
         f"[{rubrik}]({mall.repo}/raw/main/{katalog}/{kommun.id}.csv): skriven för hand"
-        for katalog, rubrik in handskrivna(mall, kommun.id)
+        for katalog, rubrik in handskrivna(underlag.filer | kalendern)
     ]
     return f"## {kommun.namn}\n\n" + "".join(f"- {lank}\n" for lank in lankar)
 
 
-def handskrivna(mall: Mall, kommun: str) -> list[tuple[str, str]]:
-    filer = [
-        ("kalender", "Kalendern", mall.kalendrar),
-        ("mal", "Mål och direktiv", mall.malen),
-        ("uppfoljningar", "Uppföljningar av målen", mall.uppfoljningar),
+# Katalogerna i `filer` med sina rubriker, i den ordning de länkas.
+def handskrivna(filer: frozenset[str]) -> list[tuple[str, str]]:
+    kataloger = [
+        ("kalender", "Kalendern"),
+        ("mal", "Mål och direktiv"),
+        ("uppfoljningar", "Uppföljningar av målen"),
     ]
-    filer += [(s.id, s.rubrik, mall.spar.get(s.id, {})) for s in SLAGEN]
-    filer.append(("projekt", "Detaljplanernas projekt", mall.projekt))
-    return [(katalog, rubrik) for katalog, rubrik, finns in filer if kommun in finns]
+    kataloger += [(s.id, s.rubrik) for s in SLAGEN]
+    kataloger.append(("projekt", "Detaljplanernas projekt"))
+    return [(katalog, rubrik) for katalog, rubrik in kataloger if katalog in filer]
