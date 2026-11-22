@@ -12,7 +12,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from kommunhandlingar import frontmatter
+from kommunhandlingar import frontmatter, pool
 from kommunhandlingar.konvertering import vag_h
 
 MINST_TAL = 15
@@ -30,11 +30,12 @@ class Prov:
 
 
 def urval(data: Path, antal: int, fro: int) -> list[Prov]:
-    filer = sorted(data.rglob("*.md"))
-    random.Random(fro).shuffle(filer)
+    dokument = list(pool.dokumenten(data))
+    random.Random(fro).shuffle(dokument)
     valda, kvar = [], antal
-    for fil in filer:
-        prov = provet(fil, data, random.Random(f"{fro}:{fil.relative_to(data)}"))
+    for fil, falt, text in dokument:
+        namn = str(fil.relative_to(data))
+        prov = provet(namn, falt, text, random.Random(f"{fro}:{namn}"))
         if prov is not None and kvar > 0:
             prov = Prov(prov.fil, prov.url, prov.sha256, prov.sidor[:kvar])
             valda.append(prov)
@@ -42,24 +43,20 @@ def urval(data: Path, antal: int, fro: int) -> list[Prov]:
     return valda
 
 
-def provet(fil: Path, data: Path, slump: random.Random) -> Prov | None:
-    text = fil.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
+def provet(namn: str, falt: dict, text: str, slump: random.Random) -> Prov | None:
+    if falt["kalla_url"].startswith(("[", "null")):
         return None
-    falt = frontmatter.las(text)
-    if falt.get("kalla_url", "null").startswith(("[", "null")):
-        return None
-    if falt.get("bytes", "null") == "null" or int(falt["bytes"]) > STORST:
+    if falt["bytes"] == "null" or int(falt["bytes"]) > STORST:
         return None
     sidor = mojliga(falt, frontmatter.brodtext(text))
     if not sidor:
         return None
     valda = sorted(slump.sample(sidor, min(PER_DOKUMENT, len(sidor))))
-    return Prov(str(fil.relative_to(data)), falt["kalla_url"], falt["sha256"], valda)
+    return Prov(namn, falt["kalla_url"], falt["sha256"], valda)
 
 
 def mojliga(falt: dict[str, str], brodtext: str) -> list[int]:
-    kvalitet = frontmatter.lista(falt.get("kvalitet_per_sida", "null"))
+    kvalitet = frontmatter.lista(falt["kvalitet_per_sida"])
     obekraftade = {int(s) for s in frontmatter.lista(falt["tal_obekraftade"])}
     delar = SIDMARKERING.split(brodtext)[1:]
     texter = {int(n): t for n, t in zip(delar[::2], delar[1::2], strict=True)}

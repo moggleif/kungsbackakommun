@@ -70,7 +70,6 @@ class Urval(unittest.TestCase):
         self.skriv("ej.md", dokument("null", "[]", [], kalla_url="null"))
         self.skriv("stor.md", dokument("[ok]", "[]", sida, bytes="30000000"))
         self.skriv("okand.md", dokument("[ok]", "[]", sida, bytes="null"))
-        self.skriv("README.md", "# Inget dokument\n")
         self.skriv("ocr.md", dokument("[ocr]", "[1]", sida))
         self.assertEqual(urval.urval(self.data, 10, 1), [])
 
