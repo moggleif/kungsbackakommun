@@ -11,13 +11,13 @@ när den inte går ihop med kommunfilen och poolen (docs/03-ARKITEKTUR.md#lokalb
 #initiativärenden och #handlingsplaner).
 """
 
-import csv
 import re
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.webbplats import radfil
 from kommunhandlingar.webbplats.mal import Sidtext, provbar, sidlasare
 from kommunhandlingar.webbplats.partier import star_pa
 
@@ -67,50 +67,45 @@ class Steg:
         return self.kalla.split("/", 1)[0]
 
 
-def las(fil: Path, kommun: Kommun, data: Path, slag: Slag) -> list[Steg]:
-    with fil.open(encoding="utf-8", newline="") as f:
-        rader = list(csv.reader(f))
-    if not rader or rader[0] != slag.kolumner:
-        raise Datafel(f"{fil}: rubrikerna är inte {','.join(slag.kolumner)}")
-    organ = {o.id for o in kommun.organ}
-    sidtext = sidlasare(data)
-    stegen, sedda = [], set()
-    for nr, rad in enumerate(rader[1:], 2):
-        try:
-            steg = tolka(rad, slag, organ, sidtext)
-        except ValueError as fel:
-            raise Datafel(f"{fil}, rad {nr}: {fel}") from None
-        nyckel = (steg.organ, steg.namn, steg.fas, steg.kalla)
-        if nyckel in sedda:
-            raise Datafel(f"{fil}, rad {nr}: steget står redan med samma källa")
-        sedda.add(nyckel)
-        stegen.append(steg)
-    return stegen
+@dataclass(frozen=True)
+class Poolen:
+    organ: set[str]
+    sidtext: Sidtext
 
 
-def tolka(rad: list[str], slag: Slag, organ: set[str], sidtext: Sidtext) -> Steg:
-    if len(rad) != len(slag.kolumner):
-        raise ValueError(f"{len(rad)} fält, inte {len(slag.kolumner)}")
-    if not re.fullmatch(r"\d{4}", rad[2]):
-        raise ValueError(f"året {rad[2]!r} är inte fyra siffror")
-    steg = Steg(rad[0], rad[1], int(rad[2]), *rad[3:])
-    if steg.organ not in organ:
-        raise ValueError(f"organet {steg.organ!r} står inte i kommunfilen")
+Lasare = Callable[[Path, Kommun, Path], list[Steg]]
+
+
+def lasare(slag: Slag) -> Lasare:
+    def las(fil: Path, kommun: Kommun, data: Path) -> list[Steg]:
+        poolen = Poolen(radfil.organen(kommun), sidlasare(data))
+        tolka_unik = radfil.unika(
+            lambda rad: tolka(rad, slag, poolen),
+            lambda s: (s.organ, s.namn, s.fas, s.kalla),
+            "steget står redan med samma källa",
+        )
+        return radfil.las(fil, slag.kolumner, tolka_unik)
+
+    return las
+
+
+def tolka(rad: list[str], slag: Slag, poolen: Poolen) -> Steg:
+    steg = Steg(rad[0], rad[1], radfil.ar(rad[2]), *rad[3:])
+    radfil.i_kommunfilen(steg.organ, poolen.organ)
     if not steg.namn or not steg.text:
         raise ValueError(f"{slag.kolumn} och texten får inte vara tomma")
     if steg.fas not in slag.faser:
         raise ValueError(f"fasen {steg.fas!r} är inte en av {', '.join(slag.faser)}")
     kontrollera_varde(steg, slag)
-    if steg.tolkad not in ("", "ja"):
-        raise ValueError(f"tolkad {steg.tolkad!r} är varken tom eller ja")
-    kontrollera_sidan(steg, slag, kallans_sida(steg, organ, sidtext))
+    radfil.tolkad(steg.tolkad)
+    kontrollera_sidan(steg, slag, kallans_sida(steg, poolen))
     return steg
 
 
-def kallans_sida(steg: Steg, organ: set[str], sidtext: Sidtext) -> str:
-    if steg.kallans_organ not in organ:
+def kallans_sida(steg: Steg, poolen: Poolen) -> str:
+    if steg.kallans_organ not in poolen.organ:
         raise ValueError(f"källan {steg.kalla!r} är inget organs dokument")
-    return sidtext(steg.kalla, steg.kallans_organ)
+    return poolen.sidtext(steg.kalla, steg.kallans_organ)
 
 
 # Avsändaren får stå som partiets namn, eller Alliansen som de fyra

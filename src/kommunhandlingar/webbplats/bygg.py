@@ -10,7 +10,6 @@ tests/test_sammantradessida.py, tests/test_sokindex.py.
 import shutil
 from dataclasses import replace
 from datetime import datetime
-from functools import partial
 from pathlib import Path
 
 from kommunhandlingar import konfiguration, pool
@@ -52,8 +51,7 @@ def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:
     malen = las_kommunfiler(rot, "mal", kommuner, mal.las)
     uppfoljda = las_kommunfiler(rot, "uppfoljningar", kommuner, uppfoljningar.las)
     sparen = {
-        s.id: las_kommunfiler(rot, s.id, kommuner, partial(spar.las, slag=s))
-        for s in SLAGEN
+        s.id: las_kommunfiler(rot, s.id, kommuner, spar.lasare(s)) for s in SLAGEN
     }
     projekten = las_projekten(rot, kommuner, sparen[DETALJPLANER.id])
     aren = kommunernas_ar(rot, kommuner, byggd, (malen, uppfoljda, sparen))

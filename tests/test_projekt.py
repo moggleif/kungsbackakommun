@@ -129,6 +129,6 @@ class TestKungsbacka(unittest.TestCase):
         fil = ROT / "projekt" / "kungsbacka.csv"
         projekten = projekt.las(fil, kungsbacka, data)
         planer = ROT / "detaljplaner" / "kungsbacka.csv"
-        stegen = spar.las(planer, kungsbacka, data, DETALJPLANER)
+        stegen = spar.lasare(DETALJPLANER)(planer, kungsbacka, data)
         projekt.kontrollera(projekten, stegen, "projekt/kungsbacka.csv")
         self.assertEqual(fil.read_bytes().count(b"\r"), 0)

@@ -5,14 +5,13 @@ protokoll där nämnden tar upp sina mål, en uppföljning eller en dragning.
 Bygget stoppas med raden när den inte går ihop med kommunfilen och poolen.
 """
 
-import csv
 import re
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.webbplats import radfil
 from kommunhandlingar.webbplats.mal import Sidtext, sidlasare, star_pa
 
 KOLUMNER = ["organ", "datum", "paragraf", "slag", "rubrik", "kalla"]
@@ -34,36 +33,22 @@ class Uppfoljning:
 
 
 def las(fil: Path, kommun: Kommun, data: Path) -> list[Uppfoljning]:
-    with fil.open(encoding="utf-8", newline="") as f:
-        rader = list(csv.reader(f))
-    if not rader or rader[0] != KOLUMNER:
-        raise Datafel(f"{fil}: rubrikerna är inte {','.join(KOLUMNER)}")
-    organ = {o.id for o in kommun.organ}
-    sidtext = sidlasare(data)
-    uppfoljningar, sedda = [], set()
-    for nr, rad in enumerate(rader[1:], 2):
-        try:
-            uppfoljning = tolka(rad, organ, sidtext)
-        except ValueError as fel:
-            raise Datafel(f"{fil}, rad {nr}: {fel}") from None
-        nyckel = (uppfoljning.organ, uppfoljning.datum, uppfoljning.paragraf)
-        if nyckel in sedda:
-            raise Datafel(f"{fil}, rad {nr}: paragrafen står redan i filen")
-        sedda.add(nyckel)
-        uppfoljningar.append(uppfoljning)
-    return uppfoljningar
+    organ, sidtext = radfil.organen(kommun), sidlasare(data)
+    tolka_unik = radfil.unika(
+        lambda rad: tolka(rad, organ, sidtext),
+        lambda u: (u.organ, u.datum, u.paragraf),
+        "paragrafen står redan i filen",
+    )
+    return radfil.las(fil, KOLUMNER, tolka_unik)
 
 
 def tolka(rad: list[str], organ: set[str], sidtext: Sidtext) -> Uppfoljning:
-    if len(rad) != len(KOLUMNER):
-        raise ValueError(f"{len(rad)} fält, inte {len(KOLUMNER)}")
     upp = Uppfoljning(*rad)
     try:
         date.fromisoformat(upp.datum)
     except ValueError:
         raise ValueError(f"datumet {upp.datum!r} är inte ÅÅÅÅ-MM-DD") from None
-    if upp.organ not in organ:
-        raise ValueError(f"organet {upp.organ!r} står inte i kommunfilen")
+    radfil.i_kommunfilen(upp.organ, organ)
     if upp.slag not in SLAG:
         raise ValueError(f"slaget {upp.slag!r} är varken {' eller '.join(SLAG)}")
     if not re.fullmatch(r"\d+", upp.paragraf):

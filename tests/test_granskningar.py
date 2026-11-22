@@ -45,7 +45,7 @@ def bedomning(varde: str) -> str:
 
 def las(rader: str) -> list[spar.Steg]:
     with tillfallig_pool(RUBRIK, rader, dokumenten(TEXTER, "[ok]")) as (fil, data):
-        return spar.las(fil, exempelby(), data, GRANSKNINGAR)
+        return spar.lasare(GRANSKNINGAR)(fil, exempelby(), data)
 
 
 def sida() -> str:
@@ -74,7 +74,7 @@ class TestKungsbacka(unittest.TestCase):
     def test_filen_gar_ihop_med_kommunfilen_och_poolen(self):
         kungsbacka = las_kommun(ROT / "kommuner" / "kungsbacka.toml")
         fil = ROT / "granskningar" / "kungsbacka.csv"
-        stegen = spar.las(fil, kungsbacka, ROT / "data" / "kungsbacka", GRANSKNINGAR)
+        stegen = spar.lasare(GRANSKNINGAR)(fil, kungsbacka, ROT / "data" / "kungsbacka")
         self.assertNotIn("revision", {s.organ for s in stegen})
         for steg in stegen:
             if steg.fas == "bedomning":

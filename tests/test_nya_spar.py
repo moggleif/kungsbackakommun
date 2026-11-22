@@ -35,7 +35,7 @@ FALL = (
 def las(slag: spar.Slag, rad: str) -> list[spar.Steg]:
     rubrik, texter = ",".join(slag.kolumner) + "\n", {PROTOKOLL: TEXT}
     with tillfallig_pool(rubrik, rad, dokumenten(texter, "[ok]")) as (fil, data):
-        return spar.las(fil, exempelby(), data, slag)
+        return spar.lasare(slag)(fil, exempelby(), data)
 
 
 def rad(namn: str, fas: str, text: str) -> str:
