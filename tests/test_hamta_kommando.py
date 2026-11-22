@@ -57,7 +57,7 @@ class Kommandofall(unittest.TestCase):
         skriv(KANDIDATER, lista(self.arbete, "exempelby", arkiv))
         utskrift = io.StringIO()
         with (
-            mock.patch.object(hamta.ocr, "kontrollera"),
+            mock.patch.object(hamta.tesseract, "kontrollera"),
             mock.patch.object(hamta, "Klient", return_value=self.klient),
             mock.patch.object(hamta, "nu", side_effect=klocka),
             contextlib.redirect_stdout(utskrift),
@@ -141,7 +141,7 @@ class TestKonfigurationsfel(Kommandofall):
         with (
             warnings.catch_warnings(),
             mock.patch.object(sys, "argv", argv),
-            mock.patch.object(hamta.ocr, "kontrollera"),
+            mock.patch.object(hamta.tesseract, "kontrollera"),
             self.assertRaises(SystemExit) as stopp,
         ):
             # runpy varnar när modulen redan är importerad.

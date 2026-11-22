@@ -16,8 +16,9 @@ from dataclasses import dataclass
 
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr, rapid, upphojt, vag_h
+from kommunhandlingar.konvertering import rapid, tesseract, upphojt, vag_h
 from kommunhandlingar.konvertering.rapid import Ruta
+from kommunhandlingar.konvertering.tsv import orden
 
 MARGINAL = 15
 
@@ -108,15 +109,10 @@ def radens_text(ord_: list[Ord], ruta: Ruta) -> str:
 
 
 def tesseracts_ord(bild: Image.Image) -> list[Ord]:
-    lasning = ocr.las_bild(bild)
+    lasning = tesseract.las_bild(bild)
     if lasning is None:
         raise Fallerade
     return [
-        Ord(
-            int(r["left"]) + int(r["width"]) / 2,
-            int(r["top"]) + int(r["height"]) / 2,
-            int(r["left"]),
-            r["text"],
-        )
-        for r in ocr.ordrader(lasning[0])
+        Ord((o.ruta[0] + o.ruta[2]) / 2, (o.ruta[1] + o.ruta[3]) / 2, o.ruta[0], o.text)
+        for o in orden(lasning.tsv)
     ]

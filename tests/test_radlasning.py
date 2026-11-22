@@ -11,7 +11,7 @@ from unittest.mock import patch
 import pypdfium2 as pdfium
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr, radlasning, rapid
+from kommunhandlingar.konvertering import ocr, radlasning, rapid, tesseract
 
 VAG_H = Path(__file__).parent / "fixtures" / "pdf" / "vag-h.pdf"
 
@@ -84,7 +84,7 @@ class Tom(unittest.TestCase):
 class Fallerar(unittest.TestCase):
     def test_tesseract_som_fallerar(self):
         with (
-            patch.object(ocr, "las_bild", return_value=None),
+            patch.object(tesseract, "las_bild", return_value=None),
             self.assertRaises(radlasning.Fallerade),
         ):
             radlasning.tesseracts_ord(sidbild())

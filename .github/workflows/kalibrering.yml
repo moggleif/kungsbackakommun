@@ -19,6 +19,8 @@ on:
       - src/kommunhandlingar/konvertering/rapid.py
       - src/kommunhandlingar/konvertering/morka_delar.py
       - src/kommunhandlingar/konvertering/ocr.py
+      - src/kommunhandlingar/konvertering/tesseract.py
+      - src/kommunhandlingar/konvertering/tsv.py
       - pyproject.toml
       - src/kommunhandlingar/kalibrering/**
       - .github/workflows/kalibrering.yml

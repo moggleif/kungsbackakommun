@@ -33,7 +33,7 @@ from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Kandidat, lista
 from kommunhandlingar.kandidat import las as las_kandidater
-from kommunhandlingar.konvertering import ocr
+from kommunhandlingar.konvertering import tesseract
 from kommunhandlingar.tidsbudget import Tidsgrans
 from kommunhandlingar.utfall import AT_SIDAN, VANTAR, Korning, Utfall
 
@@ -110,7 +110,7 @@ def forbered(arg: argparse.Namespace) -> tuple[Steg2, list[Kandidat], Path | Non
 
 
 def main(arg: argparse.Namespace) -> int:
-    ocr.kontrollera()
+    tesseract.kontrollera()
     steg, att_prova, provfil = forbered(arg)
     mjuk = tidsbudget.delens_grans(arg.start, arg.del_, nu())
     if arg.start:

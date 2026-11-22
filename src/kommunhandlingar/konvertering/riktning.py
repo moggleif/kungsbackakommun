@@ -15,7 +15,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr
+from kommunhandlingar.konvertering import tesseract
 
 MINSTA_SAKERHET = 2.0
 VRID = re.compile(r"^Rotate: (\d+)$", re.MULTILINE)
@@ -38,10 +38,10 @@ def detektera(bild: Image.Image) -> str:
         bild.save(fil)
         try:
             svar = subprocess.run(
-                ["tesseract", fil, "-", "--psm", "0", "--dpi", str(ocr.DPI)],
+                ["tesseract", fil, "-", "--psm", "0", "--dpi", str(tesseract.DPI)],
                 capture_output=True,
                 text=True,
-                timeout=ocr.TIDSGRANS,
+                timeout=tesseract.TIDSGRANS,
             )
         except subprocess.TimeoutExpired as fel:
             print(f"Tesseract, riktning: {fel}", file=sys.stderr)
