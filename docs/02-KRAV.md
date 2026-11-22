@@ -2482,8 +2482,7 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
   grannens tal.
 
 - **Givet** en rad där en siffra står direkt intill en bokstav i någon av
-  de två läsningarna, som `K1.` för `Kl.`, eller ett kolon mellan två
-  siffror, som `09:35` för `09: 35`
+  de två läsningarna, som `K1.` för `Kl.`
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad.
 

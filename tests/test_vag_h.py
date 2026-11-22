@@ -27,7 +27,7 @@ class Tal(unittest.TestCase):
 
     def test_mellanslag_kring_minus_och_kolon_star_kvar(self):
         self.assertEqual(
-            tal("116 −4, 116 -4 och 09: 35"), ["116", "-4", "116", "-4", "09", "35"]
+            tal("116 −4, 116 -4 och 09: 35"), ["116", "-4", "116", "-4", "09:35"]
         )
 
 
@@ -47,10 +47,6 @@ class Avgor(unittest.TestCase):
     def test_bokstav_intill_en_siffra(self):
         svar = avgor("Kl. 16:05", "K1. 16:05", inte_anropad)
         self.assertEqual(svar, Avgorande(None, "bokstav-vid-siffra"))
-
-    def test_kolon_mellan_siffror_bekraftas_inte(self):
-        svar = avgor("kl. 09:35", "kl. 09:35", inte_anropad)
-        self.assertEqual(svar, Avgorande(None, "kolon-mellan-siffror"))
 
     def test_tre_olika_lasningar(self):
         svar = avgor("1845", "1 845", lambda: "1846")

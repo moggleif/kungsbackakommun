@@ -1185,10 +1185,10 @@ varje ord hör till de rader vars ruta har ordets mittpunkt. En rad där
 någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
 (`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
 alla sorters streck blivit bindestreck och mellanslag kring ett
-tankstreck mellan två siffror tagits bort. En rad där en siffra står
-direkt intill en bokstav i någon av läsningarna bekräftas inte, eftersom
-båda motorerna läser `Kl.` som `K1.`. Inte heller en rad med ett kolon
-mellan två siffror, eftersom båda läser `09: 35` som `09:35`. Är de två eniga är raden bekräftad. Annars
+tankstreck eller kolon mellan två siffror tagits bort, eftersom båda
+motorerna läser `09: 35` som `09:35`. En rad där en siffra står direkt
+intill en bokstav i någon av läsningarna bekräftas inte, eftersom båda
+motorerna läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
 PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
 av de två, och minst ett.
