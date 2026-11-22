@@ -11,12 +11,12 @@ skriptet är målsidans.
 import re
 from collections import Counter
 from html import escape
-from pathlib import Path
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.flikar import flikar
+from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mall import KALLKOD, sida
-from kommunhandlingar.webbplats.malsida import AREN, SKRIPT, STIL
+from kommunhandlingar.webbplats.malsida import AREN
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.spar import Slag, Steg
@@ -30,7 +30,6 @@ from kommunhandlingar.webbplats.sparkort import (
     korten,
 )
 
-EGEN_STIL = Path(__file__).with_name("spar.css")
 BESLUTEN = "/blob/main/docs/decisions/"
 
 
@@ -45,8 +44,7 @@ def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:
     sakerna = per_sak(slag, stegen)
     innehall = (
         flikar(sammanhang.underlag, organ, slag.id)
-        + f"<style>{STIL.read_text(encoding='utf-8')}"
-        f"{EGEN_STIL.read_text(encoding='utf-8')}</style>"
+        + stil("mal.css", "spar.css")
         + slag.inledning
         + f"<details><summary>Om sidan</summary>{slag.metod}{AREN}<p>Hur och varför "
         f'står i <a href="{escape(KALLKOD + BESLUTEN + slag.adr)}">'
@@ -55,7 +53,7 @@ def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:
         + urval(slag, stegen)
         + tidslinje(vy, sakerna)
         + korten(vy, sakerna)
-        + f"<script>{SKRIPT.read_text(encoding='utf-8')}</script>"
+        + skript("mal.js")
     )
     return sida(sammanhang.mall, sidans, f"{slag.rubrik} – {namn}", innehall)
 

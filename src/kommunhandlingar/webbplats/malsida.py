@@ -12,11 +12,11 @@ perspektiv i taget; utan dem står allt på sidan. Stilen står i `mal.css`.
 
 from collections import defaultdict
 from html import escape
-from pathlib import Path
 
 from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.flikar import MAL, flikar
+from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mal import SLAG, Mal
 from kommunhandlingar.webbplats.malar import Underlag, aren
 from kommunhandlingar.webbplats.malkort import korten
@@ -25,9 +25,6 @@ from kommunhandlingar.webbplats.malstatistik import protokollar, statistik
 from kommunhandlingar.webbplats.maltidslinje import namnden_rad, tidslinje
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 
-SKRIPT = Path(__file__).with_name("mal.js")
-PERSPEKTIVSKRIPT = Path(__file__).with_name("perspektiv.js")
-STIL = Path(__file__).with_name("mal.css")
 ADR = "/blob/main/docs/decisions/"
 ADR_0044 = "0044-namndens-mal-och-direktiv-las-ur-dokumenten-och-skrivs-for-hand.md"
 ADR_0045 = "0045-omdopta-mal-grupperas-protokollet-gar-fore-och-status-blir-ikoner.md"
@@ -115,7 +112,7 @@ def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> s
     luckor = set(range(ar[0], mall.byggd.year + 1)) - dokumentar - malar
     innehall = (
         flikar(sammanhang.underlag, organ, MAL)
-        + f"<style>{STIL.read_text(encoding='utf-8')}</style>"
+        + stil("mal.css")
         + INLEDNING
         + fore_malen(min(dokumentar), min(malar))
         + om_sidan(mall, any(m.huvudmal for m in malen))
@@ -128,16 +125,9 @@ def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> s
         )
         + vy("ar", aren(Underlag(spar, ar, luckor, uppfoljda, protokoll)))
         + vy("kort", korten(spar, ar, luckor))
-        + skript()
+        + skript("mal.js", "perspektiv.js")
     )
     return sida(mall, sidans, f"Mål och direktiv – {namn}", innehall)
-
-
-def skript() -> str:
-    return "".join(
-        f"<script>{fil.read_text(encoding='utf-8')}</script>"
-        for fil in (SKRIPT, PERSPEKTIVSKRIPT)
-    )
 
 
 def vy(namn: str, innehall: str) -> str:

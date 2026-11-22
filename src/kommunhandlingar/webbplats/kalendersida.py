@@ -11,18 +11,17 @@ det står allt på sidan.
 
 from collections import defaultdict
 from html import escape
-from pathlib import Path
 from urllib.parse import urlparse
 
 from kommunhandlingar.gruppmote import VECKODAGAR
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import kalendervyer
+from kommunhandlingar.webbplats.inbaddning import las, skript
 from kommunhandlingar.webbplats.kalender import GRUPPMOTE, Sammantrade, gruppmoten
 from kommunhandlingar.webbplats.kalenderfarger import farger, stil
 from kommunhandlingar.webbplats.mall import KALLKOD, Mall, sida
 from kommunhandlingar.webbplats.meny import kommunens
 
-SKRIPT = Path(__file__).with_name("kalender.js")
 ADR = "/blob/main/docs/decisions/"
 ADR_0032 = "0032-kalendern-las-ur-besluten-och-skrivs-for-hand.md"
 ADR_0053 = "0053-tidigare-sammantraden-las-ur-poolens-mappar.md"
@@ -43,19 +42,6 @@ METOD = (
     "den anger en veckodag som datumet inte stämmer med. Ett osäkert datum "
     "har ett frågetecken i månadsvyn och ordet osäkert i listan.</p>"
 )
-STIL = """
-[hidden] { display: none !important; }
-.ruta { display: inline-block; border: 2px solid; border-radius: 3px;
-        padding: 0 0.25rem; margin: 1px 0; font-size: 0.8rem; }
-.osakert { border-style: dashed; }
-table.kalender { table-layout: fixed; width: 100%; min-width: 44rem; }
-table.kalender td { height: 5rem; }
-.dag { display: block; font-size: 0.8rem; color: var(--dampad); }
-details { margin-bottom: 1rem; }
-.urval label { display: inline-block; margin: 0 1rem 0.25rem 0; }
-.alla { margin: 0 0 0.5rem; }
-.o-gruppmöte { border: 2px dotted var(--kant); color: var(--dampad); background: none; }
-"""
 
 
 def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) -> str:
@@ -66,14 +52,14 @@ def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) ->
     if moten:
         namn[GRUPPMOTE] = f"Partiernas gruppmöte inför {namn[kommun.gruppmote.fore]}"
     innehall = (
-        f"<style>{STIL}{stil(farg)}</style>"
+        f"<style>{las('kalender.css')}{stil(farg)}</style>"
         + INLEDNING
         + kvalitet(mall, sammantraden, namn)
         + om_gruppmoten(kommun, moten, namn)
         + urval([*farg, *([GRUPPMOTE] if moten else [])], namn)
         + kalendervyer.manader(sammantraden + moten)
         + kalendervyer.lista(sammantraden + moten, namn)
-        + f"<script>{SKRIPT.read_text(encoding='utf-8')}</script>"
+        + skript("kalender.js")
     )
     return sida(mall, adress, kommunens(mall.kommuner, "Kalender", kommun), innehall)
 
