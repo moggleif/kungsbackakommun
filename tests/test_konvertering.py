@@ -16,7 +16,7 @@ from kommunhandlingar.konvertering.kvalitet import dokumentets
 from kommunhandlingar.konvertering.ocr import medelsakerhet
 from kommunhandlingar.konvertering.tabeller import som_csv, som_markdown
 from kommunhandlingar.konvertering.text import ar_talrad, stycken
-from kommunhandlingar.konvertering.tsv import orden
+from kommunhandlingar.konvertering.tsv import Ord
 from kommunhandlingar.konvertering.vag import langd_av, tackt_yta, vag
 
 PDF = Path(__file__).parent / "fixtures" / "pdf"
@@ -210,25 +210,15 @@ class TestOcrFel(unittest.TestCase):
         tesseract.kontrollera()
 
 
-def ocr_tsv(*rader: str) -> str:
-    """En TSV från Tesseract med `nivå,säkerhet,text` för varje rad."""
-    kolumner = "level page_num block_num par_num line_num left top width height"
-    ut = ["\t".join([*kolumner.split(), "conf", "text"])]
-    for rad in rader:
-        niva, conf, text = rad.split(",")
-        ut.append(
-            "\t".join([niva, "1", "1", "1", "1", "0", "0", "10", "10", conf, text])
-        )
-    return "\n".join(ut)
-
-
 class TestOcrSakerhet(unittest.TestCase):
-    def test_medelvardet_utan_poster_med_minus_ett(self):
-        tsv = ocr_tsv("5,-1,", "5,90,ord", "5,50,annat", "5,-1,x")
-        self.assertEqual(medelsakerhet(orden(tsv)), 70)
+    def test_medelvardet_av_ordens_sakerhet(self):
+        ord_ = [
+            Ord(t, c, (0, 0, 10, 10), ("1",) * 4) for t, c in [("ord", 90), ("x", 50)]
+        ]
+        self.assertEqual(medelsakerhet(ord_), 70)
 
     def test_inga_ord_ger_ingen_sakerhet(self):
-        self.assertIsNone(medelsakerhet(orden(ocr_tsv("1,-1,"))))
+        self.assertIsNone(medelsakerhet([]))
 
 
 class TestTabellformat(unittest.TestCase):

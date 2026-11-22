@@ -1,4 +1,4 @@
-"""Krav: K6, ADR-0005. Test: tests/test_tsv.py.
+"""Krav: K41, K73 och K84 i docs/02-KRAV.md, ADR-0005. Test: tests/test_tsv.py.
 
 Orden i Tesseracts TSV. Tesseract skriver en rad per sida, block, stycke,
 rad och ord; bara orden har en säkerhet, de andra har −1. Ett ord utan

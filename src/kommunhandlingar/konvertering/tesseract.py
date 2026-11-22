@@ -77,10 +77,10 @@ def verktyg() -> list[str]:
     svar = subprocess.run(
         ["tesseract", "--version"], check=True, capture_output=True, text=True
     )
-    tesseract = svar.stdout.split()[1]
+    programmet = svar.stdout.split()[1]
     return [
         f"pypdfium2 {version('pypdfium2')}",
-        f"tesseract {tesseract} {SPRAK} {modellversion()}",
+        f"tesseract {programmet} {SPRAK} {modellversion()}",
     ]
 
 

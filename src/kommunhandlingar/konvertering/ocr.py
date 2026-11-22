@@ -2,7 +2,7 @@
 Test: tests/test_konvertering.py och tests/test_hogkant.py.
 
 En sida som ska läsas med OCR renderas med pypdfium2 i 300 dpi, i gråskala,
-och läses av Tesseract (`tesseract`). Säkerheten är medelvärdet av
+och läses av Tesseract (konvertering/tesseract.py). Säkerheten är medelvärdet av
 Tesseracts säkerhet för de ord den känt igen; under tröskeln, eller utan
 ord, ger läsningen ingen text men sin TSV, som de säkra raderna läses ur
 (K73). Fallerar Tesseract ger läsningen ingenting.
