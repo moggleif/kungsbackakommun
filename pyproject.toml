@@ -20,6 +20,9 @@ dependencies = [
 [project.optional-dependencies]
 # Samma versioner i CI och lokalt; Dependabot håller dem uppdaterade.
 utveckling = ["ruff==0.17.4", "pip-audit==2.10.1", "coverage==7.17.4"]
+# Väg H för skannade sidor (ADR-0105): RapidOCR med modellerna i onnxruntime.
+# Bara kalibreringen använder dem än så länge (K84).
+ocr = ["rapidocr==3.10.0", "onnxruntime==1.32.0"]
 
 # Webbplatsens skript och stilar följer med paketet, så att ett datarepo som
 # installerar en fast version kan bygga sidorna (ADR-0080).

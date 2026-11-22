@@ -17,18 +17,22 @@ git clone https://github.com/moggleif/kungsbackakommun.git
 cd kungsbackakommun
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[utveckling]"
+pip install -e ".[utveckling,ocr]"
 npm install
 ```
 
 `pip install -e .` gör paketet i `src/kommunhandlingar/` importerbart, så
 att testerna når det, och drar in markdown-it-py, som webbplatsen och
 testerna renderar Markdown med. `[utveckling]` tar med ruff,
-pip-audit och coverage, i de versioner som
+pip-audit och coverage, och `[ocr]` RapidOCR och onnxruntime för väg H
+(K84), i de versioner som
 står i `pyproject.toml`, samma som CI installerar; ruffs förhandsregler
 kan ändras mellan versioner. Med
 [uv](https://docs.astral.sh/uv/) går samma ruff att köra utan
 installation: `uvx ruff@<versionen i pyproject.toml> check .`.
+Testerna av väg H (`tests/test_radlasning.py`) kör RapidOCR, som hämtar
+den latinska modellen från nätet första gången och kontrollerar dess
+sha256; CI hämtar den i varje körning.
 `npm install` installerar ESLint och jsdom i `node_modules/`, i de
 versioner som står i `package.json`, för webbplatsens skript (K83).
 `package-lock.json` checkas inte in, eftersom den bär
@@ -149,7 +153,8 @@ reportlab, pypdf och Pillow, `skapa_skarvar.py` och `skapa_spalter.py`,
 som behöver reportlab, `skapa_hogkant.py`, som behöver reportlab och
 Pillow, `skapa_kort.py`, som behöver reportlab och pypdf, och
 `skapa_delade.py` och `skapa_rutor.py`, som behöver reportlab. De är inte
-projektets beroenden. Testerna av hämtningen läser `kort.pdf`, som saknar
+projektets beroenden. `skapa_hogkant_ute.py` och `skapa_vag_h.py` klarar
+sig med standardbiblioteket. Testerna av hämtningen läser `kort.pdf`, som saknar
 inskannade sidor, så att de inte väntar på OCR; testerna av konverteringen
 läser `sidor.pdf`.
 
@@ -168,6 +173,22 @@ Kör det från repots rot.
 Ändrar en ändring måtten skrivs raden om med `--spara` i samma ändring.
 Hur måtten räknas och hur ett nytt dokument läggs till i urvalet står under
 "Facit för konverteringen" i [03-ARKITEKTUR.md](03-ARKITEKTUR.md).
+
+## Kalibreringen av väg H
+
+Väg H mäts på textlagersidor ur poolen, med textlagret som facit (K84).
+Den hämtar PDF:erna, så den behöver nät:
+
+```sh
+python3 -m kommunhandlingar.kalibrering data /tmp/kalibrering --antal 300
+```
+
+Resultatet står i `rapport.md` och `rader.csv` i utkatalogen. Samma
+körning går i Actions under "Kalibrering av väg H", för hand och i varje
+PR som ändrar regeln, OCR-läsningen eller beroendena. RapidOCR hämtar
+den latinska modellen vid första körningen. `hamtning.toml` läses i
+katalogen ovanför datakatalogen, alltså repots rot. Kommandot avslutas
+med kod 1 när kravet inte är uppfyllt eller för få sidor gick att mäta.
 
 ## Ögonblicksbilden av konverteringen
 

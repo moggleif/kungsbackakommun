@@ -959,7 +959,9 @@ nattkörningen checkar inte in något
   inga tabeller;
   hela sidans text är OCR-text, och den läses för sammanhangets skull,
   inte som data. Talen i OCR-texten står omärkta i texten; att de inte är
-  bekräftade syns bara i `tal_obekraftade`. Två fel som Tesseract gör
+  bekräftade syns bara i `tal_obekraftade`. Hur väg H ska kunna bekräfta
+  dem mäts först ([Väg H och kalibreringen](#väg-h-och-kalibreringen)).
+  Två fel som Tesseract gör
   i protokollen rättas i OCR-texten
   ([ADR-0055](decisions/0055-granskade-dokument-konverteras-inte-om.md)):
   ett eller flera `$` som står intill en siffra, med högst ett mellanslag
@@ -1168,6 +1170,81 @@ karta eller ett diagram inte är lästa. En `ointressant` sida får ingen
 text, står inte i `figurer` och inte i `tal_obekraftade`, eftersom den
 inte har några tal som lagras. En sida blir `ej-konverterad` här bara
 när Tesseract fallerar eller inte blir klar.
+
+### Väg H och kalibreringen
+
+Varför står i
+[ADR-0105](decisions/0105-vag-h-kalibreras-mot-textlagersidor.md) (K84).
+Väg H är ännu inte inbyggd i konverteringen. Den mäts först, och
+skannade sidor märks som förut.
+
+**Läsningen** (`konvertering/radlasning.py`). Sidan renderas i 300 dpi i
+gråskala, som en OCR-sida. RapidOCR, med sina förvalda modeller ur
+PP-OCRv6, hittar raderna och läser dem. Tesseract läser hela sidan, och
+varje ord hör till de rader vars ruta har ordets mittpunkt. En rad där
+någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
+(`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
+alla sorters streck blivit bindestreck och mellanslag kring ett
+tankstreck eller kolon mellan två siffror tagits bort, eftersom båda
+motorerna läser `09: 35` som `09:35`. Ett bindestreck med mellanslag på
+båda sidor räknas som ett tankstreck. En rad där en siffra står direkt
+intill en bokstav i någon av läsningarna bekräftas inte, eftersom båda
+motorerna läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
+läses raden, med 15 pixlar marginal, av den latinska modellen ur
+PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
+av de två, och minst ett.
+
+**Skyddet mot upphöjda tecken** (`upphojt.py` och `morka_delar.py`)
+gäller före avgörandet. Radens utsnitt delas i sammanhängande mörka
+delar, de som hör till raderna ovanför och nedanför och streck som en
+understrykning räknas bort, och delarna slås ihop till tecken. Ett tecken
+som är lägre än radens tecken och slutar en bit ovanför baslinjen är
+upphöjt, och en rad som RapidOCR hittat är upphöjd när den står bredvid
+en högre rad och slutar en bit ovanför dess underkant. En rad med ett
+upphöjt tecken och en upphöjd rad bekräftas aldrig. Trösklarna står i
+modulernas docstring, och bara där. Inte heller en rad vars ruta går in i
+en annan ruta på samma rad bekräftas, eftersom RapidOCR då kan läsa en
+bit av grannens tal som ett eget.
+
+**Sidan** är bekräftad när varje rad med tal är det och inget tal i
+Tesseracts ord står utanför raderna.
+
+**Kalibreringen** (`kalibrering/`). `urval.py` väljer sidor med `ok`, utan
+obekräftade tal och med minst 15 tal i poolens text, ur dokument som är
+en enda PDF på högst 20 MB. Dokumenten blandas med fröet, högst tre sidor
+tas ur varje och en PDF som flera dokument pekar på tas en gång.
+Dokumenten mäts i tur och ordning tills det begärda antalet sidor är
+mätt, så att en PDF som inte går att hämta ersätts av nästa. PDF:en
+hämtas med poolens hämtning (K10), och en PDF med annan sha256 än i
+front matter mäts inte. `facit.py` och `matning.py` jämför varje rad med
+talen i textlagrets tecken vars mittpunkt ligger i radens ruta. Mellan två
+tecken räknas ett mellanslag när textlagret har ett eller när avståndet
+syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt.
+En rad med en vriden eller spegelvänd siffra i textlagret har inget
+facit, eftersom tecknens ordning från vänster då inte är textens. Andra
+vridna tecken hoppas över:
+
+| Utfall       | Raden                                                          |
+| ------------ | -------------------------------------------------------------- |
+| `ratt`       | bekräftad, med textlagrets tal                                 |
+| `fel`        | bekräftad, med andra tal                                       |
+| `upphojt`    | bekräftad, men textlagret har ett upphöjt tecken på raden      |
+| `utan-facit` | bekräftad, men rör en bild eller har en vriden siffra          |
+| `obekraftad` | inte bekräftad; orsaken står i `hur`                           |
+| `missad`     | ingen läsning har ett tal, men textlagret har det              |
+| `utanfor`    | textlagrets tal utanför alla rader och bilder, en rad per sida |
+
+pdfplumber läser ihop en upphöjd siffra med ordet före (`118²` blir
+`1182`), så facit kan inte avgöra om en sådan rad är rätt. Därför prövas
+textlagrets tecken för sig, och en bekräftad rad med ett upphöjt tecken
+i textlagret är alltid `upphojt`. En `fel`, `upphojt`, `missad` eller
+`utanfor` på en bekräftad sida är en falsk bekräftelse. `rapport.md`
+räknar utfallen och sidorna, också de bekräftade sidorna med rader utan
+facit, och listar varje falsk bekräftelse. Kommandot avslutas med kod 1
+när det finns en, eller när färre sidor än det begärda antalet gick att
+mäta. `rader.csv` har varje rad med sina läsningar. Arbetsflödet
+`kalibrering.yml` körs för hand och i varje PR som ändrar regeln,
+mätningen, OCR-läsningen eller beroendena, och sparar båda filerna.
 
 ### Känd inläsning
 

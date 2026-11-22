@@ -2457,3 +2457,66 @@ Issue [#359](https://github.com/moggleif/kungsbackakommun/issues/359).
   stämmer
 - **När** testerna körs
 - **Så** faller ett test.
+
+## K84 — Väg H bekräftar tal på skannade sidor bara när kalibreringen inte hittar något fel
+
+Väg H i ADR-0005 läser en skannad sida med RapidOCR och Tesseract, och en
+tredje läsning avgör en rad där de är oense. Innan regeln får gälla
+poolen kalibreras den mot textlagersidor, med textlagret som facit. Hur
+står under [Väg H och kalibreringen](03-ARKITEKTUR.md#väg-h-och-kalibreringen),
+och varför i [ADR-0105](decisions/0105-vag-h-kalibreras-mot-textlagersidor.md).
+Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
+
+- **Givet** en rad där RapidOCR och Tesseract har samma tal i samma ordning
+- **När** väg H avgör raden
+- **Så** är raden bekräftad, utan en tredje läsning.
+
+- **Givet** en rad där de två har olika tal
+- **När** väg H avgör raden
+- **Så** läses raden en tredje gång, och raden är bekräftad bara när den
+  tredje läsningen har samma tal som en av de två, och minst ett tal.
+
+- **Givet** en rad med ett upphöjt tecken, som en fotnotssiffra eller
+  tvåan i m², eller en rad som själv står upphöjd bredvid en högre rad
+- **När** väg H avgör raden
+- **Så** är raden aldrig bekräftad, vad läsningarna än säger.
+
+- **Givet** en rad vars ruta går in i en annan ruta på samma rad
+- **När** väg H avgör raden
+- **Så** är raden aldrig bekräftad, eftersom den kan ha läst en bit av
+  grannens tal.
+
+- **Givet** en rad där en siffra står direkt intill en bokstav i någon av
+  de två läsningarna, som `K1.` för `Kl.`
+- **När** väg H avgör raden
+- **Så** är raden aldrig bekräftad.
+
+- **Givet** poolens data och ett fast frö
+- **När** `python -m kommunhandlingar.kalibrering <data> <ut>` körs
+- **Så** mäts väg H på 300 sidor med textlager och bekräftade tal, högst
+  tre ur varje dokument och en gång per PDF, och samma frö ger samma
+  sidor. En PDF vars sha256 ändrats i källan, eller som inte går att
+  hämta, mäts inte, står i rapporten och ersätts av nästa dokument i
+  urvalet.
+
+- **Givet** att färre sidor än det begärda antalet gick att mäta
+- **När** kalibreringen är klar
+- **Så** säger rapporten att kravet inte är prövat, och kommandot
+  avslutas med kod 1.
+
+- **Givet** en sida i kalibreringen som väg H bekräftar, och en rad på den
+  med andra tal än textlagret, med ett upphöjt tecken i textlagret, med
+  tal som ingen läsning såg, eller textlagrets tal utanför alla rader
+- **När** kalibreringen är klar
+- **Så** står raden i `rapport.md` med sina läsningar, och kommandot
+  avslutas med kod 1, så att arbetsflödet faller.
+
+- **Givet** en rad som rör en bild på sidan, eller som har en vriden
+  eller spegelvänd siffra i textlagret
+- **När** kalibreringen mäter den
+- **Så** räknas den som `utan-facit`, eftersom textlagret inte har
+  bildens tal och de vridna siffrornas ordning inte är textens.
+
+- **Givet** att väg H ännu inte är inbyggd i konverteringen
+- **När** poolen konverteras
+- **Så** märks skannade sidor som förut, med obekräftade tal (ADR-0005).

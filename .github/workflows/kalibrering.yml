@@ -1,0 +1,61 @@
+# Kalibreringen av väg H (K84, ADR-0105): väg H mäts på textlagersidor ur
+# poolen, med textlagret som facit. Körs för hand och i varje PR som ändrar
+# regeln, mätningen, OCR-läsningen eller beroendena, där Dependabot byter
+# motor och modell. Faller när en bekräftad sida har ett fel eller när för
+# få sidor gick att mäta.
+name: Kalibrering av väg H
+
+on:
+  workflow_dispatch:
+    inputs:
+      antal:
+        description: Antal sidor
+        default: "300"
+  pull_request:
+    paths:
+      - src/kommunhandlingar/konvertering/vag_h.py
+      - src/kommunhandlingar/konvertering/radlasning.py
+      - src/kommunhandlingar/konvertering/upphojt.py
+      - src/kommunhandlingar/konvertering/rapid.py
+      - src/kommunhandlingar/konvertering/morka_delar.py
+      - src/kommunhandlingar/konvertering/ocr.py
+      - pyproject.toml
+      - src/kommunhandlingar/kalibrering/**
+      - .github/workflows/kalibrering.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kalibrering-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  kalibrering:
+    name: Kalibrering av väg H
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Tesseract med svensk modell (OCR, ADR-0005)
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
+      - run: pip install -e ".[ocr]"
+      - name: Mätningen
+        run: python -m kommunhandlingar.kalibrering data kalibrering --antal "${ANTAL:-300}"
+        env:
+          ANTAL: ${{ inputs.antal }}
+      - name: Rapporten i sammanfattningen
+        if: always()
+        run: cat kalibrering/rapport.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kalibrering
+          path: kalibrering/
