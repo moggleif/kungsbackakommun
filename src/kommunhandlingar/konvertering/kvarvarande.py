@@ -8,13 +8,14 @@ delas som i tabellerna utan lodräta linjer.
 from pdfplumber.page import Page
 
 from kommunhandlingar.konvertering.falt import falt, radvis
+from kommunhandlingar.konvertering.geometri import Ruta
 from kommunhandlingar.konvertering.olinjerade import fria
 from kommunhandlingar.konvertering.rader import I_LINJE, ar_varde
 
 ANDRA_RADER = 2
 
 
-def har_talrader(sida: Page, rutor: list[tuple]) -> bool:
+def har_talrader(sida: Page, rutor: list[Ruta]) -> bool:
     ord_ = fria(sida.extract_words(extra_attrs=["size"]), rutor)
     rader = [k for r in radvis(ord_) if len(k := talkanter(r)) >= 2]
     return any(

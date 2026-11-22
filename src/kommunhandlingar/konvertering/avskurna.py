@@ -10,12 +10,12 @@ text bredvid en tabell är oftast löptext.
 """
 
 from kommunhandlingar.konvertering.falt import falt, radvis
+from kommunhandlingar.konvertering.geometri import Ruta, mitt
 from kommunhandlingar.konvertering.olinjerade import fria
 from kommunhandlingar.konvertering.rader import ar_varde
-from kommunhandlingar.konvertering.tabeller import mitt
 
 
-def avskuren(ruta: tuple, ord_: list[dict], upptagna: list[tuple]) -> bool:
+def avskuren(ruta: Ruta, ord_: list[dict], upptagna: list[Ruta]) -> bool:
     """Ett tal på tabellens höjd bland orden utanför `upptagna`, de
     tabeller med linjer som hittats på sidan."""
     _, top, _, bottom = ruta

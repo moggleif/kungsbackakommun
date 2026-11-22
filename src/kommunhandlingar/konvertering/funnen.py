@@ -7,10 +7,12 @@ En tabell som hittats på sidan, med eller utan linjer.
 
 from dataclasses import dataclass
 
+from kommunhandlingar.konvertering.geometri import Ruta
+
 
 @dataclass(frozen=True)
 class Funnen:
-    ruta: tuple[float, float, float, float]
+    ruta: Ruta
     rader: list[list[str]]
     # Kolumngränserna, som skarven jämför med grannsidornas (K19); hur
     # de mäts står där tabellen läses.

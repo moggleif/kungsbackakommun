@@ -14,7 +14,7 @@ from kommunhandlingar.konvertering import kvalitet, ocr, tesseract
 from kommunhandlingar.konvertering.dokument import konvertera, versioner
 from kommunhandlingar.konvertering.kvalitet import dokumentets
 from kommunhandlingar.konvertering.ocr import medelsakerhet
-from kommunhandlingar.konvertering.tabeller import som_csv, som_markdown
+from kommunhandlingar.konvertering.tabellformat import som_csv, som_markdown
 from kommunhandlingar.konvertering.text import ar_talrad, stycken
 from kommunhandlingar.konvertering.tsv import Ord
 from kommunhandlingar.konvertering.vag import langd_av, tackt_yta, vag

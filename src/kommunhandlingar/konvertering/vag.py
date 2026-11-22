@@ -7,10 +7,13 @@ stämmer gäller.
 
 import unicodedata
 from collections.abc import Callable
+from typing import override
 
 from pdfminer.pdfdevice import PDFDevice
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
 from pdfplumber.page import Page
+
+from kommunhandlingar.konvertering.geometri import Ruta
 
 TOM_ANDEL = 0.005
 SKANNING_TACKNING = 0.9
@@ -33,7 +36,7 @@ def ar_skanning(sida: Page) -> bool:
     return tacker and synliga_tecken(sida) < SKANNING_TECKEN
 
 
-def ruta(bild: dict, sida: Page) -> tuple[float, float, float, float]:
+def ruta(bild: dict, sida: Page) -> Ruta:
     return (
         max(bild["x0"], 0),
         max(bild["top"], 0),
@@ -42,7 +45,7 @@ def ruta(bild: dict, sida: Page) -> tuple[float, float, float, float]:
     )
 
 
-def tackt_yta(rutor: list[tuple[float, float, float, float]]) -> float:
+def tackt_yta(rutor: list[Ruta]) -> float:
     xs = sorted({x for r in rutor for x in (r[0], r[2])})
     yta = 0.0
     for vanster, hoger in zip(xs, xs[1:], strict=False):
@@ -76,6 +79,7 @@ class Raknare(PDFDevice):
 
     antal = 0
 
+    @override
     def render_string(self, textstate, seq, ncs, graphicstate):
         if textstate.render == OSYNLIG:
             return

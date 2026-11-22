@@ -14,6 +14,8 @@ from statistics import median
 
 from pdfplumber.page import Page
 
+from kommunhandlingar.konvertering.geometri import Ruta
+
 MINSTA_RADER = 6
 MINSTA_TECKEN = 25
 MINSTA_BOKSTAVER = 0.7
@@ -130,7 +132,7 @@ def loptext(stycken: list[Radstycke]) -> bool:
     )
 
 
-def ruta(stycken: list[Radstycke]) -> tuple[float, float, float, float]:
+def ruta(stycken: list[Radstycke]) -> Ruta:
     return (
         min(s.x0 for s in stycken),
         min(s.top for s in stycken),
