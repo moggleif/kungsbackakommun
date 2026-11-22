@@ -76,9 +76,7 @@ def oppningsfel(fel: pdfium.PdfiumError) -> str:
 
 
 def konvertera(pdf: Path) -> Resultat:
-    with pdf.open("rb") as fil:
-        borjan = fil.read(1024)
-    if PDF_BORJAN not in borjan:
+    if not ar_pdf(pdf):
         return Resultat(kvalitet.EJ_KONVERTERAD, "inte-pdf")
     try:
         with tidsbudget.hogst(tidsbudget.DOKUMENT):
@@ -88,10 +86,24 @@ def konvertera(pdf: Path) -> Resultat:
     except pdfium.PdfiumError as fel:
         return Resultat(kvalitet.EJ_KONVERTERAD, oppningsfel(fel))
     except Exception as fel:
-        # pdfminer kastar godtyckliga undantag (TypeError, IndexError, …) för
-        # trasiga filer. En fil får inte stoppa körningen; orsaken syns i loggen.
-        print(f"{pdf.name}: {type(fel).__name__}: {fel}", file=sys.stderr)
-        return Resultat(kvalitet.EJ_KONVERTERAD, "trasig-pdf")
+        return trasigt_dokument(pdf, fel)
+    return av_sidorna(sidor)
+
+
+def ar_pdf(pdf: Path) -> bool:
+    with pdf.open("rb") as fil:
+        return PDF_BORJAN in fil.read(1024)
+
+
+def trasigt_dokument(pdf: Path, fel: Exception) -> Resultat:
+    """pdfminer kastar godtyckliga undantag (TypeError, IndexError, …) för
+    trasiga filer. En fil får inte stoppa körningen; orsaken syns i loggen."""
+    print(f"{pdf.name}: {type(fel).__name__}: {fel}", file=sys.stderr)
+    return Resultat(kvalitet.EJ_KONVERTERAD, "trasig-pdf")
+
+
+def av_sidorna(sidor: list[Sida]) -> Resultat:
+    """Ett dokument utan sidor är trasigt."""
     if not sidor:
         return Resultat(kvalitet.EJ_KONVERTERAD, "trasig-pdf")
     return Resultat(kvalitet.dokumentets([s.kvalitet for s in sidor]), sidor=sidor)
