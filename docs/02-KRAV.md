@@ -2360,13 +2360,18 @@ Kommandona `facit`, `tolkning`, `kand_inlasning`, `arenden`,
 `maska_poolen` och `datakontroll` prövas i `tests/test_facit_kommando.py`,
 `tests/test_tolkning_kommando.py` och `tests/test_poolkommandon.py`, utan
 nät och i temporära kataloger.
-Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
+Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355), med
+`--urval` från [#376](https://github.com/moggleif/kungsbackakommun/issues/376).
 
 - **Givet** ett urval med ett dokument och en `matt.csv` med en äldre rad
 - **När** `python -m kommunhandlingar.facit --spara` körs
 - **Så** står måtten för dokumentet och totalt på standard ut, och raden
   för poolens version läggs till i `matt.csv` medan den äldre står kvar
   (K20).
+
+- **Givet** `--urval` med en katalog som inte finns
+- **När** `python -m kommunhandlingar.facit` körs
+- **Så** stoppar det med ett fel som namnger katalogen.
 
 - **Givet** `--sidor 3,5` eller `--sidor 0` till `tolkning rendera`
 - **När** argumenten tolkas
