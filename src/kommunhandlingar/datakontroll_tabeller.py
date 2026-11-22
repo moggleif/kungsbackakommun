@@ -31,9 +31,10 @@ def tabellfel(fil: Path) -> list[str]:
     sida, sista, nr, tolkad = namn
     formfel = formatfel(fil)
     fel = luckfel(fil, f"{sida}-{nr - 1}{tolkad}.csv", nr) + formfel
+    text = md.read_text(encoding="utf-8")
     if not tolkad:
-        return sidfel(md, range(sida, sista + 1)) + spannfel(fil, sida, nr) + fel
-    return tolkningsfel(md, sida) + fel + ([] if formfel else talfel(fil, md, sida))
+        return sidfel(text, range(sida, sista + 1)) + spannfel(fil, sida, nr) + fel
+    return tolkningsfel(text, sida) + fel + ([] if formfel else talfel(fil, text, sida))
 
 
 def delar(namn: str) -> tuple[int, int, int, str] | None:
@@ -61,15 +62,15 @@ def spannfel(fil: Path, sida: int, nr: int) -> list[str]:
     return []
 
 
-def las_lista(md: Path, namn: str) -> list[str] | None:
+def las_lista(md: str, namn: str) -> list[str] | None:
     try:
-        falt = frontmatter.las(md.read_text(encoding="utf-8"))
+        falt = frontmatter.las(md)
         return frontmatter.lista(falt[namn])
     except (IndexError, ValueError, KeyError):
         return None  # felet i front matter rapporteras för `.md`
 
 
-def sidfel(md: Path, sidor: range) -> list[str]:
+def sidfel(md: str, sidor: range) -> list[str]:
     kvalitet = las_lista(md, "kvalitet_per_sida")
     if kvalitet is None:
         return []
@@ -80,7 +81,7 @@ def sidfel(md: Path, sidor: range) -> list[str]:
     ]
 
 
-def tolkningsfel(md: Path, sida: int) -> list[str]:
+def tolkningsfel(md: str, sida: int) -> list[str]:
     tolkade = las_lista(md, "tolkade")
     if tolkade is not None and str(sida) not in tolkade:
         return [f"sidan {sida} står inte i tolkade"]
