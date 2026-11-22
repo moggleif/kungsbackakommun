@@ -316,6 +316,8 @@ src/kommunhandlingar/
                    eller arkiv (wayback);
                    gemensamt.py sidans länkar och kontrollen av tabellen
                    organ → sida, som fler plattformar använder,
+                   wayback.py Internet Archive: frågorna, valet av bästa
+                   kopia, kopians adress och kontrollen av kapade kopior,
                    sitevision_html.py läser mötessidan och ger källnyckeln,
                    sitevision.py tolkar den,
                    sitevision_arkiv.py läser sidorna och filerna ur arkivet,

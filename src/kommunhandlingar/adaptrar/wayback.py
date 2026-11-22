@@ -1,11 +1,12 @@
 """Krav: K16 i docs/02-KRAV.md, ADR-0018. Test: tests/test_wayback.py.
 
-Internet Archives CDX-tjänst, adressen till en kopia och kontrollen av
-kapade kopior. `id_` i adressen ger filen som den sparades, utan arkivets
-ram och med originalets länkar.
+Internet Archives CDX-tjänst, valet av bästa kopia, adressen till en kopia
+och kontrollen av kapade kopior. `id_` i adressen ger filen som den
+sparades, utan arkivets ram och med originalets länkar.
 """
 
 import json
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlencode
@@ -25,10 +26,19 @@ class Kopia:
     langd: int
 
 
-def fraga(klient, adress: str, mimetyp: str, prefix: bool = False) -> list[Kopia]:
-    url = f"{CDX}?{urlencode(parametrar(adress, mimetyp, prefix))}"
+def fraga(klient, adress: str, mimetyp: str) -> list[Kopia]:
+    return cdx(klient, adress, parametrar(adress, mimetyp))
+
+
+def fraga_under(klient, adress: str, mimetyp: str) -> list[Kopia]:
+    """Varje adress som börjar med `adress`."""
+    falt = parametrar(adress, mimetyp) + [("matchType", "prefix")]
+    return cdx(klient, adress, falt)
+
+
+def cdx(klient, adress: str, falt: list[tuple[str, str]]) -> list[Kopia]:
     try:
-        rader = json.loads(klient.text(url).strip() or "[]")
+        rader = json.loads(klient.text(f"{CDX}?{urlencode(falt)}").strip() or "[]")
         return [Kopia(tid, original, int(langd)) for tid, original, langd in rader[1:]]
     except Hamtfel as fel:
         raise Hamtfel(fel.orsak, f"arkivets lista för {adress}") from fel
@@ -37,15 +47,26 @@ def fraga(klient, adress: str, mimetyp: str, prefix: bool = False) -> list[Kopia
         raise Hamtfel("inte-json", f"arkivets lista för {adress}") from fel
 
 
-def parametrar(adress: str, mimetyp: str, prefix: bool) -> list[tuple[str, str]]:
-    falt = [
+def parametrar(adress: str, mimetyp: str) -> list[tuple[str, str]]:
+    return [
         ("url", adress),
         ("output", "json"),
         ("fl", "timestamp,original,length"),
         ("filter", "statuscode:200"),
         ("filter", f"mimetype:{mimetyp}"),
     ]
-    return falt + [("matchType", "prefix")] if prefix else falt
+
+
+def basta(
+    kopior: list[Kopia], nyckel: Callable[[Kopia], str], rang: Callable[[Kopia], tuple]
+) -> dict[str, Kopia]:
+    """Den kopia per nyckel som rangordnas högst."""
+    return {nyckel(kopia): kopia for kopia in sorted(kopior, key=rang)}
+
+
+def storst(kopia: Kopia) -> tuple[int, int]:
+    """Största kopian, och vid lika den äldsta."""
+    return kopia.langd, -int(kopia.tidsstampel)
 
 
 def adress(kopia: Kopia) -> str:
