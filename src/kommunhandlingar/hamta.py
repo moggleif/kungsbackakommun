@@ -70,10 +70,10 @@ def prova(steg: Steg2, kandidat: Kandidat, mjuk: datetime) -> Utfall:
         return AT_SIDAN
 
 
-def steg2(  # noqa: PLR0913  # undantag: loggfilen väljs av den som kör, None för arkivet
+def steg2(  # noqa: PLR0913  # undantag: testerna väljer loggfilen, None för arkivet
     steg: Steg2, kandidater: list[Kandidat], mjuk: datetime, logg: Path | None
 ) -> Korning:
-    """Loggen skrivs också när steg 2 stoppas, så att ingen version tappas."""
+    """Kandidaterna kommer ordnade. Loggen skrivs också när steg 2 stoppas."""
     fore = versionslogg.versioner(steg.pool)
     try:
         return kor(steg, kandidater, mjuk)

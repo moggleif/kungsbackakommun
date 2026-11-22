@@ -3,7 +3,8 @@ test_hamta_arkiv.py, test_plattformar.py, test_sammanslagning.py,
 test_omkonvertering.py, test_tidsbudget.py och test_hamta_kommando.py.
 
 Vad steg 2 gjorde med en kandidat. Texten räknas i sammanfattningen, och ett
-utfall som ska loggas skrivs också ut med kandidatens adress.
+utfall som ska loggas skrivs också ut med kandidatens adress. Korning räknar
+utfallen över en körning.
 """
 
 from collections import Counter

@@ -1,5 +1,6 @@
 """Krav: K2, K13, K16, K31 och K45 i docs/02-KRAV.md. Test: tests/test_kandidat.py
-och, för listan som steg 1 skriver och steg 2 läser, tests/test_hamta.py."""
+och, för listan som steg 1 skriver och steg 2 läser, tests/test_upptack.py och
+tests/test_hamta.py."""
 
 import json
 from dataclasses import asdict, dataclass
