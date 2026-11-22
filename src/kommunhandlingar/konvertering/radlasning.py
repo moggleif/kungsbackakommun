@@ -75,13 +75,16 @@ def avgor(bild: Image.Image, ruta: Ruta, texter: tuple[str, str], rutor: list):
 
 
 def overlappar(ruta: Ruta, rutor: list[Ruta]) -> bool:
-    return any(
-        andra != ruta
-        and andra[0] < ruta[2]
-        and ruta[0] < andra[2]
-        and min(ruta[3], andra[3]) - max(ruta[1], andra[1])
-        > min(ruta[3] - ruta[1], andra[3] - andra[1]) / 2
-        for andra in rutor
+    """Om rutan går in i en annan ruta än sig själv på samma rad."""
+    return (
+        sum(
+            andra[0] < ruta[2]
+            and ruta[0] < andra[2]
+            and min(ruta[3], andra[3]) - max(ruta[1], andra[1])
+            > min(ruta[3] - ruta[1], andra[3] - andra[1]) / 2
+            for andra in rutor
+        )
+        > 1
     )
 
 

@@ -1184,10 +1184,11 @@ PP-OCRv6, hittar raderna och läser dem. Tesseract läser hela sidan, och
 varje ord hör till de rader vars ruta har ordets mittpunkt. En rad där
 någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
 (`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
-alla sorters streck blivit bindestreck och mellanslag kring ett streck
-eller kolon mellan två siffror tagits bort. En rad där en siffra står direkt intill
-en bokstav i någon av läsningarna bekräftas inte, eftersom båda motorerna
-läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
+alla sorters streck blivit bindestreck och mellanslag kring ett
+tankstreck mellan två siffror tagits bort. En rad där en siffra står
+direkt intill en bokstav i någon av läsningarna bekräftas inte, eftersom
+båda motorerna läser `Kl.` som `K1.`. Inte heller en rad med ett kolon
+mellan två siffror, eftersom båda läser `09: 35` som `09:35`. Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
 PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
 av de två, och minst ett.
@@ -1218,15 +1219,16 @@ front matter mäts inte. `facit.py` och `matning.py` jämför varje rad med
 talen i textlagrets tecken vars mittpunkt ligger i radens ruta. Mellan två
 tecken räknas ett mellanslag när textlagret har ett eller när avståndet
 syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt.
-En rad med ett vridet eller spegelvänt tecken i textlagret har inget
-facit, eftersom tecknens ordning från vänster då inte är textens:
+En rad med en vriden eller spegelvänd siffra i textlagret har inget
+facit, eftersom tecknens ordning från vänster då inte är textens. Andra
+vridna tecken hoppas över:
 
 | Utfall       | Raden                                                          |
 | ------------ | -------------------------------------------------------------- |
 | `ratt`       | bekräftad, med textlagrets tal                                 |
 | `fel`        | bekräftad, med andra tal                                       |
 | `upphojt`    | bekräftad, men textlagret har ett upphöjt tecken på raden      |
-| `utan-facit` | bekräftad, men rör en bild eller har vridna tecken             |
+| `utan-facit` | bekräftad, men rör en bild eller har en vriden siffra          |
 | `obekraftad` | inte bekräftad; orsaken står i `hur`                           |
 | `missad`     | ingen läsning har ett tal, men textlagret har det              |
 | `utanfor`    | textlagrets tal utanför alla rader och bilder, en rad per sida |

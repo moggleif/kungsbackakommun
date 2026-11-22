@@ -2482,7 +2482,8 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
   grannens tal.
 
 - **Givet** en rad där en siffra står direkt intill en bokstav i någon av
-  de två läsningarna, som `K1.` för `Kl.`
+  de två läsningarna, som `K1.` för `Kl.`, eller ett kolon mellan två
+  siffror, som `09:35` för `09: 35`
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad.
 
@@ -2506,11 +2507,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **Så** står raden i `rapport.md` med sina läsningar, och kommandot
   avslutas med kod 1, så att arbetsflödet faller.
 
-- **Givet** en rad som rör en bild på sidan, eller som har ett vridet
-  eller spegelvänt tecken i textlagret
+- **Givet** en rad som rör en bild på sidan, eller som har en vriden
+  eller spegelvänd siffra i textlagret
 - **När** kalibreringen mäter den
 - **Så** räknas den som `utan-facit`, eftersom textlagret inte har
-  bildens tal och de vridna tecknens ordning inte är textens.
+  bildens tal och de vridna siffrornas ordning inte är textens.
 
 - **Givet** att väg H ännu inte är inbyggd i konverteringen
 - **När** poolen konverteras

@@ -20,9 +20,15 @@ class Tal(unittest.TestCase):
         self.assertEqual(tal("−1,8 och 2010–2032"), ["-1,8", "2010-2032"])
         self.assertEqual(tal("2026‑2030 och 2026 — 2030"), ["2026-2030"] * 2)
 
-    def test_mellanslag_kring_streck_mellan_siffror(self):
-        self.assertEqual(tal("2026– 2030 och 5 -3"), ["2026-2030", "5-3"])
-        self.assertEqual(tal("09:15 – 09: 35"), ["09:15-09:35"])
+    def test_mellanslag_kring_tankstreck_mellan_siffror(self):
+        self.assertEqual(
+            tal("2026– 2030 och 09:15 — 09:35"), ["2026-2030", "09:15-09:35"]
+        )
+
+    def test_mellanslag_kring_minus_och_kolon_star_kvar(self):
+        self.assertEqual(
+            tal("116 −4, 116 -4 och 09: 35"), ["116", "-4", "116", "-4", "09", "35"]
+        )
 
 
 class Avgor(unittest.TestCase):
@@ -41,6 +47,10 @@ class Avgor(unittest.TestCase):
     def test_bokstav_intill_en_siffra(self):
         svar = avgor("Kl. 16:05", "K1. 16:05", inte_anropad)
         self.assertEqual(svar, Avgorande(None, "bokstav-vid-siffra"))
+
+    def test_kolon_mellan_siffror_bekraftas_inte(self):
+        svar = avgor("kl. 09:35", "kl. 09:35", inte_anropad)
+        self.assertEqual(svar, Avgorande(None, "kolon-mellan-siffror"))
 
     def test_tre_olika_lasningar(self):
         svar = avgor("1845", "1 845", lambda: "1846")

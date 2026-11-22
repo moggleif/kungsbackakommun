@@ -70,6 +70,7 @@ class Overlappar(unittest.TestCase):
             (390, 100, 600, 140): True,
             (400, 100, 600, 140): False,
             (100, 135, 400, 175): False,
+            raden: True,
         }
         for andra, svar in fall.items():
             self.assertEqual(radlasning.overlappar(raden, [raden, andra]), svar)

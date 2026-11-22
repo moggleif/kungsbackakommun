@@ -152,8 +152,8 @@ båda motorerna läste `K1.`, vilket gav regeln om en siffra intill en
 bokstav. Fyra var facit som brast: pdfplumber läste ihop ett datum och en
 tid som står åtskilda (`2021-03-2215:33:39`), och ett tankstreck följt av
 mellanslag (`2026– 2030`) blev två tal. Facit läser därför tecknen med
-synliga mellanrum, och mellanslag kring ett streck mellan två siffror
-räknas inte.
+synliga mellanrum, och mellanslag kring ett tankstreck mellan två
+siffror räknas inte.
 
 **Den andra körningen.** Den mätte 300 sidor: 189 bekräftade och 23
 falska bekräftelser. Nio var de fall som redan rättats. Tio var en
@@ -165,18 +165,23 @@ eget tal, `9 2024-01-24`, och den tredje läsningen höll med. En rad vars
 ruta går in i en annan på samma rad bekräftas därför inte. Tre gällde en
 blankett där textlagrets tecken är spärrade och vridna, så att facit
 läste `4 3 4 8 1` och `001 6002`. Facit räknar därför med radens vanliga
-avstånd, och en rad med vridna tecken har inget facit.
+avstånd, och en rad med en vriden siffra har inget facit.
 
 **Den tredje körningen.** 300 sidor: 5 610 rader rätt, 117 sidor
 bekräftade och en falsk bekräftelse. Textlagret hade `09: 35` med ett
-mellanslag efter kolonet, och båda motorerna läste `09:35`. Talet är
-detsamma, så mellanslag kring ett kolon mellan två siffror räknas inte,
-som kring ett streck. Regeln om en siffra intill en bokstav kostar mest:
+mellanslag efter kolonet, och båda motorerna läste `09:35`. Att räkna
+bort mellanslaget i jämförelsen hade dolt samma fel i `punkt 4: 20`, och
+att mäta luckan i bilden skilde inte ett tappat mellanslag från kolonets
+egen luft (en fjärdedel mot en femtedel av radhöjden). Därför bekräftas
+en rad med ett kolon mellan två siffror aldrig, fast det gäller klockslag och lagrum på ungefär hälften av de
+bekräftade sidorna. Regeln om en siffra intill en bokstav kostar också:
 305 rader och 99 sidor blev obekräftade bara av den, mest
 kontrollsummor, `100kr`, diarienummer som `RES123` och `Kl.`. Den
 behålls, eftersom just de raderna är där en bokstav läses som en siffra
 utan att någon läsning märker det. Märkning per rad kan ta tillbaka
-sidornas övriga tal.
+sidornas övriga tal. Den oberoende granskningen av rättelserna visade
+att mellanslag kring bindestreck och minus inte heller får räknas bort,
+eftersom `116 −4` då blir `116-4`. Bara tankstreck räknas bort.
 
 **Skyddets form.** Agentens första försök mätte varje mörk del för sig.
 Det flaggade ringen i å och pricken i i som upphöjda, och 82 rader med

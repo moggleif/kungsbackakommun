@@ -6,18 +6,21 @@ Mellan två tecken står ett mellanslag när textlagret har ett, eller när
 avståndet är minst 15 % av tecknets storlek större än radens vanliga
 avstånd, eftersom pdfplumbers ord ibland läser ihop det som syns
 åtskilt (`2021-03-2215:33:39`) och en spärrad rad har luft mellan alla
-tecken. En rad som rör en bild på sidan har inget facit, eftersom ett
-tal i bilden saknas i textlagret. Inte heller en rad med ett tecken som
-är vridet eller spegelvänt, eftersom tecknens ordning från vänster då
-inte är textens (`001 6002` för `100 2006`).
+tecken. Det vanliga avståndet räknas bara när raden har minst fyra
+avstånd mellan tecken intill varandra, så att ett enda synligt mellanrum
+inte blir det vanliga. En rad som rör en bild på sidan har inget facit,
+eftersom ett tal i bilden saknas i textlagret. Inte heller en rad med en
+siffra som är vriden eller spegelvänd, eftersom tecknens ordning från
+vänster då inte är textens (`001 6002` för `100 2006`). Andra vridna
+tecken, som en stående marginaltext, hoppas över. Kursiv räknas som rak.
 
 pdfplumber läser ihop en upphöjd siffra med ordet före, så att `118²`
 blir `1182`. Därför prövas tecknen för sig: raden har ett upphöjt tecken
-i textlagret när en siffra står intill ett annat tecken, utan mellanslag
-och närmare än en halv teckenstorlek, och är mindre än 85 % av det eller
-slutar mer än en fjärdedel av sin storlek ovanför det. Siffran jämförs
-bara med tecknet intill, eftersom en rubrik i mindre stil bredvid ett
-datum (`Upprättad 2016-08-16`) inte är upphöjd.
+i textlagret när en siffra står intill närmaste synliga tecken, närmare
+än en teckenstorlek, och är mindre än 85 % av det eller slutar mer än
+en fjärdedel av sin storlek ovanför det. Siffran jämförs bara med
+tecknet intill, eftersom en rubrik i mindre stil bredvid ett datum
+(`Upprättad 2016-08-16`) inte är upphöjd.
 """
 
 from dataclasses import dataclass
@@ -33,7 +36,9 @@ SKALA = 72 / ocr.DPI
 MINDRE = 0.85
 OVER = 0.25
 MELLANRUM = 0.15
-INTILL = 0.5
+INTILL = 1.0
+SNETT = 0.01
+SPARRAD = 4
 
 
 @dataclass(frozen=True)
@@ -51,42 +56,43 @@ def las(sida: pdfplumber.page.Page) -> Facitsida:
 def radens_tal(sida: Facitsida, ruta: Ruta) -> list[str] | None:
     if any(ror(b, skalad(ruta)) for b in sida.bilder):
         return None
-    tecken = sorted(
-        (t for t in sida.tecken if inom(t, skalad(ruta))), key=lambda t: t["x0"]
-    )
-    if not all(rak(t) for t in tecken):
+    tecken = radens_tecken(sida, ruta)
+    if any(t["text"].isdigit() and not rak(t) for t in tecken):
         return None
-    return vag_h.tal("".join(med_mellanrum(tecken)))
+    return vag_h.tal(med_mellanrum([t for t in tecken if rak(t)]))
+
+
+def radens_tecken(sida: Facitsida, ruta: Ruta) -> list[dict]:
+    pa_raden = (t for t in sida.tecken if inom(t, skalad(ruta)))
+    return sorted(pa_raden, key=lambda t: t["x0"])
 
 
 def rak(tecken: dict) -> bool:
-    a, b, c, d, _, _ = tecken["matrix"]
-    return a > 0 and d > 0 and b == c == 0
+    a, b, _, d, _, _ = tecken["matrix"]
+    return a > 0 and d > 0 and abs(b) <= SNETT * a
 
 
-def med_mellanrum(tecken: list[dict]) -> list[str]:
-    avstand = [b["x0"] - a["x1"] for a, b in pairwise(tecken) if intill(a, b)]
-    vanligt = max(0, median(avstand)) if avstand else 0
+def med_mellanrum(tecken: list[dict]) -> str:
+    synliga = [t for t in tecken if not t["text"].isspace()]
+    avstand = [b["x0"] - a["x1"] for a, b in pairwise(synliga) if intill(a, b)]
+    vanligt = max(0, median(avstand)) if len(avstand) >= SPARRAD else 0
     text = [tecken[0]["text"]] if tecken else []
     for fore, t in pairwise(tecken):
         if t["x0"] - fore["x1"] - vanligt >= MELLANRUM * t["size"]:
             text.append(" ")
         text.append(t["text"])
-    return text
+    return "".join(" " if t.isspace() else t for t in text)
 
 
 def har_upphojt(sida: Facitsida, ruta: Ruta) -> bool:
-    tecken = sorted(
-        (t for t in sida.tecken if inom(t, skalad(ruta))), key=lambda t: t["x0"]
-    )
+    synliga = [t for t in radens_tecken(sida, ruta) if not t["text"].isspace()]
     return any(
-        upphojd(a, b) or upphojd(b, a) for a, b in pairwise(tecken) if intill(a, b)
+        upphojd(a, b) or upphojd(b, a) for a, b in pairwise(synliga) if intill(a, b)
     )
 
 
 def intill(a: dict, b: dict) -> bool:
-    synliga = not (a["text"].isspace() or b["text"].isspace())
-    return synliga and b["x0"] - a["x1"] < INTILL * max(a["size"], b["size"])
+    return b["x0"] - a["x1"] < INTILL * max(a["size"], b["size"])
 
 
 def upphojd(siffra: dict, granne: dict) -> bool:

@@ -107,10 +107,30 @@ class Facit(unittest.TestCase):
             facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["434", "81"]
         )
 
-    def test_en_rad_med_ett_vridet_tecken_saknar_facit(self):
+    def test_en_rad_med_en_vriden_siffra_saknar_facit(self):
         tecknen = self.text("2027")
         tecknen[0] = {**tecknen[0], "matrix": (-1, 0, 0, -1, 0, 0)}
         self.assertIsNone(facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA))
+
+    def test_vridna_bokstaver_hoppas_over_och_kursiv_ar_rak(self):
+        tecknen = self.text("A 2027")
+        tecknen[0] = {**tecknen[0], "matrix": (0, 1, -1, 0, 0, 0)}
+        tecknen[1] = {**tecknen[1], "matrix": (1, 1e-9, 0.2, 1, 0, 0)}
+        self.assertEqual(
+            facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["2027"]
+        )
+
+    def test_ett_enda_mellanrum_ar_inte_radens_vanliga(self):
+        tecknen = self.text("1___8")
+        self.assertEqual(
+            facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["1", "8"]
+        )
+
+    def test_hart_blanksteg_ar_ett_mellanslag(self):
+        tecknen = [*self.text("12"), tecken("\u00a0", 70), tecken("%", 75)]
+        self.assertEqual(
+            facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["12%"]
+        )
 
     def test_en_rad_som_ror_en_bild_saknar_facit(self):
         bild = (250, 90, 350, 220)
@@ -121,9 +141,12 @@ class Facit(unittest.TestCase):
         rad = [tecken("2", 95), tecken("0", 100), tecken("7", 105)]
         mindre = [*rad, tecken("4", 110, 6, 106)]
         hojt = [*rad, tecken("4", 110, 10, 105)]
+        efter_mellanslag = [*rad, tecken(" ", 110), tecken("4", 113, 6, 106)]
         self.assertFalse(facit.har_upphojt(self.sida(tecken_=rad), self.RUTA))
         self.assertTrue(facit.har_upphojt(self.sida(tecken_=mindre), self.RUTA))
         self.assertTrue(facit.har_upphojt(self.sida(tecken_=hojt), self.RUTA))
+        sida = self.sida(tecken_=efter_mellanslag)
+        self.assertTrue(facit.har_upphojt(sida, self.RUTA))
         self.assertFalse(facit.har_upphojt(self.sida(), self.RUTA))
 
     def test_en_mindre_rubrik_bredvid_ett_datum_ar_inte_upphojd(self):
