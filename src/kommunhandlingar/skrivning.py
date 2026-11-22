@@ -13,7 +13,7 @@ from pathlib import Path
 from kommunhandlingar import sidmarkor
 from kommunhandlingar.konvertering import flersidiga
 from kommunhandlingar.konvertering.sida import Sida
-from kommunhandlingar.konvertering.tabeller import som_csv, som_markdown
+from kommunhandlingar.konvertering.tabellformat import som_csv, som_markdown
 
 
 def tabellkatalog(md: Path) -> Path:

@@ -11,7 +11,8 @@ from dataclasses import dataclass
 from itertools import pairwise
 
 from kommunhandlingar.konvertering.falt import Falt, falt, radvis
-from kommunhandlingar.konvertering.tabeller import inom, mitt, siffra, talfalt
+from kommunhandlingar.konvertering.geometri import Ruta, inom, mitt
+from kommunhandlingar.konvertering.tabeller import siffra, talfalt
 
 # Hur långt, i punkter, en kant eller ett fält får ligga från en kolumngräns.
 I_LINJE = 2
@@ -36,7 +37,7 @@ def med_tal(falt_: Iterable[str]) -> bool:
     return any(siffra(f) or talfalt(f) for f in falt_)
 
 
-def cellens(cell: tuple, ord_: list[dict], granser: tuple) -> tuple[str, list | None]:
+def cellens(cell: Ruta, ord_: list[dict], granser: tuple) -> tuple[str, list | None]:
     """Cellens slag och textrader med sin kolumn. En cell som går över
     flera kolumner delas efter fälten, när varje fält ligger inom en
     kolumn; en text som går över en gräns ger slaget `over`."""
@@ -67,7 +68,7 @@ def faltets(f: Falt, granser: tuple) -> int | None:
     return i
 
 
-def slaget(cell: tuple, ut: list[tuple], granser: tuple) -> tuple[str, list | None]:
+def slaget(cell: Ruta, ut: list[tuple], granser: tuple) -> tuple[str, list | None]:
     """`text` utan tal, `hel` över hela bredden, och för en cell med
     text i varje kolumn den täcker slaget enligt `fylld`. Annars är
     cellen sammanslagen med flit och går inte att dela."""
@@ -105,7 +106,7 @@ def radens(falt_: list[str]) -> str:
     return "rubrik" if med_tal(falt_) else "text"
 
 
-def tackta(cell: tuple, granser: tuple) -> range:
+def tackta(cell: Ruta, granser: tuple) -> range:
     def narmast(x: float) -> int:
         return min(range(len(granser)), key=lambda i: abs(granser[i] - x))
 

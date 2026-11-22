@@ -9,10 +9,10 @@ import re
 from itertools import pairwise
 
 from kommunhandlingar.konvertering.falt import Falt
+from kommunhandlingar.konvertering.geometri import Ruta, mitt
 from kommunhandlingar.konvertering.tabeller import (
     enhet,
     forsta_med_text,
-    mitt,
     siffra,
     talfalt,
 )
@@ -20,7 +20,7 @@ from kommunhandlingar.konvertering.tabeller import (
 Rader = list[list[Falt]]
 
 
-def etiketter_utanfor(bbox: tuple, ord_: list[dict]) -> bool:
+def etiketter_utanfor(bbox: Ruta, ord_: list[dict]) -> bool:
     """Text till vänster om tabellen i höjd med den, efter ordens mitt, som
     etiketter med punktledare in mot tabellen."""
     x0, topp, _, botten = bbox

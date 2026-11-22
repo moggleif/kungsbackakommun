@@ -15,10 +15,11 @@ from itertools import pairwise
 
 from pdfplumber.page import Page
 
+from kommunhandlingar.konvertering.geometri import Ruta
 from kommunhandlingar.konvertering.tabeller import i_tabell
 
 
-def i_oordning(sida: Page, rutor: list[tuple]) -> bool:
+def i_oordning(sida: Page, rutor: list[Ruta]) -> bool:
     tecken = list(enumerate(c for c in sida.chars if not c["text"].isspace()))
     pa_hogkant = [c for _, c in tecken if not c["upright"]]
     if any(c["text"].isnumeric() or i_tabell(c, rutor) for c in pa_hogkant):

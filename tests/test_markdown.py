@@ -5,7 +5,7 @@ import unittest
 from markdown_it import MarkdownIt
 
 from kommunhandlingar.konvertering import markdown
-from kommunhandlingar.konvertering.tabeller import som_markdown
+from kommunhandlingar.konvertering.tabellformat import som_markdown
 from kommunhandlingar.konvertering.text import stycken
 
 GFM = MarkdownIt("commonmark").enable(["table", "strikethrough"])
