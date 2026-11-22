@@ -78,11 +78,13 @@ def tolka(
 ) -> Tolkning:
     for monstret in monster:
         if traff := monstret.uttryck.search(text):
-            return tolkning(monstret, traff.groupdict(), manadsnamn)
+            return tolkning_av(monstret, traff.groupdict(), manadsnamn)
     raise IngenKandidat("inget mönster matchar")
 
 
-def tolkning(monstret: Monster, grupper: dict, manadsnamn: tuple[str, ...]) -> Tolkning:
+def tolkning_av(
+    monstret: Monster, grupper: dict, manadsnamn: tuple[str, ...]
+) -> Tolkning:
     typ = (monstret.typ or grupper["typ"] or "").casefold()
     if typ not in TYPORDNING:
         raise IngenKandidat(f"okänd typ {typ!r}")
