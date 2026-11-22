@@ -1,5 +1,6 @@
 """Krav: K22, K26, K28, K36–K38 och K46 i docs/02-KRAV.md. Kod:
-src/kommunhandlingar/webbplats/radfil.py, mal.py, spar.py, uppfoljningar.py, kalender.py och projekt.py.
+src/kommunhandlingar/webbplats/radfil.py, mal.py, spar.py, uppfoljningar.py,
+kalender.py och projekt.py.
 
 Webbplatsens radfiler stoppar bygget med samma ordalydelse, med fil och
 rad: en tom fil, fel rubrikrad och fel antal fält. Kalenderns dubblett
