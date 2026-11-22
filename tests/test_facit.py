@@ -14,10 +14,11 @@ from pathlib import Path
 
 import pdfplumber
 
-from kommunhandlingar.facit.jamfor import MATT, jamfor
+from kommunhandlingar.facit.jamfor import jamfor
 from kommunhandlingar.facit.lasa import Facit, Tabell, urvalet
-from kommunhandlingar.facit.matt import URVALET, spara, sparade, totalt, urvalets_utfall
+from kommunhandlingar.facit.matt import spara, sparade, totalt, urvalets_utfall
 from kommunhandlingar.facit.rader import lika, siffror, talrad
+from kommunhandlingar.facit.utfall import MATT
 from kommunhandlingar.konvertering.dokument import Resultat
 from kommunhandlingar.konvertering.las_sida import Sida
 from kommunhandlingar.personuppgifter import maska
@@ -25,6 +26,7 @@ from kommunhandlingar.personuppgifter import maska
 RUBRIK = ["Belopp", "2025", "2026"]
 RADER = [RUBRIK, ["Intäkter", "1 184", "-41,4"], ["Kostnader", "-5 802", "-"]]
 TEXT = "Resultaträkning 2025 och 2026\nSida 4"
+URVALET = Path(__file__).parent / "fixtures" / "facit"
 SIDANS_TAL = ["2025", "2026", "4"] + [c for r in RADER for c in r[1:]]
 
 
@@ -110,6 +112,19 @@ class Tabellerna(unittest.TestCase):
     def test_en_rubrik_delad_pa_tva_rader_stammer(self):
         delad = [["Belopp", "År", "År"], ["", "2025", "2026"], *RADER[1:]]
         self.assertEqual(matt(ok(TEXT, delad))["ratt"], 1)
+
+    def test_en_csv_med_bara_rubriken_ger_en_saknad_tabell(self):
+        utfall = matt(ok(TEXT, [RUBRIK]))
+        self.assertEqual((utfall["saknade"], utfall["fel_rader"]), (1, 0))
+
+    def test_en_rubrik_utan_tal_behover_inte_sta_i_csv_en(self):
+        rader = [["Post", "Belopp"], ["Avgifter", "77"]]
+        utfall = matt(
+            ok("", rader[1:]),
+            tal={1: ["77"]},
+            tabeller=[Tabell("1-1", 1, 1, 1, rader)],
+        )
+        self.assertEqual((utfall["ratt"], utfall["fel_rader"]), (1, 0))
 
     def test_en_tabell_som_saknas_ar_saknad_eller_osaker(self):
         text = TEXT + "\nIntäkter 1 184 -41,4\nKostnader -5 802 -"

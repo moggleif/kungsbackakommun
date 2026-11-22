@@ -7,11 +7,10 @@ import csv
 from collections import Counter
 from pathlib import Path
 
-from kommunhandlingar.facit.jamfor import MATT, Utfall, jamfor
+from kommunhandlingar.facit.jamfor import jamfor
 from kommunhandlingar.facit.lasa import urvalet
+from kommunhandlingar.facit.utfall import MATT, Utfall
 from kommunhandlingar.konvertering.dokument import konvertera
-
-URVALET = Path(__file__).resolve().parents[3] / "tests" / "fixtures" / "facit"
 
 
 def urvalets_utfall(katalog: Path) -> dict[str, Utfall]:

@@ -163,6 +163,9 @@ python3 -m kommunhandlingar.facit            # måtten och en not per avvikelse
 python3 -m kommunhandlingar.facit --spara    # och raden i matt.csv
 ```
 
+Kommandot läser urvalet ur `tests/fixtures/facit` under arbetskatalogen;
+kör det från repots rot, eller ge katalogen med `--urval`.
+
 Ändrar en ändring måtten skrivs raden om med `--spara` i samma ändring.
 Hur måtten räknas och hur ett nytt dokument läggs till i urvalet står under
 "Facit för konverteringen" i [03-ARKITEKTUR.md](03-ARKITEKTUR.md).

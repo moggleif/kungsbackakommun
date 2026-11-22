@@ -1723,7 +1723,11 @@ antalet skannade sidor som inte står i `tal_obekraftade`.
 
 `python -m kommunhandlingar.facit` skriver måtten per dokument, med en
 not för varje avvikelse, och totalt. Med `--spara` skrivs totalen på raden
-för poolens version i `tests/fixtures/facit/matt.csv`. Testet prövar att
+för poolens version i `tests/fixtures/facit/matt.csv`. Urvalet läses ur
+`--urval`, som förval `tests/fixtures/facit` räknat från arbetskatalogen;
+paketet räknar inte fram platsen ur sin egen sökväg, eftersom `tests/`
+inte följer med när paketet installeras som en fast version. Finns
+katalogen inte stoppar kommandot med ett fel som säger det. Testet prövar att
 raden för den installerade versionen stämmer med en ny körning. Testet
 prövar också att varje tal i en facittabell står bland sidans `tal`, att
 facittabellernas rader har lika många fält, och att textlagret i utdragen inte

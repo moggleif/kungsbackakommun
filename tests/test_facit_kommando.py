@@ -4,6 +4,8 @@
 temporär katalog.
 """
 
+import contextlib
+import io
 import shutil
 import sys
 import unittest
@@ -11,8 +13,8 @@ from importlib.metadata import version
 from unittest import mock
 
 from kommunhandlingar.facit import __main__ as facit_kommando
-from kommunhandlingar.facit.jamfor import MATT
-from kommunhandlingar.facit.matt import URVALET, sparade
+from kommunhandlingar.facit.matt import sparade
+from kommunhandlingar.facit.utfall import MATT
 from tests.kommandofall import Katalogfall, utskrift_av
 
 DOKUMENTET = "skuggbudget-2027"
@@ -21,7 +23,7 @@ DOKUMENTET = "skuggbudget-2027"
 class TestFacitKommandot(Katalogfall):
     def setUp(self):
         super().setUp()
-        shutil.copytree(URVALET / DOKUMENTET, self.rot / DOKUMENTET)
+        shutil.copytree(facit_kommando.URVALET / DOKUMENTET, self.rot / DOKUMENTET)
         self.matt = self.rot / "matt.csv"
         self.matt.write_text(
             "version," + ",".join(MATT) + "\n0.0.1" + ",9" * len(MATT) + "\n",
@@ -29,10 +31,8 @@ class TestFacitKommandot(Katalogfall):
         )
 
     def kor(self, *flaggor: str) -> list[str]:
-        with (
-            mock.patch.object(facit_kommando, "URVALET", self.rot),
-            mock.patch.object(sys, "argv", ["facit", *flaggor]),
-        ):
+        argv = ["facit", "--urval", str(self.rot), *flaggor]
+        with mock.patch.object(sys, "argv", argv):
             return utskrift_av(facit_kommando.main).splitlines()
 
     def test_matten_skrivs_per_dokument_och_totalt(self):
@@ -49,6 +49,18 @@ class TestFacitKommandot(Katalogfall):
         ny = rader[version("kommunhandlingar")]
         self.assertEqual([f"{m}={ny[m]}" for m in MATT], totalt)
         self.assertEqual(rader["0.0.1"]["ratt"], "9")
+
+    def test_ett_urval_som_inte_finns_stoppar_med_katalogen(self):
+        saknas = self.rot / "saknas"
+        argv = ["facit", "--urval", str(saknas)]
+        with (
+            mock.patch.object(sys, "argv", argv),
+            contextlib.redirect_stderr(io.StringIO()) as fel,
+            self.assertRaises(SystemExit) as stopp,
+        ):
+            facit_kommando.main()
+        self.assertEqual(stopp.exception.code, 2)
+        self.assertIn(f"urvalet finns inte: {saknas}", fel.getvalue())
 
 
 if __name__ == "__main__":
