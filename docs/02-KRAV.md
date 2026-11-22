@@ -2356,8 +2356,8 @@ Issue [#354](https://github.com/moggleif/kungsbackakommun/issues/354).
 
 ## K81 — Facit, figurtolkningen och poolens kommandon prövas genom sin ingång
 
-Kommandona `facit`, `tolkning`, `kand_inlasning`, `arenden` och
-`maska_poolen` prövas i `tests/test_facit_kommando.py`,
+Kommandona `facit`, `tolkning`, `kand_inlasning`, `arenden`,
+`maska_poolen` och `datakontroll` prövas i `tests/test_facit_kommando.py`,
 `tests/test_tolkning_kommando.py` och `tests/test_poolkommandon.py`, utan
 nät och i temporära kataloger.
 Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
@@ -2390,8 +2390,8 @@ Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
 - **När** `arenden` och sedan `maska_poolen` körs
 - **Så** skriver vart och ett att ett dokument ändrades (K48, K17).
 
-- **Givet** fel antal argument till `kand_inlasning`, `arenden` eller
-  `maska_poolen`
+- **Givet** fel antal argument till `kand_inlasning`, `arenden`,
+  `maska_poolen` eller `datakontroll`
 - **När** kommandot körs
 - **Så** stoppas det med kommandots användningstext.
 

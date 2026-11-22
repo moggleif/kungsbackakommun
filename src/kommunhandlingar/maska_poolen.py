@@ -8,9 +8,9 @@ fortfarande vilken version som läste dokumentet. En fil skrivs bara om
 något maskas, och en andra körning ändrar ingenting.
 """
 
-import sys
 from pathlib import Path
 
+from kommunhandlingar.kommando import datakatalog
 from kommunhandlingar.konvertering.tabeller import som_csv
 from kommunhandlingar.personuppgifter import maskad_md, maskade_celler
 from kommunhandlingar.skrivning import skriv_md
@@ -38,6 +38,4 @@ def maskad_fil(fil: Path) -> str | None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.maska_poolen <data>")
-    print(f"{maska_poolen(Path(sys.argv[1]))} filer maskades.")
+    print(f"{maska_poolen(datakatalog('maska_poolen'))} filer maskades.")

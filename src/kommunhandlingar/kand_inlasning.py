@@ -9,11 +9,11 @@ utan sidor, som inte gick att hämta eller öppna, räknas för sig
 samma andel (K14).
 """
 
-import sys
 from collections import Counter
 from pathlib import Path
 
 from kommunhandlingar import frontmatter, pool
+from kommunhandlingar.kommando import datakatalog
 from kommunhandlingar.konvertering.kvalitet import EJ_KONVERTERAD, SIDKVALITETER
 
 
@@ -50,6 +50,4 @@ def main(data: Path) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.kand_inlasning <data>")
-    main(Path(sys.argv[1]))
+    main(datakatalog("kand_inlasning"))

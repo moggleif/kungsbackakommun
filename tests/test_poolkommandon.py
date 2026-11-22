@@ -1,5 +1,6 @@
 """Krav: K81 i docs/02-KRAV.md, med K17, K48 och K73.
-Kod: src/kommunhandlingar/kand_inlasning.py, arenden.py och maska_poolen.py.
+Kod: src/kommunhandlingar/kand_inlasning.py, arenden.py, maska_poolen.py,
+datakontroll.py och kommando.py.
 
 Poolens kommandon körs som moduler, med `sys.argv` som på kommandoraden,
 mot en pool i en temporär katalog. Alla nummer här är påhittade.
@@ -40,7 +41,7 @@ class TestPoolensKommandon(Katalogfall):
                 self.assertEqual(kor_modulen(modul, str(self.rot)), (None, rad))
 
     def test_fel_antal_argument_ger_anvandningstexten(self):
-        moduler = ("kand_inlasning", "arenden", "maska_poolen")
+        moduler = ("kand_inlasning", "arenden", "maska_poolen", "datakontroll")
         for modul, argument in product(moduler, ((), ("a", "b"))):
             with self.subTest(modul, argument=argument):
                 anvandning = f"Användning: python -m kommunhandlingar.{modul} <data>"

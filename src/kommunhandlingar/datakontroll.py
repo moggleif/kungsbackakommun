@@ -1,6 +1,6 @@
-"""Krav: K6, K11, K15, K17, K34 och K48 i docs/02-KRAV.md, ADR-0006, ADR-0017,
-ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
-tests/test_granskning.py och tests/test_arenden.py.
+"""Krav: K6, K11, K15, K17, K34, K48 och K81 i docs/02-KRAV.md, ADR-0006,
+ADR-0017, ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
+tests/test_granskning.py, tests/test_arenden.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.datakontroll <data>` prövar varje fil under
 `data/` mot schemat i docs/03-ARKITEKTUR.md: front matter, sökvägen,
@@ -21,6 +21,7 @@ from kommunhandlingar.arenden import ratt_varde
 from kommunhandlingar.datakontroll_tabeller import tabellfel
 from kommunhandlingar.frontmatter import saknas
 from kommunhandlingar.kandidat import TYPORDNING
+from kommunhandlingar.kommando import datakatalog
 from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.las_sida import STYRTECKEN
 from kommunhandlingar.personuppgifter import maskad_md, maskade_celler
@@ -144,8 +145,6 @@ def statusfel(falt: dict[str, str]) -> list[str]:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.datakontroll <data>")
-    hittade = fel_i(Path(sys.argv[1]))
+    hittade = fel_i(datakatalog("datakontroll"))
     print("\n".join(hittade) or "Datakontrollerna gick igenom.")
     sys.exit(1 if hittade else 0)
