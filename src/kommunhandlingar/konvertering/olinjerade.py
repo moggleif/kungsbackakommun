@@ -69,16 +69,23 @@ def tabell(
     delar = [delad(r) for r in rader_[borjan:slut]]
     if None in delar or sum(talrad(c) for _, c in delar) < MINSTA_FOLJD:
         return None
+    med_fack = kropp_och_fack(delar, linjer)
+    if med_fack is None:
+        return None
+    kropp, fack = med_fack
+    celler, ovanfor_ = ovanfor(rader_[: borjan + 1], fack)
+    return byggd(ovanfor_ + rader_[borjan:slut], celler + kropp, fack.kolumner)
+
+
+def kropp_och_fack(delar: list, linjer: list[tuple]) -> tuple[list, Fack] | None:
+    """Tabellens kropp och kolumnernas fack, eller None när talen inte står
+    i kolumner eller kroppen inte går ihop."""
     kolumner_ = kolumner([f for _, c in delar for f in c if ar_tal(f)])
     if kolumner_ is None:
         return None
-    etiketternas_slut = max(e.x1 for e, _ in delar)
-    kropp = kroppen(delar, kolumner_, etiketternas_slut)
-    if kropp is None:
-        return None
-    fack = Fack(kolumner_, etiketternas_slut, linjer)
-    celler, ovanfor_ = ovanfor(rader_[: borjan + 1], fack)
-    return byggd(ovanfor_ + rader_[borjan:slut], celler + kropp, kolumner_)
+    fack = Fack(kolumner_, max(e.x1 for e, _ in delar), linjer)
+    kropp = kroppen(delar, kolumner_, fack.etiketternas_slut)
+    return None if kropp is None else (kropp, fack)
 
 
 def byggd(rader_: list[Rad], celler: list[list[str]], kolumner_: list) -> Utkast:
