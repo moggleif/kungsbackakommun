@@ -1,5 +1,5 @@
 """Krav: K38 i docs/02-KRAV.md, ADR-0059. Kod: src/kommunhandlingar/webbplats/
-spar.py, sparslag.py, sparsida.py, sparkort.py och bygg.py."""
+spar.py, sparslag.py, sparsida.py, sparkort.py, inlasning.py och bygg.py."""
 
 import unittest
 from contextlib import contextmanager

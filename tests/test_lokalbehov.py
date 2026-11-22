@@ -1,6 +1,6 @@
 """Krav: K36 i docs/02-KRAV.md, ADR-0057. Kod: src/kommunhandlingar/webbplats/
-spar.py, sparslag.py, sparsida.py, sparkort.py, sparikon.py, organsida.py
-och bygg.py."""
+spar.py, sparslag.py, sparsida.py, sparkort.py, sparikon.py, organsida.py,
+inlasning.py och bygg.py."""
 
 import shutil
 import tempfile
