@@ -12,9 +12,11 @@ och formaten under "Tabeller" och "Tolkade figurer".
 
 1. Skapa en gren från senaste `main`.
 2. Välj några dokument ur ett organ, protokollen först. Hoppa över ett
-   dokument som är `ej-hamtad`, och ett vars `pipeline` inte är poolens
-   version medan `omkonvertera = true`: det konverteras snart om, och en
-   granskning nu skulle frysa den gamla konverteringen.
+   dokument som är `ej-hamtad`, och ett som en senare version än den i
+   dess `pipeline` kan ändra medan `omkonvertera = true` (K86,
+   `omkonvertering.berors` med tabellen ur `omkonvertering.las()`): det
+   konverteras snart om, och en granskning nu skulle frysa den gamla
+   konverteringen.
 3. Rendera sidorna till en ny katalog utanför repot:
    `python -m kommunhandlingar.tolkning rendera <md> <katalog> --sidor 1,2,3`.
    Ta alltid med varje sida som är `ocr`, `ej-konverterad` eller

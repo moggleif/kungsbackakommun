@@ -81,6 +81,7 @@ krav eller ett test. Det betyder:
 | Remisser och yttranden steg för steg            | `remisser/<kommun>.csv`            |
 | Överenskommelser och vårdval steg för steg      | `overenskommelser/<kommun>.csv`    |
 | Hämtningens User-Agent och intervall per värd   | `hamtning.toml`                    |
+| Vad varje version av konverteringen kan ändra   | `src/kommunhandlingar/omkonvertering.toml` |
 | Front matter-schemat och tabellernas format     | `docs/03-ARKITEKTUR.md`            |
 | Ett dokuments härkomst och kvalitet (värdena)   | front matter i dokumentets `.md`   |
 

@@ -6,7 +6,7 @@ import unittest
 from dataclasses import replace
 from pathlib import Path
 
-from kommunhandlingar import frontmatter, pool
+from kommunhandlingar import frontmatter, omkonvertering, pool
 from kommunhandlingar.arkivluckor import ensamma
 from kommunhandlingar.behandla import Steg2, behandla
 from kommunhandlingar.hamta import ordna
@@ -45,6 +45,7 @@ class Arkivbas(unittest.TestCase):
             frozenset(k.kallnyckel for k in kandidater),
             lambda: TID,
             "kommunhandlingar 0.2.0",
+            omkonvertering.las(),
             arkiv,
             ensamma=ensamma(kandidater),
         )

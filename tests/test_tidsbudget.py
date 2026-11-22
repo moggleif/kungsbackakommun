@@ -6,17 +6,17 @@ import signal
 import tempfile
 import time
 import unittest
+from dataclasses import replace
 from datetime import timedelta
 from pathlib import Path
 from unittest import mock
 
-from kommunhandlingar import frontmatter, pool, tidsbudget
-from kommunhandlingar.behandla import Steg2
+from kommunhandlingar import frontmatter, tidsbudget
 from kommunhandlingar.datakontroll import fel_i
 from kommunhandlingar.hamta import kor
 from kommunhandlingar.konvertering import dokument
 from kommunhandlingar.tidsbudget import Dokumentgrans, Tidsgrans, avbryt, utan_avbrott
-from tests.test_hamta import PDF, TID, Klient, kandidat
+from tests.test_hamta import PDF, TID, Klient, kandidat, nytt_steg
 
 
 class Avbrytande(Klient):
@@ -41,14 +41,8 @@ class TestBudgeten(unittest.TestCase):
         ]
 
     def kor(self, mjuk):
-        steg = Steg2(
-            self.data,
-            "exempelby",
-            pool.las(self.data, "exempelby"),
-            self.klient,
-            frozenset(k.kallnyckel for k in self.kandidater),
-            lambda: TID,
-            "kommunhandlingar 0.1.0",
+        steg = nytt_steg(
+            self.data, self.klient, self.kandidater, "kommunhandlingar 0.1.0"
         )
         return kor(steg, self.kandidater, mjuk).utfall
 
@@ -131,14 +125,8 @@ class TestDokumentetsGrans(unittest.TestCase):
         ]
 
     def kor(self, version: str = "kommunhandlingar 0.1.0"):
-        steg = Steg2(
-            self.data,
-            "exempelby",
-            pool.las(self.data, "exempelby"),
-            self.klient,
-            frozenset(k.kallnyckel for k in self.kandidater),
-            lambda: TID,
-            version,
+        steg = replace(
+            nytt_steg(self.data, self.klient, self.kandidater, version),
             omkonvertera=True,
         )
         return kor(steg, self.kandidater, TID + timedelta(hours=1)).utfall

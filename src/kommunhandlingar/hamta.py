@@ -25,7 +25,14 @@ from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
 
-from kommunhandlingar import konfiguration, pool, provade, tidsbudget, versionslogg
+from kommunhandlingar import (
+    konfiguration,
+    omkonvertering,
+    pool,
+    provade,
+    tidsbudget,
+    versionslogg,
+)
 from kommunhandlingar.arkivluckor import ensamma
 from kommunhandlingar.behandla import Steg2, bara_omkonvertering, behandla
 from kommunhandlingar.fel import Konfigurationsfel
@@ -93,6 +100,7 @@ def bygg_steg(arg: argparse.Namespace, kommun, kandidater: list[Kandidat]) -> St
         nycklar=frozenset(k.kallnyckel for k in kandidater),
         tid=nu,
         version=f"kommunhandlingar {version('kommunhandlingar')}",
+        andringar=omkonvertering.las(),
         arkiv=arg.arkiv,
         omkonvertera=kommun.omkonvertera and not arg.utan_omkonvertering,
         ensamma=ensamma(kandidater),

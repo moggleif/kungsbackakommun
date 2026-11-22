@@ -29,6 +29,8 @@ utveckling = ["ruff==0.17.4", "pip-audit==2.10.1", "coverage==7.17.4"]
 # installerar en fast version kan bygga sidorna (ADR-0080).
 [tool.setuptools.package-data]
 "kommunhandlingar.webbplats" = ["*.js", "*.css"]
+# Vad varje version kan ändra följer med koden (ADR-0107).
+"kommunhandlingar" = ["omkonvertering.toml"]
 
 # Täckningen i CI (K75, ADR-0102).
 [tool.coverage.run]

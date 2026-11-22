@@ -287,8 +287,8 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
 - **Givet** att en källnyckel redan finns i poolen som ett dokuments
   `kallnyckel`, med samma `kalla_url` som upptäckten anger och utan
   kvalitet `ej-hamtad`, och, när kommunfilen har `omkonvertera = true`,
-  med den version av poolen som körs i `pipeline`, ett datum i
-  `granskad` (K34) eller kvalitet `full` (K72)
+  som ingen version efter den i `pipeline` kan ändra (K86) eller med ett
+  datum i `granskad` (K34)
 - **När** en ny körning startas
 - **Så** hämtas filen inte, och dokumentets `.md` lämnas orörd.
 
@@ -313,9 +313,9 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
   `.md` på samma sökväg.
 
 - **Givet** en kommunfil med `omkonvertera = true`, ett fullständigt
-  dokument som inte är granskat (K34) eller `full` (K72) och vars
-  `pipeline` har en annan version av poolen än den som körs, och en
-  kandidat med samma källnyckel och samma `kalla_url`
+  dokument som inte är granskat (K34) och som en version efter den i dess
+  `pipeline`, fram till den som körs, kan ändra (K86), och en kandidat
+  med samma källnyckel och samma `kalla_url`
 - **När** körningen når kandidaten
 - **Så** hämtas filen och konverteras om. Är sha256 densamma skrivs
   dokumentet om på samma sökväg med den nya versionens text, tabeller och
@@ -345,9 +345,9 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
   sha256 som den som redan finns
 - **När** nästa körning hittar den
 - **Så** uppdateras bara `kalla_url`, och texten konverteras inte om, om
-  inte kommunfilen har `omkonvertera = true` och dokumentets `pipeline`
-  har en annan version av poolen än den som körs och dokumentet inte är
-  `full` (K72); då konverteras det om som i K8.
+  inte kommunfilen har `omkonvertera = true` och en version efter den i
+  dokumentets `pipeline`, fram till den som körs, kan ändra dokumentet
+  (K86); då konverteras det om som i K8.
 
 - **Givet** att kommunen publicerar en fil under en ny källnyckel på ett
   dokuments plats, och den gamla källnyckeln inte längre finns i källan
@@ -610,8 +610,8 @@ arkivet per organ.
 - **När** en kandidat ur arkivet för den källnyckeln eller platsen tas
 - **Så** hämtas den inte, och dokumentet i poolen lämnas orört. Ett
   misslyckat försök ur arkivet från en annan plattform är ett undantag
-  (K23), och ett dokument ur arkivet från en annan version av
-  poolen ett annat (K52).
+  (K23), och ett dokument ur arkivet som en senare version av poolen kan
+  ändra ett annat (K52, K86).
 - **Givet** flera versioner och kopior av samma fil i arkivet
 - **När** arkivet upptäcks
 - **Så** blir den nyaste versionen kandidat, med den största kopian och vid
@@ -1776,14 +1776,15 @@ och [Körning och incheckning](03-ARKITEKTUR.md#körning-och-incheckning).
   kandidaten
 - **När** en senare körning når kandidaten
 - **Så** hämtas och konverteras det bara om omkonverteringen är påslagen
-  och dokumentets `pipeline` har en annan version av poolen än den som
-  körs (K8); annars är det oförändrat.
+  och poolen har en nyare version än den i dokumentets `pipeline` (K8,
+  K86: ett dokument utan sidor berörs av varje ny version); annars är det
+  oförändrat.
 - **Givet** att budgetens hårda gräns kommer före dokumentets 30 minuter
 - **När** den nås
 - **Så** läggs dokumentet åt sidan som i K11, utan att något skrivs.
 - **Givet** en kommunfil med `omkonvertera = true` och ett fullständigt
-  dokument ur arkivet som inte är granskat (K34) eller `full` (K72), vars
-  `pipeline` har en annan version av poolen än den som körs
+  dokument ur arkivet som inte är granskat (K34) och som en version efter
+  den i dess `pipeline`, fram till den som körs, kan ändra (K86)
 - **När** arkivets kandidat med samma källnyckel och samma `kalla_url`
   tas
 - **Så** hämtas kopian och konverteras om som i K8, efter arkivets
@@ -2157,8 +2158,8 @@ läsa: inte ett foto, en karta eller en tom sida.
 - **Givet** omkonvertering i kommunfilen och ett dokument som är `full`
   i en äldre version av poolen
 - **När** steg 2 körs
-- **Så** konverteras det inte om; ett dokument med en svagare sida
-  konverteras om som förut.
+- **Så** konverteras det om bara när en senare version kan ändra det, som
+  varje annat dokument (K86 ersätter här ADR-0099:s undantag för `full`).
 
 ## K73 — Varje sida har känd inläsning
 
@@ -2562,3 +2563,43 @@ byggt står i
 - **När** steg 2 startar
 - **Så** stoppas körningen innan något dokument läses, som när Tesseract
   saknas.
+
+## K86 — Bara det som en ny version kan ändra konverteras om
+
+[ADR-0107](decisions/0107-omkonvertering-efter-vad-versionen-kan-andra.md).
+Issue [#450](https://github.com/moggleif/kungsbackakommun/issues/450). Hur
+det är byggt står i
+[03-ARKITEKTUR.md](03-ARKITEKTUR.md#inkrementell-körning).
+En omkonvertering som inte kan ändra något kostar en hämtning och en
+körning i onödan, och en som uteblir lämnar text som en senare version
+skulle ha rättat.
+
+- **Givet** poolens version i `pyproject.toml`
+- **När** testerna körs
+- **Så** har versionen en rad i `src/kommunhandlingar/omkonvertering.toml`
+  som säger vad den kan ändra: `alla`, sidkvaliteter eller
+  `tal_obekraftade`, och raderna står i versionsordning.
+
+- **Givet** omkonvertering i kommunfilen och ett fullständigt, ogranskat
+  dokument, också ett som är `full`, och en version efter den i dess
+  `pipeline`, fram till poolens, vars rad är `alla`, har en sidkvalitet
+  som en av dokumentets sidor har, eller är `tal_obekraftade` när
+  dokumentet har en sida med obekräftade tal
+- **När** steg 2 når kandidaten
+- **Så** hämtas och konverteras dokumentet om som i K8.
+
+- **Givet** ett sådant dokument som ingen version efter dess egen, fram
+  till poolens, kan ändra
+- **När** steg 2 når kandidaten
+- **Så** hämtas det inte, och `pipeline` och resten av dokumentet står
+  kvar orörda.
+
+- **Givet** ett dokument från en nyare version än poolens
+- **När** steg 2 når kandidaten
+- **Så** hämtas det inte.
+
+- **Givet** ett dokument som är `ej-konverterad` och saknar sidor, eller
+  har en sida som är `ej-konverterad`
+- **När** poolen har en nyare version än dokumentets
+- **Så** hämtas och konverteras det om, eftersom felet kan ha varit
+  tillfälligt.

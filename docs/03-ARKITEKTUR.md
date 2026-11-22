@@ -60,21 +60,26 @@ Hur och varför står i
   emellan står nya tabeller bredvid den gamla `.md`; dess `kalla_url` är
   då fortfarande den gamla, så nästa körning gör om dokumentet. En sådan
   körning checkas aldrig in (se nedan).
-- **En äldre version av poolen konverteras om**, när kommunfilen har
-  `omkonvertera = true` (K8,
-  [ADR-0019](decisions/0019-omkonvertering-efter-poolens-version.md)).
-  Utan den räknas versionen inte, som före ADR-0019. Ett fullständigt dokument vars `pipeline` börjar med en annan version
-  av poolen än den som körs hämtas igen från `kalla_url` och konverteras
-  om, efter alla andra kandidater i samma lista. Det är versionen som
-  avgör, och den höjs när konverteringen ändrar vad den skriver (se
-  [Konvertering och kvalitet](#konvertering-och-kvalitet)), så med
-  flaggan påslagen konverteras hela poolen om under de närmaste
-  nätterna. PDF:en sparas inte mellan körningarna; den hämtas igen.
-  Ett granskat dokument konverteras inte om
-  ([Granskade dokument](#granskade-dokument)), och inte heller ett som
-  är `full`: projektägaren valde att poolens bästa dokument inte läses om
-  (K72, [ADR-0099](decisions/0099-inskannade-bilder-markas-och-vridna-sidor-vands.md)).
-  En senare förbättring av textlagret når dem därför inte av sig själv.
+- **Det som en senare version kan ändra konverteras om**, när
+  kommunfilen har `omkonvertera = true` (K8, K86,
+  [ADR-0019](decisions/0019-omkonvertering-efter-poolens-version.md),
+  [ADR-0107](decisions/0107-omkonvertering-efter-vad-versionen-kan-andra.md)).
+  Utan den räknas versionen inte, som före ADR-0019. Tabellen
+  `src/kommunhandlingar/omkonvertering.toml` säger för varje version av
+  poolen vad den kan ändra: `alla`, sidkvaliteter (dokumentet har en sida
+  med en av dem i `kvalitet_per_sida`) eller `tal_obekraftade`
+  (dokumentet har en sida med obekräftade tal). Ett fullständigt dokument
+  som en version efter den i dess `pipeline`, fram till poolens, berör
+  hämtas igen från `kalla_url` och konverteras om, efter alla andra
+  kandidater i samma lista; versionerna jämförs som tal. Ett dokument som
+  ingen sådan version berör lämnas orört, med sin `pipeline`, eftersom
+  varje senare version skriver samma sak för det. Ett dokument från en
+  nyare version än poolens lämnas också orört, och ett dokument som är
+  `ej-konverterad` utan sidor, eller som har en sida som är
+  `ej-konverterad`, berörs av varje ny version. Prövningen
+  görs ur front matter, utan anrop, i varje körning. PDF:en sparas inte
+  mellan körningarna; den hämtas igen. Ett granskat dokument konverteras
+  inte om ([Granskade dokument](#granskade-dokument)).
 - **Det som en gång tagits in tas inte bort** (K12,
   [ADR-0007](decisions/0007-poolen-ar-en-ogonblicksbild.md)). Ett
   dokument står kvar när det försvinner ur källan, och historiken på
@@ -420,7 +425,7 @@ regex = '^Protokoll för (?P<organ>.+?)\s+(?P<ar>\d{4})-(?P<manad>\d{2})-(?P<dag
 | Fält                   | Betyder                                                      |
 | ---------------------- | ------------------------------------------------------------ |
 | `namn`                 | Kommunens namn.                                              |
-| `omkonvertera`         | `true`: dokument från en annan version av poolen konverteras om ([Inkrementell körning](#inkrementell-körning)). Utelämnas annars. |
+| `omkonvertera`         | `true`: dokument som en senare version av poolen kan ändra konverteras om ([Inkrementell körning](#inkrementell-körning)). Utelämnas annars. |
 | `organ.id`             | Organets katalog i `data/` och `organ` i front matter.       |
 | `organ.namn`           | Alla namn källorna använt för organet, minst ett.            |
 | `organ.fran`, `till`   | Giltighetsperioden, som datum. Ett utelämnat värde är öppet åt det hållet. |
@@ -791,8 +796,8 @@ steg 2 gör som för de levande källorna med två skillnader:
   arkivets försök står den levande källans försök kvar orört.
 - **Arkivets egna dokument konverteras om** som de levande källornas, när
   kommunfilen har `omkonvertera = true`: ett dokument med samma
-  källnyckel och samma `kalla_url` som kandidaten, från en annan version
-  av poolen, hämtas igen och konverteras om, sist i arkivets lista (K52,
+  källnyckel och samma `kalla_url` som kandidaten, som en senare version
+  av poolen kan ändra (K86), hämtas igen och konverteras om, sist i arkivets lista (K52,
   [ADR-0076](decisions/0076-arkivet-konverterar-om-sina-egna-dokument.md)).
 - **Två plattformar** ([ADR-0039](decisions/0039-episerver-ur-arkivet-med-mappar-och-monster.md),
   [ADR-0048](decisions/0048-hogst-kvalitet-vinner-mellan-plattformarna.md)).
@@ -1121,8 +1126,13 @@ Språkmodellens version är paketet `tesseract-ocr-swe`:s version utan epok
 och revision; går den inte att läsa ur paketsystemet står `okänd`. En fil
 som inte gick att öppna har lästs av pdfplumber och pdfminer.six.
 Versionen höjs när en ändring i konverteringen ändrar vad den skriver,
-och bara då: med `omkonvertera = true` gör varje höjning att hela poolen
-hämtas och konverteras om ([ADR-0019](decisions/0019-omkonvertering-efter-poolens-version.md)).
+och bara då, och samma ändring lägger till versionens rad i
+`src/kommunhandlingar/omkonvertering.toml` med det den kan ändra. Med
+`omkonvertera = true` hämtas och konverteras de dokument om som raden
+berör ([ADR-0107](decisions/0107-omkonvertering-efter-vad-versionen-kan-andra.md)).
+Raden är en överskattning och gäller allt som ändrats i konverteringen
+sedan förra versionen: går ändringen inte att avgränsa ur front matter
+står `alla`.
 Verktygens versioner i `pipeline` ger ingen omkonvertering.
 
 ### Inskannade sidor som inte blir text
@@ -1713,8 +1723,8 @@ utfallen och nämner varje dokument som inte gick att hämta, med orsak.
   ser ut, blir `ej-konverterad` med `trasig-pdf`, och felet skrivs ut, så
   att en enda fil inte stoppar körningen.
 - **Ett dokument med samma källnyckel och sha256** under en ny adress får
-  bara ny `kalla_url`; texten och tabellerna rörs inte. Har det en äldre
-  version av poolen konverteras det om i stället.
+  bara ny `kalla_url`; texten och tabellerna rörs inte. Kan en senare
+  version av poolen ändra det (K86) konverteras det om i stället.
 
 ## Tabeller
 

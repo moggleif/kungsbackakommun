@@ -6,10 +6,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from kommunhandlingar import frontmatter, pool
-from kommunhandlingar.behandla import Steg2, behandla
+from kommunhandlingar import frontmatter
+from kommunhandlingar.behandla import behandla
 from kommunhandlingar.datakontroll import fel_i
-from tests.test_hamta import TID, Klient, kandidat
+from tests.test_hamta import Klient, kandidat, nytt_steg
 
 DOKUMENT = "exempelby/ks/2025/2025-04-22/protokoll.md"
 EJ_HAMTAD = "exempelby/ks/2025/2025-04-22/kallelse.md"
@@ -22,15 +22,7 @@ def pool_med_tva_dokument(data: Path) -> None:
     klient = Klient()
     klient.filer |= {"u1": "sidor.pdf", "u2": "fel:http-404"}
     kandidater = (kandidat("s:1", "u1"), kandidat("s:2", "u2", typ="kallelse"))
-    steg = Steg2(
-        data,
-        "exempelby",
-        pool.las(data, "exempelby"),
-        klient,
-        frozenset(k.kallnyckel for k in kandidater),
-        lambda: TID,
-        "kommunhandlingar 0.1.0",
-    )
+    steg = nytt_steg(data, klient, kandidater, "kommunhandlingar 0.1.0")
     for k in kandidater:
         behandla(steg, k)
 

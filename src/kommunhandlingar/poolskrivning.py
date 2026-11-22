@@ -1,6 +1,6 @@
-"""Krav: K4, K6, K8, K9, K11 och K48 i docs/02-KRAV.md, ADR-0004, ADR-0019 och
-ADR-0071. Test i tests/: test_hamta.py, test_hamta_arkiv.py, test_omkonvertering.py
-och test_tidsbudget.py.
+"""Krav: K4, K6, K8, K9, K11, K48 och K86 i docs/02-KRAV.md, ADR-0004, ADR-0019,
+ADR-0071 och ADR-0107. Test i tests/: test_hamta.py, test_hamta_arkiv.py,
+test_omkonvertering.py och test_tidsbudget.py.
 
 Stegets typer och fälten och skrivningen i steg 2. `Steg2` och `Dokument`
 bor här, och inte i `behandla.py`, så att `placering.py` kan använda dem utan
@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path, PurePosixPath
 
-from kommunhandlingar import frontmatter, skrivning, utfall
+from kommunhandlingar import frontmatter, omkonvertering, skrivning, utfall
 from kommunhandlingar.arenden import arenden
 from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.kandidat import Kandidat
@@ -35,6 +35,7 @@ class Steg2:
     nycklar: frozenset[str]
     tid: Callable[[], datetime]
     version: str
+    andringar: omkonvertering.Andringar
     arkiv: bool = False
     omkonvertera: bool = False
     ensamma: frozenset[str] = frozenset()  # arkivluckor.ensamma
