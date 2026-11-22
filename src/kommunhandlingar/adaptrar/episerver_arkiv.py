@@ -34,11 +34,11 @@ class Mapp:
 
 def upptack(kalla: episerver.Kalla, klient) -> Fynd:
     mappar = (Mapp(o, m) for o, adresser in kalla.mappar.items() for m in adresser)
-    fynd = sum((fraga_mapp(klient, kalla, mapp) for mapp in mappar), Fynd())
+    fynd = sum((mappens_fynd(klient, kalla, mapp) for mapp in mappar), Fynd())
     return replace(fynd, kandidater=moten(fynd.kandidater))
 
 
-def fraga_mapp(klient, kalla: episerver.Kalla, mapp: Mapp) -> Fynd:
+def mappens_fynd(klient, kalla: episerver.Kalla, mapp: Mapp) -> Fynd:
     try:
         kopior = wayback.fraga_under(klient, mapp.adress, "application/pdf")
     except Hamtfel as fel:
@@ -91,20 +91,20 @@ def nyckel_av(original: str) -> str:
 
 
 def kandidat(kalla: episerver.Kalla, mapp: Mapp, kopia: wayback.Kopia) -> Kandidat:
-    kallnyckel = nyckel_av(kopia.original)
-    typ, datum = episerver.typ_och_datum(kalla, under(mapp, kopia), kallnyckel)
+    nyckel = nyckel_av(kopia.original)
+    typ, datum = episerver.typ_och_datum(kalla, under(mapp, kopia), nyckel)
     return Kandidat(
         organ=mapp.organ,
         datum=datum,
         typ=typ,
         url=wayback.adress(kopia),
         kalla=mapp.adress,
-        kallnyckel=kallnyckel,
+        kallnyckel=nyckel,
         filnamn=filnamn(kopia),
     )
 
 
-def sokvag(kopia: wayback.Kopia) -> str:
+def kopians_sokvag(kopia: wayback.Kopia) -> str:
     """Kopians sökväg efter värden, avkodad."""
     return unquote(urlsplit(kopia.original).path).lstrip("/")
 
@@ -112,13 +112,13 @@ def sokvag(kopia: wayback.Kopia) -> str:
 def inne_i(mapp: Mapp, kopia: wayback.Kopia) -> bool:
     """Arkivets prefix tar också syskonmappar med längre namn, som
     "Kommunstyrelsens arbetsutskott/" för "Kommunstyrelsen/"."""
-    return sokvag(kopia).startswith(mapp.sokvag)
+    return kopians_sokvag(kopia).startswith(mapp.sokvag)
 
 
 def under(mapp: Mapp, kopia: wayback.Kopia) -> str:
     """Sökvägen under mappen, avkodad."""
-    return sokvag(kopia)[len(mapp.sokvag) :]
+    return kopians_sokvag(kopia)[len(mapp.sokvag) :]
 
 
 def filnamn(kopia: wayback.Kopia) -> str:
-    return sokvag(kopia).rsplit("/", 1)[-1]
+    return kopians_sokvag(kopia).rsplit("/", 1)[-1]

@@ -6,6 +6,7 @@ sparades, utan arkivets ram och med originalets länkar.
 """
 
 import json
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlencode
@@ -26,16 +27,16 @@ class Kopia:
 
 
 def fraga(klient, adress: str, mimetyp: str) -> list[Kopia]:
-    return kopior(klient, adress, parametrar(adress, mimetyp))
+    return cdx(klient, adress, parametrar(adress, mimetyp))
 
 
 def fraga_under(klient, adress: str, mimetyp: str) -> list[Kopia]:
     """Varje adress som börjar med `adress`."""
     falt = parametrar(adress, mimetyp) + [("matchType", "prefix")]
-    return kopior(klient, adress, falt)
+    return cdx(klient, adress, falt)
 
 
-def kopior(klient, adress: str, falt: list[tuple[str, str]]) -> list[Kopia]:
+def cdx(klient, adress: str, falt: list[tuple[str, str]]) -> list[Kopia]:
     try:
         rader = json.loads(klient.text(f"{CDX}?{urlencode(falt)}").strip() or "[]")
         return [Kopia(tid, original, int(langd)) for tid, original, langd in rader[1:]]
@@ -56,7 +57,9 @@ def parametrar(adress: str, mimetyp: str) -> list[tuple[str, str]]:
     ]
 
 
-def basta(kopior: list[Kopia], nyckel, rang) -> dict[str, Kopia]:
+def basta(
+    kopior: list[Kopia], nyckel: Callable[[Kopia], str], rang: Callable[[Kopia], tuple]
+) -> dict[str, Kopia]:
     """Den kopia per nyckel som rangordnas högst."""
     return {nyckel(kopia): kopia for kopia in sorted(kopior, key=rang)}
 
