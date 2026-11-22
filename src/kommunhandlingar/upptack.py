@@ -34,15 +34,15 @@ from kommunhandlingar.tidsbudget import Tidsgrans
 
 
 def upptack(kommun: konfiguration.Kommun, klient) -> Fynd:
-    moten = sum((motessidorna(kalla, klient) for kalla in kommun.kallor), Fynd())
-    projekt = projekten(kommun, klient, {k.kallnyckel for k in moten.kandidater})
-    hela_historiken = meetingsplus_kallorna(kommun, klient)
+    motena = sum((motessidorna(kalla, klient) for kalla in kommun.kallor), Fynd())
+    projekt = projekten(kommun, klient, {k.kallnyckel for k in motena.kandidater})
+    meetingsplus_fynd = meetingsplus_kallorna(kommun, klient)
     organordning = [o.id for o in kommun.organ]
     # Meetings Plus har hela historiken levande: nyast först, som arkivet (ADR-0080).
     return Fynd(
-        ordna(moten.kandidater + projekt.kandidater, organordning)
-        + ordna_bakat(hela_historiken.kandidater, organordning),
-        moten.avvisade + projekt.avvisade + hela_historiken.avvisade,
+        ordna(motena.kandidater + projekt.kandidater, organordning)
+        + ordna_bakat(meetingsplus_fynd.kandidater, organordning),
+        motena.avvisade + projekt.avvisade + meetingsplus_fynd.avvisade,
     )
 
 

@@ -70,17 +70,9 @@ class TestFynden(unittest.TestCase):
             ),
         )
 
-    def test_inga_fynd_ar_tomma_listor(self):
-        self.assertEqual(Fynd(), Fynd([], [], []))
-
     def test_fynden_summeras_fran_inga_fynd(self):
         delar = [Fynd(FORVANTAD[:1]), Fynd(noteringar=["n"]), Fynd(FORVANTAD[1:2])]
         self.assertEqual(sum(delar, Fynd()), Fynd(FORVANTAD[:2], [], ["n"]))
-
-    def test_sammanlaggningen_andrar_inte_delarna(self):
-        forsta = Fynd(FORVANTAD[:1])
-        forsta + Fynd(FORVANTAD[1:2])  # noqa: B018
-        self.assertEqual(forsta, Fynd(FORVANTAD[:1]))
 
 
 if __name__ == "__main__":

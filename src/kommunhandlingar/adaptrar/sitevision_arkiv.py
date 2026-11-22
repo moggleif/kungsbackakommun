@@ -74,13 +74,16 @@ def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], lis
 
 def med_kopior(fynd: Fynd, filer: dict[str, wayback.Kopia]) -> Fynd:
     """En kandidat utan kopia i arkivet blir en fil utan kandidat."""
-    utan = [k for k in fynd.kandidater if k.kallnyckel not in filer]
-    return Fynd(
-        [
-            replace(k, url=wayback.adress(filer[k.kallnyckel]))
-            for k in fynd.kandidater
-            if k.kallnyckel in filer
+    kopior = [(k, filer.get(k.kallnyckel)) for k in fynd.kandidater]
+    return replace(
+        fynd,
+        kandidater=[
+            replace(k, url=wayback.adress(c)) for k, c in kopior if c is not None
         ],
-        fynd.avvisade
-        + [Avvisad(k.kalla, k.filnamn, "ingen kopia i arkivet") for k in utan],
+        avvisade=fynd.avvisade
+        + [
+            Avvisad(k.kalla, k.filnamn, "ingen kopia i arkivet")
+            for k, c in kopior
+            if c is None
+        ],
     )

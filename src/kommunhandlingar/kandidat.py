@@ -41,7 +41,9 @@ class Avvisad:
 
 @dataclass(frozen=True)
 class Fynd:
-    """Det en upptäckt ger. Noteringarna är det arkivet inte svarade på."""
+    """Det en upptäckt ger. Noteringarna är det som hoppades över utan att
+    vara en fil: en fråga arkivet inte svarade på, en sida som inte gick att
+    läsa eller en tidsbudget som tog slut."""
 
     kandidater: list[Kandidat] = field(default_factory=list)
     avvisade: list[Avvisad] = field(default_factory=list)
