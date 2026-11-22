@@ -27,6 +27,7 @@ from kommunhandlingar.konvertering import (
 )
 from kommunhandlingar.konvertering.avskurna import avskuren
 from kommunhandlingar.konvertering.funnen import Funnen
+from kommunhandlingar.konvertering.geometri import Ruta, inom, mitt
 from kommunhandlingar.konvertering.mellanslag import utan_mellanslag_i_tal
 from kommunhandlingar.konvertering.ordning import i_oordning
 from kommunhandlingar.konvertering.sida import Sida
@@ -76,7 +77,7 @@ def sidans_text(utanfor: Page) -> tuple[str, bool]:
     return stycken(hogkant.sist(text, hogkant.textlagret(utanfor)))
 
 
-def med_linjer(sida: Page) -> tuple[list[Funnen], list[tuple]]:
+def med_linjer(sida: Page) -> tuple[list[Funnen], list[Ruta]]:
     """Tabellerna med linjer, också de som delats (ADR-0028), och rutorna
     kring dem som fälldes, också de avskurna (ADR-0034)."""
     ord_ = sida.extract_words(return_chars=True)
@@ -97,16 +98,16 @@ def delad_tabell(fallen: Table, ord_: list[dict]) -> Funnen | None:
     return Funnen(fallen.bbox, rader, kanter)
 
 
-def osakra_tal(sida: Page, fallda: list[tuple], rutor: list[tuple]) -> bool:
+def osakra_tal(sida: Page, fallda: list[Ruta], rutor: list[Ruta]) -> bool:
     """En siffra ur en fälld tabell med linjer, eller talrader i linje,
     utanför de tabeller som lästs."""
     siffror = any(olast_siffra(c, fallda, rutor) for c in sida.chars)
     return siffror or kvarvarande.har_talrader(sida, rutor)
 
 
-def olast_siffra(tecken: dict, fallda: list[tuple], rutor: list[tuple]) -> bool:
+def olast_siffra(tecken: dict, fallda: list[Ruta], rutor: list[Ruta]) -> bool:
     """En siffra i en fälld tabell med linjer som inte lästs i någon tabell."""
-    i_fallda = any(tabeller.inom(tabeller.mitt(tecken), f) for f in fallda)
+    i_fallda = any(inom(mitt(tecken), f) for f in fallda)
     return (
         tecken["text"].isdigit() and i_fallda and not tabeller.i_tabell(tecken, rutor)
     )

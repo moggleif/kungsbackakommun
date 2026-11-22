@@ -11,7 +11,7 @@ något maskas, och en andra körning ändrar ingenting.
 from pathlib import Path
 
 from kommunhandlingar.kommando import datakatalog
-from kommunhandlingar.konvertering.tabeller import som_csv
+from kommunhandlingar.konvertering.tabellformat import som_csv
 from kommunhandlingar.personuppgifter import maskad_md, maskade_celler
 from kommunhandlingar.skrivning import skriv_md
 

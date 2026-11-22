@@ -13,15 +13,14 @@ tabellen, medan ett tal för lite ger en cell med två tal i en CSV. En
 fälld tabell kan ändå delas (`delade.py`, ADR-0028).
 """
 
-import csv
-import io
 import re
 
 from pdfplumber.page import Page
 from pdfplumber.table import Table
 
-from kommunhandlingar.konvertering import markdown, rutkanter
+from kommunhandlingar.konvertering import rutkanter
 from kommunhandlingar.konvertering.falt import falt, radvis
+from kommunhandlingar.konvertering.geometri import Ruta, inom, mitt
 from kommunhandlingar.konvertering.text import TAL
 
 LINJEBREDD = 2
@@ -120,15 +119,7 @@ def siffra(text: str) -> bool:
     return any(c.isdigit() for c in text)
 
 
-def mitt(objekt: dict) -> tuple[float, float]:
-    return ((objekt["x0"] + objekt["x1"]) / 2, (objekt["top"] + objekt["bottom"]) / 2)
-
-
-def inom(punkt: tuple[float, float], ruta: tuple) -> bool:
-    return ruta[0] <= punkt[0] <= ruta[2] and ruta[1] <= punkt[1] <= ruta[3]
-
-
-def i_tabell(objekt: dict, rutor: list[tuple]) -> bool:
+def i_tabell(objekt: dict, rutor: list[Ruta]) -> bool:
     """Ett tecken vars mitt ligger i någon av tabellernas rutor."""
     if objekt.get("object_type") != "char":
         return False
@@ -142,16 +133,3 @@ def kanter(tabell: Table) -> tuple[float, ...]:
 
 def rader(tabell: Table) -> list[list[str]]:
     return [[cell or "" for cell in rad] for rad in tabell.extract()]
-
-
-def som_csv(rader_: list[list[str]]) -> str:
-    ut = io.StringIO()
-    csv.writer(ut, lineterminator="\n").writerows(rader_)
-    return ut.getvalue()
-
-
-def som_markdown(rader_: list[list[str]]) -> str:
-    celler = [[markdown.cell(c) for c in r] for r in rader_]
-    rubrik, *ovriga = celler
-    linjer = [rubrik, ["---"] * len(rubrik), *ovriga]
-    return "\n".join("| " + " | ".join(rad) + " |" for rad in linjer)

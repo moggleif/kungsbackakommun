@@ -14,9 +14,10 @@ from pdfplumber.table import Table
 
 from kommunhandlingar.konvertering import talkolumner
 from kommunhandlingar.konvertering.falt import RADTOLERANS, falt, radvis
+from kommunhandlingar.konvertering.geometri import Ruta, inom, mitt
 from kommunhandlingar.konvertering.ombrutna import ombruten
 from kommunhandlingar.konvertering.sammanslagna import I_LINJE, Textrad, cellens, kolumn
-from kommunhandlingar.konvertering.tabeller import flera_tal, inom, mitt, talfalt
+from kommunhandlingar.konvertering.tabeller import flera_tal, talfalt
 
 
 def tabell(t: Table, ord_: list[dict]) -> tuple[list, tuple] | None:
@@ -41,7 +42,7 @@ def tabell(t: Table, ord_: list[dict]) -> tuple[list, tuple] | None:
     return None if utan_etiketter or ombruten(rader) else (rader, granser)
 
 
-def over_linje(o: dict, celler: list[tuple]) -> bool:
+def over_linje(o: dict, celler: list[Ruta]) -> bool:
     """Ett ord vars tecken står i olika celler, som en etikett i ett
     diagram vars rutnät pdfplumber läser som en tabell."""
     i_celler = {

@@ -17,6 +17,7 @@ from kommunhandlingar.konvertering import mellanrader
 from kommunhandlingar.konvertering.falt import Falt, falt, radvis
 from kommunhandlingar.konvertering.foljder import foljder
 from kommunhandlingar.konvertering.funnen import Funnen
+from kommunhandlingar.konvertering.geometri import Ruta, inom, mitt, omslutande, ruta
 from kommunhandlingar.konvertering.ombrutna import ombruten
 from kommunhandlingar.konvertering.rader import (
     I_LINJE,
@@ -30,7 +31,6 @@ from kommunhandlingar.konvertering.rader import (
 )
 from kommunhandlingar.konvertering.rubriker import ovanfor
 from kommunhandlingar.konvertering.spann import Fack
-from kommunhandlingar.konvertering.tabeller import inom, mitt
 from kommunhandlingar.konvertering.text import MINSTA_FOLJD
 
 AR_ELLER_KOD = re.compile(r"\d{4}")
@@ -45,7 +45,7 @@ class Utkast:
     antal_ord: int
 
 
-def tabeller(sida: Page, upptagna: list[tuple]) -> list[Funnen]:
+def tabeller(sida: Page, upptagna: list[Ruta]) -> list[Funnen]:
     alla = sida.extract_words(extra_attrs=["size"])
     rader_ = [Rad(r, falt(r)) for r in radvis(fria(alla, upptagna))]
     linjer = [(e["x0"], e["top"], e["bottom"]) for e in sida.vertical_edges]
@@ -58,7 +58,7 @@ def tabeller(sida: Page, upptagna: list[tuple]) -> list[Funnen]:
     return [u.tabell for u in hittade if u and ensam(u, alla)]
 
 
-def fria(ord_: list[dict], upptagna: list[tuple]) -> list[dict]:
+def fria(ord_: list[dict], upptagna: list[Ruta]) -> list[dict]:
     return [o for o in ord_ if not any(inom(mitt(o), r) for r in upptagna)]
 
 
@@ -84,9 +84,9 @@ def tabell(
 def byggd(rader_: list[Rad], celler: list[list[str]], kolumner_: list) -> Utkast:
     """Kanterna är etiketternas vänsterkant och kolumnernas högerkanter (K19)."""
     ord_ = [o for r in rader_ for o in r.ord]
-    ruta = ram(ord_)
-    kanter = (ruta[0], *(x1 for _, x1 in kolumner_))
-    return Utkast(Funnen(ruta, celler, kanter), len(ord_))
+    ram = omslutande([ruta(o) for o in ord_])
+    kanter = (ram[0], *(x1 for _, x1 in kolumner_))
+    return Utkast(Funnen(ram, celler, kanter), len(ord_))
 
 
 def kroppen(delar: list, kolumner_: list, etiketternas_slut: float) -> list | None:
@@ -128,15 +128,6 @@ def kroppsrad(etikett: Falt, celler: list[Falt], kolumner_: list) -> list[str] |
 def atskilda(kolumner_: list[tuple[float, float]], etiketternas_slut: float) -> bool:
     granser = [etiketternas_slut] + [x1 for _, x1 in kolumner_[:-1]]
     return all(x0 > grans for (x0, _), grans in zip(kolumner_, granser, strict=True))
-
-
-def ram(ord_: list[dict]) -> tuple[float, float, float, float]:
-    return (
-        min(o["x0"] for o in ord_),
-        min(o["top"] for o in ord_),
-        max(o["x1"] for o in ord_),
-        max(o["bottom"] for o in ord_),
-    )
 
 
 def ensam(utkast: Utkast, alla: list[dict]) -> bool:
