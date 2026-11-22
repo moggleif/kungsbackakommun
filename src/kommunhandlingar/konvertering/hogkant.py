@@ -8,12 +8,13 @@ vriden moturs. I OCR-texten är det de ord som är minst dubbelt så höga
 som breda och har minst fyra tecken; de målas vita och sidan läses om.
 """
 
-import csv
 from collections.abc import Iterable
 from itertools import pairwise
 
 from pdfplumber.page import Page
 from PIL import Image, ImageDraw
+
+from kommunhandlingar.konvertering.tsv import Ord
 
 MINSTA_ORD = 4
 HOJD_MOT_BREDD = 2
@@ -67,38 +68,30 @@ def storlek(tecken: dict) -> float:
     return tecken["x1"] - tecken["x0"]
 
 
-def ocr_ord(tsv: str) -> list[dict]:
+def ocr_ord(ord_: list[Ord]) -> list[Ord]:
     """Tesseracts ord på de rader som har ett ord på högkant, i Tesseracts
     ordning, så att också korta ord i en stämpel kommer med."""
-    ord_ = list(
-        csv.DictReader(tsv.splitlines(), delimiter="\t", quoting=csv.QUOTE_NONE)
-    )
-    rader = {radnyckel(o) for o in ord_ if pa_hogkant(o)}
-    return [o for o in ord_ if o["text"].strip() and radnyckel(o) in rader]
+    rader = {o.radnyckel for o in ord_ if pa_hogkant(o)}
+    return [o for o in ord_ if o.radnyckel in rader]
 
 
-def radnyckel(ord_: dict) -> tuple[str, str, str, str]:
-    return (ord_["page_num"], ord_["block_num"], ord_["par_num"], ord_["line_num"])
+def pa_hogkant(ord_: Ord) -> bool:
+    x0, y0, x1, y1 = ord_.ruta
+    hog = y1 - y0 >= HOJD_MOT_BREDD * (x1 - x0)
+    return len(ord_.text.strip()) >= MINSTA_ORD and hog
 
 
-def pa_hogkant(ord_: dict) -> bool:
-    text = ord_["text"].strip()
-    hog = int(ord_["height"]) >= HOJD_MOT_BREDD * int(ord_["width"])
-    return len(text) >= MINSTA_ORD and hog
-
-
-def ocr_rader(ord_: list[dict]) -> list[str]:
+def ocr_rader(ord_: list[Ord]) -> list[str]:
     rader: dict[tuple, list[str]] = {}
     for o in ord_:
-        rader.setdefault(radnyckel(o), []).append(o["text"])
+        rader.setdefault(o.radnyckel, []).append(o.text)
     return [" ".join(r) for r in rader.values()]
 
 
-def mala_vitt(bild: Image.Image, ord_: Iterable[dict]) -> None:
+def mala_vitt(bild: Image.Image, ord_: Iterable[Ord]) -> None:
     rita = ImageDraw.Draw(bild)
     for o in ord_:
-        x, y = int(o["left"]), int(o["top"])
-        rita.rectangle((x, y, x + int(o["width"]), y + int(o["height"])), fill=255)
+        rita.rectangle(o.ruta, fill=255)
 
 
 def sist(text: str, rader: list[str]) -> str:

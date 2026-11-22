@@ -14,7 +14,8 @@ import re
 
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr
+from kommunhandlingar.konvertering import ocr, tesseract
+from kommunhandlingar.konvertering.tsv import Ord, orden
 
 RADSAKERHET = 80
 MINSTA_ORD = 30
@@ -39,25 +40,24 @@ def las(gra: Image.Image, tsv: str) -> str | None:
 
 
 def vriden(gra: Image.Image, grader: int) -> str:
-    lasning = ocr.las_bild(gra.rotate(-grader, expand=True, fillcolor=255))
+    lasning = tesseract.las_bild(gra.rotate(-grader, expand=True, fillcolor=255))
     if lasning is None:
         raise Fallerade
-    return lasning[0]
+    return lasning.tsv
 
 
 def rader(tsv: str) -> list[str]:
-    grupper: dict[tuple, list[dict]] = {}
-    for ord_ in ocr.ordrader(tsv):
-        nyckel = (ord_["block_num"], ord_["par_num"], ord_["line_num"])
-        grupper.setdefault(nyckel, []).append(ord_)
-    return [" ".join(o["text"] for o in rad) for rad in grupper.values() if saker(rad)]
+    grupper: dict[tuple, list[Ord]] = {}
+    for ord_ in orden(tsv):
+        grupper.setdefault(ord_.radnyckel, []).append(ord_)
+    return [" ".join(o.text for o in rad) for rad in grupper.values() if saker(rad)]
 
 
-def saker(rad: list[dict]) -> bool:
-    ord_ = [o for o in rad if not PUNKTORD.search(o["text"])]
-    if not any(BOKSTAVER.search(o["text"]) for o in ord_):
+def saker(rad: list[Ord]) -> bool:
+    ord_ = [o for o in rad if not PUNKTORD.search(o.text)]
+    if not any(BOKSTAVER.search(o.text) for o in ord_):
         return False
-    return sum(float(o["conf"]) for o in ord_) / len(ord_) >= RADSAKERHET
+    return sum(o.sakerhet for o in ord_) / len(ord_) >= RADSAKERHET
 
 
 def antal_ord(rader_: list[str]) -> int:

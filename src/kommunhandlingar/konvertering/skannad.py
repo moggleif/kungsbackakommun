@@ -15,7 +15,14 @@ from dataclasses import dataclass
 import pypdfium2 as pdfium
 from PIL import Image, ImageDraw
 
-from kommunhandlingar.konvertering import bildyta, kvalitet, ocr, riktning, sakra_rader
+from kommunhandlingar.konvertering import (
+    bildyta,
+    kvalitet,
+    ocr,
+    riktning,
+    sakra_rader,
+    tesseract,
+)
 
 FARG_DPI = 100
 FIGUR = 0.04
@@ -36,7 +43,7 @@ def las(rendering: pdfium.PdfPage) -> Skannad:
     forsta = ocr.las(gra)
     if forsta.ordantal is None:
         return Skannad(kvalitet.EJ_KONVERTERAD)
-    skala = FARG_DPI / ocr.DPI
+    skala = FARG_DPI / tesseract.DPI
     yta = bildyta.storsta(farg, [skalad(r, skala) for r in forsta.ord])
     figur = yta.andel >= FIGUR and yta.jamn
     text = forsta.text

@@ -10,12 +10,13 @@ from unittest import mock
 import pypdfium2 as pdfium
 
 from kommunhandlingar.fel import Konfigurationsfel
-from kommunhandlingar.konvertering import kvalitet, ocr
+from kommunhandlingar.konvertering import kvalitet, ocr, tesseract
 from kommunhandlingar.konvertering.dokument import konvertera, versioner
 from kommunhandlingar.konvertering.kvalitet import dokumentets
 from kommunhandlingar.konvertering.ocr import medelsakerhet
 from kommunhandlingar.konvertering.tabeller import som_csv, som_markdown
 from kommunhandlingar.konvertering.text import ar_talrad, stycken
+from kommunhandlingar.konvertering.tsv import orden
 from kommunhandlingar.konvertering.vag import langd_av, tackt_yta, vag
 
 PDF = Path(__file__).parent / "fixtures" / "pdf"
@@ -185,7 +186,7 @@ class TestRegler(unittest.TestCase):
 
 class TestOcrFel(unittest.TestCase):
     def test_tesseract_som_fallerar_marker_bara_sidan(self):
-        with mock.patch.object(ocr, "tesseract", return_value=False):
+        with mock.patch.object(tesseract, "kor", return_value=False):
             resultat = konvertera(PDF / "sidor.pdf")
         self.assertEqual(resultat.fel, None)
         self.assertEqual(resultat.kvalitet_per_sida[0], "ok")
@@ -199,23 +200,35 @@ class TestOcrFel(unittest.TestCase):
     def test_saknad_tesseract_stoppar_innan_nagot_lases(self):
         with mock.patch.dict(os.environ, {"PATH": ""}):
             with self.assertRaises(Konfigurationsfel):
-                ocr.kontrollera()
-            self.assertEqual(ocr.modellversion(), "okänd")
+                tesseract.kontrollera()
+            self.assertEqual(tesseract.modellversion(), "okänd")
         with (
-            mock.patch.object(ocr, "SPRAK", "finns-inte"),
+            mock.patch.object(tesseract, "SPRAK", "finns-inte"),
             self.assertRaises(Konfigurationsfel),
         ):
-            ocr.kontrollera()
-        ocr.kontrollera()
+            tesseract.kontrollera()
+        tesseract.kontrollera()
+
+
+def ocr_tsv(*rader: str) -> str:
+    """En TSV från Tesseract med `nivå,säkerhet,text` för varje rad."""
+    kolumner = "level page_num block_num par_num line_num left top width height"
+    ut = ["\t".join([*kolumner.split(), "conf", "text"])]
+    for rad in rader:
+        niva, conf, text = rad.split(",")
+        ut.append(
+            "\t".join([niva, "1", "1", "1", "1", "0", "0", "10", "10", conf, text])
+        )
+    return "\n".join(ut)
 
 
 class TestOcrSakerhet(unittest.TestCase):
     def test_medelvardet_utan_poster_med_minus_ett(self):
-        tsv = "level\tconf\ttext\n5\t-1\t\n5\t90\tord\n5\t50\tannat\n5\t-1\tx\n"
-        self.assertEqual(medelsakerhet(tsv), 70)
+        tsv = ocr_tsv("5,-1,", "5,90,ord", "5,50,annat", "5,-1,x")
+        self.assertEqual(medelsakerhet(orden(tsv)), 70)
 
     def test_inga_ord_ger_ingen_sakerhet(self):
-        self.assertIsNone(medelsakerhet("level\tconf\ttext\n1\t-1\t\n"))
+        self.assertIsNone(medelsakerhet(orden(ocr_tsv("1,-1,"))))
 
 
 class TestTabellformat(unittest.TestCase):

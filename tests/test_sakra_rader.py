@@ -7,7 +7,8 @@ from unittest import mock
 
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr, sakra_rader
+from kommunhandlingar.konvertering import sakra_rader, tesseract
+from kommunhandlingar.konvertering.tesseract import Utdata
 
 HUVUD = "\t".join(
     [
@@ -61,25 +62,27 @@ class TestLas(unittest.TestCase):
         self.gra = Image.new("L", (100, 140), 255)
 
     def test_for_fa_ord_ger_ingen_text(self):
-        with mock.patch.object(ocr, "las_bild", return_value=("", "")):
+        with mock.patch.object(tesseract, "las_bild", return_value=Utdata("", "")):
             self.assertIsNone(sakra_rader.las(self.gra, tsv(mening(29))))
 
     def test_minst_trettio_ord_ger_raderna(self):
-        with mock.patch.object(ocr, "las_bild", return_value=("", "")):
+        with mock.patch.object(tesseract, "las_bild", return_value=Utdata("", "")):
             text = sakra_rader.las(self.gra, tsv(mening(15), mening(15), mening(9, 30)))
         self.assertEqual(text, "\n".join([" ".join(["planen"] * 15)] * 2))
 
     def test_vriden_lasning_med_flest_ord_galler(self):
         """Bestämmelser på högkant: den vridna läsningen ger fler säkra ord."""
-        vriden = (tsv(mening(40)), "")
-        with mock.patch.object(ocr, "las_bild", side_effect=[vriden, ("", "")]) as las:
+        vriden = Utdata(tsv(mening(40)), "")
+        with mock.patch.object(
+            tesseract, "las_bild", side_effect=[vriden, Utdata("", "")]
+        ) as las:
             text = sakra_rader.las(self.gra, tsv(mening(5)))
         self.assertEqual((text.count("planen"), las.call_count), (40, 2))
         self.assertEqual(las.call_args_list[0].args[0].size, (140, 100))
 
     def test_tesseract_som_fallerar_i_en_vriden_lasning(self):
         with (
-            mock.patch.object(ocr, "las_bild", return_value=None),
+            mock.patch.object(tesseract, "las_bild", return_value=None),
             self.assertRaises(sakra_rader.Fallerade),
         ):
             sakra_rader.las(self.gra, tsv(mening(40)))

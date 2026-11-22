@@ -11,7 +11,7 @@ from unittest import mock
 import pypdfium2 as pdfium
 from PIL import Image, ImageDraw, ImageFont
 
-from kommunhandlingar.konvertering import ocr, riktning, skannad
+from kommunhandlingar.konvertering import ocr, riktning, skannad, tesseract
 
 B, H = 1240, 1754  # A4 i 150 dpi
 # Utan å, ä och ö: Pillows inbyggda typsnitt saknar dem.
@@ -116,7 +116,7 @@ class TestSkannad(unittest.TestCase):
     def test_tesseract_som_fallerar_i_en_vriden_lasning(self):
         with (
             mock.patch.object(ocr, "las", return_value=ocr.Lasning(None, ordantal=9)),
-            mock.patch.object(ocr, "las_bild", return_value=None),
+            mock.patch.object(tesseract, "las_bild", return_value=None),
         ):
             resultat = skannad.las(sida(vit()))
         self.assertEqual(resultat.kvalitet, "ej-konverterad")
