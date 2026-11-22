@@ -11,10 +11,8 @@ kommunfilen ligger i.
 """
 
 import argparse
-import json
 import sys
 from collections import Counter
-from dataclasses import asdict
 from datetime import UTC, datetime
 from functools import partial
 from pathlib import Path
@@ -30,7 +28,14 @@ from kommunhandlingar.adaptrar import (
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.klient import Klient
-from kommunhandlingar.kandidat import Avvisad, Kandidat, lista, ordna, ordna_bakat
+from kommunhandlingar.kandidat import (
+    Avvisad,
+    Kandidat,
+    lista,
+    ordna,
+    ordna_bakat,
+    skriv,
+)
 from kommunhandlingar.tidsbudget import Tidsgrans
 
 
@@ -116,11 +121,6 @@ def sida(klient, adress: str) -> str:
         return klient.text(adress)
     except Hamtfel as fel:
         raise Hamtfel(fel.orsak, adress) from fel
-
-
-def skriv(kandidater: list[Kandidat], fil: Path) -> None:
-    poster = [asdict(k) | {"datum": k.datum.isoformat()} for k in kandidater]
-    fil.write_text(json.dumps(poster, ensure_ascii=False, indent=1) + "\n", "utf-8")
 
 
 def sammanfattning(

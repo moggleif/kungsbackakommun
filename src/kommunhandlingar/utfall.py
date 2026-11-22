@@ -3,10 +3,14 @@ test_hamta_arkiv.py, test_plattformar.py, test_sammanslagning.py,
 test_omkonvertering.py, test_tidsbudget.py och test_hamta_kommando.py.
 
 Vad steg 2 gjorde med en kandidat. Texten räknas i sammanfattningen, och ett
-utfall som ska loggas skrivs också ut med kandidatens adress.
+utfall som ska loggas skrivs också ut med kandidatens adress. Korning räknar
+utfallen över en körning.
 """
 
-from dataclasses import dataclass
+from collections import Counter
+from dataclasses import dataclass, field
+
+from kommunhandlingar.kandidat import Kandidat
 
 
 @dataclass(frozen=True)
@@ -34,3 +38,17 @@ def ej_hamtad(orsak: str, *foljd: str) -> Utfall:
 
 def ej_konverterad(orsak: str, *foljd: str) -> Utfall:
     return Utfall(", ".join([f"ej konverterad ({orsak})", *foljd]), loggas=True)
+
+
+@dataclass
+class Korning:
+    """Utfallen räknas på sin text, som i sammanfattningen."""
+
+    utfall: Counter = field(default_factory=Counter)
+    provade: list[Kandidat] = field(default_factory=list)
+
+    def notera(self, utfall: Utfall, adress: str) -> None:
+        """Räknar utfallet och skriver ut det med adressen när det ska loggas."""
+        self.utfall[utfall.text] += 1
+        if utfall.loggas:
+            print(f"{utfall.text}: {adress}", flush=True)

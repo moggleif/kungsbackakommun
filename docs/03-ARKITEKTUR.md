@@ -309,7 +309,7 @@ src/kommunhandlingar/
   schema.py        kontrollerna av fält och värden i kommunfilen
   fel.py           konfigurationsfel och "ingen kandidat"
   monster.py       mönstren: typ och datum ur en text
-  kandidat.py      kandidaten, ordningen (K13, K16) och listans sökväg
+  kandidat.py      kandidaten, ordningen (K13, K16) och listan: sökväg, skriv, läs
   adaptrar/        en modul per publiceringsplattform (sitevision, ciceron, …)
                    eller arkiv (wayback);
                    sitevision_html.py läser mötessidan, sitevision.py tolkar den,
@@ -322,7 +322,8 @@ src/kommunhandlingar/
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta eller konvertera
-  utfall.py        vad steg 2 gjorde med en kandidat: text och om det loggas
+  utfall.py        vad steg 2 gjorde med en kandidat: text och om det loggas,
+                   och körningens räkning av utfallen
   placering.py     var kandidaten hamnar: egen plats, en rivals eller en ny
   poolskrivning.py stegets typer (Steg2, Dokument), dokumentets fält och
                    skrivningen till poolen
