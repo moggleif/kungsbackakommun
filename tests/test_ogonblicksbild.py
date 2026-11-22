@@ -16,7 +16,7 @@ from unittest import mock
 
 from kommunhandlingar import frontmatter, skrivning
 from kommunhandlingar.konvertering.dokument import Resultat, konvertera, kvalitetsfalt
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 
 FIXTURER = Path(__file__).parent / "fixtures"
 BILD = FIXTURER / "ogonblicksbild"

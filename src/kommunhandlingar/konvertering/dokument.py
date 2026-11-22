@@ -18,7 +18,8 @@ import pypdfium2 as pdfium
 
 from kommunhandlingar import tidsbudget
 from kommunhandlingar.konvertering import kvalitet, ocr
-from kommunhandlingar.konvertering.las_sida import Sida, las_sida
+from kommunhandlingar.konvertering.las_sida import las_sida
+from kommunhandlingar.konvertering.sida import Sida
 
 VERKTYG = ("pdfplumber", "pdfminer.six")
 PDF_BORJAN = b"%PDF-"

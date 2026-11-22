@@ -6,7 +6,7 @@ kolumn som flyter in i nästa. pdfplumber blandar ihop dem till rader som
 `aktivitetsstö2d0225-05-21`, och sidans tal räknas då inte som
 bekräftade (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet). Text på
 högkant utanför tabellerna läses för sig (K41) och räknas här bara när
-den har en siffra (ADR-0103); `las_sida.textsida` prövar att den inte
+den har en siffra (ADR-0103); `textlagret.textsida` prövar att den inte
 ändrar hur resten av sidan läses.
 """
 

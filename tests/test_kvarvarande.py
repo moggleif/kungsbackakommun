@@ -12,7 +12,7 @@ from types import SimpleNamespace
 import pdfplumber
 
 from kommunhandlingar.konvertering.kvarvarande import har_talrader
-from kommunhandlingar.konvertering.las_sida import textsida
+from kommunhandlingar.konvertering.textlagret import textsida
 
 HOJD = 10
 FACIT = Path(__file__).parent / "fixtures" / "facit"

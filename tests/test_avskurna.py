@@ -10,7 +10,7 @@ from pathlib import Path
 import pdfplumber
 
 from kommunhandlingar.konvertering.avskurna import avskuren
-from kommunhandlingar.konvertering.las_sida import textsida
+from kommunhandlingar.konvertering.textlagret import textsida
 
 HOJD = 10
 RUTA = (100, 100, 300, 160)

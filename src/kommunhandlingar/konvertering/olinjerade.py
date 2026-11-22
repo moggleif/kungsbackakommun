@@ -16,6 +16,7 @@ from pdfplumber.page import Page
 from kommunhandlingar.konvertering import mellanrader
 from kommunhandlingar.konvertering.falt import Falt, falt, radvis
 from kommunhandlingar.konvertering.foljder import foljder
+from kommunhandlingar.konvertering.funnen import Funnen
 from kommunhandlingar.konvertering.ombrutna import ombruten
 from kommunhandlingar.konvertering.rader import (
     I_LINJE,
@@ -36,25 +37,25 @@ AR_ELLER_KOD = re.compile(r"\d{4}")
 
 
 @dataclass(frozen=True)
-class Tabell:
-    bbox: tuple[float, float, float, float]
-    rader: list[list[str]]
+class Utkast:
+    """En tabell och hur många ord den läste, innan det prövats att inga
+    andra ord står inom dess ruta."""
+
+    tabell: Funnen
     antal_ord: int
-    # Etiketternas vänsterkant och kolumnernas högerkanter (K19).
-    kanter: tuple[float, ...]
 
 
-def tabeller(sida: Page, upptagna: list[tuple]) -> list[Tabell]:
+def tabeller(sida: Page, upptagna: list[tuple]) -> list[Funnen]:
     alla = sida.extract_words(extra_attrs=["size"])
     rader_ = [Rad(r, falt(r)) for r in radvis(fria(alla, upptagna))]
     linjer = [(e["x0"], e["top"], e["bottom"]) for e in sida.vertical_edges]
     utan_broar = foljder(rader_, 0)
-    hittade: list[Tabell | None] = []
+    hittade: list[Utkast | None] = []
     for borjan, slut in foljder(rader_, MEST_EMELLAN):
         hel = tabell(rader_, (borjan, slut), linjer)
         delar = [f for f in utan_broar if borjan <= f[0] < slut]
         hittade += [hel] if hel else [tabell(rader_, d, linjer) for d in delar]
-    return [t for t in hittade if t and ensam(t, alla)]
+    return [u.tabell for u in hittade if u and ensam(u, alla)]
 
 
 def fria(ord_: list[dict], upptagna: list[tuple]) -> list[dict]:
@@ -63,7 +64,7 @@ def fria(ord_: list[dict], upptagna: list[tuple]) -> list[dict]:
 
 def tabell(
     rader_: list[Rad], foljd: tuple[int, int], linjer: list[tuple]
-) -> Tabell | None:
+) -> Utkast | None:
     borjan, slut = foljd[0], med_fortsattning(rader_, foljd[1])
     delar = [delad(r) for r in rader_[borjan:slut]]
     if None in delar or sum(talrad(c) for _, c in delar) < MINSTA_FOLJD:
@@ -80,10 +81,12 @@ def tabell(
     return byggd(ovanfor_ + rader_[borjan:slut], celler + kropp, kolumner_)
 
 
-def byggd(rader_: list[Rad], celler: list[list[str]], kolumner_: list) -> Tabell:
+def byggd(rader_: list[Rad], celler: list[list[str]], kolumner_: list) -> Utkast:
+    """Kanterna är etiketternas vänsterkant och kolumnernas högerkanter (K19)."""
     ord_ = [o for r in rader_ for o in r.ord]
     ruta = ram(ord_)
-    return Tabell(ruta, celler, len(ord_), (ruta[0], *(x1 for _, x1 in kolumner_)))
+    kanter = (ruta[0], *(x1 for _, x1 in kolumner_))
+    return Utkast(Funnen(ruta, celler, kanter), len(ord_))
 
 
 def kroppen(delar: list, kolumner_: list, etiketternas_slut: float) -> list | None:
@@ -136,5 +139,6 @@ def ram(ord_: list[dict]) -> tuple[float, float, float, float]:
     )
 
 
-def ensam(t: Tabell, alla: list[dict]) -> bool:
-    return sum(1 for o in alla if inom(mitt(o), t.bbox)) == t.antal_ord
+def ensam(utkast: Utkast, alla: list[dict]) -> bool:
+    i_rutan = sum(1 for o in alla if inom(mitt(o), utkast.tabell.ruta))
+    return i_rutan == utkast.antal_ord

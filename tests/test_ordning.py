@@ -11,9 +11,9 @@ from unittest.mock import patch
 
 import pdfplumber
 
-from kommunhandlingar.konvertering import las_sida
-from kommunhandlingar.konvertering.las_sida import textsida
+from kommunhandlingar.konvertering import textlagret
 from kommunhandlingar.konvertering.ordning import i_oordning
+from kommunhandlingar.konvertering.textlagret import textsida
 
 PDF = Path(__file__).parent / "fixtures" / "pdf"
 HOGKANT = PDF / "hogkant.pdf"
@@ -99,7 +99,7 @@ class TestSidan(unittest.TestCase):
         with pdfplumber.open(PDF / "sidor.pdf") as pdf:
             sida = pdf.pages[0]
             self.assertFalse(textsida(sida).tal_obekraftade)
-            with patch.object(las_sida, "i_oordning", return_value=True):
+            with patch.object(textlagret, "i_oordning", return_value=True):
                 self.assertTrue(textsida(sida).tal_obekraftade)
 
     def test_diarienummer_pa_hogkant_ger_obekraftade_tal(self):
@@ -130,7 +130,7 @@ class TestSidan(unittest.TestCase):
         with pdfplumber.open(PDF / "tabell-hogkant.pdf") as pdf:
             sida = pdf.pages[0]
             self.assertTrue(textsida(sida).tal_obekraftade)
-            with patch.object(las_sida.hogkant, "staende", side_effect=lambda s: s):
+            with patch.object(textlagret.hogkant, "staende", side_effect=lambda s: s):
                 self.assertFalse(textsida(sida).tal_obekraftade)
 
     def test_hogkant_som_tar_bort_osakra_talrader(self):
