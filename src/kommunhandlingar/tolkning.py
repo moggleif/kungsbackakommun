@@ -57,7 +57,7 @@ def rendera(
     with tempfile.TemporaryDirectory() as tillfallig:
         pdf = Path(tillfallig) / "original.pdf"
         adresser = frontmatter.adresser(falt["kalla_url"])
-        hamtat = original.hamta(klient, adresser, pdf, arkiv=False)
+        hamtat = original.hamta(original.Hamtsatt(klient, arkiv=False), adresser, pdf)
         if frontmatter.varde_av(hamtat.sha256) != falt["sha256"]:
             raise AndratOriginal(f"{md}: originalet har ändrats sedan konverteringen")
         with pdfium.PdfDocument(pdf) as dokument:

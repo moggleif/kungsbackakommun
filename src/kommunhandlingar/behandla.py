@@ -73,8 +73,9 @@ def hamta(steg: Steg2, dokument: Dokument) -> Utfall:
         pdf = Path(katalog) / "original.pdf"
         dokument = replace(dokument, hamtad=steg.tid())
         adresser = dokument.kandidat.adresser()
+        hamtsatt = original.Hamtsatt(steg.klient, steg.arkiv)
         try:
-            hamtat = original.hamta(steg.klient, adresser, pdf, steg.arkiv)
+            hamtat = original.hamta(hamtsatt, adresser, pdf)
         except Hamtfel as fel:
             return misslyckad(steg, dokument, fel.orsak)
         return hamtad_fil(steg, dokument, hamtat)
