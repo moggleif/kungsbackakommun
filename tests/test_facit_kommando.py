@@ -10,6 +10,7 @@ import shutil
 import sys
 import unittest
 from importlib.metadata import version
+from pathlib import Path
 from unittest import mock
 
 from kommunhandlingar.facit import __main__ as facit_kommando
@@ -17,13 +18,14 @@ from kommunhandlingar.facit.matt import sparade
 from kommunhandlingar.facit.utfall import MATT
 from tests.kommandofall import Katalogfall, utskrift_av
 
+URVALET = Path(__file__).parent / "fixtures" / "facit"
 DOKUMENTET = "skuggbudget-2027"
 
 
 class TestFacitKommandot(Katalogfall):
     def setUp(self):
         super().setUp()
-        shutil.copytree(facit_kommando.URVALET / DOKUMENTET, self.rot / DOKUMENTET)
+        shutil.copytree(URVALET / DOKUMENTET, self.rot / DOKUMENTET)
         self.matt = self.rot / "matt.csv"
         self.matt.write_text(
             "version," + ",".join(MATT) + "\n0.0.1" + ",9" * len(MATT) + "\n",
