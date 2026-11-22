@@ -1,6 +1,6 @@
-"""Krav: K6, K11, K15, K17, K34 och K48 i docs/02-KRAV.md, ADR-0006, ADR-0017,
-ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
-tests/test_granskning.py och tests/test_arenden.py.
+"""Krav: K6, K11, K15, K17, K34, K48 och K81 i docs/02-KRAV.md, ADR-0006,
+ADR-0017, ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
+tests/test_granskning.py, tests/test_arenden.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.datakontroll <data>` prövar varje fil under
 `data/` mot schemat i docs/03-ARKITEKTUR.md: front matter, sökvägen,
