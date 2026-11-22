@@ -13,13 +13,14 @@ from datetime import date
 from urllib.parse import urlsplit
 
 from kommunhandlingar import monster, schema
-from kommunhandlingar.adaptrar import meetingsplus_html, sitevision
+from kommunhandlingar.adaptrar import meetingsplus_html
+from kommunhandlingar.adaptrar.gemensamt import organsidor
 from kommunhandlingar.adaptrar.meetingsplus_html import Fil
 from kommunhandlingar.fel import Hamtfel, IngenKandidat, Konfigurationsfel
 from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
+from kommunhandlingar.monster import MONSTERGRUPPER
 
 FALT = {"adapter", "sidor", "samlingsmoten", "monster"}
-MONSTERGRUPPER = {"ar", "manad", "dag", "typ"}
 # Länktexten slutar på .pdf; adressens sista del på pdf, ibland med ett löpnummer.
 PDF = re.compile(r"(?i)pdf(-\d+)?$")
 
@@ -33,7 +34,7 @@ class Kalla:
 
 def kalla_av(post: dict, organ_id: list[str], var: str) -> Kalla:
     schema.kontrollera_falt(post, FALT, var)
-    sidor = sitevision.sidor(schema.varde(post, "sidor", dict, var), organ_id, var)
+    sidor = organsidor(schema.varde(post, "sidor", dict, var), organ_id, var)
     samlingar = tuple(
         samlingsmote(a, sidor, var)
         for a in schema.textlista(post, "samlingsmoten", var)

@@ -10,13 +10,16 @@ import re
 from collections.abc import Callable
 from dataclasses import replace
 from datetime import UTC, date, datetime
-from html.parser import HTMLParser
 from pathlib import PurePosixPath
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
-from kommunhandlingar.adaptrar.sitevision import kallnyckel
-from kommunhandlingar.adaptrar.sitevision_html import NEDLADDNING, forekomster
+from kommunhandlingar.adaptrar.gemensamt import adresser
+from kommunhandlingar.adaptrar.sitevision_html import (
+    NEDLADDNING,
+    forekomster,
+    kallnyckel,
+)
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 from kommunhandlingar.plats import namn_av
@@ -24,28 +27,11 @@ from kommunhandlingar.plats import namn_av
 TIDSZON = ZoneInfo("Europe/Stockholm")
 
 
-class Lankar(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.adresser: list[str] = []
-
-    def handle_starttag(self, tagg, attribut):
-        if tagg == "a" and (adress := dict(attribut).get("href")):
-            self.adresser.append(adress)
-
-
-def lankar(html: str, sidadress: str) -> list[str]:
-    tolk = Lankar()
-    tolk.feed(html)
-    tolk.close()
-    return [urljoin(sidadress, a).split("#")[0] for a in tolk.adresser]
-
-
 def projektsidor(lista: str, hamta: Callable[[str], str]) -> list[str]:
     """Listans projekt i sidornas ordning."""
     sidor, projekt, i = [lista], [], 0
     while i < len(sidor):
-        for adress in lankar(hamta(sidor[i]), sidor[i]):
+        for adress in adresser(hamta(sidor[i]), sidor[i]):
             if bladdring(lista, adress) and adress not in sidor:
                 sidor.append(adress)
             elif ar_projekt(lista, adress) and adress not in projekt:
@@ -99,7 +85,7 @@ def med_sidorna_under(organ: str, sida: str, hamta: Callable[[str], str]) -> Fyn
         fynd = Fynd(kandidater_pa(organ, sida, html))
     except FEL as fel:
         return Fynd(avvisade=[Avvisad(sida, "", f"projektsidan: {fel}")])
-    under = dict.fromkeys(a for a in lankar(html, sida) if ar_projekt(sida, a))
+    under = dict.fromkeys(a for a in adresser(html, sida) if ar_projekt(sida, a))
     return sum((projektsidan(organ, u, hamta) for u in under), fynd)
 
 
