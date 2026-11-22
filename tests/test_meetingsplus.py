@@ -11,6 +11,7 @@ from pathlib import Path
 
 from kommunhandlingar.adaptrar.meetingsplus import kalla_av, las_mote, upptack
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
+from kommunhandlingar.kandidat import Kallsida
 
 SIDOR = Path(__file__).parent / "fixtures" / "meetingsplus"
 BAS = "https://politik.regionhalland.se/committees"
@@ -38,7 +39,9 @@ def kalla(post: dict = POST):
 class TestMotessidan(unittest.TestCase):
     def setUp(self):
         self.mote = f"{SJUKHUS}/mote-2026-09-30"
-        fynd = las_mote(kalla(), "hs", self.mote, html("mote-2026-09-30.html"))
+        fynd = las_mote(
+            kalla(), Kallsida("hs", self.mote), html("mote-2026-09-30.html")
+        )
         self.kandidater, self.avvisade = fynd.kandidater, fynd.avvisade
 
     def test_kallelse_protokoll_och_bilagor(self):
@@ -73,7 +76,7 @@ class TestMotessidan(unittest.TestCase):
     def test_protokollets_bilagor_bara_med_eget_filnamn(self):
         mote = f"{BAS}/driftnamnden-kollektivtrafik/mote-2023-01-20-12741"
         kandidater = las_mote(
-            kalla(), "hs", mote, html("mote-med-protokollets-bilagor.html")
+            kalla(), Kallsida("hs", mote), html("mote-med-protokollets-bilagor.html")
         ).kandidater
         bilagor = [k for k in kandidater if k.typ == "bilaga"]
         self.assertEqual(len(bilagor), 12)
@@ -87,7 +90,7 @@ class TestMotessidan(unittest.TestCase):
             '<a href="/w/mote-2026-01-01/protocol/apdf?downloadMode=open">A.pdf</a>'
             '<a href="/w/mote-2026-01-01/protocol/bpdf?downloadMode=open">B.pdf</a>'
         )
-        kandidater = las_mote(kalla(), "hs", mote, sida).kandidater
+        kandidater = las_mote(kalla(), Kallsida("hs", mote), sida).kandidater
         self.assertEqual(
             [(k.typ, k.kallnyckel) for k in kandidater],
             [
@@ -98,7 +101,7 @@ class TestMotessidan(unittest.TestCase):
 
     def test_en_fil_som_inte_ar_pdf_blir_ingen_kandidat(self):
         sida = f'<a href="{BAS}/x/agenda/lista-xlsx?downloadMode=open">Lista.xlsx</a>'
-        fynd = las_mote(kalla(), "hs", f"{SJUKHUS}/mote-2026-01-01", sida)
+        fynd = las_mote(kalla(), Kallsida("hs", f"{SJUKHUS}/mote-2026-01-01"), sida)
         self.assertEqual(fynd.kandidater, [])
         self.assertEqual(
             [(a.filnamn, a.orsak) for a in fynd.avvisade],
@@ -108,7 +111,7 @@ class TestMotessidan(unittest.TestCase):
 
 class TestSamlingsmoten(unittest.TestCase):
     def test_typ_och_datum_ur_filnamnet(self):
-        fynd = las_mote(kalla(), "rf", SAMLING, html("samlingsmote.html"))
+        fynd = las_mote(kalla(), Kallsida("rf", SAMLING), html("samlingsmote.html"))
         self.assertEqual({k.typ for k in fynd.kandidater}, {"protokoll"})
         self.assertEqual(
             [k.datum for k in fynd.kandidater],
@@ -119,7 +122,7 @@ class TestSamlingsmoten(unittest.TestCase):
 
     def test_en_fil_utan_datum_blir_ingen_kandidat(self):
         sida = f'<a href="{SAMLING}x/agenda/manualpdf?downloadMode=open">Manual.pdf</a>'
-        avvisade = las_mote(kalla(), "rf", SAMLING, sida).avvisade
+        avvisade = las_mote(kalla(), Kallsida("rf", SAMLING), sida).avvisade
         self.assertEqual([a.filnamn for a in avvisade], ["Manual.pdf"])
 
 
