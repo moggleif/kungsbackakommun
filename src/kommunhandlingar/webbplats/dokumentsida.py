@@ -2,9 +2,11 @@
 
 from html import escape
 
-from kommunhandlingar.frontmatter import FALT, adresser, lista
+from kommunhandlingar import frontmatter
+from kommunhandlingar.frontmatter import FALT, lista
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.luckor import motesnamn
-from kommunhandlingar.webbplats.mall import lank, rot, sida, stig
+from kommunhandlingar.webbplats.mall import lank, sida, stig
 from kommunhandlingar.webbplats.meny import oversiktsnamn
 from kommunhandlingar.webbplats.organsida import dokumentrubrik
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
@@ -13,16 +15,17 @@ from kommunhandlingar.webbplats.text import pdfsidor
 
 def dokumentsida(sammanhang: Sammanhang, falt: dict[str, str], text: str) -> str:
     mall, kommun = sammanhang.mall, sammanhang.kommun
-    adress = f"{kommun.id}/{falt['adress']}"
+    adress = adresser.i_kommunen(kommun.id, falt["adress"])
     organ = next(o.namn[0] for o in kommun.organ if o.id == falt["organ"])
     mote = motesnamn(falt["datum"], falt["lopnr"])
-    organsida = f"{rot(adress)}{kommun.id}/{falt['organ']}.html"
+    till_rot = adresser.rot(adress)
+    organsida = till_rot + adresser.organets_sida(kommun.id, falt["organ"])
     oversikten = (
-        f"{rot(adress)}{kommun.id}.html",
+        till_rot + adresser.oversikt(kommun.id),
         oversiktsnamn(mall.kommuner, kommun),
     )
     vag = [oversikten, (organsida, organ)]
-    md = f"{mall.repo}/blob/main/data/{adress.removesuffix('.html')}.md"
+    md = f"{mall.repo}/blob/main/data/{adresser.kallfil(adress)}"
     # En typ utanför kommunfilens `sidor_med_text` visar bara härkomsten, så
     # att en stor pool ryms under GitHub Pages gräns (K18, ADR-0080).
     med_text = kommun.sidor_med_text is None or falt["typ"] in kommun.sidor_med_text
@@ -54,7 +57,7 @@ def harkomst(falt: dict[str, str], md: str, med_text: bool) -> str:
 
 def varde(namn: str, text: str, med_text: bool) -> str:
     if namn == "kalla_url":
-        return ", ".join(lank(a, a) for a in adresser(text))
+        return ", ".join(lank(a, a) for a in frontmatter.adresser(text))
     if namn == "tal_obekraftade" and med_text:
         sidnr = [escape(s) for s in lista(text)]
         return ", ".join(f'<a href="#sida-{s}">{s}</a>' for s in sidnr) or "[]"

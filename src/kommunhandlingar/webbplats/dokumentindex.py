@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from kommunhandlingar.frontmatter import FALT, lista, saknas
+from kommunhandlingar.webbplats import adresser
 
 TAL = {"lopnr", "bytes", "sidor", "tal_obekraftade", "figurer", "tolkade"}
 
@@ -18,7 +19,7 @@ def skriv(ut: Path, dokument: list[dict], katalog: Path) -> None:
 
 
 def rad(falt: dict[str, str], katalog: Path) -> str:
-    md = Path(falt["adress"]).with_suffix(".md")
+    md = Path(adresser.kallfil(falt["adress"]))
     tabeller = (katalog / md).with_suffix(".tabeller").glob("*.csv")
     objekt = {namn: varde(namn, falt[namn]) for namn in FALT} | platser(falt, katalog)
     objekt["tabeller"] = sorted(tabell.name for tabell in tabeller)
@@ -27,10 +28,10 @@ def rad(falt: dict[str, str], katalog: Path) -> str:
 
 def platser(falt: dict[str, str], katalog: Path) -> dict[str, str]:
     """Dokumentets sökväg i repot och dess sida på webbplatsen."""
-    md = Path(falt["adress"]).with_suffix(".md").as_posix()
+    md = adresser.kallfil(falt["adress"])
     return {
         "fil": f"data/{katalog.name}/{md}",
-        "sida": f"{katalog.name}/{falt['adress']}",
+        "sida": adresser.i_kommunen(katalog.name, falt["adress"]),
     }
 
 

@@ -13,6 +13,7 @@ from collections import Counter
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.flikar import flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mall import KALLKOD, sida
@@ -34,7 +35,7 @@ BESLUTEN = "/blob/main/docs/decisions/"
 
 
 def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
-    return f"{kommun.id}/{organ}/{slag.id}.html"
+    return adresser.over_tid(adresser.i_kommunen(kommun.id, organ), slag.id)
 
 
 def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:

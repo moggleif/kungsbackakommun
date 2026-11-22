@@ -10,7 +10,7 @@ import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
-from kommunhandlingar.webbplats import avvikelser
+from kommunhandlingar.webbplats import adresser, avvikelser
 from kommunhandlingar.webbplats.avvikelsesida import avvikelsesida
 from kommunhandlingar.webbplats.bygg import bygg
 
@@ -18,7 +18,7 @@ from kommunhandlingar.webbplats.bygg import bygg
 def main(ut: Path, repo: str, avvikelsefil: Path) -> None:
     mall = bygg(Path.cwd(), ut, repo, datetime.now(UTC))
     html = avvikelsesida(mall, avvikelser.las(avvikelsefil))
-    (ut / avvikelser.ADRESS).write_text(html, encoding="utf-8")
+    (ut / adresser.AVVIKELSER).write_text(html, encoding="utf-8")
 
 
 if __name__ == "__main__":

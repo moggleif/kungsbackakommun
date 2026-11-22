@@ -33,10 +33,6 @@ class Mall:
         return len(self.kommuner) == 1
 
 
-def rot(adress: str) -> str:
-    return "../" * adress.count("/")
-
-
 def sida(mall: Mall, adress: str, rubrik: str, innehall: str) -> str:
     namn = sajtnamn(mall.kommuner)
     titel = namn if rubrik == namn else f"{rubrik} – {namn}"

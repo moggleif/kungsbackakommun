@@ -10,6 +10,7 @@ varje rad, dess status och källa.
 
 from html import escape
 
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.mal import Mal
 from kommunhandlingar.webbplats.malspar import (
     arets,
@@ -133,6 +134,6 @@ def kallank(kalla: str) -> str:
     dokument, sidor = kalla.split("#sida-")
     _, _, datum, fil = dokument.split("/")
     forsta = sidor.split("-")[0]
-    lank = dokument.split("/", 1)[1].removesuffix(".md") + f".html#sida-{forsta}"
+    lank = adresser.dokumentsida(dokument.split("/", 1)[1]) + f"#sida-{forsta}"
     text = f"{fil.removesuffix('.md')} {datum}, sida {sidor.replace('-', '–')}"
     return f'<a href="{escape(lank)}">{escape(text)}</a>'

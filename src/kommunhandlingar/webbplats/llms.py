@@ -6,6 +6,7 @@ en AI, som säger hur poolen ska läsas och pekar på varje kommuns index,
 sidor och filer skrivna för hand.
 """
 
+from kommunhandlingar.webbplats.adresser import organets_sida, oversikt
 from kommunhandlingar.webbplats.bygge import Bygge
 from kommunhandlingar.webbplats.mall import KALLKOD
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
@@ -49,9 +50,9 @@ def kommunavsnitt(sammanhang: Sammanhang) -> str:
     lankar = [
         f"[Index över dokumenten]({kommun.id}/index.jsonl)",
         f"[Protokollens paragrafer]({kommun.id}/paragrafer.jsonl)",
-        f"[Översikt]({kommun.id}.html)",
+        f"[Översikt]({oversikt(kommun.id)})",
     ]
-    lankar += [f"[{o.namn[0]}]({kommun.id}/{o.id}.html)" for o in kommun.organ]
+    lankar += [f"[{o.namn[0]}]({organets_sida(kommun.id, o.id)})" for o in kommun.organ]
     kalendern = {"kalender"} if kommun.id in mall.kalendrar else set()
     lankar += [
         f"[{rubrik}]({mall.repo}/raw/main/{katalog}/{kommun.id}.csv): skriven för hand"
