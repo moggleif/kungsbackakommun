@@ -16,13 +16,14 @@ from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Protocol
 
-from kommunhandlingar import frontmatter, skrivning
+from kommunhandlingar import frontmatter, skrivning, utfall
 from kommunhandlingar.arenden import arenden
 from kommunhandlingar.kandidat import Kandidat
 from kommunhandlingar.konvertering.las_sida import Sida
 from kommunhandlingar.original import Original
 from kommunhandlingar.pool import Pool
 from kommunhandlingar.tidsbudget import utan_avbrott
+from kommunhandlingar.utfall import Utfall
 
 
 class Hamtare(Protocol):
@@ -73,19 +74,19 @@ def filfalt(dokument: Dokument, hamtat: Original) -> dict:
     return {"sha256": hamtat.sha256, "bytes": hamtat.bytes, "hamtad": hamtad}
 
 
-def ny_adress(steg: Steg2, dokument: Dokument) -> str:
+def ny_adress(steg: Steg2, dokument: Dokument) -> Utfall:
     k = dokument.kandidat
     nya = {"kallnyckel": k.kallnyckel, "tidigare_kallnycklar": tidigare(dokument)}
     andra_falt(steg, dokument.sokvag, nya | {"kalla_url": k.kalla_url()})
-    return "ny adress, samma innehåll"
+    return utfall.NY_ADRESS
 
 
-def behall(steg: Steg2, dokument: Dokument) -> str:
+def behall(steg: Steg2, dokument: Dokument) -> Utfall:
     """Kandidaten blir en tidigare källnyckel, så att den inte hämtas igen."""
     nycklar = frontmatter.lista(dokument.befintlig["tidigare_kallnycklar"])
     nycklar.append(dokument.kandidat.kallnyckel)
     andra_falt(steg, dokument.sokvag, {"tidigare_kallnycklar": nycklar})
-    return "lika eller lägre kvalitet; det befintliga behålls"
+    return utfall.BEHALLS
 
 
 def andra_falt(steg: Steg2, sokvag: PurePosixPath, nya: dict) -> None:

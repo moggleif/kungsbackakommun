@@ -322,6 +322,7 @@ src/kommunhandlingar/
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta eller konvertera
+  utfall.py        vad steg 2 gjorde med en kandidat: text och om det loggas
   placering.py     var kandidaten hamnar: egen plats, en rivals eller en ny
   poolskrivning.py stegets typer (Steg2, Dokument), dokumentets fält och
                    skrivningen till poolen
