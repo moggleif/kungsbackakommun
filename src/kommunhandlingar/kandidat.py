@@ -1,6 +1,8 @@
-"""Krav: K2, K13, K16, K31 och K45 i docs/02-KRAV.md. Test: tests/test_kandidat.py."""
+"""Krav: K2, K13, K16, K31 och K45 i docs/02-KRAV.md. Test: tests/test_kandidat.py
+och, för listan som steg 1 skriver och steg 2 läser, tests/test_hamta.py."""
 
-from dataclasses import dataclass
+import json
+from dataclasses import asdict, dataclass
 from datetime import date
 from pathlib import Path
 
@@ -65,3 +67,17 @@ def ordna_bakat(kandidater: list[Kandidat], organordning: list[str]) -> list[Kan
 def lista(arbetskatalog: Path, kommun: str, arkiv: bool) -> Path:
     slag = ".arkiv" if arkiv else ""
     return arbetskatalog / f"{kommun}{slag}.kandidater.json"
+
+
+def skriv(kandidater: list[Kandidat], fil: Path) -> None:
+    poster = [asdict(k) | {"datum": k.datum.isoformat()} for k in kandidater]
+    fil.write_text(json.dumps(poster, ensure_ascii=False, indent=1) + "\n", "utf-8")
+
+
+def las(fil: Path) -> list[Kandidat]:
+    poster = json.loads(fil.read_text(encoding="utf-8"))
+    return [Kandidat(**p | lasta(p)) for p in poster]
+
+
+def lasta(post: dict) -> dict:
+    return {"datum": date.fromisoformat(post["datum"]), "delar": tuple(post["delar"])}

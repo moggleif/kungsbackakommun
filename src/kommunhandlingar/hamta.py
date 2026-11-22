@@ -19,11 +19,9 @@ mötessidorna inte väntar på omkonverteringen.
 """
 
 import argparse
-import json
 import sys
 from collections import Counter
-from dataclasses import dataclass, field
-from datetime import UTC, date, datetime
+from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
 
@@ -34,20 +32,12 @@ from kommunhandlingar.fel import Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Kandidat, lista
+from kommunhandlingar.kandidat import las as las_kandidater
 from kommunhandlingar.konvertering import ocr
 from kommunhandlingar.tidsbudget import Tidsgrans
-from kommunhandlingar.utfall import AT_SIDAN, VANTAR, Utfall
+from kommunhandlingar.utfall import AT_SIDAN, VANTAR, Korning, Utfall
 
 MER_I_NASTA_DEL = 4
-
-
-def las_kandidater(fil: Path) -> list[Kandidat]:
-    poster = json.loads(fil.read_text(encoding="utf-8"))
-    return [Kandidat(**p | lasta(p)) for p in poster]
-
-
-def lasta(post: dict) -> dict:
-    return {"datum": date.fromisoformat(post["datum"]), "delar": tuple(post["delar"])}
 
 
 def nu() -> datetime:
@@ -58,45 +48,35 @@ def ordna(steg: Steg2, kandidater: list[Kandidat]) -> list[Kandidat]:
     return sorted(kandidater, key=lambda k: bara_omkonvertering(steg, k))
 
 
-@dataclass
-class Korning:
-    """Utfallen räknas på sin text, som i sammanfattningen."""
-
-    utfall: Counter = field(default_factory=Counter)
-    provade: list[Kandidat] = field(default_factory=list)
-
-
 def kor(steg: Steg2, kandidater: list[Kandidat], mjuk: datetime) -> Korning:
     korning = Korning()
     for nr, kandidat in enumerate(kandidater):
-        try:
-            if steg.tid() >= mjuk:
-                korning.utfall[VANTAR.text] += len(kandidater) - nr
-                break
-            resultat = behandla(steg, kandidat)
-        except Tidsgrans:
-            notera(korning, AT_SIDAN, kandidat)
+        utfall = prova(steg, kandidat, mjuk)
+        korning.notera(utfall, kandidat.url)
+        if utfall in (VANTAR, AT_SIDAN):
             korning.utfall[VANTAR.text] += len(kandidater) - nr - 1
             break
-        notera(korning, resultat, kandidat)
         korning.provade.append(kandidat)
     return korning
 
 
-def notera(korning: Korning, utfall: Utfall, kandidat: Kandidat) -> None:
-    """Räknar utfallet och skriver ut det med adressen när det ska loggas."""
-    korning.utfall[utfall.text] += 1
-    if utfall.loggas:
-        print(f"{utfall.text}: {kandidat.url}", flush=True)
+def prova(steg: Steg2, kandidat: Kandidat, mjuk: datetime) -> Utfall:
+    """VANTAR när delens tid gått ut före kandidaten, AT_SIDAN vid den hårda gränsen."""
+    try:
+        if steg.tid() >= mjuk:
+            return VANTAR
+        return behandla(steg, kandidat)
+    except Tidsgrans:
+        return AT_SIDAN
 
 
-def steg2(
+def steg2(  # noqa: PLR0913  # undantag: loggfilen väljs av den som kör, None för arkivet
     steg: Steg2, kandidater: list[Kandidat], mjuk: datetime, logg: Path | None
 ) -> Korning:
     """Loggen skrivs också när steg 2 stoppas, så att ingen version tappas."""
     fore = versionslogg.versioner(steg.pool)
     try:
-        return kor(steg, ordna(steg, kandidater), mjuk)
+        return kor(steg, kandidater, mjuk)
     finally:
         tidsbudget.stoppa()
         if logg:
@@ -119,18 +99,23 @@ def bygg_steg(arg: argparse.Namespace, kommun, kandidater: list[Kandidat]) -> St
     )
 
 
-def main(arg: argparse.Namespace) -> int:
-    ocr.kontrollera()
+def forbered(arg: argparse.Namespace) -> tuple[Steg2, list[Kandidat], Path | None]:
+    """Steget, kandidaterna att prova i sin ordning och filen med de provade."""
     kommun = konfiguration.las(arg.kommunfil)
     kandidatlista = lista(arg.arbetskatalog, kommun.id, arg.arkiv)
     kandidater = las_kandidater(kandidatlista)
     steg = bygg_steg(arg, kommun, kandidater)
     provfil = provade.fil(kandidatlista) if arg.del_ else None
-    att_prova = ordna(steg, provade.kvar(kandidater, provfil))
-    logg = None if arg.arkiv else steg.data.parent / "versioner" / f"{kommun.id}.csv"
+    return steg, ordna(steg, provade.kvar(kandidater, provfil)), provfil
+
+
+def main(arg: argparse.Namespace) -> int:
+    ocr.kontrollera()
+    steg, att_prova, provfil = forbered(arg)
     mjuk = tidsbudget.delens_grans(arg.start, arg.del_, nu())
     if arg.start:
         tidsbudget.starta_hard_grans(arg.start, nu())
+    logg = None if steg.arkiv else steg.data.parent / "versioner" / f"{steg.kommun}.csv"
     korning = steg2(steg, att_prova, mjuk, logg)
     provade.skriv(provfil, korning.provade)
     for text, antal in sorted(korning.utfall.items()):
