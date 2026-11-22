@@ -11,6 +11,7 @@ import tomllib
 from pathlib import Path
 
 from kommunhandlingar import frontmatter
+from kommunhandlingar.konvertering import kvalitet
 
 TABELL = Path(__file__).with_name("omkonvertering.toml")
 ALLA = "alla"
@@ -20,33 +21,35 @@ Version = tuple[int, ...]
 Andringar = dict[Version, frozenset[str]]
 
 
-def las(fil: Path = TABELL) -> Andringar:
-    with fil.open("rb") as tabell:
+def las() -> Andringar:
+    with TABELL.open("rb") as tabell:
         versioner = tomllib.load(tabell)["versioner"]
-    return {version_av(v): frozenset(berors) for v, berors in versioner.items()}
+    return {version_av(v): frozenset(omfang) for v, omfang in versioner.items()}
 
 
 def version_av(text: str) -> Version:
     return tuple(int(del_) for del_ in text.split("."))
 
 
-def pipelinens_version(pipeline: str) -> Version:
-    """`kommunhandlingar 0.12.0 / pdfplumber …` ger (0, 12, 0)."""
+def poolens_version_i(pipeline: str) -> Version:
+    """`kommunhandlingar 0.12.0 / pdfplumber …` och `kommunhandlingar
+    0.12.0` ger båda (0, 12, 0)."""
     return version_av(pipeline.split(" / ")[0].split(" ")[1])
 
 
 def berors(andringar: Andringar, falt: dict[str, str], poolens: str) -> bool:
     """Ett dokument från en nyare version än poolens lämnas orört."""
-    egen = pipelinens_version(falt["pipeline"])
-    tak = pipelinens_version(poolens)
+    egen = poolens_version_i(falt["pipeline"])
+    tak = poolens_version_i(poolens)
     nyare = (v for v in andringar if egen < v <= tak)
     return any(traffar(andringar[v], falt) for v in nyare)
 
 
-def traffar(berors_: frozenset[str], falt: dict[str, str]) -> bool:
-    """Ett dokument utan sidor, som inte gick att konvertera, berörs alltid."""
-    sidor = frontmatter.lista(falt["kvalitet_per_sida"])
-    if ALLA in berors_ or not sidor:
+def traffar(omfang: frozenset[str], falt: dict[str, str]) -> bool:
+    """En sida som inte är läst, eller ett dokument utan sidor, prövas av
+    varje ny version, eftersom felet kan ha varit tillfälligt."""
+    sidor = set(frontmatter.lista(falt["kvalitet_per_sida"]))
+    if ALLA in omfang or not sidor or kvalitet.EJ_KONVERTERAD in sidor:
         return True
     obekraftade = bool(frontmatter.lista(falt["tal_obekraftade"]))
-    return bool(berors_ & set(sidor)) or (TAL_OBEKRAFTADE in berors_ and obekraftade)
+    return bool(omfang & sidor) or (TAL_OBEKRAFTADE in omfang and obekraftade)

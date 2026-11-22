@@ -68,6 +68,10 @@ class TestBerors(unittest.TestCase):
     def test_versionerna_jamfors_som_tal(self):
         self.assertTrue(berors(TABELL, falt("0.9.0"), "kommunhandlingar 0.12.0"))
 
+    def test_en_sida_som_inte_ar_last_berors_alltid(self):
+        dokument = falt("0.15.0", "[ok, ej-konverterad]")
+        self.assertTrue(berors(TABELL, dokument, "kommunhandlingar 0.16.0"))
+
     def test_ett_dokument_utan_sidor_berors_alltid(self):
         dokument = falt("0.15.0", "null", "null")
         self.assertTrue(berors(TABELL, dokument, "kommunhandlingar 0.16.0"))

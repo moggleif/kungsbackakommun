@@ -6,7 +6,10 @@
 # Värdena är `alla`, en sidkvalitet ur `kvalitet_per_sida` (dokumentet har en
 # sådan sida) eller `tal_obekraftade` (dokumentet har en sida med
 # obekräftade tal). Hellre ett dokument för mycket än ett för lite: går
-# ändringen inte att avgränsa ur front matter står `alla`.
+# ändringen inte att avgränsa ur front matter står `alla`. Raden gäller allt
+# som ändrats i konverteringen sedan förra versionen, inte bara det som höjde
+# den. Ett dokument med en sida som är `ej-konverterad`, eller utan sidor,
+# prövas av varje ny version.
 
 [versioner]
 "0.1.0" = ["alla"]
@@ -36,8 +39,10 @@
 "0.13.0" = ["ocr", "ej-konverterad"]
 # Säkra rader (ADR-0100): också sidor som 0.13.0 gjorde till bild eller tom.
 "0.14.0" = ["ocr", "ej-konverterad", "bild", "tom"]
-# Text på högkant utan siffror (ADR-0103): före 0.15.0 gav all text på
-# högkant obekräftade tal.
-"0.15.0" = ["tal_obekraftade"]
+# Text på högkant utan siffror (ADR-0103). Före 0.15.0 gav text på högkant
+# obekräftade tal, men inte ett blanktecken på högkant, och 0.15.0 läser
+# också en sådan sida på nytt och räknar dess skarv (ADR-0024) utan det.
+# Sidan syns inte i front matter.
+"0.15.0" = ["alla"]
 # Väg H (ADR-0106): bara sidor som läses med OCR.
 "0.16.0" = ["ocr"]

@@ -13,8 +13,8 @@ grupper = ["Kommunfullmäktige och kommunstyrelsen", "Nämnderna", "Övriga"]
 # Det är en vana, inget beslutat sammanträde; kalendern räknar fram det (K49).
 gruppmote = { fore = "ks", veckodag = "måndag", tid = "kväll" }
 
-# Påslaget för omkonverteringen i #84 (ADR-0019); raden tas bort när
-# poolen är omkonverterad.
+# Dokument som en senare version av poolen kan ändra konverteras om
+# (ADR-0019, ADR-0107).
 omkonvertera = true
 
 # Sammanträdena får en sida punkt för punkt från 2026, för organen med

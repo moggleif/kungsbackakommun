@@ -7,7 +7,7 @@ import unittest
 from datetime import UTC, date, datetime
 from pathlib import Path
 
-from kommunhandlingar import frontmatter, pool
+from kommunhandlingar import frontmatter, omkonvertering, pool
 from kommunhandlingar.behandla import Steg2, behandla
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.hamta import las_kandidater
@@ -36,6 +36,20 @@ def kandidat(nyckel: str, url: str, typ: str = "protokoll", filnamn: str = "P.pd
     return Kandidat("ks", date(2025, 4, 22), typ, url, "sida", nyckel, filnamn)
 
 
+def nytt_steg(data: Path, klient, kandidater, version: str) -> Steg2:
+    """Steg 2 för kommunen `exempelby`, med poolens tabell över ändringar."""
+    return Steg2(
+        data,
+        "exempelby",
+        pool.las(data, "exempelby"),
+        klient,
+        frozenset(k.kallnyckel for k in kandidater),
+        lambda: TID,
+        version,
+        omkonvertering.las(),
+    )
+
+
 class Steg2Fall(unittest.TestCase):
     def setUp(self):
         katalog = tempfile.TemporaryDirectory()
@@ -46,15 +60,7 @@ class Steg2Fall(unittest.TestCase):
     def steg(
         self, kandidater: list[Kandidat], version: str = "kommunhandlingar 0.2.0"
     ) -> Steg2:
-        return Steg2(
-            self.data,
-            "exempelby",
-            pool.las(self.data, "exempelby"),
-            self.klient,
-            frozenset(k.kallnyckel for k in kandidater),
-            lambda: TID,
-            version,
-        )
+        return nytt_steg(self.data, self.klient, kandidater, version)
 
     def kor(
         self, *kandidater: Kandidat, version: str = "kommunhandlingar 0.2.0"

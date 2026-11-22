@@ -3,8 +3,8 @@ Test: tests/test_maska_poolen.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.maska_poolen <data>` maskar personuppgifterna
 i text och tabeller som en äldre version skrivit, utan att hämta PDF:en.
-Front matter och `pipeline` rörs inte, så omkonverteringen (ADR-0019) ser
-fortfarande vilken version som läste dokumentet. En fil skrivs bara om
+Front matter och `pipeline` rörs inte, så omkonverteringen (ADR-0019,
+ADR-0107) ser fortfarande vilken version som läste dokumentet. En fil skrivs bara om
 något maskas, och en andra körning ändrar ingenting.
 """
 

@@ -11,7 +11,7 @@ avgör `behandla.py`.
 """
 
 from collections.abc import Callable
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path, PurePosixPath
 
@@ -35,9 +35,9 @@ class Steg2:
     nycklar: frozenset[str]
     tid: Callable[[], datetime]
     version: str
+    andringar: omkonvertering.Andringar
     arkiv: bool = False
     omkonvertera: bool = False
-    andringar: omkonvertering.Andringar = field(default_factory=omkonvertering.las)
     ensamma: frozenset[str] = frozenset()  # arkivluckor.ensamma
 
 

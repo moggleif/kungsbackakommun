@@ -75,7 +75,8 @@ Hur och varför står i
   ingen sådan version berör lämnas orört, med sin `pipeline`, eftersom
   varje senare version skriver samma sak för det. Ett dokument från en
   nyare version än poolens lämnas också orört, och ett dokument som är
-  `ej-konverterad` utan sidor berörs av varje ny version. Prövningen
+  `ej-konverterad` utan sidor, eller som har en sida som är
+  `ej-konverterad`, berörs av varje ny version. Prövningen
   görs ur front matter, utan anrop, i varje körning. PDF:en sparas inte
   mellan körningarna; den hämtas igen. Ett granskat dokument konverteras
   inte om ([Granskade dokument](#granskade-dokument)).
@@ -1129,8 +1130,9 @@ och bara då, och samma ändring lägger till versionens rad i
 `src/kommunhandlingar/omkonvertering.toml` med det den kan ändra. Med
 `omkonvertera = true` hämtas och konverteras de dokument om som raden
 berör ([ADR-0107](decisions/0107-omkonvertering-efter-vad-versionen-kan-andra.md)).
-Raden är en överskattning: går ändringen inte att avgränsa ur front
-matter står `alla`.
+Raden är en överskattning och gäller allt som ändrats i konverteringen
+sedan förra versionen: går ändringen inte att avgränsa ur front matter
+står `alla`.
 Verktygens versioner i `pipeline` ger ingen omkonvertering.
 
 ### Inskannade sidor som inte blir text
@@ -1721,8 +1723,8 @@ utfallen och nämner varje dokument som inte gick att hämta, med orsak.
   ser ut, blir `ej-konverterad` med `trasig-pdf`, och felet skrivs ut, så
   att en enda fil inte stoppar körningen.
 - **Ett dokument med samma källnyckel och sha256** under en ny adress får
-  bara ny `kalla_url`; texten och tabellerna rörs inte. Har det en äldre
-  version av poolen konverteras det om i stället.
+  bara ny `kalla_url`; texten och tabellerna rörs inte. Kan en senare
+  version av poolen ändra det (K86) konverteras det om i stället.
 
 ## Tabeller
 

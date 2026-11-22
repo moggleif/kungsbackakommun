@@ -84,7 +84,15 @@ versions räckvidd synlig och prövbar i CI.
 * **Versionerna jämförs som tal**, inte som lika eller olika. Ett
   dokument från en nyare version än poolens lämnas orört, så att en
   äldre utcheckning inte skriver över det med äldre kod. Ett dokument som
-  helt är `ej-konverterad` och saknar sidor berörs av varje ny version.
+  helt är `ej-konverterad` och saknar sidor, eller har en sida som är
+  `ej-konverterad`, berörs av varje ny version, eftersom felet kan ha
+  varit tillfälligt (Tesseract som fallerar eller når sin tidsgräns). Det
+  gällde också med den gamla regeln.
+* **Raden gäller allt sedan förra versionen**, inte bara den ändring som
+  höjde den. En omstrukturering som sägs lämna beteendet orört och som
+  slagits ihop mellan två höjningar omfattas av nästa rad, och
+  granskningen av varje höjning prövar raden mot hela diffen sedan förra
+  versionen.
 * **CI kräver en rad** för versionen i `pyproject.toml`, raderna i
   versionsordning och bara kända värden.
 
@@ -95,11 +103,15 @@ Raderna i efterhand:
 | 0.1.0–0.12.0 | `alla` | tabeller, spalter och text på högkant på textsidorna; går inte att avgränsa ur front matter |
 | 0.13.0 | `ocr`, `ej-konverterad` | bilder och vridna sidor prövas bara på sidor som läses med OCR (ADR-0099) |
 | 0.14.0 | `ocr`, `ej-konverterad`, `bild`, `tom` | säkra rader prövas före `bild` och `tom` (ADR-0100) |
-| 0.15.0 | `tal_obekraftade` | före 0.15.0 gav all text på högkant obekräftade tal (ADR-0038, ADR-0103) |
+| 0.15.0 | `alla` | före 0.15.0 gav text på högkant obekräftade tal, men inte ett blanktecken på högkant; 0.15.0 läser också en sådan sida på nytt och räknar dess skarv (ADR-0024) utan tecknet, och sidan syns inte i front matter (ADR-0038, ADR-0103) |
 | 0.16.0 | `ocr` | väg H prövas bara på sidor som läses med OCR (ADR-0106) |
 
 Allt före 0.13.0 är `alla`, eftersom varje dokument som är äldre än
 0.12.0 ändå berörs av 0.10.0–0.12.0; en snävare rad där ger ingenting.
+Agenten föreslog först `tal_obekraftade` för 0.15.0. Granskningen visade
+att 0.15.0 prövar alla tecken på högkant, också blanktecken, medan regeln
+före 0.15.0 hoppade över blanktecken; en sådan sida var inte märkt och kan
+ändå läsas annorlunda. Raden blev därför `alla`.
 En sida som 0.13.0 gjorde `tom` går inte att skilja från en vit sida som
 aldrig lästes med OCR, så 0.14.0 tar med alla `tom`.
 
@@ -116,9 +128,11 @@ aldrig lästes med OCR, så 0.14.0 tar med alla `tom`.
   i ADR:en för versionen, och granskningen av varje versionshöjning
   prövar raden.
 * Dåligt, eftersom 0.16.0 i dag ger fler omkonverteringar än förut:
-  2 950 dokument i stället för 1 692, eftersom 1 530 dokument som är
-  `full` kommer med en gång. 1 456 av dem kommer ur arkivet. Av dem som
-  inte är `full` står 1 420 på tur i stället för 1 692.
+  4 898 av 5 050 ogranskade dokument i stället för 1 692, eftersom raden
+  för 0.15.0 är `alla` och de 3 356 dokument som är `full` då kommer med
+  en gång. Det är en engångskostnad. En framtida version som bara ändrar
+  sidor som läses med OCR berör 1 104 dokument i stället för alla som
+  inte är `full`.
 * Neutralt, eftersom ett dokument som inte berörs fortsätter att ha en
   äldre version i `pipeline`. Den som läser poolen ser i tabellen att
   texten är densamma som poolens version skulle skriva.
@@ -129,7 +143,8 @@ aldrig lästes med OCR, så 0.14.0 tar med alla `tom`.
   en rad, raderna står i ordning med kända värden, och regeln: bara
   versionerna efter dokumentets och fram till poolens räknas, `alla`,
   sidkvalitet och `tal_obekraftade` träffar som de ska, ett nyare
-  dokument lämnas orört, och ett dokument utan sidor berörs.
+  dokument lämnas orört, och ett dokument utan sidor eller med en sida som
+  är `ej-konverterad` berörs.
 * `tests/test_omkonvertering.py`: ett dokument som inte berörs är
   oförändrat och flyttas inte sist, ett som berörs konverteras om, också
   när det är `full`, och ett granskat konverteras aldrig om.
@@ -194,7 +209,13 @@ aldrig lästes med OCR, så 0.14.0 tar med alla `tom`.
 4. **Beslutet (projektägaren).** Ja till tabellen, och ja till att `full`
    följer den, så att arkivets äldre dokument som är `full` konverteras om
    en gång. Raderna i efterhand som agenten föreslog.
-5. **Nattkörningen** samma natt konverterade om som förut; regeln gäller
+5. **Granskningen (fas 6)** fann att raden för 0.15.0 inte var en
+   överskattning, eftersom ett blanktecken på högkant inte gav obekräftade
+   tal före 0.15.0. Raden blev `alla`, så att 0.16.0 i dag konverterar om
+   nästan hela poolen en gång. Granskningen påpekade också att en sida som
+   är `ej-konverterad` kan bero på ett tillfälligt fel, och den prövas nu
+   av varje ny version.
+6. **Nattkörningen** samma natt konverterade om som förut; regeln gäller
    från den körning som har den här ändringen.
-6. **Omprövas** om en version behöver en räckvidd som inte går att
+7. **Omprövas** om en version behöver en räckvidd som inte går att
    uttrycka med sidkvaliteter och `tal_obekraftade`.

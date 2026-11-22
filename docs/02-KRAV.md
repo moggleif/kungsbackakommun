@@ -610,8 +610,8 @@ arkivet per organ.
 - **När** en kandidat ur arkivet för den källnyckeln eller platsen tas
 - **Så** hämtas den inte, och dokumentet i poolen lämnas orört. Ett
   misslyckat försök ur arkivet från en annan plattform är ett undantag
-  (K23), och ett dokument ur arkivet från en annan version av
-  poolen ett annat (K52).
+  (K23), och ett dokument ur arkivet som en senare version av poolen kan
+  ändra ett annat (K52, K86).
 - **Givet** flera versioner och kopior av samma fil i arkivet
 - **När** arkivet upptäcks
 - **Så** blir den nyaste versionen kandidat, med den största kopian och vid
@@ -2598,6 +2598,8 @@ skulle ha rättat.
 - **När** steg 2 når kandidaten
 - **Så** hämtas det inte.
 
-- **Givet** ett dokument som är `ej-konverterad` och saknar sidor
+- **Givet** ett dokument som är `ej-konverterad` och saknar sidor, eller
+  har en sida som är `ej-konverterad`
 - **När** poolen har en nyare version än dokumentets
-- **Så** hämtas och konverteras det om.
+- **Så** hämtas och konverteras det om, eftersom felet kan ha varit
+  tillfälligt.
