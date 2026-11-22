@@ -19,7 +19,7 @@ from kommunhandlingar import frontmatter, skrivning, utfall
 from kommunhandlingar.arenden import arenden
 from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.kandidat import Kandidat
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 from kommunhandlingar.original import Original
 from kommunhandlingar.pool import Pool
 from kommunhandlingar.tidsbudget import utan_avbrott

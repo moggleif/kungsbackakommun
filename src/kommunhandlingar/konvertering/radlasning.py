@@ -16,8 +16,9 @@ from dataclasses import dataclass
 
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr, rapid, upphojt, vag_h
+from kommunhandlingar.konvertering import rapid, tesseract, upphojt, vag_h
 from kommunhandlingar.konvertering.rapid import Ruta
+from kommunhandlingar.konvertering.tsv import orden
 
 MARGINAL = 15
 
@@ -32,7 +33,7 @@ class Ord:
     y: float
     vanster: int
     text: str
-    linje: tuple[str, str, str]  # Tesseracts block, stycke och rad
+    linje: tuple[str, str, str, str]  # Tesseracts sida, block, stycke och rad
     nr: int  # ordningen i Tesseracts läsning
 
 
@@ -116,21 +117,21 @@ def radens_ord(ord_: list[Ord], ruta: Ruta) -> tuple[Ord, ...]:
 
 
 def tesseracts_tsv(bild: Image.Image) -> str:
-    lasning = ocr.las_bild(bild)
+    lasning = tesseract.las_bild(bild)
     if lasning is None:
         raise Fallerade
-    return lasning[0]
+    return lasning.tsv
 
 
 def tesseracts_ord(tsv: str) -> list[Ord]:
     return [
         Ord(
-            int(r["left"]) + int(r["width"]) / 2,
-            int(r["top"]) + int(r["height"]) / 2,
-            int(r["left"]),
-            r["text"],
-            (r["block_num"], r["par_num"], r["line_num"]),
+            (o.ruta[0] + o.ruta[2]) / 2,
+            (o.ruta[1] + o.ruta[3]) / 2,
+            o.ruta[0],
+            o.text,
+            o.radnyckel,
             nr,
         )
-        for nr, r in enumerate(ocr.ordrader(tsv))
+        for nr, o in enumerate(orden(tsv))
     ]

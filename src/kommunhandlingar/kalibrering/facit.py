@@ -29,10 +29,10 @@ from statistics import median
 
 import pdfplumber
 
-from kommunhandlingar.konvertering import ocr, vag_h
+from kommunhandlingar.konvertering import tesseract, vag_h
 from kommunhandlingar.konvertering.rapid import Ruta
 
-SKALA = 72 / ocr.DPI
+SKALA = 72 / tesseract.DPI
 MINDRE = 0.85
 OVER = 0.25
 MELLANRUM = 0.15

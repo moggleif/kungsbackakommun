@@ -136,8 +136,14 @@ def statusfel(falt: dict[str, str]) -> list[str]:
         return ["sidor stämmer inte med kvalitet_per_sida"]
     if frontmatter.granskad(falt):
         return []  # granskningen tar själv bort de sidor vars tal den bekräftat
+    return obekraftade_fel(falt, sidor)
+
+
+def obekraftade_fel(falt: dict[str, str], sidor: list[str]) -> list[str]:
+    """Sidorna som borde stå i tal_obekraftade. Väg H bekräftar tal per
+    sida men skriver det inte per sida, så i ett dokument som lästs med
+    väg H får varje OCR-sida stå utanför listan (K85, ADR-0106)."""
     obekraftade = set(frontmatter.lista(falt["tal_obekraftade"]))
-    # En OCR-sida vars tal väg H bekräftat står inte i listan (K85).
     vag_h = "rapidocr" in falt["pipeline"]
     return [
         f"sidan {nr} är {s} men står inte i tal_obekraftade"

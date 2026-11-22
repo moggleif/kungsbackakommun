@@ -14,7 +14,7 @@ from kommunhandlingar.konvertering.flersidiga import (
     fortsatter,
     hor_ihop,
 )
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 from kommunhandlingar.konvertering.skarv import Skarv
 
 PDF = Path(__file__).parent / "fixtures" / "pdf" / "skarvar.pdf"

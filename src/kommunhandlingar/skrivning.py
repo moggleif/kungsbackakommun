@@ -12,7 +12,7 @@ from pathlib import Path
 
 from kommunhandlingar import sidmarkor
 from kommunhandlingar.konvertering import flersidiga
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 from kommunhandlingar.konvertering.tabeller import som_csv, som_markdown
 
 

@@ -955,7 +955,8 @@ nattkörningen checkar inte in något
   en bildyta maskas och en vriden sida vänds innan sidan ger upp. Fallerar Tesseract på en sida, eller blir den inte
   klar på fem minuter, blir sidan `ej-konverterad` och felet skrivs ut;
   dokumentets övriga sidor behålls. Ord på högkant målas vita och sidan
-  läses om ([Text på högkant](#text-på-högkant)). Saknas Tesseract, `swe` eller `osd` stoppas
+  läses om ([Text på högkant](#text-på-högkant)). Saknas Tesseract, `swe` eller `osd`,
+  eller går RapidOCR:s modeller inte att hämta, stoppas
   steg 2 innan något dokument läses, så att ingen sida märks
   `ej-konverterad` för att miljön saknar något. På en OCR-sida letas
   inga tabeller;
@@ -1264,7 +1265,12 @@ färdiga texten vara de bekräftade talen, lika många gånger vart och ett.
 Går något av det inte ihop läses sidan som förut och står i
 `tal_obekraftade`. En sida vars tal väg H bekräftat är `ocr` och står
 inte i `tal_obekraftade`, och dokumentets `pipeline` nämner RapidOCR och
-onnxruntime.
+onnxruntime. Märkningen är per sida, men vilka sidor väg H bekräftat
+skrivs inte för sig. Datakontrollen godtar därför varje `ocr`-sida
+utanför `tal_obekraftade` i ett dokument vars `pipeline` nämner RapidOCR.
+Den latinska modellen för den tredje läsningen följer inte med RapidOCR
+utan hämtas första gången; steg 2 kontrollerar att båda motorerna går att
+starta innan något dokument läses (`rapid.kontrollera`).
 
 ### Känd inläsning
 
@@ -1968,7 +1974,8 @@ figur tolkas i efterhand, för hand, av en Claude-session, enligt
   `5` och `053`. Står båda delarna ensamma på var sin rad, eller med
   minst två mellanslag till resten av raden, som talen i ett diagram,
   räknas de. På en sida som lästs med OCR stäms talen
-  av mot OCR-texten och är lika obekräftade som den. Att texten före
+  av mot OCR-texten och är lika obekräftade som den, utom när väg H
+  bekräftat sidans tal (K85). Att texten före
   tolkningen är orörd prövas inte mekaniskt; det syns i PR:ens diff.
 - **En ny konvertering** av dokumentet skriver om `.md` och
   tabellkatalogen som vanligt, också när bara källnyckeln har bytts

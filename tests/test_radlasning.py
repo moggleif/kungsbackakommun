@@ -10,8 +10,10 @@ from unittest.mock import patch
 
 import pypdfium2 as pdfium
 from PIL import Image
+from rapidocr.utils.download_file import DownloadFileException
 
-from kommunhandlingar.konvertering import ocr, radlasning, rapid
+from kommunhandlingar.fel import Konfigurationsfel
+from kommunhandlingar.konvertering import ocr, radlasning, rapid, tesseract
 
 VAG_H = Path(__file__).parent / "fixtures" / "pdf" / "vag-h.pdf"
 
@@ -85,10 +87,19 @@ class Tom(unittest.TestCase):
 class Fallerar(unittest.TestCase):
     def test_tesseract_som_fallerar(self):
         with (
-            patch.object(ocr, "las_bild", return_value=None),
+            patch.object(tesseract, "las_bild", return_value=None),
             self.assertRaises(radlasning.Fallerade),
         ):
             radlasning.tesseracts_tsv(sidbild())
+
+    def test_en_modell_som_inte_gar_att_hamta_stoppar_korningen(self):
+        rapid.kontrollera()
+        fel = DownloadFileException("latin_PP-OCRv5_rec_mobile.onnx")
+        with (
+            patch.object(rapid, "radmotor", side_effect=fel),
+            self.assertRaises(Konfigurationsfel),
+        ):
+            rapid.kontrollera()
 
 
 if __name__ == "__main__":

@@ -14,7 +14,9 @@ import pypdfium2 as pdfium
 from PIL import Image
 
 from kommunhandlingar.konvertering import hogkant
-from kommunhandlingar.konvertering.las_sida import las_sida, textsida
+from kommunhandlingar.konvertering.las_sida import las_sida
+from kommunhandlingar.konvertering.textlagret import textsida
+from kommunhandlingar.konvertering.tsv import Ord, orden
 
 PDF = Path(__file__).parent / "fixtures" / "pdf" / "hogkant.pdf"
 STAMPEL = "2021-103216-0024"
@@ -23,8 +25,8 @@ KOLUMNER = (
 )
 
 
-def tsv(*ord_: tuple) -> str:
-    return "\n".join([KOLUMNER, *("\t".join(map(str, (1, *o))) for o in ord_)])
+def ord_ur(*ord_: tuple) -> list[Ord]:
+    return orden("\n".join([KOLUMNER, *("\t".join(map(str, (1, *o))) for o in ord_)]))
 
 
 def tecken(text: str, x0: float, top: float, uppat: bool = True) -> dict:
@@ -93,19 +95,19 @@ class TestTextlagret(unittest.TestCase):
 class TestOcr(unittest.TestCase):
     def test_ord_pa_hogkant_kanns_igen(self):
         ord_ = hogkant.ocr_ord(
-            tsv(
+            ord_ur(
                 (1, 1, 1, 450, 900, 1400, 40, 95, "Ledningarna"),
                 (2, 1, 1, 2250, 480, 38, 344, 94, "2023-01-02"),
                 (3, 1, 1, 2250, 1016, 39, 559, 90, STAMPEL),
                 (4, 1, 1, 100, 100, 20, 60, 90, "I"),
             )
         )
-        self.assertEqual([o["text"] for o in ord_], ["2023-01-02", STAMPEL])
+        self.assertEqual([o.text for o in ord_], ["2023-01-02", STAMPEL])
         self.assertEqual(hogkant.ocr_rader(ord_), ["2023-01-02", STAMPEL])
 
     def test_korta_ord_pa_samma_rad_som_stampeln_kommer_med(self):
         ord_ = hogkant.ocr_ord(
-            tsv(
+            ord_ur(
                 (2, 1, 1, 2250, 300, 38, 60, 94, "Dnr"),
                 (2, 1, 1, 2250, 380, 38, 300, 94, "2021/123"),
             )
@@ -114,9 +116,7 @@ class TestOcr(unittest.TestCase):
 
     def test_malas_vita(self):
         bild = Image.new("L", (10, 10), 0)
-        hogkant.mala_vitt(
-            bild, [{"left": "2", "top": "2", "width": "3", "height": "6"}]
-        )
+        hogkant.mala_vitt(bild, [Ord("Dnr", 90, (2, 2, 5, 8), ("1", "1", "1", "1"))])
         self.assertEqual(bild.getpixel((3, 5)), 255)
         self.assertEqual(bild.getpixel((7, 5)), 0)
 

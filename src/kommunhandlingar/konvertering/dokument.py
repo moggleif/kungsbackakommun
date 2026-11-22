@@ -17,8 +17,9 @@ import pdfplumber
 import pypdfium2 as pdfium
 
 from kommunhandlingar import tidsbudget
-from kommunhandlingar.konvertering import kvalitet, ocr, rapid
-from kommunhandlingar.konvertering.las_sida import Sida, las_sida
+from kommunhandlingar.konvertering import kvalitet, rapid, tesseract
+from kommunhandlingar.konvertering.las_sida import las_sida
+from kommunhandlingar.konvertering.sida import Sida
 
 VERKTYG = ("pdfplumber", "pdfminer.six")
 PDF_BORJAN = b"%PDF-"
@@ -66,7 +67,7 @@ def versioner(resultat: Resultat) -> list[str]:
     lasta = [f"{namn} {version(namn)}" for namn in VERKTYG]
     kvaliteter = set(resultat.kvalitet_per_sida or [])
     lasta_med_ocr = kvaliteter & kvalitet.MED_OCR
-    return lasta + (ocr.verktyg() + rapid.verktyg() if lasta_med_ocr else [])
+    return lasta + (tesseract.verktyg() + rapid.verktyg() if lasta_med_ocr else [])
 
 
 def oppningsfel(fel: pdfium.PdfiumError) -> str:

@@ -14,6 +14,8 @@ from dataclasses import dataclass
 
 from pdfplumber.page import Page
 
+from kommunhandlingar.konvertering.funnen import Funnen
+
 SIFFROR = re.compile(r"\d+")
 MARGINAL = 0.1
 NEDERSTA = 0.75
@@ -32,9 +34,9 @@ class Skarv:
     sista_nederst: bool = False
 
 
-def skarv(utanfor: Page, tabeller: list[tuple[tuple, tuple]]) -> Skarv:
-    """`utanfor` är sidan utan tabellernas tecken, `tabeller` varje tabells
-    ruta och kolumngränser i sidans ordning."""
+def skarv(utanfor: Page, tabeller: list[Funnen]) -> Skarv:
+    """`utanfor` är sidan utan tabellernas tecken, `tabeller` sidans
+    tabeller i sidans ordning."""
     linjer = utanfor.extract_text_lines()
     hojd = utanfor.height
     marginalen = frozenset(
@@ -42,14 +44,14 @@ def skarv(utanfor: Page, tabeller: list[tuple[tuple, tuple]]) -> Skarv:
     )
     if not tabeller:
         return Skarv(marginalen)
-    (forsta, kanter_forsta), (sista, kanter_sista) = tabeller[0], tabeller[-1]
+    forsta, sista = tabeller[0], tabeller[-1]
     return Skarv(
         marginalen,
-        kanter_forsta,
-        kanter_sista,
-        tuple(rad(t) for t in linjer if t["bottom"] <= forsta[1]),
-        tuple(rad(t) for t in linjer if t["top"] >= sista[3]),
-        sista[3] >= NEDERSTA * hojd,
+        forsta.kanter,
+        sista.kanter,
+        tuple(rad(t) for t in linjer if t["bottom"] <= forsta.ruta[1]),
+        tuple(rad(t) for t in linjer if t["top"] >= sista.ruta[3]),
+        sista.ruta[3] >= NEDERSTA * hojd,
     )
 
 

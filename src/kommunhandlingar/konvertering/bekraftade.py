@@ -14,19 +14,22 @@ obekräftade. Sist jämförs talen i den färdiga texten med de bekräftade.
 
 from collections import Counter
 from itertools import groupby
+from operator import attrgetter
 
 from PIL import Image
 
-from kommunhandlingar.konvertering import ocr, radlasning, vag_h
+from kommunhandlingar.konvertering import ocr, radlasning, tesseract, vag_h
 
 
-def text(bild: Image.Image, tsv: str, txt: str) -> str | None:
+def text(bild: Image.Image, forsta: tesseract.Utdata) -> str | None:
     """Sidans text med väg H:s tal, eller None när ett tal inte är bekräftat."""
-    lasning = radlasning.las(bild, tsv)
+    lasning = radlasning.las(bild, forsta.tsv)
     if lasning.tal_utanfor or any(r.avgorande.tal is None for r in lasning.rader):
         return None
     ersatt = ersattningar(lasning.rader)
-    ny = None if ersatt is None else med_ersattningar(txt, tsv, ersatt)
+    if ersatt is None:
+        return None
+    ny = med_ersattningar(forsta, ersatt)
     if ny is None:
         return None
     ny = ocr.rensa(ny.strip())
@@ -49,9 +52,10 @@ def ersattningar(rader: list[radlasning.Rad]) -> dict[int, str] | None:
     return ersatt
 
 
-def med_ersattningar(txt: str, tsv: str, ersatt: dict[int, str]) -> str | None:
-    linjer = [list(o) for _, o in groupby(radlasning.tesseracts_ord(tsv), linje)]
-    rader = txt.split("\n")
+def med_ersattningar(forsta: tesseract.Utdata, ersatt: dict[int, str]) -> str | None:
+    ord_ = radlasning.tesseracts_ord(forsta.tsv)
+    linjer = [list(o) for _, o in groupby(ord_, attrgetter("linje"))]
+    rader = forsta.text.split("\n")
     med_text = [i for i, r in enumerate(rader) if r.strip()]
     if len(med_text) != len(linjer):
         return None
@@ -60,7 +64,3 @@ def med_ersattningar(txt: str, tsv: str, ersatt: dict[int, str]) -> str | None:
             return None
         rader[i] = " ".join(t for o in ord_ if (t := ersatt.get(o.nr, o.text)))
     return "\n".join(rader)
-
-
-def linje(o: radlasning.Ord) -> tuple[str, str, str]:
-    return o.linje

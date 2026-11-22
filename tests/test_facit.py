@@ -20,7 +20,7 @@ from kommunhandlingar.facit.matt import spara, sparade, totalt, urvalets_utfall
 from kommunhandlingar.facit.rader import lika, siffror, talrad
 from kommunhandlingar.facit.utfall import MATT
 from kommunhandlingar.konvertering.dokument import Resultat
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 from kommunhandlingar.personuppgifter import maska
 
 RUBRIK = ["Belopp", "2025", "2026"]

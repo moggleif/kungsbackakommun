@@ -1,5 +1,6 @@
-"""Krav: K6, K15, K72 och K73 i docs/02-KRAV.md, ADR-0005, ADR-0099 och
-ADR-0100. Test: tests/test_skannad.py och tests/test_konvertering.py.
+"""Krav: K6, K15, K72, K73 och K85 i docs/02-KRAV.md, ADR-0005, ADR-0099,
+ADR-0100 och ADR-0106. Test: tests/test_skannad.py, tests/test_konvertering.py
+och tests/test_bekraftade.py.
 
 En sida som läses med OCR. Når den inte tröskeln maskas bildytan och
 sidan läses om, sedan vänds den om Tesseract säger att den ligger fel.
@@ -24,6 +25,7 @@ from kommunhandlingar.konvertering import (
     ocr,
     riktning,
     sakra_rader,
+    tesseract,
 )
 
 FARG_DPI = 100
@@ -46,19 +48,25 @@ def las(rendering: pdfium.PdfPage) -> Skannad:
     forsta = ocr.las(gra)
     if forsta.ordantal is None:
         return Skannad(kvalitet.EJ_KONVERTERAD)
-    skala = FARG_DPI / ocr.DPI
+    skala = FARG_DPI / tesseract.DPI
     yta = bildyta.storsta(farg, [skalad(r, skala) for r in forsta.ord])
     figur = yta.andel >= FIGUR and yta.jamn
-    if forsta.txt:
-        bekraftad = bekraftade.text(gra, forsta.tsv, forsta.txt)
-        if bekraftad is not None:
-            return Skannad(kvalitet.OCR, bekraftad, figur, tal_bekraftade=True)
     text = forsta.text
     if text is None:
         text = omlast(gra, skalad(yta.ruta, 1 / skala) if figur else None)
     if text is not None:
-        return Skannad(kvalitet.OCR, text, figur)
+        return med_vag_h(gra, forsta, text, figur)
     return sakra(gra, forsta.tsv, figur) or utan_text(yta, farg, forsta.ordantal)
+
+
+def med_vag_h(gra: Image.Image, forsta: ocr.Lasning, text: str, figur: bool):
+    """Sidan med väg H:s text när väg H bekräftar dess tal (K85), annars
+    med OCR-texten."""
+    if forsta.for_vag_h is not None:
+        bekraftad = bekraftade.text(gra, forsta.for_vag_h)
+        if bekraftad is not None:
+            return Skannad(kvalitet.OCR, bekraftad, figur, tal_bekraftade=True)
+    return Skannad(kvalitet.OCR, text, figur)
 
 
 def sakra(gra: Image.Image, tsv: str, figur: bool) -> Skannad | None:

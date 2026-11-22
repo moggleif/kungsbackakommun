@@ -8,7 +8,7 @@ from unittest import mock
 from kommunhandlingar import behandla
 from kommunhandlingar.arenden import arenden, fyll
 from kommunhandlingar.konvertering.dokument import Resultat
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 from tests.test_datakontroll import Pool
 from tests.test_hamta import Steg2Fall, kandidat
 

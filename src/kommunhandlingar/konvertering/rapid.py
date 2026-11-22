@@ -1,9 +1,14 @@
-"""Krav: K84 i docs/02-KRAV.md och ADR-0105. Test: tests/test_radlasning.py.
+"""Krav: K84 och K85 i docs/02-KRAV.md, ADR-0105 och ADR-0106. Test:
+tests/test_radlasning.py.
 
 RapidOCR i väg H, med sina förvalda modeller ur PP-OCRv6 för att hitta och
 läsa raderna, och den latinska modellen ur PP-OCRv5 som tredje läsning av
 en rad. Modellerna körs i onnxruntime. Versionerna låses i pyproject.toml,
-och RapidOCR kontrollerar modellfilernas sha256 när de hämtas.
+och RapidOCR kontrollerar modellfilernas sha256 när de hämtas. Den
+latinska modellen följer inte med paketet utan hämtas första gången; går
+den inte att hämta stoppas körningen innan något dokument läses
+(`kontrollera`), så att ingen sida blir `ej-konverterad` för att miljön
+saknar den (K85).
 """
 
 from functools import cache
@@ -11,6 +16,9 @@ from importlib.metadata import version
 
 from PIL import Image
 from rapidocr import LangRec, ModelType, OCRVersion, RapidOCR
+from rapidocr.utils.download_file import DownloadFileException
+
+from kommunhandlingar.fel import Konfigurationsfel
 
 TYST = {"Global.log_level": "critical"}
 LATIN = {
@@ -30,6 +38,13 @@ def sidmotor() -> RapidOCR:
 @cache
 def radmotor() -> RapidOCR:
     return RapidOCR(params=TYST | LATIN)
+
+
+def kontrollera() -> None:
+    try:
+        sidmotor(), radmotor()
+    except DownloadFileException as fel:
+        raise Konfigurationsfel(f"RapidOCR saknar en modell (K85): {fel}") from fel
 
 
 def rader(bild: Image.Image) -> list[tuple[Ruta, str]]:

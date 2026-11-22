@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 from PIL import Image, ImageDraw, ImageFont
 
-from kommunhandlingar.konvertering import bekraftade, ocr, radlasning
+from kommunhandlingar.konvertering import bekraftade, radlasning, tesseract
 from kommunhandlingar.konvertering.vag_h import Avgorande
 from tests.test_radlasning import sidbild
 
@@ -25,6 +25,10 @@ def tsv(linjer: list[list[str]]) -> str:
         for j, o in enumerate(ord_, 1):
             rader.append(f"5\t1\t{i}\t1\t1\t{j}\t{100 * j}\t{100 * i}\t80\t30\t90\t{o}")
     return "\n".join(rader)
+
+
+def utdata(txt: str) -> tesseract.Utdata:
+    return tesseract.Utdata(tsv(LINJER), txt)
 
 
 def rad(
@@ -45,7 +49,7 @@ class Placering(unittest.TestCase):
         with patch.object(
             radlasning, "las", return_value=lasning(*rader, utanfor=utanfor)
         ):
-            return bekraftade.text(Image.new("L", (10, 10)), tsv(LINJER), TXT)
+            return bekraftade.text(Image.new("L", (10, 10)), utdata(TXT))
 
     def test_rapidocrs_text_ersatter_tesseracts_ord(self):
         forsta = rad("tredje-och-rapid", ["2027"], [0, 1], "Budget 2027")
@@ -73,7 +77,7 @@ class Placering(unittest.TestCase):
         with patch.object(radlasning, "las", return_value=lasning(forsta, andra)):
             for txt in ("Budget 2O27 kr", "Budget 2O27\n\nSumma 4 078"):
                 bild = Image.new("L", (10, 10))
-                self.assertIsNone(bekraftade.text(bild, tsv(LINJER), txt))
+                self.assertIsNone(bekraftade.text(bild, utdata(txt)))
 
 
 class HelaVagen(unittest.TestCase):
@@ -82,16 +86,14 @@ class HelaVagen(unittest.TestCase):
         typsnitt = ImageFont.load_default(size=40)
         for i, text in enumerate(["Budgeten 2027 ar 4 078 tkr.", "Beslut den 11 maj."]):
             ImageDraw.Draw(bild).text((120, 120 + 70 * i), text, fill=0, font=typsnitt)
-        tsv_, txt = ocr.las_bild(bild)
         self.assertEqual(
-            bekraftade.text(bild, tsv_, txt),
+            bekraftade.text(bild, tesseract.las_bild(bild)),
             "Budgeten 2027 ar 4 078 tkr.\nBeslut den 11 maj.",
         )
 
     def test_fotnotssiffran_i_fixturen_bekraftas_inte(self):
         bild = sidbild()
-        tsv_, txt = ocr.las_bild(bild)
-        self.assertIsNone(bekraftade.text(bild, tsv_, txt))
+        self.assertIsNone(bekraftade.text(bild, tesseract.las_bild(bild)))
 
 
 if __name__ == "__main__":

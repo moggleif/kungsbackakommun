@@ -190,7 +190,8 @@ kunna läggas till utan kodändring.
   annan text från den skrivs.
 
 - **Givet** en sida vars tal inte är bekräftade – en sida som lästs med
-  OCR, en sida som inte gick att konvertera, ett textlager med oläsliga
+  OCR och vars tal väg H inte bekräftat (K85), en sida som inte gick att
+  konvertera, ett textlager med oläsliga
   tecken, eller ett textlager med text på högkant inne i en tabell eller
   text ritad ovanpå annan text (issue
   [#119](https://github.com/moggleif/kommunhandlingar/issues/119))
@@ -2528,7 +2529,8 @@ byggt står i
   tal och inget tal står utanför raderna
 - **När** sidan konverteras
 - **Så** är den `ocr`, står inte i `tal_obekraftade`, och dokumentets
-  `pipeline` nämner RapidOCR och onnxruntime.
+  `pipeline` nämner RapidOCR och onnxruntime. Det gäller också en sida
+  där ingen av läsningarna ser något tal.
 
 - **Givet** en sådan sida med en rad som RapidOCR och den tredje
   läsningen bekräftat, med andra tal än Tesseracts
@@ -2554,3 +2556,9 @@ byggt står i
 - **När** datakontrollen körs
 - **Så** är det inget fel. I ett dokument vars `pipeline` inte nämner
   RapidOCR är det ett fel, som förut.
+
+- **Givet** en miljö där RapidOCR:s modeller inte finns och inte går att
+  hämta
+- **När** steg 2 startar
+- **Så** stoppas körningen innan något dokument läses, som när Tesseract
+  saknas.

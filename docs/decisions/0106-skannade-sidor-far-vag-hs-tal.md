@@ -83,14 +83,23 @@ Granskade dokument konverteras inte om
   den som bara bygger webbplatsen ur ett paket med fast version.
 * Dåligt, eftersom en rad med `09: 35` kan sparas som `09:35`, som
   ADR-0105 beskriver.
+* Dåligt, eftersom datakontrollen inte längre kan pröva att en `ocr`-sida
+  står i `tal_obekraftade` i ett dokument som lästs med väg H. Den vet
+  inte vilka sidor väg H bekräftat, bara att RapidOCR använts.
+* Dåligt, eftersom den latinska modellen hämtas första gången den
+  behövs. Steg 2 kontrollerar den innan något dokument läses, så att en
+  miljö utan den inte gör dokument till `ej-konverterad`.
+* Neutralt, eftersom en sida där ingen av läsningarna ser något tal
+  räknas som bekräftad: det finns inget tal i texten som kan vara fel.
 
 ### Confirmation
 
 `tests/test_bekraftade.py` prövar placeringen och hela vägen, och
 `tests/test_konvertering.py` och `tests/test_datakontroll.py` märkningen.
-Kalibreringen (K84) mäter regeln. Den lagrade texten mäts inte mot ett
-facit, men jämförelsen sist gör att den inte kan ha andra tal än de
-kalibreringen mätt.
+Kalibreringen (K84) mäter regeln på textlagersidor. Den lagrade texten
+mäts inte mot ett facit, men jämförelsen sist gör att den inte kan ha
+andra tal än de väg H bekräftat, normaliserade som i väg H (`09: 35` och
+`09:35` är samma tal).
 
 ## Pros and Cons of the Options
 
@@ -117,5 +126,25 @@ kalibreringen mätt.
 
 Väg H körs på samma sidbild som Tesseract läste, i 300 dpi i gråskala.
 Hur placeringen görs står i
-[03-ARKITEKTUR.md](../03-ARKITEKTUR.md#väg-h-och-kalibreringen). Beslutet
-bör omprövas när märkningen blir per rad i stället för per sida.
+[03-ARKITEKTUR.md](../03-ARKITEKTUR.md#väg-h-och-kalibreringen).
+
+Diskussion. Att placera RapidOCR:s text på Tesseracts rad är den svåra
+delen, och regeln är medvetet snäv: hellre en sida obekräftad än en text
+där en rad hamnat fel. Jämförelsen sist är skyddsnätet, men den bortser
+från ordningen mellan raderna och från vilken rad ett tal står på. Ett
+tal som står två gånger för att två rader täcker samma ord fångas bara
+när ordet ligger i båda rutorna. Det är kvar som en känd risk, eftersom
+talen ändå är de bekräftade.
+
+Datakontrollen kunde i stället ha prövat ett nytt fält per sida, med de
+sidor väg H bekräftat. Det skulle ändra front matter-schemat för en
+kontroll som konverteringen redan gör, och valdes bort tills märkningen
+blir per rad.
+
+En sida tog i provet 2,5 sekunder med väg H mot 0,8 med bara Tesseract.
+En skannad handling på 300 sidor tar då runt tolv minuter, under
+tidsbudgeten på 30 minuter per dokument (K11). Hur ofta placeringen
+lyckas på riktiga skanningar är inte mätt: talet två av fem bygger på
+kalibreringens textlagersidor.
+
+Beslutet bör omprövas när märkningen blir per rad i stället för per sida.
