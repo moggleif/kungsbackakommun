@@ -34,6 +34,12 @@ class Organ:
     sammantradessidor: int | None = None
 
 
+def organen(poster: list[dict]) -> tuple[Organ, ...]:
+    organ = tuple(organ_av(post) for post in poster)
+    kontrollera_organ(organ)
+    return organ
+
+
 def organ_av(post: dict) -> Organ:
     var = f"organ {post.get('id')!r}"
     schema.kontrollera_falt(post, ORGANFALT, var)
@@ -71,10 +77,10 @@ def kontrollera_hanvisningar(organ: tuple[Organ, ...]) -> None:
     for o in organ:
         if id_.count(o.id) > 1:
             raise Konfigurationsfel(f"organ {o.id!r}: två organ har samma id")
-        kontrollera_hanvisning(o, id_)
+        hanvisningarna_finns(o, id_)
 
 
-def kontrollera_hanvisning(o: Organ, id_: list[str]) -> None:
+def hanvisningarna_finns(o: Organ, id_: list[str]) -> None:
     saknade = [f for f in o.foregangare if f not in id_]
     if saknade:
         raise Konfigurationsfel(

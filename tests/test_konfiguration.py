@@ -66,10 +66,10 @@ class TestKommunfilen(unittest.TestCase):
 
 
 class TestFelStopparKorningen(unittest.TestCase):
-    def stoppas(self, andra, kommun_id: str = "exempelby"):
+    def stoppas(self, andra, kommun_id: str = "exempelby", text: str = ""):
         data = copy.deepcopy(exempelby())
         andra(data)
-        with self.assertRaises(Konfigurationsfel):
+        with self.assertRaisesRegex(Konfigurationsfel, text):
             tolka(kommun_id, data)
 
     def test_okant_falt(self):
@@ -126,12 +126,14 @@ class TestFelStopparKorningen(unittest.TestCase):
         self.stoppas(lambda d: d["organ"][0].update(fran=datetime(2019, 1, 1, 8)))
         self.stoppas(lambda d: d["organ"][0].update(namn="Barn- och ungdomsnämnden"))
         self.stoppas(lambda d: d.update(organ={}))
-        self.stoppas(lambda d: d.update(organ=[]))
-        self.stoppas(lambda d: d.update(kalla=["sitevision"]))
+        self.stoppas(lambda d: d.update(organ=[]), text="organ ska vara en lista")
+        self.stoppas(lambda d: d.update(kalla=[1]), text="kalla ska vara en lista")
 
     def test_okand_adapter(self):
         self.stoppas(lambda d: d["kalla"][0].update(adapter="episerver"))
-        self.stoppas(lambda d: d["kalla"][0].update(adapter="ciceron"))
+        self.stoppas(
+            lambda d: d["kalla"][0].update(adapter="x"), text="okänd adapter 'x'"
+        )
 
     def test_wayback_ar_en_lista_med_kallans_organ(self):
         self.stoppas(lambda d: d["kalla"][0].update(wayback=True))

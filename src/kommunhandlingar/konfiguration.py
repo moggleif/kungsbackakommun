@@ -12,12 +12,7 @@ from kommunhandlingar.adaptrar import episerver, meetingsplus, sitevision
 from kommunhandlingar.fel import Konfigurationsfel
 from kommunhandlingar.gruppmote import Gruppmote, gruppmote_av
 from kommunhandlingar.kandidat import TYPORDNING
-from kommunhandlingar.organ import (
-    Organ,
-    kontrollera_grupper,
-    kontrollera_organ,
-    organ_av,
-)
+from kommunhandlingar.organ import Organ, kontrollera_grupper, organen
 
 KOMMUNFALT = {
     "namn",
@@ -57,7 +52,9 @@ def las(sokvag: Path) -> Kommun:
 def tolka(kommun_id: str, data: dict) -> Kommun:
     schema.kontrollera_falt(data, KOMMUNFALT, "kommunen")
     namn = schema.varde(data, "namn", str, "kommunen")
-    organ, grupper = organen_och_grupperna(data)
+    organ = organen(poster(data, "organ"))
+    grupper = schema.textlista(data, "grupper", "kommunen")
+    kontrollera_grupper(organ, grupper)
     organ_id = [o.id for o in organ]
     kallor = [kalla_av(p, i, organ_id) for i, p in enumerate(poster(data, "kalla"), 1)]
     omkonvertera = schema.valfritt(data, "omkonvertera", bool, "kommunen") or False
@@ -76,15 +73,7 @@ def tolka(kommun_id: str, data: dict) -> Kommun:
     )
 
 
-def organen_och_grupperna(data: dict) -> tuple[tuple[Organ, ...], tuple[str, ...]]:
-    organ = tuple(organ_av(post) for post in poster(data, "organ"))
-    kontrollera_organ(organ)
-    grupper = schema.textlista(data, "grupper", "kommunen")
-    kontrollera_grupper(organ, grupper)
-    return organ, grupper
-
-
-def av_slag(kallor: list, slag: type) -> tuple:
+def av_slag[T](kallor: list, slag: type[T]) -> tuple[T, ...]:
     return tuple(k for k in kallor if isinstance(k, slag))
 
 
