@@ -14,7 +14,7 @@ from kommunhandlingar.webbplats import uppfoljningar
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.malsida import malsida
 from tests.aren import aren
-from tests.poolfall import mall, tillfallig_pool
+from tests.poolfall import sammanhang, tillfallig_pool
 from tests.test_mal import BUDGET, HANDLINGAR, ROT, budget, pool
 from tests.test_webbplats import FIXTURER, REPO, TID, exempelby, protokoll
 
@@ -62,8 +62,8 @@ class TestLasning(unittest.TestCase):
 class TestTabellen(unittest.TestCase):
     def tabell(self, organets: list[dict]) -> dict[str, list[str]]:
         with pool() as malen, lasta() as uppfoljda:
-            vald = mall(uppfoljningar={"exempelby": uppfoljda}, aren=aren(malen))
-            html = malsida(vald, exempelby(), malen, organets)
+            vald = sammanhang(uppfoljningar=uppfoljda, aren=aren(malen))
+            html = malsida(vald, malen, organets)
         tabell = html[html.index('id="antal"') : html.index('id="tidslinje"')]
         rader = re.findall(r'<tr><th scope="row">(\d+)</th>(.*?)</tr>', tabell)
         return {ar: re.findall(r'"tal">(.*?)<', celler) for ar, celler in rader}

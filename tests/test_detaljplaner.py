@@ -2,15 +2,13 @@
 sparslag.py."""
 
 import unittest
-from dataclasses import replace
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
-from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from tests.aren import aren
-from tests.poolfall import dokumenten, mall, tillfallig_pool
+from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import exempelby
 
@@ -32,11 +30,8 @@ RADER = (
 def sida(projekten: dict | None = None) -> str:
     with tillfallig_pool(RUBRIK, RADER, dokumenten(TEXTER, "[ok]")) as (fil, data):
         stegen = spar.lasare(DETALJPLANER)(fil, exempelby(), data)
-    vy = replace(
-        Vy(DETALJPLANER, exempelby(), aren(stegen)["exempelby"]),
-        projekt=projekten or {},
-    )
-    return sparsida(mall(), vy, stegen)
+    vald = sammanhang(aren=aren(stegen), projekt=projekten or {})
+    return sparsida(vald, DETALJPLANER, stegen)
 
 
 class TestSidan(unittest.TestCase):

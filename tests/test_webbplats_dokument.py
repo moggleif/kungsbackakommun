@@ -10,8 +10,8 @@ from kommunhandlingar import frontmatter
 from kommunhandlingar.webbplats import rakning
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.dokumentsida import dokumentsida
-from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.organsida import organsida
+from tests.poolfall import sammanhang
 from tests.test_webbplats import FIXTURER, REPO, TID, dokument, exempelby
 
 TABELL = """<!-- sida 1 -->
@@ -42,7 +42,7 @@ class TestOrgansida(unittest.TestCase):
         rad = next(
             r for r in rakning.rakna(kommun, list(dok), TID.date()) if r.id == "fsn"
         )
-        return organsida(Mall([kommun], REPO, TID), kommun, rad, list(dok))
+        return organsida(sammanhang(kommun), rad, list(dok))
 
     def test_sammantraden_per_ar_nyast_forst(self):
         html = self.organsida(
@@ -96,7 +96,7 @@ class TestOrgansida(unittest.TestCase):
 class TestDokumentsida(unittest.TestCase):
     def dokumentsida(self, text: str) -> str:
         kommun = exempelby()
-        return dokumentsida(Mall([kommun], REPO, TID), kommun, las(text), text)
+        return dokumentsida(sammanhang(kommun), las(text), text)
 
     def test_harkomsten_med_kallan_och_filen_i_repot(self):
         html = self.dokumentsida(dokument())
@@ -172,13 +172,13 @@ class TestBygg(unittest.TestCase):
 
     def test_typ_utanfor_sidor_med_text_visar_harkomsten_och_filen(self):
         kommun = replace(exempelby(), sidor_med_text=("protokoll",))
-        mall = Mall([kommun], REPO, TID)
+        vald = sammanhang(kommun)
         text = dokument(typ="kallelse", tal="[2]")
         kallelse = las(text, "fsn/2024/2024-05-02/kallelse.html")
-        html = dokumentsida(mall, kommun, kallelse, text)
+        html = dokumentsida(vald, kallelse, text)
         fil = f"{REPO}/blob/main/data/exempelby/fsn/2024/2024-05-02/kallelse.md"
         self.assertIn(f'Texten står i <a href="{fil}">Markdown-filen i repot</a>', html)
         self.assertNotIn("Mer text", html)
         self.assertNotIn('href="#sida-', html)
         protokoll = las(dokument())
-        self.assertIn("Mer text", dokumentsida(mall, kommun, protokoll, dokument()))
+        self.assertIn("Mer text", dokumentsida(vald, protokoll, dokument()))

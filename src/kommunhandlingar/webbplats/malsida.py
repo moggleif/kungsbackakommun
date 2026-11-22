@@ -23,6 +23,7 @@ from kommunhandlingar.webbplats.malkort import korten
 from kommunhandlingar.webbplats.mall import KALLKOD, Mall, sida
 from kommunhandlingar.webbplats.malstatistik import protokollar, statistik
 from kommunhandlingar.webbplats.maltidslinje import namnden_rad, tidslinje
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 
 SKRIPT = Path(__file__).with_name("mal.js")
 PERSPEKTIVSKRIPT = Path(__file__).with_name("perspektiv.js")
@@ -101,19 +102,19 @@ def adress(kommun: Kommun, organ: str) -> str:
 # Alla mål är samma organs, och åren är kommunens (K60). Ett år fram till
 # byggåret utan både dokument och mål är en lucka: ett år med mål ur ett
 # senare dokument, som en årsredovisning, är det inte.
-def malsida(mall: Mall, kommun: Kommun, malen: list[Mal], organets: list[dict]) -> str:
-    organ = malen[0].organ
-    uppfoljda = [u for u in mall.uppfoljningar.get(kommun.id, []) if u.organ == organ]
+def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> str:
+    organ, mall, kommun = malen[0].organ, sammanhang.mall, sammanhang.kommun
+    uppfoljda = [u for u in sammanhang.underlag.uppfoljningar if u.organ == organ]
     protokoll = protokollar(organets)
     sidans = adress(kommun, organ)
     namn = next(o.namn[0] for o in kommun.organ if o.id == organ)
     spar = sparen(malen)
     malar = {m.ar for m in malen}
-    ar = mall.aren[kommun.id]
+    ar = sammanhang.underlag.aren
     dokumentar = {frontmatter.ar(d) for d in organets}
     luckor = set(range(ar[0], mall.byggd.year + 1)) - dokumentar - malar
     innehall = (
-        flikar(mall, kommun.id, organ, MAL)
+        flikar(sammanhang.underlag, organ, MAL)
         + f"<style>{STIL.read_text(encoding='utf-8')}</style>"
         + INLEDNING
         + fore_malen(min(dokumentar), min(malar))

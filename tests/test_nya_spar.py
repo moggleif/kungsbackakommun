@@ -9,10 +9,10 @@ from kommunhandlingar.webbplats.flikar import flikar
 from kommunhandlingar.webbplats.investeringsslag import INVESTERINGAR
 from kommunhandlingar.webbplats.overenskommelseslag import OVERENSKOMMELSER
 from kommunhandlingar.webbplats.remissslag import REMISSER
-from kommunhandlingar.webbplats.sparkort import Vy
+from kommunhandlingar.webbplats.sammanhang import Kommununderlag
 from kommunhandlingar.webbplats.sparsida import sparsida
 from tests.aren import aren
-from tests.poolfall import dokumenten, mall, tillfallig_pool
+from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_webbplats import exempelby
 
 PROTOKOLL = "fsn/2025/2025-10-27/protokoll.md"
@@ -47,12 +47,11 @@ class TestSidorna(unittest.TestCase):
         for slag, namn, fas, text in FALL:
             with self.subTest(slag.id):
                 stegen = las(slag, rad(namn, fas, text))
-                vy = Vy(slag, exempelby(), aren(stegen)["exempelby"])
-                html = sparsida(mall(), vy, stegen)
+                html = sparsida(sammanhang(aren=aren(stegen)), slag, stegen)
                 self.assertIn(f">{namn}</a></th>", html)
                 self.assertIn(f"<dt>{slag.faser[fas][1]}</dt><dd>1</dd>", html)
-                vald = mall(spar={slag.id: {"exempelby": stegen}})
-                nav = flikar(vald, "exempelby", "fsn", slag.id)
+                vald = Kommununderlag(aren(stegen), spar={slag.id: stegen})
+                nav = flikar(vald, "fsn", slag.id)
                 self.assertIn(f'aria-current="page">{slag.rubrik}<', nav)
 
     def test_en_okand_fas_stoppar(self):

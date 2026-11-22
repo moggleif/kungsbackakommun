@@ -3,15 +3,16 @@
 from html import escape
 
 from kommunhandlingar.frontmatter import FALT, adresser, lista
-from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.luckor import motesnamn
-from kommunhandlingar.webbplats.mall import Mall, lank, rot, sida, stig
+from kommunhandlingar.webbplats.mall import lank, rot, sida, stig
 from kommunhandlingar.webbplats.meny import oversiktsnamn
 from kommunhandlingar.webbplats.organsida import dokumentrubrik
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.text import pdfsidor
 
 
-def dokumentsida(mall: Mall, kommun: Kommun, falt: dict[str, str], text: str) -> str:
+def dokumentsida(sammanhang: Sammanhang, falt: dict[str, str], text: str) -> str:
+    mall, kommun = sammanhang.mall, sammanhang.kommun
     adress = f"{kommun.id}/{falt['adress']}"
     organ = next(o.namn[0] for o in kommun.organ if o.id == falt["organ"])
     mote = motesnamn(falt["datum"], falt["lopnr"])

@@ -15,9 +15,10 @@ from pathlib import Path
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.flikar import flikar
-from kommunhandlingar.webbplats.mall import KALLKOD, Mall, sida
+from kommunhandlingar.webbplats.mall import KALLKOD, sida
 from kommunhandlingar.webbplats.malsida import AREN, SKRIPT, STIL
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.spar import Slag, Steg
 from kommunhandlingar.webbplats.sparikon import teckenforklaring
 from kommunhandlingar.webbplats.sparkort import (
@@ -37,13 +38,13 @@ def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
     return f"{kommun.id}/{organ}/{slag.id}.html"
 
 
-def sparsida(mall: Mall, vy: Vy, stegen: list[Steg]) -> str:
-    organ, slag = stegen[0].organ, vy.slag
+def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:
+    organ, vy = stegen[0].organ, sammanhang.vy(slag)
     sidans = adress(vy.kommun, organ, slag)
     namn = next(o.namn[0] for o in vy.kommun.organ if o.id == organ)
     sakerna = per_sak(slag, stegen)
     innehall = (
-        flikar(mall, vy.kommun.id, organ, slag.id)
+        flikar(sammanhang.underlag, organ, slag.id)
         + f"<style>{STIL.read_text(encoding='utf-8')}"
         f"{EGEN_STIL.read_text(encoding='utf-8')}</style>"
         + slag.inledning
@@ -56,7 +57,7 @@ def sparsida(mall: Mall, vy: Vy, stegen: list[Steg]) -> str:
         + korten(vy, sakerna)
         + f"<script>{SKRIPT.read_text(encoding='utf-8')}</script>"
     )
-    return sida(mall, sidans, f"{slag.rubrik} – {namn}", innehall)
+    return sida(sammanhang.mall, sidans, f"{slag.rubrik} – {namn}", innehall)
 
 
 # Sakerna i den ordning de först står, med stegen i år- och fasordning.

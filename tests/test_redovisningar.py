@@ -7,11 +7,10 @@ import unittest
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
-from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import REDOVISNINGAR
 from tests.aren import aren
-from tests.poolfall import dokumenten, mall, tillfallig_pool
+from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import exempelby
 
@@ -39,8 +38,7 @@ def steg() -> list:
 
 def sida() -> str:
     stegen = steg()
-    vy = Vy(REDOVISNINGAR, exempelby(), aren(stegen)["exempelby"])
-    return sparsida(mall(), vy, stegen)
+    return sparsida(sammanhang(aren=aren(stegen)), REDOVISNINGAR, stegen)
 
 
 class TestSidan(unittest.TestCase):

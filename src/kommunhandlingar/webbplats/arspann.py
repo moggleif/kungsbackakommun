@@ -15,9 +15,3 @@ def arspann(ar: list[int]) -> range:
 
 def poolens_ar(katalog: Path) -> list[int]:
     return [int(p.name) for p in katalog.glob("*/[0-9][0-9][0-9][0-9]")]
-
-
-def radernas_ar(kommun: str, malen: dict, uppfoljda: dict, sparen: dict) -> list[int]:
-    rader = [*malen.get(kommun, []), *uppfoljda.get(kommun, [])]
-    rader += [s for slag in sparen.values() for s in slag.get(kommun, [])]
-    return [r.ar for r in rader]

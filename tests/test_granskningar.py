@@ -7,10 +7,9 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
 from kommunhandlingar.webbplats.granskningsslag import GRANSKNINGAR
-from kommunhandlingar.webbplats.sparkort import Vy
 from kommunhandlingar.webbplats.sparsida import sparsida
 from tests.aren import aren
-from tests.poolfall import dokumenten, mall, tillfallig_pool
+from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_mal import ROT
 from tests.test_webbplats import exempelby
 
@@ -50,8 +49,7 @@ def las(rader: str) -> list[spar.Steg]:
 
 def sida() -> str:
     stegen = las(RAPPORT + bedomning("inte") + SVAR)
-    vy = Vy(GRANSKNINGAR, exempelby(), aren(stegen)["exempelby"])
-    return sparsida(mall(), vy, stegen)
+    return sparsida(sammanhang(aren=aren(stegen)), GRANSKNINGAR, stegen)
 
 
 class TestSidan(unittest.TestCase):
