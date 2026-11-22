@@ -10,14 +10,15 @@ ett dokument i poolen; har sammanträdet typen från en annan plattform står de
 med högst kvalitet kvar. Med omkonverteringen påslagen räknas ett dokument från
 en annan version av poolen, också i arkivet, inte som befintligt, utom när det
 är granskat för hand eller redan `full`. Var kandidaten hamnar står i
-`placering.py`, fälten och skrivningen i `poolskrivning.py`.
+`placering.py`, fälten och skrivningen i `poolskrivning.py` och utfallen i
+`utfall.py`.
 """
 
 import tempfile
 from dataclasses import replace
 from pathlib import Path
 
-from kommunhandlingar import frontmatter, original, tidsbudget
+from kommunhandlingar import frontmatter, original, tidsbudget, utfall
 from kommunhandlingar.arkivluckor import forlorar, hel, ingen_lucka, levande
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.kandidat import Kandidat
@@ -32,20 +33,21 @@ from kommunhandlingar.poolskrivning import (
     ny_adress,
     skriv,
 )
+from kommunhandlingar.utfall import Utfall
 
 
-def behandla(steg: Steg2, kandidat: Kandidat) -> str:
+def behandla(steg: Steg2, kandidat: Kandidat) -> Utfall:
     if kandidat.kallnyckel in steg.pool.tidigare:
-        return "tidigare källnyckel"
+        return utfall.TIDIGARE
     sokvag = steg.pool.efter_nyckel.get(kandidat.kallnyckel)
     rival = motstandare_for(steg, kandidat) if sokvag is None else None
     dokument = valj_plats(steg, kandidat, sokvag or rival)
     gammal = dokument.befintlig
     luckor = steg.arkiv and not rival and not bara_omkonvertering(steg, kandidat)
     if luckor and ingen_lucka(steg.pool, steg.kommun, kandidat, gammal):
-        return "finns redan; arkivet fyller bara luckor"
+        return utfall.LUCKOR
     if sokvag and samma_kalla(gammal, kandidat) and aktuell(steg, gammal):
-        return "oförändrad"
+        return utfall.OFORANDRAD
     return hamta(steg, dokument)
 
 
@@ -66,7 +68,7 @@ def bara_omkonvertering(steg: Steg2, kandidat: Kandidat) -> bool:
     return bool(gammal) and samma_kalla(gammal, kandidat) and not aktuell(steg, gammal)
 
 
-def hamta(steg: Steg2, dokument: Dokument) -> str:
+def hamta(steg: Steg2, dokument: Dokument) -> Utfall:
     with tempfile.TemporaryDirectory() as katalog:
         pdf = Path(katalog) / "original.pdf"
         dokument = replace(dokument, hamtad=steg.tid())
@@ -78,43 +80,43 @@ def hamta(steg: Steg2, dokument: Dokument) -> str:
         return hamtad_fil(steg, dokument, hamtat)
 
 
-def misslyckad(steg: Steg2, dokument: Dokument, orsak: str) -> str:
+def misslyckad(steg: Steg2, dokument: Dokument, orsak: str) -> Utfall:
     if orort := orort_vid_hamtfel(steg, dokument, orsak):
         return orort
     gammal = dokument.befintlig
     hamtad = gammal["hamtad"] if gammal else dokument.hamtad.isoformat()
     falt = {"hamtad": hamtad, "pipeline": steg.version, "fel": orsak}
     skriv(steg, dokument, falt | {"kvalitet": kvalitet.EJ_HAMTAD}, None)
-    return f"ej hämtad ({orsak})"
+    return utfall.ej_hamtad(orsak)
 
 
-def orort_vid_hamtfel(steg: Steg2, dokument: Dokument, orsak: str) -> str | None:
+def orort_vid_hamtfel(steg: Steg2, dokument: Dokument, orsak: str) -> Utfall | None:
     gammal = dokument.befintlig
     if gammal and hel(gammal):
-        return f"ej hämtad ({orsak}), fullständig .md orörd"
+        return utfall.ej_hamtad(orsak, utfall.ORORD)
     adress = frontmatter.varde_av(dokument.kandidat.kalla_url())
     if gammal and (gammal["fel"], gammal["kalla_url"]) == (orsak, adress):
-        return f"ej hämtad ({orsak}), oförändrad"
+        return utfall.ej_hamtad(orsak, "oförändrad")
     if steg.arkiv and gammal and levande(gammal):
         # Annars skriver den levande källan och arkivet om filen varannan gång.
-        return f"ej hämtad ({orsak}), den levande källans försök orört"
+        return utfall.ej_hamtad(orsak, "den levande källans försök orört")
     return None
 
 
-def hamtad_fil(steg: Steg2, dokument: Dokument, hamtat: original.Original) -> str:
+def hamtad_fil(steg: Steg2, dokument: Dokument, hamtat: original.Original) -> Utfall:
     gammal = dokument.befintlig
     samma_fil = samma_original(gammal, dokument.kandidat, hamtat.sha256)
     if samma_fil and aktuell(steg, gammal):
         return ny_adress(steg, dokument)
     resultat = konverterat(hamtat)
     if resultat.fel == tidsbudget.FEL and samma_fil and har_text(gammal):
-        return f"ej konverterad ({tidsbudget.FEL}), fullständig .md orörd"
+        return utfall.ej_konverterad(tidsbudget.FEL, utfall.ORORD)
     if steg.arkiv and forlorar(gammal, dokument.kandidat, resultat.kvalitet):
         return behall(steg, dokument)
     falt = kvalitetsfalt(steg.version, resultat) | filfalt(dokument, hamtat)
     falt["konverterad"] = steg.tid().isoformat()
     skriv(steg, dokument, falt, resultat.sidor)
-    return utfall(resultat, samma_fil)
+    return konverteringens_utfall(resultat, samma_fil)
 
 
 def konverterat(hamtat: original.Original) -> Resultat:
@@ -123,10 +125,10 @@ def konverterat(hamtat: original.Original) -> Resultat:
     return konvertera(hamtat.pdf)
 
 
-def utfall(resultat: Resultat, samma_fil: bool) -> str:
+def konverteringens_utfall(resultat: Resultat, samma_fil: bool) -> Utfall:
     if resultat.fel == tidsbudget.FEL:
-        return f"ej konverterad ({tidsbudget.FEL})"
-    return "konverterad om" if samma_fil else "konverterad"
+        return utfall.ej_konverterad(tidsbudget.FEL)
+    return utfall.KONVERTERAD_OM if samma_fil else utfall.KONVERTERAD
 
 
 def har_text(falt: dict[str, str]) -> bool:

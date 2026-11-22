@@ -50,7 +50,7 @@ class TestBudgeten(unittest.TestCase):
             lambda: TID,
             "kommunhandlingar 0.1.0",
         )
-        return kor(steg, self.kandidater, mjuk)
+        return kor(steg, self.kandidater, mjuk).utfall
 
     def test_inget_nytt_dokument_startar_efter_den_mjuka_gransen(self):
         utfall = self.kor(TID)
@@ -141,7 +141,7 @@ class TestDokumentetsGrans(unittest.TestCase):
             version,
             omkonvertera=True,
         )
-        return kor(steg, self.kandidater, TID + timedelta(hours=1))
+        return kor(steg, self.kandidater, TID + timedelta(hours=1)).utfall
 
     def falt(self, namn: str) -> dict[str, str]:
         md = self.data / "exempelby/ks/2025/2025-04-22" / f"{namn}.md"

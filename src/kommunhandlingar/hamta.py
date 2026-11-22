@@ -22,6 +22,7 @@ import argparse
 import json
 import sys
 from collections import Counter
+from dataclasses import dataclass, field
 from datetime import UTC, date, datetime
 from importlib.metadata import version
 from pathlib import Path
@@ -35,10 +36,9 @@ from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Kandidat, lista
 from kommunhandlingar.konvertering import ocr
 from kommunhandlingar.tidsbudget import Tidsgrans
+from kommunhandlingar.utfall import AT_SIDAN, VANTAR, Utfall
 
 MER_I_NASTA_DEL = 4
-VANTAR = "väntar på nästa körning"
-AT_SIDAN = "lagd åt sidan vid tidsgränsen"
 
 
 def las_kandidater(fil: Path) -> list[Kandidat]:
@@ -58,28 +58,41 @@ def ordna(steg: Steg2, kandidater: list[Kandidat]) -> list[Kandidat]:
     return sorted(kandidater, key=lambda k: bara_omkonvertering(steg, k))
 
 
-def kor(steg: Steg2, kandidater: list[Kandidat], mjuk: datetime) -> Counter:
-    utfall: Counter = Counter()
+@dataclass
+class Korning:
+    """Utfallen räknas på sin text, som i sammanfattningen."""
+
+    utfall: Counter = field(default_factory=Counter)
+    provade: list[Kandidat] = field(default_factory=list)
+
+
+def kor(steg: Steg2, kandidater: list[Kandidat], mjuk: datetime) -> Korning:
+    korning = Korning()
     for nr, kandidat in enumerate(kandidater):
         try:
             if steg.tid() >= mjuk:
-                utfall[VANTAR] += len(kandidater) - nr
+                korning.utfall[VANTAR.text] += len(kandidater) - nr
                 break
             resultat = behandla(steg, kandidat)
         except Tidsgrans:
-            print(f"lagd åt sidan vid tidsgränsen: {kandidat.url}", flush=True)
-            utfall[AT_SIDAN] += 1
-            utfall[VANTAR] += len(kandidater) - nr - 1
+            notera(korning, AT_SIDAN, kandidat)
+            korning.utfall[VANTAR.text] += len(kandidater) - nr - 1
             break
-        utfall[resultat] += 1
-        if resultat.startswith(("ej hämtad", "ej konverterad")):
-            print(f"{resultat}: {kandidat.url}", flush=True)
-    return utfall
+        notera(korning, resultat, kandidat)
+        korning.provade.append(kandidat)
+    return korning
+
+
+def notera(korning: Korning, utfall: Utfall, kandidat: Kandidat) -> None:
+    """Räknar utfallet och skriver ut det med adressen när det ska loggas."""
+    korning.utfall[utfall.text] += 1
+    if utfall.loggas:
+        print(f"{utfall.text}: {kandidat.url}", flush=True)
 
 
 def steg2(
     steg: Steg2, kandidater: list[Kandidat], mjuk: datetime, logg: Path | None
-) -> Counter:
+) -> Korning:
     """Loggen skrivs också när steg 2 stoppas, så att ingen version tappas."""
     fore = versionslogg.versioner(steg.pool)
     try:
@@ -118,21 +131,18 @@ def main(arg: argparse.Namespace) -> int:
     mjuk = tidsbudget.delens_grans(arg.start, arg.del_, nu())
     if arg.start:
         tidsbudget.starta_hard_grans(arg.start, nu())
-    utfall = steg2(steg, att_prova, mjuk, logg)
-    # Kandidaterna tas i ordning, så de provade är de första.
-    provade.skriv(
-        provfil, att_prova[: len(att_prova) - utfall[VANTAR] - utfall[AT_SIDAN]]
-    )
-    for resultat, antal in sorted(utfall.items()):
-        print(f"{antal} {resultat}")
-    return slutkod(utfall, arg.start, mjuk)
+    korning = steg2(steg, att_prova, mjuk, logg)
+    provade.skriv(provfil, korning.provade)
+    for text, antal in sorted(korning.utfall.items()):
+        print(f"{antal} {text}")
+    return slutkod(korning.utfall, arg.start, mjuk)
 
 
 def slutkod(utfall: Counter, start: datetime | None, mjuk: datetime) -> int:
     """Kod 4 när delen tog slut före budgeten och kandidater väntar (ADR-0088).
     Skriptet som kör delarna, .github/nattkorning/hamta_i_delar.sh, läser den."""
     delen_tog_slut = mjuk < tidsbudget.mjuk_grans(start)
-    return MER_I_NASTA_DEL if utfall[VANTAR] and delen_tog_slut else 0
+    return MER_I_NASTA_DEL if utfall[VANTAR.text] and delen_tog_slut else 0
 
 
 def argument() -> argparse.Namespace:
