@@ -12,5 +12,6 @@ from dataclasses import dataclass
 class Funnen:
     ruta: tuple[float, float, float, float]
     rader: list[list[str]]
-    # Kolumngränserna, som skarven jämför med grannsidornas (K19).
+    # Kolumngränserna, som skarven jämför med grannsidornas (K19); hur
+    # de mäts står där tabellen läses.
     kanter: tuple[float, ...]

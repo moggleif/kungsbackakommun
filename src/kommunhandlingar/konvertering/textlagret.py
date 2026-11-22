@@ -1,4 +1,4 @@
-"""Krav: K5, K15, K19 och K41 i docs/02-KRAV.md, ADR-0016, ADR-0017,
+"""Krav: K5, K6, K15, K19 och K41 i docs/02-KRAV.md, ADR-0016, ADR-0017,
 ADR-0024, ADR-0028, ADR-0033, ADR-0034, ADR-0036, ADR-0038, ADR-0063,
 ADR-0064 och ADR-0103.
 Test: tests/test_konvertering.py, tests/test_skarvar.py, tests/test_delade.py,
@@ -82,14 +82,14 @@ def med_linjer(sida: Page) -> tuple[list[Funnen], list[tuple]]:
     ord_ = sida.extract_words(return_chars=True)
     sakra, fallda = tabeller.sakra(sida, ord_)
     hittade = [Funnen(t.bbox, tabeller.rader(t), tabeller.kanter(t)) for t in sakra]
-    hittade += [d for d in (delad(t, ord_) for t in fallda) if d is not None]
+    hittade += [d for d in (delad_tabell(t, ord_) for t in fallda) if d is not None]
     upptagna = [t.ruta for t in hittade] + [t.bbox for t in fallda]
     avskurna = [t.ruta for t in hittade if avskuren(t.ruta, ord_, upptagna)]
     hela = [t for t in hittade if t.ruta not in avskurna]
     return hela, [t.bbox for t in fallda] + avskurna
 
 
-def delad(fallen: Table, ord_: list[dict]) -> Funnen | None:
+def delad_tabell(fallen: Table, ord_: list[dict]) -> Funnen | None:
     delningen = delade.tabell(fallen, ord_)
     if delningen is None:
         return None

@@ -54,7 +54,7 @@ med textlager får obekräftade tal när något tecken på högkant
 
 Text ritad ovanpå annan upprätt text ger obekräftade tal som förut.
 Reglerna står i `konvertering/ordning.py` och `textsida` i
-`konvertering/las_sida.py`. Raderna för tabeller över flera sidor
+`konvertering/textlagret.py`. Raderna för tabeller över flera sidor
 (ADR-0024) läses nu utan text på högkant, eftersom den skrivs sist på
 sidan; annars skulle varje stämpel i marginalen göra att sidan läses
 annorlunda.
