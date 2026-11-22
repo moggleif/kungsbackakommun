@@ -1167,8 +1167,10 @@ PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
 av de två, och minst ett.
 
 **Skyddet mot upphöjda tecken** (`upphojt.py`) gäller före avgörandet.
-Radens bild delas i sammanhängande mörka delar, och delar som överlappar
-i sidled blir ett tecken, så att pricken i i och ringen i å hör till sin
+Radens bild delas i sammanhängande mörka delar. Delar som når bildens
+över- eller underkant hör till raden ovanför eller nedanför, eftersom
+rutorna går in i varandra, och räknas inte; når alla delar kanten räknas
+raden som upphöjd. Delar som överlappar i sidled blir ett tecken, så att pricken i i och ringen i å hör till sin
 bokstav. Baslinjen är medianen av tecknens underkanter, och radens höjd
 räknas från baslinjen till överkanten hos den tiondel av tecknen som når
 högst. Ett tecken som är högst sju tiondelar av radens höjd och slutar

@@ -53,6 +53,14 @@ class HarUpphojt(unittest.TestCase):
         ]
         self.assertFalse(har_upphojt(rad(*ord_(10), *ord_(100), *trappa)))
 
+    def test_raden_nedanfor_slas_inte_ihop_med_en_fotnotssiffra(self):
+        siffra = (180, 8, BASLINJE - 30, BASLINJE - 12)
+        nedanfor = (178, 12, 62, 70)
+        self.assertTrue(har_upphojt(rad(*ord_(10), *ord_(100), siffra, nedanfor)))
+
+    def test_bara_delar_vid_kanten_gar_inte_att_bedoma(self):
+        self.assertTrue(har_upphojt(rad((10, 14, 0, 30), (40, 14, 40, 70))))
+
     def test_tom_bild(self):
         self.assertFalse(har_upphojt(Image.new("L", (40, 20), 255)))
 

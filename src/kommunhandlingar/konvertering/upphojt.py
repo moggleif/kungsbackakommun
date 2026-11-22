@@ -11,7 +11,10 @@ radens höjd är avståndet från baslinjen till tecknens överkant, räknat på
 den tiondel av tecknen som når högst. Ett tecken är upphöjt när det är
 högst sju tiondelar av radens höjd och slutar minst en fjärdedel av
 radens höjd ovanför baslinjen. Det som är lägre än en femtedel av radens
-höjd, som ett bindestreck, räknas inte. Mörkt är det som är mörkare än
+höjd, som ett bindestreck, räknas inte. Delar som når bildens över- eller
+underkant hör till raden ovanför eller nedanför, eftersom rutorna går in
+i varandra, och räknas inte; en bild där alla delar gör det räknas som
+upphöjd, eftersom den inte går att bedöma. Mörkt är det som är mörkare än
 mitten mellan bildens ljusaste och mörkaste grå.
 
 En rad som RapidOCR har hittat är upphöjd när den står bredvid en rad som
@@ -35,9 +38,11 @@ MORK = re.compile(rb"\x01+")
 
 
 def har_upphojt(bild: Image.Image) -> bool:
-    tecken = sammanfogade(delar(bild.convert("L")))
-    if not tecken:
-        return False
+    alla = delar(bild.convert("L"))
+    inne = [d for d in alla if d[2] > 0 and d[3] < bild.height]
+    if not inne:
+        return bool(alla)
+    tecken = sammanfogade(inne)
     baslinje = median(n for _, n in tecken)
     toppar = sorted(o for o, _ in tecken)
     hojd = baslinje - toppar[int(HOGST * len(toppar))]
