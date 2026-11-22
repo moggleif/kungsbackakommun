@@ -12,7 +12,7 @@ from kommunhandlingar.fel import Konfigurationsfel
 
 class Lankar(HTMLParser):
     """Varje `<a>` med adress i sidans ordning, och de som stängs med sin text.
-    En ny `<a>` utan `</a>` emellan lämnar den förra utan text."""
+    En `<a>` som aldrig stängs finns bara med i `adresser`, inte i `lankar`."""
 
     def __init__(self):
         super().__init__()

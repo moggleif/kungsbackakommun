@@ -11,6 +11,7 @@ HTML = (
     '<a name="topp">utan adress</a>'
     '<a href="/fil.pdf#sida-2">fil.pdf</a>'
     '<a href="">tom</a>'
+    '<a href="#">upp</a>'
     '<a href="https://annan.se/x">x'
 )
 
@@ -23,6 +24,7 @@ class Lankarna(unittest.TestCase):
                 ("https://exempelby.se/politik/mote-1", "Möte ett i mars"),
                 ("https://exempelby.se/fil.pdf#sida-2", "fil.pdf"),
                 (SIDA, "tom"),
+                (SIDA, "upp"),
             ],
         )
 
@@ -32,6 +34,7 @@ class Lankarna(unittest.TestCase):
             [
                 "https://exempelby.se/politik/mote-1",
                 "https://exempelby.se/fil.pdf",
+                SIDA,
                 "https://annan.se/x",
             ],
         )

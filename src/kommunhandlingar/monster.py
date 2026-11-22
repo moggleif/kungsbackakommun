@@ -9,7 +9,7 @@ from kommunhandlingar.fel import IngenKandidat, Konfigurationsfel
 from kommunhandlingar.kandidat import TYPORDNING
 
 DATUMGRUPPER = {"ar", "manad", "dag"}
-# Grupperna i adaptrarnas mönster för filnamnen.
+# Grupperna i Sitevisions och Meetings Plus mönster för filnamnen.
 MONSTERGRUPPER = DATUMGRUPPER | {"typ"}
 
 
