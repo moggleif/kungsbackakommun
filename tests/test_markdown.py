@@ -124,3 +124,12 @@ class TestKodstaket(unittest.TestCase):
     def test_staketet_ar_langre_an_blockets_backticks(self):
         self.assertEqual(markdown.kodstaket("1  2\n3  4"), "```")
         self.assertEqual(markdown.kodstaket("1 ``` 2"), "````")
+
+
+class TestUtanEscapning(unittest.TestCase):
+    def test_escapningen_tas_bort_sa_att_texten_star_som_i_pdfen(self):
+        text = "<!-- * ` $ _x_ & [a](b) \\"
+        self.assertEqual(markdown.utan_escapning(markdown.i_raden(text)), text)
+
+    def test_ett_bakstreck_fore_en_bokstav_star_kvar(self):
+        self.assertEqual(markdown.utan_escapning("C:\\mapp \\*"), "C:\\mapp *")

@@ -15,6 +15,8 @@ from pathlib import Path
 
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.konvertering.markdown import utan_escapning
+from kommunhandlingar.sidmarkor import sidorna
 from kommunhandlingar.webbplats.malkontroll import Kontroll
 
 KOLUMNER = [
@@ -36,8 +38,6 @@ KALLA = re.compile(
     r"(?P<dokument>(?P<organ>[^/]+)/\d{4}/[^/]+/[^/]+\.md)"
     r"#sida-(?P<forsta>\d+)(?:-(?P<sista>\d+))?"
 )
-SIDA = re.compile(r"^<!-- sida (\d+) -->$", re.MULTILINE)
-ESCAPNING = re.compile(r"\\([!-/:-@\[-`{-~])")
 PUNKT = re.compile(r"^[ \t]*[-•*][ \t]*", re.MULTILINE)
 # Mellanrum, mjuka bindestreck, ett ord delat i en tabellcell och
 # trendkolumnens pilar och tankstreck, som hamnar mitt i texten (ADR-0056).
@@ -158,16 +158,14 @@ def sidnummer(traff: re.Match) -> list[str]:
 
 
 def las_sidor(fil: Path) -> dict[str, str]:
-    delar = SIDA.split(fil.read_text(encoding="utf-8"))
-    return {
-        nr: provbar(text) for nr, text in zip(delar[1::2], delar[2::2], strict=True)
-    }
+    sidor = sidorna(fil.read_text(encoding="utf-8"))
+    return {nr: provbar(text) for nr, text in sidor.items()}
 
 
 # Radbrytningarna ur PDF:en, punkterna först i en rad och
 # Markdown-escapningen (ADR-0021) räknas inte.
 def jamforbar(text: str) -> str:
-    return " ".join(PUNKT.sub("", ESCAPNING.sub(r"\1", text)).split())
+    return " ".join(PUNKT.sub("", utan_escapning(text)).split())
 
 
 def provbar(text: str) -> str:

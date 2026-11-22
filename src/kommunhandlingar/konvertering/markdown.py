@@ -3,7 +3,8 @@
 Text ur PDF:en escapas så att den visas som den står när den läses som
 Markdown: CommonMark med GFM:s tabeller och genomstrykning, och GitHubs
 formler med `$`. Bara det som annars ändrar betydelse escapas, så att
-råfilen går att läsa som den är.
+råfilen går att läsa som den är. `utan_escapning` ger texten som den stod i
+PDF:en igen.
 """
 
 import re
@@ -28,6 +29,7 @@ FORSTA_TECKEN = re.compile(r"^(?:[-+](?=[ \t]|$)|#|>|\[(?=[^\]]*\]:))")
 # ett \ först gör den till text, och `*` och `_` escapas så att de inte
 # blir betoning.
 STRECK = re.compile(r"[-=_*|: ]+")
+ESCAPAT = re.compile(r"\\([!-/:-@\[-`{-~])")
 
 
 def rad(text: str) -> str:
@@ -45,6 +47,10 @@ def cell(text: str) -> str:
 
 def i_raden(text: str) -> str:
     return I_RADEN.sub(lambda m: "\\" + m.group(), text)
+
+
+def utan_escapning(text: str) -> str:
+    return ESCAPAT.sub(r"\1", text)
 
 
 def kodstaket(block: str) -> str:
