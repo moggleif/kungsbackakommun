@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.4bb1ea8d1a0a67501a41af58/1789561461
 sha256: f3b9fba4aff32db7c324af746d4e5b646201777fdd8fe2744451d377b26e62b5
 bytes: 16768408
 sidor: 186
-hamtad: 2026-11-18T00:57:47+00:00
-konverterad: 2026-11-18T00:59:06+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T10:05:51+00:00
+konverterad: 2026-11-22T10:07:36+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ej-konverterad, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [3, 7, 8, 43, 44, 54, 57, 79, 80, 88, 95, 96, 97, 111, 115, 117, 118, 137, 138, 141, 142, 147, 167, 168, 176, 178]
-figurer: [3, 4, 5, 6, 9, 14, 15, 16, 26, 33, 35, 36, 38, 39, 40, 44, 45, 48, 49, 50, 51, 52, 54, 90, 95, 96, 97, 101, 112, 115, 116, 118, 121, 122, 127, 129, 131, 133, 137, 138, 139, 140, 143, 146, 147, 148, 149, 156, 158, 159, 160, 161, 162, 180]
+kvalitet_per_sida: [ok, ok, ocr, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [3, 7, 8, 43, 44, 54, 57, 79, 80, 88, 95, 97, 111, 115, 117, 118, 137, 138, 141, 142, 147, 167, 168, 176, 178]
+figurer: [3, 4, 5, 6, 9, 14, 15, 16, 26, 33, 35, 36, 38, 39, 40, 44, 45, 48, 49, 50, 51, 52, 54, 90, 95, 97, 101, 112, 115, 116, 118, 121, 122, 127, 129, 131, 133, 137, 138, 139, 140, 143, 146, 147, 148, 149, 156, 158, 159, 160, 161, 162, 180]
 tolkade: []
 granskad: null
 ---
@@ -97,6 +97,247 @@ Lovisa Eld                        Ida Lennartsson
 Samhällsbyggnadschef              Verksamhetschef plan
 
 <!-- sida 3 -->
+
+7
+
+se 570m?
+
+7
+ffs bo,
+
+AA
+
+hi 15,0m /
+
+€, 930m?
+
+\|
+\+
+
+\|
+
+Kd ffs bio,
+e, 570m?
+Si hi15,0m) AA
+
+. bib>0,
+Valga tg NV — €4900m?
+h,16,5m
+
+[ meter
+
+50
+
+SWEREF 99
+
+Skala 1:500 i A1, skala 1:1000 i A3
+TECKENFÖRKLARING KARTDATA
+
+De
+1200 och höjt
+
+är baserad på
+idsystemet RH 2000
+
+Aktualitetsdatum: 2026-01-30
+
+A
+
+N
+
+2:14 5 — Registernummer, tomtnummer
++4,5 Höjdpunkt
+Liljan Traktnamn, kvartersnamn
+
+Fastighetsgräns
+Gång- och cykelbana
+Höjdkurva 1,0 m
+
+\=
+\-
+
+Höjdkurva 5,0 m
+Vägbana
+
+Bostadshus fasad, resp. tak
+Uthus fasad, resp. tak
+Skärmtak
+
+I
+PLANBESTÄMMELSER
+
+Följande gäller inom områden med nedanstående beteckningar.
+Endast angiven användning och utformning är tillåten. Där
+beteckning saknas gäller bestämmelsen inom hela området.
+
+GRÄNSER
+
+J gm Planområdesgräns.
+
+Användningsgräns.
+
+\- — Egenskapsgräns.
+
+— «+ — Sekundär egenskapsgräns.
+
+ANVÄNDNING AV MARK
+Allmän platsmark
+PARK Park.
+
+Kvartersmark
+B Bostäder.
+
+E, Transformatorstation.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN
+PLATS
+
+Avgränsad via egenskapsgräns och
+användningsgräns
+
+Huvudmannaskap
+
+Huvudmannaskapet är enskilt för den allmänna
+platsen.
+
+Upphävande av strandskydd
+a, Strandskyddet är upphävt.
+
+a
+
+Utformning av allmän plats
+
+damm, Damm för fördröjning och rening av dagvatten ska
+finnas.
+träd, Träd med en stamdiameter på 30 cm eller större,
+
+1,5 meter över mark, får endast fällas om det är
+sjukt eller utgör en säkerhetsrisk.
+Ändrad lovplikt
+
+Marklov krävs även för fällning av träd med en
+stamdiameter större än 30 cm 1,5 meter över mark.
+
+as
+
+EGENSKAPSBESTÄMMELSER FÖR
+KVARTERSMARK
+Avgränsad via egenskapsgräns och
+
+1 användningsgräns
+
+Begränsning av markens utnyttjande
+Marken får inte förses med byggnad.
+
+\- Marken får endast förses med komplementbyggnad
+och andra anläggningar än byggnader.
+
+Marken får endast förses med
+
+h, Högsta nockhöjd är \<angivet> meter över angivet
+nollplan.
+h, Högsta nockhöjd är \<angivet> meter.
+
+Markens anordnande och vegetation
+n, Marken får inte användas för parkering.
+
+Marken får inte användas för parkering, undantaget
+parkering för rörelsehindrade.
+
+Markreservat för allmännyttiga ändamål
+
+na
+
+u, Markreservat för allmännyttiga underjordiska
+ledningar.
+Placering
+på Byggnader ska placeras så att skyfallsvatten kan
+rinna söderut mot parkområdet.
+Takvinkel
+O, Minsta takvinkel för sadeltak är 30 grader.
+Utformning
+f, Endast flerbostadshus och komplementbyggnader.
+f. Endast flerbostadshus, gemensamhetsbyggnader
+och komplementbyggnader.
+f; Endast sadeltak, undantaget takkupor, loftgångar,
+balkonger och förbindelsegångar mellan hus.
+f, Minst 300 kvadratmeter av byggnadsarean ska ha
+en högsta nockhöjd på 15,5 meter över nollplanet.
+f; Minst 530 kvadratmeter av byggnadsarean ska ha
+en högsta nockhöjd på 15,5 meter över nollplanet.
+f; Minst 400 kvadratmeter av byggnadsarean ska ha
+en högsta nockhöjd på 15,5 meter över nollplanet.
+f, Byggnadsvolymer med högsta nockhöjd +15,5
+meter över nollplanet får ha högst två horisontella
+fönsterrader.
+fz Byggnader får vara högst 28 meter långa och ska
+placeras med ett minsta avstånd om 2 meter från
+varandra.
+Utförande
+b, Källare får inte finnas.
+b, Byggnader ska uppföras med
+översvämningsskyddad konstruktion upp till minst
++3,3 m över nollplanet (RH 2000).
+bs Byggnader ska uppföras med
+
+översvämningsskyddad konstruktion upp till minst
++3,0 m över nollplanet (RH 2000).
+
+Utnyttjandegrad
+e, Största byggnadsarea är \<angivet> m?.
+
+EGENSKAPSBESTÄMMELSER FÖR
+KVARTERSMARK
+
+Avgränsad via sekundär egenskapsgräns och
+användningsgräns
+
+Upphävande av strandskydd
+
+Ö, a, Strandskyddet är upphävt.
+gemensamhetsbyggnader, komplementbyggnader
+och andra anläggningar än byggnader. 38
+
+. TE SINA Än "ye GENOMFÖRANDETID
+
+02 Marken får endast förses med miljöhus och andra Genomförandetiden är 5 år från den dag detaljplanen får laga
+anläggningar än byggnader. kraft 9 IP 9
+
+Höjd på byggnadsverk
+ORIENTERINGSKARTA
+
+Kullavik
+
+Detaljplan för bostäder inom
+
+Antagandehandling
+
+;
+
+Kungsbacka — Hjälm
+
+Fräs
+
+Ae Ida Lennartsson
+
+Frilesås.
+
+\- = Beslutsdatum | — Instans
+
+Skörvalla 1:116 fä -
+QAR Samråd BN 8 135
+i Särö 2025-08-21
+Kungsbacka kommun Kungsbacka | Sg96 ga.1 | BNdelbeslut
+Upprättad 2026-09-08 Antagande
+
+Laga kraft
+
+Diarienummer Plankostnads-
+
+Emma Johansson 2023-00211 avtal
+Verksamhetschef Plan Planarkitekt Ja
+Detaljplanen är upprättad enligt PBL.
+PLAN KARTA 2010:900 med standardförfarande
 
 <!-- sida 4 -->
 
@@ -4131,6 +4372,178 @@ Samhällsbyggnadschef              Verksamhetschef plan
 
 <!-- sida 95 -->
 
+/
+
+2
+
+e4 250m?
+| d;1400m?
+
+fr —
+IN]
+VALLDA 7:178 FE ao h:7,2m
+EN , h
+
+OJ
+
+-425- 6373430
+
+oÅes
+
+e4 300m?
+va.A3500m?
+
+\- Sn
+Och. Öm |
+FN
+
+ON I
+h> 7,0m
+
+I fö
+AI
+1 2S
+VALLDA 19:22)
+
+\| -
+
+—
+
+[0] meter
+
+Skala 1:1000 i A3, 1:500 i A1
+
+Detaljplanen är baserad på koordinatsystemet SWEREF 99
+1200 och höjdsystemet RH 2000
+
+TECKENFÖRKLARING KARTDATA
+
+Aktualitetsdatum: 2025-11-04
+
+2:14 5 — Registernummer, tomtnummer
+
++4,5 Höjdpunkt
+
+Liljan Traktnamn, kvartersmark
+Fastighetsgränser
+Gång- och cykelbana
+Höjdkurva 1,0 m
+
+Rd BA
+EE
+
+Höjdkurva 5,0 m
+
+Vägbana
+
+Bostadshus fasad, resp. tak
+Uthus, resp. tak
+
+Skärmtak
+
+PLANBESTÄMMELSER
+
+Följande gäller inom områden med nedanstående
+beteckningar. Endast angiven användning och
+utformning är tillåten. Där beteckning saknas gäller
+bestämmelsen inom hela området.
+
+GRÄNSER
+
+«» Planområdesgräns.
+Se —- Egenskapsgräns.
+
+\+ or +--+ Sammanfallande sekundär
+och egenskapsgräns.
+
+ANVÄNDNING AV MARK
+Kvartersmark
+B | Bostäder.
+
+EGENSKAPSBESTÄMMELSER FÖR ALL
+KVARTERSMARK
+Placering
+
+Huvudbyggnad ska placeras minst 4 meter från
+fastighetsgräns.
+
+Komplementbyggnad ska placeras minst 2 meter från
+fastighetsgräns.
+
+Utformning
+Endast friliggande enbostadshus.
+
+EGENSKAPSBESTÄMMELSER FÖR
+KVARTERSMARK
+
+Avgränsad via egenskapsgräns och
+användningsgräns
+
+Begränsning av markens utnyttjande
+
+ERE Marken får inte förses med byggnad.
+
+Höjd på byggnadsverk
+h, Högsta nockhöjd på huvudbyggnad är
+\<angivet> meter .
+h, Högsta nockhöjd på
+komplementbyggnad är \<angivet>
+meter.
+
+Markens anordnande och vegetation
+
+Nn, Markens höjd får inte ändras.
+n, Träd med en stamdiameter större än
+30 cm 1,5 meter över mark får endast
+
+tas bort om de är sjuka eller utgör en
+säkerhetsrisk.
+
+Markreservat för allmännyttiga ändamål
+
+u, Markreservat för allmännyttiga
+underjordiska ledningar.
+Takvinkel
+[ON Minsta takvinkel är \<angivet> grader.
+Utnyttjandegrad
+e, Största byggnadsarea är \<angivet>
+m?.
+
+EGENSKAPSBESTÄMMELSER FÖR
+KVARTERSMARK
+Avgränsad via sekundär egenskapsgräns
+och användningsgräns
+Fastighetsstorlek
+d, Minsta fastighetsstorlek är \<angivet>
+m?.
+
+GENOMFÖRANDETID
+Genomförandetiden är 5 år från den dag detaljplanen
+får laga kraft.
+
+Detaljplan för bostäder inom
+
+Antagandehandling
+
+Vallda 17:17 och |A; Beslutsdatum Instans
+Kungsbacka — Hjälm Vallda 17:223 ' Samrådbeslut eng 119
+. 2025-05-16
+hörde)
+i Vallda Köngsbacks -
+ee . . . Granskningsbeslut Tjm
+Fjärås 2025-11-20
+t Upprättad 2026-09-08 Antagandebeslut BN 5 xxx
+JOCKK-AKKK
+Laga kraft
+JOCKH-AKKK
+Ida Lennartsson Stina Wikström Diarienummer af ostnads-
+& Verksamhetschef plan Planarkitekt BN 2024-00105 Ja
+Frillesås
+Detaljpl äl ättad enligt
+PLANKARTA PBL 2010:000 med nn | KBXXXX
+
+2148850
+
 <!-- sida 96 -->
 
 <!-- sida 97 -->
@@ -4921,6 +5334,78 @@ Bilaga
 Yttrande från Statens geotekniska institut, 4671-2025-4.1
 
 <!-- sida 115 -->
+
+TECKENFÖRKLARING
+
+—+—— Kommungräns
+SA — Trakt-, kvartersgräns
+———— Fastighetsgräns
+s---- Föreslagen fastighetsgräns
+o Gränspunkt
+APELSINEN Traktnamn, kvartersnamn
+2:14 5 Register ,tc
+Bostadshus fasad, resp tak
+[a | Uthus fasad, resp tak
+Skärmtak
+Transformator fasad, resp tak
+Altan
++48 Höjdpunkt
+Höjdkurva 1 m
+Höjdkurva 5 m
+Järnväg
+Perrong
+
+sor Vägkant, matarväg
+0-0 - Vägkant, större väg
+ee Vägkant, mindre väg
+
+\- Gång- / Cykelväg, infart, stig
+Vägtunnel
+Vägillustrationslinje
+Storgatan Gatunamn
+5 Adressnummer
+Trappa
+— Strandlinje, åkant
+ss] Dike, mindre bäck >0,8 m
+,—— Dike, mindre bäck <0,8 m
+vy Vatten
+
+Kaj
+SS ÄA Mur
+Ser Räcke
+0 Släntfot
+FA Släntkrön
+Stödmur
+Staket
+Häck
+Xx Belysningsmast
+Xx Belysningsstolpe
+Lå Elstolpe, trafiksignal
+g Mast
+—EBR HÄ Luftledning, högspänning
+Ägoslagsgräns
+
+FRAMSTÄLLNING
+
+Ajourföring och kontroll av kartan innanför aktuellt planområde
+är genomförd av Kartavdelningen, Kungsbacka kommun.
+
+'Grundkartan är upprättad genom utdrag ur primärkartverk
+tillhörande Kungsbacka kommun och kompletterad i fält
+med terrestra mätningar.
+
+Rättigheter redovisas inom ljp området.
+Aktualitetsdatum kartdata 2025-10-24
+A i um fastigh 2025-11-04
+Grundkarta till detaljplan |Sranskningshandiing
+Vallda 1:17 m fl Ajourföringsdatum
+i Vallda 2025-1024
+
+Kungsbacka | syvererg9 12 00
+Upprättad 2025-11-04 Reviderad RH 2000
+Malin Lundgren Patrik Stenberg Dlaronr
+
+BN 2024-00105
 
 <!-- sida 116 -->
 
@@ -5791,7 +6276,149 @@ Samhällsbyggnadschef              Verksamhetschef plan
 
 <!-- sida 137 -->
 
+a
+
+Skala 1:1000 i A1, skala 1:2000 i A3
+
+o meter 100. Detaljplanen är baserad på koordinatsystemet SWEREF 99
+
+1200 och höjdsystemet RH 2000
+
+TECKENFÖRKLARING KARTDATA == Aktualitetsdatum: 2026-09-08
+
+2:14 5 — Registernummer, tomtnummer
++4,5 Höjdpunkt
+Liljan Traktnamn, kvartersnamn
+Fastighetsgräns
+Gång- och cykelbana
+Höjdkurva 1,0 m
+
+UM
+
+Höjdkurva 5,0 m
+Vägbana
+
+Bostadshus fasad, resp. tak
+Uthus fasad, resp. tak
+
+Skärmtak
+
+PLANBESTÄMMELSER
+
+Följande gäller inom områden med nedanstående beteckningar. Endast
+angiven användning och utformning är tillåten. Där beteckning saknas
+gäller bestämmelsen inom hela området.
+
+GRÄNSER
+
+— + » Planområdesgräns.
+
+Användningsgräns.
+ee Egenskapsgräns.
+—+—+— Sekundär egenskapsgräns.
+
++. —+--—+-. Sammanfallande sekundär och egenskapsgräns.
+
+ANVÄNDNING AV MARK
+Allmän platsmark
+
+Kvartersmark
+En Transformatorstation.
+ER Detaljhandel utom handel med livsmedel och skrymmande
+varor.
+P Parkering.
+
+EGENSKAPSBESTÄMMELSER FÖR ALL
+KVARTERSMARK
+Skydd mot störningar
+
+Skyltanläggningar och ljusanordningar, som kan inverka störande på
+biltrafik får ej uppföras.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+Avgränsad via egenskapsgräns och användningsgräns
+Begränsning av markens utnyttjande
+| i i . | . | « Marken får inte förses med byggnad.
+Höjd på byggnadsverk
+h, Högsta nockhöjd är 13,0 meter.
+
+h, Högsta nockhöjd är 23,5 meter. Trapphus, hisschakt och
+fasadelement får överstiga nockhöjden. .
+Markens anordnande och vegetation
+Nn, Marken får inte användas för upplag.
+
+Placering
+Pa Byggnad ska placeras minst 6,5 meter från allmän plats gata.
+Pe Plank ska placeras minst 1 meter från allmän plats gata.
+
+Stängsel, utfart och annan utgång
+pb O- - -O- g Utfartsförbud.
+
+Utformning
+
+f, Minst 5026 av fasad mot infart ska vara transparent.
+
+f, Fasader ska utformas för att bryta ner byggnadens volym,
+såsom indrag, avsatser, materialskiftningar eller variation i
+kulör.
+
+f; Plank ska utformas med variation i höjd och längdriktning,
+exempelvis genom indrag, höjdskillnader eller sektionering.
+
+f, Minst 15960 av övre våningar mot Kungsparksvägen ska ha en
+transperant fasad i form av fönster.
+
+f; Bottenvåningens fasad ska ges ett annat material eller en
+
+annan materialverkan än övriga våningar för att tydliggöra
+bottenvåningens avläsbarhet.
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+Avgränsad via sekundär egenskapsgräns och
+användningsgräns
+Fastighetsindelningsbestämmelser
+
+a, Servitut avseende rätt till in- och utfart till förmån för Varla
+2:412 som belastar Varla 2:198.
+a Servitut avseende rätt till väg till förmån för Varla 2:438, Varla
+
+2:439 och Varla 2:440 som belastar Varla 2:412.
+Markens anordnande och vegetation
+na Parkering ska anordnas.
+
+Markreservat för gemensamhetsanläggningar
+gJ: Markreservat för gemensamhetsanläggning.
+
+GENOMFÖRANDETID
+
+Genomförandetiden är 5 år för allmän plats från den dag detaljplanen får
+laga kraft. Genomförandetiden är 10 år för kvartersmark från den dag
+detaljplanen får laga kraft.
+
+Detaljplan för handel inom Samrådshandling
+Beslutsdatum Instans
+Varla 2:412 och Varla Samrad
+2:198 2026-10-22 |PN §20x
+i Kungsbacka Kungsbacka | omRI TBN \$ xxx
+Upprättad 2026-09-08 AR [BN xxx
+Laga kraft
+DOCCK-AKH-HK
+Ida Lennartsson Björn Vikström Diarenummer val me
+Verksamhetschef Plan Planarkitekt 2022-00029 | Ja
+PLANKARTA 010285 nad älooradnse | KBXXX
+Vv AN
+
+154300
+
+Detaljplanen är upprättad enligt PBL
+
 <!-- sida 138 -->
+
+HFO Expansion 2026-09-08
+2\. Föreslagen ny fastighetsgräns 9. Planteringar, plank och servicegård
+3\. Befintlig placering av busshållplats. Flyttas till Kungsparksvägen. 10. Projektgräns
+5\. Potentiell framtida utfart till Arendalsleden
+6\. Område för servitut för gemensam parkering (m) SKALA 1:1000 QA3
+7\. Utkragande skärmtak [| I |
 
 <!-- sida 139 -->
 
