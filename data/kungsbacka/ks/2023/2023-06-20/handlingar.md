@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20241125184016id_/https://kungsbacka.se/d
 sha256: a2a89430caa8a95b71194deaed53f24a2b2b4e1d1ed39d5ed597d9b59edfc980
 bytes: 36849435
 sidor: 396
-hamtad: 2026-11-17T11:35:12+00:00
-konverterad: 2026-11-17T11:38:12+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T00:26:48+00:00
+konverterad: 2026-11-22T00:33:33+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ej-konverterad, ocr, ej-konverterad, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [19, 25, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 83, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 154, 155, 156, 184, 215, 227, 228, 229, 230, 231, 232, 233, 296, 313, 319, 327]
-figurer: [14, 25, 42, 71, 77, 78, 80, 83, 87, 89, 96, 97, 99, 100, 102, 103, 105, 106, 107, 108, 111, 113, 115, 117, 118, 123, 124, 125, 134, 136, 139, 165, 175, 176, 178, 183, 189, 190, 191, 192, 196, 197, 198, 199, 200, 201, 203, 207, 215, 224, 225, 230, 231, 232, 233, 304, 305, 307, 308, 309, 310, 312, 313, 314, 315, 318, 319, 320, 321, 322, 323, 324, 325, 327, 328, 329, 330, 332, 334, 335, 336, 337, 346, 348, 349, 350, 353, 355, 357, 358, 361, 362, 363, 364, 365, 368, 369, 370, 371, 372, 379]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [19, 25, 48, 49, 50, 51, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 154, 155, 156, 184, 215, 227, 228, 229, 230, 231, 232, 233, 296, 313, 319, 327]
+figurer: [14, 25, 42, 70, 71, 77, 78, 80, 87, 89, 96, 97, 99, 100, 102, 103, 105, 106, 107, 108, 111, 113, 115, 117, 118, 123, 124, 125, 134, 136, 139, 147, 148, 149, 156, 165, 175, 176, 178, 183, 189, 190, 191, 192, 196, 197, 198, 199, 200, 201, 203, 207, 215, 224, 225, 227, 228, 229, 230, 231, 232, 233, 304, 305, 307, 308, 309, 310, 312, 313, 314, 315, 318, 319, 320, 321, 322, 323, 324, 325, 327, 328, 329, 330, 332, 334, 335, 336, 337, 346, 348, 349, 350, 353, 355, 357, 358, 361, 362, 363, 364, 365, 368, 369, 370, 371, 372, 379]
 tolkade: []
 granskad: null
 ---
@@ -504,37 +504,37 @@ Sannolikhet
 
 [Tabell 19-1](handlingar.tabeller/19-1.csv)
 
-| Kategorier<br>Personal | Sanno- Till<br>Risker Konsekvens<br>likhet plan<br>1 Kommunövergripande risk: 3. Vanligt 3. Kännbar (uppfattas som Ja<br>Brister vid referenstagning besvärande för berörda<br>intressenter och kommunen) |
-| --- | --- |
-| Ekonomi | 2 Debiteringsrutiner 2. Mindre 3. Kännbar (uppfattas som Ja<br>vanligt besvärande för berörda<br>intressenter och kommunen) |
-| Verksam-<br>het | 3 Kommunövergripande risk - 2. Mindre 4. Allvarlig/stor inverkan (så stor Ja<br>Risk för korruption vanligt att den inte får inträffa) |
+| Kategorier |  | Risker | Sanno-<br>likhet | Konsekvens | Till<br>plan |
+| --- | --- | --- | --- | --- | --- |
+| Personal |  | 1 Kommunövergripande risk:<br>Brister vid referenstagning | 3. Vanligt | 3. Kännbar (uppfattas som<br>besvärande för berörda<br>intressenter och kommunen) | Ja |
+| Ekonomi |  | 2 Debiteringsrutiner | 2. Mindre<br>vanligt | 3. Kännbar (uppfattas som<br>besvärande för berörda<br>intressenter och kommunen) | Ja |
+| Verksam-<br>het |  | 3 Kommunövergripande risk -<br>Risk för korruption | 2. Mindre<br>vanligt | 4. Allvarlig/stor inverkan (så stor<br>att den inte får inträffa) | Ja |
 
 <!-- sida 20 -->
 
 Kommunstyrelsen                                  Kungsbacka kommun
 Intern kontrollplan 2024
 
-Sanno-                       Till
-Kategorier  Risker                        Konsekvens
-likhet                       plan
-4 Kommunövergripande risk: 3. Vanligt 3. Kännbar (uppfattas som Ja
-Förvaltningarnas arbete med   besvärande för berörda
-att utveckla krislednings-    intressenter och kommunen)
-organisationen i egen
-verksamhet
 5.2 Risker - Ej till plan
 
 9
 
 [Tabell 20-1](handlingar.tabeller/20-1.csv)
 
-| Kategorier<br>Personal | Sanno- Anledning till att<br>Risker Konsekvens<br>likhet risk ej tas till plan<br>Kommunövergripande risk: Risken är under<br>3. Kännbar<br>Resurs- och kompetensbrist uppsegling och<br>(uppfattas som<br>bevakas i<br>2. Mindre besvärande för<br>samverkan med<br>vanligt berörda<br>SKR och i<br>intressenter och<br>ordinarie<br>kommunen)<br>avtalsrörelse. |
-| --- | --- |
-|  | Kommunövergripande risk: 3. Kännbar Risken tas<br>Övertidsersättning betalas ut (uppfattas som omhand som en<br>på fel grund 2. Mindre besvärande för del av ordinarie<br>vanligt berörda uppföljnings- och<br>intressenter och förbättringsarbete.<br>kommunen) |
-| Ekonomi | Kommunövergripande risk: 3. Kännbar Risken tas<br>Grundläggande redovisning (uppfattas som omhand genom<br>kvalitetsbrister 2. Mindre besvärande för riktad information<br>vanligt berörda och utbildnings.<br>intressenter och<br>kommunen) |
-| Informatio<br>nssäkerhe<br>t,<br>administra<br>tion,<br>inköp... | Kommunövergripande risk: 3. Kännbar Risken tas<br>Inköp (granskning begränsas (uppfattas som omhand genom<br>till belopp över 100.000:-) 2. Mindre besvärande för riktad information<br>vanligt berörda och utbildning.<br>intressenter och<br>kommunen) |
-|  | Kommunövergripande risk: 3. Kännbar Risken tas<br>informationssäkerhet; skydd (uppfattas som omhand som en<br>av information mot obehörig 2. Mindre besvärande för del av ordinarie<br>tillgång vanligt berörda uppföljnings och<br>intressenter och förbättringsarbete<br>kommunen) |
-| Verksamh<br>et | Bostadsförsörjningsprogram 3. Kännbar Risken tas om<br>mets målsättning kan ej nås (uppfattas som hand som en del<br>2. Mindre besvärande för av ordinarie<br>vanligt berörda uppföljnings och<br>intressenter och förbättringsarbete.<br>kommunen) |
+| Kategorier |  | Risker | Sanno-<br>likhet | Konsekvens | Till<br>plan |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 4 Kommunövergripande risk:<br>Förvaltningarnas arbete med<br>att utveckla krislednings-<br>organisationen i egen<br>verksamhet | 3. Vanligt | 3. Kännbar (uppfattas som<br>besvärande för berörda<br>intressenter och kommunen) | Ja |
+
+[Tabell 20-2](handlingar.tabeller/20-2.csv)
+
+| Kategorier |  | Risker | Sanno-<br>likhet | Konsekvens | Anledning till att<br>risk ej tas till plan |
+| --- | --- | --- | --- | --- | --- |
+| Personal |  | Kommunövergripande risk:<br>Resurs- och kompetensbrist | 2. Mindre<br>vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Risken är under<br>uppsegling och<br>bevakas i<br>samverkan med<br>SKR och i<br>ordinarie<br>avtalsrörelse. |
+|  |  | Kommunövergripande risk:<br>Övertidsersättning betalas ut<br>på fel grund | 2. Mindre<br>vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Risken tas<br>omhand som en<br>del av ordinarie<br>uppföljnings- och<br>förbättringsarbete. |
+| Ekonomi |  | Kommunövergripande risk:<br>Grundläggande redovisning<br>kvalitetsbrister | 2. Mindre<br>vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Risken tas<br>omhand genom<br>riktad information<br>och utbildnings. |
+| Informatio<br>nssäkerhe<br>t,<br>administra<br>tion,<br>inköp... |  | Kommunövergripande risk:<br>Inköp (granskning begränsas<br>till belopp över 100.000:-) | 2. Mindre<br>vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Risken tas<br>omhand genom<br>riktad information<br>och utbildning. |
+|  |  | Kommunövergripande risk:<br>informationssäkerhet; skydd<br>av information mot obehörig<br>tillgång | 2. Mindre<br>vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Risken tas<br>omhand som en<br>del av ordinarie<br>uppföljnings och<br>förbättringsarbete |
+| Verksamh<br>et |  | Bostadsförsörjningsprogram<br>mets målsättning kan ej nås | 2. Mindre<br>vanligt | 3. Kännbar<br>(uppfattas som<br>besvärande för<br>berörda<br>intressenter och<br>kommunen) | Risken tas om<br>hand som en del<br>av ordinarie<br>uppföljnings och<br>förbättringsarbete. |
 
 <!-- sida 21 -->
 
@@ -6299,6 +6299,8 @@ Kommundirektör
 
 <!-- sida 156 -->
 
+Kartbilaga
+
 <!-- sida 157 -->
 
 KUNGSBACKA KOMMUN                  SAMMANTRÄDESPROTOKOLL           1 (1)
@@ -8433,6 +8435,15 @@ Båratorp 2007-10-18
 
 <!-- sida 228 -->
 
+ÖR Södra Hamm
+b& Södra Hammerö 1
+NN Planering av bostäder med inslag av företag och service Bostäder
+Företag och service
+Skola, förskola, äldreboende eller servicehus
+Idrottsomrade
+= Järnväg. inga byggnader inom 30 meter
+— —P Hede ringled. sträckningen utreds
+
 <!-- sida 229 -->
 
 Ansökan om planbesked för fastigheten Båratorp 2:1 och
@@ -8473,6 +8484,22 @@ POR å
 Ort och datum
 
 <!-- sida 230 -->
+
+Byggnads område
+Fastighetsgräns
+ickvä Stickväg -
+Yta
+Yta REV | ANT ÄNDRINGEN AVSER
+BÅRATORP
+FMTAB
+HERMANSBY 210
+UPPDRAG NR HANDLÄGGARE
+REF.NR
+DATUM
+K TEM
+PLAT: RE ELLER LIKNANDE
+VÄG, OMRÅDE
+Skala1:1500 N
 
 <!-- sida 231 -->
 
@@ -12452,20 +12479,17 @@ nedgången under pandemin. Under pandemin infördes restriktioner om att undvika
 kollektivtrafiken till fördel för andra färdmedel vilket bedöms vara orsak till den minskade
 kundnöjdheten.
 
-Nyckeltal         2019  2020   2021   2022   2023  2024   2030
-utfall utfall utfall utfall mål    mål   mål
-Marknadsandel (%) 18,1   12,4  12,4   15,8   16,9   18,1  30,0
-Antal resor (milj) 20,0  12,1  11,2   18,1   18,5   20,0  39,0
-Nöjdhet (%)
+[Tabell 318-1](handlingar.tabeller/318-1.csv)
 
-```osaker-tabell
-   • Kund         59,6   61,5  55,0   59,5   60,0   62,7  80,0
-   • Allmänhet    51,5   53,5  48,9   51,0   53,3   55,6  70,0
-   • Senaste resan 80,5  78,8  78,2   79,2   81,3   82,9  90,0
-Fossilfria bränslen* 99,6 99,8  100   100    100    100   100
-```
-
-\*exklusive Krösatåg
+| Nyckeltal | 2019<br>utfall | 2020<br>utfall | 2021<br>utfall | 2022<br>utfall | 2023<br>mål | 2024<br>mål | 2030<br>mål |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Marknadsandel (%) | 18,1 | 12,4 | 12,4 | 15,8 | 16,9 | 18,1 | 30,0 |
+| Antal resor (milj) | 20,0 | 12,1 | 11,2 | 18,1 | 18,5 | 20,0 | 39,0 |
+| Nöjdhet (%) |  |  |  |  |  |  |  |
+| • Kund | 59,6 | 61,5 | 55,0 | 59,5 | 60,0 | 62,7 | 80,0 |
+| • Allmänhet | 51,5 | 53,5 | 48,9 | 51,0 | 53,3 | 55,6 | 70,0 |
+| • Senaste resan | 80,5 | 78,8 | 78,2 | 79,2 | 81,3 | 82,9 | 90,0 |
+| Fossilfria bränslen\*<br>\*exklusive Krösatåg | 99,6 | 99,8 | 100 | 100 | 100 | 100 | 100 |
 
 <!-- sida 319 -->
 
@@ -13122,14 +13146,17 @@ antalet uppgår till 14 totalt i Halland. Dessutom har 18 väderskydd bytts ut u
 Tillgänglighetsanpassade eller nybyggda hållplatser under 2022
 
 Falkenberg Halmstad Hylte Kungsbacka Laholm Varberg Totalt
+Statligt vägnät 0     1     1      0       0     0     2
 
-```osaker-tabell
-   Statligt vägnät 0     1     1      0       0     0     2
+Kommunalt/enskilt vägnät
 
-Kommunalt/enskilt vägnät 3 4   0      2       1     2     12
+Summa/kommun
 
-  Summa/kommun   3       5     1      2       1     2     14
-```
+[Tabell 334-1](handlingar.tabeller/334-1.csv)
+
+| 3 | 4 | 0 | 2 | 1 | 2 | 12 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 3 | 5 | 1 | 2 | 1 | 2 | 14 |
 
 <!-- sida 335 -->
 
@@ -13350,26 +13377,19 @@ budget avseende verksamhetsåret 2024 beslutas av Regionfullmäktige i juni. Uti
 budgetram, tillsammans med omhändertagande av kommunernas synpunkter, fastställs därefter
 Kollektivtrafikplanen av Driftnämnd Kollektivtrafik.
 
-Objekt           Beskrivning                       Ekonomi
-(mkr)
-1   Öresundståg      Utökade öppettider kvälls- och helgtrafik
-2   Hallandståg      Utökning med tre avgångar per vardag och
-riktning Varberg – Göteborg
-3   Västtåg          Utökning med en avgång per riktning Varberg –
-Viskadalsbanan   Borås, söndag – fredag
-4   Stadsbusstrafik  Utökade öppettider och förstärkt utbud i
-kollektivtrafikstråk
+[Tabell 340-1](handlingar.tabeller/340-1.csv)
 
-5   Regionbusstrafik Utökade öppettider och förstärkt utbud i
-kollektivtrafikstråk
-6   Stadsbusstrafik  Trafikering av Björkris och Kungsbacka badhus
-Kungsbacka
-7   Stadsbusstrafik  Förändrad linjedragning Träslövsläge
-Varberg
-8   Regionbusstrafik Utökning linje 509, avkortad linjesträckning linje
-Falkenberg       557
-9   Stadsbusstrafik  Justerad linjesträckning linje 2
-Halmstad
+|  | Objekt | Beskrivning | Ekonomi<br>(mkr) |
+| --- | --- | --- | --- |
+| 1 Öresundståg Utökade öppettider kvälls- och helgtrafik |  |  |  |
+| 2 Hallandståg Utökning med tre avgångar per vardag och<br>riktning Varberg – Göteborg |  |  |  |
+| 3 Västtåg Utökning med en avgång per riktning Varberg –<br>Viskadalsbanan Borås, söndag – fredag |  |  |  |
+| 4 Stadsbusstrafik Utökade öppettider och förstärkt utbud i<br>kollektivtrafikstråk |  |  |  |
+| 5 Regionbusstrafik Utökade öppettider och förstärkt utbud i<br>kollektivtrafikstråk |  |  |  |
+| 6 Stadsbusstrafik Trafikering av Björkris och Kungsbacka badhus<br>Kungsbacka |  |  |  |
+| 7 Stadsbusstrafik Förändrad linjedragning Träslövsläge<br>Varberg |  |  |  |
+| 8 Regionbusstrafik Utökning linje 509, avkortad linjesträckning linje<br>Falkenberg 557 |  |  |  |
+| 9 Stadsbusstrafik Justerad linjesträckning linje 2<br>Halmstad |  |  |  |
 
 <!-- sida 341 -->
 
@@ -14034,14 +14054,18 @@ till denna kollektivtrafikplan.
 Återstående antal hållplatslägen att bygga om till 2025 (inventerat senhösten 2022)
 Falkenberg Halmstad Hylte Kungsbacka Laholm Varberg Totalt
 
-```osaker-tabell
-   Statligt vägnät 23   16     5      44      3     17    108
-Kommunalt/enskilt vägnät 35 107 2     62     14     58    278
+Statligt vägnät 23   16     5      44      3     17    108
+Kommunalt/enskilt vägnät
 
-  Summa/kommun   58     123    7     106     17     75    386
-```
+Summa/kommun
 
 Hållplats Vrångagatan, Varbergs kommun
+
+[Tabell 358-1](handlingar.tabeller/358-1.csv)
+
+| 35 | 107 | 2 | 62 | 14 | 58 | 278 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 58 | 123 | 7 | 106 | 17 | 75 | 386 |
 
 <!-- sida 359 -->
 
@@ -14098,52 +14122,33 @@ SIDA | 57
 
 BEFINTLIGA TRAFIKAVTAL
 
-Avtal   Trafik VERKSAMHET     AVTALS AVTALSTID AVTALSPART
-ÅR
-NS-1708 Buss  Skoltrafik        8   2018-08 > Göteborgs Buss AB
-2026-06
-Trafik 2018 Buss Allmän kollektivtrafik 10 2019-04 > Nobina AB
-2028-06
-Trafik 2019 Buss Allmän kollektivtrafik 10 2019-06 > Karl Erik Elofsson Buss AB
-2029-06
-Trafik 2019 Buss Allmän kollektivtrafik 10 2020-06 > Karl Erik Elofsson Buss AB
-2029-06
-Trafik 2020 Buss Allmän kollektivtrafik 10 2020-06 > Nobina AB
-2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Karl Erik Elofsson Buss AB
-Skoltrafik            2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Veddige Buss & Transport AB
-Skoltrafik            2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Flexbuss Sverige AB
-Skoltrafik            2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Sambus AB
-Skoltrafik            2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Buss i Väst AB
-Skoltrafik            2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > LK Buss AB
-Skoltrafik            2030-06
-Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Västbo Taxi AB
-Skoltrafik            2030-06
-NS2207  Person Serviceresor     1   2022-07 > Göteborgs Buss AB
-bil                         2023-06
-NS2207  Person Serviceresor     1   2022-07 > Kungsbacka Taxi- och
-bil                         2023-06  Handikapptransport AB
-NS2207  Person Serviceresor     1   2022-07 > Varbergs Taxi AB
-bil                         2023-06
-NS2207  Person Serviceresor     1   2022-07 > Bud o Taxi Stjärnraketen AB
-bil                         2023-06
-NS2207  Person Serviceresor     1   2022-07 > Cabonline Region Syd AB
-bil                         2023-06
-NS2207  Person Serviceresor     1   2022-07 > Österblad Carlsson Taxi AB
-bil                         2023-06
-NS2207  Person Serviceresor     1   2022-07 > Sennans Taxi AB
-bil                         2023-06
-Västtåg Tåg   Allmän kollektivtrafik 8 2015-12 > SJ Götalandståg AB
-2026-12
-Pågatåg Tåg   Allmän kollektivtrafik 8 2018-12 > Arriva Tåg AB
-2026-12
-Öresundståg Tåg Allmän kollektivtrafik 8 2022-12 > Transdev AB
-Krösatåg Tåg  Allmän kollektivtrafik 12 2021-12 > SJ Krösatåg AB
+[Tabell 360-1](handlingar.tabeller/360-1.csv)
+
+| Avtal | Trafik | VERKSAMHET | AVTALS<br>ÅR | AVTALSTID | AVTALSPART |
+| --- | --- | --- | --- | --- | --- |
+| NS-1708 Buss Skoltrafik 8 2018-08 > Göteborgs Buss AB<br>2026-06 |  |  |  |  |  |
+| Trafik 2018 Buss Allmän kollektivtrafik 10 2019-04 > Nobina AB<br>2028-06 |  |  |  |  |  |
+| Trafik 2019 Buss Allmän kollektivtrafik 10 2019-06 > Karl Erik Elofsson Buss AB<br>2029-06 |  |  |  |  |  |
+| Trafik 2019 Buss Allmän kollektivtrafik 10 2020-06 > Karl Erik Elofsson Buss AB<br>2029-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik 10 2020-06 > Nobina AB<br>2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Karl Erik Elofsson Buss AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Veddige Buss & Transport AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Flexbuss Sverige AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Sambus AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Buss i Väst AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > LK Buss AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| Trafik 2020 Buss Allmän kollektivtrafik och 10 2020-06 > Västbo Taxi AB<br>Skoltrafik 2030-06 |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Göteborgs Buss AB<br>bil 2023-06 |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Kungsbacka Taxi- och<br>bil 2023-06 Handikapptransport AB |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Varbergs Taxi AB<br>bil 2023-06 |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Bud o Taxi Stjärnraketen AB<br>bil 2023-06 |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Cabonline Region Syd AB<br>bil 2023-06 |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Österblad Carlsson Taxi AB<br>bil 2023-06 |  |  |  |  |  |
+| NS2207 Person Serviceresor 1 2022-07 > Sennans Taxi AB<br>bil 2023-06 |  |  |  |  |  |
+| Västtåg Tåg Allmän kollektivtrafik 8 2015-12 > SJ Götalandståg AB<br>2026-12 |  |  |  |  |  |
+| Pågatåg Tåg Allmän kollektivtrafik 8 2018-12 > Arriva Tåg AB<br>2026-12 |  |  |  |  |  |
+| Öresundståg Tåg Allmän kollektivtrafik 8 2022-12 > Transdev AB |  |  |  |  |  |
+| Krösatåg Tåg Allmän kollektivtrafik 12 2021-12 > SJ Krösatåg AB |  |  |  |  |  |
 
 <!-- sida 361 -->
 
@@ -14504,8 +14509,10 @@ kollektivtrafikplaneringen såsom kommuner, skolor med flera, ett underlag för 
 
 [Tabell 369-1](handlingar.tabeller/369-1.csv)
 
-| År | Övergång till sommar,<br>natt mot måndag: | Övergång till höst, natt<br>mot måndag: | Tidtabellsskifte i december,<br>startdag: |
+|  | Övergång till sommar, | Övergång till höst, natt | Tidtabellsskifte i december, |
 | --- | --- | --- | --- |
+| År |  |  |  |
+|  | natt mot måndag: | mot måndag: | startdag: |
 | 2022 | Må 13 juni | Må 15 augusti | Sö 11 december |
 | 2023 | Må 19 juni | Må 21 augusti | Sö 10 december |
 | 2024 | Må 17 juni | Må 19 augusti | Sö 15 december |
