@@ -9,7 +9,7 @@ from datetime import date, timedelta
 from kommunhandlingar import monster, schema
 from kommunhandlingar.adaptrar.sitevision_html import Forekomst, forekomster
 from kommunhandlingar.fel import IngenKandidat, Konfigurationsfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 
 FALT = {
     "adapter",
@@ -75,31 +75,25 @@ def sidor(tabell: dict, organ_id: list[str], var: str) -> dict[str, str]:
     return tabell
 
 
-def upptack(
-    kalla: Kalla, html_per_sida: dict[str, str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def upptack(kalla: Kalla, html_per_sida: dict[str, str]) -> Fynd:
     return las(kalla, [(o, a, html_per_sida[a]) for o, a in kalla.sidor.items()])
 
 
-def las(
-    kalla: Kalla, sidor: list[tuple[str, str, str]]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def las(kalla: Kalla, sidor: list[tuple[str, str, str]]) -> Fynd:
     """Sidorna som organ, adress och HTML; den första sidan med en fil gäller."""
     kandidater: dict[str, Kandidat] = {}
     avvisade: dict[str, Avvisad] = {}
-    for organ, adress, html in sidor:
-        for forekomst in forekomster(html, adress):
-            nyckel = kallnyckel(forekomst)
-            if nyckel in kandidater:
-                continue
-            try:
-                kandidater[nyckel] = kandidat(kalla, organ, adress, forekomst)
-                avvisade.pop(nyckel, None)
-            except IngenKandidat as fel:
-                avvisade.setdefault(
-                    nyckel, Avvisad(adress, forekomst.filnamn, str(fel))
-                )
-    return list(kandidater.values()), list(avvisade.values())
+    filerna = ((o, a, f) for o, a, html in sidor for f in forekomster(html, a))
+    for organ, adress, forekomst in filerna:
+        nyckel = kallnyckel(forekomst)
+        if nyckel in kandidater:
+            continue
+        try:
+            kandidater[nyckel] = kandidat(kalla, organ, adress, forekomst)
+            avvisade.pop(nyckel, None)
+        except IngenKandidat as fel:
+            avvisade.setdefault(nyckel, Avvisad(adress, forekomst.filnamn, str(fel)))
+    return Fynd(list(kandidater.values()), list(avvisade.values()))
 
 
 def kallnyckel(forekomst: Forekomst) -> str:

@@ -18,23 +18,19 @@ from urllib.parse import quote, unquote, urlsplit
 
 from kommunhandlingar.adaptrar import episerver, wayback
 from kommunhandlingar.fel import Hamtfel, IngenKandidat
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 
 
-def upptack(
-    kalla: episerver.Kalla, klient
-) -> tuple[list[Kandidat], list[Avvisad], list[str]]:
-    kandidater, avvisade, noteringar = [], [], []
-    for organ, mappar in kalla.mappar.items():
-        for mapp in mappar:
-            try:
-                kopior = wayback.fraga(klient, mapp, "application/pdf", True)
-            except Hamtfel as fel:
-                noteringar.append(str(fel))
-                continue
-            nya, bort = las_mapp(kalla, organ, mapp, kopior)
-            kandidater, avvisade = kandidater + nya, avvisade + bort
-    return moten(kandidater), avvisade, noteringar
+def upptack(kalla: episerver.Kalla, klient) -> Fynd:
+    fynd = Fynd()
+    for organ, mapp in ((o, m) for o, mappar in kalla.mappar.items() for m in mappar):
+        try:
+            kopior = wayback.fraga(klient, mapp, "application/pdf", True)
+        except Hamtfel as fel:
+            fynd += Fynd(noteringar=[str(fel)])
+            continue
+        fynd += las_mapp(kalla, organ, mapp, kopior)
+    return replace(fynd, kandidater=moten(fynd.kandidater))
 
 
 def moten(kandidater: list[Kandidat]) -> list[Kandidat]:
@@ -64,14 +60,14 @@ def naturlig(text: str) -> list:
 
 def las_mapp(
     kalla: episerver.Kalla, organ: str, mapp: str, kopior: list[wayback.Kopia]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+) -> Fynd:
     kandidater, avvisade = [], []
     for kopia in basta([k for k in kopior if inne_i(mapp, k)]).values():
         try:
             kandidater.append(kandidat(kalla, organ, mapp, kopia))
         except IngenKandidat as fel:
             avvisade.append(Avvisad(mapp, filnamn(kopia), str(fel)))
-    return kandidater, avvisade
+    return Fynd(kandidater, avvisade)
 
 
 def nyckel_av(original: str) -> str:

@@ -3,7 +3,7 @@ och, för listan som steg 1 skriver och steg 2 läser, tests/test_upptack.py och
 tests/test_hamta.py."""
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
 
@@ -37,6 +37,24 @@ class Avvisad:
     kalla: str
     filnamn: str
     orsak: str
+
+
+@dataclass(frozen=True)
+class Fynd:
+    """Det en upptäckt ger. Noteringarna är det som hoppades över utan att
+    vara en fil: en fråga arkivet inte svarade på, en sida som inte gick att
+    läsa eller en tidsbudget som tog slut."""
+
+    kandidater: list[Kandidat] = field(default_factory=list)
+    avvisade: list[Avvisad] = field(default_factory=list)
+    noteringar: list[str] = field(default_factory=list)
+
+    def __add__(self, andra: "Fynd") -> "Fynd":
+        return Fynd(
+            self.kandidater + andra.kandidater,
+            self.avvisade + andra.avvisade,
+            self.noteringar + andra.noteringar,
+        )
 
 
 def ordna(kandidater: list[Kandidat], organordning: list[str]) -> list[Kandidat]:

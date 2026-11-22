@@ -7,8 +7,8 @@ datumet mötets, utom i samlingsmötena, där ett "möte" rymmer ett helt
 """
 
 import re
-from collections.abc import Callable
-from dataclasses import dataclass
+from collections.abc import Callable, Iterator
+from dataclasses import dataclass, replace
 from datetime import date
 from urllib.parse import urlsplit
 
@@ -16,7 +16,7 @@ from kommunhandlingar import monster, schema
 from kommunhandlingar.adaptrar import meetingsplus_html, sitevision
 from kommunhandlingar.adaptrar.meetingsplus_html import Fil
 from kommunhandlingar.fel import Hamtfel, IngenKandidat, Konfigurationsfel
-from kommunhandlingar.kandidat import Avvisad, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 
 FALT = {"adapter", "sidor", "samlingsmoten", "monster"}
 MONSTERGRUPPER = {"ar", "manad", "dag", "typ"}
@@ -54,24 +54,26 @@ def samlingsmote(adress: str, sidor: dict[str, str], var: str) -> str:
     return adress.rstrip("/")
 
 
-def upptack(
-    kalla: Kalla, hamta_sida: Callable[[str], str]
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def upptack(kalla: Kalla, hamta_sida: Callable[[str], str]) -> Fynd:
     """En mötessida som inte går att hämta stoppar inte de andra (ADR-0080)."""
-    kandidater: list[Kandidat] = []
-    avvisade: list[Avvisad] = []
+    fynd = Fynd()
     missade: set[tuple[str, date]] = set()
+    for organ, motessida in moten(kalla, hamta_sida):
+        try:
+            html = hamta_sida(motessida)
+        except Hamtfel as fel:
+            missade.add((organ, motesdatum(motessida)))
+            fynd += Fynd(avvisade=[Avvisad(motessida, "mötessidan", fel.orsak)])
+            continue
+        fynd += las_mote(kalla, organ, motessida, html)
+    return replace(fynd, kandidater=utan_missade_dagar(fynd.kandidater, missade))
+
+
+def moten(kalla: Kalla, hamta_sida: Callable[[str], str]) -> Iterator[tuple[str, str]]:
+    """Organ för organ: organets sida hämtas när dess möten står på tur."""
     for organ, organsida in kalla.sidor.items():
         for motessida in egna_moten(kalla, organ, hamta_sida(organsida)):
-            try:
-                html = hamta_sida(motessida)
-            except Hamtfel as fel:
-                missade.add((organ, motesdatum(motessida)))
-                avvisade.append(Avvisad(motessida, "mötessidan", fel.orsak))
-                continue
-            nya, bort = las_mote(kalla, organ, motessida, html)
-            kandidater, avvisade = kandidater + nya, avvisade + bort
-    return utan_missade_dagar(kandidater, missade), avvisade
+            yield organ, motessida
 
 
 def egna_moten(kalla: Kalla, organ: str, html: str) -> list[str]:
@@ -89,9 +91,7 @@ def utan_missade_dagar(
     return [k for k in kandidater if (k.organ, k.datum) not in missade]
 
 
-def las_mote(
-    kalla: Kalla, organ: str, motessida: str, html: str
-) -> tuple[list[Kandidat], list[Avvisad]]:
+def las_mote(kalla: Kalla, organ: str, motessida: str, html: str) -> Fynd:
     kandidater: list[Kandidat] = []
     avvisade: list[Avvisad] = []
     for fil in motets_filer(meetingsplus_html.filer(html, motessida)):
@@ -99,7 +99,7 @@ def las_mote(
             kandidater.append(kandidat(kalla, organ, motessida, fil))
         except IngenKandidat as fel:
             avvisade.append(Avvisad(motessida, fil.filnamn, str(fel)))
-    return kandidater, avvisade
+    return Fynd(kandidater, avvisade)
 
 
 def motets_filer(filer: list[Fil]) -> list[Fil]:

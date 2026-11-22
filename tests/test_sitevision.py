@@ -45,12 +45,13 @@ class TestUpptack(unittest.TestCase):
             ("2 maj 2024", lank("a1", "Kallelse%202024-05-02.pdf")),
             ("3 maj 2024", json_fil("b2", "Protokoll%202024-05-03.pdf")),
         )
-        kandidater, avvisade = self.upptack(html)
-        self.assertEqual(avvisade, [])
+        fynd = self.upptack(html)
+        self.assertEqual(fynd.avvisade, [])
         self.assertEqual(
-            [k.kallnyckel for k in kandidater], ["sitevision:18.a1", "sitevision:18.b2"]
+            [k.kallnyckel for k in fynd.kandidater],
+            ["sitevision:18.a1", "sitevision:18.b2"],
         )
-        forsta = kandidater[0]
+        forsta = fynd.kandidater[0]
         self.assertEqual(
             (forsta.organ, forsta.typ, forsta.datum),
             ("bun", "kallelse", date(2024, 5, 2)),
@@ -63,66 +64,62 @@ class TestUpptack(unittest.TestCase):
         self.assertEqual(forsta.kalla, "https://exempelby.se/bun")
 
     def test_datum_ur_rubriken_nar_filnamnet_saknar_det(self):
-        kandidater, _ = self.upptack(
+        kandidater = self.upptack(
             sida(("21 februari 2024", lank("a1", "protokoll%20%C2%A7%2022.pdf")))
-        )
+        ).kandidater
         self.assertEqual(
             (kandidater[0].typ, kandidater[0].datum), ("protokoll", date(2024, 2, 21))
         )
 
     def test_rubrik_utan_ar_ger_filnamnets_datum(self):
-        kandidater, _ = self.upptack(
+        kandidater = self.upptack(
             sida(("16 oktober", lank("a1", "Kallelse%202025-10-16.pdf")))
-        )
+        ).kandidater
         self.assertEqual(kandidater[0].datum, date(2025, 10, 16))
 
     def test_olika_datum_ger_ingen_kandidat(self):
-        kandidater, avvisade = self.upptack(
+        fynd = self.upptack(
             sida(("22 januari 2024", lank("a1", "Kallelse%202025-01-22.pdf")))
         )
-        self.assertEqual(kandidater, [])
-        self.assertEqual([a.filnamn for a in avvisade], ["Kallelse 2025-01-22.pdf"])
+        self.assertEqual(fynd.kandidater, [])
+        self.assertEqual(
+            [a.filnamn for a in fynd.avvisade], ["Kallelse 2025-01-22.pdf"]
+        )
 
     def test_rattelsen_galler(self):
-        kandidater, _ = self.upptack(
+        kandidater = self.upptack(
             sida(("27 mars 2024", lank("abc", "Kallelse%202024-04-24.pdf")))
-        )
+        ).kandidater
         self.assertEqual(kandidater[0].datum, date(2024, 5, 2))
 
     def test_inget_datum_alls_ger_ingen_kandidat(self):
-        _, avvisade = self.upptack(
+        avvisade = self.upptack(
             sida(("Extra möte", lank("a1", "protokoll%20%C2%A7%201.pdf")))
-        )
+        ).avvisade
         self.assertEqual(len(avvisade), 1)
 
     def test_fil_under_tva_moten_blir_en_kandidat(self):
         fil = lank("a1", "Kallelse%202024-05-15.pdf")
-        kandidater, avvisade = self.upptack(
-            sida(("24 april 2024", fil), ("15 maj 2024", fil))
-        )
-        self.assertEqual(avvisade, [])
-        self.assertEqual([k.datum for k in kandidater], [date(2024, 5, 15)])
+        fynd = self.upptack(sida(("24 april 2024", fil), ("15 maj 2024", fil)))
+        self.assertEqual(fynd.avvisade, [])
+        self.assertEqual([k.datum for k in fynd.kandidater], [date(2024, 5, 15)])
 
     def test_absolut_adress_till_filen(self):
         adress = "https://exempelby.se/download/18.a1/1/Kallelse%202024-05-02.pdf"
         html = sida(("2 maj 2024", f'<a href="{adress}">Kallelse</a>'))
-        kandidater, _ = self.upptack(html)
+        kandidater = self.upptack(html).kandidater
         self.assertEqual(
             [(k.kallnyckel, k.url) for k in kandidater], [("sitevision:18.a1", adress)]
         )
 
     def test_nytt_ar_nollstaller_rubriken(self):
         fil = lank("a1", "protokoll%20%C2%A7%201.pdf")
-        kandidater, avvisade = self.upptack(
-            sida(("2 maj 2024", "")) + "<h2>2025</h2>" + fil
-        )
-        self.assertEqual((kandidater, len(avvisade)), ([], 1))
+        fynd = self.upptack(sida(("2 maj 2024", "")) + "<h2>2025</h2>" + fil)
+        self.assertEqual((fynd.kandidater, len(fynd.avvisade)), ([], 1))
 
     def test_andra_lankar_raknas_inte(self):
-        kandidater, avvisade = self.upptack(
-            sida(("2 maj 2024", '<a href="/kontakta-oss">Kontakt</a>'))
-        )
-        self.assertEqual((kandidater, avvisade), ([], []))
+        fynd = self.upptack(sida(("2 maj 2024", '<a href="/kontakta-oss">Kontakt</a>')))
+        self.assertEqual((fynd.kandidater, fynd.avvisade), ([], []))
 
 
 class TestSitevisionsFaltStopparFel(unittest.TestCase):
@@ -190,7 +187,8 @@ class TestKungsbackasSparadeSidor(unittest.TestCase):
             adress: (sidor / f"{adress.rsplit('/', 1)[1]}.html").read_text()
             for adress in cls.kalla.sidor.values()
         }
-        cls.kandidater, cls.avvisade = upptack(cls.kalla, html)
+        fynd = upptack(cls.kalla, html)
+        cls.kandidater, cls.avvisade = fynd.kandidater, fynd.avvisade
 
     def test_antalet_kandidater(self):
         self.assertEqual(len(self.kandidater), 1662)

@@ -13,6 +13,7 @@ from pathlib import Path
 from unittest import mock
 
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
+from kommunhandlingar.kandidat import Fynd
 from kommunhandlingar.konfiguration import las
 from kommunhandlingar.tidsbudget import Tidsgrans
 from kommunhandlingar.upptack import (
@@ -56,9 +57,11 @@ class TestUpptack(unittest.TestCase):
         klient = Klient(
             {"https://exempelby.se/bun": BUN, "https://exempelby.se/fsn": FSN}
         )
-        kandidater, avvisade = upptack(self.kommun, klient)
-        self.assertEqual([k.kallnyckel[-2:] for k in kandidater], ["b2", "b1", "f1"])
-        text = sammanfattning(self.kommun, kandidater, avvisade, [])
+        fynd = upptack(self.kommun, klient)
+        self.assertEqual(
+            [k.kallnyckel[-2:] for k in fynd.kandidater], ["b2", "b1", "f1"]
+        )
+        text = sammanfattning(self.kommun, fynd)
         self.assertIn("3 kandidater, 1 filer utan kandidat", text)
         self.assertIn("  bun: 2", text)
         self.assertIn("Budget 2022.pdf (inget mönster matchar)", text)
@@ -77,7 +80,7 @@ class TestUpptack(unittest.TestCase):
                 + lank("c1", "Plankarta.pdf"),
             }
         )
-        kandidater, _ = upptack(kommun, klient)
+        kandidater = upptack(kommun, klient).kandidater
         self.assertEqual(
             [(k.kallnyckel[-2:], k.organ) for k in kandidater],
             [("b2", "bun"), ("b1", "bun"), ("f1", "fsn"), ("c1", "fsn")],
@@ -93,7 +96,7 @@ class TestUpptack(unittest.TestCase):
         klient = Klient(
             {"https://exempelby.se/bun": BUN, "https://exempelby.se/fsn": FSN}
         )
-        kandidater, _ = upptack(self.kommun, klient)
+        kandidater = upptack(self.kommun, klient).kandidater
         with tempfile.TemporaryDirectory() as katalog:
             fil = Path(katalog) / "exempelby.kandidater.json"
             skriv(kandidater, fil)
@@ -131,19 +134,19 @@ class TestArkivet(unittest.TestCase):
         self.kommun = replace(exempelby, kallor=(kalla,))
 
     def test_utan_arkiv_i_konfigurationen_fragas_inget(self):
-        self.assertEqual(upptack_arkiv(self.utan_arkiv, Klient({}), None), ([], [], []))
+        self.assertEqual(upptack_arkiv(self.utan_arkiv, Klient({}), None), Fynd())
 
     def test_arkivets_lista_nyast_forst(self):
-        kandidater, _, noteringar = upptack_arkiv(self.kommun, arkivet(), None)
+        fynd = upptack_arkiv(self.kommun, arkivet(), None)
         self.assertEqual(
-            [str(k.datum) for k in kandidater], ["2022-05-03", "2022-05-02"]
+            [str(k.datum) for k in fynd.kandidater], ["2022-05-03", "2022-05-02"]
         )
         self.assertEqual(
-            noteringar, ["arkivets lista för https://exempelby.se/fsn: anslutning"]
+            fynd.noteringar, ["arkivets lista för https://exempelby.se/fsn: anslutning"]
         )
 
     def test_noteringarna_star_i_sammanfattningen(self):
-        text = sammanfattning(self.kommun, [], [], ["https://a: anslutning"])
+        text = sammanfattning(self.kommun, Fynd(noteringar=["https://a: anslutning"]))
         self.assertIn("\nArkivet: https://a: anslutning", text)
 
     def test_den_harda_gransen_ger_en_tom_lista(self):
@@ -152,7 +155,9 @@ class TestArkivet(unittest.TestCase):
                 raise Tidsgrans
 
         resultat = upptack_arkiv(self.kommun, Avbryter(), datetime.now(UTC))
-        self.assertEqual(resultat, ([], [], ["avbrutet vid tidsbudgetens hårda gräns"]))
+        self.assertEqual(
+            resultat, Fynd(noteringar=["avbrutet vid tidsbudgetens hårda gräns"])
+        )
 
     def test_arkivet_fragas_inte_efter_den_mjuka_gransen(self):
         with tempfile.TemporaryDirectory() as katalog:
