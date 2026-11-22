@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20241129213826id_/https://kungsbacka.se/d
 sha256: b1faf94094020cb484e4b464ee4b72a02a0d0601cb935e8a5107b450d4d1e0d1
 bytes: 140352638
 sidor: 899
-hamtad: 2026-11-17T01:40:54+00:00
-konverterad: 2026-11-17T01:47:46+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T00:53:55+00:00
+konverterad: 2026-11-22T01:04:19+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ocr, ocr, ocr, ocr, ocr, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, tabell-osaker, ocr, tabell-osaker, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 453, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 515, 519, 553, 554, 555, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 668, 671, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 686, 687, 688, 690, 691, 692, 693, 694, 695, 696, 697, 698, 700, 701, 702, 705, 707, 711, 712, 713, 714, 716, 717, 718, 719, 720, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 749, 750, 762, 769, 775, 822, 823, 844, 845, 853, 854, 868, 869, 875, 876, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899]
-figurer: [23, 40, 45, 46, 57, 58, 59, 64, 65, 66, 69, 72, 76, 77, 78, 79, 82, 87, 88, 98, 109, 110, 111, 112, 113, 385, 433, 436, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 512, 513, 514, 515, 516, 517, 518, 519, 521, 528, 529, 530, 533, 600, 602, 603, 604, 605, 606, 607, 611, 624, 631, 652, 653, 654, 655, 658, 662, 668, 669, 670, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 698, 699, 701, 702, 703, 704, 705, 707, 713, 714, 715, 719, 720, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 741, 742, 743, 744, 745, 746, 748, 749, 750, 751, 787, 796, 797, 798, 799, 800, 801, 803, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ointressant, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, bild, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ocr, ocr, ocr, ocr, ocr, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, tabell-osaker, ocr, tabell-osaker, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+tal_obekraftade: [392, 393, 394, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 453, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 515, 519, 553, 554, 555, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649, 650, 668, 671, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 686, 687, 688, 690, 691, 692, 693, 694, 695, 696, 697, 698, 700, 701, 702, 705, 707, 711, 712, 713, 714, 716, 717, 718, 719, 720, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 749, 750, 762, 769, 775, 822, 823, 844, 845, 853, 854, 868, 869, 875, 876, 884, 885, 886, 887, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899]
+figurer: [23, 40, 45, 46, 57, 58, 59, 64, 65, 66, 69, 72, 76, 77, 78, 79, 82, 87, 88, 98, 109, 110, 111, 112, 113, 385, 396, 397, 398, 401, 402, 405, 406, 407, 413, 415, 426, 433, 436, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 512, 513, 514, 515, 516, 517, 518, 519, 521, 528, 529, 530, 533, 600, 602, 603, 604, 605, 606, 607, 611, 624, 631, 652, 653, 654, 655, 658, 662, 668, 669, 670, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 698, 699, 701, 702, 703, 704, 705, 707, 713, 714, 715, 719, 720, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 741, 742, 743, 744, 745, 746, 748, 749, 750, 751, 769, 787, 796, 797, 798, 799, 800, 801, 803, 869, 885, 886, 887, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899]
 tolkade: []
 granskad: null
 ---
@@ -2781,8 +2781,9 @@ perioden 2024–2026 tar Kungsbacka emot medel i kostnadsutjämningen.
 
 [Tabell 70-1](handlingar.tabeller/70-1.csv)
 
-| Belopp i miljoner kronor | Budget<br>2023 | Budget<br>2024 | Plan<br>2025 | Plan<br>2026 |
+| Belopp i miljoner kronor | Budget | Budget | Plan | Plan |
 | --- | --- | --- | --- | --- |
+|  | 2023 | 2024 | 2025 | 2026 |
 | Skatteintäkter | 5 561 | 5 865 | 6 145 | 6 432 |
 | Inkomstutjämning | -64 | -123 | -128 | -123 |
 | Andel av rikets skattekraft (%) | 116,7 | 118,1 | 118,0 | 117,8 |
@@ -12485,8 +12486,9 @@ n:\106\10\1061094\5 arbetsmaterial\01 dokument\g\pm kbk station slutversion.docx
 
 [Tabell 437-1](handlingar.tabeller/437-1.csv)
 
-| 1 | 2020-01-17 | Färdig handling | D. Strandberg | B. Gervide-<br>Eckel | B. Gervide-<br>Eckel |
+| 1 | 2020-01-17 | Färdig handling | D. Strandberg | B. Gervide- | B. Gervide- |
 | --- | --- | --- | --- | --- | --- |
+|  |  |  |  | Eckel | Eckel |
 | Version | Datum | Beskrivning | Upprättat | Granskat | Godkänt |
 
 <!-- sida 438 -->
@@ -12930,8 +12932,11 @@ n:\106\10\1061094\5 arbetsmaterial\01 dokument\g\pm kbk station slutversion.docx
 
 [Tabell 446-1](handlingar.tabeller/446-1.csv)
 
-| Schaktdjup<br>[m] | Schaktbredd<br>[m] | Slitsvägg<br>installationsdjup<br>[m] | Tvärvägg<br>djup under<br>schaktbotten<br>[m] | Fritt avstånd<br>mellan<br>tvärväggar<br>[m] |
+| Schaktdjup | Schaktbredd | Slitsvägg | Tvärvägg | Fritt avstånd |
 | --- | --- | --- | --- | --- |
+| [m] | [m] | installationsdjup | djup under | mellan |
+|  |  | [m] | schaktbotten | tvärväggar |
+|  |  |  | [m] | [m] |
 | 2 | 10 | 5 | 3 | 7 |
 | 4 | 10 | 11 | 7 | 6,5 |
 | 6 | 10 | 14,5 | 8,5 | 5,5 |
@@ -13070,22 +13075,28 @@ n:\106\10\1061094\5 arbetsmaterial\01 dokument\g\pm kbk station slutversion.docx
 | Arbete | á-pris | volym | enhet | Summa |
 | --- | --- | --- | --- | --- |
 | Projektering | - | 1 | st | 550 000 000 kr |
-| Projektledning under<br>byggtiden | - | 1 | st | 240 000 000 kr |
-| Rivning byggnadsverk<br>enligt kapitel 7.3 | - | 1 | st | 20 000 000 kr |
+| Projektledning under | - | 1 | st | 240 000 000 kr |
+| byggtiden |  |  |  |  |
+| Rivning byggnadsverk | - | 1 | st | 20 000 000 kr |
+| enligt kapitel 7.3 |  |  |  |  |
 | Schakt jord | 450 kr | 850 100 | m3 | 382 562 000 kr |
 | Schakt berg | 850 kr | 11 700 | m3 | 9 945 000 kr |
 | Förorenade massor | 200 kr | 69 100 | ton | 138 308 000 kr |
 | Kalk-/cementpelare | 80 kr | 15 400 | st | 1 234 000 kr |
 | Kalk-/cementpelare | 70 kr | 129 500 | m | 9 064 000 kr |
-| Lättklinker (temp) inkl<br>schakt | 450 kr | 6 000 | m3 | 2 700 000 kr |
+| Lättklinker (temp) inkl | 450 kr | 6 000 | m3 | 2 700 000 kr |
+| schakt |  |  |  |  |
 | Slitsmur 1m tjock | 5 500 kr | 446 600 | m2 | 2 456 455 000 kr |
-| Återfyllning & schakt<br>ovan tvärvägg | 800 | 269 100 | m3 | 215 257 000 kr |
+| Återfyllning & schakt | 800 | 269 100 | m3 | 215 257 000 kr |
+| ovan tvärvägg |  |  |  |  |
 | Krönbalk | 2 500 kr | 13 100 | m | 32 700 000 kr |
 | Stämp 800 mm | 5000 kr | 11 200 | m | 55 900 000 kr |
 | Grovbetong | 2000 kr | 53 300 | m3 | 106 600 000 kr |
 | Sekantpåle | 5 000 kr | 3 200 | m2 | 16 125 000 kr |
 | Injektering | - | 1 | st | 2 000 000 kr |
-| Provisorier pga att<br>stationen utförs<br>etappvis | - | 1 | st | 250 000 000 kr |
+| Provisorier pga att | - | 1 | st | 250 000 000 kr |
+| stationen utförs |  |  |  |  |
+| etappvis |  |  |  |  |
 |  |  |  |  |  |
 | Totalsumma |  |  |  | 4 488 851 000 kr |
 
@@ -13129,12 +13140,18 @@ n:\106\10\1061094\5 arbetsmaterial\01 dokument\g\pm kbk station slutversion.docx
 | Valvform | 1 200 kr | 64 800 | m2 | 77 700 000 kr |
 | Valvställning | 200 kr | 534 700 | m3 | 106 950 000 kr |
 |  |  |  |  |  |
-| Ny bro över Tölöleden<br>samt anslutande<br>grundförstärkning | 18 500 000 kr | 1 | st | 18 500 000 kr |
+| Ny bro över Tölöleden | 18 500 000 kr | 1 | st | 18 500 000 kr |
+| samt anslutande |  |  |  |  |
+| grundförstärkning |  |  |  |  |
 | Tätskärm | 1000 kr | 2 800 | m2 | 2 800 000 kr |
-| Stomkompletteringar<br>station | - | 1 | st | 300 000 000 kr |
-| Räddningsschakt inom<br>tunnel | 150 000 000 kr | 8 | st | 1 200 000 000 kr |
-| Räddningsschakt inom<br>tråg | 55 000 000 kr | 9 | st | 675 000 000 kr |
-| Ventilation och<br>brandvatten | 50 000 000 kr | 1 | st | 50 000 000 kr |
+| Stomkompletteringar | - | 1 | st | 300 000 000 kr |
+| station |  |  |  |  |
+| Räddningsschakt inom | 150 000 000 kr | 8 | st | 1 200 000 000 kr |
+| tunnel |  |  |  |  |
+| Räddningsschakt inom | 55 000 000 kr | 9 | st | 675 000 000 kr |
+| tråg |  |  |  |  |
+| Ventilation och | 50 000 000 kr | 1 | st | 50 000 000 kr |
+| brandvatten |  |  |  |  |
 | Totalsumma |  |  |  | 4 014 050 000 kr |
 
 <!-- sida 451 -->
