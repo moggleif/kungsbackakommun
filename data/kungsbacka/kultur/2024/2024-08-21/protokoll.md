@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.50ef5810191784a92d952c8/17246804306
 sha256: bb19a3e59f63dc088dd7a03ad0d6e31dbbe4356d5ae73e9872c4720d2b210a4d
 bytes: 1116637
 sidor: 10
-hamtad: 2026-11-18T02:58:25+00:00
-konverterad: 2026-11-18T02:58:49+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:38:36+00:00
+konverterad: 2026-11-22T11:38:56+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 figurer: []
 tolkade: []
@@ -71,6 +71,15 @@ Ordförande Annika Hedman (C)
 Protokolljustarare Per Gunnarsson (S)
 
 <!-- sida 2 -->
+
+Nämnden för Kultur & Fritid Datum
+Innehåll
+§ 81 Dur KFT-2024-00220
+§83 Dur KFT-2024-00219
+Redovisning av inkomna handlingar augusti 2024 sesseessrssrersrsrssrersrssrrrnns 7
+§84 Dur KFT-2024-00223
+§85 Dur KFT-2024-00224
+Det här dokumentet är digitalt signerat
 
 <!-- sida 3 -->
 

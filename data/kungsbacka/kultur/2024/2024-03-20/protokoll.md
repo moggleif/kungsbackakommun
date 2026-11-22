@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.2ab7772d18e5f864a3916484/1711795484
 sha256: 7bd0b9785445f36c194a70f0a155a773808f15af79dd1b6c77e9bb21ef2c3856
 bytes: 5888190
 sidor: 30
-hamtad: 2026-11-18T02:56:24+00:00
-konverterad: 2026-11-18T02:57:49+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:36:58+00:00
+konverterad: 2026-11-22T11:38:13+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 figurer: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 tolkade: []
@@ -70,6 +70,32 @@ Ordförande Annika Hedman
 Protokolljusterare Ulrika Jörgensen
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+§ 26 Dnr KFT-2024-00060
+Information till nämnd: naturum Fjärås BräCka .... 4
+§27 Dnr KFT-2024-00081
+§28 Dnr KFT-2024-00030
+Begäran om yttrande - Betänkande från Narkotikautredningen (KS 2024-
+§29 Dnr KFT-2024-00061
+Information till nämnd: kulturföreningar och studieförbund .... 8
+§30 Dnr KFT-2024-00062
+Information till nämnd: dataskyddsombudets rapport .... 9
+§ 31 Dnr KFT-2024-00063
+Information till nämnd: Cykelpilotprojektet.................+ssssssssrsssserersrrrsssnn 10
+§32 Dnr KFT-2024-00071
+§33 Dnr KFT-2024-00064
+§ 34 Dnr KFT-2024-00068
+§35 Dnr KFT-2024-00065
+§36 Dnr KFT-2024-00069
+§37 Dnr KFT-2024-00070
+§38 Dnr KFT-2024-00072
+§39 Dnr KFT-2024-00073
+§40 Dnr KFT-2023-00380
+§41 Dnr KFT-2024-00074
+Expedierat/bestyrkt
 
 <!-- sida 3 -->
 

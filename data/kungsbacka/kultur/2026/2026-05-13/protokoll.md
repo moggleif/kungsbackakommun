@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.52f0a12a19e103e1053bacc6/1779092641
 sha256: 0cd3fddd5be543f33a6b7a456a5c53991d067943b1a818d22f007b24eea0cb21
 bytes: 1587003
 sidor: 15
-hamtad: 2026-11-18T03:03:28+00:00
-konverterad: 2026-11-18T03:03:54+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T11:41:42+00:00
+konverterad: 2026-11-22T11:42:11+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
+kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
 tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 figurer: []
 tolkade: []
@@ -82,6 +82,29 @@ Susanne Andersson, Medley
 Paragrafer §§ 58-70
 
 <!-- sida 2 -->
+
+KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL
+Nämnden för Kultur & Fritid Datum
+Innehåll
+§58 Dnr KFT-2026-00139
+§59 Dnr KFT-2026-00122
+Information till nämnd: uppföljning badhusverksamhet .... 5
+§61 Dnr KFT-2026-00124
+Information till nämnd: återrapportering nytt stöd till föreningar .... 6
+§62 Dnr KFT-2026-00126
+Information till nämnd: uppdatering Destination .... 7
+§63 Dnr KFT-2026-00127
+§64 Dnr KFT-2026-00140
+Definition armlängds avstånd för nämnd och förvaltning .... 9
+Information till nämnd: förvaltningens förhållningssätt till armlängds
+Delrapportering uppdrag ridanläggningar s .... 11
+§67 Dnr KFT-2026-00138
+Initiativärende Socialdemokraterna: Nya lokaler för Tölöscouterna .... 12
+§68 Dnr KFT-2026-00129
+§69 Dnr KFT-2026-00130
+Det här dokumentet är digitalt signerat
+Transaktionsidentitet: SCB6D1BFBA77C95047869CA6894973D64E1278FF2D
+Transaktionsidentitet: 68F35217465DCF01E0982C71DF71865F8B679E9D0C
 
 <!-- sida 3 -->
 
