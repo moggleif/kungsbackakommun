@@ -319,6 +319,8 @@ src/kommunhandlingar/
                    sitevision_html.py läser mötessidan och ger källnyckeln,
                    sitevision.py tolkar den,
                    sitevision_arkiv.py läser sidorna och filerna ur arkivet,
+                   wayback.py arkivets frågor och valet av bästa kopia,
+                   som arkivadaptrarna delar,
                    sitevision_projekt.py listan med projekt och projektsidorna,
                    meetingsplus_html.py läser Meetings Plus sidor,
                    meetingsplus.py tolkar dem
