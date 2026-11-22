@@ -310,7 +310,8 @@ src/kommunhandlingar/
   schema.py        kontrollerna av fält och värden i kommunfilen
   fel.py           konfigurationsfel och "ingen kandidat"
   monster.py       mönstren: typ och datum ur en text
-  kandidat.py      kandidaten, ordningen (K13, K16) och listan: sökväg, skriv, läs
+  kandidat.py      kandidaten, upptäcktens fynd (kandidater, avvisade och
+                   noteringar), ordningen (K13, K16) och listan: sökväg, skriv, läs
   adaptrar/        en modul per publiceringsplattform (sitevision, ciceron, …)
                    eller arkiv (wayback);
                    sitevision_html.py läser mötessidan, sitevision.py tolkar den,
