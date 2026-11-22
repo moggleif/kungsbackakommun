@@ -23,6 +23,7 @@ from unittest import mock
 
 from kommunhandlingar import hamta, konfiguration, provade
 from kommunhandlingar.kandidat import lista
+from kommunhandlingar.tidsbudget import Tidsgrans
 from kommunhandlingar.upptack import skriv
 from tests.test_granssnitt import tolkat
 from tests.test_hamta import TID, Klient, kandidat
@@ -85,6 +86,12 @@ class TestKommandot(Kommandofall):
         self.assertEqual((kod, utskrift), (0, "3 konverterad\n"))
         self.assertFalse(self.logg().exists())
 
+    def test_det_som_inte_gick_att_hamta_skrivs_ut_med_adressen(self):
+        self.klient.filer["u1"] = "fel:http-404"
+        kod, utskrift = self.kor()
+        rader = "ej hämtad (http-404): u1\n1 ej hämtad (http-404)\n2 konverterad\n"
+        self.assertEqual((kod, utskrift), (0, rader))
+
 
 class TestDelar(Kommandofall):
     def test_en_del_skriver_de_provade_och_nasta_tar_inte_om_dem(self):
@@ -97,6 +104,24 @@ class TestDelar(Kommandofall):
         self.assertEqual(self.kor("--del", str(DEL))[0], 0)
         self.assertEqual(self.klient.anrop, ["u2", "u3"])
         self.assertEqual(provfil.read_text(encoding="utf-8"), "s:1\ns:2\ns:3\n")
+
+    def test_den_som_lades_at_sidan_raknas_inte_som_provad(self):
+        riktig = hamta.behandla
+
+        def andra_nar_gransen(steg, k):
+            if k.url == "u2":
+                raise Tidsgrans
+            return riktig(steg, k)
+
+        with mock.patch.object(hamta, "behandla", andra_nar_gransen):
+            kod, utskrift = self.kor("--del", str(DEL))
+        sammanfattning = (
+            "lagd åt sidan vid tidsgränsen: u2\n1 konverterad\n"
+            "1 lagd åt sidan vid tidsgränsen\n1 väntar på nästa körning\n"
+        )
+        self.assertEqual((kod, utskrift), (hamta.MER_I_NASTA_DEL, sammanfattning))
+        provfil = provade.fil(lista(self.arbete, "exempelby", False))
+        self.assertEqual(provfil.read_text(encoding="utf-8"), "s:1\n")
 
 
 class TestOmkonvertering(Kommandofall):
