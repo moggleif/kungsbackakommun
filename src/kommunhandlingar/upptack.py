@@ -28,12 +28,13 @@ from kommunhandlingar.adaptrar import (
 )
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
+from kommunhandlingar.hamtning.hamtare import Lasare
 from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Fynd, lista, ordna, ordna_bakat, skriv
 from kommunhandlingar.tidsbudget import Tidsgrans
 
 
-def upptack(kommun: konfiguration.Kommun, klient) -> Fynd:
+def upptack(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
     motena = sum((motessidorna(kalla, klient) for kalla in kommun.kallor), Fynd())
     projekt = projekten(kommun, klient, {k.kallnyckel for k in motena.kandidater})
     meetingsplus_fynd = meetingsplus_kallorna(kommun, klient)
@@ -46,18 +47,18 @@ def upptack(kommun: konfiguration.Kommun, klient) -> Fynd:
     )
 
 
-def motessidorna(kalla: sitevision.Kalla, klient) -> Fynd:
+def motessidorna(kalla: sitevision.Kalla, klient: Lasare) -> Fynd:
     html = {adress: sida(klient, adress) for adress in kalla.sidor.values()}
     return sitevision.upptack(kalla, html)
 
 
-def meetingsplus_kallorna(kommun: konfiguration.Kommun, klient) -> Fynd:
+def meetingsplus_kallorna(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
     hamta = partial(sida, klient)
     kallorna = kommun.meetingsplus_kallor
     return sum((meetingsplus.upptack(k, hamta) for k in kallorna), Fynd())
 
 
-def projekten(kommun: konfiguration.Kommun, klient, moten: set[str]) -> Fynd:
+def projekten(kommun: konfiguration.Kommun, klient: Lasare, moten: set[str]) -> Fynd:
     """Projektsidornas filer; en fil som också står på en mötessida är mötets."""
     hamta = partial(sida, klient)
     listorna = (sitevision_projekt.upptack(k.projekt, hamta) for k in kommun.kallor)
@@ -66,7 +67,9 @@ def projekten(kommun: konfiguration.Kommun, klient, moten: set[str]) -> Fynd:
     return replace(fynd, kandidater=egna)
 
 
-def upptack_arkiv(kommun: konfiguration.Kommun, klient, start: datetime | None) -> Fynd:
+def upptack_arkiv(
+    kommun: konfiguration.Kommun, klient: Lasare, start: datetime | None
+) -> Fynd:
     """Arkivet frågas inte efter den mjuka gränsen och avbryts vid den hårda."""
     if datetime.now(UTC) >= tidsbudget.mjuk_grans(start):
         return Fynd(noteringar=["väntar på nästa körning; tidsbudgeten är slut"])
@@ -80,7 +83,7 @@ def upptack_arkiv(kommun: konfiguration.Kommun, klient, start: datetime | None) 
         tidsbudget.stoppa()
 
 
-def las_arkivet(kommun: konfiguration.Kommun, klient) -> Fynd:
+def las_arkivet(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
     lasningar = [(sitevision_arkiv.upptack, k) for k in kommun.kallor if k.wayback] + [
         (episerver_arkiv.upptack, k) for k in kommun.arkivkallor
     ]
@@ -89,7 +92,7 @@ def las_arkivet(kommun: konfiguration.Kommun, klient) -> Fynd:
     return replace(fynd, kandidater=ordna_bakat(fynd.kandidater, organordning))
 
 
-def sida(klient, adress: str) -> str:
+def sida(klient: Lasare, adress: str) -> str:
     try:
         return klient.text(adress)
     except Hamtfel as fel:

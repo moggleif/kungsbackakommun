@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import urlencode
 
 from kommunhandlingar.fel import Hamtfel
+from kommunhandlingar.hamtning.hamtare import Lasare
 
 CDX = "https://web.archive.org/cdx/search/cdx"
 KOPIA = "https://web.archive.org/web/"
@@ -26,17 +27,17 @@ class Kopia:
     langd: int
 
 
-def fraga(klient, adress: str, mimetyp: str) -> list[Kopia]:
+def fraga(klient: Lasare, adress: str, mimetyp: str) -> list[Kopia]:
     return cdx(klient, adress, parametrar(adress, mimetyp))
 
 
-def fraga_under(klient, adress: str, mimetyp: str) -> list[Kopia]:
+def fraga_under(klient: Lasare, adress: str, mimetyp: str) -> list[Kopia]:
     """Varje adress som börjar med `adress`."""
     falt = parametrar(adress, mimetyp) + [("matchType", "prefix")]
     return cdx(klient, adress, falt)
 
 
-def cdx(klient, adress: str, falt: list[tuple[str, str]]) -> list[Kopia]:
+def cdx(klient: Lasare, adress: str, falt: list[tuple[str, str]]) -> list[Kopia]:
     try:
         rader = json.loads(klient.text(f"{CDX}?{urlencode(falt)}").strip() or "[]")
         return [Kopia(tid, original, int(langd)) for tid, original, langd in rader[1:]]

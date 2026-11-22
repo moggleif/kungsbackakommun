@@ -23,6 +23,7 @@ import pypdfium2 as pdfium
 from kommunhandlingar import frontmatter, original, pool
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.hamtning import installningar
+from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.hamtning.klient import Klient
 
 SKALA = 2
@@ -46,7 +47,7 @@ def arbetslista(data: Path) -> list[str]:
 
 
 def rendera(
-    md: Path, katalog: Path, klient: Klient, sidor: list[int] | None = None
+    md: Path, katalog: Path, klient: Hamtare, sidor: list[int] | None = None
 ) -> list[Path]:
     falt = frontmatter.las(md.read_text(encoding="utf-8"))
     sidor = sidor or otolkade(falt)
