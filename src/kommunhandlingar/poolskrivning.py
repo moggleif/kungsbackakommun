@@ -2,7 +2,9 @@
 ADR-0071. Test i tests/: test_hamta.py, test_hamta_arkiv.py, test_omkonvertering.py
 och test_tidsbudget.py.
 
-Fälten och skrivningen i steg 2: ett dokuments front matter byggs ur kandidaten
+Stegets typer och fälten och skrivningen i steg 2. `Steg2` och `Dokument`
+bor här, och inte i `behandla.py`, så att `placering.py` kan använda dem utan
+cirkulär import. Ett dokuments front matter byggs ur kandidaten
 och det som redan finns på platsen, och dokumentet skrivs till poolen utan att
 tidsgränsen kan avbryta skrivningen (K11). Vad som ska hända med en kandidat
 avgör `behandla.py`.
@@ -23,7 +25,9 @@ from kommunhandlingar.pool import Pool
 from kommunhandlingar.tidsbudget import utan_avbrott
 
 
-class Klient(Protocol):
+class Hamtare(Protocol):
+    """Det steg 2 behöver av en klient, som `hamtning.klient.Klient`."""
+
     def fil(self, url: str, mal: Path) -> None: ...
 
 
@@ -32,7 +36,7 @@ class Steg2:
     data: Path
     kommun: str
     pool: Pool
-    klient: Klient
+    klient: Hamtare
     nycklar: frozenset[str]
     tid: Callable[[], datetime]
     version: str
