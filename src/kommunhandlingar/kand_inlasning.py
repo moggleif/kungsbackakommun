@@ -13,17 +13,15 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from kommunhandlingar import frontmatter
+from kommunhandlingar import frontmatter, pool
 from kommunhandlingar.konvertering.kvalitet import EJ_KONVERTERAD, SIDKVALITETER
 
 
 def rakna(kommun: Path) -> tuple[Counter, int]:
     """Sidorna per kvalitet och antalet dokument utan sidor."""
     sidor, utan_sidor = Counter(), 0
-    for md in kommun.rglob("*.md"):
-        per_sida = frontmatter.lista(
-            frontmatter.las(md.read_text(encoding="utf-8"))["kvalitet_per_sida"]
-        )
+    for _, falt, _ in pool.dokumenten(kommun):
+        per_sida = frontmatter.lista(falt["kvalitet_per_sida"])
         sidor.update(per_sida)
         utan_sidor += not per_sida
     return sidor, utan_sidor

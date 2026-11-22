@@ -323,7 +323,8 @@ src/kommunhandlingar/
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta, konvertera, skriva
   original.py      originalet hämtas, ett dokument i delar slås ihop (ADR-0049)
-  pool.py          poolens front matter, uppslagen på källnyckel och sökväg
+  pool.py          poolens dokument i ordning; front matter uppslagen på källnyckel
+                   och sökväg. Bara här gås poolens `.md` igenom
   plats.py         sökvägen och namnet för ett nytt dokument (ADR-0003)
   skrivning.py     `.md` och tabellkatalog, tabellerna först och `.md` sist
   sidmarkor.py     sidmarkören `<!-- sida N -->`: skrivs, läses och delar texten
