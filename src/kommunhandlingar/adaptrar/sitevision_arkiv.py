@@ -36,19 +36,19 @@ def nyaste_kopior(klient, kalla: sitevision.Kalla) -> dict[str, wayback.Kopia]:
     kopior = [
         kopia
         for vard in vardar
-        for kopia in wayback.fraga(klient, f"{vard}/download/", "application/pdf", True)
+        for kopia in wayback.fraga_under(klient, f"{vard}/download/", "application/pdf")
         if NEDLADDNING.match(kopia.original)
     ]
-    basta: dict[str, wayback.Kopia] = {}
-    for kopia in sorted(kopior, key=rang):
-        basta[f"sitevision:{NEDLADDNING.match(kopia.original)[1]}"] = kopia
-    return basta
+    return wayback.basta(kopior, nyckel, rang)
+
+
+def nyckel(kopia: wayback.Kopia) -> str:
+    return f"sitevision:{NEDLADDNING.match(kopia.original)[1]}"
 
 
 def rang(kopia: wayback.Kopia) -> tuple[int, int, int]:
     """Nyaste versionen, sedan största kopian, och vid lika den äldsta."""
-    version = int(NEDLADDNING.match(kopia.original)[2])
-    return version, kopia.langd, -int(kopia.tidsstampel)
+    return int(NEDLADDNING.match(kopia.original)[2]), *wayback.storst(kopia)
 
 
 def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], list[str]]:
@@ -61,15 +61,22 @@ def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], lis
         return [], [f"{sidadress}: ingen kopia av mötessidan i arkivet"]
     bilder, fel = [], []
     for adress in map(wayback.adress, wayback.sista_per_ar(kopior)):
-        try:
-            html = klient.text(adress)
-            forekomster(html, adress)  # en kapad sida går inte att läsa
-            bilder.append((adress, html))
-        except Hamtfel as hamtfel:
-            fel.append(f"{adress}: {hamtfel.orsak}")
-        except ValueError:
-            fel.append(f"{adress}: sidan går inte att läsa")
+        lasta, olasta = bild(klient, adress)
+        bilder += lasta
+        fel += olasta
     return bilder, fel
+
+
+def bild(klient, adress: str) -> tuple[list[tuple[str, str]], list[str]]:
+    """Ögonblicksbilden med sin HTML, eller varför den inte går att läsa."""
+    try:
+        html = klient.text(adress)
+        forekomster(html, adress)  # en kapad sida går inte att läsa
+    except Hamtfel as fel:
+        return [], [f"{adress}: {fel.orsak}"]
+    except ValueError:
+        return [], [f"{adress}: sidan går inte att läsa"]
+    return [(adress, html)], []
 
 
 def med_kopior(fynd: Fynd, filer: dict[str, wayback.Kopia]) -> Fynd:

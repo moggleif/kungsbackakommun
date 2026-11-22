@@ -13,7 +13,7 @@ inte slås ihop när de möttes samma dag.
 """
 
 import re
-from dataclasses import replace
+from dataclasses import dataclass, replace
 from urllib.parse import quote, unquote, urlsplit
 
 from kommunhandlingar.adaptrar import episerver, wayback
@@ -21,16 +21,29 @@ from kommunhandlingar.fel import Hamtfel, IngenKandidat
 from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 
 
+@dataclass(frozen=True)
+class Mapp:
+    organ: str
+    adress: str
+
+    @property
+    def sokvag(self) -> str:
+        """Sökvägen efter värden, avkodad."""
+        return unquote(self.adress.split("/", 1)[1])
+
+
 def upptack(kalla: episerver.Kalla, klient) -> Fynd:
-    fynd = Fynd()
-    for organ, mapp in ((o, m) for o, mappar in kalla.mappar.items() for m in mappar):
-        try:
-            kopior = wayback.fraga(klient, mapp, "application/pdf", True)
-        except Hamtfel as fel:
-            fynd += Fynd(noteringar=[str(fel)])
-            continue
-        fynd += las_mapp(kalla, organ, mapp, kopior)
+    mappar = (Mapp(o, m) for o, adresser in kalla.mappar.items() for m in adresser)
+    fynd = sum((fraga_mapp(klient, kalla, mapp) for mapp in mappar), Fynd())
     return replace(fynd, kandidater=moten(fynd.kandidater))
+
+
+def fraga_mapp(klient, kalla: episerver.Kalla, mapp: Mapp) -> Fynd:
+    try:
+        kopior = wayback.fraga_under(klient, mapp.adress, "application/pdf")
+    except Hamtfel as fel:
+        return Fynd(noteringar=[str(fel)])
+    return las_mapp(kalla, mapp, kopior)
 
 
 def moten(kandidater: list[Kandidat]) -> list[Kandidat]:
@@ -58,15 +71,15 @@ def naturlig(text: str) -> list:
     return [int(d) if d.isdigit() else d for d in re.split(r"(\d+)", text)]
 
 
-def las_mapp(
-    kalla: episerver.Kalla, organ: str, mapp: str, kopior: list[wayback.Kopia]
-) -> Fynd:
+def las_mapp(kalla: episerver.Kalla, mapp: Mapp, kopior: list[wayback.Kopia]) -> Fynd:
     kandidater, avvisade = [], []
-    for kopia in basta([k for k in kopior if inne_i(mapp, k)]).values():
+    i_mappen = [k for k in kopior if inne_i(mapp, k)]
+    filer = wayback.basta(i_mappen, lambda k: nyckel_av(k.original), wayback.storst)
+    for kopia in filer.values():
         try:
-            kandidater.append(kandidat(kalla, organ, mapp, kopia))
+            kandidater.append(kandidat(kalla, mapp, kopia))
         except IngenKandidat as fel:
-            avvisade.append(Avvisad(mapp, filnamn(kopia), str(fel)))
+            avvisade.append(Avvisad(mapp.adress, filnamn(kopia), str(fel)))
     return Fynd(kandidater, avvisade)
 
 
@@ -77,41 +90,35 @@ def nyckel_av(original: str) -> str:
     return f"episerver:{vard}{quote(unquote(delar.path), safe='/')}"
 
 
-def basta(kopior: list[wayback.Kopia]) -> dict[str, wayback.Kopia]:
-    basta: dict[str, wayback.Kopia] = {}
-    for kopia in sorted(kopior, key=lambda k: (k.langd, -int(k.tidsstampel))):
-        basta[nyckel_av(kopia.original)] = kopia
-    return basta
-
-
-def kandidat(
-    kalla: episerver.Kalla, organ: str, mapp: str, kopia: wayback.Kopia
-) -> Kandidat:
-    nyckel = nyckel_av(kopia.original)
-    typ, datum = episerver.typ_och_datum(kalla, under(mapp, kopia), nyckel)
+def kandidat(kalla: episerver.Kalla, mapp: Mapp, kopia: wayback.Kopia) -> Kandidat:
+    kallnyckel = nyckel_av(kopia.original)
+    typ, datum = episerver.typ_och_datum(kalla, under(mapp, kopia), kallnyckel)
     return Kandidat(
-        organ=organ,
+        organ=mapp.organ,
         datum=datum,
         typ=typ,
         url=wayback.adress(kopia),
-        kalla=mapp,
-        kallnyckel=nyckel,
+        kalla=mapp.adress,
+        kallnyckel=kallnyckel,
         filnamn=filnamn(kopia),
     )
 
 
-def inne_i(mapp: str, kopia: wayback.Kopia) -> bool:
+def sokvag(kopia: wayback.Kopia) -> str:
+    """Kopians sökväg efter värden, avkodad."""
+    return unquote(urlsplit(kopia.original).path).lstrip("/")
+
+
+def inne_i(mapp: Mapp, kopia: wayback.Kopia) -> bool:
     """Arkivets prefix tar också syskonmappar med längre namn, som
     "Kommunstyrelsens arbetsutskott/" för "Kommunstyrelsen/"."""
-    mappens = unquote(mapp.split("/", 1)[1])
-    return unquote(urlsplit(kopia.original).path).lstrip("/").startswith(mappens)
+    return sokvag(kopia).startswith(mapp.sokvag)
 
 
-def under(mapp: str, kopia: wayback.Kopia) -> str:
+def under(mapp: Mapp, kopia: wayback.Kopia) -> str:
     """Sökvägen under mappen, avkodad."""
-    mappens = unquote(mapp.split("/", 1)[1])
-    return unquote(urlsplit(kopia.original).path).lstrip("/")[len(mappens) :]
+    return sokvag(kopia)[len(mapp.sokvag) :]
 
 
 def filnamn(kopia: wayback.Kopia) -> str:
-    return unquote(urlsplit(kopia.original).path).rsplit("/", 1)[-1]
+    return sokvag(kopia).rsplit("/", 1)[-1]
