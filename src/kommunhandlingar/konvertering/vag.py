@@ -7,6 +7,7 @@ stämmer gäller.
 
 import unicodedata
 from collections.abc import Callable
+from typing import override
 
 from pdfminer.pdfdevice import PDFDevice
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
@@ -78,6 +79,7 @@ class Raknare(PDFDevice):
 
     antal = 0
 
+    @override
     def render_string(self, textstate, seq, ncs, graphicstate):
         if textstate.render == OSYNLIG:
             return
