@@ -1,7 +1,7 @@
 """Krav: K26 och K27 i docs/02-KRAV.md, ADR-0044 och ADR-0045. Kod:
 src/kommunhandlingar/webbplats/mal.py, malsida.py, malkort.py,
-statusikon.py och bygg.py. Grupperna och antalet: tests/test_malgrupper.py.
-Tidslinjen och korten: tests/test_malkort.py."""
+statusikon.py, inlasning.py och bygg.py. Grupperna och antalet:
+tests/test_malgrupper.py. Tidslinjen och korten: tests/test_malkort.py."""
 
 import shutil
 import tempfile

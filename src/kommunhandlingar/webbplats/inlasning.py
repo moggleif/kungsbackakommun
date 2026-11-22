@@ -10,7 +10,7 @@ sidor som bygget redan skrivit.
 """
 
 from collections.abc import Callable
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 
@@ -27,7 +27,8 @@ from kommunhandlingar.webbplats.spar import Steg
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 
 
-# En katalog i poolens rot med en fil per kommun, som `mal/kungsbacka.csv`.
+# Poolens rot och kommunerna, för kataloger med en fil per kommun, som
+# `mal/<kommun>.csv`.
 @dataclass(frozen=True)
 class Kommunfiler:
     rot: Path
@@ -40,11 +41,13 @@ class Kommunfiler:
         return filer
 
     def las[T](
-        self, katalog: str, las: Callable[[Path, Kommun, Path], T]
+        self, katalog: str, lasare: Callable[[Path, Kommun, Path], T]
     ) -> dict[str, T]:
         filer = self.med_fil(katalog)
         return {
-            k.id: las(self.rot / katalog / f"{k.id}.csv", k, self.rot / "data" / k.id)
+            k.id: lasare(
+                self.rot / katalog / f"{k.id}.csv", k, self.rot / "data" / k.id
+            )
             for k in self.kommuner
             if k.id in filer
         }
@@ -53,17 +56,15 @@ class Kommunfiler:
 def las(rot: Path, repo: str, byggd: datetime) -> Mall:
     kommuner = [konfiguration.las(f) for f in sorted((rot / "kommuner").glob("*.toml"))]
     filer = Kommunfiler(rot, kommuner)
-    mall = Mall(
-        kommuner,
-        repo,
-        byggd,
-        kalendrar=filer.med_fil("kalender"),
-        malen=filer.las("mal", mal.las),
-        uppfoljningar=filer.las("uppfoljningar", uppfoljningar.las),
-        spar={s.id: filer.las(s.id, spar.lasare(s)) for s in SLAGEN},
+    kalendrar = filer.med_fil("kalender")
+    malen = filer.las("mal", mal.las)
+    uppfoljda = filer.las("uppfoljningar", uppfoljningar.las)
+    sparen = {s.id: filer.las(s.id, spar.lasare(s)) for s in SLAGEN}
+    projekten = las_projekten(filer, sparen[DETALJPLANER.id])
+    aren = kommunernas_ar(filer, byggd, (malen, uppfoljda, sparen))
+    return Mall(
+        kommuner, repo, byggd, kalendrar, malen, uppfoljda, sparen, projekten, aren
     )
-    mall = replace(mall, projekt=las_projekten(filer, mall.spar[DETALJPLANER.id]))
-    return replace(mall, aren=kommunernas_ar(rot, mall))
 
 
 def las_kalender(rot: Path, kommun: Kommun) -> list[Sammantrade]:
@@ -72,17 +73,18 @@ def las_kalender(rot: Path, kommun: Kommun) -> list[Sammantrade]:
 
 
 # Målen, uppföljningarna och spåren per kommun, som Mall har dem (K60).
-def kommunernas_ar(rot: Path, mall: Mall) -> dict[str, range]:
-    filer = (mall.malen, mall.uppfoljningar, mall.spar)
+def kommunernas_ar(
+    filer: Kommunfiler, byggd: datetime, rader: tuple[dict, dict, dict]
+) -> dict[str, range]:
     return {
         k.id: arspann(
             [
-                *poolens_ar(rot / "data" / k.id),
-                *radernas_ar(k.id, *filer),
-                mall.byggd.year,
+                *poolens_ar(filer.rot / "data" / k.id),
+                *radernas_ar(k.id, *rader),
+                byggd.year,
             ]
         )
-        for k in mall.kommuner
+        for k in filer.kommuner
     }
 
 

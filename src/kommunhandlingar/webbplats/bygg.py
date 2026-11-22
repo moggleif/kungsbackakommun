@@ -46,9 +46,7 @@ from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 
 
-# Signaturen står kvar med fyra parametrar: `webbplats/__main__.py`, och
-# genom den regionens datarepo, bygger webbplatsen härifrån.
-def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:
+def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:  # noqa: PLR0913  # undantag: __main__ och regionens datarepo bygger genom signaturen
     bygge = Bygge(ut, inlasning.las(rot, repo, byggd))
     ut.mkdir(parents=True, exist_ok=True)
     if not bygge.mall.en_kommun:
@@ -88,8 +86,10 @@ def skriv_dokumenten(
     for fil, falt, text in pool.dokumenten(katalog):
         prova(fil, falt, kommun)
         falt["adress"] = fil.relative_to(katalog).with_suffix(".html").as_posix()
-        html = dokumentsida(bygge.mall, kommun, falt, text)
-        kopiera_tabeller(fil, bygge.skriv(f"{kommun.id}/{falt['adress']}", html))
+        adress = f"{kommun.id}/{falt['adress']}"
+        (bygge.ut / adress).parent.mkdir(parents=True, exist_ok=True)
+        sidfil = bygge.skriv(adress, dokumentsida(bygge.mall, kommun, falt, text))
+        kopiera_tabeller(fil, sidfil)
         dokument.append(falt)
         stycken += paragrafindex.av_dokument(falt, text, katalog)
     return dokument, stycken

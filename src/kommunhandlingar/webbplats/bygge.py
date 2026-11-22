@@ -1,6 +1,8 @@
 """Krav: K14 i docs/02-KRAV.md. Test: tests/test_webbplats.py.
 
-Ett webbplatsbygge: utkatalogen och mallen som alla sidor skrivs med.
+Ett webbplatsbygge: utkatalogen och mallen som sidorna skrivs med. Katalogen
+för sidan ska finnas. Indexen och sammanträdenas sidor skrivs av sina egna
+moduler direkt i utkatalogen.
 """
 
 from dataclasses import dataclass
@@ -16,6 +18,5 @@ class Bygge:
 
     def skriv(self, adress: str, html: str) -> Path:
         fil = self.ut / adress
-        fil.parent.mkdir(parents=True, exist_ok=True)
         fil.write_text(html, encoding="utf-8")
         return fil
