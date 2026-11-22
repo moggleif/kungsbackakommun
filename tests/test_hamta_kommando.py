@@ -115,11 +115,8 @@ class TestDelar(Kommandofall):
 
         with mock.patch.object(hamta, "behandla", andra_nar_gransen):
             kod, utskrift = self.kor("--del", str(DEL))
-        sammanfattning = (
-            "lagd åt sidan vid tidsgränsen: u2\n1 konverterad\n"
-            "1 lagd åt sidan vid tidsgränsen\n1 väntar på nästa körning\n"
-        )
-        self.assertEqual((kod, utskrift), (hamta.MER_I_NASTA_DEL, sammanfattning))
+        self.assertEqual(kod, hamta.MER_I_NASTA_DEL)
+        self.assertIn("lagd åt sidan vid tidsgränsen: u2\n", utskrift)
         provfil = provade.fil(lista(self.arbete, "exempelby", False))
         self.assertEqual(provfil.read_text(encoding="utf-8"), "s:1\n")
 

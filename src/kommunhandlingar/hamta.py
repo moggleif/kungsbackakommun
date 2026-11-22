@@ -60,7 +60,7 @@ def ordna(steg: Steg2, kandidater: list[Kandidat]) -> list[Kandidat]:
 
 @dataclass
 class Korning:
-    """Utfallen räknade på sin text, och kandidaterna som provades."""
+    """Utfallen räknas på sin text, som i sammanfattningen."""
 
     utfall: Counter = field(default_factory=Counter)
     provade: list[Kandidat] = field(default_factory=list)
@@ -68,22 +68,23 @@ class Korning:
 
 def kor(steg: Steg2, kandidater: list[Kandidat], mjuk: datetime) -> Korning:
     korning = Korning()
-    for kandidat in kandidater:
+    for nr, kandidat in enumerate(kandidater):
         try:
             if steg.tid() >= mjuk:
+                korning.utfall[VANTAR.text] += len(kandidater) - nr
                 break
             resultat = behandla(steg, kandidat)
         except Tidsgrans:
-            rakna(korning, AT_SIDAN, kandidat)
+            notera(korning, AT_SIDAN, kandidat)
+            korning.utfall[VANTAR.text] += len(kandidater) - nr - 1
             break
-        rakna(korning, resultat, kandidat)
+        notera(korning, resultat, kandidat)
         korning.provade.append(kandidat)
-    if vantar := len(kandidater) - korning.utfall.total():
-        korning.utfall[VANTAR.text] = vantar
     return korning
 
 
-def rakna(korning: Korning, utfall: Utfall, kandidat: Kandidat) -> None:
+def notera(korning: Korning, utfall: Utfall, kandidat: Kandidat) -> None:
+    """Räknar utfallet och skriver ut det med adressen när det ska loggas."""
     korning.utfall[utfall.text] += 1
     if utfall.loggas:
         print(f"{utfall.text}: {kandidat.url}", flush=True)

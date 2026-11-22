@@ -1,5 +1,6 @@
 """Krav: K8, K9 och K11 i docs/02-KRAV.md. Test i tests/: test_hamta.py,
-test_hamta_arkiv.py, test_tidsbudget.py och test_hamta_kommando.py.
+test_hamta_arkiv.py, test_plattformar.py, test_sammanslagning.py,
+test_omkonvertering.py, test_tidsbudget.py och test_hamta_kommando.py.
 
 Vad steg 2 gjorde med en kandidat. Texten räknas i sammanfattningen, och ett
 utfall som ska loggas skrivs också ut med kandidatens adress.
