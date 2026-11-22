@@ -11,7 +11,8 @@ protokoll med text.
 
 from html import escape
 
-from kommunhandlingar.webbplats.mal import SLAG, Mal, jamforbar
+from kommunhandlingar.webbplats.kallprov import jamforbar
+from kommunhandlingar.webbplats.mal import SLAG, Mal
 from kommunhandlingar.webbplats.malspar import arets, egenskaper, fristaende, under
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.statusikon import teckenforklaring

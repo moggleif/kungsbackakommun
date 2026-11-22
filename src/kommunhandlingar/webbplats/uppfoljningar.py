@@ -12,7 +12,7 @@ from pathlib import Path
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import radfil
-from kommunhandlingar.webbplats.mal import Sidtext, sidlasare, star_pa
+from kommunhandlingar.webbplats.kallprov import Sidlasare, star_pa
 
 KOLUMNER = ["organ", "datum", "paragraf", "slag", "rubrik", "kalla"]
 SLAG = ("uppföljning", "dragning")
@@ -33,7 +33,7 @@ class Uppfoljning:
 
 
 def las(fil: Path, kommun: Kommun, data: Path) -> list[Uppfoljning]:
-    organ, sidtext = radfil.organen(kommun), sidlasare(data)
+    organ, sidtext = radfil.organen(kommun), Sidlasare(data)
     tolka_unik = radfil.unika(
         lambda rad: tolka(rad, organ, sidtext),
         lambda u: (u.organ, u.datum, u.paragraf),
@@ -42,7 +42,7 @@ def las(fil: Path, kommun: Kommun, data: Path) -> list[Uppfoljning]:
     return radfil.las(fil, KOLUMNER, tolka_unik)
 
 
-def tolka(rad: list[str], organ: set[str], sidtext: Sidtext) -> Uppfoljning:
+def tolka(rad: list[str], organ: set[str], sidtext: Sidlasare) -> Uppfoljning:
     upp = Uppfoljning(*rad)
     try:
         date.fromisoformat(upp.datum)
@@ -57,7 +57,7 @@ def tolka(rad: list[str], organ: set[str], sidtext: Sidtext) -> Uppfoljning:
     return upp
 
 
-def kontrollera_kalla(upp: Uppfoljning, sidtext: Sidtext) -> None:
+def kontrollera_kalla(upp: Uppfoljning, sidtext: Sidlasare) -> None:
     if not upp.kalla.startswith(f"{upp.organ}/{upp.ar}/{upp.datum}/protokoll"):
         raise ValueError(f"källan {upp.kalla!r} är inte mötets protokoll")
     if not star_pa(upp.rubrik, sidtext(upp.kalla, upp.organ)):

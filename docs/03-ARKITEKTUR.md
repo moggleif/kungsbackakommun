@@ -2418,9 +2418,11 @@ filen (K26), länkad från organets sida.
   sida eller sidor som finns i ett av organets dokument i poolen,
   rubriken, formuleringen eller statusen inte står på sidorna, eller
   samma organ, slag och rubrik står två gånger med samma källa (den
-  kontrollen och de följande står i `webbplats/malkontroll.py`). Bygget
-  stoppas också om uppföljningen eller bedömningen är okänd, en rad utan
-  uppföljning har en bedömning eller status, en uppföljning saknar
+  kontrollen och de följande står i `webbplats/malkontroll.py`; prövningen
+  mot källans sidor, som spåren och uppföljningarna delar, står i
+  `webbplats/kallprov.py`). Bygget stoppas också om uppföljningen eller
+  bedömningen är okänd, en rad utan uppföljning har en bedömning eller
+  status, en uppföljning saknar
   bedömning, `tolkad` är något annat än tomt eller `ja` i en grupp, samma
   rubrik har två olika grupper eller huvudmål, två rubriker står i samma
   spår samma år i samma dokument (budgeten och uppföljningen får skriva
@@ -2594,7 +2596,7 @@ En kommun med en fil `lokalbehov/<kommun>.csv` får en sida
   `docs/kallor/<kommun>.md`.
 - **Kontrollen** (`webbplats/spar.py`) stoppar bygget med raden
   enligt K36. Texten och värdet prövas mot källans sidor som målfilens
-  (`mal.provbar`), med källans organ i stället för behovets.
+  (`kallprov.provbar`), med källans organ i stället för behovets.
 - **Ett förslag är inget beslut.** Nämndens lokalbehov och prioriteringar
   tas ur protokollet, eller ur handlingarna när protokollet visar att
   förslaget bifölls, som för målen (ADR-0045). När projektägaren vet att

@@ -18,7 +18,7 @@ from pathlib import Path
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import radfil
-from kommunhandlingar.webbplats.mal import Sidtext, provbar, sidlasare
+from kommunhandlingar.webbplats.kallprov import Sidlasare, provbar
 from kommunhandlingar.webbplats.partier import star_pa
 
 
@@ -70,12 +70,12 @@ class Steg:
 @dataclass(frozen=True)
 class Underlag:
     organ: set[str]
-    sidtext: Sidtext
+    sidtext: Sidlasare
 
 
 def lasare(slag: Slag) -> Callable[[Path, Kommun, Path], list[Steg]]:
     def las(fil: Path, kommun: Kommun, data: Path) -> list[Steg]:
-        underlag = Underlag(radfil.organen(kommun), sidlasare(data))
+        underlag = Underlag(radfil.organen(kommun), Sidlasare(data))
         tolka_unik = radfil.unika(
             lambda rad: tolka(rad, slag, underlag),
             lambda s: (s.organ, s.namn, s.fas, s.kalla),
