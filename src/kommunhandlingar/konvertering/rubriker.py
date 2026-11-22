@@ -18,19 +18,24 @@ def ovanfor(rader_: list[Rad], fack: Fack) -> tuple[list[list[str]], list[Rad]]:
     """Cellerna och textraderna för rubriken och högst två avsnittsrubriker
     närmast ovanför tabellen. Avsnittsrubrikerna tas med bara när rubriken
     finns."""
-    n = 0
-    while n < min(MEST_EMELLAN, len(rader_) - 1) and ensam_ovanfor(rader_, n, fack):
-        n += 1
+    n = antal_avsnittsrubriker(rader_, fack)
     huvud = huvudet(rader_[: len(rader_) - n], fack)
     celler = rubrikceller(huvud, len(fack.kolumner)) if huvud else None
     if not celler:
         return [], []
     avsnitt = rader_[-1 - n : -1]
     tomma = [""] * len(fack.kolumner)
-    rader_i_huvudet = [r for r, _ in huvud]
-    return celler + [
-        [r.falt[0].text, *tomma] for r in avsnitt
-    ], rader_i_huvudet + avsnitt
+    med_avsnitt = celler + [[r.falt[0].text, *tomma] for r in avsnitt]
+    return med_avsnitt, [r for r, _ in huvud] + avsnitt
+
+
+def antal_avsnittsrubriker(rader_: list[Rad], fack: Fack) -> int:
+    """Hur många ensamma etiketter, högst `MEST_EMELLAN`, som står närmast ovanför
+    tabellen."""
+    n = 0
+    while n < min(MEST_EMELLAN, len(rader_) - 1) and ensam_ovanfor(rader_, n, fack):
+        n += 1
+    return n
 
 
 def ensam_ovanfor(rader_: list[Rad], n: int, fack: Fack) -> bool:
