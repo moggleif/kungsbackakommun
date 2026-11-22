@@ -17,6 +17,7 @@ from kommunhandlingar.facit.rader import (
 )
 from kommunhandlingar.konvertering.dokument import Resultat
 from kommunhandlingar.konvertering.flersidiga import Sammanslagen, tabeller
+from kommunhandlingar.konvertering.kvalitet import OK
 
 MATT = (
     "ratt",
@@ -120,7 +121,7 @@ def rubrikens_fel(rubrik: list[list[str]], kandidater: list[Tabell]) -> list:
 
 def markerade_sidor(resultat: Resultat) -> set[int]:
     sidor = enumerate(resultat.kvalitet_per_sida, 1)
-    return {nr for nr, k in sidor if k != "ok"} | set(resultat.tal_obekraftade)
+    return {nr for nr, k in sidor if k != OK} | set(resultat.tal_obekraftade)
 
 
 def status(f: Tabell, utfall: Utfall, markerade: set[int]) -> tuple[str, str]:

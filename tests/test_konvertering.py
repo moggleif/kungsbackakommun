@@ -10,7 +10,7 @@ from unittest import mock
 import pypdfium2 as pdfium
 
 from kommunhandlingar.fel import Konfigurationsfel
-from kommunhandlingar.konvertering import ocr
+from kommunhandlingar.konvertering import kvalitet, ocr
 from kommunhandlingar.konvertering.dokument import konvertera, versioner
 from kommunhandlingar.konvertering.kvalitet import dokumentets
 from kommunhandlingar.konvertering.ocr import medelsakerhet
@@ -129,6 +129,12 @@ class TestRegler(unittest.TestCase):
             (["ointressant", "ej-konverterad"], "delvis"),
         ):
             self.assertEqual(dokumentets(sidor), vantat, sidor)
+
+    def test_mangderna_ar_kvaliteter(self):
+        sidmangder = (kvalitet.LASTA, kvalitet.OBEKRAFTADE, kvalitet.TEXTLAGER)
+        for mangd in (*sidmangder, kvalitet.MED_OCR):
+            self.assertLessEqual(mangd, set(kvalitet.SIDKVALITETER))
+        self.assertLessEqual(set(kvalitet.UTAN_TEXT), set(kvalitet.KVALITETER))
 
     def test_talrader(self):
         self.assertTrue(ar_talrad("Netto      2 233     -1 845"))

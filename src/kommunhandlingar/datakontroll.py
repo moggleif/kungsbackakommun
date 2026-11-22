@@ -21,7 +21,7 @@ from kommunhandlingar.arenden import ratt_varde
 from kommunhandlingar.datakontroll_tabeller import tabellfel
 from kommunhandlingar.frontmatter import saknas
 from kommunhandlingar.kandidat import TYPORDNING
-from kommunhandlingar.konvertering.kvalitet import KVALITETER, SIDKVALITETER
+from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.las_sida import STYRTECKEN
 from kommunhandlingar.personuppgifter import maskad_md, maskade_celler
 
@@ -31,7 +31,6 @@ EJ_HAMTAD_NULL = ("sha256", "bytes", "sidor", "konverterad")
 EJ_HAMTAD_NULL += ("kvalitet_per_sida", "tal_obekraftade", "figurer", "tolkade")
 EJ_HAMTAD_NULL += ("granskad",)
 DATUM = re.compile(r"\d{4}-\d{2}-\d{2}")
-OBEKRAFTADE = {"ocr", "bild", "ej-konverterad"}
 
 
 def fel_i(data: Path) -> list[str]:
@@ -101,10 +100,12 @@ def arendefel(falt: dict[str, str], text: str) -> list[str]:
 
 def vardefel(falt: dict[str, str]) -> list[str]:
     fel = [] if falt["typ"] in TYPORDNING else [f"okänd typ {falt['typ']!r}"]
-    if falt["kvalitet"] not in KVALITETER:
+    if falt["kvalitet"] not in kvalitet.KVALITETER:
         fel.append(f"okänd kvalitet {falt['kvalitet']!r}")
     sidor = frontmatter.lista(falt["kvalitet_per_sida"])
-    fel += [f"okänd sidkvalitet {s!r}" for s in sidor if s not in SIDKVALITETER]
+    fel += [
+        f"okänd sidkvalitet {s!r}" for s in sidor if s not in kvalitet.SIDKVALITETER
+    ]
     for namn in ("datum", "granskad"):
         if not saknas(falt[namn]) and not DATUM.fullmatch(falt[namn]):
             fel.append(f"{namn} {falt[namn]!r} är inte ÅÅÅÅ-MM-DD")
@@ -126,7 +127,7 @@ def sokvagsfel(relativ: Path, falt: dict[str, str]) -> list[str]:
 
 
 def statusfel(falt: dict[str, str]) -> list[str]:
-    if falt["kvalitet"] == "ej-hamtad":
+    if falt["kvalitet"] == kvalitet.EJ_HAMTAD:
         fel = [f"{n} ska vara null" for n in EJ_HAMTAD_NULL if not saknas(falt[n])]
         return fel + (["fel saknas"] if saknas(falt["fel"]) else [])
     sidor = frontmatter.lista(falt["kvalitet_per_sida"])
@@ -138,7 +139,7 @@ def statusfel(falt: dict[str, str]) -> list[str]:
     return [
         f"sidan {nr} är {s} men står inte i tal_obekraftade"
         for nr, s in enumerate(sidor, 1)
-        if s in OBEKRAFTADE and str(nr) not in obekraftade
+        if s in kvalitet.OBEKRAFTADE and str(nr) not in obekraftade
     ]
 
 
