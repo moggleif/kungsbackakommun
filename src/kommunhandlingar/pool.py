@@ -3,7 +3,7 @@ och tests/test_pool.py.
 
 Poolen är tillståndet: front matter i varje `.md` under `data/<kommun>/`,
 uppslagen på källnyckel, tidigare källnycklar och sökväg. Bara här gås
-poolens dokument igenom (#364): `dokumenten` ger dem i sökvägarnas ordning.
+poolens `.md` igenom (#364): `dokumenten` ger dem i sökvägarnas ordning.
 """
 
 from collections.abc import Iterator

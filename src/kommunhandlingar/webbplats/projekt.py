@@ -50,12 +50,12 @@ def las(fil: Path, kommun: Kommun, data: Path) -> dict[str, Projekt]:
             raise Datafel(f"{fil}, rad {nr}: {fel}")
         planerna.add(rad[1])
     namnen = {forled(r[2]) for r in rader}
-    pool = {organ: organets(data, organ) for organ in {r[0] for r in rader}}
+    per_organ = {organ: organets(data, organ) for organ in {r[0] for r in rader}}
     return {
         plan: Projekt(
             f"{listor[organ]}/{projekt}",
             tolkad == "ja",
-            dokumenten(forled(projekt), pool[organ], namnen),
+            dokumenten(forled(projekt), per_organ[organ], namnen),
         )
         for organ, plan, projekt, tolkad in rader
     }
@@ -94,13 +94,13 @@ def dokumenten(projekt: str, organets: Organets, namnen: set[str]) -> Dokument:
 
 # Titeln är källans filnamn som det står, med å, ä, ö och versaler.
 def organets(data: Path, organ: str) -> Organets:
-    dokumenten = []
+    funna = []
     for fil, falt, _ in pool.dokumenten(data / organ):
         kalla = frontmatter.adresser(falt["kalla_url"])[0]
         titel = unquote(PurePosixPath(urlsplit(kalla).path).stem)
         adress = fil.relative_to(data).with_suffix(".html").as_posix()
-        dokumenten.append((falt["datum"], falt["namn"], titel, adress))
-    return tuple(sorted(dokumenten))
+        funna.append((falt["datum"], falt["namn"], titel, adress))
+    return tuple(sorted(funna))
 
 
 def kontrollera(projekten: dict[str, Projekt], stegen: list[Steg], fil: str) -> None:
