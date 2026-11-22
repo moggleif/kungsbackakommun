@@ -7,18 +7,18 @@ typ: protokoll
 namn: null
 kallnyckel: sitevision:18.5025299019e4ad5ed2c975d
 tidigare_kallnycklar: []
-arenden: [FG-2026-00231]
+arenden: []
 kalla_url: https://kungsbacka.se/download/18.5025299019e4ad5ed2c975d/1779452708413/F%C3%B6rskola%20&%20Grundskola%20n%C3%A4mnd%20protokoll%20%C2%A7%2052%202026-05-20.pdf
 sha256: a0ddd4a936b2b8b3a521bc46213660d42a917c98def382ab2484b451e4ab8450
 bytes: 242489
 sidor: 5
-hamtad: 2026-11-22T08:49:25+00:00
-konverterad: 2026-11-22T08:49:30+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T21:40:25+00:00
+konverterad: 2026-11-22T21:40:38+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5]
+tal_obekraftade: [2, 3, 4]
 figurer: []
 tolkade: []
 granskad: null
@@ -54,7 +54,7 @@ Ledamöter
 
 Emanuel Forsell (M), Ordförande
 
-Jan Eric Knutas (1), 1:e vice ordförande
+Jan Eric Knutas (L), 1:e vice ordförande
 Johan Tolinsson (S), 2:e vice ordförande
 Mia Sundvall (M)
 
@@ -111,7 +111,7 @@ Lars Sundbom, utvecklare
 
 Övriga
 
-8 52
+§52
 
 Paragrafer
 

@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.5025299019e4ad5ed2c975e/17794527084
 sha256: 7fe3adb6d9ca229c671a10c214a869678cc503385ba8f8840d5044e8ccbd0f20
 bytes: 1350624
 sidor: 21
-hamtad: 2026-11-22T08:49:30+00:00
-konverterad: 2026-11-22T08:50:04+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T21:40:38+00:00
+konverterad: 2026-11-22T21:41:59+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+tal_obekraftade: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 figurer: []
 tolkade: []
 granskad: null
@@ -54,7 +54,7 @@ Ledamöter
 
 Emanuel Forsell (M), Ordförande
 
-Jan Eric Knutas (1), 1:e vice ordförande
+Jan Eric Knutas (L), 1:e vice ordförande
 Johan Tolinsson (S), 2:e vice ordförande
 Mia Sundvall (M)
 
