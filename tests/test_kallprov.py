@@ -1,5 +1,4 @@
-"""Krav: K26, K28 och K36–K38 i docs/02-KRAV.md, ADR-0021 och ADR-0056. Kod:
-src/kommunhandlingar/webbplats/kallprov.py.
+"""Krav: ADR-0021 och ADR-0056. Kod: src/kommunhandlingar/webbplats/kallprov.py.
 
 Ett värde ur en radfil står på källans sida när det står där sedan
 radbrytningar, mellanrum, mjuka bindestreck, tabellcellernas `<br>`,
@@ -23,32 +22,31 @@ på nästa sida
 """
 
 
-def sida(text: str) -> str:
-    return provbar(text)
-
-
 class TestStarPa(unittest.TestCase):
     def test_mjuka_bindestreck(self):
-        self.assertTrue(star_pa("Ökad trygghet", sida("Ökad tryg­ghet")))
+        self.assertTrue(star_pa("Ökad trygghet", provbar("Ökad tryg­ghet")))
 
     def test_br_i_en_tabellcell(self):
-        self.assertTrue(star_pa("Ökad trygghet", sida("| Ökad tryg-<br>ghet |")))
-        self.assertTrue(star_pa("Ökad trygghet", sida("| Ökad<br>trygghet |")))
+        self.assertTrue(star_pa("Ökad trygghet", provbar("| Ökad tryg-<br>ghet |")))
+        self.assertTrue(star_pa("Ökad trygghet", provbar("| Ökad<br>trygghet |")))
 
     def test_punktlistor(self):
         text = "- Fler elever\n• klarar målen"
-        self.assertTrue(star_pa("Fler elever klarar målen", sida(text)))
-        self.assertTrue(star_pa("- Fler elever", sida("Fler elever")))
+        self.assertTrue(star_pa("Fler elever klarar målen", provbar(text)))
+        self.assertTrue(star_pa("- Fler elever", provbar("Fler elever")))
 
     def test_escapad_markdown(self):
-        self.assertTrue(star_pa("1. Mål *ett*", sida(r"1\. Mål \*ett\*")))
+        self.assertTrue(star_pa("1. Mål *ett*", provbar(r"1\. Mål \*ett\*")))
+
+    def test_trendkolumnens_pilar_och_tankstreck(self):
+        self.assertEqual(provbar("Ökar \u2191 \u2013 mål \u2014 \ue001x"), "Ökarmålx")
 
     def test_text_i_versaler(self):
-        self.assertTrue(star_pa("Ökad trygghet", sida("ÖKAD TRYGGHET")))
-        self.assertFalse(star_pa("Ökad Trygghet", sida("Ökad trygghet")))
+        self.assertTrue(star_pa("Ökad trygghet", provbar("ÖKAD TRYGGHET")))
+        self.assertFalse(star_pa("Ökad Trygghet", provbar("Ökad trygghet")))
 
     def test_text_som_inte_star_dar(self):
-        self.assertFalse(star_pa("Minskad trygghet", sida("Ökad trygghet")))
+        self.assertFalse(star_pa("Minskad trygghet", provbar("Ökad trygghet")))
 
     def test_jamforbar_behaller_mellanrummen(self):
         self.assertEqual(jamforbar("- Ökad\n  trygghet\\*"), "Ökad trygghet*")
@@ -64,7 +62,7 @@ class TestSidlasare(unittest.TestCase):
         fil.write_text(TEXT, encoding="utf-8")
         self.sidtext = Sidlasare(self.data)
 
-    def test_en_sida(self):
+    def test_en_provbar(self):
         self.assertEqual(self.sidtext(f"{DOKUMENT}#sida-14", "fsn"), "Måletfortsätter")
 
     def test_en_kalla_over_tva_sidor(self):

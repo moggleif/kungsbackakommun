@@ -1,12 +1,12 @@
-"""Krav: K26, K28 och K36–K38 i docs/02-KRAV.md, ADR-0021 och ADR-0056.
+"""Krav: de krav vars radfil prövas mot källans sida, ADR-0021 och ADR-0056.
 Test: tests/test_kallprov.py.
 
-Prövar att ett värde ur en radfil står på källans sida i ett dokument i
-poolen: målen, spåren och uppföljningarna gör det på samma sätt.
+Läser källans sidor i ett dokument i poolen och gör en text prövbar mot
+dem. Målen, spåren och uppföljningarna prövar sina värden med den;
+partierna och målens tidslinje jämför texter med samma regler.
 """
 
 import re
-from collections.abc import Callable
 from functools import cache
 from pathlib import Path
 
@@ -22,9 +22,7 @@ KALLA = re.compile(
 PUNKT = re.compile(r"^[ \t]*[-•*][ \t]*", re.MULTILINE)
 # Mellanrum, mjuka bindestreck, ett ord delat i en tabellcell och
 # trendkolumnens pilar och tankstreck, som hamnar mitt i texten (ADR-0056).
-UTFYLLNAD = re.compile(r"-<br>|<br>|[\s­–—←-⇿-]")
-
-Sidtext = Callable[[str, str], str]
+UTFYLLNAD = re.compile(r"-<br>|<br>|[\s\u00ad\u2013\u2014\u2190-\u21ff\ue000-\uf8ff]")
 
 
 class Sidlasare:

@@ -12,7 +12,7 @@ from pathlib import Path
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import radfil
-from kommunhandlingar.webbplats.kallprov import Sidlasare, Sidtext, star_pa
+from kommunhandlingar.webbplats.kallprov import Sidlasare, star_pa
 from kommunhandlingar.webbplats.malkontroll import Kontroll
 
 KOLUMNER = [
@@ -86,7 +86,7 @@ def las(fil: Path, kommun: Kommun, data: Path) -> list[Mal]:
     return malen
 
 
-def tolka(rad: list[str], organ: set[str], sidtext: Sidtext) -> Mal:
+def tolka(rad: list[str], organ: set[str], sidtext: Sidlasare) -> Mal:
     mal = Mal(rad[0], radfil.ar(rad[1]), *rad[2:])
     radfil.i_kommunfilen(mal.organ, organ)
     if mal.slag not in SLAG:
