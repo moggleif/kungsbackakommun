@@ -8,6 +8,8 @@ sidan `bild` när den till största delen är en jämn bildyta, `tom` när
 nästan inget är mörkt och Tesseract inte hittar något ord, och annars
 `ointressant` (docs/03-ARKITEKTUR.md#inskannade-sidor-som-inte-blir-text).
 Fallerar Tesseract är sidan `ej-konverterad` direkt, utan fler läsningar.
+Når den första läsningen tröskeln utan att sidan läses om prövas väg H,
+och bekräftar den sidans tal får sidan väg H:s text (K85, ADR-0106).
 """
 
 from dataclasses import dataclass
@@ -15,7 +17,14 @@ from dataclasses import dataclass
 import pypdfium2 as pdfium
 from PIL import Image, ImageDraw
 
-from kommunhandlingar.konvertering import bildyta, kvalitet, ocr, riktning, sakra_rader
+from kommunhandlingar.konvertering import (
+    bekraftade,
+    bildyta,
+    kvalitet,
+    ocr,
+    riktning,
+    sakra_rader,
+)
 
 FARG_DPI = 100
 FIGUR = 0.04
@@ -28,6 +37,7 @@ class Skannad:
     kvalitet: str
     text: str = ""
     figur: bool = False
+    tal_bekraftade: bool = False
 
 
 def las(rendering: pdfium.PdfPage) -> Skannad:
@@ -39,6 +49,10 @@ def las(rendering: pdfium.PdfPage) -> Skannad:
     skala = FARG_DPI / ocr.DPI
     yta = bildyta.storsta(farg, [skalad(r, skala) for r in forsta.ord])
     figur = yta.andel >= FIGUR and yta.jamn
+    if forsta.txt:
+        bekraftad = bekraftade.text(gra, forsta.tsv, forsta.txt)
+        if bekraftad is not None:
+            return Skannad(kvalitet.OCR, bekraftad, figur, tal_bekraftade=True)
     text = forsta.text
     if text is None:
         text = omlast(gra, skalad(yta.ruta, 1 / skala) if figur else None)

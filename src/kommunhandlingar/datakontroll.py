@@ -1,5 +1,5 @@
-"""Krav: K6, K11, K15, K17, K34, K48 och K81 i docs/02-KRAV.md, ADR-0006,
-ADR-0017, ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
+"""Krav: K6, K11, K15, K17, K34, K48, K81 och K85 i docs/02-KRAV.md, ADR-0006,
+ADR-0017, ADR-0022, ADR-0055, ADR-0071 och ADR-0106. Test: tests/test_datakontroll.py,
 tests/test_granskning.py, tests/test_arenden.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.datakontroll <data>` prövar varje fil under
@@ -137,10 +137,14 @@ def statusfel(falt: dict[str, str]) -> list[str]:
     if frontmatter.granskad(falt):
         return []  # granskningen tar själv bort de sidor vars tal den bekräftat
     obekraftade = set(frontmatter.lista(falt["tal_obekraftade"]))
+    # En OCR-sida vars tal väg H bekräftat står inte i listan (K85).
+    vag_h = "rapidocr" in falt["pipeline"]
     return [
         f"sidan {nr} är {s} men står inte i tal_obekraftade"
         for nr, s in enumerate(sidor, 1)
-        if s in kvalitet.OBEKRAFTADE and str(nr) not in obekraftade
+        if s in kvalitet.OBEKRAFTADE
+        and str(nr) not in obekraftade
+        and not (vag_h and s == kvalitet.OCR)
     ]
 
 

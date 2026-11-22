@@ -37,7 +37,8 @@ class Sidutfall:
 
 
 def mat(pdf: pdfium.PdfDocument, plumber: pdfplumber.PDF, nummer: int) -> Sidutfall:
-    lasning = radlasning.las(ocr.rendera(pdf[nummer - 1]))
+    bild = ocr.rendera(pdf[nummer - 1])
+    lasning = radlasning.las(bild, radlasning.tesseracts_tsv(bild))
     sida = facit.las(plumber.pages[nummer - 1])
     rader = [utfall(rad, sida) for rad in lasning.rader]
     med_tal = {r.ruta for r in lasning.rader}

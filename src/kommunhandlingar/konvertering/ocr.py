@@ -55,6 +55,7 @@ class Lasning:
     ord: list[tuple[int, int, int, int]] = field(default_factory=list)
     ordantal: int | None = None  # None: Tesseract fallerade
     tsv: str = ""
+    txt: str = ""  # Tesseracts egen text, när sidan inte lästes om
 
 
 def rendera(rendering: pdfium.PdfPage) -> Image.Image:
@@ -68,20 +69,24 @@ def las(bild: Image.Image) -> Lasning:
     forsta = las_bild(bild)
     if forsta is None:
         return Lasning(None)
-    ord_, antal = sakra_ord(forsta[0]), len(ordrader(forsta[0]))
-    if not over_troskeln(forsta[0]):
-        return Lasning(None, ord_, antal, forsta[0])
-    return Lasning(text_utan_stamplar(bild, forsta), ord_, antal)
-
-
-def text_utan_stamplar(bild: Image.Image, forsta: tuple[str, str]) -> str:
-    stamplar = hogkant.ocr_ord(forsta[0])
+    tsv, txt = forsta
+    ord_, antal = sakra_ord(tsv), len(ordrader(tsv))
+    if not over_troskeln(tsv):
+        return Lasning(None, ord_, antal, tsv)
+    stamplar = hogkant.ocr_ord(tsv)
     if stamplar:
-        bild = bild.copy()
-        hogkant.mala_vitt(bild, stamplar)
-        andra = las_bild(bild)
-        if andra is not None and over_troskeln(andra[0]):
-            return hogkant.sist(rensa(andra[1].strip()), hogkant.ocr_rader(stamplar))
+        return Lasning(text_utan_stamplar(bild, forsta, stamplar), ord_, antal, tsv)
+    return Lasning(rensa(txt.strip()), ord_, antal, tsv, txt)
+
+
+def text_utan_stamplar(
+    bild: Image.Image, forsta: tuple[str, str], stamplar: list[dict]
+) -> str:
+    bild = bild.copy()
+    hogkant.mala_vitt(bild, stamplar)
+    andra = las_bild(bild)
+    if andra is not None and over_troskeln(andra[0]):
+        return hogkant.sist(rensa(andra[1].strip()), hogkant.ocr_rader(stamplar))
     return rensa(forsta[1].strip())
 
 

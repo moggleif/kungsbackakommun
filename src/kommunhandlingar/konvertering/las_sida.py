@@ -1,6 +1,6 @@
-"""Krav: K4, K5, K6, K15, K17, K19, K41, K72 och K73 i docs/02-KRAV.md, ADR-0005,
-ADR-0016, ADR-0017, ADR-0022, ADR-0024, ADR-0028, ADR-0033, ADR-0034,
-ADR-0036, ADR-0038, ADR-0063, ADR-0064, ADR-0099 och ADR-0103.
+"""Krav: K4, K5, K6, K15, K17, K19, K41, K72, K73 och K85 i docs/02-KRAV.md,
+ADR-0005, ADR-0016, ADR-0017, ADR-0022, ADR-0024, ADR-0028, ADR-0033, ADR-0034,
+ADR-0036, ADR-0038, ADR-0063, ADR-0064, ADR-0099, ADR-0103 och ADR-0106.
 Test: tests/test_konvertering.py,
 tests/test_maska_poolen.py, tests/test_skarvar.py, tests/test_delade.py,
 tests/test_kvarvarande.py, tests/test_avskurna.py, tests/test_mellanslag.py,
@@ -8,7 +8,8 @@ tests/test_ordning.py, tests/test_spalter.py, tests/test_hogkant.py och
 tests/test_skannad.py.
 
 En sida blir `tom`, läses ur textlagret, eller läses med OCR. En OCR-sida
-får inga tabeller, och dess tal är aldrig bekräftade; en inskannad sida som
+får inga tabeller, och dess tal är bekräftade bara när väg H bekräftar
+dem (K85); en inskannad sida som
 inte blir text kan bli `bild` eller `tom` (K72). En sida som inte är
 tom prövas för figurer. Personuppgifterna maskas i text och celler innan
 sidan lämnas vidare, och styrtecken blir ersättningstecken. En sida ur
@@ -81,14 +82,16 @@ def rensad(text: str) -> str:
 
 
 def ocr_sida(rendering: pdfium.PdfPage, figur: bool) -> Sida:
-    """En sida som läses med OCR (K72). Bara en `tom` eller `ointressant`
-    sida (K73) är utan obekräftade tal och står aldrig i `figurer`."""
+    """En sida som läses med OCR (K72). En `tom` eller `ointressant` sida
+    (K73) är utan obekräftade tal och står aldrig i `figurer`, och en
+    `ocr`-sida är utan dem när väg H bekräftat dess tal (K85)."""
     skannad_ = skannad.las(rendering)
     figur = figur or skannad_.figur
     match skannad_.kvalitet:
         case kvalitet.OCR:
             rader = [markdown.rad(r) for r in skannad_.text.splitlines()]
-            return Sida(kvalitet.OCR, True, komprimera(rader), figur=figur)
+            obekraftade = not skannad_.tal_bekraftade
+            return Sida(kvalitet.OCR, obekraftade, komprimera(rader), figur=figur)
         case kvalitet.TOM | kvalitet.OINTRESSANT:
             return Sida(skannad_.kvalitet, False)
         case annan:

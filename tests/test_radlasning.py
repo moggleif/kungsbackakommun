@@ -27,7 +27,8 @@ def sidbild():
 class Las(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.lasning = radlasning.las(sidbild())
+        bild = sidbild()
+        cls.lasning = radlasning.las(bild, radlasning.tesseracts_tsv(bild))
 
     def test_raderna_med_tal_bekraftas(self):
         tal = [r.avgorande.tal for r in self.lasning.rader[:3]]
@@ -87,7 +88,7 @@ class Fallerar(unittest.TestCase):
             patch.object(ocr, "las_bild", return_value=None),
             self.assertRaises(radlasning.Fallerade),
         ):
-            radlasning.tesseracts_ord(sidbild())
+            radlasning.tesseracts_tsv(sidbild())
 
 
 if __name__ == "__main__":

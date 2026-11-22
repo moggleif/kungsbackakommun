@@ -1,5 +1,5 @@
-"""Krav: K4–K6, K52 och K55, ADR-0005, ADR-0009, ADR-0075 och ADR-0079.
-Test: tests/test_konvertering.py och tests/test_tidsbudget.py.
+"""Krav: K4–K6, K52, K55 och K85, ADR-0005, ADR-0009, ADR-0075, ADR-0079
+och ADR-0106. Test: tests/test_konvertering.py och tests/test_tidsbudget.py.
 
 Läser en PDF sida för sida och ger Markdown-texten, tabellerna som CSV och
 kvaliteten per sida och för dokumentet. En sida med fler tecken än taket
@@ -17,7 +17,7 @@ import pdfplumber
 import pypdfium2 as pdfium
 
 from kommunhandlingar import tidsbudget
-from kommunhandlingar.konvertering import kvalitet, ocr
+from kommunhandlingar.konvertering import kvalitet, ocr, rapid
 from kommunhandlingar.konvertering.las_sida import Sida, las_sida
 
 VERKTYG = ("pdfplumber", "pdfminer.six")
@@ -66,7 +66,7 @@ def versioner(resultat: Resultat) -> list[str]:
     lasta = [f"{namn} {version(namn)}" for namn in VERKTYG]
     kvaliteter = set(resultat.kvalitet_per_sida or [])
     lasta_med_ocr = kvaliteter & kvalitet.MED_OCR
-    return lasta + (ocr.verktyg() if lasta_med_ocr else [])
+    return lasta + (ocr.verktyg() + rapid.verktyg() if lasta_med_ocr else [])
 
 
 def oppningsfel(fel: pdfium.PdfiumError) -> str:

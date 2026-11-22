@@ -42,7 +42,7 @@ class TestSidorna(unittest.TestCase):
                 "ok",  # omslag: helsidesbild med mer än 50 synliga tecken
                 "ointressant",  # en ritad yta utan tecken
                 "tom",  # bara ett streck
-                "ocr",  # inskannad blankett
+                "ocr",  # inskannad blankett, vars tal väg H bekräftar
                 "ok",  # tabell utan lodräta linjer med rubrikrad
                 "tabell-osaker",  # tabell utan lodräta linjer, talen inte i linje
                 "ok",  # linjer, men en cell rymmer två tal
@@ -52,7 +52,7 @@ class TestSidorna(unittest.TestCase):
             ],
         )
         self.assertEqual(self.resultat.kvalitet, "ocr")
-        self.assertEqual(self.resultat.tal_obekraftade, [11])
+        self.assertEqual(self.resultat.tal_obekraftade, [])
 
     def test_tva_priser_i_linje_blir_tva_kolumner(self):
         (tabell,) = self.resultat.sidor[15].tabeller
@@ -68,9 +68,10 @@ class TestSidorna(unittest.TestCase):
         verktyg = versioner(self.resultat)
         self.assertEqual(
             [v.split()[0] for v in verktyg],
-            ["pdfplumber", "pdfminer.six", "pypdfium2", "tesseract"],
+            ["pdfplumber", "pdfminer.six", "pypdfium2", "tesseract", "rapidocr"]
+            + ["onnxruntime"],
         )
-        self.assertIn(" swe ", verktyg[-1])
+        self.assertIn(" swe ", verktyg[3])
 
     def test_loptext(self):
         self.assertEqual(
