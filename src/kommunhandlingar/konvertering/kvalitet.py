@@ -1,4 +1,5 @@
-"""Krav: K6, K72 och K73 i docs/02-KRAV.md, ADR-0005, ADR-0099 och ADR-0100.
+"""Krav: K6, K11, K15, K19, K72 och K73 i docs/02-KRAV.md, ADR-0005, ADR-0009,
+ADR-0099 och ADR-0100.
 Test: tests/test_konvertering.py.
 
 Kvalitetsvärdena och de mängder av dem som har en mening i schemat.
@@ -21,7 +22,9 @@ TOM = "tom"
 # Dokumentets kvalitetsnivåer, från bäst till sämst.
 KVALITETER = (FULL, TEXT_UTAN_TABELLER, OCR, DELVIS, EJ_KONVERTERAD, EJ_HAMTAD)
 SIDKVALITETER = (OK, TABELL_OSAKER, OCR, BILD, OINTRESSANT, TOM, EJ_KONVERTERAD)
+# Sidor som gav en läsning; utan någon är dokumentet `ej-konverterad`.
 LASTA = {OK, TABELL_OSAKER, OCR, BILD, OINTRESSANT}
+# Dokument utan text.
 UTAN_TEXT = (EJ_HAMTAD, EJ_KONVERTERAD)
 # Sidor vars tal ska stå i `tal_obekraftade`.
 OBEKRAFTADE = {OCR, BILD, EJ_KONVERTERAD}

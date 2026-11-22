@@ -131,8 +131,12 @@ class TestRegler(unittest.TestCase):
             self.assertEqual(dokumentets(sidor), vantat, sidor)
 
     def test_mangderna_ar_kvaliteter(self):
-        sidmangder = (kvalitet.LASTA, kvalitet.OBEKRAFTADE, kvalitet.TEXTLAGER)
-        for mangd in (*sidmangder, kvalitet.MED_OCR):
+        for mangd in (
+            kvalitet.LASTA,
+            kvalitet.OBEKRAFTADE,
+            kvalitet.TEXTLAGER,
+            kvalitet.MED_OCR,
+        ):
             self.assertLessEqual(mangd, set(kvalitet.SIDKVALITETER))
         self.assertLessEqual(set(kvalitet.UTAN_TEXT), set(kvalitet.KVALITETER))
 
