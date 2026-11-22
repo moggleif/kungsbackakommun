@@ -52,14 +52,10 @@ def textsida(sida: Page) -> Sida:
 
 def lasning(sida: Page) -> Sida:
     sida = utan_mellanslag_i_tal(sida)
-    hittade, fallda = med_linjer(sida)
-    rutor = [t.ruta for t in hittade]
-    utan_linjer = olinjerade.tabeller(sida, rutor)
-    rutor += [t.ruta for t in utan_linjer]
+    hittade, rutor, fallda = tabellerna(sida)
     utanfor = sida.filter(lambda o: not tabeller.i_tabell(o, rutor))
     text, i_texten = sidans_text(utanfor)
     osaker = i_texten or osakra_tal(sida, fallda, rutor)
-    hittade = sorted(hittade + utan_linjer, key=lambda t: (round(t.ruta[1]), t.ruta[0]))
     return Sida(
         kvalitet.TABELL_OSAKER if osaker else kvalitet.OK,
         olasliga(sida) > 0 or i_oordning(sida, rutor),
@@ -68,6 +64,17 @@ def lasning(sida: Page) -> Sida:
         figurer.har_figur(sida, rutor),
         skarv(hogkant.staende(utanfor), hittade),
     )
+
+
+def tabellerna(sida: Page) -> tuple[list[Funnen], list[Ruta], list[Ruta]]:
+    """Tabellerna med och utan linjer i sidans ordning, deras rutor, och
+    rutorna för de tabeller med linjer som fälldes."""
+    hittade, fallda = med_linjer(sida)
+    rutor = [t.ruta for t in hittade]
+    utan_linjer = olinjerade.tabeller(sida, rutor)
+    rutor += [t.ruta for t in utan_linjer]
+    ordnade = sorted(hittade + utan_linjer, key=lambda t: (round(t.ruta[1]), t.ruta[0]))
+    return ordnade, rutor, fallda
 
 
 def sidans_text(utanfor: Page) -> tuple[str, bool]:
