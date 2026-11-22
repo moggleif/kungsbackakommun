@@ -5,8 +5,8 @@ from pathlib import Path
 
 import pdfplumber
 
-from kommunhandlingar.konvertering.las_sida import textsida
 from kommunhandlingar.konvertering.mellanslag import mellanslag_i_siffra
+from kommunhandlingar.konvertering.textlagret import textsida
 
 FACIT = Path(__file__).parent / "fixtures" / "facit"
 

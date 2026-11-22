@@ -9,7 +9,7 @@ OCR har ingen skarv och slås aldrig ihop.
 from collections import Counter
 from dataclasses import dataclass, replace
 
-from kommunhandlingar.konvertering.las_sida import Sida
+from kommunhandlingar.konvertering.sida import Sida
 from kommunhandlingar.konvertering.skarv import Rad, Skarv
 
 KANT = 3

@@ -14,7 +14,8 @@ import pypdfium2 as pdfium
 from PIL import Image
 
 from kommunhandlingar.konvertering import hogkant
-from kommunhandlingar.konvertering.las_sida import las_sida, textsida
+from kommunhandlingar.konvertering.las_sida import las_sida
+from kommunhandlingar.konvertering.textlagret import textsida
 
 PDF = Path(__file__).parent / "fixtures" / "pdf" / "hogkant.pdf"
 STAMPEL = "2021-103216-0024"

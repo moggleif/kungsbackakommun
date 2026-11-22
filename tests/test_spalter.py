@@ -10,8 +10,8 @@ from pathlib import Path
 import pdfplumber
 
 from kommunhandlingar.konvertering import spalter
-from kommunhandlingar.konvertering.las_sida import textsida
 from kommunhandlingar.konvertering.spalter import Radstycke, ordna
+from kommunhandlingar.konvertering.textlagret import textsida
 
 PDF = Path(__file__).parent / "fixtures" / "pdf" / "spalter.pdf"
 LOPTEXT = "ord som bildar en rad med löptext i spalten"
