@@ -16,6 +16,10 @@ from kommunhandlingar.konvertering.markdown import utan_escapning
 from kommunhandlingar.sidmarkor import SIDA, sidorna
 
 TOLKNING = "<!-- tolkning:"
+EJ_ORDAGRANT = (
+    "cellen {cell!r} har siffror som inte är ett helt tal"
+    " och står inte ordagrant i sidans text"
+)
 MARKERING = re.compile(r"<!-- tolkning: [^,\n]+, \d{4}-\d{2}-\d{2} -->")
 LANK = re.compile(r"\[[^\]]*\]\([^)]*\)")
 SIFFRA = re.compile(r"\d")
@@ -84,25 +88,22 @@ def sidans_text(md: str, sida: int) -> str:
     return utan_escapning(LANK.sub("", text.split(TOLKNING)[0]))
 
 
-def talfel(fil: Path, md: str, sida: int) -> list[str]:
-    text = sidans_text(md, sida)
+def talfel(fil: Path, md: Path, sida: int) -> list[str]:
+    text = sidans_text(md.read_text(encoding="utf-8"), sida)
     talen = sidans_tal(text)
     celler = csv.reader(fil.read_text(encoding="utf-8").splitlines())
     return [fel for rad in celler for cell in rad for fel in cellfel(cell, text, talen)]
 
 
 def cellfel(cell: str, text: str, talen: set[str]) -> list[str]:
-    fel = []
-    if SIFFRA.search(TALEN.sub("", cell)) and not ordagrant(cell, text):
-        fel.append(
-            f"cellen {cell!r} har siffror som inte är ett helt tal"
-            " och står inte ordagrant i sidans text"
-        )
-    return fel + [
+    fel = [
         f"talet {t!r} står inte i sidans text"
         for t in TALEN.findall(cell)
         if t not in talen
     ]
+    if SIFFRA.search(TALEN.sub("", cell)) and not ordagrant(cell, text):
+        return [EJ_ORDAGRANT.format(cell=cell), *fel]
+    return fel
 
 
 def sidans_tal(text: str) -> set[str]:
