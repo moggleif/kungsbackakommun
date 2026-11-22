@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.2da4b3f51a0864b91543b215/1789112180
 sha256: 66fc5635f329adfd9fb606836b9cb2dcf9544ae948f6a1d0b30493ae7a37889a
 bytes: 31211465
 sidor: 258
-hamtad: 2026-11-18T00:26:13+00:00
-konverterad: 2026-11-18T00:27:33+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T09:49:00+00:00
+konverterad: 2026-11-22T09:49:56+00:00
+pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
 tal_obekraftade: [3]
-figurer: [39, 43, 77, 104, 110, 115, 117, 118, 119, 120, 121, 122, 123, 124, 125, 133, 135, 138, 142, 145, 148, 157, 165, 175, 176, 179, 182, 185, 187, 191, 198, 204, 211, 213, 219, 221, 224, 241, 244, 248, 255]
+figurer: [3, 39, 43, 77, 104, 110, 115, 117, 118, 119, 120, 121, 122, 123, 124, 125, 133, 135, 138, 142, 145, 148, 157, 165, 175, 176, 179, 182, 185, 187, 191, 198, 204, 211, 213, 219, 221, 224, 241, 244, 248, 255]
 tolkade: []
 granskad: null
 ---
