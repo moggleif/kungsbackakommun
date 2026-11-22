@@ -21,6 +21,7 @@ from kommunhandlingar.arenden import ratt_varde
 from kommunhandlingar.datakontroll_tabeller import tabellfel
 from kommunhandlingar.frontmatter import saknas
 from kommunhandlingar.kandidat import TYPORDNING
+from kommunhandlingar.kommando import datakatalog
 from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.las_sida import STYRTECKEN
 from kommunhandlingar.personuppgifter import maskad_md, maskade_celler
@@ -144,8 +145,6 @@ def statusfel(falt: dict[str, str]) -> list[str]:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.datakontroll <data>")
-    hittade = fel_i(Path(sys.argv[1]))
+    hittade = fel_i(datakatalog("datakontroll"))
     print("\n".join(hittade) or "Datakontrollerna gick igenom.")
     sys.exit(1 if hittade else 0)

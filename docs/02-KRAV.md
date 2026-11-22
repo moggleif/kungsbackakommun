@@ -2390,10 +2390,11 @@ Issue [#355](https://github.com/moggleif/kungsbackakommun/issues/355).
 - **När** `arenden` och sedan `maska_poolen` körs
 - **Så** skriver vart och ett att ett dokument ändrades (K48, K17).
 
-- **Givet** fel antal argument till `kand_inlasning`, `arenden` eller
-  `maska_poolen`
+- **Givet** fel antal argument till `kand_inlasning`, `arenden`,
+  `maska_poolen` eller `datakontroll`
 - **När** kommandot körs
-- **Så** stoppas det med kommandots användningstext.
+- **Så** stoppas det med kommandots användningstext, som de fyra läser
+  ur `kommando.py` (#365).
 
 ## K82 — Webbplatsens kommando har en ingång som går att pröva
 

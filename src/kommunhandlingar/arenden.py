@@ -11,10 +11,10 @@ en äldre version konverterat, och i granskade dokument, utan att hämta
 PDF:en. Bara raden `arenden` ändras, och en andra körning ändrar ingenting.
 """
 
-import sys
 from pathlib import Path
 
 from kommunhandlingar import frontmatter, pool
+from kommunhandlingar.kommando import datakatalog
 from kommunhandlingar.paragrafer import paragrafer
 from kommunhandlingar.skrivning import skriv_md
 
@@ -42,6 +42,4 @@ def fyll(data: Path) -> int:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Användning: python -m kommunhandlingar.arenden <data>")
-    print(f"{fyll(Path(sys.argv[1]))} dokument fick nya ärenden.")
+    print(f"{fyll(datakatalog('arenden'))} dokument fick nya ärenden.")

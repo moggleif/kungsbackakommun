@@ -336,6 +336,7 @@ src/kommunhandlingar/
   tidsbudget.py    budgetens hårda gräns, som inte avbryter en skrivning,
                    och dokumentets egen gräns (ADR-0075)
   datakontroll*.py datakontrollerna av allt under data/ (K11)
+  kommando.py      katalogen till kommandona som tar en enda, eller användningstexten
   tolkning.py      arbetslistan och renderingen av figurerna (K15)
   konvertering/    pdf → md: sidans väg, text, tabeller och kvalitet
   facit/           konverteringen mätt mot facit för ett urval (K20)
