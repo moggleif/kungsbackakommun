@@ -329,7 +329,8 @@ src/kommunhandlingar/
                    klient.py håller intervallet, robots.txt och försöken,
                    svar.py läser svaret och översätter fel till nytt försök
                    eller Hamtfel, hamtare.py det anroparna behöver
-                   (Lasare för sidor, Hamtare för filer)
+                   (Lasare för sidor, Hamtare för filer), robots.py
+                   tolkar robots.txt, installningar.py läser hamtning.toml
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta eller konvertera

@@ -1,4 +1,5 @@
-"""Krav: K10 i docs/02-KRAV.md, ADR-0013. Test: tests/test_klient.py.
+"""Krav: K10 i docs/02-KRAV.md, ADR-0013. Påhittade klienter i
+tests/test_upptack.py, tests/test_wayback.py och tests/test_hamta.py.
 
 Det anroparna behöver av en klient: upptäckten läser sidor, steg 2 hämtar
 filer. `klient.Klient` är båda; testernas påhittade klienter är den ena.
