@@ -39,20 +39,18 @@ def skarv(utanfor: Page, tabeller: list[Funnen]) -> Skarv:
     tabeller i sidans ordning."""
     linjer = utanfor.extract_text_lines()
     hojd = utanfor.height
-    marginalen = frozenset(
-        rad(t) for t in linjer if not MARGINAL * hojd < t["top"] < (1 - MARGINAL) * hojd
-    )
+    marginalen = frozenset(rad(t) for t in linjer if i_marginalen(t, hojd))
     if not tabeller:
         return Skarv(marginalen)
     forsta, sista = tabeller[0], tabeller[-1]
-    return Skarv(
-        marginalen,
-        forsta.kanter,
-        sista.kanter,
-        tuple(rad(t) for t in linjer if t["bottom"] <= forsta.ruta[1]),
-        tuple(rad(t) for t in linjer if t["top"] >= sista.ruta[3]),
-        sista.ruta[3] >= NEDERSTA * hojd,
-    )
+    ovanfor = tuple(rad(t) for t in linjer if t["bottom"] <= forsta.ruta[1])
+    nedanfor = tuple(rad(t) for t in linjer if t["top"] >= sista.ruta[3])
+    nederst = sista.ruta[3] >= NEDERSTA * hojd
+    return Skarv(marginalen, forsta.kanter, sista.kanter, ovanfor, nedanfor, nederst)
+
+
+def i_marginalen(linje: dict, hojd: float) -> bool:
+    return not MARGINAL * hojd < linje["top"] < (1 - MARGINAL) * hojd
 
 
 def rad(linje: dict) -> Rad:
