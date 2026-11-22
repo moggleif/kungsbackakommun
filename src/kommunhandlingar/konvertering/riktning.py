@@ -36,16 +36,24 @@ def detektera(bild: Image.Image) -> str:
     with tempfile.TemporaryDirectory() as katalog:
         fil = Path(katalog) / "sida.png"
         bild.save(fil)
-        try:
-            svar = subprocess.run(
-                ["tesseract", fil, "-", "--psm", "0", "--dpi", str(tesseract.DPI)],
-                capture_output=True,
-                text=True,
-                timeout=tesseract.TIDSGRANS,
-            )
-        except subprocess.TimeoutExpired as fel:
-            print(f"Tesseract, riktning: {fel}", file=sys.stderr)
-            return ""
+        svar = osd(fil)
+    if svar is None:
+        return ""
     if svar.returncode != 0 and FOR_LITE_TEXT not in svar.stderr:
         print(f"Tesseract, riktning: {svar.stderr.strip()}", file=sys.stderr)
     return svar.stdout
+
+
+def osd(fil: Path) -> subprocess.CompletedProcess[str] | None:
+    """Tesseracts orienteringsdetektering (OSD, `--psm 0`), eller None när den
+    inte blir klar i tid."""
+    try:
+        return subprocess.run(
+            ["tesseract", fil, "-", "--psm", "0", "--dpi", str(tesseract.DPI)],
+            capture_output=True,
+            text=True,
+            timeout=tesseract.TIDSGRANS,
+        )
+    except subprocess.TimeoutExpired as fel:
+        print(f"Tesseract, riktning: {fel}", file=sys.stderr)
+        return None
