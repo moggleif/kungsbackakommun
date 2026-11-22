@@ -1,8 +1,10 @@
-"""Krav: K14 i docs/02-KRAV.md. Kod: src/kommunhandlingar/webbplats/mall.py."""
+"""Krav: K14 i docs/02-KRAV.md. Kod: src/kommunhandlingar/webbplats/mall.css."""
 
 import unittest
 
-from kommunhandlingar.webbplats.mall import STIL
+from kommunhandlingar.webbplats.inbaddning import las
+
+STIL = las("mall.css")
 
 
 class TestSmalSkarm(unittest.TestCase):

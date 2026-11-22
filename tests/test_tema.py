@@ -1,5 +1,5 @@
 """Krav: K51 i docs/02-KRAV.md, ADR-0074 och ADR-0083. Kod:
-src/kommunhandlingar/webbplats/mall.py och stilarna i samma katalog."""
+src/kommunhandlingar/webbplats/mall.css och stilarna i samma katalog."""
 
 import re
 import unittest
@@ -7,10 +7,12 @@ from pathlib import Path
 
 from kommunhandlingar import webbplats
 from kommunhandlingar.webbplats import sidor
-from kommunhandlingar.webbplats.mall import STIL, Mall
+from kommunhandlingar.webbplats.inbaddning import las
+from kommunhandlingar.webbplats.mall import Mall
 from tests.test_webbplats import REPO, TID, exempelby
 
 KATALOG = Path(webbplats.__file__).parent
+STIL = las("mall.css")
 FARG = re.compile(r"#[0-9a-fA-F]{3}(?:[0-9a-fA-F]{3})?\b")
 
 
@@ -34,7 +36,7 @@ class TestTemat(unittest.TestCase):
         ]
         self.assertTrue(rader)
         self.assertEqual(
-            [r for r in rader if r[0] != "mall.py" or "--" not in r[1]], []
+            [r for r in rader if r[0] != "mall.css" or "--" not in r[1]], []
         )
 
     def test_reserven_har_de_ljusa_vardena(self):

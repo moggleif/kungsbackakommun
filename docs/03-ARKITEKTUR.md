@@ -1902,8 +1902,9 @@ byggtid, och jämför varje fil i utkatalogen med
 ## Webbplatsens skript
 
 Sidorna har tre små skript, `kalender.js`, `mal.js` och `perspektiv.js`
-i `webbplats/`, som bäddas in i sidan när den byggs. Hur och varför de
-kontrolleras står i
+i `webbplats/`, som bäddas in i sidan när den byggs. Stilarna i
+`webbplats/*.css` bäddas in på samma sätt, genom `webbplats/inbaddning.py`,
+som läser varje fil en gång. Hur och varför skripten kontrolleras står i
 [ADR-0104](decisions/0104-webbplatsens-skript-med-eslint-och-jsdom.md)
 (K83).
 
@@ -2165,8 +2166,9 @@ varje push till `main`, för hand och när ett issue med etiketten
   [Handlingsplaner](#handlingsplaner)),
   och en sida med avvikelserna
   i källan (`avvikelser.html`, se nedan), och dessutom indexet och
-  `llms.txt` ([Steg 3: indexet](#steg-3-indexet)). Sidmallen och
-  stilen står i `webbplats/mall.py`, menyn i `webbplats/meny.py`.
+  `llms.txt` ([Steg 3: indexet](#steg-3-indexet)). Sidmallen står i
+  `webbplats/mall.py`, dess stil i `webbplats/mall.css` och menyn i
+  `webbplats/meny.py`.
   Varje sida har samma meny (K39, K58,
   [ADR-0081](decisions/0081-menyn-i-projektets-gemensamma-form.md)) i
   projektets gemensamma form – för varje kommun i bokstavsordning efter id
@@ -2447,7 +2449,7 @@ filen (K26), länkad från organets sida.
   uppnått, delvis uppnått eller på väg, ej uppnått, eller ingen bedömning
   i källan. Ikonerna är SVG-figurer med olika form, källans formulering
   står i pekrutan, en prognos har en streckad ram, och stilen står i
-  `webbplats/mall.py` så att andra sidor kan använda dem.
+  `webbplats/mall.css` så att andra sidor kan använda dem.
 - **Sidan** (`webbplats/malsida.py`, K29,
   [ADR-0050](decisions/0050-malsidan-visas-som-tidslinje-och-malkort.md))
   börjar med en kort inledning och en hopfälld del om hur målen tagits

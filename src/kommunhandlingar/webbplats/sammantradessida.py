@@ -6,9 +6,9 @@ sammanträdets katalog. Stilen är målkortens (`mal.css`) och `mote.css`.
 """
 
 from html import escape
-from pathlib import Path
 
 from kommunhandlingar import frontmatter
+from kommunhandlingar.webbplats.inbaddning import stil
 from kommunhandlingar.webbplats.kortkoppling import organnamn
 from kommunhandlingar.webbplats.luckor import motesnamn
 from kommunhandlingar.webbplats.mall import Mall, rot, sida, stig
@@ -16,8 +16,6 @@ from kommunhandlingar.webbplats.meny import oversiktsnamn
 from kommunhandlingar.webbplats.organsida import dokumentrubrik
 from kommunhandlingar.webbplats.punktkort import Lankar, antal, punktkort
 from kommunhandlingar.webbplats.sammantrade import Arende, Mote, adress, ordnade
-
-STIL = [Path(__file__).with_name(f) for f in ("mal.css", "mote.css")]
 
 
 def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
@@ -30,9 +28,8 @@ def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
     ]
     innehall = (
         stig(vag)
-        + "<style>"
-        + "".join(f.read_text(encoding="utf-8") for f in STIL)
-        + "</style><h2>Sammanträdets dokument</h2>"
+        + stil("mal.css", "mote.css")
+        + "<h2>Sammanträdets dokument</h2>"
         + dokumentlista(kommun.id, mote.dokument, lankar.rot)
         + dagordningen(arenden, lankar)
     )
