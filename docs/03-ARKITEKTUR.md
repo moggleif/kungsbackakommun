@@ -326,6 +326,10 @@ src/kommunhandlingar/
                    meetingsplus.py tolkar dem
   upptack.py       steg 1: hämtar källsidorna och skriver kandidatlistan
   hamtning/        artig HTTP-klient: robots.txt, intervall och nya försök
+                   klient.py håller intervallet, robots.txt och försöken,
+                   svar.py läser svaret och översätter fel till nytt försök
+                   eller Hamtfel, hamtare.py det anroparna behöver
+                   (Lasare för sidor, Hamtare för filer)
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta eller konvertera

@@ -14,10 +14,11 @@ from urllib.parse import urlsplit
 from kommunhandlingar.adaptrar import sitevision, wayback
 from kommunhandlingar.adaptrar.sitevision_html import NEDLADDNING, forekomster
 from kommunhandlingar.fel import Hamtfel
+from kommunhandlingar.hamtning.hamtare import Lasare
 from kommunhandlingar.kandidat import Avvisad, Fynd
 
 
-def upptack(kalla: sitevision.Kalla, klient) -> Fynd:
+def upptack(kalla: sitevision.Kalla, klient: Lasare) -> Fynd:
     try:
         filer = nyaste_kopior(klient, kalla)
     except Hamtfel as fel:
@@ -31,7 +32,7 @@ def upptack(kalla: sitevision.Kalla, klient) -> Fynd:
     return med_kopior(lasta, filer) + Fynd(noteringar=noteringar)
 
 
-def nyaste_kopior(klient, kalla: sitevision.Kalla) -> dict[str, wayback.Kopia]:
+def nyaste_kopior(klient: Lasare, kalla: sitevision.Kalla) -> dict[str, wayback.Kopia]:
     vardar = sorted({urlsplit(adress).netloc for adress in kalla.sidor.values()})
     kopior = [
         kopia
@@ -51,7 +52,9 @@ def rang(kopia: wayback.Kopia) -> tuple[int, int, int]:
     return int(NEDLADDNING.match(kopia.original)[2]), *wayback.storst(kopia)
 
 
-def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], list[str]]:
+def ogonblicksbilder(
+    klient: Lasare, sidadress: str
+) -> tuple[list[tuple[str, str]], list[str]]:
     """Den sista ögonblicksbilden per år, den nyaste först, med sin HTML."""
     try:
         kopior = wayback.fraga(klient, sidadress, "text/html")
@@ -67,7 +70,7 @@ def ogonblicksbilder(klient, sidadress: str) -> tuple[list[tuple[str, str]], lis
     return bilder, fel
 
 
-def bild(klient, adress: str) -> tuple[list[tuple[str, str]], list[str]]:
+def bild(klient: Lasare, adress: str) -> tuple[list[tuple[str, str]], list[str]]:
     """Ögonblicksbilden med sin HTML, eller varför den inte går att läsa."""
     try:
         html = klient.text(adress)

@@ -14,22 +14,16 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path, PurePosixPath
-from typing import Protocol
 
 from kommunhandlingar import frontmatter, skrivning, utfall
 from kommunhandlingar.arenden import arenden
+from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.kandidat import Kandidat
 from kommunhandlingar.konvertering.las_sida import Sida
 from kommunhandlingar.original import Original
 from kommunhandlingar.pool import Pool
 from kommunhandlingar.tidsbudget import utan_avbrott
 from kommunhandlingar.utfall import Utfall
-
-
-class Hamtare(Protocol):
-    """Det steg 2 behöver av en klient, som `hamtning.klient.Klient`."""
-
-    def fil(self, url: str, mal: Path) -> None: ...
 
 
 @dataclass(frozen=True)

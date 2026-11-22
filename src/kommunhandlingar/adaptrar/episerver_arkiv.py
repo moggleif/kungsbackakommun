@@ -18,6 +18,7 @@ from urllib.parse import quote, unquote, urlsplit
 
 from kommunhandlingar.adaptrar import episerver, wayback
 from kommunhandlingar.fel import Hamtfel, IngenKandidat
+from kommunhandlingar.hamtning.hamtare import Lasare
 from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
 
 
@@ -32,13 +33,13 @@ class Mapp:
         return unquote(self.adress.split("/", 1)[1])
 
 
-def upptack(kalla: episerver.Kalla, klient) -> Fynd:
+def upptack(kalla: episerver.Kalla, klient: Lasare) -> Fynd:
     mappar = (Mapp(o, m) for o, adresser in kalla.mappar.items() for m in adresser)
     fynd = sum((mappens_fynd(klient, kalla, mapp) for mapp in mappar), Fynd())
     return replace(fynd, kandidater=moten(fynd.kandidater))
 
 
-def mappens_fynd(klient, kalla: episerver.Kalla, mapp: Mapp) -> Fynd:
+def mappens_fynd(klient: Lasare, kalla: episerver.Kalla, mapp: Mapp) -> Fynd:
     try:
         kopior = wayback.fraga_under(klient, mapp.adress, "application/pdf")
     except Hamtfel as fel:
