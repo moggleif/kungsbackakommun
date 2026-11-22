@@ -28,16 +28,14 @@ TIDSZON = ZoneInfo("Europe/Stockholm")
 
 
 def projektsidor(lista: str, hamta: Callable[[str], str]) -> list[str]:
-    """Listans projekt i sidornas ordning."""
-    sidor, projekt, i = [lista], [], 0
-    while i < len(sidor):
-        for adress in adresser(hamta(sidor[i]), sidor[i]):
-            if bladdring(lista, adress) and adress not in sidor:
-                sidor.append(adress)
-            elif ar_projekt(lista, adress) and adress not in projekt:
-                projekt.append(adress)
-        i += 1
-    return projekt
+    """Listans projekt i sidornas ordning. Bläddringssidorna läggs till
+    medan sidorna läses, och läses i sin tur."""
+    sidor, projekt = [lista], {}
+    for sida in sidor:
+        adresserna = dict.fromkeys(adresser(hamta(sida), sida))
+        sidor += [a for a in adresserna if bladdring(lista, a) and a not in sidor]
+        projekt.update(dict.fromkeys(a for a in adresserna if ar_projekt(lista, a)))
+    return list(projekt)
 
 
 def bladdring(lista: str, adress: str) -> bool:

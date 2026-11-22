@@ -18,14 +18,11 @@ from urllib.parse import quote, unquote, urlsplit
 
 from kommunhandlingar.adaptrar import episerver, wayback
 from kommunhandlingar.fel import Hamtfel, IngenKandidat
-from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
+from kommunhandlingar.kandidat import Avvisad, Fynd, Kallsida, Kandidat
 
 
 @dataclass(frozen=True)
-class Mapp:
-    organ: str
-    adress: str
-
+class Mapp(Kallsida):
     @property
     def sokvag(self) -> str:
         """Sökvägen efter värden, avkodad."""

@@ -62,6 +62,10 @@ def kompilera(post: dict, grupper: set[str], var: str) -> Monster:
     return Monster(monster, typ)
 
 
+def filnamnsmonster(poster: list, var: str) -> tuple[Monster, ...]:
+    return tuple(kompilera(p, MONSTERGRUPPER, f"{var}, mönster") for p in poster)
+
+
 def manader(post: dict, var: str) -> tuple[str, ...]:
     namn = schema.textlista(post, "manader", var)
     if namn and (len(namn) != 12 or len({manad.casefold() for manad in namn}) != 12):
@@ -73,14 +77,16 @@ def tolka(
     monster: tuple[Monster, ...], text: str, manadsnamn: tuple[str, ...]
 ) -> Tolkning:
     for monstret in monster:
-        traff = monstret.uttryck.search(text)
-        if traff:
-            grupper = traff.groupdict()
-            typ = (monstret.typ or grupper["typ"] or "").casefold()
-            if typ not in TYPORDNING:
-                raise IngenKandidat(f"okänd typ {typ!r}")
-            return Tolkning(typ, datum_av(grupper, manadsnamn))
+        if traff := monstret.uttryck.search(text):
+            return tolkning(monstret, traff.groupdict(), manadsnamn)
     raise IngenKandidat("inget mönster matchar")
+
+
+def tolkning(monstret: Monster, grupper: dict, manadsnamn: tuple[str, ...]) -> Tolkning:
+    typ = (monstret.typ or grupper["typ"] or "").casefold()
+    if typ not in TYPORDNING:
+        raise IngenKandidat(f"okänd typ {typ!r}")
+    return Tolkning(typ, datum_av(grupper, manadsnamn))
 
 
 def datum_av(grupper: dict, manadsnamn: tuple[str, ...]) -> date | None:

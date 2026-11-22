@@ -33,6 +33,14 @@ class Kandidat:
 
 
 @dataclass(frozen=True)
+class Kallsida:
+    """Sidan där adaptern hittar filerna och organet de hör till."""
+
+    organ: str
+    adress: str
+
+
+@dataclass(frozen=True)
 class Avvisad:
     kalla: str
     filnamn: str
