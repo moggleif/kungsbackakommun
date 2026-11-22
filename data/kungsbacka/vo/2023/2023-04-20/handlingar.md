@@ -12,12 +12,12 @@ kalla_url: https://web.archive.org/web/20240902063858id_/https://kungsbacka.se/d
 sha256: 287b6112a136979bdcfcd1a223a44aa3bb1d5eae8859142101bb71b330c51a1e
 bytes: 8200249
 sidor: 115
-hamtad: 2026-10-20T10:51:20+00:00
-konverterad: 2026-10-20T10:52:34+00:00
-pipeline: kommunhandlingar 0.8.10 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.14.0 / tesseract 5.3.4 swe 4.1.0
+hamtad: 2026-11-22T01:16:44+00:00
+konverterad: 2026-11-22T01:17:37+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
 tal_obekraftade: [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 103, 104]
 figurer: [75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 109]
 tolkade: []
@@ -410,9 +410,6 @@ Kungsbacka kommun     Slutrapport Receptbank Goda Måltider      8
 3.2 Energi och näring
 Tabell 3. Sammanställning innehåll energi och protein 7 veckors grundmatsedel
 
-Grundmatsedel  Energi, kalorier Protein, gram Protein, E%
-VT23, 7 veckor                                (energiprocent)
-
 Resultat sett till snitt över hela grundmatsedeln:
 •  Lunch 1 + dessert uppnår önskat målvärde både sett till energi och protein.
 
@@ -427,8 +424,9 @@ Kungsbacka kommun     Slutrapport Receptbank Goda Måltider      9
 
 [Tabell 10-1](handlingar.tabeller/10-1.csv)
 
-| Lunch 1 + dessert | 713 | 28 | 16 |
+| Grundmatsedel<br>VT23, 7 veckor | Energi, kalorier | Protein, gram | Protein, E%<br>(energiprocent) |
 | --- | --- | --- | --- |
+| Lunch 1 + dessert | 713 | 28 | 16 |
 | Lunch 2 + dessert | 747 | 29 | 16 |
 | Kvällsmat | 401 | 18 | 18 |
 
@@ -437,34 +435,6 @@ Kungsbacka kommun     Slutrapport Receptbank Goda Måltider      9
 3.2.1 Jämförelse med gamla menyer och portionsstorlekar
 
 Tabell 4. Exempel på justeringar i recept och påverkan på näring och kostnad
-Portionsstorlek          Näring    Kostnad
-
-Fruktcocktail, DÅ  110 g fruktcocktail med 25 g vispad 1 g protein 4,36 kr
-grädde
-
-Fruktcocktail, NU  110 g fruktcocktail med 50 g 3 g protein 5,76 kr
-vaniljklick
-
-Resultat                                    + 2 g protein + 1,40 kr
-
-Broccolisoppa, DÅ  3 dl                     8,2 g protein 9,28 kr
-
-Broccolisoppa, NU  2,5 dl med mixade smörbönor 7,1 g protein 7,63 kr
-Resultat                                    -1,1 g    -1,65 kr
-
-Kokt potatis, DÅ   120 g                    2,0 g protein 1,15 kr
-
-Kokt potatis, NU   100 g                    1,8 g protein 1,04 kr
-Resultat                                    -0,2 g protein - 0,11 kr
-
-Kaka (mandarinkaka i 135 g                  5,5 g protein 5,16 kr
-storlek enligt gamla
-portioneringstabellen), DÅ
-
-Mjuk kaka (bönberikad) 60 g kaka och 50 g klick 8,3 g protein 5,62 kr
-med blåbärsklick, NU
-
-Resultat                                    + 2,8 g protein +0,46 kr
 
 3.2.2 Undantagslista
 
@@ -482,6 +452,13 @@ menyplaneringen kombineras måltider som är höga respektive låga i energi- oc
 att uppnå högsta möjliga energi- och proteinnivå för måltiden.
 
 Kungsbacka kommun     Slutrapport Receptbank Goda Måltider     10
+
+[Tabell 11-1](handlingar.tabeller/11-1.csv)
+
+|  | Portionsstorlek | Näring | Kostnad |
+| --- | --- | --- | --- |
+| Fruktcocktail, DÅ 110 g fruktcocktail med 25 g vispad 1 g protein 4,36 kr<br>grädde<br>Fruktcocktail, NU 110 g fruktcocktail med 50 g 3 g protein 5,76 kr<br>vaniljklick<br>Resultat + 2 g protein + 1,40 kr<br>Broccolisoppa, DÅ 3 dl 8,2 g protein 9,28 kr<br>Broccolisoppa, NU 2,5 dl med mixade smörbönor 7,1 g protein 7,63 kr |  |  |  |
+| Resultat -1,1 g -1,65 kr<br>Kokt potatis, DÅ 120 g 2,0 g protein 1,15 kr<br>Kokt potatis, NU 100 g 1,8 g protein 1,04 kr<br>Resultat -0,2 g protein - 0,11 kr<br>Kaka (mandarinkaka i 135 g 5,5 g protein 5,16 kr<br>storlek enligt gamla<br>portioneringstabellen), DÅ<br>Mjuk kaka (bönberikad) 60 g kaka och 50 g klick 8,3 g protein 5,62 kr<br>med blåbärsklick, NU<br>Resultat + 2,8 g protein +0,46 kr |  |  |  |
 
 <!-- sida 12 -->
 
@@ -560,36 +537,14 @@ säkerställa att portionsstorlekarna överensstämmer med den mängd som omsorg
 maten innehåller rätt mängd energi och näring.
 
 Tabell 4. Plan för uppföljning
-Typ
-Frekvens Vilka professioner   Vad
-uppföljning
-Utvecklare, enhetschefer och Utvecklingsråd diskuterar aktuella frågor,
-Utvecklings- Varannan restaurangchefer Service menyer och verksamhetsfrågor som berör
-råd      månad    Måltid, samt dietist, Vård & förvaltningarna. Vid behov kallas andra
-Omsorg               professioner.
 
-Översyn av energi- och näringsinnehåll i
-Tre gånger Utvecklare Service Måltid och
-Avstämning                             menyer. Eventuella åtgärder och justeringar
-per år   dietist Vård & Omsorg
-görs och information förmedlas till berörda.
-Kvalitetsberättelse sammanställs och lämnas
-till Vård & Omsorg.
-Innehåll:
-\- statistik över antal portioner
-\- redogörelse för relevanta synpunkter som
-inkommit på måltidsråd, måltidsmöte,
-En gång
-Kvalitets-        Enhetschefer på Service anhörigträff och från enskilda kunder samt
-per år, vid
-berättelse        Måltid               eventuellt genomförda förändringar
-årsskiftet
-\- energi- och näringsinnehåll av menyer
-Dietist och verksamhetschef Ekonomi och
-kvalitet, Vård & Omsorg återrapporterar till
-egna verksamheten och ansvarar för att
-eventuella åtgärder vidtas.
 Kungsbacka kommun     Slutrapport Receptbank Goda Måltider     12
+
+[Tabell 13-1](handlingar.tabeller/13-1.csv)
+
+| Typ<br>uppföljning | Frekvens | Vilka professioner | Vad |
+| --- | --- | --- | --- |
+| Utvecklare, enhetschefer och Utvecklingsråd diskuterar aktuella frågor,<br>Utvecklings- Varannan restaurangchefer Service menyer och verksamhetsfrågor som berör<br>råd månad Måltid, samt dietist, Vård & förvaltningarna. Vid behov kallas andra<br>Omsorg professioner.<br>Översyn av energi- och näringsinnehåll i<br>Tre gånger Utvecklare Service Måltid och<br>Avstämning menyer. Eventuella åtgärder och justeringar<br>per år dietist Vård & Omsorg<br>görs och information förmedlas till berörda.<br>Kvalitetsberättelse sammanställs och lämnas<br>till Vård & Omsorg.<br>Innehåll:<br>- statistik över antal portioner<br>- redogörelse för relevanta synpunkter som<br>inkommit på måltidsråd, måltidsmöte,<br>En gång<br>Kvalitets- Enhetschefer på Service anhörigträff och från enskilda kunder samt<br>per år, vid<br>berättelse Måltid eventuellt genomförda förändringar<br>årsskiftet<br>- energi- och näringsinnehåll av menyer<br>Dietist och verksamhetschef Ekonomi och<br>kvalitet, Vård & Omsorg återrapporterar till<br>egna verksamheten och ansvarar för att<br>eventuella åtgärder vidtas. |  |  |  |
 
 <!-- sida 14 -->
 
@@ -718,10 +673,6 @@ Matsedelsvecka 6   Kalorier         Protein, g
 
 Matsedelsvecka 7   Kalorier         Protein, g
 
-Grundmatsedel VT23
-Kalorier       Protein, g
-7 veckor
-
 \*
 Gul markering: Måltiden når upp till energi- och proteinspannet men inte till målvärdet.
 
@@ -771,8 +722,9 @@ Kungsbacka kommun     Slutrapport Receptbank Goda Måltider     15
 
 [Tabell 16-7](handlingar.tabeller/16-7.csv)
 
-| Lunch 1 + dessert | 713 | 28 |
+| Grundmatsedel VT23<br>7 veckor | Kalorier | Protein, g |
 | --- | --- | --- |
+| Lunch 1 + dessert | 713 | 28 |
 | Lunch 2 + dessert | 747 | 29 |
 | Kvällsmat | 401 | 18 |
 
@@ -1312,7 +1264,7 @@ särskilt stöd och service samt patienter i hemsjukvården, enligt följande:
 
 \+ Bedömning av behov respektive intag av energi och protein.
 
-+» — Ordination och förskrivning av kosttillägg utifrån ett bassortiment av nutritionsprodukter.
+\+ — Ordination och förskrivning av kosttillägg utifrån ett bassortiment av nutritionsprodukter.
 
 « Anpassning av maten utifrån allergier, överkänslighet eller vid behov av förändrad
 konsistens.
@@ -1646,11 +1598,10 @@ hjälp med matning. Läkarens bedömning är att förändringarna är åldersrel
 är för skör för att klara insättning av gastrostomi. Däremot klarar han näringsdryck väl och de är
 avgörande för att han ska täcka sitt energi- och näringsbehov.
 
-Kommunen ansvarar Kommunsjuksköterska Kommunsjuksköterska HMC distribuerar
-as kontaktar . . produkterna och
-för —> tritionsk lent fö > | ordinerar och förskriver — fakt ligt
-nutritionsbehandlingen. nutritonskonsutent för kosttillägg. akturerar enlig
-rådgivning. rådande regelverk.
+Kommunsijuksköterska ; s HMC distribuerar
+Kommunen ansvarar kontaktar Kommunsijuksköterska produkterna och
+så ; nu onsuen or ; urerar en
+nutritionsbehandlingen. rådgivning. kosttillägg. rådande regelvérk.
 
 I
 
@@ -1668,6 +1619,8 @@ månad. åligger kommunen.
 
 personalgruppen.
 
+för —> tritionsk lent fö > | ordinerar och förskriver — fakt ligt
+
 <!-- sida 37 -->
 
 Svensson Inga-Britt RK STAB
@@ -1676,7 +1629,7 @@ Från: Svensson Monica RK HÄLSO- OCH SJUKVÅRD
 Skickat: den 19 december 2017 13:49
 Till: 'kommun(Alaholm.se'; 'direktQhalmstad.se'; 'kontaktcenterQfalkenberg.se';
 
-'kommunenQhylte.se'; 'ksQvarberg.se'; 'infoQkungsbacka.se'; REGION HALLAND
+'kommunen(Qhylte.se'; 'ksQvarberg.se'; 'infoQkungsbacka.se'; REGION HALLAND
 officiell e-post
 
 Ämne: Korrigering: Överenskommelse ang SärNär med beslut från samtliga aktörer
@@ -4763,8 +4716,6 @@ kostnader i olika delar av kommunen.
 och folkhälsa.
 
 2022-11-11
-
-FS UR kel se a uu
 
 Elisabeth Sahlsten, Maria Losman, Clas Rosander, Karin Färnlöf Clarin
 

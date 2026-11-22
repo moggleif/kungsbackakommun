@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20240406002425id_/https://kungsbacka.se/d
 sha256: 3dcf9dcbeb974e4085f7d226c7889ebc850ed169e110b2deaf431ffd8535554b
 bytes: 30535996
 sidor: 166
-hamtad: 2026-11-17T02:02:29+00:00
-konverterad: 2026-11-17T02:03:13+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T01:19:27+00:00
+konverterad: 2026-11-22T01:21:12+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [7, 26, 29, 31, 35, 132]
-figurer: [7, 8, 9, 10, 11, 19, 21, 22, 26, 27, 29, 31, 33, 35, 37, 40, 41, 42, 43, 44, 45, 52, 58, 76, 77, 78, 79, 80, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 125, 132, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [7, 26, 29, 31, 35]
+figurer: [7, 8, 9, 10, 11, 19, 21, 22, 26, 27, 29, 31, 33, 35, 37, 40, 41, 42, 43, 44, 45, 52, 58, 76, 77, 78, 79, 80, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 125, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160]
 tolkade: []
 granskad: null
 ---
@@ -1999,7 +1999,7 @@ ekonomi och verksamhet.
 | TE |  |  |  |  |  |  |  |  |  |
 | VO |  |  |  |  |  |  |  |  |  |
 | VN |  |  |  |  |  |  |  |  |  |
-| R<br>Kriteriet uppfyllt Delvis uppfyllt Ej uppfyllt Ej tillämpbart Rekommendation |  |  |  |  |  |  |  |  |  |
+|  | R<br>Kriteriet uppfyllt Delvis uppfyllt Ej uppfyllt Ej tillämpbart Rekommendation |  |  |  |  |  |  |  |  |
 
 <!-- sida 60 -->
 
@@ -5183,6 +5183,19 @@ FG 2023-00356
 Bilaga 2 Yttrande Skolor i Kungsbacka kommun
 
 Kommunala  grundskolor
+Antal
+Pedagogiskt område CENTRUM    elever
+2023-01-18
+Älvsåkerskolan F-9 (F-6 from HT23) 552
+
+Björkrisskolan F-6 (F-3 from HT23) 172
+Hedeskolan F-9 (F-6 from HT23) 552
+Tingbergsskolan F-6            367
+Varlaskolan 7-9                674
+Hålabäcksskolan 4-9            322
+
+Gullregnsskolan F-3            116
+Kollaskolan F-9 (inkl. grundsärskola 1-9) 773
 
 Antal
 Pedagogiskt område NORR       elever
@@ -5197,19 +5210,6 @@ Telefon 0300-83 40 00
 www.kungsbacka.se
 
 [Tabell 133-1](handlingar.tabeller/133-1.csv)
-
-| Pedagogiskt område CENTRUM | Antal<br>elever<br>2023-01-18 |
-| --- | --- |
-| Älvsåkerskolan F-9 (F-6 from HT23) | 552 |
-| Björkrisskolan F-6 (F-3 from HT23) | 172 |
-| Hedeskolan F-9 (F-6 from HT23) | 552 |
-| Tingbergsskolan F-6 | 367 |
-| Varlaskolan 7-9 | 674 |
-| Hålabäcksskolan 4-9 | 322 |
-| Gullregnsskolan F-3 | 116 |
-| Kollaskolan F-9 (inkl. grundsärskola 1-9) | 773 |
-
-[Tabell 133-2](handlingar.tabeller/133-2.csv)
 
 | Kullaviksskolan F-9 | 713 |
 | --- | --- |

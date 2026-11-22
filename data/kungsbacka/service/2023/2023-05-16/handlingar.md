@@ -12,9 +12,9 @@ kalla_url: https://web.archive.org/web/20250802203914id_/https://kungsbacka.se/d
 sha256: 7c2cf5c9e334a890e2778e307e84fa98f161551a3c1ddaf48133aa1dd9b38c39
 bytes: 1948553
 sidor: 68
-hamtad: 2026-11-17T01:49:45+00:00
-konverterad: 2026-11-17T01:49:58+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-22T01:09:46+00:00
+konverterad: 2026-11-22T01:09:56+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -1516,12 +1516,17 @@ per rum
 |  | 4.5.3 | Städförråd föreningar |  | 1 | 4 | 4 | A,B,C |  |
 |  | 4.5.4 | Tvättstuga |  | 1 | 5 | 5 | A,B,C | Skola/Föreningar, TT, TM utslagsback |
 |  | 4.5.5 | Miljöstation |  | 1 | 10 | 10 | A,B,C | Förvaring och sortering av avfall, kan ev placeras vid skolbyggnad |
-|  | Summa 2 026 |  |  |  |  |  |  |  |
+|  | Summa |  | 2 026 |  |  |  |  |  |
 | Övriga ytor | 4.6.1 | Elcentral |  |  | 10 | 10 | A,B,C | Entréplan, nås från utsida. |
 |  | 4.6.2 | Undercentral |  | 1 | 18 | 18 | A,B,C | Entréplan |
 |  | 4.6.3 | Fläktrum |  | 1 | 120 | 120 | A,B,C | Placering som gynnar kanaldragning ventilation. |
 |  | 4.6.4 | Hiss/trapphus |  |  |  |  | A,B | Hiss för möjlighet att frakta utrusning mellan våningsplan, trapphus för<br>utrymning ska byggas inomhus. |
-|  | Summa 148<br>Summa lokalyta 2 026 kvm<br>Kommunikationsfaktor\* 15% Påslag för korridorer, trappa mm.<br>SUMMA BRUKSAREA 2 330 kvm Nivå A<br>SUMMA BRUKSAREA 2 320 kvm Nivå B<br>SUMMA BRUKSAREA 2 205 kvm Nivå C |  |  |  |  |  |  |  |
+|  | Summa 148 |  |  |  |  |  |  |  |
+|  | Summa lokalyta 2 026 kvm |  |  |  |  |  |  |  |
+|  | Kommunikationsfaktor\* 15% Påslag för korridorer, trappa mm. |  |  |  |  |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 330 kvm |  |  | Nivå A |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 320 kvm |  |  | Nivå B |  |  |  |
+|  |  | SUMMA BRUKSAREA 2 205 kvm |  |  | Nivå C |  |  |  |
 
 <!-- sida 40 -->
 

@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20241126065037id_/https://kungsbacka.se/d
 sha256: fc9f1b7c8dba49a3161f19cbb8dc5df39456c41fd0d81c8ebebc75af55b66f1a
 bytes: 181438011
 sidor: 254
-hamtad: 2026-11-17T01:55:10+00:00
-konverterad: 2026-11-17T01:57:57+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-22T01:11:16+00:00
+konverterad: 2026-11-22T01:16:24+00:00
+pipeline: kommunhandlingar 0.14.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 30, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 76, 77, 78, 79, 80, 81, 82, 83, 84, 140, 148, 149, 150, 151, 152, 153, 163, 164, 204, 208, 240, 241, 242, 243, 251]
-figurer: [8, 9, 33, 43, 51, 76, 77, 78, 79, 80, 81, 82, 83, 84, 126, 128, 130, 131, 132, 154, 173, 175, 176, 188, 189, 191, 193, 194, 196, 199, 206, 207, 208, 210, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 226, 228, 246, 249, 250]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [14, 15, 16, 17, 19, 20, 21, 23, 24, 25, 26, 30, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 76, 77, 78, 79, 80, 81, 82, 83, 84, 140, 148, 149, 150, 151, 152, 153, 163, 164, 204, 208, 240, 241, 242, 243, 251]
+figurer: [8, 9, 17, 23, 24, 25, 33, 43, 44, 45, 51, 76, 77, 78, 79, 80, 81, 82, 83, 84, 126, 128, 130, 131, 132, 140, 154, 173, 175, 176, 188, 189, 191, 193, 194, 196, 199, 206, 207, 208, 210, 214, 215, 216, 217, 218, 219, 220, 221, 222, 224, 225, 226, 228, 246, 249, 250]
 tolkade: []
 granskad: null
 ---
@@ -761,11 +761,97 @@ Avtalet fordrar för sin giltighet att det godkänns av kommunfullmäktige.
 
 <!-- sida 23 -->
 
+337246 VLD Stationsflytt KBN-019
+IB337246 Projektering
+Projektnummer 8809 Uträknade parametrar har använts
+Löpnummer 2 Investering 0 Yo
+Kalkylnamn LN Projektering EBR P2 -Avtal stationsflytt Kostnad 0 Yo
+Notering Högspänning 0 Yo
+Nätstation 0 Yo
+Kataloger EON Tilläggskoder, 2022
+EBR P2, 2022
+Sammanställning
+
 <!-- sida 24 -->
+
+Projektnummer
+
+Projektnamn
+
+Löpnummer Uppdragsbenämning Kalkylnamn Sidnummer
+8809 337246 VLD Stationsflytt KBN-019 2 IB337246 Projektering LÅN Projektering EBR P2 -Avtal 2 (4
+stationsflytt (6)
+Investering - Nätstation
+Antal |Enhet |Typ |Beskrivning [Summa (kr) —— JArbete (kr) — [Material (kr) [Maskin (kr) = [Övrigt (kr) = [Beredare (h)|Montör (h) |Maskin (h) |IU |HLN |F
+1 st 13531 Trafikavstängning, punktavstängning. 16 776 6 154 0 2 634 7 988 1,50 5,63 3,04 100 100 100
+City
+5.m2 13647 Asfaltering mindre yta <= 5 m2 5 056 0 0 0 5 056 0,00 0,00 0:00:7100-74-100--1200
+1 st 13731 Stationsbädd stor station 21 288 6 192 8792 6 211 92 0,63 6,62 7,00 100 100 100
+20 m3 13758 Utbyte av massor 3515 295 4110 850 2700 0,20 Oe 0,98-1005-1-1007-100
+2 st 14056 Avslut 12-24 kV i.hus PEX 3x50-300 7976 5 289 2 687 0 0 0,80 5,37 0,00 100 100 100
+2St 14067 Tillägg kapslat avslut 12-24 kv 7786 1398 6 388 0 0 0,20 1,43 000:--100:5 200-100
+8 st 14070 Ansluta kabel 0,4 kV NIXV(E) 240 7 800 7 617 183 0 0 0,80 B,l2 0,00 100 100 100
+NS 15120 Nätstation N2x12/4 1250 kVA, betong 596 480 11586 564 511 0 20 383 2,60 10,84 0:00:--10015-100:-100
+2 st 15231 Tillkommande lastfrånskiljare 12 kv 47 275 16 005 31 270 0 0 1,80 16,93 0,00 100 100 100
+2:0st 15252 Tillkommande säkringslastfrånskiljare 12 61 736 24 235 35SO0L 0 0 1,80 26,65 0:00:--1100-- 100-200
+kV
+8 st 15762 Säkringslastfrånskiljare NH2, 400 A 21756 5 446 16 310 0 0 0,80 5,56 0,00 100 100 100
+2äSt 15921 12/0,4 kV 800 kVA 448 272 0 448 272 0 0 0,00 0,00 0,00:-100::-40051-100
+1 st 16121 Tillägg fjärrmanöver 71 924 8 204 63 720 0) 0 2,00 7,50 0,00 100 100 100
+2 st 31262 Avbrottsarbete 12-24 kv 2403 2 403 0 0 0 0,00 2,84 0,00 100 100 100
+2 st 31264 Tillägg vid avbrottsarbete i city- och 1 096 1 096 0 0 0 0,00 1,29 0,00 100 100 100
+industriområde 0,4 kv
+1 st 31267 Idrifttagning av komplett nätstation inkl 1071 107 0 0 0 0,00 120 0,00 100 100 100
+uppmärkning
+2 st 41120 Flyttning och etablering 1 montör 6 015 6 015 0) 0,84 6,18 0,00 100 100 100
+st 41122 Flyttning och etablering av 3 142 463 0 2 679 0,50 0,00 00-100: 200:4100
+kabelschaktmaskin
+1 st 51001 Grundläggande beredning. fast 3 337 3 337 0 0 0 3,60 0,00 0,00 100 100 100
+tid/projekt
+1 st 51006 Upprätta markavtal 2249 2 249 0 0 0 2,43 0,00 0:00: 10054 1007--7100
+1 st 51008 Bygglov 3 123 3 123 0 0 0 3,37 0,00 0,00 100 100 100
+1ist 51013 TA-plan 970 970 0 0 0 1,05 0,00 0:00:-:100554007 200
+1 st 51014 Upplagsplatser 952 952 0 0 0 1,03 0,00 0,00 100 100 100
+Töst 51015 Upprätta arbetsmiljöplan 1401 1401 0 0 0 SE 0,00 0,00 100 100 100
+A41376
+
+2023-01-26 11:31
 
 <!-- sida 25 -->
 
+Projektnummer Projektnamn Löpnummer Uppdragsbenämning Kalkylnamn Sidnummer
+8809 337246 VLD Stationsflytt KBN-019 2 1B337246 Projektering LN Projektering EBR P2 -Avtal a (4
+stationsflytt ()
+Investering - Nätstation
+Antal |Enhet |Typ |Beskrivning |Summa (kr) Arbete (kr) | Material (kr) | Maskin (kr) Övrigt (kr) |Beredare (h)| Montör (h) | Maskin (h) Ju JHLN |F
+1 st 51016 Upprätta miljöplan 1442 1442 0 0 0 1,56 0,00 0,00 100 100 100
+TiSk Materialprisökning 290 30 000 0 30 000 0 0) 0,00 0,00 0,00 100 100 100
+1 st Projekteringstid 25 000 0 0 0) 25 000 0,00 0,00 0,00 100 100 100
+US Projektledning 25 000 (0) 0 0 25 000 0,00 0,00 0:00 -:100-5100:1-200
+2 st Transport trafo 20 000 0 0 0 20 000 0,00 0,00 0,00 100 100 100
+
+Totalt Nätstation 1449 841 — 117443 1213744 12374 106280 29,01 106,94 = 1411
+Totalt Investering = 1449841 117443 1213744 <+12374 106280 29,01 106,94 — 14,11
+
+A41376
+2023-01-26 11:31
+
 <!-- sida 26 -->
+
+Projektnummer Projektnamn Löpnummer Uppdragsbenämning Kalkylnamn Sidnummer
+8809 337246 VLD Stationsflytt KBN-019 2 IB337246 Projektering LN Projektering EBR P2 -Avtal 4 (4)
+stationsflytt
+Kostnad - Nätstation
+Antal | Enhet Typ |Beskrivning |Summa (kr) |Arbete (kr) | Material (kr) | Maskin (kr) lÖvrigt (kr) |Beredare (h) | Montör (h) | Maskin (h) ru JHLN |F
+1 st 25618 Invändig rasering, platsbyggd nätstation 52 697 51 738 0 0 959 1,19 59,80 0,00 100 100 100
+2 trafo
+Totalt Nätstation 52697 — 51738 0 0 959 1,19 59,80 0,00
+Totalt Kostnad 52697 — 51738 0 0 959 1,19 59,80 0,00
+
+Totalt 1 502 538 169 181 121374 12 374 107 239 30,20 166,75 14,11
+
+A41376
+2023-01-26 11:31
 
 <!-- sida 27 -->
 
@@ -1627,6 +1713,15 @@ Anders Sandberg enl. fullmakt
 
 <!-- sida 44 -->
 
+Bilaga A
+Programkarta ostadskvarter, småhus i upp till tre våningar.
+Teckenförklaring Bostadskvarter, flerbostadshus i upp till sex
+1). Byggnader i upp till tré väningar föreslås
+Utvecklingsområde, utbildningslokaler att placeras mot Industrigatan och Borgmästare-
+GINy gång- och cykelväg genom parkområdet.
+lytt av befintlig gäng- och cykelväg.
+II, VI Högsta antal våningar på ny bebyggelse mästaregatan. TR i
+
 <!-- sida 45 -->
 
 Bilaga B
@@ -1638,6 +1733,18 @@ Exploateringsomr
 <!-- sida 46 -->
 
 <!-- sida 47 -->
+
+Blivande allmän platsmark |N NN
+Gjutaren 2 (blå linje)
+Bilaga D
+Blivande kvartersmark
+inom Gjutaren 2 (yta
+inom röd linje)
+Blivande kvartersmark
+inom röd linje)
+\- Blivande kvartersmark för bostäder markanvisas till Riksbyggen
+Gjutaren 2 — Kv. 1 och 2
+\- Blivande allmän platsmark överlåts till kommunen
 
 <!-- sida 48 -->
 
@@ -4164,22 +4271,20 @@ Kommundirektör                     Biträdande kommundirektör
 
 Ombudgeteringar 2022 till 2023-2024
 
+Budget Nämndernas Nämndernas Förändring Förändring Summa förslag Summa förslag
+2023   förslag till förslag till gentemot gentemot ny budget ny budget
+ombudget 2023 ombudget 2024 nämndernas nämndernas 2023 2024
+förslag2023 förslag2024
+Löpande årliga investeringar 94 476 8 515 0    ‐1 594           101 397
+Övriga och reinvesteringar 211 917 109 134 2 527  0        0    321 051  2 527
+Lokaler              446 236  75 123   29 222     0        0    521 359 29 222
+Avgiftsfinansierad verksamhet 464 053 ‐778 67 337 0        0    463 275 67 337
+Delsumma 1 216 682 191 993 99 085  ‐1 594      0   1 407 081 99 085
+Exploateringsinvesteringar 11 500 ‐86 000 0       0        0    ‐74 500    0
+Summa totalt 1 228 182 105 993 99 085 ‐1 594     0   1 332 581 99 085
 2023    2024  2023-2024
 Totalt förslag från nämnderna 105 993 99 085  205 079
-
 Förslag till kommunfullmäktige 104 399 99 085 203 485
-
-[Tabell 108-1](handlingar.tabeller/108-1.csv)
-
-|  | Budget<br>2023 | Nämndernas<br>förslag till<br>ombudget 2023 | Nämndernas<br>förslag till<br>ombudget 2024 | Förändring<br>gentemot<br>nämndernas<br>förslag2023 | Förändring<br>gentemot<br>nämndernas<br>förslag2024 | Summa förslag<br>ny budget<br>2023 | Summa förslag<br>ny budget<br>2024 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Löpande årliga investeringar | 94 476 | 8 515 | 0 | ‐1 594 |  | 101 397 |  |
-| Övriga och reinvesteringar | 211 917 | 109 134 | 2 527 | 0 | 0 | 321 051 | 2 527 |
-| Lokaler | 446 236 | 75 123 | 29 222 | 0 | 0 | 521 359 | 29 222 |
-| Avgiftsfinansierad verksamhet | 464 053 | ‐778 | 67 337 | 0 | 0 | 463 275 | 67 337 |
-| Delsumma | 1 216 682 | 191 993 | 99 085 | ‐1 594 | 0 | 1 407 081 | 99 085 |
-| Exploateringsinvesteringar | 11 500 | ‐86 000 | 0 | 0 | 0 | ‐74 500 | 0 |
-| Summa totalt | 1 228 182 | 105 993 | 99 085 | ‐1 594 | 0 | 1 332 581 | 99 085 |
 
 <!-- sida 109 -->
 
