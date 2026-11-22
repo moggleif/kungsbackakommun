@@ -155,6 +155,18 @@ mellanslag (`2026– 2030`) blev två tal. Facit läser därför tecknen med
 synliga mellanrum, och mellanslag kring ett streck mellan två siffror
 räknas inte.
 
+**Den andra körningen.** Den mätte 300 sidor: 189 bekräftade och 23
+falska bekräftelser. Nio var de fall som redan rättats. Tio var en
+rubrik i 7 punkter bredvid ett datum (`Upprättad 2016-08-16`), som facit
+tog för upphöjd fast talen var rätt. Facit jämför därför en siffra bara
+med tecknet intill. En var ett verkligt fel: två rutor från RapidOCR gick
+in i varandra, och den högra läste nian i grannens `2024-02-29` som ett
+eget tal, `9 2024-01-24`, och den tredje läsningen höll med. En rad vars
+ruta går in i en annan på samma rad bekräftas därför inte. Tre gällde en
+blankett där textlagrets tecken är spärrade och vridna, så att facit
+läste `4 3 4 8 1` och `001 6002`. Facit räknar därför med radens vanliga
+avstånd, och en rad med vridna tecken har inget facit.
+
 **Skyddets form.** Agentens första försök mätte varje mörk del för sig.
 Det flaggade ringen i å och pricken i i som upphöjda, och 82 rader med
 tal blev obekräftade i onödan. När delar som överlappar i sidled slogs

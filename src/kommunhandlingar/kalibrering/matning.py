@@ -4,11 +4,11 @@ Mätningen på en textlagersida: sidan renderas som i konverteringen, läses
 med väg H, och varje rad jämförs med textlagret. En bekräftad rad är `ratt`
 när talen är textlagrets och annars `fel`, och `upphojt` när textlagret
 har ett upphöjt tecken på raden, eftersom det är just det skyddet ska
-stoppa. En rad som rör en bild är `utan-facit`. En rad där ingen läsning
-har ett tal men textlagret har det är `missad`, och textlagrets tal
-utanför alla rader räknas som `utanfor`. En sida är bekräftad när alla
-dess rader med tal är det och inget tal i Tesseracts läsning står utanför
-raderna.
+stoppa. En rad som rör en bild eller har vridna tecken är `utan-facit`.
+En rad där ingen läsning har ett tal men textlagret har det är `missad`,
+och textlagrets tal utanför alla rader räknas som `utanfor`. En sida är
+bekräftad när alla dess rader med tal är det och inget tal i Tesseracts
+läsning står utanför raderna.
 """
 
 from dataclasses import dataclass

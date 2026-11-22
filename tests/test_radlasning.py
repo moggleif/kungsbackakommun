@@ -56,6 +56,24 @@ class Las(unittest.TestCase):
         rad = radlasning.avgor(sidbild(), siffra, ("4", "4"), [raden, siffra])
         self.assertEqual(rad.hur, "upphojd-rad")
 
+    def test_rad_som_gar_in_i_grannen_bekraftas_inte(self):
+        raden = self.lasning.rader[0].ruta
+        grannen = (raden[2] - 20, raden[1], raden[2] + 200, raden[3])
+        rad = radlasning.avgor(sidbild(), raden, ("4", "4"), [raden, grannen])
+        self.assertEqual(rad.hur, "overlappar")
+
+
+class Overlappar(unittest.TestCase):
+    def test_bara_en_ruta_pa_samma_rad(self):
+        raden = (100, 100, 400, 140)
+        fall = {
+            (390, 100, 600, 140): True,
+            (400, 100, 600, 140): False,
+            (100, 135, 400, 175): False,
+        }
+        for andra, svar in fall.items():
+            self.assertEqual(radlasning.overlappar(raden, [raden, andra]), svar)
+
 
 class Tom(unittest.TestCase):
     def test_en_tom_sida_har_inga_rader(self):

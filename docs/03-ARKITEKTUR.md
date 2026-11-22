@@ -1200,7 +1200,9 @@ som är lägre än radens tecken och slutar en bit ovanför baslinjen är
 upphöjt, och en rad som RapidOCR hittat är upphöjd när den står bredvid
 en högre rad och slutar en bit ovanför dess underkant. En rad med ett
 upphöjt tecken och en upphöjd rad bekräftas aldrig. Trösklarna står i
-modulernas docstring, och bara där.
+modulernas docstring, och bara där. Inte heller en rad vars ruta går in i
+en annan ruta på samma rad bekräftas, eftersom RapidOCR då kan läsa en
+bit av grannens tal som ett eget.
 
 **Sidan** är bekräftad när varje rad med tal är det och inget tal i
 Tesseracts ord står utanför raderna.
@@ -1215,14 +1217,16 @@ hämtas med poolens hämtning (K10), och en PDF med annan sha256 än i
 front matter mäts inte. `facit.py` och `matning.py` jämför varje rad med
 talen i textlagrets tecken vars mittpunkt ligger i radens ruta. Mellan två
 tecken räknas ett mellanslag när textlagret har ett eller när avståndet
-syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt:
+syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt.
+En rad med ett vridet eller spegelvänt tecken i textlagret har inget
+facit, eftersom tecknens ordning från vänster då inte är textens:
 
 | Utfall       | Raden                                                          |
 | ------------ | -------------------------------------------------------------- |
 | `ratt`       | bekräftad, med textlagrets tal                                 |
 | `fel`        | bekräftad, med andra tal                                       |
 | `upphojt`    | bekräftad, men textlagret har ett upphöjt tecken på raden      |
-| `utan-facit` | bekräftad, men rör en bild, vars tal textlagret saknar         |
+| `utan-facit` | bekräftad, men rör en bild eller har vridna tecken             |
 | `obekraftad` | inte bekräftad; orsaken står i `hur`                           |
 | `missad`     | ingen läsning har ett tal, men textlagret har det              |
 | `utanfor`    | textlagrets tal utanför alla rader och bilder, en rad per sida |

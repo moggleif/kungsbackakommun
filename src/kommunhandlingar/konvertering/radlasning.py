@@ -6,8 +6,10 @@ Tesseract läser hela sidan, och varje ord hör till de rader vars ruta
 har ordets mittpunkt. Raderna där någon läsning har ett tal avgörs med
 `vag_h.avgor`. En rad bekräftas aldrig när den har ett upphöjt tecken
 eller själv är upphöjd (`upphojt`), prövat i ett utsnitt med 15 pixlars
-marginal. Ett tal i Tesseracts ord utanför alla rader räknas för sig,
-eftersom ingen rad kan bekräfta det.
+marginal. Inte heller när rutan går in i en annan ruta på samma rad,
+eftersom RapidOCR då kan läsa en bit av grannens tal som ett eget
+(`9 2024-01-24` ur `2024-02-29 2024-01-24`). Ett tal i Tesseracts ord
+utanför alla rader räknas för sig, eftersom ingen rad kan bekräfta det.
 """
 
 from dataclasses import dataclass
@@ -63,11 +65,24 @@ def las(bild: Image.Image) -> Sidlasning:
 def avgor(bild: Image.Image, ruta: Ruta, texter: tuple[str, str], rutor: list):
     if upphojt.upphojd_rad(ruta, rutor):
         return vag_h.Avgorande(None, "upphojd-rad")
+    if overlappar(ruta, rutor):
+        return vag_h.Avgorande(None, "overlappar")
     utsnitt = med_marginal(ruta, bild)
     rad = (int(ruta[1]) - utsnitt[1], int(ruta[3]) - utsnitt[1])
     if upphojt.har_upphojt(bild.crop(utsnitt), rad):
         return vag_h.Avgorande(None, "upphojt")
     return vag_h.avgor(*texter, lambda: rapid.las_rad(bild.crop(utsnitt)))
+
+
+def overlappar(ruta: Ruta, rutor: list[Ruta]) -> bool:
+    return any(
+        andra != ruta
+        and andra[0] < ruta[2]
+        and ruta[0] < andra[2]
+        and min(ruta[3], andra[3]) - max(ruta[1], andra[1])
+        > min(ruta[3] - ruta[1], andra[3] - andra[1]) / 2
+        for andra in rutor
+    )
 
 
 def med_marginal(ruta: Ruta, bild: Image.Image) -> tuple[int, int, int, int]:

@@ -66,6 +66,7 @@ def tecken(text: str, x0: float, storlek: float = 10, botten: float = 110) -> di
         "top": botten - storlek,
         "bottom": botten,
         "size": storlek,
+        "matrix": (1, 0, 0, 1, x0, 0),
     }
 
 
@@ -100,6 +101,17 @@ class Facit(unittest.TestCase):
         sida = self.sida(tecken_=self.text("2021-03-22_15:33:39"))
         self.assertEqual(facit.radens_tal(sida, self.RUTA), ["2021-03-22", "15:33:39"])
 
+    def test_sparrad_text_har_mellanslag_bara_mellan_orden(self):
+        tecknen = self.text("4_3_4___8_1")
+        self.assertEqual(
+            facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["434", "81"]
+        )
+
+    def test_en_rad_med_ett_vridet_tecken_saknar_facit(self):
+        tecknen = self.text("2027")
+        tecknen[0] = {**tecknen[0], "matrix": (-1, 0, 0, -1, 0, 0)}
+        self.assertIsNone(facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA))
+
     def test_en_rad_som_ror_en_bild_saknar_facit(self):
         bild = (250, 90, 350, 220)
         self.assertIsNone(facit.radens_tal(self.sida([bild]), self.RUTA))
@@ -113,6 +125,13 @@ class Facit(unittest.TestCase):
         self.assertTrue(facit.har_upphojt(self.sida(tecken_=mindre), self.RUTA))
         self.assertTrue(facit.har_upphojt(self.sida(tecken_=hojt), self.RUTA))
         self.assertFalse(facit.har_upphojt(self.sida(), self.RUTA))
+
+    def test_en_mindre_rubrik_bredvid_ett_datum_ar_inte_upphojd(self):
+        rubrik = [tecken("d", 70, 7, 108), tecken(" ", 74, 7, 108)]
+        datum = [tecken("2", 78), tecken("0", 83)]
+        langre_bort = [tecken("d", 60, 7, 108), *datum]
+        for tecknen in ([*rubrik, *datum], langre_bort):
+            self.assertFalse(facit.har_upphojt(self.sida(tecken_=tecknen), self.RUTA))
 
     def test_fotnotssiffran_i_fixturen(self):
         with pdfplumber.open(VAG_H) as plumber:

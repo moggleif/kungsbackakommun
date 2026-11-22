@@ -2476,6 +2476,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad, vad läsningarna än säger.
 
+- **Givet** en rad vars ruta går in i en annan ruta på samma rad
+- **När** väg H avgör raden
+- **Så** är raden aldrig bekräftad, eftersom den kan ha läst en bit av
+  grannens tal.
+
 - **Givet** en rad där en siffra står direkt intill en bokstav i någon av
   de två läsningarna, som `K1.` för `Kl.`
 - **När** väg H avgör raden
@@ -2501,10 +2506,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **Så** står raden i `rapport.md` med sina läsningar, och kommandot
   avslutas med kod 1, så att arbetsflödet faller.
 
-- **Givet** en rad som rör en bild på sidan
+- **Givet** en rad som rör en bild på sidan, eller som har ett vridet
+  eller spegelvänt tecken i textlagret
 - **När** kalibreringen mäter den
 - **Så** räknas den som `utan-facit`, eftersom textlagret inte har
-  bildens tal.
+  bildens tal och de vridna tecknens ordning inte är textens.
 
 - **Givet** att väg H ännu inte är inbyggd i konverteringen
 - **När** poolen konverteras
