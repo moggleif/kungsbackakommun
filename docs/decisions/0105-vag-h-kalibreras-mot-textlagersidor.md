@@ -187,6 +187,13 @@ att mellanslag kring bindestreck och minus inte heller får räknas bort,
 eftersom `116 −4` då blir `116-4`. Bara tankstreck och kolon räknas
 bort.
 
+**Den fjärde körningen.** 300 sidor: 5 646 rader rätt, 112 sidor
+bekräftade och en falsk bekräftelse. Tesseract läste tankstrecket i
+`18:55 – 19:15` som `—-`, och den tredje läsningen som ett bindestreck
+med mellanslag, så att raden fick två tal i stället för ett intervall.
+Talen var rätta, men ett bindestreck med mellanslag på båda sidor, eller
+flera streck i rad, räknas nu som ett tankstreck.
+
 **Skyddets form.** Agentens första försök mätte varje mörk del för sig.
 Det flaggade ringen i å och pricken i i som upphöjda, och 82 rader med
 tal blev obekräftade i onödan. När delar som överlappar i sidled slogs

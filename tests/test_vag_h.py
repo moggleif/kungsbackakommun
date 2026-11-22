@@ -25,6 +25,9 @@ class Tal(unittest.TestCase):
             tal("2026– 2030 och 09:15 — 09:35"), ["2026-2030", "09:15-09:35"]
         )
 
+    def test_bindestreck_med_luft_och_flera_streck_ar_tankstreck(self):
+        self.assertEqual(tal("18:55 —- 19:15 och 5 - 3"), ["18:55-19:15", "5-3"])
+
     def test_mellanslag_kring_minus_och_kolon_star_kvar(self):
         self.assertEqual(
             tal("116 −4, 116 -4 och 09: 35"), ["116", "-4", "116", "-4", "09:35"]

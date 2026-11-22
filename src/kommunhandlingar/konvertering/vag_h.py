@@ -9,8 +9,10 @@ mellan två siffror (`2026 – 2030`, `09: 35`) och mellanslaget före ett
 procenttecken tagits bort. Båda motorerna läser gärna `09: 35` som
 `09:35`, och klockslag och fastighetsbeteckningar är för vanliga för att
 lämnas obekräftade. Priset är att `punkt 4: 20` kan sparas som `4:20`.
-Kring ett bindestreck eller minustecken står mellanslagen kvar, eftersom
-`116 −4` är två tal och inte `116-4`.
+Ett bindestreck med mellanslag på båda sidor, eller flera streck i rad
+(`18:55 —- 19:15`), räknas som ett tankstreck. Annars står mellanslagen
+kring ett bindestreck eller minustecken kvar, eftersom `116 −4` är två
+tal och inte `116-4`.
 
 En rad där en siffra står direkt intill en bokstav i någon av de två
 läsningarna bekräftas aldrig. Där läser båda motorerna gärna en bokstav
@@ -23,7 +25,7 @@ from dataclasses import dataclass
 
 TAL = re.compile(r"-?\d+(?:[,.:/-]\d+)*%?")
 STRECK = str.maketrans(dict.fromkeys("−–—‐‑‒", "-"))
-KRING_TANKSTRECK = re.compile(r"(?<=\d) *[–—] *(?=\d)")
+KRING_TANKSTRECK = re.compile(r"(?<=\d)(?: *[–—][-–—]* *| +- +)(?=\d)")
 PROCENT = re.compile(r"(\d) %")
 BOKSTAV_VID_SIFFRA = re.compile(r"[^\W\d_]\d|\d[^\W\d_]")
 KRING_KOLON = re.compile(r"(?<=\d) *: *(?=\d)")

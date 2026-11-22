@@ -1186,7 +1186,8 @@ någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som
 (`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
 alla sorters streck blivit bindestreck och mellanslag kring ett
 tankstreck eller kolon mellan två siffror tagits bort, eftersom båda
-motorerna läser `09: 35` som `09:35`. En rad där en siffra står direkt
+motorerna läser `09: 35` som `09:35`. Ett bindestreck med mellanslag på
+båda sidor räknas som ett tankstreck. En rad där en siffra står direkt
 intill en bokstav i någon av läsningarna bekräftas inte, eftersom båda
 motorerna läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
