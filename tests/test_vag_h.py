@@ -22,6 +22,7 @@ class Tal(unittest.TestCase):
 
     def test_mellanslag_kring_streck_mellan_siffror(self):
         self.assertEqual(tal("2026– 2030 och 5 -3"), ["2026-2030", "5-3"])
+        self.assertEqual(tal("09:15 – 09: 35"), ["09:15-09:35"])
 
 
 class Avgor(unittest.TestCase):

@@ -167,6 +167,17 @@ blankett där textlagrets tecken är spärrade och vridna, så att facit
 läste `4 3 4 8 1` och `001 6002`. Facit räknar därför med radens vanliga
 avstånd, och en rad med vridna tecken har inget facit.
 
+**Den tredje körningen.** 300 sidor: 5 610 rader rätt, 117 sidor
+bekräftade och en falsk bekräftelse. Textlagret hade `09: 35` med ett
+mellanslag efter kolonet, och båda motorerna läste `09:35`. Talet är
+detsamma, så mellanslag kring ett kolon mellan två siffror räknas inte,
+som kring ett streck. Regeln om en siffra intill en bokstav kostar mest:
+305 rader och 99 sidor blev obekräftade bara av den, mest
+kontrollsummor, `100kr`, diarienummer som `RES123` och `Kl.`. Den
+behålls, eftersom just de raderna är där en bokstav läses som en siffra
+utan att någon läsning märker det. Märkning per rad kan ta tillbaka
+sidornas övriga tal.
+
 **Skyddets form.** Agentens första försök mätte varje mörk del för sig.
 Det flaggade ringen i å och pricken i i som upphöjda, och 82 rader med
 tal blev obekräftade i onödan. När delar som överlappar i sidled slogs

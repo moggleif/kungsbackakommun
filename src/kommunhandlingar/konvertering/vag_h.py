@@ -4,8 +4,9 @@ Väg H avgör en rad som RapidOCR och Tesseract har läst. Raden är bekräftad
 när två läsningar har samma tal i samma ordning: först de två, annars den
 tredje läsningen tillsammans med en av dem. Den tredje läsningen görs bara
 när de två är oense. Talen jämförs efter att minustecken och alla sorters
-streck blivit bindestreck, mellanslag kring ett streck mellan två siffror
-(`2026 – 2030`) och mellanslaget före ett procenttecken tagits bort.
+streck blivit bindestreck, mellanslag kring ett streck eller kolon mellan
+två siffror (`2026 – 2030`, `09: 35`) och mellanslaget före ett
+procenttecken tagits bort.
 
 En rad där en siffra står direkt intill en bokstav i någon av de två
 läsningarna bekräftas aldrig. Där läser båda motorerna gärna en bokstav
@@ -18,7 +19,7 @@ from dataclasses import dataclass
 
 TAL = re.compile(r"-?\d+(?:[,.:/-]\d+)*%?")
 STRECK = str.maketrans(dict.fromkeys("−–—‐‑‒", "-"))
-KRING_STRECK = re.compile(r"(?<=\d) *- *(?=\d)")
+KRING_SKILJETECKEN = re.compile(r"(?<=\d) *([-:]) *(?=\d)")
 PROCENT = re.compile(r"(\d) %")
 BOKSTAV_VID_SIFFRA = re.compile(r"[^\W\d_]\d|\d[^\W\d_]")
 
@@ -30,7 +31,7 @@ class Avgorande:
 
 
 def tal(text: str) -> list[str]:
-    text = KRING_STRECK.sub("-", text.translate(STRECK))
+    text = KRING_SKILJETECKEN.sub(r"\1", text.translate(STRECK))
     return TAL.findall(PROCENT.sub(r"\1%", text))
 
 

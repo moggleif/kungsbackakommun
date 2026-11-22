@@ -1185,7 +1185,7 @@ varje ord hör till de rader vars ruta har ordets mittpunkt. En rad där
 någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
 (`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
 alla sorters streck blivit bindestreck och mellanslag kring ett streck
-mellan två siffror tagits bort. En rad där en siffra står direkt intill
+eller kolon mellan två siffror tagits bort. En rad där en siffra står direkt intill
 en bokstav i någon av läsningarna bekräftas inte, eftersom båda motorerna
 läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
