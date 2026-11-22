@@ -13,7 +13,7 @@ from datetime import datetime
 from functools import partial
 from pathlib import Path
 
-from kommunhandlingar import frontmatter, konfiguration
+from kommunhandlingar import konfiguration, pool
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import (
@@ -77,8 +77,9 @@ def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:
 def bygg_kommun(katalog: Path, ut: Path, mall: Mall, kommun: Kommun) -> dict:
     (ut / kommun.id).mkdir(exist_ok=True)
     dokument, stycken = [], []
-    for fil in sorted(katalog.rglob("*.md")):
-        falt, text = las_dokument(fil, katalog, kommun)
+    for fil, falt, text in pool.dokumenten(katalog):
+        prova(fil, falt, kommun)
+        falt["adress"] = fil.relative_to(katalog).with_suffix(".html").as_posix()
         html = dokumentsida(mall, kommun, falt, text)
         skriv_dokument(fil, ut / kommun.id / falt["adress"], html)
         dokument.append(falt)
@@ -168,13 +169,9 @@ def bygg_kalender(rot: Path, ut: Path, mall: Mall, kommun: Kommun) -> None:
         (ut / kommun.id / "kalender.html").write_text(html, encoding="utf-8")
 
 
-def las_dokument(fil: Path, katalog: Path, kommun: Kommun) -> tuple[dict, str]:
-    text = fil.read_text(encoding="utf-8")
-    falt = frontmatter.las(text)
+def prova(fil: Path, falt: dict, kommun: Kommun) -> None:
     if fel := okanda(falt, kommun):
         raise Datafel(f"{fil}: okänt {', '.join(fel)}")
-    falt["adress"] = fil.relative_to(katalog).with_suffix(".html").as_posix()
-    return falt, text
 
 
 def skriv_dokument(fil: Path, sidfil: Path, html: str) -> None:

@@ -17,7 +17,7 @@ from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
 
-from kommunhandlingar import frontmatter
+from kommunhandlingar import frontmatter, pool
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.plats import namn_av
@@ -95,8 +95,7 @@ def dokumenten(projekt: str, organets: Organets, namnen: set[str]) -> Dokument:
 # Titeln är källans filnamn som det står, med å, ä, ö och versaler.
 def organets(data: Path, organ: str) -> Organets:
     dokumenten = []
-    for fil in sorted((data / organ).rglob("*.md")):
-        falt = frontmatter.las(fil.read_text(encoding="utf-8"))
+    for fil, falt, _ in pool.dokumenten(data / organ):
         kalla = frontmatter.adresser(falt["kalla_url"])[0]
         titel = unquote(PurePosixPath(urlsplit(kalla).path).stem)
         adress = fil.relative_to(data).with_suffix(".html").as_posix()

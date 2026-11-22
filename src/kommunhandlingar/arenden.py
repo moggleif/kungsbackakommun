@@ -14,7 +14,7 @@ PDF:en. Bara raden `arenden` ändras, och en andra körning ändrar ingenting.
 import sys
 from pathlib import Path
 
-from kommunhandlingar import frontmatter
+from kommunhandlingar import frontmatter, pool
 from kommunhandlingar.paragrafer import paragrafer
 from kommunhandlingar.skrivning import skriv_md
 
@@ -34,10 +34,8 @@ def ratt_varde(text: str) -> str:
 
 def fyll(data: Path) -> int:
     andrade = 0
-    for fil in sorted(data.rglob("*.md")):
-        text = fil.read_text(encoding="utf-8")
-        gammal = frontmatter.las(text)["arenden"]
-        if (ny := ratt_varde(text)) != gammal:
+    for fil, falt, text in pool.dokumenten(data):
+        if (ny := ratt_varde(text)) != falt["arenden"]:
             skriv_md(fil, frontmatter.andrad(text, "arenden", ny))
             andrade += 1
     return andrade
