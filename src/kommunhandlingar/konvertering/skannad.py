@@ -15,7 +15,7 @@ from dataclasses import dataclass
 import pypdfium2 as pdfium
 from PIL import Image, ImageDraw
 
-from kommunhandlingar.konvertering import bildyta, ocr, riktning, sakra_rader
+from kommunhandlingar.konvertering import bildyta, kvalitet, ocr, riktning, sakra_rader
 
 FARG_DPI = 100
 FIGUR = 0.04
@@ -35,7 +35,7 @@ def las(rendering: pdfium.PdfPage) -> Skannad:
     farg = rendering.render(scale=FARG_DPI / 72).to_pil()
     forsta = ocr.las(gra)
     if forsta.ordantal is None:
-        return Skannad("ej-konverterad")
+        return Skannad(kvalitet.EJ_KONVERTERAD)
     skala = FARG_DPI / ocr.DPI
     yta = bildyta.storsta(farg, [skalad(r, skala) for r in forsta.ord])
     figur = yta.andel >= FIGUR and yta.jamn
@@ -43,7 +43,7 @@ def las(rendering: pdfium.PdfPage) -> Skannad:
     if text is None:
         text = omlast(gra, skalad(yta.ruta, 1 / skala) if figur else None)
     if text is not None:
-        return Skannad("ocr", text, figur)
+        return Skannad(kvalitet.OCR, text, figur)
     return sakra(gra, forsta.tsv, figur) or utan_text(yta, farg, forsta.ordantal)
 
 
@@ -52,16 +52,16 @@ def sakra(gra: Image.Image, tsv: str, figur: bool) -> Skannad | None:
     try:
         rader = sakra_rader.las(gra, tsv)
     except sakra_rader.Fallerade:
-        return Skannad("ej-konverterad", figur=figur)
-    return None if rader is None else Skannad("ocr", rader, figur)
+        return Skannad(kvalitet.EJ_KONVERTERAD, figur=figur)
+    return None if rader is None else Skannad(kvalitet.OCR, rader, figur)
 
 
 def utan_text(yta: bildyta.Yta, farg: Image.Image, ordantal: int) -> Skannad:
     if yta.andel >= BILD and yta.jamn:
-        return Skannad("bild", figur=True)
+        return Skannad(kvalitet.BILD, figur=True)
     if ordantal == 0 and bildyta.mork_andel(farg) <= NASTAN_TOM:
-        return Skannad("tom")
-    return Skannad("ointressant")
+        return Skannad(kvalitet.TOM)
+    return Skannad(kvalitet.OINTRESSANT)
 
 
 def omlast(gra: Image.Image, bildruta: tuple | None) -> str | None:

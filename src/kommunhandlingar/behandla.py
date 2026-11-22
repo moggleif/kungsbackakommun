@@ -32,8 +32,8 @@ from kommunhandlingar.arkivluckor import (
 )
 from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.kandidat import Kandidat
+from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.dokument import Resultat, konvertera, kvalitetsfalt
-from kommunhandlingar.konvertering.kvalitet import UTAN_TEXT
 from kommunhandlingar.plats import grundplats, ledigt_for
 from kommunhandlingar.pool import Pool
 from kommunhandlingar.tidsbudget import utan_avbrott
@@ -99,7 +99,7 @@ def samma_kalla(falt: dict[str, str], kandidat: Kandidat) -> bool:
 
 
 def aktuell(steg: Steg2, falt: dict[str, str]) -> bool:
-    orord = frontmatter.granskad(falt) or falt["kvalitet"] == "full"  # K72
+    orord = frontmatter.granskad(falt) or falt["kvalitet"] == kvalitet.FULL  # K72
     if not steg.omkonvertera or orord:
         return True
     return falt["pipeline"].split(" / ")[0] == steg.version
@@ -142,7 +142,7 @@ def misslyckad(steg: Steg2, dokument: Dokument, orsak: str, hamtad: datetime) ->
     falt = grundfalt(steg, dokument) | {
         "hamtad": gammal["hamtad"] if gammal else hamtad.isoformat(),
         "pipeline": steg.version,
-        "kvalitet": "ej-hamtad",
+        "kvalitet": kvalitet.EJ_HAMTAD,
         "fel": orsak,
     }
     spara(steg, dokument.sokvag, frontmatter.skriv(falt), {})
@@ -156,9 +156,8 @@ def hamtad_fil(
     samma_fil = samma_original(gammal, dokument.kandidat, hamtat.sha256)
     if samma_fil and aktuell(steg, gammal):
         return ny_adress(steg, dokument)
-    resultat = (
-        Resultat("ej-konverterad", hamtat.fel) if hamtat.fel else konvertera(hamtat.pdf)
-    )
+    ej_last = Resultat(kvalitet.EJ_KONVERTERAD, hamtat.fel)
+    resultat = ej_last if hamtat.fel else konvertera(hamtat.pdf)
     if resultat.fel == tidsbudget.FEL and samma_fil and har_text(gammal):
         return f"ej konverterad ({tidsbudget.FEL}), fullständig .md orörd"
     if steg.arkiv and forlorar(gammal, dokument.kandidat, resultat.kvalitet):
@@ -176,7 +175,7 @@ def hamtad_fil(
 
 
 def har_text(falt: dict[str, str]) -> bool:
-    return falt["kvalitet"] not in UTAN_TEXT
+    return falt["kvalitet"] not in kvalitet.UTAN_TEXT
 
 
 def samma_original(gammal: dict | None, kandidat: Kandidat, sha256) -> bool:

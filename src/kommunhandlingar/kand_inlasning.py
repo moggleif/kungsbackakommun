@@ -14,9 +14,7 @@ from collections import Counter
 from pathlib import Path
 
 from kommunhandlingar import frontmatter
-from kommunhandlingar.konvertering.kvalitet import SIDKVALITETER
-
-OLAST = "ej-konverterad"
+from kommunhandlingar.konvertering.kvalitet import EJ_KONVERTERAD, SIDKVALITETER
 
 
 def rakna(kommun: Path) -> tuple[Counter, int]:
@@ -32,7 +30,7 @@ def rakna(kommun: Path) -> tuple[Counter, int]:
 
 
 def kanda(sidor: Counter) -> int:
-    return sidor.total() - sidor[OLAST]
+    return sidor.total() - sidor[EJ_KONVERTERAD]
 
 
 def andel(sidor: Counter) -> str:

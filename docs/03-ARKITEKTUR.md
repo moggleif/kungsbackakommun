@@ -879,7 +879,8 @@ börjar före siffran skiljer den från texten framför och står kvar.
 
 Text och tal märks var för sig. `kvalitet` och `kvalitet_per_sida` säger
 hur texten lästes; `tal_obekraftade` säger på vilka sidor talen inte är
-bekräftade och därför inte ska användas som data.
+bekräftade och därför inte ska användas som data. Värdena, och mängderna
+av dem som koden använder, står som konstanter i `konvertering/kvalitet.py`.
 
 Varje sida får en kvalitet:
 
