@@ -81,11 +81,7 @@ def mellan_linjer(f: Falt, r: Rad, fack: Fack) -> tuple[int, int] | None:
     """Fältet ska stå mitt emellan två linjer som står mellan kolumnerna,
     som en centrerad rubrik i en sammanslagen cell; annars går det inte att
     avgöra."""
-    overst = min(o["top"] for o in r.ord)
-    nederst = max(o["bottom"] for o in r.ord)
-    xs = [x for x, top, bottom in fack.linjer if top < nederst and bottom > overst]
-    vanster = max((x for x in xs if x <= f.x0), default=None)
-    hoger = min((x for x in xs if x >= f.x1), default=None)
+    vanster, hoger = linjerna_runt(f, r, fack)
     if (
         vanster is None
         or hoger is None
@@ -94,6 +90,16 @@ def mellan_linjer(f: Falt, r: Rad, fack: Fack) -> tuple[int, int] | None:
         return None
     efter, fore = mellanrummet(vanster, fack, r.hojd), mellanrummet(hoger, fack, r.hojd)
     return None if efter is None or fore is None else (efter + 1, fore)
+
+
+def linjerna_runt(f: Falt, r: Rad, fack: Fack) -> tuple[float | None, float | None]:
+    """De lodräta linjerna i radens höjd närmast till vänster och höger om fältet."""
+    overst = min(o["top"] for o in r.ord)
+    nederst = max(o["bottom"] for o in r.ord)
+    xs = [x for x, top, bottom in fack.linjer if top < nederst and bottom > overst]
+    vanster = max((x for x in xs if x <= f.x0), default=None)
+    hoger = min((x for x in xs if x >= f.x1), default=None)
+    return vanster, hoger
 
 
 def mellanrummet(x: float, fack: Fack, marginal: float) -> int | None:
