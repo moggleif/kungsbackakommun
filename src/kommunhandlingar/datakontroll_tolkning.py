@@ -16,6 +16,10 @@ from kommunhandlingar.konvertering.markdown import utan_escapning
 from kommunhandlingar.sidmarkor import SIDA, sidorna
 
 TOLKNING = "<!-- tolkning:"
+EJ_ORDAGRANT = (
+    "cellen {cell!r} har siffror som inte är ett helt tal"
+    " och står inte ordagrant i sidans text"
+)
 MARKERING = re.compile(r"<!-- tolkning: [^,\n]+, \d{4}-\d{2}-\d{2} -->")
 LANK = re.compile(r"\[[^\]]*\]\([^)]*\)")
 SIFFRA = re.compile(r"\d")
@@ -39,21 +43,33 @@ TALEN = re.compile(
 
 
 def dokumentfel(falt: dict[str, str], text: str) -> list[str]:
+    fel = faltfel(falt)
+    if fel or frontmatter.saknas(falt["figurer"]):
+        return fel
+    return textfel(text, frontmatter.lista(falt["tolkade"]), sidnumren(falt))
+
+
+def faltfel(falt: dict[str, str]) -> list[str]:
     figurer, tolkade = falt["figurer"], falt["tolkade"]
     if frontmatter.saknas(figurer) != frontmatter.saknas(tolkade):
         return ["figurer och tolkade är inte null samtidigt"]
     sidor = frontmatter.lista(tolkade)
     if sidor != [s for s in frontmatter.lista(figurer) if s in sidor]:
         return ["tolkade är inte sidor ur figurer, i ordning"]
-    if frontmatter.saknas(figurer):
-        return []
-    antal = len(frontmatter.lista(falt["kvalitet_per_sida"]))
-    finns = [str(n) for n in range(1, antal + 1)]
-    if any(s not in finns for s in frontmatter.lista(figurer)):
+    if not set(frontmatter.lista(figurer)) <= set(sidnumren(falt)):
         return ["figurer har sidor som inte finns i dokumentet"]
-    if sidor and SIDA.findall(text) != finns:
+    return []
+
+
+def sidnumren(falt: dict[str, str]) -> list[str]:
+    antal = len(frontmatter.lista(falt["kvalitet_per_sida"]))
+    return [str(n) for n in range(1, antal + 1)]
+
+
+def textfel(text: str, tolkade: list[str], finns: list[str]) -> list[str]:
+    if tolkade and SIDA.findall(text) != finns:
         return ["sidorna står inte en gång var och i ordning"]
-    return [fel for nr, d in sidorna(text).items() for fel in antalfel(nr, d, sidor)]
+    return [fel for nr, d in sidorna(text).items() for fel in antalfel(nr, d, tolkade)]
 
 
 def antalfel(nr: str, sida: str, tolkade: list[str]) -> list[str]:
@@ -76,18 +92,17 @@ def talfel(fil: Path, md: Path, sida: int) -> list[str]:
     text = sidans_text(md.read_text(encoding="utf-8"), sida)
     talen = sidans_tal(text)
     celler = csv.reader(fil.read_text(encoding="utf-8").splitlines())
-    fel = []
-    for cell in (c for rad in celler for c in rad):
-        if SIFFRA.search(TALEN.sub("", cell)) and not ordagrant(cell, text):
-            fel.append(
-                f"cellen {cell!r} har siffror som inte är ett helt tal"
-                " och står inte ordagrant i sidans text"
-            )
-        fel += [
-            f"talet {t!r} står inte i sidans text"
-            for t in TALEN.findall(cell)
-            if t not in talen
-        ]
+    return [fel for rad in celler for cell in rad for fel in cellfel(cell, text, talen)]
+
+
+def cellfel(cell: str, text: str, talen: set[str]) -> list[str]:
+    fel = [
+        f"talet {t!r} står inte i sidans text"
+        for t in TALEN.findall(cell)
+        if t not in talen
+    ]
+    if SIFFRA.search(TALEN.sub("", cell)) and not ordagrant(cell, text):
+        return [EJ_ORDAGRANT.format(cell=cell), *fel]
     return fel
 
 
