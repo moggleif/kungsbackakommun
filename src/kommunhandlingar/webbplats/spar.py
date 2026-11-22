@@ -68,19 +68,16 @@ class Steg:
 
 
 @dataclass(frozen=True)
-class Poolen:
+class Underlag:
     organ: set[str]
     sidtext: Sidtext
 
 
-Lasare = Callable[[Path, Kommun, Path], list[Steg]]
-
-
-def lasare(slag: Slag) -> Lasare:
+def lasare(slag: Slag) -> Callable[[Path, Kommun, Path], list[Steg]]:
     def las(fil: Path, kommun: Kommun, data: Path) -> list[Steg]:
-        poolen = Poolen(radfil.organen(kommun), sidlasare(data))
+        underlag = Underlag(radfil.organen(kommun), sidlasare(data))
         tolka_unik = radfil.unika(
-            lambda rad: tolka(rad, slag, poolen),
+            lambda rad: tolka(rad, slag, underlag),
             lambda s: (s.organ, s.namn, s.fas, s.kalla),
             "steget står redan med samma källa",
         )
@@ -89,23 +86,23 @@ def lasare(slag: Slag) -> Lasare:
     return las
 
 
-def tolka(rad: list[str], slag: Slag, poolen: Poolen) -> Steg:
+def tolka(rad: list[str], slag: Slag, underlag: Underlag) -> Steg:
     steg = Steg(rad[0], rad[1], radfil.ar(rad[2]), *rad[3:])
-    radfil.i_kommunfilen(steg.organ, poolen.organ)
+    radfil.i_kommunfilen(steg.organ, underlag.organ)
     if not steg.namn or not steg.text:
         raise ValueError(f"{slag.kolumn} och texten får inte vara tomma")
     if steg.fas not in slag.faser:
         raise ValueError(f"fasen {steg.fas!r} är inte en av {', '.join(slag.faser)}")
     kontrollera_varde(steg, slag)
     radfil.tolkad(steg.tolkad)
-    kontrollera_sidan(steg, slag, kallans_sida(steg, poolen))
+    kontrollera_sidan(steg, slag, kallans_sida(steg, underlag))
     return steg
 
 
-def kallans_sida(steg: Steg, poolen: Poolen) -> str:
-    if steg.kallans_organ not in poolen.organ:
+def kallans_sida(steg: Steg, underlag: Underlag) -> str:
+    if steg.kallans_organ not in underlag.organ:
         raise ValueError(f"källan {steg.kalla!r} är inget organs dokument")
-    return poolen.sidtext(steg.kalla, steg.kallans_organ)
+    return underlag.sidtext(steg.kalla, steg.kallans_organ)
 
 
 # Avsändaren får stå som partiets namn, eller Alliansen som de fyra

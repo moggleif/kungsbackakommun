@@ -1,4 +1,5 @@
-"""Krav: K14 i docs/02-KRAV.md. Test: tests/test_radfilerna.py.
+"""Krav: K22, K26, K28, K36–K38 och K46 i docs/02-KRAV.md.
+Test: tests/test_radfilerna.py.
 
 Läser en av webbplatsens radfiler – målen, spåren, uppföljningarna,
 kalendern och projekten – och stoppar bygget med filen och raden när
@@ -37,9 +38,9 @@ def unika[T](
 
     def tolka_unik(rad: list[str]) -> T:
         post = tolka(rad)
-        if nyckel(post) in sedda:
+        if (radens := nyckel(post)) in sedda:
             raise ValueError(dubblett)
-        sedda.add(nyckel(post))
+        sedda.add(radens)
         return post
 
     return tolka_unik
@@ -55,8 +56,8 @@ def organen(kommun: Kommun) -> set[str]:
     return {o.id for o in kommun.organ}
 
 
-def i_kommunfilen(organ: str, organen: set[str]) -> None:
-    if organ not in organen:
+def i_kommunfilen(organ: str, kommunens: set[str]) -> None:
+    if organ not in kommunens:
         raise ValueError(f"organet {organ!r} står inte i kommunfilen")
 
 

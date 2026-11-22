@@ -2313,7 +2313,10 @@ En kommun med en fil `kalender/<kommun>.csv` får sidan
   ett datum inte är ÅÅÅÅ-MM-DD eller inte finns, ett organ har två
   sammanträden samma dag, källan inte är ett dokument i poolen
   (`<organ>/<år>/<datum>/<namn>.md`) eller ett datum på en lördag eller
-  söndag inte är märkt osäkert. En kalenderfil utan kommunfil stoppar
+  söndag inte är märkt osäkert. Rubrikraden, radnumret, antalet fält och
+  dubbletterna prövas av stommen i `webbplats/radfil.py`, som kalendern
+  delar med målen, uppföljningarna, spåren och projekten; resten av
+  raden prövas i filens egen modul. En kalenderfil utan kommunfil stoppar
   också bygget.
 - **Sidan** (`webbplats/kalendersida.py` och `kalendervyer.py`) börjar
   med en kort inledning och en hopfälld del, `<details>`, om kvaliteten:

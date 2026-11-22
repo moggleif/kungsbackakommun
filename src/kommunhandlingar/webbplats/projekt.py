@@ -41,7 +41,7 @@ class Projekt:
 def las(fil: Path, kommun: Kommun, data: Path) -> dict[str, Projekt]:
     listor = {o: a for k in kommun.kallor for o, a in k.projekt.items()}
     planerna: set[str] = set()
-    rader = radfil.las(fil, KOLUMNER, lambda rad: tolka(rad, listor, planerna))
+    rader = radfil.las(fil, KOLUMNER, lambda rad: provad_rad(rad, listor, planerna))
     namnen = {forled(r[2]) for r in rader}
     per_organ = {organ: organets(data, organ) for organ in {r[0] for r in rader}}
     return {
@@ -54,8 +54,9 @@ def las(fil: Path, kommun: Kommun, data: Path) -> dict[str, Projekt]:
     }
 
 
-# Planen läggs till bland filens planer, som den inte får stå bland redan.
-def tolka(rad: list[str], listor: dict[str, str], planerna: set[str]) -> list[str]:
+# Raden står kvar som den är. Planen prövas mot de tidigare raderna här, inte
+# med radfil.unika: meddelandet har planens namn och kommer före projektet.
+def provad_rad(rad: list[str], listor: dict[str, str], planerna: set[str]) -> list[str]:
     organ, plan, projekt, tolkad = rad
     if organ not in listor:
         raise ValueError(f"organet {organ!r} har ingen lista med projekt i kommunfilen")
