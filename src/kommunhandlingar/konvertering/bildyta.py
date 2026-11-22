@@ -99,10 +99,11 @@ def grupp_fran(start: int, rutor: list[bool], sedda: set[int]) -> list[int]:
     while ko:
         cell = ko.popleft()
         grupp.append(cell)
-        for granne in grannar(cell):
-            if rutor[granne] and granne not in sedda:
-                sedda.add(granne)
-                ko.append(granne)
+        nya = [
+            granne for granne in grannar(cell) if rutor[granne] and granne not in sedda
+        ]
+        sedda.update(nya)
+        ko.extend(nya)
     return grupp
 
 
