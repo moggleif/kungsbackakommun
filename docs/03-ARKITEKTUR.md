@@ -306,6 +306,7 @@ Kommun ── Organ (KF, KS, nämnd, utskott)    giltighetsperiod, föregångare
 ```text
 src/kommunhandlingar/
   konfiguration.py kommunfilen läses och kontrolleras
+  organ.py         organen i kommunfilen och deras kontroller
   schema.py        kontrollerna av fält och värden i kommunfilen
   fel.py           konfigurationsfel och "ingen kandidat"
   monster.py       mönstren: typ och datum ur en text

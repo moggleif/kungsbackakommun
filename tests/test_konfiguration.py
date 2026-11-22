@@ -1,5 +1,5 @@
 """Krav: K1, K22, K39 och K54 i docs/02-KRAV.md.
-Kod: src/kommunhandlingar/konfiguration.py."""
+Kod: src/kommunhandlingar/konfiguration.py och organ.py."""
 
 import copy
 import tomllib

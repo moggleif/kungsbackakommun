@@ -5,7 +5,6 @@ tests/test_meetingsplus.py."""
 
 import tomllib
 from dataclasses import dataclass
-from datetime import date
 from pathlib import Path
 
 from kommunhandlingar import schema
@@ -13,6 +12,12 @@ from kommunhandlingar.adaptrar import episerver, meetingsplus, sitevision
 from kommunhandlingar.fel import Konfigurationsfel
 from kommunhandlingar.gruppmote import Gruppmote, gruppmote_av
 from kommunhandlingar.kandidat import TYPORDNING
+from kommunhandlingar.organ import (
+    Organ,
+    kontrollera_grupper,
+    kontrollera_organ,
+    organ_av,
+)
 
 KOMMUNFALT = {
     "namn",
@@ -23,30 +28,6 @@ KOMMUNFALT = {
     "gruppmote",
     "sidor_med_text",
 }
-ORGANFALT = {
-    "id",
-    "namn",
-    "fran",
-    "till",
-    "foregangare",
-    "hor_till",
-    "grupp",
-    "sammantradessidor",
-}
-
-
-@dataclass(frozen=True)
-class Organ:
-    id: str
-    namn: tuple[str, ...]
-    fran: date | None
-    till: date | None
-    foregangare: tuple[str, ...]
-    hor_till: str | None = None
-    # Gruppen organet står i på kommunens sida; ett utskott står i sitt organs.
-    grupp: str | None = None
-    # Första året organets sammanträden får en egen sida (K54).
-    sammantradessidor: int | None = None
 
 
 @dataclass(frozen=True)
@@ -76,28 +57,35 @@ def las(sokvag: Path) -> Kommun:
 def tolka(kommun_id: str, data: dict) -> Kommun:
     schema.kontrollera_falt(data, KOMMUNFALT, "kommunen")
     namn = schema.varde(data, "namn", str, "kommunen")
+    organ, grupper = organen_och_grupperna(data)
+    organ_id = [o.id for o in organ]
+    kallor = [kalla_av(p, i, organ_id) for i, p in enumerate(poster(data, "kalla"), 1)]
+    omkonvertera = schema.valfritt(data, "omkonvertera", bool, "kommunen") or False
+    gruppmote = schema.valfritt(data, "gruppmote", dict, "kommunen")
+    return Kommun(
+        id=schema.katalognamn(kommun_id, "kommunen"),
+        namn=namn,
+        organ=organ,
+        kallor=av_slag(kallor, sitevision.Kalla),
+        omkonvertera=omkonvertera,
+        arkivkallor=av_slag(kallor, episerver.Kalla),
+        grupper=grupper,
+        gruppmote=None if gruppmote is None else gruppmote_av(gruppmote, organ_id),
+        meetingsplus_kallor=av_slag(kallor, meetingsplus.Kalla),
+        sidor_med_text=sidor_med_text_av(data),
+    )
+
+
+def organen_och_grupperna(data: dict) -> tuple[tuple[Organ, ...], tuple[str, ...]]:
     organ = tuple(organ_av(post) for post in poster(data, "organ"))
     kontrollera_organ(organ)
     grupper = schema.textlista(data, "grupper", "kommunen")
     kontrollera_grupper(organ, grupper)
-    organ_id = [o.id for o in organ]
-    alla = [
-        kalla_av(post, i, organ_id) for i, post in enumerate(poster(data, "kalla"), 1)
-    ]
-    omkonvertera = schema.valfritt(data, "omkonvertera", bool, "kommunen") or False
-    gruppmote = schema.valfritt(data, "gruppmote", dict, "kommunen")
-    return Kommun(
-        schema.katalognamn(kommun_id, "kommunen"),
-        namn,
-        organ,
-        tuple(k for k in alla if isinstance(k, sitevision.Kalla)),
-        omkonvertera,
-        tuple(k for k in alla if isinstance(k, episerver.Kalla)),
-        grupper,
-        None if gruppmote is None else gruppmote_av(gruppmote, organ_id),
-        tuple(k for k in alla if isinstance(k, meetingsplus.Kalla)),
-        sidor_med_text_av(data),
-    )
+    return organ, grupper
+
+
+def av_slag(kallor: list, slag: type) -> tuple:
+    return tuple(k for k in kallor if isinstance(k, slag))
 
 
 def sidor_med_text_av(data: dict) -> tuple[str, ...] | None:
@@ -114,73 +102,6 @@ def poster(data: dict, falt: str) -> list[dict]:
     if not lista or not all(isinstance(post, dict) for post in lista):
         raise Konfigurationsfel(f"kommunen: {falt} ska vara en lista med tabeller")
     return lista
-
-
-def organ_av(post: dict) -> Organ:
-    var = f"organ {post.get('id')!r}"
-    schema.kontrollera_falt(post, ORGANFALT, var)
-    namn = schema.textlista(post, "namn", var)
-    if not namn:
-        raise Konfigurationsfel(f"{var}: organet har inget namn")
-    return Organ(
-        schema.katalognamn(schema.varde(post, "id", str, var), var),
-        namn,
-        schema.valfritt(post, "fran", date, var),
-        schema.valfritt(post, "till", date, var),
-        schema.textlista(post, "foregangare", var),
-        schema.valfritt(post, "hor_till", str, var),
-        schema.valfritt(post, "grupp", str, var),
-        schema.valfritt(post, "sammantradessidor", int, var),
-    )
-
-
-def kontrollera_organ(organ: tuple[Organ, ...]) -> None:
-    kontrollera_hanvisningar(organ)
-    for i, a in enumerate(organ):
-        for b in organ[i + 1 :]:
-            if delar_namn(a, b) and overlappar(a, b):
-                raise Konfigurationsfel(
-                    f"organ {a.id!r} och {b.id!r}: samma namn samtidigt"
-                )
-
-
-def kontrollera_hanvisningar(organ: tuple[Organ, ...]) -> None:
-    id_ = [o.id for o in organ]
-    for o in organ:
-        if id_.count(o.id) > 1:
-            raise Konfigurationsfel(f"organ {o.id!r}: två organ har samma id")
-        saknade = [f for f in o.foregangare if f not in id_]
-        if saknade:
-            raise Konfigurationsfel(
-                f"organ {o.id!r}: föregångaren {saknade[0]!r} finns inte"
-            )
-        if o.hor_till is not None and o.hor_till not in id_:
-            raise Konfigurationsfel(
-                f"organ {o.id!r}: hor_till {o.hor_till!r} finns inte"
-            )
-
-
-# Med grupper har varje organ som inte är utskott en av dem; ett utskott
-# står i sitt organs grupp och har ingen egen.
-def kontrollera_grupper(organ: tuple[Organ, ...], grupper: tuple[str, ...]) -> None:
-    for o in organ:
-        ska_ha = bool(grupper) and not o.hor_till
-        if (o.grupp is not None) != ska_ha or (o.grupp and o.grupp not in grupper):
-            raise Konfigurationsfel(f"organ {o.id!r}: grupp {o.grupp!r} passar inte")
-
-
-def normaliserat(namn: str) -> str:
-    return " ".join(namn.casefold().split())
-
-
-def delar_namn(a: Organ, b: Organ) -> bool:
-    return bool({normaliserat(n) for n in a.namn} & {normaliserat(n) for n in b.namn})
-
-
-def overlappar(a: Organ, b: Organ) -> bool:
-    return (a.fran or date.min) <= (b.till or date.max) and (b.fran or date.min) <= (
-        a.till or date.max
-    )
 
 
 ADAPTRAR = {
