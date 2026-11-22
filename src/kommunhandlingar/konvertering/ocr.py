@@ -1,4 +1,5 @@
-"""Krav: K6, K41 och K73 i docs/02-KRAV.md, ADR-0005, ADR-0064 och ADR-0100.
+"""Krav: K6, K41, K73 och K85 i docs/02-KRAV.md, ADR-0005, ADR-0064, ADR-0100
+och ADR-0106.
 Test: tests/test_konvertering.py och tests/test_hogkant.py.
 
 En sida som ska läsas med OCR renderas med pypdfium2 i 300 dpi, i gråskala,
@@ -10,7 +11,8 @@ ord, ger läsningen ingen text men sin TSV, som de säkra raderna läses ur
 Ord på högkant, som en stämpel i marginalen, målas vita och sidan läses
 om, och de skrivs sist på sidan (K41, ADR-0064). Läsningen ger också
 rutorna kring de ord som lästs säkert, som bildytan räknas utan (K72,
-ADR-0099).
+ADR-0099). Når den första läsningen tröskeln utan att sidan läses om
+följer den med, så att väg H kan pröva samma läsning (K85, ADR-0106).
 
 Två fel som Tesseract gör i protokollen rättas i texten (K34, ADR-0055):
 `§` intill en siffra läses som `$`, och en innehållsförtecknings
@@ -42,6 +44,7 @@ class Lasning:
     ord: list[Ruta] = field(default_factory=list)
     ordantal: int | None = None  # None: Tesseract fallerade
     tsv: str = ""
+    for_vag_h: tesseract.Utdata | None = None  # sidan nådde tröskeln utan omläsning
 
 
 def rendera(rendering: pdfium.PdfPage) -> Image.Image:
@@ -59,9 +62,9 @@ def las(bild: Image.Image) -> Lasning:
     rutor, antal = sakra_ord(ord_), len(ord_)
     if not over_troskeln(ord_):
         return Lasning(None, rutor, antal, forsta.tsv)
-    return Lasning(
-        text_utan_stamplar(bild, forsta.text, hogkant.ocr_ord(ord_)), rutor, antal
-    )
+    stamplar = hogkant.ocr_ord(ord_)
+    text = text_utan_stamplar(bild, forsta.text, stamplar)
+    return Lasning(text, rutor, antal, forsta.tsv, None if stamplar else forsta)
 
 
 def text_utan_stamplar(bild: Image.Image, text: str, stamplar: list[Ord]) -> str:

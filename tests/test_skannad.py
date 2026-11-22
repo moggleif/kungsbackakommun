@@ -1,4 +1,4 @@
-"""Krav: K72 och K73 i docs/02-KRAV.md, ADR-0099 och ADR-0100. Testar
+"""Krav: K72, K73 och K85 i docs/02-KRAV.md, ADR-0099, ADR-0100 och ADR-0106. Testar
 src/kommunhandlingar/konvertering/skannad.py och riktning.py med ritade
 sidor som läses av Tesseract, och maskningen med en läsning som byts ut."""
 
@@ -11,7 +11,8 @@ from unittest import mock
 import pypdfium2 as pdfium
 from PIL import Image, ImageDraw, ImageFont
 
-from kommunhandlingar.konvertering import ocr, riktning, skannad, tesseract
+from kommunhandlingar.konvertering import bekraftade, ocr, riktning, skannad, tesseract
+from tests.test_hogkant import PDF as HOGKANT
 
 B, H = 1240, 1754  # A4 i 150 dpi
 # Utan å, ä och ö: Pillows inbyggda typsnitt saknar dem.
@@ -163,6 +164,31 @@ class TestSkannad(unittest.TestCase):
         with mock.patch.object(ocr, "las", side_effect=las):
             resultat = skannad.las(sida(bild))
         self.assertEqual(resultat, skannad.Skannad("ocr", "Kommunstyrelsen", True))
+
+
+class TestVagH(unittest.TestCase):
+    def las(self, rendering: pdfium.PdfPage, bekraftad: str | None):
+        with mock.patch.object(bekraftade, "text", return_value=bekraftad) as text:
+            return skannad.las(rendering), text
+
+    def test_sidan_far_vag_hs_text_nar_talen_bekraftas(self):
+        bild = vit()
+        text(bild)
+        resultat, anrop = self.las(sida(bild), "Beslutet 2030")
+        self.assertEqual(resultat, skannad.Skannad("ocr", "Beslutet 2030", False, True))
+        self.assertIsInstance(anrop.call_args.args[1], tesseract.Utdata)
+
+    def test_annars_far_sidan_ocr_texten(self):
+        bild = vit()
+        text(bild)
+        resultat, _ = self.las(sida(bild), None)
+        self.assertFalse(resultat.tal_bekraftade)
+        self.assertIn("underlag som namnden tog fram", resultat.text)
+
+    def test_vag_h_provas_inte_nar_sidan_lases_om_for_en_stampel(self):
+        resultat, anrop = self.las(pdfium.PdfDocument(HOGKANT)[1], "bekraftad")
+        self.assertFalse(resultat.tal_bekraftade)
+        anrop.assert_not_called()
 
 
 class TestRiktning(unittest.TestCase):

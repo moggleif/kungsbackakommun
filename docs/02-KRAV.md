@@ -190,7 +190,8 @@ kunna läggas till utan kodändring.
   annan text från den skrivs.
 
 - **Givet** en sida vars tal inte är bekräftade – en sida som lästs med
-  OCR, en sida som inte gick att konvertera, ett textlager med oläsliga
+  OCR och vars tal väg H inte bekräftat (K85), en sida som inte gick att
+  konvertera, ett textlager med oläsliga
   tecken, eller ett textlager med text på högkant inne i en tabell eller
   text ritad ovanpå annan text (issue
   [#119](https://github.com/moggleif/kommunhandlingar/issues/119))
@@ -2517,6 +2518,47 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **Så** räknas den som `utan-facit`, eftersom textlagret inte har
   bildens tal och de vridna siffrornas ordning inte är textens.
 
-- **Givet** att väg H ännu inte är inbyggd i konverteringen
-- **När** poolen konverteras
-- **Så** märks skannade sidor som förut, med obekräftade tal (ADR-0005).
+## K85 — En skannad sida får bekräftade tal när väg H bekräftar dem
+
+[ADR-0106](decisions/0106-skannade-sidor-far-vag-hs-tal.md). Hur det är
+byggt står i
+[03-ARKITEKTUR.md](03-ARKITEKTUR.md#väg-h-och-kalibreringen).
+
+- **Givet** en skannad sida vars första läsning med Tesseract når
+  tröskeln utan att sidan läses om, och där väg H bekräftar varje rad med
+  tal och inget tal står utanför raderna
+- **När** sidan konverteras
+- **Så** är den `ocr`, står inte i `tal_obekraftade`, och dokumentets
+  `pipeline` nämner RapidOCR och onnxruntime. Det gäller också en sida
+  där ingen av läsningarna ser något tal.
+
+- **Givet** en sådan sida med en rad som RapidOCR och den tredje
+  läsningen bekräftat, med andra tal än Tesseracts
+- **När** sidan konverteras
+- **Så** står RapidOCR:s text i stället för Tesseracts ord på raden, och
+  resten av sidans text är Tesseracts.
+
+- **Givet** en sida där en sådan rads ord inte står i följd på en av
+  Tesseracts rader, där Tesseracts text inte är dess ord rad för rad,
+  eller där talen i den färdiga texten inte är de bekräftade talen, lika
+  många gånger
+- **När** sidan konverteras
+- **Så** läses den som förut och står i `tal_obekraftade`.
+
+- **Givet** en skannad sida där väg H inte bekräftar en rad, där ett tal
+  står utanför raderna, eller som lästs om (bildyta, vridning, ord på
+  högkant eller säkra rader)
+- **När** sidan konverteras
+- **Så** står den i `tal_obekraftade`, som förut (ADR-0005).
+
+- **Givet** ett dokument vars `pipeline` nämner RapidOCR och en `ocr`-sida
+  som inte står i `tal_obekraftade`
+- **När** datakontrollen körs
+- **Så** är det inget fel. I ett dokument vars `pipeline` inte nämner
+  RapidOCR är det ett fel, som förut.
+
+- **Givet** en miljö där RapidOCR:s modeller inte finns och inte går att
+  hämta
+- **När** steg 2 startar
+- **Så** stoppas körningen innan något dokument läses, som när Tesseract
+  saknas.

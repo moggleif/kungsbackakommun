@@ -198,8 +198,10 @@ Datakontrollerna, i körningen och i CI
 - Inga temporära filer finns under `data/`.
 - Front matter hänger ihop: `ej-hamtad` har ett `fel` och inga
   originalfält, `sidor` stämmer med `kvalitet_per_sida`, och varje sida
-  som är `ocr`, `bild` eller `ej-konverterad` står i `tal_obekraftade`, utom i
-  ett granskat dokument, och `granskad` är `null` eller ett datum
+  som är `ocr`, `bild` eller `ej-konverterad` står i `tal_obekraftade`,
+  utom i ett granskat dokument och utom en `ocr`-sida i ett dokument vars
+  `pipeline` nämner RapidOCR, där väg H kan ha bekräftat talen, och
+  `granskad` är `null` eller ett datum
   ([Granskade dokument](#granskade-dokument)).
 - Figurerna och tolkningarna hänger ihop, och varje tal i en tolkad CSV
   står i sidans text, enligt [Tolkade figurer](#tolkade-figurer).
@@ -953,14 +955,15 @@ nattkörningen checkar inte in något
   en bildyta maskas och en vriden sida vänds innan sidan ger upp. Fallerar Tesseract på en sida, eller blir den inte
   klar på fem minuter, blir sidan `ej-konverterad` och felet skrivs ut;
   dokumentets övriga sidor behålls. Ord på högkant målas vita och sidan
-  läses om ([Text på högkant](#text-på-högkant)). Saknas Tesseract, `swe` eller `osd` stoppas
+  läses om ([Text på högkant](#text-på-högkant)). Saknas Tesseract, `swe` eller `osd`,
+  eller går RapidOCR:s modeller inte att hämta, stoppas
   steg 2 innan något dokument läses, så att ingen sida märks
   `ej-konverterad` för att miljön saknar något. På en OCR-sida letas
   inga tabeller;
   hela sidans text är OCR-text, och den läses för sammanhangets skull,
   inte som data. Talen i OCR-texten står omärkta i texten; att de inte är
-  bekräftade syns bara i `tal_obekraftade`. Hur väg H ska kunna bekräfta
-  dem mäts först ([Väg H och kalibreringen](#väg-h-och-kalibreringen)).
+  bekräftade syns bara i `tal_obekraftade`. Väg H kan bekräfta dem
+  ([Väg H och kalibreringen](#väg-h-och-kalibreringen)).
   Två fel som Tesseract gör
   i protokollen rättas i OCR-texten
   ([ADR-0055](decisions/0055-granskade-dokument-konverteras-inte-om.md)):
@@ -975,7 +978,8 @@ nattkörningen checkar inte in något
   fram till numret på samma rad. Tre punkter är en ellips och står kvar,
   också tidigare på en rad med utfyllnad.
 - **`tal_obekraftade`** listar, med sidnummer från 1, varje sida vars tal
-  inte är bekräftade: varje sida som är `ocr`, varje sida som är
+  inte är bekräftade: varje sida som är `ocr` och vars tal väg H inte
+  bekräftat, varje sida som är
   `ej-konverterad`, eftersom talen på den inte är lästa, och varje sida
   med textlager där något tecken är oläsligt, eftersom tecknet kan ha
   varit en siffra. Det gäller också en sida med textlager där något
@@ -1105,11 +1109,13 @@ läsa är `fel` `null`, och `sidor`, `kvalitet_per_sida` och
 
 `pipeline` är poolens version ur `pyproject.toml` följd av de verktyg som
 läste dokumentet, med version: alltid pdfplumber och pdfminer.six, och
-pypdfium2 samt Tesseract och språkmodellens version när någon sida
+pypdfium2, Tesseract och språkmodellens version, RapidOCR och
+onnxruntime när någon sida
 är `ocr`, `bild`, `ointressant` eller `ej-konverterad`, också en sida som är för tung att läsa
 (K55) och aldrig prövades med OCR, till exempel
 `kommunhandlingar 0.3.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 /
-pypdfium2 5.14.0 / tesseract 5.3.4 swe 4.1.0`. För `ej-hamtad` har inget
+pypdfium2 5.14.0 / tesseract 5.3.4 swe 4.1.0 / rapidocr 3.10.0 /
+onnxruntime 1.32.0`. Dokument från före 0.16.0 nämner inte RapidOCR. För `ej-hamtad` har inget
 verktyg läst dokumentet, och `pipeline` är bara poolens version.
 Språkmodellens version är paketet `tesseract-ocr-swe`:s version utan epok
 och revision; går den inte att läsa ur paketsystemet står `okänd`. En fil
@@ -1174,9 +1180,8 @@ när Tesseract fallerar eller inte blir klar.
 ### Väg H och kalibreringen
 
 Varför står i
-[ADR-0105](decisions/0105-vag-h-kalibreras-mot-textlagersidor.md) (K84).
-Väg H är ännu inte inbyggd i konverteringen. Den mäts först, och
-skannade sidor märks som förut.
+[ADR-0105](decisions/0105-vag-h-kalibreras-mot-textlagersidor.md) (K84)
+och [ADR-0106](decisions/0106-skannade-sidor-far-vag-hs-tal.md) (K85).
 
 **Läsningen** (`konvertering/radlasning.py`). Sidan renderas i 300 dpi i
 gråskala, som en OCR-sida. RapidOCR, med sina förvalda modeller ur
@@ -1245,6 +1250,27 @@ när det finns en, eller när färre sidor än det begärda antalet gick att
 mäta. `rader.csv` har varje rad med sina läsningar. Arbetsflödet
 `kalibrering.yml` körs för hand och i varje PR som ändrar regeln,
 mätningen, OCR-läsningen eller beroendena, och sparar båda filerna.
+
+**I konverteringen** (`konvertering/bekraftade.py`). Väg H prövas på en
+skannad sida vars första läsning med Tesseract når tröskeln utan att
+sidan läses om: utan bildyta som maskas, utan vridning och utan ord på
+högkant. Väg H får då Tesseracts TSV från samma läsning, så att orden
+och rutorna hör till samma bild. Bekräftar väg H varje rad med tal, och
+står inget tal i Tesseracts ord utanför raderna, får sidan Tesseracts
+text med en ändring: på en rad som RapidOCR och den tredje läsningen
+bekräftat (`tredje-och-rapid`) ersätts Tesseracts ord på raden med
+RapidOCR:s text. Orden ska stå i följd på en av Tesseracts rader, och
+Tesseracts text ska vara dess ord rad för rad. Sist ska talen i den
+färdiga texten vara de bekräftade talen, lika många gånger vart och ett.
+Går något av det inte ihop läses sidan som förut och står i
+`tal_obekraftade`. En sida vars tal väg H bekräftat är `ocr` och står
+inte i `tal_obekraftade`, och dokumentets `pipeline` nämner RapidOCR och
+onnxruntime. Märkningen är per sida, men vilka sidor väg H bekräftat
+skrivs inte för sig. Datakontrollen godtar därför varje `ocr`-sida
+utanför `tal_obekraftade` i ett dokument vars `pipeline` nämner RapidOCR.
+Den latinska modellen för den tredje läsningen följer inte med RapidOCR
+utan hämtas första gången; steg 2 kontrollerar att båda motorerna går att
+starta innan något dokument läses (`rapid.kontrollera`).
 
 ### Känd inläsning
 
@@ -1948,7 +1974,8 @@ figur tolkas i efterhand, för hand, av en Claude-session, enligt
   `5` och `053`. Står båda delarna ensamma på var sin rad, eller med
   minst två mellanslag till resten av raden, som talen i ett diagram,
   räknas de. På en sida som lästs med OCR stäms talen
-  av mot OCR-texten och är lika obekräftade som den. Att texten före
+  av mot OCR-texten och är lika obekräftade som den, utom när väg H
+  bekräftat sidans tal (K85). Att texten före
   tolkningen är orörd prövas inte mekaniskt; det syns i PR:ens diff.
 - **En ny konvertering** av dokumentet skriver om `.md` och
   tabellkatalogen som vanligt, också när bara källnyckeln har bytts

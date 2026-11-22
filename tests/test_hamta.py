@@ -77,7 +77,7 @@ class TestSteg2(Steg2Fall):
         self.assertEqual(falt["kvalitet"], "ocr")
         self.assertEqual(falt["sidor"], "17")
         self.assertEqual((falt["figurer"], falt["tolkade"]), ("[17]", "[]"))
-        self.assertEqual(falt["tal_obekraftade"], "[11]")
+        self.assertEqual(falt["tal_obekraftade"], "[]")  # K85: väg H bekräftar sidan 11
         self.assertTrue(
             falt["pipeline"].startswith("kommunhandlingar 0.2.0 / pdfplumber ")
         )

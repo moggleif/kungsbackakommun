@@ -33,14 +33,20 @@ class Ord:
     y: float
     vanster: int
     text: str
+    linje: tuple[str, str, str, str]  # Tesseracts sida, block, stycke och rad
+    nr: int  # ordningen i Tesseracts läsning
 
 
 @dataclass(frozen=True)
 class Rad:
     ruta: Ruta
     rapid: str
-    tesseract: str
+    ord: tuple[Ord, ...]  # Tesseracts ord på raden, från vänster
     avgorande: vag_h.Avgorande
+
+    @property
+    def tesseract(self) -> str:
+        return " ".join(o.text for o in self.ord)
 
 
 @dataclass(frozen=True)
@@ -50,15 +56,18 @@ class Sidlasning:
     tal_utanfor: int
 
 
-def las(bild: Image.Image) -> Sidlasning:
+def las(bild: Image.Image, tsv: str) -> Sidlasning:
+    """Väg H på sidbilden, med Tesseracts läsning av samma bild som TSV."""
     hittade = rapid.rader(bild)
-    ord_ = tesseracts_ord(bild)
+    ord_ = tesseracts_ord(tsv)
     rutor = [r for r, _ in hittade]
     rader = []
     for ruta, text in hittade:
-        tess = radens_text(ord_, ruta)
+        pa_raden = radens_ord(ord_, ruta)
+        tess = " ".join(o.text for o in pa_raden)
         if vag_h.tal(text) or vag_h.tal(tess):
-            rader.append(Rad(ruta, text, tess, avgor(bild, ruta, (text, tess), rutor)))
+            avgorande = avgor(bild, ruta, (text, tess), rutor)
+            rader.append(Rad(ruta, text, pa_raden, avgorande))
     utanfor = [o for o in ord_ if not any(inom(o, r) for r in rutor)]
     return Sidlasning(rader, rutor, sum(len(vag_h.tal(o.text)) for o in utanfor))
 
@@ -103,16 +112,26 @@ def inom(o: Ord, ruta: Ruta) -> bool:
     return ruta[0] <= o.x <= ruta[2] and ruta[1] <= o.y <= ruta[3]
 
 
-def radens_text(ord_: list[Ord], ruta: Ruta) -> str:
-    pa_raden = sorted((o for o in ord_ if inom(o, ruta)), key=lambda o: o.vanster)
-    return " ".join(o.text for o in pa_raden)
+def radens_ord(ord_: list[Ord], ruta: Ruta) -> tuple[Ord, ...]:
+    return tuple(sorted((o for o in ord_ if inom(o, ruta)), key=lambda o: o.vanster))
 
 
-def tesseracts_ord(bild: Image.Image) -> list[Ord]:
+def tesseracts_tsv(bild: Image.Image) -> str:
     lasning = tesseract.las_bild(bild)
     if lasning is None:
         raise Fallerade
+    return lasning.tsv
+
+
+def tesseracts_ord(tsv: str) -> list[Ord]:
     return [
-        Ord((o.ruta[0] + o.ruta[2]) / 2, (o.ruta[1] + o.ruta[3]) / 2, o.ruta[0], o.text)
-        for o in orden(lasning.tsv)
+        Ord(
+            (o.ruta[0] + o.ruta[2]) / 2,
+            (o.ruta[1] + o.ruta[3]) / 2,
+            o.ruta[0],
+            o.text,
+            o.radnyckel,
+            nr,
+        )
+        for nr, o in enumerate(orden(tsv))
     ]

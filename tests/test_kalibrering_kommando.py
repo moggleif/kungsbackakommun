@@ -145,7 +145,7 @@ class Kommando(unittest.TestCase):
 
     def test_tesseract_som_fallerar(self):
         fallerar = patch.object(
-            radlasning, "tesseracts_ord", side_effect=radlasning.Fallerade
+            radlasning, "tesseracts_tsv", side_effect=radlasning.Fallerade
         )
         with fallerar:
             text, _ = self.kor(kopiera)

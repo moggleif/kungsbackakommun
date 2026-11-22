@@ -1,5 +1,5 @@
-"""Krav: K6, K11, K15, K17, K34, K48 och K81 i docs/02-KRAV.md, ADR-0006,
-ADR-0017, ADR-0022, ADR-0055 och ADR-0071. Test: tests/test_datakontroll.py,
+"""Krav: K6, K11, K15, K17, K34, K48, K81 och K85 i docs/02-KRAV.md, ADR-0006,
+ADR-0017, ADR-0022, ADR-0055, ADR-0071 och ADR-0106. Test: tests/test_datakontroll.py,
 tests/test_granskning.py, tests/test_arenden.py och tests/test_poolkommandon.py.
 
 `python -m kommunhandlingar.datakontroll <data>` prövar varje fil under
@@ -136,11 +136,21 @@ def statusfel(falt: dict[str, str]) -> list[str]:
         return ["sidor stämmer inte med kvalitet_per_sida"]
     if frontmatter.granskad(falt):
         return []  # granskningen tar själv bort de sidor vars tal den bekräftat
+    return obekraftade_fel(falt, sidor)
+
+
+def obekraftade_fel(falt: dict[str, str], sidor: list[str]) -> list[str]:
+    """Sidorna som borde stå i tal_obekraftade. Väg H bekräftar tal per
+    sida men skriver det inte per sida, så i ett dokument som lästs med
+    väg H får varje OCR-sida stå utanför listan (K85, ADR-0106)."""
     obekraftade = set(frontmatter.lista(falt["tal_obekraftade"]))
+    vag_h = "rapidocr" in falt["pipeline"]
     return [
         f"sidan {nr} är {s} men står inte i tal_obekraftade"
         for nr, s in enumerate(sidor, 1)
-        if s in kvalitet.OBEKRAFTADE and str(nr) not in obekraftade
+        if s in kvalitet.OBEKRAFTADE
+        and str(nr) not in obekraftade
+        and not (vag_h and s == kvalitet.OCR)
     ]
 
 

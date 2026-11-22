@@ -120,8 +120,10 @@ class TestDatakontroll(Pool):
         bild = sidor.replace("[ok,", "[bild,", 1)  # K72
         self.andra(DOKUMENT, kvalitet_per_sida=bild, tal_obekraftade="[5, 6, 7, 9]")
         fel = "{}: sidan {} är {} men står inte i tal_obekraftade"
-        vantat = [fel.format(DOKUMENT, 1, "bild"), fel.format(DOKUMENT, 11, "ocr")]
-        self.assertEqual(self.fel(), vantat)
+        bild_fel = fel.format(DOKUMENT, 1, "bild")
+        self.assertEqual(self.fel(), [bild_fel])  # K85: väg H i pipeline
+        self.andra(DOKUMENT, pipeline="kommunhandlingar 0.15.0 / tesseract 5.3.4")
+        self.assertEqual(self.fel(), [bild_fel, fel.format(DOKUMENT, 11, "ocr")])
 
     def test_antalet_sidor(self):
         self.andra(DOKUMENT, sidor="12")
