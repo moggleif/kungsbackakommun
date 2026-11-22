@@ -126,9 +126,12 @@ class TestFelStopparKorningen(unittest.TestCase):
         self.stoppas(lambda d: d["organ"][0].update(fran=datetime(2019, 1, 1, 8)))
         self.stoppas(lambda d: d["organ"][0].update(namn="Barn- och ungdomsnämnden"))
         self.stoppas(lambda d: d.update(organ={}))
+        self.stoppas(lambda d: d.update(organ=[]))
+        self.stoppas(lambda d: d.update(kalla=["sitevision"]))
 
     def test_okand_adapter(self):
         self.stoppas(lambda d: d["kalla"][0].update(adapter="episerver"))
+        self.stoppas(lambda d: d["kalla"][0].update(adapter="ciceron"))
 
     def test_wayback_ar_en_lista_med_kallans_organ(self):
         self.stoppas(lambda d: d["kalla"][0].update(wayback=True))
