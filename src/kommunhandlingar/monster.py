@@ -9,6 +9,8 @@ from kommunhandlingar.fel import IngenKandidat, Konfigurationsfel
 from kommunhandlingar.kandidat import TYPORDNING
 
 DATUMGRUPPER = {"ar", "manad", "dag"}
+# Grupperna i adaptrarnas mönster för filnamnen.
+MONSTERGRUPPER = DATUMGRUPPER | {"typ"}
 
 
 @dataclass(frozen=True)

@@ -7,9 +7,11 @@ from dataclasses import dataclass
 from datetime import date, timedelta
 
 from kommunhandlingar import monster, schema
-from kommunhandlingar.adaptrar.sitevision_html import Forekomst, forekomster
+from kommunhandlingar.adaptrar.gemensamt import organsidor
+from kommunhandlingar.adaptrar.sitevision_html import Forekomst, forekomster, kallnyckel
 from kommunhandlingar.fel import IngenKandidat, Konfigurationsfel
 from kommunhandlingar.kandidat import Avvisad, Fynd, Kandidat
+from kommunhandlingar.monster import MONSTERGRUPPER
 
 FALT = {
     "adapter",
@@ -21,7 +23,6 @@ FALT = {
     "wayback",
     "projekt",
 }
-MONSTERGRUPPER = {"ar", "manad", "dag", "typ"}
 # Ett möte som flyttas, flyttas några dagar (ADR-0062).
 FLYTTAT_MOTE = timedelta(days=7)
 
@@ -43,7 +44,7 @@ class Kalla:
 def kalla_av(post: dict, organ_id: list[str], var: str) -> Kalla:
     schema.kontrollera_falt(post, FALT, var)
     monsterposter = schema.varde(post, "monster", list, var)
-    motessidor = sidor(schema.varde(post, "sidor", dict, var), organ_id, var)
+    motessidor = organsidor(schema.varde(post, "sidor", dict, var), organ_id, var)
     return Kalla(
         motessidor,
         monster.datummonster(schema.varde(post, "rubrik", str, var), "rubrik", var),
@@ -56,7 +57,7 @@ def kalla_av(post: dict, organ_id: list[str], var: str) -> Kalla:
             schema.valfritt(post, "rattelser", dict, var) or {}, "sitevision", var
         ),
         arkivorgan(schema.textlista(post, "wayback", var), motessidor, var),
-        sidor(schema.valfritt(post, "projekt", dict, var) or {}, organ_id, var),
+        organsidor(schema.valfritt(post, "projekt", dict, var) or {}, organ_id, var),
     )
 
 
@@ -66,13 +67,6 @@ def arkivorgan(
     if okanda := set(organ) - motessidor.keys():
         raise Konfigurationsfel(f"{var}: wayback {sorted(okanda)} saknar mötessida")
     return organ
-
-
-def sidor(tabell: dict, organ_id: list[str], var: str) -> dict[str, str]:
-    for organ, adress in tabell.items():
-        if organ not in organ_id or not isinstance(adress, str):
-            raise Konfigurationsfel(f"{var}: sidan för {organ!r}")
-    return tabell
 
 
 def upptack(kalla: Kalla, html_per_sida: dict[str, str]) -> Fynd:
@@ -94,10 +88,6 @@ def las(kalla: Kalla, sidor: list[tuple[str, str, str]]) -> Fynd:
         except IngenKandidat as fel:
             avvisade.setdefault(nyckel, Avvisad(adress, forekomst.filnamn, str(fel)))
     return Fynd(list(kandidater.values()), list(avvisade.values()))
-
-
-def kallnyckel(forekomst: Forekomst) -> str:
-    return f"sitevision:{forekomst.nodid}"
 
 
 def kandidat(kalla: Kalla, organ: str, adress: str, forekomst: Forekomst) -> Kandidat:

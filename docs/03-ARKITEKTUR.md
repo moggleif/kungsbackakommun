@@ -309,12 +309,15 @@ src/kommunhandlingar/
   organ.py         organen i kommunfilen och deras kontroller
   schema.py        kontrollerna av fält och värden i kommunfilen
   fel.py           konfigurationsfel och "ingen kandidat"
-  monster.py       mönstren: typ och datum ur en text
+  monster.py       mönstren: typ och datum ur en text, och mönstrens grupper
   kandidat.py      kandidaten, upptäcktens fynd (kandidater, avvisade och
                    noteringar), ordningen (K13, K16) och listan: sökväg, skriv, läs
   adaptrar/        en modul per publiceringsplattform (sitevision, ciceron, …)
                    eller arkiv (wayback);
-                   sitevision_html.py läser mötessidan, sitevision.py tolkar den,
+                   gemensamt.py sidans länkar och kontrollen av tabellen
+                   organ → sida, som fler plattformar använder,
+                   sitevision_html.py läser mötessidan och ger källnyckeln,
+                   sitevision.py tolkar den,
                    sitevision_arkiv.py läser sidorna och filerna ur arkivet,
                    sitevision_projekt.py listan med projekt och projektsidorna,
                    meetingsplus_html.py läser Meetings Plus sidor,
