@@ -103,19 +103,18 @@ def adress(kommun: Kommun, organ: str) -> str:
 # byggåret utan både dokument och mål är en lucka: ett år med mål ur ett
 # senare dokument, som en årsredovisning, är det inte.
 def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> str:
-    mall, kommun, underlag = sammanhang.mall, sammanhang.kommun, sammanhang.underlag
-    organ = malen[0].organ
-    uppfoljda = [u for u in underlag.uppfoljningar if u.organ == organ]
+    organ, mall, kommun = malen[0].organ, sammanhang.mall, sammanhang.kommun
+    uppfoljda = [u for u in sammanhang.underlag.uppfoljningar if u.organ == organ]
     protokoll = protokollar(organets)
     sidans = adress(kommun, organ)
     namn = next(o.namn[0] for o in kommun.organ if o.id == organ)
     spar = sparen(malen)
     malar = {m.ar for m in malen}
-    ar = underlag.aren
+    ar = sammanhang.underlag.aren
     dokumentar = {frontmatter.ar(d) for d in organets}
     luckor = set(range(ar[0], mall.byggd.year + 1)) - dokumentar - malar
     innehall = (
-        flikar(underlag, organ, MAL)
+        flikar(sammanhang.underlag, organ, MAL)
         + f"<style>{STIL.read_text(encoding='utf-8')}</style>"
         + INLEDNING
         + fore_malen(min(dokumentar), min(malar))

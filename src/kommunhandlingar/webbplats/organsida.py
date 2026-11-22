@@ -19,16 +19,15 @@ Mote = tuple[str, str]
 
 
 def organsida(sammanhang: Sammanhang, rad: Organrad, dokument: list[dict]) -> str:
-    kommun = sammanhang.kommun
     moten = defaultdict(list)
     for d in dokument:
         moten[(d["datum"], d["lopnr"])].append(d)
     saknas = {(lucka.datum, lucka.lopnr): lucka.saknas for lucka in rad.luckor}
     ar = defaultdict(list)
     for mote in sorted(moten, key=ordning, reverse=True):
-        rubrik = moterubrik(mote, kommun, moten[mote])
+        rubrik = moterubrik(mote, sammanhang.kommun, moten[mote])
         ar[mote[0][:4]].append(motesavsnitt(rubrik, moten[mote], saknas.get(mote, ())))
-    adress = f"{kommun.id}/{rad.id}.html"
+    adress = f"{sammanhang.kommun.id}/{rad.id}.html"
     innehall = flikar(sammanhang.underlag, rad.id, SAMMANTRADEN) + (
         "".join(f"<h2>{escape(a)}</h2>{''.join(m)}" for a, m in ar.items())
         or "<p>Inget hämtat än.</p>"

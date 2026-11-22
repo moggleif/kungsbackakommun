@@ -28,7 +28,8 @@ class Kommununderlag:
     spar: dict[str, list[Steg]] = field(default_factory=dict)
     # Detaljplanernas projekt per plan (K46).
     projekt: dict[str, Projekt] = field(default_factory=dict)
-    # Katalogerna där kommunen har en fil skriven för hand, som "mal" (K47).
+    # Katalogerna där kommunen har en fil skriven för hand, som "mal" (K47);
+    # kalendern står i mallen, som menyn läser.
     filer: frozenset[str] = frozenset()
 
     def stegen(self, slag: str) -> list[Steg]:

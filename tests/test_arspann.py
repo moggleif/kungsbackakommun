@@ -1,5 +1,5 @@
 """Krav: K60 i docs/02-KRAV.md, ADR-0086. Kod:
-src/kommunhandlingar/webbplats/arspann.py, inlasning.py, malsida.py,
+src/kommunhandlingar/webbplats/arspann.py, inlasning.py, sammanhang.py, malsida.py,
 malstatistik.py och sparkort.py."""
 
 import re
@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 from kommunhandlingar.webbplats.arspann import arspann, poolens_ar
-from kommunhandlingar.webbplats.inlasning import kommunens
+from kommunhandlingar.webbplats.inlasning import kommunens_underlag
 from kommunhandlingar.webbplats.malsida import malsida
 from kommunhandlingar.webbplats.sparsida import sparsida
 from kommunhandlingar.webbplats.sparslag import REDOVISNINGAR
@@ -51,13 +51,16 @@ class TestSpannet(unittest.TestCase):
             "mal": {"exempelby": [Rad(2017)], "annan": [Rad(2001)]},
             "uppfoljningar": {"exempelby": [Rad(2020)]},
             "initiativ": {"exempelby": [Rad(2010)]},
+            "lokalbehov": {"exempelby": [], "annan": [Rad(1990)]},
             "projekt": {"annan": {}},
         }
-        underlag = kommunens(lasta, "exempelby", [2012, 2026])
+        underlag = kommunens_underlag(lasta, "exempelby", [2012, 2026])
         self.assertEqual(underlag.aren, range(2010, 2027))
-        self.assertEqual(underlag.filer, {"mal", "uppfoljningar", "initiativ"})
+        filer = {"mal", "uppfoljningar", "initiativ", "lokalbehov"}
+        self.assertEqual(underlag.filer, filer)
         self.assertEqual([r.ar for r in underlag.stegen("initiativ")], [2010])
         self.assertEqual(underlag.stegen("lokalbehov"), [])
+        self.assertEqual(underlag.stegen("granskningar"), [])
         self.assertEqual(underlag.projekt, {})
 
 

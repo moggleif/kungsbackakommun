@@ -48,7 +48,7 @@ def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:  # noqa: PLR0
     ut.mkdir(parents=True, exist_ok=True)
     if not bygge.mall.en_kommun:
         bygge.skriv("index.html", sidor.startsida(bygge.mall))
-    bygge.skriv("llms.txt", llms(bygge.mall, bygge.underlagen))
+    bygge.skriv("llms.txt", llms(bygge))
     sokgrupper = []
     for kommun in bygge.mall.kommuner:
         sokgrupper.append(bygg_kommun(bygge, rot / "data" / kommun.id, kommun))

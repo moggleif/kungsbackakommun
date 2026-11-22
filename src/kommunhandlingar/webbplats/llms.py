@@ -6,9 +6,9 @@ en AI, som säger hur poolen ska läsas och pekar på varje kommuns index,
 sidor och filer skrivna för hand.
 """
 
-from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.webbplats.mall import KALLKOD, Mall
-from kommunhandlingar.webbplats.sammanhang import Kommununderlag
+from kommunhandlingar.webbplats.bygge import Bygge
+from kommunhandlingar.webbplats.mall import KALLKOD
+from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.slagen import SLAGEN
 
 INLEDNING = """# kommunhandlingar
@@ -37,16 +37,15 @@ läs det då på sidan. `arenden` i indexet är protokollets alla diarienummer.
 """
 
 
-# Underlaget är kommunernas, med kommunens id som nyckel.
-def llms(mall: Mall, underlagen: dict[str, Kommununderlag]) -> str:
+def llms(bygge: Bygge) -> str:
+    mall = bygge.mall
     avsnitt = [INLEDNING.format(repo=mall.repo, kod=KALLKOD)]
-    avsnitt += [
-        kommunavsnitt(mall, kommun, underlagen[kommun.id]) for kommun in mall.kommuner
-    ]
+    avsnitt += [kommunavsnitt(bygge.sammanhang(k)) for k in mall.kommuner]
     return "\n".join(avsnitt)
 
 
-def kommunavsnitt(mall: Mall, kommun: Kommun, underlag: Kommununderlag) -> str:
+def kommunavsnitt(sammanhang: Sammanhang) -> str:
+    mall, kommun = sammanhang.mall, sammanhang.kommun
     lankar = [
         f"[Index över dokumenten]({kommun.id}/index.jsonl)",
         f"[Protokollens paragrafer]({kommun.id}/paragrafer.jsonl)",
@@ -56,7 +55,7 @@ def kommunavsnitt(mall: Mall, kommun: Kommun, underlag: Kommununderlag) -> str:
     kalendern = {"kalender"} if kommun.id in mall.kalendrar else set()
     lankar += [
         f"[{rubrik}]({mall.repo}/raw/main/{katalog}/{kommun.id}.csv): skriven för hand"
-        for katalog, rubrik in handskrivna(underlag.filer | kalendern)
+        for katalog, rubrik in handskrivna(sammanhang.underlag.filer | kalendern)
     ]
     return f"## {kommun.namn}\n\n" + "".join(f"- {lank}\n" for lank in lankar)
 

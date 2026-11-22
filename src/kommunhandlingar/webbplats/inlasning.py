@@ -65,10 +65,8 @@ def las(
     lasta["uppfoljningar"] = filer.las("uppfoljningar", uppfoljningar.las)
     lasta |= {s.id: filer.las(s.id, spar.lasare(s)) for s in SLAGEN}
     lasta["projekt"] = las_projekten(filer, lasta[DETALJPLANER.id])
-    return mall, {
-        k.id: kommunens(lasta, k.id, [*poolens_ar(rot / "data" / k.id), byggd.year])
-        for k in kommuner
-    }
+    aren = {k.id: [*poolens_ar(rot / "data" / k.id), byggd.year] for k in kommuner}
+    return mall, {i: kommunens_underlag(lasta, i, ar) for i, ar in aren.items()}
 
 
 def las_kalender(rot: Path, kommun: Kommun) -> list[Sammantrade]:
@@ -78,9 +76,11 @@ def las_kalender(rot: Path, kommun: Kommun) -> list[Sammantrade]:
 
 # `lasta` har varje katalogs rader per kommun. Åren är kommunens: poolens
 # och byggåret, och raderna i mål-, uppföljnings- och spårfilerna (K60).
-def kommunens(lasta: dict[str, dict], kommun: str, ar: list[int]) -> Kommununderlag:
-    egna = {k: rader[kommun] for k, rader in lasta.items() if kommun in rader}
-    spar = {s.id: egna.get(s.id, []) for s in SLAGEN}
+def kommunens_underlag(
+    lasta: dict[str, dict], kommun_id: str, ar: list[int]
+) -> Kommununderlag:
+    egna = {k: rader[kommun_id] for k, rader in lasta.items() if kommun_id in rader}
+    spar = {s.id: egna[s.id] for s in SLAGEN if s.id in egna}
     malen, uppfoljda = egna.get("mal", []), egna.get("uppfoljningar", [])
     rader = [*malen, *uppfoljda, *(s for stegen in spar.values() for s in stegen)]
     return Kommununderlag(
