@@ -1,11 +1,12 @@
 """Krav: K5 och K15 i docs/02-KRAV.md. Test: tests/test_geometri.py.
 
-Rutor och punkter på sidan, i pdfplumbers koordinater: x åt höger och y
-nedåt från sidans överkant. En punkt på rutans kant räknas som inom den.
+Rutor och punkter på PDF-sidan, i pdfplumbers koordinater: punkter, inte
+bildens pixlar (de har egna rutor i `rapid.py` och `tsv.py`), med x åt höger
+och y nedåt från sidans överkant. En ruta är `(x0, top, x1, bottom)`. En
+punkt på rutans kant räknas som inom den.
 """
 
 Punkt = tuple[float, float]
-# x0, top, x1, bottom
 Ruta = tuple[float, float, float, float]
 
 
