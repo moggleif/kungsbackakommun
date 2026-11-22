@@ -3,8 +3,15 @@
 Facit för en rad som väg H läst på en renderad textlagersida: talen i de
 ord ur textlagret vars mittpunkt ligger i radens ruta. En rad som rör en
 bild på sidan har inget facit, eftersom ett tal i bilden saknas i
-textlagret.
+textlagret. pdfplumber läser ihop en upphöjd siffra med ordet före, så
+att `118²` blir `1182`. Därför prövas tecknen för sig: raden har ett
+upphöjt tecken i textlagret när ett tecken är mindre än 85 % av radens
+största, eller slutar mer än en fjärdedel av sin storlek ovanför radens
+lägsta underkant.
 """
+
+from dataclasses import dataclass
+from statistics import median
 
 import pdfplumber
 
@@ -12,22 +19,48 @@ from kommunhandlingar.konvertering import ocr, vag_h
 from kommunhandlingar.konvertering.rapid import Ruta
 
 SKALA = 72 / ocr.DPI
+MINDRE = 0.85
+OVER = 0.25
 
 
-def radens_tal(sida: pdfplumber.page.Page, ruta: Ruta) -> list[str] | None:
-    if any(ror(b, skalad(ruta)) for b in sida.images):
-        return None
-    ord_ = [o for o in sida.extract_words() if inom(o, skalad(ruta))]
-    return vag_h.tal(" ".join(o["text"] for o in sorted(ord_, key=lambda o: o["x0"])))
+@dataclass(frozen=True)
+class Facitsida:
+    ord: list[dict]
+    tecken: list[dict]
+    bilder: list[Ruta]
 
 
-def tal_utanfor(sida: pdfplumber.page.Page, rutor: list[Ruta]) -> list[str]:
-    """Talen i textlagrets ord utanför alla rader och bilder."""
+def las(sida: pdfplumber.page.Page) -> Facitsida:
     bilder = [(b["x0"], b["top"], b["x1"], b["bottom"]) for b in sida.images]
-    alla = [skalad(r) for r in rutor] + bilder
+    tecken = [t for t in sida.chars if not t["text"].isspace()]
+    return Facitsida(sida.extract_words(), tecken, bilder)
+
+
+def radens_tal(sida: Facitsida, ruta: Ruta) -> list[str] | None:
+    if any(ror(b, skalad(ruta)) for b in sida.bilder):
+        return None
+    ord_ = sorted((o for o in sida.ord if inom(o, skalad(ruta))), key=lambda o: o["x0"])
+    return vag_h.tal(" ".join(o["text"] for o in ord_))
+
+
+def har_upphojt(sida: Facitsida, ruta: Ruta) -> bool:
+    tecken = [t for t in sida.tecken if inom(t, skalad(ruta))]
+    if not tecken:
+        return False
+    storst = max(t["size"] for t in tecken)
+    botten = median(t["bottom"] for t in tecken)
+    return any(
+        t["size"] < MINDRE * storst or t["bottom"] < botten - OVER * t["size"]
+        for t in tecken
+    )
+
+
+def tal_utanfor(sida: Facitsida, rutor: list[Ruta]) -> list[str]:
+    """Talen i textlagrets ord utanför alla rader och bilder."""
+    alla = [skalad(r) for r in rutor] + sida.bilder
     return [
         t
-        for o in sida.extract_words()
+        for o in sida.ord
         if not any(inom(o, r) for r in alla)
         for t in vag_h.tal(o["text"])
     ]
@@ -38,10 +71,12 @@ def skalad(ruta: Ruta) -> Ruta:
     return x0, y0, x1, y1
 
 
-def ror(bild: dict, ruta: Ruta) -> bool:
-    x0, y0, x1, y1 = ruta
+def ror(bild: Ruta, ruta: Ruta) -> bool:
     return (
-        bild["x0"] < x1 and x0 < bild["x1"] and bild["top"] < y1 and y0 < bild["bottom"]
+        bild[0] < ruta[2]
+        and ruta[0] < bild[2]
+        and bild[1] < ruta[3]
+        and ruta[1] < bild[3]
     )
 
 

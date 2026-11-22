@@ -2,11 +2,12 @@
 tests/test_radlasning.py.
 
 Väg H på en sidbild i 300 dpi. RapidOCR hittar raderna och läser dem.
-Tesseract läser hela sidan, och varje ord hör till den rad som har ordets
-mittpunkt. Raderna där någon läsning har ett tal avgörs med `vag_h.avgor`.
-En rad bekräftas aldrig när den har ett upphöjt tecken eller själv är
-upphöjd (`upphojt`). Ett tal i Tesseracts ord utanför alla rader
-räknas för sig, eftersom ingen rad kan bekräfta det.
+Tesseract läser hela sidan, och varje ord hör till de rader vars ruta
+har ordets mittpunkt. Raderna där någon läsning har ett tal avgörs med
+`vag_h.avgor`. En rad bekräftas aldrig när den har ett upphöjt tecken
+eller själv är upphöjd (`upphojt`), prövat i ett utsnitt med 15 pixlars
+marginal. Ett tal i Tesseracts ord utanför alla rader räknas för sig,
+eftersom ingen rad kan bekräfta det.
 """
 
 from dataclasses import dataclass
@@ -62,19 +63,15 @@ def las(bild: Image.Image) -> Sidlasning:
 def avgor(bild: Image.Image, ruta: Ruta, texter: tuple[str, str], rutor: list):
     if upphojt.upphojd_rad(ruta, rutor):
         return vag_h.Avgorande(None, "upphojd-rad")
-    if upphojt.har_upphojt(bild.crop(heltal(ruta))):
+    utsnitt = med_marginal(ruta, bild)
+    rad = (int(ruta[1]) - utsnitt[1], int(ruta[3]) - utsnitt[1])
+    if upphojt.har_upphojt(bild.crop(utsnitt), rad):
         return vag_h.Avgorande(None, "upphojt")
-    utsnitt = bild.crop(med_marginal(ruta, bild))
-    return vag_h.avgor(*texter, lambda: rapid.las_rad(utsnitt))
-
-
-def heltal(ruta: Ruta) -> tuple[int, int, int, int]:
-    x0, y0, x1, y1 = (int(v) for v in ruta)
-    return x0, y0, x1, y1
+    return vag_h.avgor(*texter, lambda: rapid.las_rad(bild.crop(utsnitt)))
 
 
 def med_marginal(ruta: Ruta, bild: Image.Image) -> tuple[int, int, int, int]:
-    x0, y0, x1, y1 = heltal(ruta)
+    x0, y0, x1, y1 = (int(v) for v in ruta)
     return (
         max(0, x0 - MARGINAL),
         max(0, y0 - MARGINAL),

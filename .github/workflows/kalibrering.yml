@@ -1,6 +1,8 @@
 # Kalibreringen av väg H (K84, ADR-0105): väg H mäts på textlagersidor ur
 # poolen, med textlagret som facit. Körs för hand och i varje PR som ändrar
-# regeln eller mätningen. Faller när en bekräftad sida har ett fel.
+# regeln, mätningen, OCR-läsningen eller beroendena, där Dependabot byter
+# motor och modell. Faller när en bekräftad sida har ett fel eller när för
+# få sidor gick att mäta.
 name: Kalibrering av väg H
 
 on:
@@ -15,6 +17,9 @@ on:
       - src/kommunhandlingar/konvertering/radlasning.py
       - src/kommunhandlingar/konvertering/upphojt.py
       - src/kommunhandlingar/konvertering/rapid.py
+      - src/kommunhandlingar/konvertering/morka_delar.py
+      - src/kommunhandlingar/konvertering/ocr.py
+      - pyproject.toml
       - src/kommunhandlingar/kalibrering/**
       - .github/workflows/kalibrering.yml
 

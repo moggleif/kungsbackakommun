@@ -4,11 +4,15 @@ Urvalet av textlagersidor att kalibrera väg H på. En sida kan väljas när
 den har textlager (`ok`), inte har obekräftade tal och har minst 15 tal i
 poolens text. Dokumentet ska vara en enda PDF på högst 20 MB. Dokumenten
 blandas med ett fast frö, så att samma urval går att ta om, och högst tre
-sidor tas ur varje dokument, slumpade bland de som kan väljas.
+sidor tas ur varje dokument, slumpade bland de som kan väljas. En PDF som
+flera dokument pekar på tas en gång. Kalibreringen tar dokumenten i tur
+och ordning tills tillräckligt många sidor är mätta, så att en PDF som
+inte går att hämta ersätts av nästa.
 """
 
 import random
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -29,18 +33,17 @@ class Prov:
     sidor: list[int]
 
 
-def urval(data: Path, antal: int, fro: int) -> list[Prov]:
+def kandidater(data: Path, fro: int) -> Iterator[Prov]:
+    """Dokumenten som kan ge sidor, i fröets ordning, en gång per PDF."""
     dokument = list(pool.dokumenten(data))
     random.Random(fro).shuffle(dokument)
-    valda, kvar = [], antal
+    sedda = set()
     for fil, falt, text in dokument:
         namn = str(fil.relative_to(data))
         prov = provet(namn, falt, text, random.Random(f"{fro}:{namn}"))
-        if prov is not None and kvar > 0:
-            prov = Prov(prov.fil, prov.url, prov.sha256, prov.sidor[:kvar])
-            valda.append(prov)
-            kvar -= len(prov.sidor)
-    return valda
+        if prov is not None and prov.sha256 not in sedda:
+            sedda.add(prov.sha256)
+            yield prov
 
 
 def provet(namn: str, falt: dict, text: str, slump: random.Random) -> Prov | None:

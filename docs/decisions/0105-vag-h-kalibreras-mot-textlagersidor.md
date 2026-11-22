@@ -39,15 +39,18 @@ facit för varje rad utan handarbete, på hundratals sidor och med samma
 urval varje gång. Projektägaren valde det i fas 0, och att kalibreringen
 blir en egen PR före väg H i konverteringen.
 
-Kalibreringen väljer minst 300 sidor med textlager och bekräftade tal ur
+Kalibreringen mäter minst 300 sidor med textlager och bekräftade tal ur
 poolen, högst tre per dokument och med ett fast frö. Varje PDF hämtas
-igen och kontrolleras mot sin sha256. Sidan renderas i 300 dpi i gråskala,
+igen och kontrolleras mot sin sha256, och en PDF som inte går att mäta
+ersätts av nästa i urvalet. Blir färre sidor mätta är kravet inte
+prövat. Sidan renderas i 300 dpi i gråskala,
 som en skannad sida i konverteringen, och läses med väg H. Kravet är
 **noll falska bekräftelser**: ingen sida som väg H bekräftar får ha en
-rad med fel tal, en rad med tal som ingen läsning såg, eller tal utanför
-raderna. Först när kravet är uppfyllt byggs väg H in i konverteringen.
+rad med fel tal, en rad med ett upphöjt tecken i textlagret, en rad med
+tal som ingen läsning såg, eller tal utanför raderna. Först när kravet är
+uppfyllt byggs väg H in i konverteringen.
 
-Tre delbeslut följer med:
+Fyra delbeslut följer med:
 
 1. **Den tredje läsningen görs med samma latinska modell som PaddleOCR
    använder, `latin_PP-OCRv5_mobile_rec`, men genom RapidOCR i
@@ -62,6 +65,11 @@ Tre delbeslut följer med:
 3. **En sida bekräftas bara när varje rad med tal är bekräftad** och inget
    tal i Tesseracts läsning står utanför raderna. Märkningen är per sida,
    som i dag.
+4. **Den lagrade texten får de bekräftade talen.** När väg H byggs in
+   ersätts Tesseracts text för en rad som bekräftats utan Tesseract
+   (`tredje-och-rapid`) med RapidOCR:s läsning av raden. Annars skulle
+   sidan märkas bekräftad med andra tal än de som kalibreringen mätt.
+   Hur raden placeras i sidans text avgörs i det steget.
 
 ### Consequences
 
@@ -123,6 +131,17 @@ läste PaddleOCR `s F1F1F119pfARO.` och modellen i onnxruntime
 `41 Diagnos 11-F1, F18-F19 ocheller ugift om LARO.`, eftersom PaddleOCR
 skalar raden annorlunda. Agenten rekommenderade onnxruntime. Valet prövas
 av kalibreringen som allt annat.
+
+**Facit och upphöjda tecken.** Den oberoende granskningen (fas 6) visade
+att pdfplumber läser ihop en upphöjd siffra med ordet före, så att
+`118²` blir `1182` i facit. Då kan just den felklass som skyddet finns
+för inte mätas: läser motorerna ihop siffrorna på samma sätt blir raden
+"rätt". Därför prövas textlagrets tecken för sig, och en bekräftad rad
+med ett upphöjt eller mindre tecken i textlagret räknas alltid som en
+falsk bekräftelse. Granskningen visade också att en understrykning, en
+siffra som nuddar bokstaven före och en siffra vid rutans överkant tog
+sig förbi den första versionen av skyddet. Det rättades före
+kalibreringen.
 
 **Skyddets form.** Agentens första försök mätte varje mörk del för sig.
 Det flaggade ringen i å och pricken i i som upphöjda, och 82 rader med

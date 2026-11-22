@@ -2479,13 +2479,19 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **Givet** poolens data och ett fast frö
 - **När** `python -m kommunhandlingar.kalibrering <data> <ut>` körs
 - **Så** mäts väg H på 300 sidor med textlager och bekräftade tal, högst
-  tre ur varje dokument, och samma frö ger samma sidor. En PDF vars
-  sha256 ändrats i källan, eller som inte går att hämta, mäts inte och
-  står i rapporten.
+  tre ur varje dokument och en gång per PDF, och samma frö ger samma
+  sidor. En PDF vars sha256 ändrats i källan, eller som inte går att
+  hämta, mäts inte, står i rapporten och ersätts av nästa dokument i
+  urvalet.
+
+- **Givet** att färre sidor än det begärda antalet gick att mäta
+- **När** kalibreringen är klar
+- **Så** säger rapporten att kravet inte är prövat, och kommandot
+  avslutas med kod 1.
 
 - **Givet** en sida i kalibreringen som väg H bekräftar, och en rad på den
-  med andra tal än textlagret, med tal som ingen läsning såg, eller
-  textlagrets tal utanför alla rader
+  med andra tal än textlagret, med ett upphöjt tecken i textlagret, med
+  tal som ingen läsning såg, eller textlagrets tal utanför alla rader
 - **När** kalibreringen är klar
 - **Så** står raden i `rapport.md` med sina läsningar, och kommandot
   avslutas med kod 1, så att arbetsflödet faller.

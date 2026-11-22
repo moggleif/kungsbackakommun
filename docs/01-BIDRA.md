@@ -30,6 +30,9 @@ står i `pyproject.toml`, samma som CI installerar; ruffs förhandsregler
 kan ändras mellan versioner. Med
 [uv](https://docs.astral.sh/uv/) går samma ruff att köra utan
 installation: `uvx ruff@<versionen i pyproject.toml> check .`.
+Testerna av väg H (`tests/test_radlasning.py`) kör RapidOCR, som hämtar
+den latinska modellen från nätet första gången och kontrollerar dess
+sha256; CI hämtar den i varje körning.
 `npm install` installerar ESLint och jsdom i `node_modules/`, i de
 versioner som står i `package.json`, för webbplatsens skript (K83).
 `package-lock.json` checkas inte in, eftersom den bär
@@ -150,7 +153,8 @@ reportlab, pypdf och Pillow, `skapa_skarvar.py` och `skapa_spalter.py`,
 som behöver reportlab, `skapa_hogkant.py`, som behöver reportlab och
 Pillow, `skapa_kort.py`, som behöver reportlab och pypdf, och
 `skapa_delade.py` och `skapa_rutor.py`, som behöver reportlab. De är inte
-projektets beroenden. Testerna av hämtningen läser `kort.pdf`, som saknar
+projektets beroenden. `skapa_hogkant_ute.py` och `skapa_vag_h.py` klarar
+sig med standardbiblioteket. Testerna av hämtningen läser `kort.pdf`, som saknar
 inskannade sidor, så att de inte väntar på OCR; testerna av konverteringen
 läser `sidor.pdf`.
 
@@ -179,8 +183,10 @@ python3 -m kommunhandlingar.kalibrering data /tmp/kalibrering --antal 300
 
 Resultatet står i `rapport.md` och `rader.csv` i utkatalogen. Samma
 körning går i Actions under "Kalibrering av väg H", för hand och i varje
-PR som ändrar regeln. RapidOCR hämtar den latinska modellen vid första
-körningen.
+PR som ändrar regeln, OCR-läsningen eller beroendena. RapidOCR hämtar
+den latinska modellen vid första körningen. `hamtning.toml` läses i
+katalogen ovanför datakatalogen, alltså repots rot. Kommandot avslutas
+med kod 1 när kravet inte är uppfyllt eller för få sidor gick att mäta.
 
 ## Ögonblicksbilden av konverteringen
 
