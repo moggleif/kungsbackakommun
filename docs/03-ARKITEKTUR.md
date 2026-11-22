@@ -322,6 +322,8 @@ src/kommunhandlingar/
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta, konvertera, skriva
+  placering.py     var kandidaten hamnar: egen plats, en rivals eller en ny
+  poolskrivning.py dokumentets fält i steg 2 och skrivningen till poolen
   original.py      originalet hämtas, ett dokument i delar slås ihop (ADR-0049)
   pool.py          poolens dokument i ordning; front matter uppslagen på källnyckel
                    och sökväg. Bara här gås poolens `.md` igenom
