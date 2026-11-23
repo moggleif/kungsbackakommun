@@ -13,6 +13,7 @@ from html import escape
 from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.mal import Mal
 from kommunhandlingar.webbplats.malspar import (
+    Underlag,
     arets,
     egenskaper,
     forsta,
@@ -24,22 +25,21 @@ from kommunhandlingar.webbplats.malspar import (
 from kommunhandlingar.webbplats.statusikon import IKONER, ikon
 
 
-def korten(spar: list[list[Mal]], ar: range, luckor: set[int]) -> str:
-    def med_fokus(nr: int, malen: list[Mal]) -> str:
-        inre = "".join(kort(n, m, ar, luckor) for n, m in ordnade(under(spar, malen)))
-        if not inre:
-            return kort(nr, malen, ar, luckor)
-        fokus = f'<div class="fokusomraden"><h4>Fokusområden</h4>{inre}</div>'
-        return (
-            kort(nr, malen, ar, luckor).removesuffix("</article>")
-            + fokus
-            + "</article>"
-        )
+def korten(underlag: Underlag) -> str:
+    alla = "".join(
+        med_fokus(underlag, nr) for nr, _ in ordnade(fristaende(underlag.spar))
+    )
+    return f'<h2 id="malen">Målen</h2><div class="malkort">{alla}</div>'
 
+
+def med_fokus(underlag: Underlag, nr: int) -> str:
+    fokus = ordnade(under(underlag.spar, underlag.spar[nr]))
+    inre = "".join(kort(underlag, n) for n, _ in fokus)
+    if not inre:
+        return kort(underlag, nr)
+    huvud = '<div class="fokusomraden"><h4>Fokusområden</h4>'
     return (
-        '<h2 id="malen">Målen</h2><div class="malkort">'
-        + "".join(med_fokus(nr, malen) for nr, malen in ordnade(fristaende(spar)))
-        + "</div>"
+        kort(underlag, nr).removesuffix("</article>") + f"{huvud}{inre}</div></article>"
     )
 
 
@@ -47,7 +47,8 @@ def ordnade(spar: list[tuple[int, list[Mal]]]) -> list[tuple[int, list[Mal]]]:
     return sorted(spar, key=lambda e: (-e[1][-1].ar, -e[1][0].ar, e[0]))
 
 
-def kort(nr: int, malen: list[Mal], ar: range, luckor: set[int]) -> str:
+def kort(underlag: Underlag, nr: int) -> str:
+    malen = underlag.spar[nr]
     borjan, slut = malen[0].ar, malen[-1].ar
     aren = str(borjan) if borjan == slut else f"{borjan}–{slut}"
     return (
@@ -55,7 +56,7 @@ def kort(nr: int, malen: list[Mal], ar: range, luckor: set[int]) -> str:
         f'<p class="markor"><span>{" och ".join(slagen(malen))}</span> '
         f"<span>{aren}</span></p>"
         f"<h3>{rubrik(rubriken(malen))}</h3>{tidigare(malen)}{formulering(malen)}"
-        f"{remsa(malen, ar, luckor)}{historik(malen)}</article>"
+        f"{remsa(malen, underlag.ar, underlag.luckor)}{historik(malen)}</article>"
     )
 
 

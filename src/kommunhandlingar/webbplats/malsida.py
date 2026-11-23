@@ -7,7 +7,8 @@ per år (`malstatistik.py`), ett urval och tre perspektiv: tidslinjen
 (`maltidslinje.py`), ett år i taget (`malar.py`) och ett kort per spår
 (`malkort.py`). Skriptet i `mal.js` visar bara det som valts och öppnar
 kortet för ett mål som väljs i tidslinjen, och `perspektiv.js` visar ett
-perspektiv i taget; utan dem står allt på sidan. Stilen står i `mal.css`.
+perspektiv i taget; utan dem står allt på sidan. Löptexterna står i
+`maltexter.py` och stilen i `mal.css`.
 """
 
 from collections import defaultdict
@@ -18,11 +19,19 @@ from kommunhandlingar.webbplats import adresser, ram
 from kommunhandlingar.webbplats.flikar import MAL, flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mal import SLAG, Mal
-from kommunhandlingar.webbplats.malar import Underlag, aren
+from kommunhandlingar.webbplats.malar import aren
 from kommunhandlingar.webbplats.malkort import korten
 from kommunhandlingar.webbplats.mall import sida
+from kommunhandlingar.webbplats.malspar import Underlag
 from kommunhandlingar.webbplats.malstatistik import protokollar, statistik
-from kommunhandlingar.webbplats.maltidslinje import namnden_rad, tidslinje
+from kommunhandlingar.webbplats.maltexter import (
+    AREN,
+    FOKUS,
+    INLEDNING,
+    METOD,
+    PERSPEKTIV,
+)
+from kommunhandlingar.webbplats.maltidslinje import tidslinje
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 
 ADR_0044 = "0044-namndens-mal-och-direktiv-las-ur-dokumenten-och-skrivs-for-hand.md"
@@ -30,55 +39,6 @@ ADR_0045 = "0045-omdopta-mal-grupperas-protokollet-gar-fore-och-status-blir-ikon
 ADR_0050 = "0050-malsidan-visas-som-tidslinje-och-malkort.md"
 ADR_0051 = "0051-tidslinjen-visar-varje-rubrik-och-nya-formuleringar.md"
 ADR_0056 = "0056-kommunfullmaktiges-mal-med-fokusomraden-och-farg.md"
-INLEDNING = (
-    "<p>Organets egna mål och direktiv år för år, ur budgetarna, "
-    "delårsrapporterna och årsredovisningarna i poolen. Välj ett mål i "
-    "tidslinjen för att se hela dess historik.</p>"
-)
-METOD = (
-    "<p>Målen är lästa ur poolens dokument och skrivna ordagrant, med "
-    "dokumentet och sidan som källa. Bygget prövar att texten står på den "
-    "sidan. Bara det organet självt beslutat står med, så en nämnds sida "
-    "har inte kommunfullmäktiges mål eller direktiv. Säger protokollet något "
-    "annat än handlingarna till samma möte, gäller protokollet.</p>"
-    "<p>Ett mål som bytt rubrik har en rad per rubrik i tidslinjen, i den "
-    "ordning de först står, och ett kort med de tidigare rubrikerna under "
-    "den senaste. Ett år då samma rubrik får en ny formulering är markerat. "
-    "Där källan inte själv säger att det är samma mål, och formuleringen "
-    "inte är densamma, är kopplingen en bedömning och rubriken märkt "
-    "tolkad.</p>"
-    "<p>Statusen är en ikon för uppföljningens bedömning, med källans egen "
-    "formulering i pekrutan och i kortets historik. En delårsrapport ger en "
-    "prognos, som har en streckad ram. Ett år utan dokument i poolen är en "
-    "lucka i poolen, inte ett år utan mål, också före organets första "
-    "dokument i poolen.</p>"
-)
-# Delas med spårsidorna (K60, ADR-0086).
-AREN = (
-    "<p>Åren är desamma på alla kommunens sidor över tid, så att de går att "
-    "jämföra: från poolens första år, eller ett äldre år som någon rad "
-    "har, till i år, eller ett senare år som någon rad har, som en budget "
-    "för nästa år. Ett år utan rader står tomt.</p>"
-)
-FOKUS = (
-    "<p>Ett mål med fokusområden har dem under sig i tidslinjen och i sitt "
-    "kort. En uppföljning kan bedöma med färg i stället för ord. Färgen "
-    "följer inte med in i texten, så den är avläst ur PDF:en på källans "
-    "sida, visas som ikonen för uppnått, delvis eller ej och är märkt "
-    "som avläst ur färgen. Hur källan använder färgerna står i "
-    "beskrivningen av kommunens källor. En rad har en status bara där "
-    "källans bedömning står i texten. Budgeten och uppföljningen kan "
-    "skriva ett fokusområde på olika sätt samma år, och då har det en rad "
-    "för varje.</p>"
-)
-
-# Väljaren visas av skriptet, som visar ett perspektiv i taget (ADR-0073).
-PERSPEKTIV = (
-    '<div class="perspektiv" role="group" aria-label="Perspektiv" hidden>'
-    '<button type="button" data-vy="tidslinje">Tidslinje</button>'
-    '<button type="button" data-vy="ar">Ett år i taget</button>'
-    '<button type="button" data-vy="kort">Målkort</button></div>'
-)
 
 
 # Sidan börjar med målens första år; poolens dokument kan vara äldre.
@@ -95,38 +55,46 @@ def adress(kommun: Kommun, organ: str) -> str:
     return adresser.over_tid(kommun.id, organ, MAL)
 
 
-# Alla mål är samma organs, och åren är kommunens (K60). Ett år fram till
-# byggåret utan både dokument och mål är en lucka: ett år med mål ur ett
-# senare dokument, som en årsredovisning, är det inte.
+# Alla mål är samma organs.
 def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> str:
-    organ, mall, kommun = malen[0].organ, sammanhang.mall, sammanhang.kommun
-    uppfoljda = [u for u in sammanhang.underlag.uppfoljningar if u.organ == organ]
-    protokoll = protokollar(organets)
-    sidans = adress(kommun, organ)
-    namn = kommun.organnamn(organ)
-    spar = sparen(malen)
-    malar = {m.ar for m in malen}
-    ar = sammanhang.underlag.aren
-    dokumentar = {frontmatter.ar(d) for d in organets}
-    luckor = set(range(ar[0], mall.byggd.year + 1)) - dokumentar - malar
+    organ, kommun = malen[0].organ, sammanhang.kommun
+    rubrik = f"Mål och direktiv – {kommun.organnamn(organ)}"
     innehall = (
         flikar(sammanhang.underlag, organ, MAL)
         + stil("mal.css")
         + INLEDNING
-        + fore_malen(min(dokumentar), min(malar))
+        + fore_malen(min(frontmatter.ar(d) for d in organets), min(m.ar for m in malen))
         + om_sidan(any(m.huvudmal for m in malen))
-        + statistik(malen, uppfoljda, protokoll, ar)
-        + urval(max(malar), {m.slag for m in malen})
-        + PERSPEKTIV
-        + vy(
-            "tidslinje",
-            tidslinje(spar, ar, luckor, namnden_rad(uppfoljda, protokoll, ar)),
-        )
-        + vy("ar", aren(Underlag(spar, ar, luckor, uppfoljda, protokoll)))
-        + vy("kort", korten(spar, ar, luckor))
+        + perspektiven(underlaget(sammanhang, malen, organets))
         + skript("mal.js", "perspektiv.js")
     )
-    return sida(mall, sidans, f"Mål och direktiv – {namn}", innehall)
+    return sida(sammanhang.mall, adress(kommun, organ), rubrik, innehall)
+
+
+# Åren är kommunens (K60). Ett år fram till byggåret utan både dokument och
+# mål är en lucka: ett år med mål ur ett senare dokument, som en
+# årsredovisning, är det inte.
+def underlaget(
+    sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]
+) -> Underlag:
+    organ, ar = malen[0].organ, sammanhang.underlag.aren
+    uppfoljda = [u for u in sammanhang.underlag.uppfoljningar if u.organ == organ]
+    dokumentar = {frontmatter.ar(d) for d in organets}
+    luckor = set(range(ar[0], sammanhang.mall.byggd.year + 1)) - dokumentar
+    luckor -= {m.ar for m in malen}
+    return Underlag(sparen(malen), ar, luckor, uppfoljda, protokollar(organets))
+
+
+def perspektiven(underlag: Underlag) -> str:
+    malen = underlag.malen
+    return (
+        statistik(malen, underlag.uppfoljda, underlag.protokollar, underlag.ar)
+        + urval(max(m.ar for m in malen), {m.slag for m in malen})
+        + PERSPEKTIV
+        + vy("tidslinje", tidslinje(underlag))
+        + vy("ar", aren(underlag))
+        + vy("kort", korten(underlag))
+    )
 
 
 def vy(namn: str, innehall: str) -> str:

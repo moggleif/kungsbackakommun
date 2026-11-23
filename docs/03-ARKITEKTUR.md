@@ -2528,9 +2528,12 @@ filen (K26), länkad från organets sida.
     sägs med ord, efter en lucka jämförs inte med året innan, och ett år
     utan protokoll med text säger det. Ett år med dokument men utan mål
     har också protokollen.
-  Det tidslinjen, korten och Ett år i taget delar, som årets status, spårets rubrik och
-  slag och radens data-attribut för urvalet, står i
-  `webbplats/malspar.py`. Stilen står i `webbplats/mal.css`.
+  Det tidslinjen, korten och Ett år i taget delar står i
+  `webbplats/malspar.py`: underlaget som sidan räknas ur (spåren, åren,
+  luckorna och protokollen), årets status, spårets rubrik och slag och
+  radens data-attribut för urvalet.
+  Sidans löptexter står i `webbplats/maltexter.py` och stilen i
+  `webbplats/mal.css`.
 - **Skripten** står i sidan. `webbplats/mal.js` visar urvalet och
   döljer det som inte valts, i alla perspektiv, och öppnar historiken på
   kortet när ett mål väljs i tidslinjen. Ett kommunmåls kort visas när ett
