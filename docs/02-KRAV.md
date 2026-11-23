@@ -2308,6 +2308,13 @@ Issue [#352](https://github.com/moggleif/kungsbackakommun/issues/352).
   [01-BIDRA.md](01-BIDRA.md#ögonblicksbilden-av-webbplatsen)
 - **Så** syns varje ändrat tecken i diffen.
 
+- **Givet** ögonblicksbilden
+- **När** en sida i bilden länkar med en relativ adress till en fil som
+  inte finns där
+- **Så** faller ett test och visar sidan och länken
+  (`tests/test_lankar.py`, issue
+  [#388](https://github.com/moggleif/kungsbackakommun/issues/388)).
+
 ## K79 — Steg 2:s kommando gör det nattkörningen räknar med
 
 Prövas i `tests/test_hamta_kommando.py` utan nät, med en påhittad klient

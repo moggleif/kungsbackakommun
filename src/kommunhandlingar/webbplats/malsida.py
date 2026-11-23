@@ -15,6 +15,7 @@ from html import escape
 
 from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.flikar import MAL, flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mal import SLAG, Mal
@@ -93,7 +94,7 @@ def fore_malen(forsta_dokument: int, forsta_mal: int) -> str:
 
 
 def adress(kommun: Kommun, organ: str) -> str:
-    return f"{kommun.id}/{organ}/{MAL}.html"
+    return adresser.over_tid(kommun.id, organ, MAL)
 
 
 # Alla mål är samma organs, och åren är kommunens (K60). Ett år fram till

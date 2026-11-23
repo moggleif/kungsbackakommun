@@ -12,7 +12,7 @@ from kommunhandlingar.webbplats.kalendersida import kalendersida
 from kommunhandlingar.webbplats.mal import Mal
 from kommunhandlingar.webbplats.mall import Mall, sida
 from kommunhandlingar.webbplats.meny import kommunens, meny, oversiktsnamn
-from kommunhandlingar.webbplats.oversikt import adresser, oversikt
+from kommunhandlingar.webbplats.oversikt import oversikt, oversiktens_adresser
 from kommunhandlingar.webbplats.rakning import Organrad
 from kommunhandlingar.webbplats.sammanhang import Kommununderlag, Sammanhang
 from kommunhandlingar.webbplats.spar import Steg
@@ -130,11 +130,12 @@ class TestNavigering(unittest.TestCase):
 
     def test_en_enda_kommun_borjar_pa_sin_oversikt(self):
         self.assertEqual(
-            adresser(self.mall, exempelby()), ["exempelby.html", "index.html"]
+            oversiktens_adresser(self.mall, exempelby()),
+            ["exempelby.html", "index.html"],
         )
         andra = replace(exempelby(), id="andraby")
         mall = Mall([exempelby(), andra], REPO, TID)
-        self.assertEqual(adresser(mall, andra), ["andraby.html"])
+        self.assertEqual(oversiktens_adresser(mall, andra), ["andraby.html"])
 
     def test_sidan_laddar_den_gemensamma_menyn_fran_giffa(self):
         html = sida(self.mall, "index.html", "Start", "")

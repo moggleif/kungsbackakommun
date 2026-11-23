@@ -2168,7 +2168,10 @@ varje push till `main`, för hand och när ett issue med etiketten
   i källan (`avvikelser.html`, se nedan), och dessutom indexet och
   `llms.txt` ([Steg 3: indexet](#steg-3-indexet)). Sidmallen står i
   `webbplats/mall.py`, dess stil i `webbplats/mall.css` och menyn i
-  `webbplats/meny.py`.
+  `webbplats/meny.py`. Var varje sida ligger står bara i
+  `webbplats/adresser.py`, så att en sida som flyttar tar sina länkar med
+  sig; `tests/test_lankar.py` prövar att varje intern länk i
+  ögonblicksbilden pekar på en fil som finns (K78).
   Varje sida har samma meny (K39, K58,
   [ADR-0081](decisions/0081-menyn-i-projektets-gemensamma-form.md)) i
   projektets gemensamma form – för varje kommun i bokstavsordning efter id

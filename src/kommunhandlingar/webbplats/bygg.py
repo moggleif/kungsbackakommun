@@ -18,6 +18,7 @@ from kommunhandlingar import pool
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import (
+    adresser,
     dokumentindex,
     inlasning,
     kalender,
@@ -33,9 +34,9 @@ from kommunhandlingar.webbplats.llms import llms
 from kommunhandlingar.webbplats.mall import Mall, sida
 from kommunhandlingar.webbplats.malsida import adress as malsidans_adress
 from kommunhandlingar.webbplats.malsida import malsida
-from kommunhandlingar.webbplats.meny import oversiktsnamn, statusadress
+from kommunhandlingar.webbplats.meny import oversiktsnamn
 from kommunhandlingar.webbplats.organsida import organsida
-from kommunhandlingar.webbplats.oversikt import adresser, oversikt
+from kommunhandlingar.webbplats.oversikt import oversikt, oversiktens_adresser
 from kommunhandlingar.webbplats.rakning import okanda, rakna
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.slagen import SLAGEN
@@ -47,7 +48,7 @@ def bygg(rot: Path, ut: Path, repo: str, byggd: datetime) -> Mall:  # noqa: PLR0
     bygge = Bygge(ut, *inlasning.las(rot, repo, byggd))
     ut.mkdir(parents=True, exist_ok=True)
     if not bygge.mall.en_kommun:
-        bygge.skriv("index.html", sidor.startsida(bygge.mall))
+        bygge.skriv(adresser.STARTSIDA, sidor.startsida(bygge.mall))
     bygge.skriv("llms.txt", llms(bygge))
     sokgrupper = []
     for kommun in bygge.mall.kommuner:
@@ -67,7 +68,9 @@ def bygg_kommun(bygge: Bygge, katalog: Path, kommun: Kommun) -> dict:
         bygge.sammanhang(kommun), katalog, (dokument, stycken)
     )
     sammantradesbygge.bygg(bygge.ut, bygge.mall, underlag)
-    bygge.skriv(statusadress(kommun.id), sidor.statussida(bygge.mall, kommun, dokument))
+    bygge.skriv(
+        adresser.status(kommun.id), sidor.statussida(bygge.mall, kommun, dokument)
+    )
     bygg_oversikten(bygge, kommun, dokument)
     bygg_organen(bygge, kommun, dokument)
     return sokindex.grupp(kommun, underlag.paragrafer)
@@ -82,8 +85,8 @@ def skriv_dokumenten(
     dokument, stycken = [], []
     for fil, falt, text in pool.dokumenten(katalog):
         prova(fil, falt, kommun)
-        falt["adress"] = fil.relative_to(katalog).with_suffix(".html").as_posix()
-        adress = f"{kommun.id}/{falt['adress']}"
+        falt["adress"] = adresser.dokumentsida(fil.relative_to(katalog).as_posix())
+        adress = adresser.i_kommunen(kommun.id, falt["adress"])
         (bygge.ut / adress).parent.mkdir(parents=True, exist_ok=True)
         sidfil = bygge.skriv(adress, dokumentsida(bygge.sammanhang(kommun), falt, text))
         kopiera_tabeller(fil, sidfil)
@@ -97,7 +100,7 @@ def bygg_oversikten(bygge: Bygge, kommun: Kommun, dokument: list[dict]) -> None:
     rader = rakna(kommun, dokument, mall.byggd.date())
     innehall = oversikt(bygge.sammanhang(kommun), rader, dokument)
     rubrik = oversiktsnamn(mall.kommuner, kommun)
-    for adress in adresser(mall, kommun):
+    for adress in oversiktens_adresser(mall, kommun):
         bygge.skriv(adress, sida(mall, adress, rubrik, innehall))
 
 
@@ -106,7 +109,7 @@ def bygg_organen(bygge: Bygge, kommun: Kommun, dokument: list[dict]) -> None:
     for rad in rakna(kommun, dokument, bygge.mall.byggd.date()):
         organets = [d for d in dokument if d["organ"] == rad.id]
         html = organsida(sammanhang, rad, organets)
-        bygge.skriv(f"{kommun.id}/{rad.id}.html", html)
+        bygge.skriv(adresser.organsida(kommun.id, rad.id), html)
         if malen := [m for m in sammanhang.underlag.malen if m.organ == rad.id]:
             html = malsida(sammanhang, malen, organets)
             bygge.skriv(malsidans_adress(kommun, rad.id), html)
@@ -125,7 +128,7 @@ def bygg_kalender(bygge: Bygge, rot: Path, kommun: Kommun) -> None:
     sammantraden = inlasning.las_kalender(rot, kommun)
     sammantraden = kalender.med_sidor(sammantraden, bygge.ut / kommun.id)
     html = kalendersida(bygge.mall, kommun, sammantraden)
-    bygge.skriv(f"{kommun.id}/kalender.html", html)
+    bygge.skriv(adresser.kalender(kommun.id), html)
 
 
 def prova(fil: Path, falt: dict, kommun: Kommun) -> None:

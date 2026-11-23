@@ -4,7 +4,8 @@ from html import escape
 
 from markdown_it import MarkdownIt
 
-from kommunhandlingar.webbplats.avvikelser import ADRESS, OKANT, ORDNING, Avvikelse
+from kommunhandlingar.webbplats.adresser import AVVIKELSER
+from kommunhandlingar.webbplats.avvikelser import OKANT, ORDNING, Avvikelse
 from kommunhandlingar.webbplats.mall import KALLKOD, Mall, lank, sida
 
 # Som dokumenten (ADR-0023), men utan bilder: en bild i ett issue skulle bli
@@ -18,7 +19,7 @@ def avvikelsesida(mall: Mall, avvikelser: list[Avvikelse]) -> str:
     innehall = inledning(mall.repo) + "".join(
         lageavsnitt(lage, [a for a in avvikelser if a.lage == lage]) for lage in ORDNING
     )
-    return sida(mall, ADRESS, "Avvikelser i källan", innehall)
+    return sida(mall, AVVIKELSER, "Avvikelser i källan", innehall)
 
 
 def inledning(repo: str) -> str:

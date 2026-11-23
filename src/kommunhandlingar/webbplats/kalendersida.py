@@ -15,7 +15,7 @@ from urllib.parse import urlparse
 
 from kommunhandlingar.gruppmote import VECKODAGAR
 from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.webbplats import kalendervyer
+from kommunhandlingar.webbplats import adresser, kalendervyer
 from kommunhandlingar.webbplats.inbaddning import las, skript
 from kommunhandlingar.webbplats.kalender import GRUPPMOTE, Sammantrade, gruppmoten
 from kommunhandlingar.webbplats.kalenderfarger import farger, organstil
@@ -45,7 +45,7 @@ METOD = (
 
 
 def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) -> str:
-    adress = f"{kommun.id}/kalender.html"
+    adress = adresser.kalender(kommun.id)
     namn = {o.id: o.namn[0] for o in kommun.organ}
     farg = farger(kommun, {s.organ for s in sammantraden})
     moten = gruppmoten(sammantraden, kommun.gruppmote, mall.byggd.date())
@@ -126,7 +126,8 @@ def tabell(rubriker: list, rader: str) -> str:
 def kallcell(organ: str, cell: dict[str, int]) -> str:
     lankar = [kallank(k) for k in cell if k]
     if cell.get(""):
-        lankar.append(f'<a href="{organ}.html">{cell[""]} sammanträden i poolen</a>')
+        adress = adresser.organ_i_katalogen(organ)
+        lankar.append(f'<a href="{adress}">{cell[""]} sammanträden i poolen</a>')
     return "<br>".join(lankar)
 
 
@@ -159,6 +160,6 @@ def kallank(kalla: str) -> str:
     if kalla.startswith("https://"):
         return f'<a href="{escape(kalla)}">{escape(urlparse(kalla).netloc)}</a>'
     organ, _, datum, fil = kalla.split("/", 3)
-    adress = kalla.removesuffix(".md") + ".html"
+    adress = adresser.dokumentsida(kalla)
     text = f"{organ.upper()} {datum}, {fil.split('-')[0].removesuffix('.md')}"
     return f'<a href="{escape(adress)}">{escape(text)}</a>'

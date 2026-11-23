@@ -8,10 +8,11 @@ sammanträdets katalog. Stilen är målkortens (`mal.css`) och `mote.css`.
 from html import escape
 
 from kommunhandlingar import frontmatter
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.inbaddning import stil
 from kommunhandlingar.webbplats.kortkoppling import organnamn
 from kommunhandlingar.webbplats.luckor import motesnamn
-from kommunhandlingar.webbplats.mall import Mall, rot, sida, stig
+from kommunhandlingar.webbplats.mall import Mall, sida, stig
 from kommunhandlingar.webbplats.meny import oversiktsnamn
 from kommunhandlingar.webbplats.organsida import dokumentrubrik
 from kommunhandlingar.webbplats.punktkort import Lankar, antal, punktkort
@@ -20,12 +21,13 @@ from kommunhandlingar.webbplats.sammantrade import Arende, Mote, adress, ordnade
 
 def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
     kommun, forsta = mote.kommun, mote.dokument[0]
-    sidans, namn = f"{kommun.id}/{adress(mote.dokument)}", organnamn(kommun)
-    lankar = Lankar(rot(sidans), handlingarna(kommun.id, mote.dokument), namn)
-    vag = [
-        (f"{lankar.rot}{kommun.id}.html", oversiktsnamn(mall.kommuner, kommun)),
-        (f"{lankar.rot}{kommun.id}/{forsta['organ']}.html", namn[forsta["organ"]]),
-    ]
+    sidans = adresser.i_kommunen(kommun.id, adress(mote.dokument))
+    namn = organnamn(kommun)
+    lankar = Lankar(adresser.rot(sidans), handlingarna(kommun.id, mote.dokument), namn)
+    organ = forsta["organ"]
+    oversikten = lankar.rot + adresser.oversikt(kommun.id)
+    organets = lankar.rot + adresser.organsida(kommun.id, organ)
+    vag = [(oversikten, oversiktsnamn(mall.kommuner, kommun)), (organets, namn[organ])]
     innehall = (
         stig(vag)
         + stil("mal.css", "mote.css")
@@ -33,7 +35,7 @@ def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
         + dokumentlista(kommun.id, mote.dokument, lankar.rot)
         + dagordningen(arenden, lankar)
     )
-    rubrik = f"{namn[forsta['organ']]} {motesnamn(forsta['datum'], forsta['lopnr'])}"
+    rubrik = f"{namn[organ]} {motesnamn(forsta['datum'], forsta['lopnr'])}"
     return sida(mall, sidans, rubrik, innehall)
 
 
@@ -57,16 +59,22 @@ def dagordningen(arenden: list[Arende], lankar: Lankar) -> str:
 
 def dokumentlista(kommun_id: str, dokument: list[dict], till_rot: str) -> str:
     rader = "".join(
-        f'<li><a href="{escape(till_rot + kommun_id + "/" + d["adress"])}">'
-        f"{escape(dokumentrubrik(d).capitalize())}</a>{sidantal(d)}</li>"
+        dokumentpost(till_rot + adresser.i_kommunen(kommun_id, d["adress"]), d)
         for d in ordnade(dokument)
     )
     return f"<ul>{rader}</ul>"
 
 
+def dokumentpost(adress: str, d: dict) -> str:
+    return (
+        f'<li><a href="{escape(adress)}">'
+        f"{escape(dokumentrubrik(d).capitalize())}</a>{sidantal(d)}</li>"
+    )
+
+
 def handlingarna(kommun_id: str, dokument: list[dict]) -> str:
-    adresser = [d["adress"] for d in ordnade(dokument) if d["typ"] == "handlingar"]
-    return f"{kommun_id}/{adresser[0]}" if adresser else ""
+    handlingar = [d["adress"] for d in ordnade(dokument) if d["typ"] == "handlingar"]
+    return adresser.i_kommunen(kommun_id, handlingar[0]) if handlingar else ""
 
 
 def sidantal(d: dict) -> str:

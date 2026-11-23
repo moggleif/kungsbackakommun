@@ -13,7 +13,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from kommunhandlingar.webbplats import avvikelser
+from kommunhandlingar.webbplats import adresser, avvikelser
 from kommunhandlingar.webbplats.avvikelsesida import avvikelsesida
 from kommunhandlingar.webbplats.bygg import bygg
 from tests.test_webbplats import REPO, TID
@@ -27,7 +27,7 @@ def bygg_webbplatsen(ut: Path) -> None:
     """Som webbplatsens `__main__`, men med testets byggtid."""
     mall = bygg(POOL, ut, REPO, TID)
     html = avvikelsesida(mall, avvikelser.las(POOL / "avvikelser.jsonl"))
-    (ut / avvikelser.ADRESS).write_text(html, encoding="utf-8")
+    (ut / adresser.AVVIKELSER).write_text(html, encoding="utf-8")
 
 
 def filer(katalog: Path) -> dict[str, str]:

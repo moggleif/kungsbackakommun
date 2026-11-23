@@ -20,7 +20,7 @@ from kommunhandlingar import frontmatter, pool
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.plats import namn_av
-from kommunhandlingar.webbplats import radfil
+from kommunhandlingar.webbplats import adresser, radfil
 from kommunhandlingar.webbplats.spar import Steg
 
 KOLUMNER = ["organ", "detaljplan", "projekt", "tolkad"]
@@ -93,7 +93,7 @@ def organets(data: Path, organ: str) -> Organets:
     for fil, falt, _ in pool.dokumenten(data / organ):
         kalla = frontmatter.adresser(falt["kalla_url"])[0]
         titel = unquote(PurePosixPath(urlsplit(kalla).path).stem)
-        adress = fil.relative_to(data).with_suffix(".html").as_posix()
+        adress = adresser.dokumentsida(fil.relative_to(data).as_posix())
         funna.append((falt["datum"], falt["namn"], titel, adress))
     return tuple(sorted(funna))
 

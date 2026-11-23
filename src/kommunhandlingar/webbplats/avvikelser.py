@@ -11,7 +11,6 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-ADRESS = "avvikelser.html"
 OKANT = "Utan läsbar status"
 LAGEN = {
     "undersökt – fel hos kommunen": "Ska meddelas kommunen",

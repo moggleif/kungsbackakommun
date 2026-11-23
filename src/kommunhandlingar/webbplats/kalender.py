@@ -13,7 +13,7 @@ from pathlib import Path
 
 from kommunhandlingar.gruppmote import Gruppmote
 from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.webbplats import radfil
+from kommunhandlingar.webbplats import adresser, radfil
 
 DATUM = re.compile(r"\d{4}-\d{2}-\d{2}")
 KOLUMNER = ["organ", "datum", "tid", "plats", "kalla", "osakert"]
@@ -62,7 +62,7 @@ def med_sidor(sammantraden: list[Sammantrade], katalog: Path) -> list[Sammantrad
 
 
 def med_sida(s: Sammantrade, katalog: Path) -> Sammantrade:
-    adress = f"{s.organ}/{s.datum.year}/{s.datum.isoformat()}.html"
+    adress = adresser.sammantrade(s.organ, s.datum.isoformat())
     return replace(s, sida=adress) if (katalog / adress).is_file() else s
 
 

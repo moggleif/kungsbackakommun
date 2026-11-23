@@ -9,9 +9,12 @@ börjar på kommunens sida, som då heter "Handlingar och protokoll" i stället 
 sajtens namn (K58, ADR-0082).
 """
 
+from collections.abc import Callable
+from functools import partial
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun, Organ
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.flikar import SIDOR, overtid
 from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.organordning import grupperade
@@ -21,9 +24,9 @@ from kommunhandlingar.webbplats.sammanhang import Sammanhang
 TOM = '<td class="tom">–<span class="dold"> saknas</span></td>'
 
 
-def adresser(mall: Mall, kommun: Kommun) -> list[str]:
-    egen = f"{kommun.id}.html"
-    return [egen, "index.html"] if mall.en_kommun else [egen]
+def oversiktens_adresser(mall: Mall, kommun: Kommun) -> list[str]:
+    egen = adresser.oversikt(kommun.id)
+    return [egen, adresser.STARTSIDA] if mall.en_kommun else [egen]
 
 
 def oversikt(
@@ -38,7 +41,7 @@ def oversikt(
         f"<tbody>{grupprad(namn, len(sidor) + 2)}"
         + "".join(
             organrad(kommun.id, o, sammantraden[o.id])
-            + celler(f"{kommun.id}/{o.id}", antal[o.id], sidor)
+            + celler(partial(adresser.over_tid, kommun.id, o.id), antal[o.id], sidor)
             + "</tr>"
             for o in organen
         )
@@ -75,9 +78,9 @@ def grupprad(namn: str, kolumner: int) -> str:
     )
 
 
-def celler(organets: str, antal: dict[str, int], sidor: list) -> str:
+def celler(over_tid: Callable[[str], str], antal: dict[str, int], sidor: list) -> str:
     return "".join(
-        f'<td><a href="{organets}/{sida}.html">{antal[sida]} {escape(enhet)}</a></td>'
+        f'<td><a href="{over_tid(sida)}">{antal[sida]} {escape(enhet)}</a></td>'
         if antal[sida]
         else TOM
         for sida, _, enhet in sidor
@@ -86,7 +89,7 @@ def celler(organets: str, antal: dict[str, int], sidor: list) -> str:
 
 def organrad(kommun_id: str, organ: Organ, sammantraden: int) -> str:
     klass = ' class="utskott"' if organ.hor_till else ""
-    organets = f"{kommun_id}/{organ.id}.html"
+    organets = adresser.organsida(kommun_id, organ.id)
     return (
         f'<tr><th scope="row"{klass}><a href="{organets}">'
         f"{escape(organ.namn[0])}</a></th>"

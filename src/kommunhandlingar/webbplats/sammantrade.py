@@ -15,6 +15,7 @@ from pathlib import Path, PurePosixPath
 from kommunhandlingar import frontmatter
 from kommunhandlingar.kandidat import TYPORDNING
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.dagordning import Punkt, dagordning
 from kommunhandlingar.webbplats.kortkoppling import Kortlank
 from kommunhandlingar.webbplats.punktsidor import (
@@ -102,9 +103,10 @@ def namnet(d: dict) -> tuple[bool, str]:
     return not frontmatter.saknas(d["namn"]), d["namn"]
 
 
-# Sammanträdets katalog med `.html`, i kommunens katalog: `ks/2026/2026-10-20.html`.
+# Sammanträdets sida i kommunens katalog: `ks/2026/2026-10-20.html`.
 def adress(dokument: list[dict]) -> str:
-    return mappen(dokument[0]) + ".html"
+    d = dokument[0]
+    return adresser.sammantrade(d["organ"], PurePosixPath(mappen(d)).name)
 
 
 def har_sida(kommun: Kommun, dokument: list[dict]) -> bool:

@@ -5,6 +5,7 @@ rader för, i samma ordning för alla organ. Kommunsidans översikt och
 flikarna på organets sidor byggs ur samma lista.
 """
 
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.mall import menypost
 from kommunhandlingar.webbplats.sammanhang import Kommununderlag
 from kommunhandlingar.webbplats.slagen import SLAGEN
@@ -30,10 +31,12 @@ def overtid(underlag: Kommununderlag, organ: str) -> dict[str, int]:
 # `aktuell` är den visade flikens id. Adresserna är relativa till den
 # visade sidan: organets sida eller, ett steg ner, en sida över tid.
 def flikar(underlag: Kommununderlag, organ: str, aktuell: str) -> str:
-    upp = "" if aktuell == SAMMANTRADEN else "../"
+    upp = "" if aktuell == SAMMANTRADEN else adresser.UR_ORGANETS_KATALOG
     antal = overtid(underlag, organ)
-    poster = [(f"{upp}{organ}.html", SAMMANTRADEN, "Sammanträden")] + [
-        (f"{upp}{organ}/{sida}.html", sida, rubrik)
+    poster = [
+        (upp + adresser.organ_i_katalogen(organ), SAMMANTRADEN, "Sammanträden")
+    ] + [
+        (upp + adresser.over_tid_i_katalogen(organ, sida), sida, rubrik)
         for sida, rubrik, _ in SIDOR
         if antal[sida]
     ]

@@ -15,7 +15,7 @@ Knappen för mörkt tema står i Giffås sajtrad (ADR-0083).
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun, Organ
-from kommunhandlingar.webbplats import avvikelser
+from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.organordning import grupperade
 
 NAMN = "Kommunhandlingar"
@@ -38,8 +38,8 @@ def meny(kommuner: list[Kommun], kalendrar: frozenset[str], aktuell: str) -> str
         poster = en_kommuns_poster(kommuner[0], kalendrar, aktuell)
     else:
         poster = [undermeny(k.namn, sidorna(k, kalendrar), aktuell) for k in kommuner]
-        poster.append(post(avvikelser.ADRESS, "Avvikelser", aktuell))
-    namn = lank("index.html", sajtnamn(kommuner), aktuell).replace(
+        poster.append(post(adresser.AVVIKELSER, "Avvikelser", aktuell))
+    namn = lank(adresser.STARTSIDA, sajtnamn(kommuner), aktuell).replace(
         "<a ", '<a class="sajtnamn" ', 1
     )
     return (
@@ -51,16 +51,16 @@ def meny(kommuner: list[Kommun], kalendrar: frozenset[str], aktuell: str) -> str
 def en_kommuns_poster(
     kommun: Kommun, kalendrar: frozenset[str], aktuell: str
 ) -> list[str]:
-    kalender = f"{kommun.id}/kalender.html"
+    kalender = adresser.kalender(kommun.id)
     kalenderpost = (
         [post(kalender, "Kalender", aktuell)] if kommun.id in kalendrar else []
     )
     om_poolen = [
-        (statusadress(kommun.id), "Poolens status"),
-        (avvikelser.ADRESS, "Avvikelser"),
+        (adresser.status(kommun.id), "Poolens status"),
+        (adresser.AVVIKELSER, "Avvikelser"),
     ]
     return (
-        [post("index.html", EN_KOMMUN, aktuell)]
+        [post(adresser.STARTSIDA, EN_KOMMUN, aktuell)]
         + kalenderpost
         + [
             enkel_undermeny(namn or "Organen", organlankar(kommun.id, organen), aktuell)
@@ -96,20 +96,20 @@ def sidorna(kommun: Kommun, kalendrar: frozenset[str]) -> list[Grupp]:
 
 
 def oversikt(kommun_id: str, kalendrar: frozenset[str]) -> list[tuple[str, str]]:
-    kalender = [(f"{kommun_id}/kalender.html", "Kalender")]
+    kalender = [(adresser.kalender(kommun_id), "Kalender")]
     return (
-        [(f"{kommun_id}.html", "Alla organ")]
+        [(adresser.oversikt(kommun_id), "Alla organ")]
         + (kalender if kommun_id in kalendrar else [])
-        + [(statusadress(kommun_id), "Poolens status")]
+        + [(adresser.status(kommun_id), "Poolens status")]
     )
 
 
 def organlankar(kommun_id: str, organen: list[Organ]) -> list[tuple[str, str]]:
-    return [(f"{kommun_id}/{o.id}.html", o.namn[0]) for o in organen if not o.hor_till]
-
-
-def statusadress(kommun_id: str) -> str:
-    return f"{kommun_id}/status.html"
+    return [
+        (adresser.organsida(kommun_id, o.id), o.namn[0])
+        for o in organen
+        if not o.hor_till
+    ]
 
 
 def undermeny(rubrik: str, grupper: list[Grupp], aktuell: str) -> str:
@@ -143,5 +143,5 @@ def post(adress: str, namn: str, aktuell: str) -> str:
 
 def lank(adress: str, namn: str, aktuell: str) -> str:
     markering = ' aria-current="page"' if adress == aktuell else ""
-    upp = "../" * aktuell.count("/")
+    upp = adresser.rot(aktuell)
     return f'<a href="{upp}{adress}"{markering}>{escape(namn)}</a>'
