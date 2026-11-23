@@ -26,9 +26,10 @@ Argumentera mot ändringen ur vart och ett av dessa sex perspektiv:
 - **Kod för säkerhets skull:** gå igenom diffen rad för rad mot "Ren kod –
   strikt" i `AGENTS.md`. Peka ut varje abstraktion med bara ett
   användningsfall, varje oanvänd parameter eller gren, varje skydd mot ett
-  tillstånd som inte kan uppstå, varje kommentar som återberättar koden och
-  varje ny eller ändrad funktion eller fil över målet utan skäl i
-  PR-texten. Föreslå vad som kan strykas.
+  tillstånd som inte kan uppstå, varje kommentar som återberättar koden,
+  varje nytt undantag (`# undantag:`) vars skäl inte håller och varje ny
+  eller ändrad fil i koden över 150 rader (CI håller 250 tills #384).
+  Föreslå vad som kan strykas.
 
 Kontrollera dessutom, oavsett perspektiv, regeln **Inga personnamn** i
 `AGENTS.md`: i alla filer på grenen, i commit-meddelandena

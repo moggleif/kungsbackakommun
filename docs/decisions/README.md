@@ -123,3 +123,4 @@ Regler för det här repot, utöver MADR:
 | 0105 | [Väg H kalibreras mot textlagersidor innan den får bekräfta tal i poolen](0105-vag-h-kalibreras-mot-textlagersidor.md) | accepted |
 | 0106 | [Skannade sidor får väg H:s tal när den lagrade texten har just dem](0106-skannade-sidor-far-vag-hs-tal.md) | accepted |
 | 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |
+| 0108 | [CI håller målen i Ren kod för koden, och testerna behåller de högre gränserna](0108-ci-haller-malen-for-koden.md) | accepted |

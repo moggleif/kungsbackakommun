@@ -27,20 +27,21 @@ som inte löser ett verkligt problem.
 
 ## Ren kod – strikt
 
-Små, enkla filer och funktioner. Den hårda gränsen kontrolleras i CI
-(se `docs/01-BIDRA.md`). Ett undantag kräver ett skäl i koden; hur det
-skrivs står i `docs/01-BIDRA.md`. Målet prövas i granskningen (fas 6): en
-funktion eller fil som tillkommer eller ändras och hamnar över målet
-behöver ett skäl i PR-texten. Befintlig kod prövas när den ändras. Hur
-allt över målet listas står i `docs/01-BIDRA.md`.
+Små, enkla filer och funktioner. Koden i `src/` och `scripts/` håller
+gränserna i tabellen, och CI faller när den går över dem. Testerna i
+`tests/` har de högre gränserna i den sista kolumnen. Rader per fil hålls
+i CI vid 250 också för koden tills spårslagen har delats (#384); till
+dess prövas 150 i granskningen (fas 6). Ett undantag kräver ett skäl i
+koden; hur det skrivs, och hur gränserna kontrolleras, står i
+`docs/01-BIDRA.md`.
 
-| Mått                         | Mål   | Hård gräns |
-| ---------------------------- | ----- | ---------- |
-| Rader per funktion           | ≤ 15  | 30         |
-| Rader per fil                | ≤ 150 | 250        |
-| Parametrar per funktion      | ≤ 3   | 4          |
-| Nästlingsnivåer              | ≤ 2   | 3          |
-| Cyklomatisk komplexitet      | ≤ 5   | 8          |
+| Mått                         | Koden | Testerna |
+| ---------------------------- | ----- | -------- |
+| Rader per funktion           | ≤ 15  | ≤ 30     |
+| Rader per fil                | ≤ 150 | ≤ 250    |
+| Parametrar per funktion      | ≤ 3   | ≤ 4      |
+| Nästlingsnivåer              | ≤ 2   | ≤ 3      |
+| Cyklomatisk komplexitet      | ≤ 5   | ≤ 8      |
 
 **Ingen kod "för säkerhets skull".** Varje rad ska kunna motiveras av ett
 krav eller ett test. Det betyder:
