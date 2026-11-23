@@ -2625,8 +2625,10 @@ låg över dem togs bort i #347; utan en spärr växer det tillbaka.
 [#370](https://github.com/moggleif/kungsbackakommun/issues/370). Hur
 gränssnittet ser ut står i
 [03-ARKITEKTUR.md](03-ARKITEKTUR.md#källorna). En ny
-publiceringsplattform ska bara behöva sin adapter och en rad i registret,
-inte ändringar i upptäckten, konfigurationen och webbplatsen.
+publiceringsplattform ska bara behöva sin adapter, ett omslag med
+gränssnittets delar och en rad i registret i `adaptrar/kallor.py`, inte
+ändringar i upptäckten, konfigurationen och webbplatsen. En projektsidas
+fil jämförs med mötessidorna i samma Sitevision-källa.
 
 - **Givet** en källa på en plattform som upptäckten inte känner, med ett
   levande fynd, ett arkiv och en ordning
@@ -2636,6 +2638,7 @@ inte ändringar i upptäckten, konfigurationen och webbplatsen.
 
 - **Givet** Kungsbackas och regionens kommunfiler och samma svar från
   källorna
-- **När** steg 1 körs före och efter gränssnittet
+- **När** steg 1 körs före och efter gränssnittet, för det levande med
+  inspelade svar och för arkivet med testernas fixturer
 - **Så** blir kandidatlistorna och sammanfattningarna identiska, och
   kommunfilernas format är oförändrat.

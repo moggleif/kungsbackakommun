@@ -498,8 +498,10 @@ plattformar.
 | `projektlistor()`       | Organ och adress till kommunens lista med projekt ([Projektsidorna](#projektsidorna)). |
 | `organsida(organ)`      | Organets sida i källan, som luckorna länkar till, eller ingen. |
 
-En källa utan levande sidor (Episerver) eller utan arkiv (Meetings Plus,
-och Sitevision utan `wayback`) ger ett tomt fynd. Steg 1 ordnar de
+En ny plattform är adapterns moduler, ett omslag i `kallor.py` med de
+fem delarna och en rad i `ADAPTRAR`. Det levande fyndet har inga
+noteringar. En källa utan levande sidor (Episerver) eller utan arkiv
+(Meetings Plus, och Sitevision utan `wayback`) ger ett tomt fynd. Steg 1 ordnar de
 levande kandidaterna från källorna framåt i K13:s ordning först och
 sedan de från källorna bakåt nyast först; arkivets ordnas alla nyast
 först.

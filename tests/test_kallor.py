@@ -69,19 +69,34 @@ class TestEnFjardeAdapter(unittest.TestCase):
         self.assertEqual(nycklar, [".b2", ".b1", "x:2", "x:1"])
 
 
+def adapterimporter(text: str) -> list[str]:
+    """Varje import av adaptrar, som modul eller ur paketet."""
+    namn = []
+    for nod in ast.walk(ast.parse(text)):
+        if isinstance(nod, ast.Import):
+            namn += [a.name for a in nod.names]
+        elif isinstance(nod, ast.ImportFrom):
+            namn += [f"{nod.module or ''}.{a.name}" for a in nod.names]
+    return [n for n in namn if "adaptrar" in n.split(".")]
+
+
 class TestUpptackKannerIngenAdapter(unittest.TestCase):
     def test_upptacken_importerar_bara_gransnittet(self):
         for modul in (upptack, arkivupptackt):
             with self.subTest(modul.__name__):
                 text = Path(modul.__file__).read_text("utf-8")
-                importer = [
-                    namn.name
-                    for nod in ast.walk(ast.parse(text))
-                    if isinstance(nod, ast.ImportFrom)
-                    and nod.module.startswith("kommunhandlingar.adaptrar")
-                    for namn in nod.names
-                ]
-                self.assertEqual(importer, [])
+                self.assertEqual(adapterimporter(text), [])
+
+    def test_alla_slags_importer_raknas(self):
+        text = (
+            "import kommunhandlingar.adaptrar.sitevision\n"
+            "from kommunhandlingar import adaptrar\n"
+            "from . import kandidat\n"
+        )
+        self.assertEqual(
+            adapterimporter(text),
+            ["kommunhandlingar.adaptrar.sitevision", "kommunhandlingar.adaptrar"],
+        )
 
 
 class TestKallorUtanEnDel(unittest.TestCase):

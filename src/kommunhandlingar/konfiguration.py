@@ -95,5 +95,5 @@ def kalla_av(post: dict, nummer: int, organ_id: list[str]) -> adaptrarna.Kalla:
     adapter = schema.varde(post, "adapter", str, var)
     if adapter not in adaptrarna.ADAPTRAR:
         raise Konfigurationsfel(f"{var}: okänd adapter {adapter!r}")
-    tolka, slag = adaptrarna.ADAPTRAR[adapter]
-    return slag(tolka(post, organ_id, var))
+    tolkning, omslag = adaptrarna.ADAPTRAR[adapter]
+    return omslag(tolkning(post, organ_id, var))

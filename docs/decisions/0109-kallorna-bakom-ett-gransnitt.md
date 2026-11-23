@@ -22,7 +22,8 @@ de är på?
 ## Decision Drivers
 
 * "Adaptrar per publiceringsplattform, inte per kommun" i `AGENTS.md`: en
-  ny plattform ska bara behöva sin adapter och en rad i registret.
+  ny plattform ska bara behöva sin adapter, ett omslag och en rad i
+  registret.
 * Kandidatlistorna och kommunfilernas format ska vara oförändrade.
 * Ingen abstraktion förrän två konkreta fall behöver den; här finns tre.
 * Adaptrarnas egna moduler, och deras tester, ska inte behöva skrivas om.
@@ -84,7 +85,9 @@ importerar någon adapter), och `tests/test_upptack.py`,
 `test_upptack_meetingsplus.py`, `test_sitevision*.py`,
 `test_episerver*.py` och `test_meetingsplus*.py` med samma förväntade
 kandidater som förut. Kandidatlistorna för Kungsbackas och regionens
-levande källor jämfördes före och efter med samma inspelade svar.
+levande källor jämfördes för hand före och efter med samma inspelade svar
+från källorna. Arkivets lista prövas bara med testernas fixturer, eftersom
+Internet Archive inte nås från utvecklingsmiljön.
 
 ## Pros and Cons of the Options
 

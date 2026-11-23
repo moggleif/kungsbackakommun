@@ -25,7 +25,8 @@ Hamta = Callable[[str], str]
 
 
 class Organsida(NamedTuple):
-    """Organets sida i källan, som luckorna länkar till."""
+    """Organets sida i källan, som luckorna länkar till; texten är sidans
+    namn på plattformen."""
 
     adress: str
     text: str
@@ -33,6 +34,9 @@ class Organsida(NamedTuple):
 
 
 class Kalla(Protocol):
+    """Delarna står i docs/03-ARKITEKTUR.md under Källorna. Det levande
+    fyndet har inga noteringar; de är arkivets."""
+
     bakat: ClassVar[bool]
 
     def levande(self, hamta: Hamta) -> Fynd: ...
