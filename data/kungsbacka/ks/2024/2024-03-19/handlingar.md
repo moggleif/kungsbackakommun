@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.29e29ba018df2c6344728d60/1710401473
 sha256: 6b3b2d7f63b6a23003f78e021bc4f431ca1210b42957bf6f2b087e8e2b3b6491
 bytes: 125157393
 sidor: 506
-hamtad: 2026-11-18T11:52:24+00:00
-konverterad: 2026-11-18T11:58:36+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-23T14:08:57+00:00
+konverterad: 2026-11-23T14:17:14+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr]
-tal_obekraftade: [17, 23, 34, 35, 36, 37, 38, 52, 53, 62, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 81, 185, 190, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 415, 416, 436, 438, 471, 472, 505, 506]
-figurer: [12, 15, 16, 17, 20, 21, 28, 29, 31, 34, 35, 36, 38, 39, 42, 43, 46, 47, 48, 51, 53, 60, 61, 62, 64, 65, 69, 70, 71, 72, 73, 74, 75, 76, 77, 80, 82, 85, 87, 108, 117, 126, 138, 139, 160, 161, 162, 163, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 194, 243, 256, 257, 259, 266, 267, 272, 275, 276, 277, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 292, 294, 295, 298, 299, 301, 302, 303, 305, 307, 308, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 396, 397, 402, 436, 437, 438, 439, 483, 484]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr]
+tal_obekraftade: [17, 23, 34, 35, 36, 37, 38, 52, 53, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 81, 185, 190, 196, 197, 198, 199, 200, 201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 227, 232, 233, 234, 235, 236, 237, 238, 239, 241, 242, 416, 436, 438, 471, 472, 505, 506]
+figurer: [12, 15, 16, 17, 20, 21, 28, 29, 31, 34, 35, 36, 38, 39, 42, 43, 46, 47, 48, 51, 53, 60, 61, 62, 64, 65, 69, 70, 71, 72, 73, 74, 75, 76, 77, 80, 82, 85, 87, 108, 117, 126, 138, 139, 160, 161, 162, 163, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 194, 215, 225, 227, 242, 243, 256, 257, 259, 266, 267, 272, 275, 276, 277, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 292, 294, 295, 298, 299, 301, 302, 303, 305, 307, 308, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 396, 397, 402, 436, 437, 438, 439, 483, 484]
 tolkade: []
 granskad: null
 ---
@@ -9267,7 +9267,7 @@ D
 
 13.2
 
-7018\)
+7(18)
 
 GENOMFÖRANDE AV ALLMÄN PLATS
 Kommunaltekniska anläggningar som Exploatören bygger ut
@@ -10031,9 +10031,93 @@ Bilaga D — Kompetenskrav entreprenör, projektör och mättekniker
 
 <!-- sida 214 -->
 
+GRÄNSER
+PLANBESTÄMMELSER
+Endast angiven användning och utformning ar ulåtn. Dar betockning
+saknas galler bestämmelsen Inom hela området.
+Komplementbyggnad ska placeras minst 3 meter
+utfart.
+Skydd mot störningar
+Ekvwalonta ljudnivån 50 dBA och maximala
+av skolgården som är avsedda för lek, vila och
+Markrosorvat för allmännyttiga ändamål
+Allmän platsmark f, Endast radhus.
+GATA Gata. fa Endast friliggando onbostadshus eller parhus,
+vi och I får balkonger och skarmtak uppföras.
+Begränsning av markens utnyttjande I Kompleme! Inader får uppta max.
+Startbesked får Inte ges för byggnation förran
+plats GAT
+allman plats GATA.
+eka placeras minst 1 metor |
+motor från utfart.
+Detalj; är baserad på koordinatsystemet SWEREF 99
+Skala 1:1000 i A1, skala 1:2000 i A3
+TECKENFÖRKLARING RTA
+1200 och höjdsystemet RH 2000
+Höjdkurva 5,0 m
+— — — Fastighetsgränser LM - Komplementbyggnad
+Gång och cykelbana
+vägbana
+Dike
+omde
+behövs finns i
+som
+Detaljplan för bostäder och
+utbildningslokaler inom
+Antagandehandling
+Laga kraft
+Verksamhetschef Plan Planarkitekt 2020-00032 | Ja
+Detaljplanen ät rättad onli;
+
 <!-- sida 215 -->
 
+PLANBESTÄMMELSER i På Komplomentbyggnad ska placeras minst 3 meter
+ljudnivån 70 dBA får Into överskridas för de dolar
+av skolgården som ar avsedda för lok, vila och
+ANVÄNDNING AV MARK | Utformning
+GATA Gata. f, Endast frillggando enbostadshus oller parhus.
+byggnadskropp. Därutöver får balkonger (även
+och I får balkonger och skärmtak uppföras.
+Begränsning av markens utnyttjande Komplementbyggnader får uppta max 400 mf".
+från medelmarknivå och får Inrymma 4 våningar. meter, Detta är utöver den byggnadsarea för
+plats GATA
+allman plats GATA. I
+På Komplementbyggnad ska placeras minst 1 meter I
+Garageport ska placeras minst 8 meter från
+allmän plate GATA.
+På Komplementbyggnad ska placeras minst 1 meter |
+Skala 1:1000 i A1, skala 1:2000 i A3 N [UPPLYSNING Detaljplan för bostäd H
+ion om de som 'alp acer Antagandehandling
+Höjdkurva 1,0 m — vägbana Antagande
+
 <!-- sida 216 -->
+
+Bilaga C - område
+PLANBESTÄMMELSER
+| På Komplomentbyggnad ska placeras minst 3 meter
+Endast angiven användning och utformning ar tillåten. Dar beteckning
+saknas gäller bostammelsen inom hela området.
+GRÄNSER
+| Skydd
+I m, Ekvivalenta ljudnivån 50 dBA och maximala
+ljudnivån 70 dBA får Inte överskridas för de delar
+av skolgården som ar avsedda för lok, vila och
+| Stängsel, utfart och annan utgång
+motor från utfart. |
+ANVÄNDNING AV MARK | Utformning
+Allmän platsmark f Endast radhus.
+byggnadskropp. Darutover får balkonger och
+byggnadskrapp. Därutöver får balkonger (aven
+Utöver det får tekniska uppstickande delar | huvudbyggnad som avses I bestammelsema 04
+allman plats GATA. I
+far samt minst 3 meter från utfart.
+allmän plats GATA. I <
+På Komplementbyggnad ska placeras minst 1 meter |
+är baserad på koordinatsystemet SWEREF 99
+Skala 1:1000 i A1, skala 1:2000 i A3
+1200 och höjdsystemet RH 2000
+UPPLYSNING
+Detaljplan för bostäder och
 
 <!-- sida 217 -->
 
@@ -10451,6 +10535,10 @@ A: Exploateringsområde samt Projektområde
 Sign
 
 <!-- sida 225 -->
+
+Lila mringat omrade = 1010 Angar 2
+Blått inringat område = Planområde/Exploateringsområde
+Rött inringat område = Projektområde
 
 <!-- sida 226 -->
 
