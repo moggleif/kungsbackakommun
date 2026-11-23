@@ -1,5 +1,5 @@
 """Krav: K50 i docs/02-KRAV.md, ADR-0073. Kod: src/kommunhandlingar/webbplats/
-malar.py, malsida.py och mal.js."""
+malar.py, malarskort.py, malprotokoll.py, malsida.py och mal.js."""
 
 import unittest
 

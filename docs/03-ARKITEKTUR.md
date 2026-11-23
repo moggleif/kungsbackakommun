@@ -2517,12 +2517,14 @@ filen (K26), länkad från organets sida.
     En bedömning utan status står som "enligt färgen i källan".
     Fokusområdenas kort står inuti sitt kommunmåls kort, som då tar hela
     bredden.
-  - **Ett år i taget** (`webbplats/malar.py`): en knapp per år och ett
+  - **Ett år i taget** (`webbplats/malar.py`, korten i
+    `webbplats/malarskort.py`): en knapp per år och ett
     avsnitt per år, nyast först. Avsnittet har årets antal (samma ruta som
     sammandragets), ett kort per spår med årets rubrik, formulering,
     status och källa, märkt "nytt" när spåret inte står året innan, en
     lista med spåren som stod året innan men inte i år, och protokollens
-    uppföljningar och dragningar det året med länk till paragrafens sida.
+    uppföljningar och dragningar det året med länk till paragrafens sida
+    (`webbplats/malprotokoll.py`).
     Fokusområdena står i sitt kommunmåls kort, och för sig ett år då
     kommunmålet saknas. En lucka och ett år utan mål
     sägs med ord, efter en lucka jämförs inte med året innan, och ett år
