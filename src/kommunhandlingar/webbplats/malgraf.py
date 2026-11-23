@@ -27,7 +27,7 @@ def graf(ar: list[int], serier: list[Serie]) -> str:
     steg = 1 if topp <= 6 else 2 if topp <= 12 else 5
     topp = -(-topp // steg) * steg
     punkt = punktare(len(ar), topp)
-    delar = [axlar(ar, topp, steg, punkt)]
+    delar = [axlar(ar, range(0, topp + 1, steg), punkt)]
     for nr, (namn, varden) in enumerate(serier):
         delar.append(linje(varden, STILAR[nr], punkt))
         delar.append(forklaring(nr, namn, STILAR[nr]))
@@ -48,9 +48,9 @@ def punktare(antal: int, topp: int):
     return punkt
 
 
-def axlar(ar: list[int], topp: int, steg: int, punkt) -> str:
+def axlar(ar: list[int], nivaer: range, punkt) -> str:
     delar = []
-    for v in range(0, topp + 1, steg):
+    for v in nivaer:
         x, y = punkt(0, v)
         delar.append(
             f'<line x1="{x}" x2="{BREDD - HOGER}" y1="{y}" y2="{y}" '
@@ -65,20 +65,23 @@ def axlar(ar: list[int], topp: int, steg: int, punkt) -> str:
 
 def linje(varden: list[int | None], stil: tuple[str, str], punkt) -> str:
     streck, fyllning = stil
-    delar = []
     med = [(i, v) for i, v in enumerate(varden) if v is not None]
-    # Följande år har samma skillnad mellan år och plats i listan.
+    return bitar(med, streck, punkt) + "".join(
+        f'<circle cx="{x}" cy="{y}" r="4" style="fill: {fyllning}" '
+        'stroke="currentColor"/>'
+        for x, y in (punkt(i, v) for i, v in med)
+    )
+
+
+# Följande år har samma skillnad mellan år och plats i listan.
+def bitar(med: list[tuple[int, int]], streck: str, punkt) -> str:
+    delar = []
     for _, bit in groupby(enumerate(med), key=lambda e: e[1][0] - e[0]):
         xy = " ".join("{},{}".format(*punkt(i, v)) for _, (i, v) in bit)
         delar.append(
             f'<polyline points="{xy}" fill="none" stroke="currentColor" '
             f'stroke-width="2" {streck}/>'
         )
-    delar += [
-        f'<circle cx="{x}" cy="{y}" r="4" style="fill: {fyllning}" '
-        'stroke="currentColor"/>'
-        for x, y in (punkt(i, v) for i, v in med)
-    ]
     return "".join(delar)
 
 
