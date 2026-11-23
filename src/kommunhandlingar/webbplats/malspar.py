@@ -1,4 +1,4 @@
-"""Krav: K29, K35 och K50 i docs/02-KRAV.md, ADR-0050, ADR-0056 och ADR-0073.
+"""Krav: K29, K35, K50 och K60 i docs/02-KRAV.md, ADR-0050, ADR-0056 och ADR-0073.
 Test: tests/test_malkort.py, tests/test_fokusomraden.py och tests/test_malar.py.
 
 Det tidslinjen, korten och Ett år i taget alla behöver: underlaget, och om
@@ -15,8 +15,8 @@ from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 FORETRADE = ("utfall", "rapport", "prognos", "")
 
 
-# Sidans spår, kommunens år, organets luckor och protokollens uppföljningar,
-# som alla tre perspektiven utgår från.
+# Det sidans perspektiv och antalet per år räknas ur. Det står här, under
+# tidslinjen, korten och Ett år i taget, eftersom malar.py läser ur malkort.py.
 @dataclass(frozen=True)
 class Underlag:
     spar: list[list[Mal]]

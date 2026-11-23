@@ -7,7 +7,8 @@ per år (`malstatistik.py`), ett urval och tre perspektiv: tidslinjen
 (`maltidslinje.py`), ett år i taget (`malar.py`) och ett kort per spår
 (`malkort.py`). Skriptet i `mal.js` visar bara det som valts och öppnar
 kortet för ett mål som väljs i tidslinjen, och `perspektiv.js` visar ett
-perspektiv i taget; utan dem står allt på sidan. Stilen står i `mal.css`.
+perspektiv i taget; utan dem står allt på sidan. Löptexterna står i
+`maltexter.py` och stilen i `mal.css`.
 """
 
 from collections import defaultdict
