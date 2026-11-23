@@ -1,5 +1,5 @@
 """Krav: K79 i docs/02-KRAV.md, med K8, K11, K53 och ADR-0088.
-Kod: src/kommunhandlingar/hamta.py.
+Kod: src/kommunhandlingar/hamta.py och provning.py.
 
 Steg 2:s kommando som nattkörningen anropar, i en temporär arbetskatalog
 utan nät: klienten och klockan byts ut i `hamta`, och OCR-kontrollen
@@ -21,7 +21,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from unittest import mock
 
-from kommunhandlingar import hamta, konfiguration, provade
+from kommunhandlingar import hamta, konfiguration, provade, provning
 from kommunhandlingar.kandidat import lista
 from kommunhandlingar.tidsbudget import Tidsgrans
 from kommunhandlingar.upptack import skriv
@@ -106,14 +106,14 @@ class TestDelar(Kommandofall):
         self.assertEqual(provfil.read_text(encoding="utf-8"), "s:1\ns:2\ns:3\n")
 
     def test_den_som_lades_at_sidan_raknas_inte_som_provad(self):
-        riktig = hamta.behandla
+        riktig = provning.behandla
 
         def andra_nar_gransen(steg, k):
             if k.url == "u2":
                 raise Tidsgrans
             return riktig(steg, k)
 
-        with mock.patch.object(hamta, "behandla", andra_nar_gransen):
+        with mock.patch.object(provning, "behandla", andra_nar_gransen):
             kod, utskrift = self.kor("--del", str(DEL))
         self.assertEqual(kod, hamta.MER_I_NASTA_DEL)
         self.assertIn("lagd åt sidan vid tidsgränsen: u2\n", utskrift)

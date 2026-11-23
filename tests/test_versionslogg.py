@@ -1,5 +1,5 @@
-"""Krav: K53 i docs/02-KRAV.md, ADR-0077. Kod: src/kommunhandlingar/versionslogg.py
-och hamta.py."""
+"""Krav: K53 i docs/02-KRAV.md, ADR-0077. Kod: src/kommunhandlingar/versionslogg.py,
+hamta.py och provning.py."""
 
 import tempfile
 import unittest
@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 from unittest import mock
 
-from kommunhandlingar import hamta, tidsbudget, versionslogg
+from kommunhandlingar import hamta, provning, tidsbudget, versionslogg
 from kommunhandlingar.pool import Pool
 from tests.test_hamta import TID, Steg2Fall, kandidat
 
@@ -114,14 +114,14 @@ class TestSteg2(Steg2Fall):
         self.klient.filer["u1"] = "fel:404"
         logg = self.data / "logg.csv"
         k1, k2 = kandidat("s:1", "u1"), kandidat("s:2", "u2", "kallelse", "K.pdf")
-        riktig = hamta.behandla
+        riktig = provning.behandla
 
         def forst_riktig_sedan_fel(steg, k):
             if k is k2:
                 raise RuntimeError
             return riktig(steg, k)
 
-        fel = mock.patch.object(hamta, "behandla", forst_riktig_sedan_fel)
+        fel = mock.patch.object(provning, "behandla", forst_riktig_sedan_fel)
         with fel, self.assertRaises(RuntimeError):
             self.kor_med_logg(logg, k1, k2)
         self.assertEqual(len(logg.read_text(encoding="utf-8").splitlines()), 2)

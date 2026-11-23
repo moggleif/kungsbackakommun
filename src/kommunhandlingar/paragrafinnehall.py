@@ -78,8 +78,12 @@ def beslut(rader: list[str]) -> str | None:
     rubriker = [" ".join(r.split()).rstrip(":") for r in forsta_sidan]
     if "Beslut" not in rubriker:
         return None
+    return beslutstext(stripade[rubriker.index("Beslut") + 1 :])
+
+
+def beslutstext(rader: list[str]) -> str | None:
     text = []
-    for rad in stripade[rubriker.index("Beslut") + 1 :]:
+    for rad in rader:
         if sidslut(rad):
             return None
         if avsnitt(rad):

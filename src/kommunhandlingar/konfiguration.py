@@ -55,7 +55,7 @@ def las(sokvag: Path) -> Kommun:
         return tolka(sokvag.stem, tomllib.load(fil))
 
 
-def tolka(kommun_id: str, data: dict) -> Kommun:
+def tolka(kommun_id: str, data: dict) -> Kommun:  # undantag: följden avgör felet
     schema.kontrollera_falt(data, KOMMUNFALT, "kommunen")
     namn = schema.varde(data, "namn", str, "kommunen")
     organ = organen(poster(data, "organ"))

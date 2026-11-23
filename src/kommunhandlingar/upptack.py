@@ -6,32 +6,24 @@ Steg 1: `python -m kommunhandlingar.upptack <kommunfil> <arbetskatalog>
 [--arkiv] [--start N]`. Hämtar kommunens källsidor, kör adaptern och
 skriver kandidatlistan; med `--arkiv` arkivets lista, som blir tom när
 tidsbudgetens mjuka gräns räknat från `--start` är passerad, eller när den
-hårda nås under upptäckten. `hamtning.toml` läses från repot som
-kommunfilen ligger i.
+hårda nås under upptäckten (`arkivupptackt.py`). `hamtning.toml` läses
+från repot som kommunfilen ligger i.
 """
 
 import argparse
 import sys
 from collections import Counter
 from dataclasses import replace
-from datetime import UTC, datetime
 from functools import partial
 from pathlib import Path
 
-from kommunhandlingar import konfiguration, tidsbudget
-from kommunhandlingar.adaptrar import (
-    episerver_arkiv,
-    meetingsplus,
-    sitevision,
-    sitevision_arkiv,
-    sitevision_projekt,
-)
+from kommunhandlingar import arkivupptackt, konfiguration, tidsbudget
+from kommunhandlingar.adaptrar import meetingsplus, sitevision, sitevision_projekt
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.hamtare import Lasare
 from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Fynd, lista, ordna, ordna_bakat, skriv
-from kommunhandlingar.tidsbudget import Tidsgrans
 
 
 def upptack(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
@@ -67,31 +59,6 @@ def projekten(kommun: konfiguration.Kommun, klient: Lasare, moten: set[str]) -> 
     return replace(fynd, kandidater=egna)
 
 
-def upptack_arkiv(
-    kommun: konfiguration.Kommun, klient: Lasare, start: datetime | None
-) -> Fynd:
-    """Arkivet frågas inte efter den mjuka gränsen och avbryts vid den hårda."""
-    if datetime.now(UTC) >= tidsbudget.mjuk_grans(start):
-        return Fynd(noteringar=["väntar på nästa körning; tidsbudgeten är slut"])
-    if start:
-        tidsbudget.starta_hard_grans(start, datetime.now(UTC))
-    try:
-        return las_arkivet(kommun, klient)
-    except Tidsgrans:
-        return Fynd(noteringar=["avbrutet vid tidsbudgetens hårda gräns"])
-    finally:
-        tidsbudget.stoppa()
-
-
-def las_arkivet(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
-    lasningar = [(sitevision_arkiv.upptack, k) for k in kommun.kallor if k.wayback] + [
-        (episerver_arkiv.upptack, k) for k in kommun.arkivkallor
-    ]
-    fynd = sum((upptack_kallan(k, klient) for upptack_kallan, k in lasningar), Fynd())
-    organordning = [o.id for o in kommun.organ]
-    return replace(fynd, kandidater=ordna_bakat(fynd.kandidater, organordning))
-
-
 def sida(klient: Lasare, adress: str) -> str:
     try:
         return klient.text(adress)
@@ -124,7 +91,7 @@ def main(arg: argparse.Namespace) -> None:
     kommun = konfiguration.las(arg.kommunfil)
     klient = Klient(installningar.las(rot / "hamtning.toml"))
     if arg.arkiv:
-        fynd = upptack_arkiv(kommun, klient, arg.start)
+        fynd = arkivupptackt.upptack(kommun, klient, arg.start)
     else:
         fynd = upptack(kommun, klient)
     katalog.mkdir(parents=True, exist_ok=True)

@@ -14,13 +14,13 @@ def kontrollera_falt(post: dict, tillatna: set[str], var: str) -> None:
         raise Konfigurationsfel(f"{var}: okänt fält {', '.join(okanda)}")
 
 
-def varde(post: dict, falt: str, slag: type, var: str):
+def varde(post: dict, falt: str, slag: type, var: str):  # noqa: PLR0913  # undantag: posten, fältet, slaget och var i kommunfilen är vad en schemakontroll behöver
     if falt not in post:
         raise Konfigurationsfel(f"{var}: fältet {falt} saknas")
     return valfritt(post, falt, slag, var)
 
 
-def valfritt(post: dict, falt: str, slag: type, var: str):
+def valfritt(post: dict, falt: str, slag: type, var: str):  # noqa: PLR0913  # undantag: samma fyra som varde, som anropar den
     if falt in post and not ar_av_slag(post[falt], slag):
         raise Konfigurationsfel(f"{var}: {falt} ska vara {slag.__name__}")
     return post.get(falt)

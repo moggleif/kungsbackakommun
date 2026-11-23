@@ -1,5 +1,5 @@
 """Krav: K80 i docs/02-KRAV.md, med K2, K16 och ADR-0061.
-Kod: src/kommunhandlingar/upptack.py.
+Kod: src/kommunhandlingar/upptack.py och arkivupptackt.py.
 
 Steg 1:s kommando som nattkörningen anropar, i ett temporärt repo utan nät:
 klienten byts ut mot en påhittad med fixturernas sidor.

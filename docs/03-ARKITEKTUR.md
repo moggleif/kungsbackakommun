@@ -332,6 +332,7 @@ src/kommunhandlingar/
                    meetingsplus_html.py läser Meetings Plus sidor,
                    meetingsplus.py tolkar dem
   upptack.py       steg 1: hämtar källsidorna och skriver kandidatlistan
+  arkivupptackt.py steg 1 för arkivet, inom tidsbudgeten (K16)
   hamtning/        artig HTTP-klient: robots.txt, intervall och nya försök
                    klient.py håller intervallet, robots.txt och försöken,
                    svar.py läser svaret och översätter fel till nytt försök
@@ -339,6 +340,7 @@ src/kommunhandlingar/
                    (Lasare för sidor, Hamtare för filer), robots.py
                    tolkar robots.txt, installningar.py läser hamtning.toml
   hamta.py         steg 2: tar kandidatlistan in i poolen, ett dokument i taget
+  provning.py      steg 2:s körning över kandidaterna tills tiden går ut
   versionslogg.py  versionsloggen: nya och ändrade dokument efter steg 2 (K53)
   behandla.py      steg 2 för en kandidat: hoppa över, hämta eller konvertera
   utfall.py        vad steg 2 gjorde med en kandidat: text och om det loggas,

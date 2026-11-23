@@ -72,7 +72,7 @@ def utan_avbrott():
 
 
 @contextmanager
-def hogst(sekunder: int):
+def hogst(sekunder: int):  # undantag: signalhanteringen läses i ett stycke
     """Larmet för den hårda gränsen står kvar när det kommer först, och
     ställs annars tillbaka efteråt, räknat på bråkdelar av sekunder."""
     kvar = signal.getitimer(signal.ITIMER_REAL)[0]
