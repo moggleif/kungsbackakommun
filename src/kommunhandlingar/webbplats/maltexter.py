@@ -1,10 +1,11 @@
-"""Krav: K26, K27, K29, K35, K50 och K60 i docs/02-KRAV.md, ADR-0044,
-ADR-0045, ADR-0050, ADR-0051, ADR-0056, ADR-0073 och ADR-0086. Test:
-tests/test_webbplatsbild.py, tests/test_fokusomraden.py och
+"""Krav: K26, K27, K28, K29, K35, K50 och K60 i docs/02-KRAV.md, ADR-0044,
+ADR-0045, ADR-0046, ADR-0050, ADR-0051, ADR-0056, ADR-0073 och ADR-0086.
+Test: tests/test_webbplatsbild.py, tests/test_fokusomraden.py och
 tests/test_malar.py.
 
 Löptexterna på sidan om ett organs mål och direktiv: inledningen, metoden,
-åren och fokusområdena i Om sidan, och väljaren av perspektiv.
+åren och fokusområdena i Om sidan, förklaringen under tabellen över antal
+per år och väljaren av perspektiv.
 """
 
 INLEDNING = (
@@ -47,6 +48,19 @@ FOKUS = (
     "källans bedömning står i texten. Budgeten och uppföljningen kan "
     "skriva ett fokusområde på olika sätt samma år, och då har det en rad "
     "för varje.</p>"
+)
+
+ANTALET = (
+    "<p>Varje mål räknas en gång per år, också när det har två rubriker. "
+    "Uppföljningarna är de delårsrapporter, årsredovisningar och andra "
+    "rapporter som målen är lästa ur; en uppföljning som inte gått att "
+    "hämta till poolen räknas inte. Ett år utan mål står som –, eftersom "
+    "dokumenten kan saknas i poolen. Uppföljningar i protokollen och "
+    "dragningar om målen är paragraferna i mötets protokoll där organet "
+    "godkänner eller tar emot en uppföljning, som årsredovisningen, "
+    "delårsrapporten eller uppföljningen per april, eller noterar en "
+    "dragning om målen, och räknas på mötets år. Ett år utan protokoll i "
+    "poolen står som –, och protokoll kan saknas också andra år.</p>"
 )
 
 # Väljaren visas av skriptet, som visar ett perspektiv i taget (ADR-0073).

@@ -13,24 +13,12 @@ bredvid grafen, och tabellen är hopfälld under dem.
 
 from dataclasses import dataclass
 
-from kommunhandlingar import frontmatter
-from kommunhandlingar.konvertering.kvalitet import UTAN_TEXT
 from kommunhandlingar.webbplats.mal import SLAG, Mal
-from kommunhandlingar.webbplats.malgraf import graf
+from kommunhandlingar.webbplats.malgraf import Serie, graf
+from kommunhandlingar.webbplats.malspar import Underlag
+from kommunhandlingar.webbplats.maltexter import ANTALET
 from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 
-FORKLARING = (
-    "<p>Varje mål räknas en gång per år, också när det har två rubriker. "
-    "Uppföljningarna är de delårsrapporter, årsredovisningar och andra "
-    "rapporter som målen är lästa ur; en uppföljning som inte gått att "
-    "hämta till poolen räknas inte. Ett år utan mål står som –, eftersom "
-    "dokumenten kan saknas i poolen. Uppföljningar i protokollen och "
-    "dragningar om målen är paragraferna i mötets protokoll där organet "
-    "godkänner eller tar emot en uppföljning, som årsredovisningen, "
-    "delårsrapporten eller uppföljningen per april, eller noterar en "
-    "dragning om målen, och räknas på mötets år. Ett år utan protokoll i "
-    "poolen står som –, och protokoll kan saknas också andra år.</p>"
-)
 FLERTAL = {
     "nämndmål": "nämndmål",
     "kommunmål": "kommunmål",
@@ -53,58 +41,64 @@ class Antal:
         return (*self.per_slag, self.uppfoljningar, self.med_bedomning)
 
 
-def statistik(
-    malen: list[Mal], uppfoljningar: list[Uppfoljning], protokollar: set[int], ar: range
-) -> str:
-    slagen = [s for s in SLAG if any(m.slag == s for m in malen)]
-    antal = [rakna([m for m in malen if m.ar == a], slagen) for a in ar]
-    namnden = [
-        i_namnden([u for u in uppfoljningar if u.ar == a]) if a in protokollar else None
-        for a in ar
-    ]
-    serier = [
-        (FLERTAL[s].capitalize(), [a and a.per_slag[i] for a in antal])
-        for i, s in enumerate(slagen)
-    ]
+@dataclass(frozen=True)
+class Aret:
+    ar: int
+    antal: Antal | None
+    namnden: tuple[int, int] | None
+
+
+def statistik(underlag: Underlag) -> str:
+    slagen = slagen_pa(underlag.malen)
+    aren = [aret(underlag, slagen, a) for a in underlag.ar]
+    sista = max(m.ar for m in underlag.malen)
     return (
         '<h2 id="antal">Antal per år</h2><div class="sammandrag">'
-        + arets_ruta(malen, uppfoljningar, protokollar, max(m.ar for m in malen))
-        + f'<div class="ruta">{graf(list(ar), serier)}</div></div>'
-        + "<details><summary>Tabell över antal per år</summary>"
-        + tabell(ar, slagen, antal, namnden)
-        + FORKLARING
+        + arets_ruta(underlag, sista)
+        + f'<div class="ruta">{graf(list(underlag.ar), serier(slagen, aren))}</div>'
+        + "</div><details><summary>Tabell över antal per år</summary>"
+        + tabell(aren, slagen)
+        + ANTALET
         + "</details>"
     )
 
 
+def slagen_pa(malen: list[Mal]) -> list[str]:
+    return [s for s in SLAG if any(m.slag == s for m in malen)]
+
+
+# Ett år utan mål har inget antal, och ett år utan protokoll med text inga
+# uppföljningar i protokollen.
+def aret(underlag: Underlag, slagen: list[str], ar: int) -> Aret:
+    arets = [u for u in underlag.uppfoljda if u.ar == ar]
+    namnden = i_namnden(arets) if ar in underlag.protokollar else None
+    return Aret(ar, rakna([m for m in underlag.malen if m.ar == ar], slagen), namnden)
+
+
+def serier(slagen: list[str], aren: list[Aret]) -> list[Serie]:
+    return [
+        (FLERTAL[s].capitalize(), [a.antal and a.antal.per_slag[i] for a in aren])
+        for i, s in enumerate(slagen)
+    ]
+
+
 # Året har mål: rutan bredvid grafen gäller målens senaste år, och Ett år
 # i taget visar rutan bara för år med mål.
-def senaste(ar: int, slagen: list[str], antal: Antal, namnden: tuple | None) -> str:
-    tal = list(zip(antal.per_slag, (FLERTAL[s] for s in slagen), strict=True))
-    if namnden:
-        tal += zip(namnden, NAMNDEN, strict=True)
+def senaste(aret: Aret, slagen: list[str]) -> str:
+    tal = list(zip(aret.antal.per_slag, (FLERTAL[s] for s in slagen), strict=True))
+    if aret.namnden:
+        tal += zip(aret.namnden, NAMNDEN, strict=True)
     siffror = "".join(f"<div><dt>{text}</dt><dd>{n}</dd></div>" for n, text in tal)
-    return f'<div class="ruta"><h3>{ar}</h3><dl class="siffror">{siffror}</dl></div>'
+    return (
+        f'<div class="ruta"><h3>{aret.ar}</h3><dl class="siffror">{siffror}</dl></div>'
+    )
 
 
 # Ett år med mål: det senaste i sammandraget, och varje år i Ett år i taget
 # (K50).
-def arets_ruta(
-    malen: list[Mal], uppfoljningar: list[Uppfoljning], med_protokoll: set[int], ar: int
-) -> str:
-    slagen = [s for s in SLAG if any(m.slag == s for m in malen)]
-    arets = [u for u in uppfoljningar if u.ar == ar]
-    namnden = i_namnden(arets) if ar in med_protokoll else None
-    return senaste(ar, slagen, rakna([m for m in malen if m.ar == ar], slagen), namnden)
-
-
-# Uppföljningarna i protokollen räknas bara år med ett protokoll med text.
-def protokollar(organets: list[dict]) -> set[int]:
-    return {
-        frontmatter.ar(d)
-        for d in organets
-        if d["typ"] == "protokoll" and d["kvalitet"] not in UTAN_TEXT
-    }
+def arets_ruta(underlag: Underlag, ar: int) -> str:
+    slagen = slagen_pa(underlag.malen)
+    return senaste(aret(underlag, slagen, ar), slagen)
 
 
 def rakna(arets: list[Mal], slagen: list[str]) -> Antal | None:
@@ -125,22 +119,22 @@ def i_namnden(arets: list[Uppfoljning]) -> tuple[int, int]:
     )
 
 
-def tabell(ar: range, slagen: list[str], antal: list[Antal | None], namnden) -> str:
+def tabell(aren: list[Aret], slagen: list[str]) -> str:
     rubriker = ["År", *(FLERTAL[s].capitalize() for s in slagen), *RUBRIKER]
     rubriker += [n.capitalize() for n in NAMNDEN]
     huvud = "".join(f'<th scope="col">{t}</th>' for t in rubriker)
     kolumner = len(slagen) + len(RUBRIKER)
-    rader = "".join(
-        f'<tr><th scope="row">{a}</th>'
-        + "".join(f'<td class="tal">{t}</td>' for t in tal_i(n and n.tal, kolumner))
-        + "".join(f'<td class="tal">{t}</td>' for t in tal_i(i, 2))
-        + "</tr>"
-        for a, n, i in zip(ar, antal, namnden, strict=True)
-    )
+    rader = "".join(tabellrad(a, kolumner) for a in aren)
     return (
         f'<div class="tabell"><table><thead><tr>{huvud}</tr></thead>'
         f"<tbody>{rader}</tbody></table></div>"
     )
+
+
+def tabellrad(aret: Aret, kolumner: int) -> str:
+    tal = tal_i(aret.antal and aret.antal.tal, kolumner) + tal_i(aret.namnden, 2)
+    celler = "".join(f'<td class="tal">{t}</td>' for t in tal)
+    return f'<tr><th scope="row">{aret.ar}</th>{celler}</tr>'
 
 
 # Ett år utan uppgift är ett streck i varje kolumn, inte en nolla.

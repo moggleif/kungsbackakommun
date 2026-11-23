@@ -1,5 +1,5 @@
 """Krav: K28 i docs/02-KRAV.md, ADR-0046. Kod: src/kommunhandlingar/webbplats/
-uppfoljningar.py, malstatistik.py, inlasning.py och bygg.py."""
+uppfoljningar.py, malstatistik.py, malsida.py, inlasning.py och bygg.py."""
 
 import re
 import shutil

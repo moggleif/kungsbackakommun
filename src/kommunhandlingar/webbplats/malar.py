@@ -55,7 +55,7 @@ def innehall(underlag: Underlag, ar: int) -> str:
 def arets_mal(underlag: Underlag, ar: int) -> str:
     kort = "".join(arskort(underlag, nr, ar) for nr in ordnade(underlag, ar))
     return (
-        arets_ruta(underlag.malen, underlag.uppfoljda, underlag.protokollar, ar)
+        arets_ruta(underlag, ar)
         + jamforelse(underlag, ar)
         + f'<div class="malkort">{kort}</div>'
     )

@@ -2576,7 +2576,8 @@ målfilen, med en rad per paragraf i ett protokoll:
 - **Räkningen** (`webbplats/malstatistik.py`) går på mötets år, för
   tabellens år, alltså kommunens. Ett år utan protokoll
   med text från organet i poolen (inte `ej-hamtad` eller
-  `ej-konverterad`) står som –.
+  `ej-konverterad`) står som –; åren med protokoll läses i
+  `webbplats/malsida.py`.
 
 ## Lokalbehov
 
