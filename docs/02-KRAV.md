@@ -2610,8 +2610,7 @@ låg över dem togs bort i #347; utan en spärr växer det tillbaka.
 - **Givet** en fil i `src/` eller `scripts/`, i Python eller i
   webbplatsens skript, med fler än 150 rader
 - **När** kontrollen körs i CI
-- **Så** faller den; en fil får inget undantag. Gränsen hölls vid 250
-  för Python tills spårslagen delats i en fil per slag (#384).
+- **Så** faller den; en fil får inget undantag.
 
 - **Givet** ett test i `tests/` som ligger över målen men inom testernas
   gränser (30 rader per funktion, 250 per fil, 4 parametrar, nästling 3
