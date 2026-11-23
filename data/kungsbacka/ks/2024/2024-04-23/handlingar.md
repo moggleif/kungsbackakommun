@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.2f18dd4b18ecb609445e85a/17133546567
 sha256: 405bdbeb76d08365cda43ec3ea890474fcc1859653098fd22a9741aec2b096c1
 bytes: 164852977
 sidor: 420
-hamtad: 2026-11-18T11:58:36+00:00
-konverterad: 2026-11-18T12:05:20+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-23T14:18:35+00:00
+konverterad: 2026-11-23T14:26:31+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tom, ok, tom, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr]
-tal_obekraftade: [49, 50, 64, 88, 89, 90, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 115, 116, 117, 118, 119, 120, 124, 126, 134, 135, 136, 156, 157, 168, 169, 170, 171, 172, 173, 174, 180, 206, 207, 208, 385, 402, 413, 419, 420]
-figurer: [46, 53, 58, 59, 63, 68, 78, 79, 80, 81, 82, 83, 115, 116, 117, 118, 119, 120, 125, 126, 134, 135, 190, 194, 208, 245, 300, 301, 302, 310, 317, 371, 377, 381, 382, 390, 420]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, bild, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, bild, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tom, ok, tom, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr]
+tal_obekraftade: [49, 50, 64, 88, 89, 90, 96, 97, 101, 104, 106, 107, 109, 110, 115, 116, 117, 126, 134, 136, 156, 157, 168, 169, 170, 171, 172, 174, 180, 206, 402]
+figurer: [46, 53, 58, 59, 63, 64, 68, 78, 79, 80, 81, 82, 83, 89, 104, 109, 115, 116, 117, 118, 119, 120, 124, 125, 126, 134, 135, 136, 174, 180, 190, 194, 208, 245, 300, 301, 302, 310, 317, 371, 377, 381, 382, 390, 402, 413, 420]
 tolkade: []
 granskad: null
 ---
@@ -3621,7 +3621,7 @@ möjligheten till ersättning förverkad.
 11\. UPPFÖRANDE AV KONTORSBYGGNAD
 
 Bolaget har fått bygglov för nybyggnad av kontor och gym inom Området (BNAu
-2022-11-03, 3498), Bygglovet. Bolaget förbinder sig att bebygga Området enligt
+2022-11-03, §498), Bygglovet. Bolaget förbinder sig att bebygga Området enligt
 detta avtal och enligt villkoren i Bygglovet.
 
 Marköverlåtelse sker då byggnation enligt bygglovet påbörjats, enligt punkt 4 och 5
@@ -3633,7 +3633,7 @@ avtal godkänts av kommunstyrelsen, genom beslut som vunnit laga kraft. Byggnat-
 ionen anses påbörjad när Bolaget påbörjat byggnadsarbeten av väsentlig grad, så som
 arbete med bottenplatta.
 
-409\)
+4(9)
 
 <!-- sida 100 -->
 
@@ -4422,7 +4422,7 @@ Kommunicering
 Om åtgärden avviker mot detaljplan, eller ska utföras utanför detaljplan ska berörda
 
 sakägare/grannar få tillfälle att yttra sig innan byggnadsnämnden tar beslut, plan- och bygglagen 9
-kap. 25 8 (PBL, SFS 2010:900).
+kap. 25 § (PBL, SFS 2010:900).
 
 Berörda sakägare har fått tillfälle att yttra sig. Annons har även satts in i dagstidningar då
 berörkretsen har bedömts som stor.
@@ -7322,7 +7322,7 @@ Tvist rörande tolkning av detta avtal ska hänskjutas till allmän domstol.
 
 Detta avtal är upprättat i två likalydande exemplar varav Parterna tagit ett vardera.
 
-Kungsbacka 2024- Kungsbacka 2024- Uu-39
+Kungsbacka 2024- Kungsbacka 2024-04-09
 för Kungsbacka kommun för Eksta Bostadsaktiebolag
 
 Lisa Andersson

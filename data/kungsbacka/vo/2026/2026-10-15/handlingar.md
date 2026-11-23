@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.dedd4261a115a113768e09a/17918092512
 sha256: e6a8a6361eb90d92e12caf7e791895decd894c9a81239745a60e16f8c267725d
 bytes: 12160129
 sidor: 360
-hamtad: 2026-11-22T12:47:35+00:00
-konverterad: 2026-11-22T12:50:35+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T13:15:46+00:00
+konverterad: 2026-11-23T13:21:56+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [47, 48, 49, 50, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342]
+tal_obekraftade: [49, 296, 298, 299, 304, 319, 323, 326, 337, 338, 339, 340]
 figurer: [14, 22, 39, 44, 55, 60, 61, 72, 76, 77, 78, 79, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102, 119, 120, 122, 132, 134, 135, 136, 139, 140, 161, 162, 163, 166, 168, 170, 171, 192, 193, 194, 197, 198, 206, 208, 209, 210, 211, 212, 213, 214, 216, 217, 218, 223, 225, 227, 229, 231, 237, 238, 243, 250, 254, 256, 261, 262, 263, 264, 291, 309, 331, 351]
 tolkade: []
 granskad: null
@@ -13116,17 +13116,17 @@ ll
 
 <!-- sida 297 -->
 
-3.1 Från reaktiv till proaktiv styrning
+5.1 Från reaktiv till proaktiv styrning.
 
-3.2 Suboptimering och kontextens betydelse
+5.2 Suboptimering och kontextens betydelse
 
 36
 38
 39
 
-3.3 Transparens och gemensamma mål
+5.3 Transparens och gemensamma mål
 
-3.4 Reviderad analysmodell
+5.4 Reviderad analysmodell
 
 6\. Slutsats, bidrag och fortsatt forskning
 
@@ -13161,7 +13161,7 @@ Bilaga 2: Förfrågan om intervju till företag
 
 51
 51
-32
+52
 
 <!-- sida 298 -->
 
@@ -13316,7 +13316,7 @@ implementeringen förändrar verksamhetsstyrningen, avser studien att öka förs
 utmaningar som kan uppstå. Därmed kan arbetet bidra med insikter för att vägleda företag
 som står inför eller befinner sig i en implementeringsfas.
 
-I.5 Uppsatsens disposition
+1.5 Uppsatsens disposition
 
 Konceptuell och teoretisk Följande kapitel presenterar studiens referensram och
 
@@ -13946,10 +13946,10 @@ som öppna och utforskande frågor möjliggör att nya teman kan träda fram ur 
 (Alvinius et al., 2023).
 
 Den tematiska analysen genomfördes i sex steg:
-Bekanta sig med data: materialet transkriberas och läses igenom flera gånger.
-Generera koder: identifiera och koda relevanta delar av datan.
-Söka efter teman: organisera koder i potentiella teman.
-Granska och justera teman: kontrollera att teman är relevanta och hänger samman
+1\. Bekanta sig med data: materialet transkriberas och läses igenom flera gånger.
+2\. Generera koder: identifiera och koda relevanta delar av datan.
+3\. Söka efter teman: organisera koder i potentiella teman.
+4\. Granska och justera teman: kontrollera att teman är relevanta och hänger samman
 med datan.
 
 5\. Definiera och namnge teman: tydliggöra vad varje tema representerar.
@@ -14736,7 +14736,7 @@ forskningsfråga i detta avsnitt att besvaras:
 Vilka konsekvenser får implementeringen av digitala dashboards för
 verksamhetsstyrningen i företag?
 
-Slutsats I: Dashboards förändrar styrningens tidsperspektiv
+Slutsats 1: Dashboards förändrar styrningens tidsperspektiv
 Resultatet visar att digitala dashboards ändrar tidsperspektivet på styrningen i företag. Det går
 att sammanfatta i form av fyra tidsmässiga skiften:
 

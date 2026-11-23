@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2e03992c199c92193a169400/1760341527
 sha256: 5cbc5fa98610754f97d506a3595cdbc72e211c434b356590497c929bb9084325
 bytes: 13346143
 sidor: 169
-hamtad: 2026-11-22T12:35:35+00:00
-konverterad: 2026-11-22T12:36:42+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:54:11+00:00
+konverterad: 2026-11-23T12:55:51+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ok, ocr, ocr, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, bild, ok, ok, bild, tabell-osaker, tabell-osaker, bild, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, bild, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 8, 9, 106, 109, 110, 111, 112, 116, 117, 137, 138, 141, 144, 145, 146, 147, 148, 152, 153, 154, 157]
+tal_obekraftade: [1, 9, 109, 110, 117, 138, 141, 144, 146, 147, 148, 153, 154, 157]
 figurer: [1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 61, 68, 70, 71, 75, 80, 81, 84, 89, 90, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 122, 128, 129, 130, 131, 134, 137, 138, 139, 140, 141, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 154, 155, 156, 157, 159, 160]
 tolkade: []
 granskad: null
@@ -5326,7 +5326,7 @@ Kungsbacka
 5\. Hur har din upplevelse varit under din tid som vikarie inom vård och omsorg? Mer
 e Mycket bra Bra Varken bra eller dålig Ganska dålig — € Dålig
 EO |
-100920 090 100924
+100% 0% 100%
 
 Observera svarsfrekvens något låg på enkäterna
 

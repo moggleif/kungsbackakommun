@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1abb884718c8ab9a9f73e7b8/1705474508
 sha256: 9e2d45b2086c80a1c8fbcdc143dd95f235a952a247f40bcbcd3e0244d0b676b6
 bytes: 163597772
 sidor: 589
-hamtad: 2026-11-22T12:56:01+00:00
-konverterad: 2026-11-22T13:04:03+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T13:44:30+00:00
+konverterad: 2026-11-23T13:58:28+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, bild, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [111, 115, 116, 118, 119, 123, 124, 125, 126, 127, 128, 129, 130, 134, 135, 136, 137, 138, 139, 140, 141, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 261, 262, 263, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 304, 306, 336, 337, 340, 341, 342, 343, 344, 454, 527, 537, 538, 545, 560, 570, 571, 589]
+tal_obekraftade: [115, 116, 118, 127, 128, 129, 138, 139, 140, 147, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 232, 234, 236, 237, 239, 240, 241, 242, 244, 246, 247, 248, 249, 250, 251, 252, 253, 254, 261, 262, 263, 266, 267, 269, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 287, 304, 306, 337, 340, 342, 343, 344, 454, 527, 537, 545, 560, 570, 571, 589]
 figurer: [21, 30, 31, 35, 36, 42, 115, 116, 123, 124, 125, 126, 127, 128, 129, 130, 134, 135, 136, 137, 138, 139, 140, 141, 158, 159, 160, 161, 162, 175, 176, 177, 178, 179, 180, 181, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 232, 236, 244, 249, 252, 254, 257, 261, 262, 263, 274, 275, 279, 284, 287, 304, 306, 320, 344, 360, 380, 435, 437, 439, 451, 518, 527, 537, 545, 555, 560, 571, 589]
 tolkade: []
 granskad: null
@@ -9539,7 +9539,7 @@ LÄNSSTYRELSEN Förslag till beslut 2 (12)
 
 2023-10-13 511-2413-16
 
-I enlighet med 3 3 förordningen (1998:1252) om områdesskydd enligt miljöbalken
+I enlighet med 3 § förordningen (1998:1252) om områdesskydd enligt miljöbalken
 m.m. fastställer Länsstyrelsen bifogad skötselplan (bilaga 1).
 
 Syftet med naturreservatet
@@ -10584,7 +10584,7 @@ ringbarkning/- sedan efter
 
 röjning behov
 
-Bokavdödning/- Snarast I 1 Vårdanslaget
+Bokavdödning/- Snarast 1 1 Vårdanslaget
 röjning sedan efter
 
 13
@@ -13798,7 +13798,7 @@ Justerande
 
 Justerare
 
-Stadshuset 2023-09-1
+Stadșhuset 2023-09-13
 
 § 28-34
 
@@ -13975,19 +13975,19 @@ Enligt särskilt avtal mellan Kungsbacka kommun och Västkuststiftelsen skall 2 
 Västkuststiftelsen svara för åtgärder för friluftsliv och naturvård inom egendomen
 med årligt bidrag från Västkuststiftelsen.
 
-84
+§4
 Till stiftelsen inflytande medel skall bilda stiftelsens fond.
 
 Fondmedel, som icke placerats i stiftelsen tillhörig fast egendom, skall insättas på
 bankräkning.
 
-85
+§5
 
 Stiftelsen äger mottaga gåva, donation, legat eller motsvarande under förutsättning
 att därvid inte föreskrivits villkor, som strider mot stiftelsens stadgar och att villkoren
 kan godkännas av styrelsen.
 
-86
+§6
 
 Stiftelsens angelägenheter handhas av en styrelse, som har sitt säte i Kungsbacka.
 Styrelsen ska ha lägst fem och högst nio ordinarie ledamöter med lägst fem och högst
@@ -14007,7 +14007,7 @@ och vid lika röstetal den mening, som biträds av ordföranden.
 Stiftelsen äger företräda stiftelsen och själv eller genom ombud föra dess talan vid
 som utom domstol.
 
-87
+§7
 Styrelsen sammanträder på kallelse av ordföranden eller — vid förfall av denne — av
 vice ordförande.
 

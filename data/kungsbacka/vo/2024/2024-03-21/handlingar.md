@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.99ff57618df2ddb19d38366/17107777120
 sha256: b4dadf45e03cae9c15ec71e56426abfc45c473b7215544f08149b256e9bff0f9
 bytes: 7670549
 sidor: 93
-hamtad: 2026-11-22T12:22:12+00:00
-konverterad: 2026-11-22T12:22:38+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:32:58+00:00
+konverterad: 2026-11-23T12:33:38+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ocr, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [48, 59, 60, 61, 62]
+tal_obekraftade: [48, 59, 61]
 figurer: [1, 12, 13, 14, 33]
 tolkade: []
 granskad: null
@@ -2604,7 +2604,7 @@ Förvaltningschef
 Förvaltningen för Vård & Omsorg
 
 KUNGSBACKA KOMMUN
-202\)
+2 (2)
 
 <!-- sida 61 -->
 
@@ -2665,22 +2665,22 @@ KUB1001, v2.0, 2013-02-26
 KUNGSBACKA KOMMUN
 2 (2)
 
-8 2 Annas Omsorg AB har ansökt om att bli utförare av service- och omsorgsinsatser inom hemtjänsten i
+§ 2 Annas Omsorg AB har ansökt om att bli utförare av service- och omsorgsinsatser inom hemtjänsten i
 Kungsbacka kommun inom nämnden för Vård och Omsorgs verksamhetsområde. Ansökan inkom 2023-11-
 21:
 
-8 3 Företrädare för företaget och förvaltningen för Vård och Omsorg träffades 2023-12-13. Företaget
+§ 3 Företrädare för företaget och förvaltningen för Vård och Omsorg träffades 2023-12-13. Företaget
 företräddes av Anna Ohlén samt Joakim Ohlén och förvaltningen av Clara Engstrand, Annakarin
 Svennebjer, Lotta Kjellner— MAS samt Cecilia Lindblad - SAS. Företaget har efter samtalet intygat att det
 ska utföra uppdraget i enlighet med uppställt förfrågningsunderlag för insatser inom kundvalet. Företrädare
 för förvaltningen anser, efter tillbörliga undersökningar, att företaget uppfyller de krav som ställs i
 förfrågningsunderlaget.
 
-8 4 Ledarna ställer frågor kring hur det går till när man väljer/får kunder som privat hemtjänstutförare samt
+§ 4 Ledarna ställer frågor kring hur det går till när man väljer/får kunder som privat hemtjänstutförare samt
 hur det kan påverka konkurrensen om personal. Arbetsgivaren förklarar hur kundvalet fungerar och vi
 resonerar kring framtiden behov av omsorg.
 
-8 5 Kommunal ställer frågor kring bilar och tvätt av arbetskläder utifrån underlaget och arbetsgivaren
+§ 5 Kommunal ställer frågor kring bilar och tvätt av arbetskläder utifrån underlaget och arbetsgivaren
 förklarar att de kommer bygga upp och dimensionera företaget efterhand som de blir godkända och får
 
 kunder.
@@ -2688,7 +2688,7 @@ kunder.
 § 6 Kommunal frågar om tid för dokumentation samt arbetsplatsträffar. Arbetsgivaren tar med sig frågorna
 och ska återkomma med detaljer.
 
-8 7 Vision frågar om hantering nattetid och arbetsgivaren bekräftar att det är kommunens nattpatrull som
+§ 7 Vision frågar om hantering nattetid och arbetsgivaren bekräftar att det är kommunens nattpatrull som
 täcker det behovet.
 
 § 8 Ledarna ställer en fråga kring följsamhet till arbetstidsregler och arbetsgivaren hänvisar till allas

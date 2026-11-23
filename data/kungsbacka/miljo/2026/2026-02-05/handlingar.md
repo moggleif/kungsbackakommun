@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.63e7dd7019bfe963d53589c4/1769704442
 sha256: 1fb2a59f0918300b5b8d0ad979e21af11b87c516acbf65ce715a8d233e9746ca
 bytes: 3357743
 sidor: 45
-hamtad: 2026-11-22T12:14:01+00:00
-konverterad: 2026-11-22T12:16:08+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:11:34+00:00
+konverterad: 2026-11-23T12:15:53+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+tal_obekraftade: [1, 2, 6, 7, 9, 15, 16, 17, 20, 21, 23, 28, 30, 31, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
 figurer: [7, 37, 40]
 tolkade: []
 granskad: null
@@ -582,15 +582,15 @@ Ingen av dessa incidenter har bedömts vara anmälningspliktig till Integritetss
 
 Begäran om registerutdrag: 4
 
-Begäran om radering: O
+Begäran om radering: 0
 
-Ansökan om rätt till begränsning: O
+Ansökan om rätt till begränsning: 0
 
-Ansökan om rätt till dataportabilitet: O
+Ansökan om rätt till dataportabilitet: 0
 
-Ansökan om att få felaktiga personuppgifter rättade: O
+Ansökan om att få felaktiga personuppgifter rättade: 0
 
-Begäran om återkallande av samtycke till behandling: O
+Begäran om återkallande av samtycke till behandling: 0
 
 1.8 Personuppgiftsbiträden
 
@@ -908,7 +908,7 @@ bristfälligt renat avloppsvatten bedöms inte i första hand vara att man koppl
 fastigheter/hushåll per år. (150 x i genomsnitt 2,4 personer per hushåll = 360 personer).
 
 Det finns redan ca 76 300 invånare som är anslutna till det kommunala avloppsnätet. De nya som
-ansluts årligen är ca 0,5 24 av det totala antalet.
+ansluts årligen är ca 0,5 % av det totala antalet.
 
 Breddning från kommunala pumpstationer eller kommunala reningsverk, sker oftast efter mycket eller
 långvarig nederbörd. Miljö & Hälsoskydd bedömer att orsaken till breddningarna inte beror på att det
@@ -926,7 +926,7 @@ Hammargårds reningsverk har fått tillstånd för att bygga ut. Det utbyggda re
 <!-- sida 19 -->
 
 KUNGSBACKA KOMMUN
-44\)
+4 (4)
 
 och intrimmat senast den 30 april 2029, enligt beslutet 2023-04-26 (Taget i anspråk 2025-01-01). Nya
 datumet när det ska vara i drift och intrimmat är den 1 januari 2030.
@@ -1165,7 +1165,7 @@ www.kungsbacka.se
 <!-- sida 24 -->
 
 KUNGSBACKA KOMMUN
-202\)
+2 (2)
 
 Förslaget innebär att kommunerna även fortsättningsvis, och i flera avseenden i ökad omfattning,
 ges ett centralt ansvar för kontroll av luftkvaliteten inom sina geografiska områden. Detta knyts till
@@ -1436,7 +1436,7 @@ www.kungsbacka.se
 <!-- sida 29 -->
 
 KUNGSBACKA KOMMUN
-202\)
+2 (2)
 
 inte nämndens bedömningar eller tillsyn enligt alkohollagen, och innebär inte någon befrielse från
 de krav och skyldigheter som följer av den lagstiftningen.

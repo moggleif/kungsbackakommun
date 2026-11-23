@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.7cb8909319ceecd54042cf09/1773665591
 sha256: c4d2eff9b5439a24c44a641f103f6b299ee2d3bb558f2f7a3b9ef8cefab25dd2
 bytes: 8010204
 sidor: 84
-hamtad: 2026-11-22T12:40:16+00:00
-konverterad: 2026-11-22T12:40:54+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T13:02:16+00:00
+konverterad: 2026-11-23T13:03:27+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, bild, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok]
-tal_obekraftade: [21, 23, 24, 25, 26, 27, 29, 32, 44, 45, 46, 47, 49, 50, 51, 52, 53, 71, 72, 73, 78, 79]
+tal_obekraftade: [21, 23, 26, 46, 47, 51, 52, 78]
 figurer: [2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 56, 57, 59, 61, 63, 65, 67, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79]
 tolkade: []
 granskad: null
@@ -503,7 +503,7 @@ grunden för sommaren byggs under hela året
 Beslut - grund att
 arbeta med hela året
 
-Rekrytera för 100920
+Rekrytera för 100%
 grundbemanning hela året
 
 utifrån omsorgstagare/patients behov
@@ -545,7 +545,7 @@ Beslut - mer kopplade
 
 till bara sommaren
 
-Inriktningsbeslut om 6620
+Inriktningsbeslut om 66%
 
 i tjänst under semesterperioden av totalt
 antal befintliga tillsvidareanställda den 1

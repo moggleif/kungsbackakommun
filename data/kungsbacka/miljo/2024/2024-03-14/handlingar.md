@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.29e29ba018df2c6344723b75/1710250453
 sha256: 18d3050ed26f0186c97e1f04bc5550e0960f7cfd230555f74a5d85dc659f85e1
 bytes: 11476043
 sidor: 123
-hamtad: 2026-11-22T12:10:07+00:00
-konverterad: 2026-11-22T12:11:08+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:08:30+00:00
+konverterad: 2026-11-23T12:10:16+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [6, 9, 10, 17, 21, 22, 23, 26, 37, 40, 41, 43, 44, 45, 49, 50, 51, 52, 57, 58, 59, 60]
+tal_obekraftade: [6, 9, 10, 17, 21, 22, 23, 26, 37, 40, 41, 43, 44, 51, 52, 57, 58]
 figurer: [21, 57, 58, 59, 60, 112]
 tolkade: []
 granskad: null
@@ -2227,7 +2227,7 @@ tas ut och som debiteras föreningen.
 Om dispens erhålls kommer den att omprövas var 9 månad. Då skall särskild
 redovisning ske hur projektet har framskridit. Om nämnden finner skäl kan dispensen
 
-we föra
+förlängas 9 månader i taget. En avgift för förlängd dispens kommer att tas ut och som
 
 debiteras föreningen.
 
@@ -2750,7 +2750,7 @@ Enligt miljöbalken skall hårt belastade ytor t.ex. rasthagar och drivvägar va
 hårdgjorda.
 
 Vid nyanläggning av brukningscentra respektive villabebyggelse inom det som
-översiktsplanen anger som jordbruksmark bör skyddsavstånden tas till 50 20 på
+översiktsplanen anger som jordbruksmark bör skyddsavstånden tas till 50 % på
 den egna fastigheten. Det samma bör gälla vid förändring av översiktsplanen.
 Naturligtvis skall hela skyddsavståndet gälla till befintlig byggnation.
 

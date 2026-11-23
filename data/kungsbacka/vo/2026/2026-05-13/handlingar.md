@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.3487527419ddc981c03d0d2e/1778506388
 sha256: 0595ff4769634a3c1efae0291d27bcd6834346f73de5f461ca95e87444609bef
 bytes: 13280112
 sidor: 166
-hamtad: 2026-11-22T12:41:50+00:00
-konverterad: 2026-11-22T12:42:38+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T13:05:13+00:00
+konverterad: 2026-11-23T13:06:35+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [5, 6, 7, 11, 16, 102, 116, 117, 119, 120, 121, 123, 124, 125, 126, 127, 129, 132, 134, 135, 136, 148, 149, 151]
+tal_obekraftade: [6, 116, 117, 119, 120, 121, 134, 149]
 figurer: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 36, 42, 43, 68, 89, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 132, 133, 134, 135, 136, 140, 141, 142, 148, 149, 150, 151]
 tolkade: []
 granskad: null

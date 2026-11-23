@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.41c94aae19faa7ae4b6dc55c/1786107453
 sha256: d77adb482e2f375dd7a80b6e010a6285d49f007635a79e467631e8b62c99f759
 bytes: 722687
 sidor: 14
-hamtad: 2026-11-22T12:16:18+00:00
-konverterad: 2026-11-22T12:16:41+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:16:03+00:00
+konverterad: 2026-11-23T12:16:54+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+tal_obekraftade: [1, 3, 4, 5, 8]
 figurer: []
 tolkade: []
 granskad: null
@@ -85,7 +85,7 @@ www.kungsbacka.se
 <!-- sida 2 -->
 
 KUNGSBACKA KOMMUN
-202\)
+2 (2)
 
 Utgångspunkten i planeringen av sammanträdesdagar är att nämnden för Miljö & Hälsoskydd
 sammanträder torsdagar. Undantag förekommer dock under året.
@@ -339,7 +339,7 @@ Taxebestämmelser:
 
 e Samma paragrafnummer som SKR:s vägledning och MSV Hallands taxemodell
 
-e Förtydligande om lagtext i I \$
+e Förtydligande om lagtext i 1 §
 e Basår för uppräkning 2026 i 6 §
 
 <!-- sida 8 -->

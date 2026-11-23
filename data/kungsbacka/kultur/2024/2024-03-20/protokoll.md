@@ -7,18 +7,18 @@ typ: protokoll
 namn: null
 kallnyckel: sitevision:18.2ab7772d18e5f864a3916484
 tidigare_kallnycklar: []
-arenden: [KFT-2023-00380, KFT-2024-00030, KFT-2024-00060, KFT-2024-00061, KFT-2024-00062, KFT-2024-00063, KFT-2024-00064, KFT-2024-00065, KFT-2024-00068, KFT-2024-00069, KFT-2024-00070, KFT-2024-00071, KFT-2024-00072, KFT-2024-00073, KFT-2024-00074, KFT-2024-00076, KFT-2024-00077, KFT-2024-00078, KFT-2024-00081, KFT-2024-00083, KFT-2024-00092]
+arenden: [KFT-2023-00380, KFT-2024-00030, KFT-2024-00060, KFT-2024-00061, KFT-2024-00062, KFT-2024-00063, KFT-2024-00064, KFT-2024-00065, KFT-2024-00068, KFT-2024-00069, KFT-2024-00070, KFT-2024-00071, KFT-2024-00072, KFT-2024-00073, KFT-2024-00074, KFT-2024-00075, KFT-2024-00076, KFT-2024-00077, KFT-2024-00078, KFT-2024-00081, KFT-2024-00083, KFT-2024-00092]
 kalla_url: https://kungsbacka.se/download/18.2ab7772d18e5f864a3916484/1711795484279/N%C3%A4mnden%20f%C3%B6r%20Kultur%20&%20Fritid%20protokoll%202024-03-20.pdf
 sha256: 7bd0b9785445f36c194a70f0a155a773808f15af79dd1b6c77e9bb21ef2c3856
 bytes: 5888190
 sidor: 30
-hamtad: 2026-11-22T11:36:58+00:00
-konverterad: 2026-11-22T11:38:13+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T11:11:18+00:00
+konverterad: 2026-11-23T11:13:46+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+tal_obekraftade: [2, 6, 21]
 figurer: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 tolkade: []
 granskad: null
@@ -63,7 +63,7 @@ Hanhals IF
 Per Österdahl, Hanhals IF
 
 Plats och tid för justering Digitalt 2024-03-27,
-Sekreterare Erik Norinder Paragrafer. § 20-47
+Sekreterare Erik Norinder Paragrafer. § 26-47
 
 Ordförande Annika Hedman
 
@@ -978,7 +978,7 @@ KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL 23 (28)
 Nämnden för Kultur & Fritid Datum
 2024-03-20
 
-842 Dnr KFT-2024-00073
+§ 42 Dnr KFT-2024-00075
 
 Information till nämnd: återrapportering av Socialdemokraternas
 initiativ kring Kungsbackas historia
@@ -1023,7 +1023,7 @@ KUNGSBACKA KOMMUN SAMMANTRÄDESPROTOKOLL 24 (28)
 Nämnden för Kultur & Fritid Datum
 2024-03-20
 
-843 Dnr KFT-2024-00076
+§ 43 Dnr KFT-2024-00076
 Anmälan av delegeringsbeslut mars 2024
 
 Beslut
