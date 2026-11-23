@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.33ee11921959c11f9ef315aa/1742217930
 sha256: fcfe910dec9082ddc585d3d99943c29f73cfb595e731ee98bdb992fbe194133d
 bytes: 31427364
 sidor: 180
-hamtad: 2026-11-22T12:28:21+00:00
-konverterad: 2026-11-22T12:31:34+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:42:59+00:00
+konverterad: 2026-11-23T12:49:45+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168]
+tal_obekraftade: [69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 96, 97, 98, 99, 135, 136, 137, 138, 139, 140, 141, 143, 144, 145, 147, 148, 149, 150, 151, 152, 154, 155, 156, 157, 158, 160, 161, 162, 163, 164, 165, 166, 167, 168]
 figurer: []
 tolkade: []
 granskad: null
@@ -3890,7 +3890,7 @@ Sida 9/28
 
 <!-- sida 78 -->
 
-Driftentreprenad Vickan värd- och omsorgsboende 191191
+Driftentreprenad Vickan värd- och omsorgsboende 19/119:1
 
 Utföraren har i anbudet redovisat för hur verksamheten kommer att säkerställa att aktuell bemanning
 motsvarar ovanstående krav genom att utföraren i anbudet har beskrivit sin bemanningsprocess och
@@ -4805,7 +4805,7 @@ Sida 25/28 7
 Driftentreprenad Vickan vård- och omsorgsboende 19/119:1
 
 e Utföraren vid tidpunkten för beslutet att tilldela kontraktet eller att ingå avtalet befann sig i någon av
-de situationer som avses i 13 kap. 18 LOU och borde ha uteslutits från upphandlingen enligt den
+de situationer som avses i 13 kap. 1§ LOU och borde ha uteslutits från upphandlingen enligt den
 bestämmelsen.
 
 e Utföraren har lämnat oriktiga uppgifter i anbudet eller på annat sätt i samband med upphandlingen
@@ -4814,7 +4814,7 @@ och dessa inte varit av oväsentlig betydelse vid valet av utförare.
 e Utföraren (VD:n eller annan med ledande ställning) enligt laga kraft vunnen dom dömts för
 ekonomiska brott eller belagts med näringsförbud.
 
-e Avtalet har varit föremål för en ändring som inte är tillåten enligt 17 kap. 9-14 §8 LOU.
+• Avtalet har varit föremål för en ändring som inte är tillåten enligt 17 kap. 9-14 §§ LOU.
 
 Domstol eller myndighet fastställer att avtalet ingåtts i strid med upphandlingslagstiftningen.
 
