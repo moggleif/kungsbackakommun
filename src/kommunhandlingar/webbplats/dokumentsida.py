@@ -16,7 +16,7 @@ from kommunhandlingar.webbplats.text import pdfsidor
 def dokumentsida(sammanhang: Sammanhang, falt: dict[str, str], text: str) -> str:
     mall, kommun = sammanhang.mall, sammanhang.kommun
     adress = adresser.i_kommunen(kommun.id, falt["adress"])
-    organ = next(o.namn[0] for o in kommun.organ if o.id == falt["organ"])
+    organ = kommun.organnamn(falt["organ"])
     mote = motesnamn(falt["datum"], falt["lopnr"])
     till_rot = adresser.rot(adress)
     organsida = till_rot + adresser.organsida(kommun.id, falt["organ"])

@@ -19,10 +19,10 @@ from kommunhandlingar.webbplats import adresser, kalendervyer
 from kommunhandlingar.webbplats.inbaddning import las, skript
 from kommunhandlingar.webbplats.kalender import GRUPPMOTE, Sammantrade, gruppmoten
 from kommunhandlingar.webbplats.kalenderfarger import farger, organstil
-from kommunhandlingar.webbplats.mall import KALLKOD, Mall, sida
+from kommunhandlingar.webbplats.mall import Mall, sida
 from kommunhandlingar.webbplats.meny import kommunens
+from kommunhandlingar.webbplats.ram import hur_och_varfor
 
-ADR = "/blob/main/docs/decisions/"
 ADR_0032 = "0032-kalendern-las-ur-besluten-och-skrivs-for-hand.md"
 ADR_0053 = "0053-tidigare-sammantraden-las-ur-poolens-mappar.md"
 INLEDNING = (
@@ -46,7 +46,7 @@ METOD = (
 
 def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) -> str:
     adress = adresser.kalender(kommun.id)
-    namn = {o.id: o.namn[0] for o in kommun.organ}
+    namn = kommun.organnamnen()
     farg = farger(kommun, {s.organ for s in sammantraden})
     moten = gruppmoten(sammantraden, kommun.gruppmote, mall.byggd.date())
     if moten:
@@ -66,15 +66,11 @@ def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) ->
 
 def kvalitet(mall: Mall, sammantraden: list[Sammantrade], namn: dict[str, str]) -> str:
     osakra = [s for s in sammantraden if s.osakert]
-    adr = " och ".join(
-        f'<a href="{escape(KALLKOD + ADR + fil)}">ADR-{fil[:4]}</a>'
-        for fil in (ADR_0032, ADR_0053)
-    )
     return (
         f'<details id="kvalitet"><summary>Kvalitet: {len(osakra)} av '
         f"{len(sammantraden)} datum är osäkra</summary>{METOD}"
-        f"<p>Hur och varför står i {adr}.</p>"
-        f'<h2 id="osakra">Osäkra datum</h2>{osakra_tabell(osakra, namn)}'
+        + hur_och_varfor(ADR_0032, ADR_0053)
+        + f'<h2 id="osakra">Osäkra datum</h2>{osakra_tabell(osakra, namn)}'
         f'<h2 id="kallor">Källor</h2>'
         f"{kallor(sammantraden, namn)}</details>"
     )

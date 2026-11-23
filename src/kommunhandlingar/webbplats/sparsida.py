@@ -13,10 +13,10 @@ from collections import Counter
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.webbplats import adresser
+from kommunhandlingar.webbplats import adresser, ram
 from kommunhandlingar.webbplats.flikar import flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
-from kommunhandlingar.webbplats.mall import KALLKOD, sida
+from kommunhandlingar.webbplats.mall import sida
 from kommunhandlingar.webbplats.malsida import AREN
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
@@ -31,8 +31,6 @@ from kommunhandlingar.webbplats.sparkort import (
     korten,
 )
 
-BESLUTEN = "/blob/main/docs/decisions/"
-
 
 def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
     return adresser.over_tid(kommun.id, organ, slag.id)
@@ -41,15 +39,13 @@ def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
 def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:
     organ, vy = stegen[0].organ, sammanhang.vy(slag)
     sidans = adress(vy.kommun, organ, slag)
-    namn = next(o.namn[0] for o in vy.kommun.organ if o.id == organ)
+    namn = vy.kommun.organnamn(organ)
     sakerna = per_sak(slag, stegen)
     innehall = (
         flikar(sammanhang.underlag, organ, slag.id)
         + stil("mal.css", "spar.css")
         + slag.inledning
-        + f"<details><summary>Om sidan</summary>{slag.metod}{AREN}<p>Hur och varför "
-        f'står i <a href="{escape(KALLKOD + BESLUTEN + slag.adr)}">'
-        f"ADR-{slag.adr[:4]}</a>.</p></details>"
+        + ram.om_sidan(slag.metod + AREN, slag.adr)
         + sammandrag(slag, sakerna)
         + urval(slag, stegen)
         + tidslinje(vy, sakerna)
@@ -118,18 +114,13 @@ def ruta(rubrik: str, siffror: list[tuple[str, int]], forklaring: str) -> str:
     )
 
 
-# Knapparna visas av målsidans skript; utan det står allt.
 def urval(slag: Slag, stegen: list[Steg]) -> str:
     val = [("alla", "Alla")]
     if senaste := senaste_ar(slag, stegen):
         val.append(("senaste", f"I {slag.rubrik.lower()} {senaste}"))
     val += [(fas, betyder.capitalize()) for fas, (_, betyder) in slag.faser.items()][1:]
     val += [(markor_for(v), v) for v in sorted(avsandarna(slag, stegen))]
-    knappar = "".join(
-        f'<button type="button" data-urval="{escape(v)}">{escape(text)}</button>'
-        for v, text in val
-    )
-    return f'<div class="urval" role="group" aria-label="Visa" hidden>{knappar}</div>'
+    return ram.urval(val)
 
 
 def tidslinje(vy: Vy, sakerna: list[Sak]) -> str:

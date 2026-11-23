@@ -11,22 +11,20 @@ perspektiv i taget; utan dem står allt på sidan. Stilen står i `mal.css`.
 """
 
 from collections import defaultdict
-from html import escape
 
 from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
-from kommunhandlingar.webbplats import adresser
+from kommunhandlingar.webbplats import adresser, ram
 from kommunhandlingar.webbplats.flikar import MAL, flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mal import SLAG, Mal
 from kommunhandlingar.webbplats.malar import Underlag, aren
 from kommunhandlingar.webbplats.malkort import korten
-from kommunhandlingar.webbplats.mall import KALLKOD, Mall, sida
+from kommunhandlingar.webbplats.mall import sida
 from kommunhandlingar.webbplats.malstatistik import protokollar, statistik
 from kommunhandlingar.webbplats.maltidslinje import namnden_rad, tidslinje
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 
-ADR = "/blob/main/docs/decisions/"
 ADR_0044 = "0044-namndens-mal-och-direktiv-las-ur-dokumenten-och-skrivs-for-hand.md"
 ADR_0045 = "0045-omdopta-mal-grupperas-protokollet-gar-fore-och-status-blir-ikoner.md"
 ADR_0050 = "0050-malsidan-visas-som-tidslinje-och-malkort.md"
@@ -105,7 +103,7 @@ def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> s
     uppfoljda = [u for u in sammanhang.underlag.uppfoljningar if u.organ == organ]
     protokoll = protokollar(organets)
     sidans = adress(kommun, organ)
-    namn = next(o.namn[0] for o in kommun.organ if o.id == organ)
+    namn = kommun.organnamn(organ)
     spar = sparen(malen)
     malar = {m.ar for m in malen}
     ar = sammanhang.underlag.aren
@@ -116,7 +114,7 @@ def malsida(sammanhang: Sammanhang, malen: list[Mal], organets: list[dict]) -> s
         + stil("mal.css")
         + INLEDNING
         + fore_malen(min(dokumentar), min(malar))
-        + om_sidan(mall, any(m.huvudmal for m in malen))
+        + om_sidan(any(m.huvudmal for m in malen))
         + statistik(malen, uppfoljda, protokoll, ar)
         + urval(max(malar), {m.slag for m in malen})
         + PERSPEKTIV
@@ -146,26 +144,14 @@ def ordning(mal: Mal) -> tuple[int, int, str]:
     return mal.ar, SLAG.index(mal.slag), mal.rubrik.casefold()
 
 
-def om_sidan(mall: Mall, fokus: bool) -> str:
-    adr = [
-        f'<a href="{escape(KALLKOD + ADR + fil)}">ADR-{fil[:4]}</a>'
-        for fil in (ADR_0044, ADR_0045, ADR_0050, ADR_0051, ADR_0056)
-    ]
-    return (
-        f"<details><summary>Om sidan</summary>{METOD}{AREN}{FOKUS * fokus}"
-        f"<p>Hur och varför står i {', '.join(adr[:-1])} och {adr[-1]}.</p></details>"
+def om_sidan(fokus: bool) -> str:
+    return ram.om_sidan(
+        METOD + AREN + FOKUS * fokus, ADR_0044, ADR_0045, ADR_0050, ADR_0051, ADR_0056
     )
 
 
-# Knapparna visas av skriptet; utan det står allt och urvalet behövs inte.
 def urval(sista: int, slagen: set[str]) -> str:
     val = [("alla", "Alla"), ("aktiv", f"Gäller {sista}")]
     val += [(slag, slag.capitalize()) for slag in SLAG if slag in slagen]
     val += [("bytt", "Har bytt rubrik")]
-    knappar = "".join(
-        f'<button type="button" data-urval="{v}">{text}</button>' for v, text in val
-    )
-    return (
-        f'<div class="urval" role="group" aria-label="Visa" data-sista="{sista}" '
-        f"hidden>{knappar}</div>"
-    )
+    return ram.urval(val, f' data-sista="{sista}"')

@@ -4,10 +4,10 @@ from html import escape
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.luckor import JUSTERING, Lucka, motesnamn
-from kommunhandlingar.webbplats.mall import KALLKOD
 from kommunhandlingar.webbplats.rakning import Organrad
+from kommunhandlingar.webbplats.ram import beslutslank
 
-ADR = "/blob/main/docs/decisions/0020-luckor-raknas-fram-lagras-inte.md"
+ADR_0020 = "0020-luckor-raknas-fram-lagras-inte.md"
 
 
 def luckavsnitt(kommun: Kommun, rader: list[Organrad]) -> str:
@@ -21,7 +21,8 @@ def luckavsnitt(kommun: Kommun, rader: list[Organrad]) -> str:
         f"Ett protokoll räknas som saknat först {JUSTERING.days} dagar efter mötet. "
         "Ett år utan något dokument mellan organets första och sista står för sig. "
         "Hur luckorna räknas står i "
-        f'<a href="{escape(KALLKOD + ADR)}">ADR-0020</a>.</p>'
+        + beslutslank(ADR_0020)
+        + ".</p>"
         + (organ or "<p>Inga luckor.</p>")
     )
 
