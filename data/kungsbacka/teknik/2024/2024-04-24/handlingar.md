@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2b8a29c818ecba375e913d1e/1713531349
 sha256: ad8a95adb634a217fa3515277fb16042343b58ed224e6f09c2c7f754f462cbc3
 bytes: 31102782
 sidor: 402
-hamtad: 2026-11-22T10:16:37+00:00
-konverterad: 2026-11-22T10:19:03+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T23:53:12+00:00
+konverterad: 2026-11-22T23:56:59+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok]
-tal_obekraftade: [39, 48, 84, 85, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 371, 372, 373, 374, 379, 380, 381, 382, 383, 384, 385, 386, 390, 395]
+tal_obekraftade: [39, 48, 84, 85, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 317, 318, 319, 371, 379, 381, 383, 385, 390, 395]
 figurer: [1, 26, 28, 30, 33, 37, 38, 40, 41, 42, 43, 44, 45, 48, 49, 50, 54, 55, 56, 57, 58, 59, 61, 66, 67, 68, 69, 70, 72, 84, 85, 89, 102, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 142, 163, 198, 199, 203, 204, 212, 213, 218, 223, 224, 262, 263, 282, 290, 295, 300, 326, 327, 330, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 347, 351, 353]
 tolkade: []
 granskad: null
@@ -13113,7 +13113,7 @@ för personal, administration, utrustning m.m.).
 
 Beställningscentralen är upphandlad och kommunen betalar en summa per bokad
 resa. För 2013 är bedömningen att bokning av färdtjänstresor kommer kosta cirka 1,3
-mkr. Systemkostnaden uppgår till cirka I mkr. Systemkostnaden är likvärdig i de två
+mkr. Systemkostnaden uppgår till cirka 1 mkr. Systemkostnaden är likvärdig i de två
 olika alternativen. |
 
 Kostnadsjämförelse tkr
@@ -15721,7 +15721,7 @@ kortare och resor samordnas i samma fordon.
 färdväg, på samma sätt som ordinarie kollektivtrafik.
 
 \- Reglerna för färdtjänst måste ses över, bland annat när det gäller
-egenavgiften. Idag är egenavgiften 2590 av taxameterpriset med en
+egenavgiften. Idag är egenavgiften 25% av taxameterpriset med en
 genomsnittlig egenavgift på cirka 40 kronor. I en beställningscentral måste
 egenavgiften vara förutbestämd, det vill säga en fast avgift. Det innebär att
 vissa resenärer kommer få lägre kostnader och vissa får högre. Revideringen

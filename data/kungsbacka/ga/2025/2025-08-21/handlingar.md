@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2f7af2ed1989780f80d68f62/1755162693
 sha256: e4f0c849159d9ef272cb8bc19e88871f94a496d5ca73fb72b622118897e2dec5
 bytes: 15347371
 sidor: 168
-hamtad: 2026-11-22T08:35:23+00:00
-konverterad: 2026-11-22T08:36:10+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T21:20:06+00:00
+konverterad: 2026-11-22T21:21:13+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ocr, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok]
-tal_obekraftade: [41, 42, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 91, 98, 103, 112, 113, 114, 115, 116, 117, 134, 142, 144, 146, 148, 149, 151, 152, 163, 164]
+tal_obekraftade: [41, 42, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 91, 98, 103, 112, 113, 114, 115, 116, 117, 134, 142, 144, 146, 148, 149, 151, 152, 164]
 figurer: [9, 11, 12, 13, 14, 24, 36, 141, 146, 148, 149, 150, 151, 152, 165]
 tolkade: []
 granskad: null
@@ -6735,7 +6735,7 @@ För att motverka missbruket av lustgas och skydda våra invånare, särskilt
 ungdomar, föreslår Sverigedemokraterna ett lokalt förbud mot användning
 av lustgas i berusningssyfte inom specifika offentliga områden i
 Kungsbacka kommun. Förbudet ska utformas enligt Ordningslagen 3 kap
-12 8 och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
+12 § och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
 alkoholförtäring redan är förbjuden, vilket skulle ge polisen ett tydligt
 mandat att ingripa och förhindra missbruk på offentliga platser.
 

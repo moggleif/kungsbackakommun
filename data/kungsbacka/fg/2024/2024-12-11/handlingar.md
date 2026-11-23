@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.6033e6193956abcf838d16/173374045424
 sha256: 781af1afbd824a8913dc60ccac1aa9a77a9cfcee6c258d725ab58f7a017b176c
 bytes: 13823316
 sidor: 235
-hamtad: 2026-11-22T08:55:57+00:00
-konverterad: 2026-11-22T08:56:38+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T21:53:20+00:00
+konverterad: 2026-11-22T21:54:13+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, bild, ok, ok, ok, ok, ok, ok, tabell-osaker, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, tom, tabell-osaker, tom, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [34, 107, 108, 109, 110, 118, 181]
+tal_obekraftade: [107, 109, 110, 118, 181]
 figurer: [22, 27, 28, 29, 30, 31, 32, 33, 34, 36, 37, 38, 41, 43, 44, 45, 60, 64, 68, 70, 74, 76, 77, 94, 96, 98, 107, 108, 109, 110, 111, 112, 114, 117, 118, 123, 124, 126, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 147, 149, 150, 155, 161, 169, 171, 172, 173, 174, 175, 176, 177, 178, 179, 181, 190, 191, 192, 193, 194, 195, 196, 197, 198, 200, 201, 202, 203]
 tolkade: []
 granskad: null

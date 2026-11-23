@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.6484dcbe1a01d8509de1085/17872057962
 sha256: be69b77172a322ecb857dbe15cd4c81cd539abbf49d8bd28784ba2fe06234fb3
 bytes: 1257005
 sidor: 20
-hamtad: 2026-11-22T09:17:21+00:00
-konverterad: 2026-11-22T09:17:52+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T22:25:33+00:00
+konverterad: 2026-11-22T22:26:46+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+tal_obekraftade: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 figurer: []
 tolkade: []
 granskad: null
@@ -53,7 +53,7 @@ Ledamöter
 
 Emanuel Forsell (M), Ordförande
 
-Jan Eric Knutas (1), 1:e vice ordförande
+Jan Eric Knutas (L), 1:e vice ordförande
 Johan Tolinsson (S)
 
 Paul Blomdahl (M)
@@ -85,7 +85,7 @@ Tjänstgörande ersättare
 Tjänstepersoner
 
 Frida Byrsten, verksamhetschef §§ 73,
-74, 75
+74,75
 
 Annelie Sackelius, utvecklare, § 76
 Anna Sörensen, utvecklingsledare \$

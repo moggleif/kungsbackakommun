@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.5689acbf1a0862710404491b/1789109262
 sha256: e5215ddc38b5f1370cea8c1a4db30cb04bcecbb12beddceacfb1160b690d69d6
 bytes: 11653586
 sidor: 380
-hamtad: 2026-11-22T11:03:43+00:00
-konverterad: 2026-11-22T11:04:46+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T01:00:01+00:00
+konverterad: 2026-11-23T01:01:40+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [42, 43, 44, 45, 46, 47, 48, 49, 50, 253, 266, 267, 268, 269, 270, 271, 272, 293, 294, 295, 307, 308, 309, 310, 311, 312, 313, 332]
+tal_obekraftade: [42, 43, 44, 45, 46, 47, 48, 49, 50, 253, 266, 267, 268, 269, 271, 272, 293, 294, 295, 307, 308, 310, 312, 313, 332]
 figurer: [56, 61, 62, 64, 66, 67, 68, 70, 72, 73, 74, 75, 76, 79, 80, 81, 82, 84, 87, 88, 89, 91, 92, 96, 97, 100, 101, 102, 103, 104, 105, 115, 117, 118, 124, 125, 127, 128, 129, 130, 131, 132, 133, 134, 136, 138, 139, 144, 146, 148, 150, 153, 216, 228, 229, 245, 248, 254, 259, 285, 286, 304, 338, 339, 343, 353, 354]
 tolkade: []
 granskad: null
@@ -16870,7 +16870,7 @@ KOMMUN
 
 Yttrande
 
-15\)
+1 (5)
 
 2026-01-13 Dnr: KS 2025/0613-16
 

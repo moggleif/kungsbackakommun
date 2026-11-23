@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.4e55f00c19afcd92d2837ea2/1765524595
 sha256: 1b8d8caaddf728d1637499ab73341967166a2ce6893c4cf7246dc29c45e98539
 bytes: 18869490
 sidor: 140
-hamtad: 2026-11-22T10:54:13+00:00
-konverterad: 2026-11-22T10:56:24+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T00:46:57+00:00
+konverterad: 2026-11-23T00:50:03+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ointressant, ok, ok, ok, ok, ocr, bild, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok]
-tal_obekraftade: [3, 4, 85, 89, 90, 91, 92, 93, 94, 95, 97, 98, 99, 100, 101, 123, 131, 132]
+tal_obekraftade: [3, 4, 85, 89, 90, 91, 92, 93, 94, 95, 97, 100, 101, 123, 131, 132]
 figurer: [3, 4, 10, 11, 12, 13, 14, 15, 22, 23, 24, 25, 26, 66, 116, 117, 131, 132]
 tolkade: []
 granskad: null
@@ -4048,7 +4048,7 @@ Förteckning över platser som jämställs med offentlig plats enligt 3 & i dess
 
 föreskrifter
 
-Motionsspår (till 19-20 88)
+Motionsspår (till 19-20 §§)
 Kungsbackaskogen
 
 Forsspåret i Kungsbacka
@@ -4060,7 +4060,7 @@ Vallda Paltaspåret
 
 Slingan vid Fjärås Fritidscenter
 Slingan vid Kungsbacka Sportcenter
-Anläggningar för lek och aktivitet (till 21 5)
+Anläggningar för lek och aktivitet (till 21§)
 Utegym
 
 Bostället Frillesås (Rya 1:3)
@@ -4096,7 +4096,7 @@ Vallda Palta (Vallda 3:15)
 Särö centrum (Nötegången 1:108)
 Kullaviksskolan (Kyvik 3:212)
 Fjärås centrum (Må 2:210)
-Badplatser (till 21 5 )
+Badplatser (till 21 §)
 Hanhals Holme
 
 Stora Iglatjärn

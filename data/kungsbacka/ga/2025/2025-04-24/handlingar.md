@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.5b0e44671961df388b27f8e4/1744873104
 sha256: 2ffc7ae3f913ab60caa336a838d5973e80c27a7d191504339d0ec631da77ff54
 bytes: 5790730
 sidor: 120
-hamtad: 2026-11-22T08:34:27+00:00
-konverterad: 2026-11-22T08:34:55+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T21:18:41+00:00
+konverterad: 2026-11-22T21:19:28+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [52, 60, 89, 90, 91, 92, 93, 94, 95, 96, 99, 100, 101, 102]
+tal_obekraftade: [52, 60, 89, 90, 91, 92, 93, 94, 95, 96, 100, 101, 102]
 figurer: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 52, 106, 114, 115, 116, 117]
 tolkade: []
 granskad: null
@@ -3891,10 +3891,10 @@ Andersson GA, Sabina Machon GA, Ulrika Borgvall GA, Elisabeth Kjellbom GA, Malin
 Edefors GA, Jasmin Pham åk 2-elev GLA, Moa Hedlund och Astrid Thomassen åk 2-elev
 Aranäsgymnasiet, Elvira Jönsson och Emilia Löfberg åk 1-elever Aranäsgymnasiet
 
-81
+§1
 
-82
-83
+§2
+§3
 
 §4
 

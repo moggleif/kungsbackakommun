@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.63e7dd7019bfe963d53e9a2b/1770037388
 sha256: 39a2065a6e71c2aa104da6362eae211aa1d7f2c0a5399ffea160ce81db5a958f
 bytes: 16564695
 sidor: 207
-hamtad: 2026-11-22T09:25:36+00:00
-konverterad: 2026-11-22T09:27:49+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T22:40:04+00:00
+konverterad: 2026-11-22T22:43:13+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ocr, ok, ok, ok, ok, ointressant, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok]
-tal_obekraftade: [91, 92, 101, 122, 123, 124, 125, 126, 127, 128, 130, 131, 132, 133, 134, 139, 167]
+tal_obekraftade: [91, 92, 101, 122, 123, 124, 125, 126, 127, 128, 130, 133, 134, 139, 167]
 figurer: [17, 19, 20, 21, 22, 76, 91, 92, 112, 113, 155, 161]
 tolkade: []
 granskad: null
@@ -5169,7 +5169,7 @@ Förteckning över platser som jämställs med offentlig plats enligt 3 & i dess
 
 föreskrifter
 
-Motionsspår (till 19-20 88)
+Motionsspår (till 19-20 §§)
 Kungsbackaskogen
 
 Forsspåret i Kungsbacka
@@ -5181,7 +5181,7 @@ Vallda Paltaspåret
 
 Slingan vid Fjärås Fritidscenter
 Slingan vid Kungsbacka Sportcenter
-Anläggningar för lek och aktivitet (till 21 5)
+Anläggningar för lek och aktivitet (till 21§)
 Utegym
 
 Bostället Frillesås (Rya 1:3)
@@ -5217,7 +5217,7 @@ Vallda Palta (Vallda 3:15)
 Särö centrum (Nötegången 1:108)
 Kullaviksskolan (Kyvik 3:212)
 Fjärås centrum (Må 2:210)
-Badplatser (till 21 5 )
+Badplatser (till 21 §)
 Hanhals Holme
 
 Stora Iglatjärn

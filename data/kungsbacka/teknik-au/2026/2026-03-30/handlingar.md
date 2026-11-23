@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1b24984919d24cef920312b3/1774615420
 sha256: 913ccc7a7cff4559005e276b1a64361185a6b6046031b86d96ff7a6732da24c3
 bytes: 6266111
 sidor: 35
-hamtad: 2026-11-22T11:20:44+00:00
-konverterad: 2026-11-22T11:21:50+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T01:18:20+00:00
+konverterad: 2026-11-23T01:20:36+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+tal_obekraftade: [1, 2, 3, 5, 6, 7, 10, 11, 13, 15, 17, 19, 20, 22, 24, 25, 26, 27, 29, 30, 31, 32, 33, 34]
 figurer: [20, 21, 32, 33]
 tolkade: []
 granskad: null
@@ -1493,7 +1493,7 @@ www.kungsbacka.se
 <!-- sida 35 -->
 
 KUNGSBACKA KOMMUN
-22\)
+2 (2)
 
 Beslutet skickas till
 Trafikverket

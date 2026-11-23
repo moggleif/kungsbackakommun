@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1e14078e19e634213a6243d9/1780382003
 sha256: ca1cb174dcb8993440f7b91b24c75f4f7bf4e73bc93b5064f58a92f12a96e043
 bytes: 943282
 sidor: 15
-hamtad: 2026-11-22T09:16:58+00:00
-konverterad: 2026-11-22T09:17:21+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T22:24:40+00:00
+konverterad: 2026-11-22T22:25:33+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+tal_obekraftade: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 figurer: []
 tolkade: []
 granskad: null
@@ -39,7 +39,7 @@ Beslutande Ledamöter
 
 Emanuel Forsell (M), Ordförande
 
-Jan Eric Knutas (1), 1:e vice ordförande
+Jan Eric Knutas (L), 1:e vice ordförande
 Johan Tolinsson (S) §§ 62-68
 
 Paul Blomdahl (M) §§ 62-69
