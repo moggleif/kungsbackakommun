@@ -2,13 +2,14 @@
 
 Ett protokolls text delas vid raderna som inleder en paragraf, `§ 121`,
 `BN § 1` eller `§ 121 Dnr GA-2026-00004`. Vilka avsnitt som blir
-paragrafer avgör `paragrafer`.
+paragrafer avgör `valda`.
 """
 
 import re
 from collections.abc import Iterator
 from dataclasses import dataclass
 from itertools import dropwhile, takewhile
+from typing import NamedTuple
 
 from kommunhandlingar.diarienummer import i_huvudet
 from kommunhandlingar.paragrafinnehall import beslut, dnr_rader, rubrik
@@ -29,22 +30,30 @@ class Paragraf:
     sida: int
 
 
+class Avsnitt(NamedTuple):
+    nummer: int
+    start: int
+    slut: int
+
+
 def paragrafer(text: str) -> list[Paragraf]:
+    rader = text.splitlines()
+    return [paragraf(avsnitt, rader) for avsnitt in valda(rader)]
+
+
+def valda(rader: list[str]) -> list[Avsnitt]:
     """Innehållsförteckningens rader hoppas över, ett avsnitt direkt efter
     ett med samma nummer är en fortsättningssida, och annars gäller det
     sista avsnittet, eftersom närvarolistan räknar upp numren först."""
-    rader = text.splitlines()
-    valda, forra = {}, None
-    for nummer, start, slut in avsnitten(rader):
-        if forteckning(rader[start + 1 : slut]):
+    per_nummer, forra = {}, None
+    for avsnitt in avsnitten(rader):
+        if forteckning(rader[avsnitt.start + 1 : avsnitt.slut]):
             forra = None
             continue
-        if forra and forra[0] == nummer and forra[2] == start:
-            start = forra[1]
-        valda[nummer] = (start, slut)
-        forra = (nummer, start, slut)
-    ordning = sorted(valda.items(), key=lambda par: par[1][0])
-    return [paragraf(n, rader, s, e) for n, (s, e) in ordning]
+        if forra and forra.nummer == avsnitt.nummer and forra.slut == avsnitt.start:
+            avsnitt = avsnitt._replace(start=forra.start)
+        per_nummer[avsnitt.nummer] = forra = avsnitt
+    return sorted(per_nummer.values(), key=lambda avsnitt: avsnitt.start)
 
 
 def forteckning(rader: list[str]) -> bool:
@@ -54,10 +63,10 @@ def forteckning(rader: list[str]) -> bool:
     return any(PUNKTER.search(rad) for rad in rubrik[:3])
 
 
-def avsnitten(rader: list[str]) -> list[tuple[int, int, int]]:
+def avsnitten(rader: list[str]) -> list[Avsnitt]:
     starter = [(i, int(m[1])) for i, m in rubriker(rader)]
     slut = [i for i, _ in starter[1:]] + [len(rader)]
-    return [(n, i, e) for (i, n), e in zip(starter, slut, strict=False)]
+    return [Avsnitt(n, i, e) for (i, n), e in zip(starter, slut, strict=False)]
 
 
 def rubriker(rader: list[str]) -> Iterator[tuple[int, re.Match]]:
@@ -75,17 +84,17 @@ def inleder(rest: str, forra: str) -> bool:
     return bool(FORTS.match(rest)) or bool(i_huvudet(rest, ensam=True))
 
 
-def paragraf(nummer: int, rader: list[str], start: int, slut: int) -> Paragraf:
-    rest = rader[start + 1 : slut]
-    numren = i_huvudet(RUBRIKRAD.match(rader[start])[2], ensam=True)
+def paragraf(avsnitt: Avsnitt, rader: list[str]) -> Paragraf:
+    rest = rader[avsnitt.start + 1 : avsnitt.slut]
+    numren = i_huvudet(RUBRIKRAD.match(rader[avsnitt.start])[2], ensam=True)
     for rad in dnr_rader(rest):
         numren += i_huvudet(rad)
     return Paragraf(
-        nummer=nummer,
+        nummer=avsnitt.nummer,
         rubrik=rubrik(rest),
         diarienummer=list(dict.fromkeys(numren)),
         beslut=beslut(rest),
-        sida=sida(rader, start),
+        sida=sida(rader, avsnitt.start),
     )
 
 

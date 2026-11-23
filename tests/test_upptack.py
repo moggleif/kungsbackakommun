@@ -1,5 +1,5 @@
 """Krav: K2, K13, K16 och K45, ADR-0013, ADR-0018, ADR-0061 och ADR-0068.
-Kod: src/kommunhandlingar/upptack.py."""
+Kod: src/kommunhandlingar/upptack.py och arkivupptackt.py."""
 
 import argparse
 import json
@@ -12,6 +12,7 @@ from io import StringIO
 from pathlib import Path
 from unittest import mock
 
+from kommunhandlingar import arkivupptackt
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
 from kommunhandlingar.kandidat import Fynd
 from kommunhandlingar.konfiguration import las
@@ -23,7 +24,6 @@ from kommunhandlingar.upptack import (
     sammanfattning,
     skriv,
     upptack,
-    upptack_arkiv,
     utanfor_repot,
 )
 from tests.test_konfiguration import FIXTURER, ROT
@@ -134,10 +134,12 @@ class TestArkivet(unittest.TestCase):
         self.kommun = replace(exempelby, kallor=(kalla,))
 
     def test_utan_arkiv_i_konfigurationen_fragas_inget(self):
-        self.assertEqual(upptack_arkiv(self.utan_arkiv, Klient({}), None), Fynd())
+        self.assertEqual(
+            arkivupptackt.upptack(self.utan_arkiv, Klient({}), None), Fynd()
+        )
 
     def test_arkivets_lista_nyast_forst(self):
-        fynd = upptack_arkiv(self.kommun, arkivet(), None)
+        fynd = arkivupptackt.upptack(self.kommun, arkivet(), None)
         self.assertEqual(
             [str(k.datum) for k in fynd.kandidater], ["2022-05-03", "2022-05-02"]
         )
@@ -154,7 +156,7 @@ class TestArkivet(unittest.TestCase):
             def text(self, url):
                 raise Tidsgrans
 
-        resultat = upptack_arkiv(self.kommun, Avbryter(), datetime.now(UTC))
+        resultat = arkivupptackt.upptack(self.kommun, Avbryter(), datetime.now(UTC))
         self.assertEqual(
             resultat, Fynd(noteringar=["avbrutet vid tidsbudgetens hårda gräns"])
         )

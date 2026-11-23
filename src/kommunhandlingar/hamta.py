@@ -30,19 +30,19 @@ from kommunhandlingar import (
     omkonvertering,
     pool,
     provade,
+    provning,
     tidsbudget,
     versionslogg,
 )
 from kommunhandlingar.arkivluckor import ensamma
-from kommunhandlingar.behandla import Steg2, bara_omkonvertering, behandla
+from kommunhandlingar.behandla import Steg2, bara_omkonvertering
 from kommunhandlingar.fel import Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.klient import Klient
 from kommunhandlingar.kandidat import Kandidat, lista
 from kommunhandlingar.kandidat import las as las_kandidater
 from kommunhandlingar.konvertering import rapid, tesseract
-from kommunhandlingar.tidsbudget import Tidsgrans
-from kommunhandlingar.utfall import AT_SIDAN, VANTAR, Korning, Utfall
+from kommunhandlingar.utfall import VANTAR, Korning
 
 MER_I_NASTA_DEL = 4
 
@@ -55,35 +55,13 @@ def ordna(steg: Steg2, kandidater: list[Kandidat]) -> list[Kandidat]:
     return sorted(kandidater, key=lambda k: bara_omkonvertering(steg, k))
 
 
-def kor(steg: Steg2, kandidater: list[Kandidat], mjuk: datetime) -> Korning:
-    korning = Korning()
-    for nr, kandidat in enumerate(kandidater):
-        utfall = prova(steg, kandidat, mjuk)
-        korning.notera(utfall, kandidat.url)
-        if utfall in (VANTAR, AT_SIDAN):
-            korning.utfall[VANTAR.text] += len(kandidater) - nr - 1
-            break
-        korning.provade.append(kandidat)
-    return korning
-
-
-def prova(steg: Steg2, kandidat: Kandidat, mjuk: datetime) -> Utfall:
-    """VANTAR när delens tid gått ut före kandidaten, AT_SIDAN vid den hårda gränsen."""
-    try:
-        if steg.tid() >= mjuk:
-            return VANTAR
-        return behandla(steg, kandidat)
-    except Tidsgrans:
-        return AT_SIDAN
-
-
 def steg2(  # noqa: PLR0913  # undantag: testerna väljer loggfilen, None för arkivet
     steg: Steg2, kandidater: list[Kandidat], mjuk: datetime, logg: Path | None
 ) -> Korning:
     """Kandidaterna kommer ordnade. Loggen skrivs också när steg 2 stoppas."""
     fore = versionslogg.versioner(steg.pool)
     try:
-        return kor(steg, kandidater, mjuk)
+        return provning.kor(steg, kandidater, mjuk)
     finally:
         tidsbudget.stoppa()
         if logg:

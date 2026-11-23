@@ -16,6 +16,9 @@ Verktygen för den som tolkar figurerna (docs/03-ARKITEKTUR.md#tolkade-figurer):
 import argparse
 import sys
 import tempfile
+from collections.abc import Iterator
+from contextlib import contextmanager
+from dataclasses import dataclass
 from pathlib import Path
 
 import pypdfium2 as pdfium
@@ -46,22 +49,38 @@ def arbetslista(data: Path) -> list[str]:
     return rader
 
 
-def rendera(
-    md: Path, katalog: Path, klient: Hamtare, sidor: list[int] | None = None
-) -> list[Path]:
-    falt = frontmatter.las(md.read_text(encoding="utf-8"))
-    sidor = sidor or otolkade(falt)
+@dataclass(frozen=True)
+class Bestallning:
+    """Dokumentet, katalogen för bilderna och sidorna; None är de otolkade."""
+
+    md: Path
+    katalog: Path
+    sidor: list[int] | None = None
+
+
+def rendera(bestallning: Bestallning, klient: Hamtare) -> list[Path]:
+    falt = frontmatter.las(bestallning.md.read_text(encoding="utf-8"))
+    sidor = bestallning.sidor or otolkade(falt)
     if not sidor:
         return []
-    katalog.mkdir(parents=True, exist_ok=True)
+    bestallning.katalog.mkdir(parents=True, exist_ok=True)
+    with (
+        original_pdf(bestallning.md, falt, klient) as pdf,
+        pdfium.PdfDocument(pdf) as dokument,
+    ):
+        return [spara(dokument, nr, bestallning.katalog) for nr in sidor]
+
+
+@contextmanager
+def original_pdf(md: Path, falt: dict[str, str], klient: Hamtare) -> Iterator[Path]:
+    """Originalet i en tillfällig katalog, som raderas efteråt."""
     with tempfile.TemporaryDirectory() as tillfallig:
         pdf = Path(tillfallig) / "original.pdf"
         adresser = frontmatter.adresser(falt["kalla_url"])
         hamtat = original.hamta(original.Hamtsatt(klient, arkiv=False), adresser, pdf)
         if frontmatter.varde_av(hamtat.sha256) != falt["sha256"]:
             raise AndratOriginal(f"{md}: originalet har ändrats sedan konverteringen")
-        with pdfium.PdfDocument(pdf) as dokument:
-            return [spara(dokument, nr, katalog) for nr in sidor]
+        yield pdf
 
 
 def spara(dokument: pdfium.PdfDocument, nr: int, katalog: Path) -> Path:
@@ -99,7 +118,8 @@ def main(arg: argparse.Namespace) -> None:
             print(rad)
         return
     try:
-        for png in rendera(arg.md, arg.katalog, klient_for(arg.md), arg.sidor):
+        bestallning = Bestallning(arg.md, arg.katalog, arg.sidor)
+        for png in rendera(bestallning, klient_for(arg.md)):
             print(png)
     except (AndratOriginal, Hamtfel) as fel:
         sys.exit(f"Stoppad: {fel}")

@@ -44,7 +44,7 @@ def behandla(steg: Steg2, kandidat: Kandidat) -> Utfall:
     dokument = valj_plats(steg, kandidat, sokvag or rival)
     gammal = dokument.befintlig
     luckor = steg.arkiv and not rival and not bara_omkonvertering(steg, kandidat)
-    if luckor and ingen_lucka(steg.pool, steg.kommun, kandidat, gammal):
+    if luckor and ingen_lucka(steg.pool, steg.kommun, dokument):
         return utfall.LUCKOR
     if sokvag and samma_kalla(gammal, kandidat) and aktuell(steg, gammal):
         return utfall.OFORANDRAD
@@ -86,7 +86,7 @@ def misslyckad(steg: Steg2, dokument: Dokument, orsak: str) -> Utfall:
     gammal = dokument.befintlig
     hamtad = gammal["hamtad"] if gammal else dokument.hamtad.isoformat()
     falt = {"hamtad": hamtad, "pipeline": steg.version, "fel": orsak}
-    skriv(steg, dokument, falt | {"kvalitet": kvalitet.EJ_HAMTAD}, None)
+    skriv(steg, dokument, falt | {"kvalitet": kvalitet.EJ_HAMTAD})
     return utfall.ej_hamtad(orsak)
 
 
@@ -115,7 +115,7 @@ def hamtad_fil(steg: Steg2, dokument: Dokument, hamtat: original.Original) -> Ut
         return behall(steg, dokument)
     falt = kvalitetsfalt(steg.version, resultat) | filfalt(dokument, hamtat)
     falt["konverterad"] = steg.tid().isoformat()
-    skriv(steg, dokument, falt, resultat.sidor)
+    skriv(steg, replace(dokument, sidor=resultat.sidor), falt)
     return konverteringens_utfall(resultat, samma_fil)
 
 

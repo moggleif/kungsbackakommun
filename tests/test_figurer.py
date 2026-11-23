@@ -17,7 +17,7 @@ from kommunhandlingar import frontmatter, skrivning
 from kommunhandlingar.konvertering import las_sida
 from kommunhandlingar.konvertering.dokument import konvertera
 from kommunhandlingar.konvertering.figurer import har_figur
-from kommunhandlingar.tolkning import AndratOriginal, arbetslista, rendera
+from kommunhandlingar.tolkning import AndratOriginal, Bestallning, arbetslista, rendera
 from tests.test_hamta import Klient
 
 PDF = Path(__file__).parent / "fixtures" / "pdf"
@@ -115,27 +115,27 @@ class TestVerktygen(unittest.TestCase):
     def test_de_otolkade_sidorna_renderas(self):
         klient = Klient()
         klient.filer["u1"] = "sidor.pdf"
-        (png,) = rendera(self.md, self.rot, klient)
+        (png,) = rendera(Bestallning(self.md, self.rot), klient)
         self.assertEqual(png, self.rot / "17.png")
         self.assertGreater(png.stat().st_size, 0)
 
     def test_valda_sidor_renderas_for_granskningen(self):
         klient = Klient()
         klient.filer["u1"] = "sidor.pdf"
-        pngar = rendera(self.md, self.rot, klient, [1, 3])
+        pngar = rendera(Bestallning(self.md, self.rot, [1, 3]), klient)
         self.assertEqual(pngar, [self.rot / "1.png", self.rot / "3.png"])
 
     def test_dokument_utan_otolkade_sidor_hamtas_inte(self):
         self.skriv(figurer="null", tolkade="null")
         klient = Klient()
-        self.assertEqual(rendera(self.md, self.rot / "ny", klient), [])
+        self.assertEqual(rendera(Bestallning(self.md, self.rot / "ny"), klient), [])
         self.assertEqual(klient.anrop, [])
 
     def test_ett_andrat_original_renderas_inte(self):
         klient = Klient()
         klient.filer["u1"] = "begransad.pdf"
         with self.assertRaises(AndratOriginal):
-            rendera(self.md, self.rot, klient)
+            rendera(Bestallning(self.md, self.rot), klient)
         self.assertEqual(list(self.rot.glob("*.png")), [])
 
     def test_ett_dokument_i_delar_slas_ihop_och_varje_del_provas(self):
@@ -144,11 +144,11 @@ class TestVerktygen(unittest.TestCase):
         self.skriv(kalla_url="[u1, u2]", sha256=lista, figurer="[2, 17]", tolkade="[2]")
         klient = Klient()
         klient.filer |= dict(zip(["u1", "u2"], DELAR, strict=True))
-        (png,) = rendera(self.md, self.rot, klient)
+        (png,) = rendera(Bestallning(self.md, self.rot), klient)
         self.assertEqual((png.name, klient.anrop), ("17.png", ["u1", "u2"]))
         klient.filer["u2"] = "begransad.pdf"
         with self.assertRaises(AndratOriginal):
-            rendera(self.md, self.rot, klient)
+            rendera(Bestallning(self.md, self.rot), klient)
 
     def test_en_ny_konvertering_tar_bort_tolkningarna(self):
         katalog = skrivning.tabellkatalog(self.md)

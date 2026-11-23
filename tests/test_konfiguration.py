@@ -128,6 +128,7 @@ class TestFelStopparKorningen(unittest.TestCase):
         self.stoppas(lambda d: d.update(organ={}))
         self.stoppas(lambda d: d.update(organ=[]), text="organ ska vara en lista")
         self.stoppas(lambda d: d.update(kalla=[1]), text="kalla ska vara en lista")
+        self.stoppas(lambda d: d.update(grupper=[1]), text="lista med text")
 
     def test_okand_adapter(self):
         self.stoppas(lambda d: d["kalla"][0].update(adapter="episerver"))

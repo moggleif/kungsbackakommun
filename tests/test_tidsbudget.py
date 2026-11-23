@@ -1,5 +1,5 @@
 """Krav: K11 och K52, ADR-0006 och ADR-0075.
-Kod: src/kommunhandlingar/tidsbudget.py, behandla.py och hamta.py."""
+Kod: src/kommunhandlingar/tidsbudget.py, behandla.py, hamta.py och provning.py."""
 
 import os
 import signal
@@ -13,8 +13,8 @@ from unittest import mock
 
 from kommunhandlingar import frontmatter, tidsbudget
 from kommunhandlingar.datakontroll import fel_i
-from kommunhandlingar.hamta import kor
 from kommunhandlingar.konvertering import dokument
+from kommunhandlingar.provning import kor
 from kommunhandlingar.tidsbudget import Dokumentgrans, Tidsgrans, avbryt, utan_avbrott
 from tests.test_hamta import PDF, TID, Klient, kandidat, nytt_steg
 

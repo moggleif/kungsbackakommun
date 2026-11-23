@@ -54,8 +54,8 @@ class TestTolkningKommandot(Katalogfall):
             mock.patch.object(tolkning, "rendera", return_value=png) as rendera,
         ):
             utskrift = utskrift_av(tolkning.main, self.rendera("--sidor", "1,3"))
-        anrop = (self.md, Path("ut"), klient_for.return_value, [1, 3])
-        rendera.assert_called_once_with(*anrop)
+        bestallning = tolkning.Bestallning(self.md, Path("ut"), [1, 3])
+        rendera.assert_called_once_with(bestallning, klient_for.return_value)
         self.assertEqual(utskrift.splitlines(), [str(p) for p in png])
 
     def test_andrat_original_och_hamtfel_stoppar(self):

@@ -48,17 +48,16 @@ class Dokument:
     befintlig: dict[str, str] | None
     namn: str | None = None
     hamtad: datetime | None = None
+    sidor: list[Sida] | None = None  # konverteringens; None utan original
 
 
-def skriv(
-    steg: Steg2, dokument: Dokument, falt: dict, sidor: list[Sida] | None
-) -> None:
+def skriv(steg: Steg2, dokument: Dokument, falt: dict) -> None:
     md = steg.data / dokument.sokvag
-    kropp = skrivning.kropp(md, sidor)
+    kropp = skrivning.kropp(md, dokument.sidor)
     falt = grundfalt(steg, dokument) | falt
     falt["arenden"] = arenden(falt["typ"], kropp)
     text = frontmatter.skriv(falt) + kropp
-    tabeller = skrivning.tabellfiler(sidor or [])
+    tabeller = skrivning.tabellfiler(dokument.sidor or [])
     with utan_avbrott():
         skrivning.skriv(md, text, tabeller)
     steg.pool.satt(dokument.sokvag, frontmatter.las(text))

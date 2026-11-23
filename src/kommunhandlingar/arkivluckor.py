@@ -16,18 +16,20 @@ from kommunhandlingar.kandidat import Kandidat
 from kommunhandlingar.konvertering.kvalitet import EJ_HAMTAD, KVALITETER
 from kommunhandlingar.plats import grundplats
 from kommunhandlingar.pool import Pool
+from kommunhandlingar.poolskrivning import Dokument
 
 
 def hel(falt: dict[str, str]) -> bool:
     return falt["kvalitet"] != EJ_HAMTAD
 
 
-def ingen_lucka(pool: Pool, kommun: str, kandidat: Kandidat, gammal) -> bool:
+def ingen_lucka(pool: Pool, kommun: str, dokument: Dokument) -> bool:
     """Arkivet tar inte en källnyckel med ett fullständigt dokument, ett
     sammanträde som har typen från en annan plattform, en plats med ett
     dokument från en levande källa, eller en plats vars dokument ur arkivet
     har en källnyckel som inte står i listan (`placera` ger det), utom ett
     försök från en annan plattform. `motstandare` prövas före."""
+    kandidat, gammal = dokument.kandidat, dokument.befintlig
     if kandidat.kallnyckel in pool.efter_nyckel:
         return hel(gammal)
     if typen_finns(pool, kandidat):
