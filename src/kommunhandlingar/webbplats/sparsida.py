@@ -4,12 +4,12 @@ Test: tests/test_lokalbehov.py, tests/test_initiativ.py.
 Sidan om ett organs spår av ett slag, byggd som målsidan (ADR-0050): en
 hopfälld del om metoden, antalet saker per fas och per avsändare, ett
 urval, tidslinjen med en rad per sak och en kolumn per år, där ikonerna
-visar årets faser, och ett kort per sak (`sparkort.py`). Stilen och
-skriptet är målsidans.
+visar årets faser, och ett kort per sak (`sparkort.py`). Sidans ram –
+flikarna, stilen, inledningen och delen om sidan – står för sig och
+innehållet för sig; sakerna samlas i `sparsak.py` och sammandraget och
+urvalet står i `sparsammandrag.py`. Stilen och skriptet är målsidans.
 """
 
-import re
-from collections import Counter
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun
@@ -22,14 +22,9 @@ from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.spar import Slag, Steg
 from kommunhandlingar.webbplats.sparikon import teckenforklaring
-from kommunhandlingar.webbplats.sparkort import (
-    Sak,
-    Vy,
-    arets,
-    avsandarna,
-    egenskaper,
-    korten,
-)
+from kommunhandlingar.webbplats.sparkort import Vy, arets, egenskaper, korten
+from kommunhandlingar.webbplats.sparsak import Sak, avsandarna, per_sak
+from kommunhandlingar.webbplats.sparsammandrag import sammandrag, urval
 
 
 def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
@@ -38,89 +33,29 @@ def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
 
 def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:
     organ, vy = stegen[0].organ, sammanhang.vy(slag)
-    sidans = adress(vy.kommun, organ, slag)
     namn = vy.kommun.organnamn(organ)
-    sakerna = per_sak(slag, stegen)
-    innehall = (
+    allt = ramen(sammanhang, organ, slag) + innehallet(vy, stegen) + skript("mal.js")
+    sidans = adress(vy.kommun, organ, slag)
+    return sida(sammanhang.mall, sidans, f"{slag.rubrik} – {namn}", allt)
+
+
+def ramen(sammanhang: Sammanhang, organ: str, slag: Slag) -> str:
+    return (
         flikar(sammanhang.underlag, organ, slag.id)
         + stil("mal.css", "spar.css")
         + slag.inledning
         + ram.om_sidan(slag.metod + AREN, slag.adr)
-        + sammandrag(slag, sakerna)
-        + urval(slag, stegen)
+    )
+
+
+def innehallet(vy: Vy, stegen: list[Steg]) -> str:
+    sakerna = per_sak(vy.slag, stegen)
+    return (
+        sammandrag(vy.slag, sakerna)
+        + urval(vy.slag, stegen)
         + tidslinje(vy, sakerna)
         + korten(vy, sakerna)
-        + skript("mal.js")
     )
-    return sida(sammanhang.mall, sidans, f"{slag.rubrik} – {namn}", innehall)
-
-
-# Sakerna i den ordning de först står, med stegen i år- och fasordning.
-def per_sak(slag: Slag, stegen: list[Steg]) -> list[Sak]:
-    namn = dict.fromkeys(s.namn for s in sorted(stegen, key=lambda s: s.ar))
-    senaste = senaste_ar(slag, stegen)
-    return [samla(slag, [s for s in stegen if s.namn == n], senaste) for n in namn]
-
-
-def samla(slag: Slag, stegen: list[Steg], senaste: int | None) -> Sak:
-    fas = list(slag.faser)
-    stegen = sorted(stegen, key=lambda s: ordning(s, fas))
-    markor = [markor_for(v) for v in avsandarna(slag, stegen)]
-    if any(s.ar == senaste and s.fas == slag.aktuell for s in stegen):
-        markor.append("senaste")
-    return stegen[0].namn, stegen, markor
-
-
-def markor_for(avsandare: str) -> str:
-    return "av-" + re.sub(r"\W+", "-", avsandare.lower()).strip("-")
-
-
-def senaste_ar(slag: Slag, stegen: list[Steg]) -> int | None:
-    return max((s.ar for s in stegen if s.fas == slag.aktuell), default=None)
-
-
-# Inom ett år kommer den första fasen först och sedan källornas datum, så
-# att en återrapport i oktober står före ett beslut i november.
-def ordning(steg: Steg, faser: list[str]) -> tuple[int, bool, str, int]:
-    datum = steg.kalla.split("/")[2]
-    return steg.ar, steg.fas != faser[0], datum, faser.index(steg.fas)
-
-
-def sammandrag(slag: Slag, sakerna: list[Sak]) -> str:
-    per_fas = [
-        (betyder, sum(any(s.fas == fas for s in sak[1]) for sak in sakerna))
-        for fas, (_, betyder) in slag.faser.items()
-    ]
-    rutor = ruta(
-        f"{slag.antal.capitalize()} per fas",
-        per_fas,
-        f"{slag.antal} som någon gång nått fasen",
-    )
-    if slag.avsandare:
-        vem = Counter(v for sak in sakerna for v in avsandarna(slag, sak[1]))
-        rutor += ruta(
-            f"{slag.antal.capitalize()} per avsändare",
-            sorted(vem.items()),
-            f"{slag.antal} per avsändare",
-        )
-    return f'<div class="sammandrag">{rutor}</div>'
-
-
-def ruta(rubrik: str, siffror: list[tuple[str, int]], forklaring: str) -> str:
-    rader = "".join(f"<div><dt>{escape(t)}</dt><dd>{n}</dd></div>" for t, n in siffror)
-    return (
-        f'<section class="ruta"><h3>{rubrik}</h3><dl class="siffror">{rader}</dl>'
-        f"<p><small>Antal {forklaring} enligt poolen.</small></p></section>"
-    )
-
-
-def urval(slag: Slag, stegen: list[Steg]) -> str:
-    val = [("alla", "Alla")]
-    if senaste := senaste_ar(slag, stegen):
-        val.append(("senaste", f"I {slag.rubrik.lower()} {senaste}"))
-    val += [(fas, betyder.capitalize()) for fas, (_, betyder) in slag.faser.items()][1:]
-    val += [(markor_for(v), v) for v in sorted(avsandarna(slag, stegen))]
-    return ram.urval(val)
 
 
 def tidslinje(vy: Vy, sakerna: list[Sak]) -> str:
@@ -135,18 +70,17 @@ def tidslinje(vy: Vy, sakerna: list[Sak]) -> str:
 
 
 def rad(vy: Vy, nr: int, sak: Sak) -> str:
-    namn, stegen, _ = sak
-    finns = {s.ar for s in stegen}
-    celler = "".join(cell(vy, stegen, a, finns) for a in vy.ar)
-    vem = "".join(f" <small>{escape(v)}</small>" for v in avsandarna(vy.slag, stegen))
+    celler = "".join(cell(vy, sak, a) for a in vy.ar)
+    vem = "".join(f" <small>{escape(v)}</small>" for v in avsandarna(vy.slag, sak.steg))
     return (
         f'<tr {egenskaper(nr, sak)}><th scope="row">'
-        f'<a href="#sak-{nr}">{escape(namn)}</a>{vem}</th>{celler}</tr>'
+        f'<a href="#sak-{nr}">{escape(sak.namn)}</a>{vem}</th>{celler}</tr>'
     )
 
 
-def cell(vy: Vy, stegen: list[Steg], ar: int, finns: set[int]) -> str:
+def cell(vy: Vy, sak: Sak, ar: int) -> str:
+    finns = sak.aren
     if ar not in finns:
         return "<td></td>"
     klass = "band" + " start" * (ar - 1 not in finns) + " slut" * (ar + 1 not in finns)
-    return f'<td class="{klass}">{arets(vy, stegen, ar)}</td>'
+    return f'<td class="{klass}">{arets(vy, sak.steg, ar)}</td>'

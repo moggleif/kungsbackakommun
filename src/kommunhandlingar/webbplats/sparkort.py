@@ -19,9 +19,7 @@ from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.projekt import Projekt
 from kommunhandlingar.webbplats.spar import Slag, Steg
 from kommunhandlingar.webbplats.sparikon import ikon
-
-# Namnet, stegen och sakens märken för urvalet utöver faserna.
-Sak = tuple[str, list[Steg], list[str]]
+from kommunhandlingar.webbplats.sparsak import Sak, avsandarna
 
 
 @dataclass(frozen=True)
@@ -43,23 +41,24 @@ def korten(vy: Vy, sakerna: list[Sak]) -> str:
 
 
 def kort(vy: Vy, nr: int, sak: Sak) -> str:
-    namn, stegen, _ = sak
+    stegen = sak.steg
     borjan, slut = stegen[0].ar, stegen[-1].ar
     aren = str(borjan) if borjan == slut else f"{borjan}–{slut}"
-    senaste = stegen[-1]
     poster = "".join(post(vy, s) for s in reversed(stegen))
     return (
         f'<article id="sak-{nr}" {egenskaper(nr, sak)}>'
         f'<p class="markor"><span>{aren}</span>{avsandare(vy.slag, stegen)}</p>'
-        f"<h3>{escape(namn)}</h3>"
-        f"<p>Senast: {vy.slag.faser[senaste.fas][1]} {senaste.ar}"
-        f"{f' ({escape(senaste.varde)})' if senaste.varde else ''}"
-        f"{' <small>tolkad</small>' if senaste.tolkad else ''}</p>"
-        f"{planen(vy, stegen)}{projektet(vy.projekt.get(namn))}{remsa(vy, stegen)}"
+        f"<h3>{escape(sak.namn)}</h3>{senast(vy.slag, stegen[-1])}"
+        f"{planen(vy, stegen)}{projektet(vy.projekt.get(sak.namn))}{remsa(vy, stegen)}"
         f"<details><summary>Läs mer: historiken och källorna, {len(stegen)} steg"
-        "</summary>"
-        f"<ol>{poster}</ol></details></article>"
+        f"</summary><ol>{poster}</ol></details></article>"
     )
+
+
+def senast(slag: Slag, steg: Steg) -> str:
+    varde = f" ({escape(steg.varde)})" if steg.varde else ""
+    tolkad = " <small>tolkad</small>" if steg.tolkad else ""
+    return f"<p>Senast: {slag.faser[steg.fas][1]} {steg.ar}{varde}{tolkad}</p>"
 
 
 def planen(vy: Vy, stegen: list[Steg]) -> str:
@@ -93,12 +92,6 @@ def avsandare(slag: Slag, stegen: list[Steg]) -> str:
     return "".join(f"<span>{escape(v)}</span>" for v in avsandarna(slag, stegen))
 
 
-def avsandarna(slag: Slag, stegen: list[Steg]) -> list[str]:
-    return list(
-        dict.fromkeys(s.varde for s in stegen if s.fas == slag.avsandare and s.varde)
-    )
-
-
 def remsa(vy: Vy, stegen: list[Steg]) -> str:
     falten = "".join(falt(vy, stegen, a) for a in vy.ar)
     return f'<ol class="remsa" aria-label="År för år">{falten}</ol>'
@@ -120,8 +113,7 @@ def arets(vy: Vy, stegen: list[Steg], ar: int) -> str:
 # Egenskaperna för målsidans skript: `slag` är faserna saken nått och
 # dess märken.
 def egenskaper(nr: int, sak: Sak) -> str:
-    _, stegen, markor = sak
-    slag = " ".join([*dict.fromkeys(s.fas for s in stegen), *markor])
+    slag = " ".join([*sak.faserna, *sak.markor])
     return f'data-mal="{nr}" data-slag="{escape(slag)}"'
 
 

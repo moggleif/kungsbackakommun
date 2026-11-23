@@ -11,7 +11,8 @@ from dataclasses import dataclass
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.spar import Slag, Steg
-from kommunhandlingar.webbplats.sparsida import adress, per_sak
+from kommunhandlingar.webbplats.sparsak import per_sak
+from kommunhandlingar.webbplats.sparsida import adress
 
 # En paragrafs första sida och diarienummer, per protokoll.
 Sidindex = dict[str, list[tuple[int, list[str]]]]
@@ -45,10 +46,10 @@ def tacker(index: Sidindex, kalla: str) -> list[list[str]]:
 
 def kortlankar(kommun: Kommun, sparen: Spar, index: Sidindex):
     lankar, namnen = defaultdict(list), kommun.organnamnen()
-    for slag, organ, nr, (namn, stegen, _) in alla_saker(sparen):
+    for slag, organ, nr, sak in alla_saker(sparen):
         sidans = f"{adress(kommun, organ, slag)}#sak-{nr}"
-        rubrik = f"{slag.rubrik}, {namnen[organ]}: {namn}"
-        for dnr, tolkad in kopplingar(index, stegen).items():
+        rubrik = f"{slag.rubrik}, {namnen[organ]}: {sak.namn}"
+        for dnr, tolkad in kopplingar(index, sak.steg).items():
             lankar[dnr].append(Kortlank(sidans, rubrik, tolkad))
     return lankar
 
