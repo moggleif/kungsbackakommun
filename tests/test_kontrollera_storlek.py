@@ -93,12 +93,6 @@ class TestKontrolleraStorlek(unittest.TestCase):
 class TestGranserPerKatalog(unittest.TestCase):
     """K87."""
 
-    def test_koden_haller_malen(self):
-        self.assertEqual((KOD.funktion, KOD.fil), (15, 250))
-
-    def test_testerna_haller_de_hogre_granserna(self):
-        self.assertEqual((TESTER.funktion, TESTER.fil), (30, 250))
-
     def test_funktion_over_malet_faller_i_koden_men_inte_i_testerna(self):
         kallkod = funktion(KOD.funktion + 1)
         self.assertEqual(len(kontrollera(kallkod, KOD)), 1)

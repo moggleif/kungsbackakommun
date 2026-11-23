@@ -64,11 +64,9 @@ def bekraftad(gra: Image.Image, forsta: ocr.Lasning, figur: bool) -> Skannad | N
     if forsta.for_vag_h is None:
         return None
     text = bekraftade.text(gra, forsta.for_vag_h)
-    return (
-        None
-        if text is None
-        else Skannad(kvalitet.OCR, text, figur, tal_bekraftade=True)
-    )
+    if text is None:
+        return None
+    return Skannad(kvalitet.OCR, text, figur, tal_bekraftade=True)
 
 
 def sakra(gra: Image.Image, tsv: str, figur: bool) -> Skannad | None:

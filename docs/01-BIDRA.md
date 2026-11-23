@@ -70,8 +70,9 @@ parametrar, nästling och komplexitet, för koden med `pyproject.toml` och
 för testerna med `tests/ruff.toml`; `scripts/kontrollera_storlek.py`
 kontrollerar rader per funktion och fil, som ruff saknar regler för. Rader
 per fil hålls där vid 250 också för koden tills spårslagen i
-`webbplats/sparslag.py` har delats (#384); då sänks `KOD.fil` till 150. Markdown-lint (ADR-0021)
-körs med [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+`webbplats/sparslag.py` har delats (#384); då sänks `KOD.fil` till 150.
+
+Markdown-lint (ADR-0021) körs med [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
 och Node på de `.md` som ändrats, med reglerna i
 `.markdownlint-cli2.jsonc`; hela poolen tar en halvtimme. `pip-audit`
 letar efter kända sårbarheter i projektets beroenden, och Dependabot
@@ -81,8 +82,8 @@ kontrollerar också att inga binärer är incheckade.
 
 Webbplatsens skript i `src/kommunhandlingar/webbplats/*.js` och deras
 tester i `tests/js/` kontrolleras av ESLint, med samma gränser
-(`eslint.config.mjs`), också 150 rader per fil för skripten. `npm test` kör testerna, som läser sidor ur
-ögonblicksbilden av webbplatsen; hur står under
+(`eslint.config.mjs`), också 150 rader per fil för skripten. `npm test`
+kör testerna, som läser sidor ur ögonblicksbilden av webbplatsen; hur står under
 [Webbplatsens skript](03-ARKITEKTUR.md#webbplatsens-skript).
 
 ## Webbplatsen
