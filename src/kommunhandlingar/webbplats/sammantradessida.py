@@ -21,21 +21,37 @@ from kommunhandlingar.webbplats.sammantrade import Arende, Mote, adress, ordnade
 def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
     kommun, forsta = mote.kommun, mote.dokument[0]
     sidans = adresser.i_kommunen(kommun.id, adress(mote.dokument))
-    namn = kommun.organnamnen()
-    lankar = Lankar(adresser.rot(sidans), handlingarna(kommun.id, mote.dokument), namn)
-    organ = forsta["organ"]
-    oversikten = lankar.rot + adresser.oversikt(kommun.id)
-    organets = lankar.rot + adresser.organsida(kommun.id, organ)
-    vag = [(oversikten, oversiktsnamn(mall.kommuner, kommun)), (organets, namn[organ])]
+    lankar = lankarna(mote, sidans)
     innehall = (
-        stig(vag)
+        stig(vagen(mall, mote, lankar))
         + stil("mal.css", "mote.css")
         + "<h2>Sammanträdets dokument</h2>"
         + dokumentlista(kommun.id, mote.dokument, lankar.rot)
         + dagordningen(arenden, lankar)
     )
-    rubrik = f"{namn[organ]} {motesnamn(forsta['datum'], forsta['lopnr'])}"
+    organ = lankar.organnamn[forsta["organ"]]
+    rubrik = f"{organ} {motesnamn(forsta['datum'], forsta['lopnr'])}"
     return sida(mall, sidans, rubrik, innehall)
+
+
+def lankarna(mote: Mote, sidans: str) -> Lankar:
+    kommun = mote.kommun
+    return Lankar(
+        adresser.rot(sidans),
+        handlingarna(kommun.id, mote.dokument),
+        kommun.organnamnen(),
+    )
+
+
+def vagen(mall: Mall, mote: Mote, lankar: Lankar) -> list[tuple[str, str]]:
+    kommun, organ = mote.kommun, mote.dokument[0]["organ"]
+    return [
+        (
+            lankar.rot + adresser.oversikt(kommun.id),
+            oversiktsnamn(mall.kommuner, kommun),
+        ),
+        (lankar.rot + adresser.organsida(kommun.id, organ), lankar.organnamn[organ]),
+    ]
 
 
 def dagordningen(arenden: list[Arende], lankar: Lankar) -> str:
@@ -43,16 +59,22 @@ def dagordningen(arenden: list[Arende], lankar: Lankar) -> str:
         return (
             "<h2>Dagordningen</h2><p>Dagordningen gick inte att läsa ur kallelsen.</p>"
         )
-    hittade = sum(1 for a in arenden if a.handling)
     return (
         f"<h2>Dagordningen, {antal(len(arenden), 'punkt', 'punkter')}</h2>"
+        + forklaring(arenden)
+        + '<div class="malkort punkter">'
+        + "".join(punktkort(a, lankar) for a in arenden)
+        + "</div>"
+    )
+
+
+def forklaring(arenden: list[Arende]) -> str:
+    hittade = sum(1 for a in arenden if a.handling)
+    return (
         "<p>Varje punkt med förslaget ur kallelsen, handlingens sidor, beslutet "
         "i protokollet och historiken i alla organ med samma diarienummer, som "
         f"det står i källan. Handlingen hittades för {hittade} av "
         f"{len(arenden)}.</p>"
-        '<div class="malkort punkter">'
-        + "".join(punktkort(a, lankar) for a in arenden)
-        + "</div>"
     )
 
 

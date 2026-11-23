@@ -33,7 +33,7 @@ class Mall:
         return len(self.kommuner) == 1
 
 
-def sida(mall: Mall, adress: str, rubrik: str, innehall: str) -> str:
+def sida(mall: Mall, adress: str, rubrik: str, innehall: str) -> str:  # noqa: PLR0913  # undantag: HTML-mallen blir inte tydligare av att delas, och varje sida ger sin adress, rubrik och sitt innehåll
     namn = sajtnamn(mall.kommuner)
     titel = namn if rubrik == namn else f"{rubrik} – {namn}"
     return f"""<!doctype html>

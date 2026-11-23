@@ -10,7 +10,8 @@ sajtens namn (K58, ADR-0082).
 """
 
 from collections.abc import Callable
-from functools import partial
+from dataclasses import dataclass
+from functools import cached_property, partial
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun, Organ
@@ -33,26 +34,44 @@ def oversikt(
     sammanhang: Sammanhang, rader: list[Organrad], dokument: list[dict]
 ) -> str:
     kommun = sammanhang.kommun
-    sammantraden = {rad.id: rad.sammantraden for rad in rader}
-    antal = {o.id: overtid(sammanhang.underlag, o.id) for o in kommun.organ}
-    sidor = kommunens_sidor(antal)
-    huvud = "".join(f'<th scope="col">{escape(r)}</th>' for _, r, _ in sidor)
-    grupper = "".join(
-        f"<tbody>{grupprad(namn, len(sidor) + 2)}"
-        + "".join(
-            organrad(kommun.id, o, sammantraden[o.id])
-            + celler(partial(adresser.over_tid, kommun.id, o.id), antal[o.id], sidor)
-            + "</tr>"
-            for o in organen
-        )
-        + "</tbody>"
-        for namn, organen in grupperade(kommun)
+    tabellen = Tabellen(
+        kommun,
+        {o.id: overtid(sammanhang.underlag, o.id) for o in kommun.organ},
+        {rad.id: rad.sammantraden for rad in rader},
     )
+    grupper = "".join(tabellen.grupp(namn, o) for namn, o in grupperade(kommun))
     return (
         inledning(dokument) + '<div class="tabell"><table class="oversikt"><thead><tr>'
-        f'<th scope="col">Organ</th><th scope="col">Sammanträden</th>{huvud}'
+        f'<th scope="col">Organ</th><th scope="col">Sammanträden</th>{tabellen.huvud()}'
         f"</tr></thead>{grupper}</table></div>"
     )
+
+
+# Antalet per organ och sida över tid, och antalet sammanträden per organ.
+@dataclass(frozen=True)
+class Tabellen:
+    kommun: Kommun
+    antal: dict[str, dict[str, int]]
+    sammantraden: dict[str, int]
+
+    @cached_property
+    def sidor(self) -> list[tuple[str, str, str]]:
+        return kommunens_sidor(self.antal)
+
+    def huvud(self) -> str:
+        return "".join(f'<th scope="col">{escape(r)}</th>' for _, r, _ in self.sidor)
+
+    def grupp(self, namn: str, organen: list[Organ]) -> str:
+        rader = "".join(self.rad(o) for o in organen)
+        return f"<tbody>{grupprad(namn, len(self.sidor) + 2)}{rader}</tbody>"
+
+    def rad(self, organ: Organ) -> str:
+        over_tid = partial(adresser.over_tid, self.kommun.id, organ.id)
+        return (
+            organrad(self.kommun.id, organ, self.sammantraden[organ.id])
+            + celler(over_tid, self.antal[organ.id], self.sidor)
+            + "</tr>"
+        )
 
 
 def kommunens_sidor(antal: dict[str, dict[str, int]]) -> list[tuple[str, str, str]]:
