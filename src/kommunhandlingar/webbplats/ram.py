@@ -1,8 +1,9 @@
 """Krav: målsidans, spårsidornas, kalenderns och luckornas, som står i deras
 moduler. Test: tests/test_ram.py.
 
-Det som sidorna över tid delar: länken till ett beslut, den hopfällda
-delen om sidan och knapparna för urvalet, som skripten visar.
+Det som sidorna över tid, kalendern och luckorna delar: länken till ett
+beslut, den hopfällda delen om sidan och knapparna för urvalet, som
+skripten visar.
 """
 
 from html import escape
@@ -30,12 +31,13 @@ def om_sidan(metod: str, *filer: str) -> str:
 
 
 # Knapparna visas av skriptet; utan det står allt och urvalet behövs inte.
-def urval(val: list[tuple[str, str]], egenskaper: str = "") -> str:
+def urval(val: list[tuple[str, str]], sista: int | None = None) -> str:
     knappar = "".join(
         f'<button type="button" data-urval="{escape(v)}">{escape(text)}</button>'
         for v, text in val
     )
+    data = "" if sista is None else f' data-sista="{sista}"'
     return (
-        f'<div class="urval" role="group" aria-label="Visa"{egenskaper} '
+        f'<div class="urval" role="group" aria-label="Visa"{data} '
         f"hidden>{knappar}</div>"
     )

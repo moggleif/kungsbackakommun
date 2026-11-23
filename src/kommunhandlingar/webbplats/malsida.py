@@ -154,4 +154,4 @@ def urval(sista: int, slagen: set[str]) -> str:
     val = [("alla", "Alla"), ("aktiv", f"Gäller {sista}")]
     val += [(slag, slag.capitalize()) for slag in SLAG if slag in slagen]
     val += [("bytt", "Har bytt rubrik")]
-    return ram.urval(val, f' data-sista="{sista}"')
+    return ram.urval(val, sista)

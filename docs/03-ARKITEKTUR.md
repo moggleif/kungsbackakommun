@@ -2172,9 +2172,9 @@ varje push till `main`, för hand och när ett issue med etiketten
   `webbplats/adresser.py`, så att en sida som flyttar tar sina länkar med
   sig; `tests/test_lankar.py` prövar att varje intern länk i
   ögonblicksbilden pekar på en fil som finns (K78). Det som sidorna över
-  tid och kalendern delar – länken till ett beslut, "Om sidan" och
-  urvalsknapparna – står i `webbplats/ram.py`, och organets visningsnamn
-  ger `Kommun.organnamn`.
+  tid, kalendern och luckorna delar – länken till ett beslut, "Om sidan"
+  och urvalsknapparna – står i `webbplats/ram.py`, och organets
+  visningsnamn ger `Kommun.organnamn` (alla organens `Kommun.organnamnen`).
   Varje sida har samma meny (K39, K58,
   [ADR-0081](decisions/0081-menyn-i-projektets-gemensamma-form.md)) i
   projektets gemensamma form – för varje kommun i bokstavsordning efter id

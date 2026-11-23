@@ -54,7 +54,7 @@ def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) ->
     innehall = (
         f"<style>{las('kalender.css')}{organstil(farg)}</style>"
         + INLEDNING
-        + kvalitet(mall, sammantraden, namn)
+        + kvalitet(sammantraden, namn)
         + om_gruppmoten(kommun, moten, namn)
         + urval([*farg, *([GRUPPMOTE] if moten else [])], namn)
         + kalendervyer.manader(sammantraden + moten)
@@ -64,7 +64,7 @@ def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) ->
     return sida(mall, adress, kommunens(mall.kommuner, "Kalender", kommun), innehall)
 
 
-def kvalitet(mall: Mall, sammantraden: list[Sammantrade], namn: dict[str, str]) -> str:
+def kvalitet(sammantraden: list[Sammantrade], namn: dict[str, str]) -> str:
     osakra = [s for s in sammantraden if s.osakert]
     return (
         f'<details id="kvalitet"><summary>Kvalitet: {len(osakra)} av '

@@ -33,6 +33,11 @@ class TestBesluten(unittest.TestCase):
             f'<p>Hur och varför står i <a href="{BESLUTEN}0001-a.md">ADR-0001</a>.</p>',
         )
 
+    def test_tva_beslut_utan_komma(self):
+        text = hur_och_varfor("0001-a.md", "0002-b.md")
+        self.assertIn("ADR-0001</a> och <a", text)
+        self.assertNotIn(",", text)
+
     def test_det_sista_beslutet_efter_och(self):
         text = hur_och_varfor("0001-a.md", "0002-b.md", "0003-c.md")
         self.assertIn("ADR-0001</a>, <a", text)
@@ -49,10 +54,10 @@ class TestUrval(unittest.TestCase):
         text = urval([("<v>", "<t>")])
         self.assertIn('data-urval="&lt;v&gt;">&lt;t&gt;</button>', text)
 
-    def test_egenskaperna_star_fore_hidden(self):
+    def test_sista_aret_star_fore_hidden(self):
         self.assertIn(
             'aria-label="Visa" data-sista="2026" hidden>',
-            urval([], ' data-sista="2026"'),
+            urval([], 2026),
         )
 
     def test_malsidan_escapar(self):
