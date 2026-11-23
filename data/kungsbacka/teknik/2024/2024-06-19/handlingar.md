@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1722ec5a1900ff6cbab106e/17183629925
 sha256: ea03bf23deece70a621415a7d09de028991241c144f41963804cf880383d7e99
 bytes: 79332559
 sidor: 442
-hamtad: 2026-11-22T10:19:07+00:00
-konverterad: 2026-11-22T10:25:55+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-22T23:57:04+00:00
+konverterad: 2026-11-23T00:08:39+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ointressant, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ocr, ocr, ok, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker]
-tal_obekraftade: [12, 17, 18, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 67, 76, 126, 127, 137, 139, 140, 141, 146, 152, 153, 154, 155, 158, 162, 165, 168, 171, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 189, 190, 191, 194, 205, 206, 211, 212, 233, 234, 235, 237, 239, 240, 241, 242, 298, 299, 301, 303, 304, 305, 306, 307, 313, 339, 347, 353, 358, 390, 392, 393, 395, 397, 398, 399, 400, 401, 402, 403, 404, 405, 408, 409, 411, 412, 414, 424, 426]
+tal_obekraftade: [12, 17, 18, 48, 49, 50, 51, 52, 53, 55, 57, 58, 59, 60, 62, 63, 67, 76, 127, 137, 139, 140, 146, 153, 158, 165, 171, 176, 177, 179, 180, 181, 182, 183, 184, 191, 205, 206, 212, 233, 234, 235, 237, 239, 240, 241, 242, 298, 299, 301, 303, 304, 305, 306, 313, 347, 353, 358, 390, 392, 393, 397, 398, 399, 400, 401, 402, 403, 404, 405, 408, 409, 412, 414, 424, 426]
 figurer: [68, 77, 78, 79, 80, 82, 83, 85, 88, 89, 90, 91, 93, 126, 128, 129, 132, 136, 141, 142, 145, 147, 148, 150, 160, 161, 169, 175, 176, 205, 211, 221, 223, 226, 228, 234, 237, 238, 250, 254, 269, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 296, 299, 304, 305, 306, 314, 347, 351, 352, 354, 360, 390, 392, 394, 395, 396, 399, 411, 412, 413, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 427, 428, 429, 430, 431, 432, 433, 434, 435]
 tolkade: []
 granskad: null
@@ -6523,7 +6523,7 @@ runt Hede station, Kungsbacka norra. Cykeln är ett effektivt och snabbt
 transportmedel som också bidrar till en livfull stadsmiljö. Gång och cykel främjar
 folkhälsan och förbättrar livskvaliteten.
 
-21
+27
 
 <!-- sida 155 -->
 
@@ -7883,7 +7883,7 @@ Ett välutvecklat gång- och cykelnät skapar hälsosamma vanor hos alla och min
 befolkningen. Planen säkerställer ekosystemtjänster som vi är beroende av för vår hälsa, men även till
 exempel skuggning av träd för att motverka solstress.
 
-\>
+51
 
 <!-- sida 179 -->
 
@@ -14528,7 +14528,7 @@ Lag (2006:412) om allmänna vattentjänster (LAV)
 
 Att säkerställa hållbara vattentjänster åt Kungsbackas invånare är ett ansvar som
 hela kommunen delar reglerat av Lag (2006:412) om allmänna vattentjänster (LAV),
-6 8. Lagändring från 2023 innebär en ökad flexibilitet i kommunens bedömning av
+6 §. Lagändring från 2023 innebär en ökad flexibilitet i kommunens bedömning av
 behovet av en allmän vattentjänst. En kommun ska ta särskild hänsyn till
 förutsättningarna att tillgodose behovet av vattenförsörjning och avlopp genom en
 enskild anläggning som kan godtas med hänsyn till skyddet för människors hälsa
@@ -14538,7 +14538,7 @@ har kravet på den enskilda anläggningen varit att den ska motsvara eller vara 
 
 Kommunens skyldighet att ordna vattentjänster
 
-68 Om det med hänsyn till skyddet för människors hälsa eller miljön behöver ordnas
+6 § Om det med hänsyn till skyddet för människors hälsa eller miljön behöver ordnas
 vattenförsörjning eller avlopp i ett större sammanhang för en viss befintlig eller blivande
 bebyggelse, ska kommunen
 
@@ -14561,7 +14561,7 @@ området. Kommunerna bör beakta det långsiktiga behovet. Dessa till synes läg
 satta krav gäller endast i bedömningen av huruvida ett kommunalt
 verksamhetsområde behövs eller inte. När ett beslut om ett verksamhetsområde väl
 är fattat, ska fortfarande alla fastigheter inom området anslutas till den allmänna
-anläggningen. Hur förändringen i LAV 86 exakt påverkar kommunens
+anläggningen. Hur förändringen i LAV §6 exakt påverkar kommunens
 planeringsarbete är oklart då det i skrivande stund inte finns några prejudicerande
 domar att utgå ifrån.
 
