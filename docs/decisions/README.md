@@ -124,3 +124,4 @@ Regler för det här repot, utöver MADR:
 | 0106 | [Skannade sidor får väg H:s tal när den lagrade texten har just dem](0106-skannade-sidor-far-vag-hs-tal.md) | accepted |
 | 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |
 | 0108 | [CI håller målen i Ren kod för koden, och testerna behåller de högre gränserna](0108-ci-haller-malen-for-koden.md) | accepted |
+| 0109 | [Varje källa upptäcker sitt levande och sitt arkiv bakom samma gränssnitt](0109-kallorna-bakom-ett-gransnitt.md) | accepted |

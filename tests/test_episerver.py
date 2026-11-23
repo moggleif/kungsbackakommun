@@ -52,8 +52,8 @@ class TestKommunfilen(unittest.TestCase):
         data = exempelby()
         data["kalla"].append(copy.deepcopy(POST))
         kommun = tolka("exempelby", data)
-        self.assertEqual(len(kommun.kallor), 1)
-        self.assertEqual(kommun.arkivkallor[0].mappar, {"bun": (MAPP,)})
+        self.assertEqual(len(kommun.kallor), 2)
+        self.assertEqual(kommun.kallor[1].kalla.mappar, {"bun": (MAPP,)})
 
     def test_mappar_for_ett_okant_organ(self):
         with self.assertRaisesRegex(Konfigurationsfel, "mapparna för 'okant'"):

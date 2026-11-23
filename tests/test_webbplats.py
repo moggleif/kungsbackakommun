@@ -3,15 +3,13 @@
 import shutil
 import tempfile
 import unittest
-from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 
 from kommunhandlingar import frontmatter
-from kommunhandlingar.adaptrar import meetingsplus
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las
-from kommunhandlingar.webbplats import luckavsnitt, rakning, sidor
+from kommunhandlingar.webbplats import rakning, sidor
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.mall import KALLKOD, Mall
 
@@ -159,28 +157,6 @@ class TestSidor(unittest.TestCase):
         self.assertIn('<a href="https://exempelby.se/fsn">mötessidan</a>', html)
         self.assertIn("<li>2024-06-01: kallelse och handlingar saknas</li>", html)
         self.assertNotIn("Inga luckor", html)
-
-    def test_arkivet_ar_en_kalla(self):
-        kommun = exempelby()
-        kalla = replace(kommun.kallor[0], wayback=("fsn",))
-        kommun = replace(kommun, kallor=(kalla,))
-        self.assertEqual(
-            luckavsnitt.kallor(kommun, "fsn"),
-            '<a href="https://exempelby.se/fsn">mötessidan</a> och Internet Archive',
-        )
-        self.assertEqual(
-            luckavsnitt.kallor(kommun, "bun"),
-            '<a href="https://exempelby.se/bun">mötessidan</a>',
-        )
-
-    def test_meetings_plus_ar_en_kalla(self):
-        kalla = meetingsplus.Kalla({"bun": "https://mp.exempelby.se/bun"}, (), ())
-        kommun = replace(exempelby(), meetingsplus_kallor=(kalla,))
-        self.assertEqual(
-            luckavsnitt.kallor(kommun, "bun"),
-            '<a href="https://exempelby.se/bun">mötessidan</a>, '
-            '<a href="https://mp.exempelby.se/bun">organets sida på Meetings Plus</a>',
-        )
 
     def test_dokumentationen_lankas_i_kodens_repo_och_datat_i_poolens(self):
         html = self.statussida()

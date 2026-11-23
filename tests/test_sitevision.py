@@ -32,7 +32,7 @@ def json_fil(nod: str, namn: str) -> str:
 
 class TestUpptack(unittest.TestCase):
     def setUp(self):
-        self.kalla = las(FIXTURER / "exempelby.toml").kallor[0]
+        self.kalla = las(FIXTURER / "exempelby.toml").kallor[0].kalla
 
     def upptack(self, html: str):
         return upptack(
@@ -181,7 +181,7 @@ class TestKungsbackasSparadeSidor(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.kalla = las(ROT / "kommuner" / "kungsbacka.toml").kallor[0]
+        cls.kalla = las(ROT / "kommuner" / "kungsbacka.toml").kallor[0].kalla
         sidor = FIXTURER / "sitevision"
         html = {
             adress: (sidor / f"{adress.rsplit('/', 1)[1]}.html").read_text()

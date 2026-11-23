@@ -6,7 +6,6 @@ import json
 import tempfile
 import unittest
 from contextlib import redirect_stdout
-from dataclasses import replace
 from datetime import UTC, datetime
 from io import StringIO
 from pathlib import Path
@@ -26,7 +25,7 @@ from kommunhandlingar.upptack import (
     upptack,
     utanfor_repot,
 )
-from tests.test_konfiguration import FIXTURER, ROT
+from tests.test_konfiguration import FIXTURER, ROT, med_kallan
 from tests.test_sitevision import lank, sida
 from tests.test_sitevision_arkiv import arkivet
 
@@ -67,10 +66,7 @@ class TestUpptack(unittest.TestCase):
         self.assertIn("Budget 2022.pdf (inget mönster matchar)", text)
 
     def test_projektsidornas_filer_efter_motenas(self):
-        kalla = replace(
-            self.kommun.kallor[0], projekt={"fsn": "https://exempelby.se/p"}
-        )
-        kommun = replace(self.kommun, kallor=(kalla,))
+        kommun = med_kallan(self.kommun, projekt={"fsn": "https://exempelby.se/p"})
         klient = Klient(
             {
                 "https://exempelby.se/bun": BUN,
@@ -130,8 +126,7 @@ class TestArkivet(unittest.TestCase):
     def setUp(self):
         exempelby = las(FIXTURER / "exempelby.toml")
         self.utan_arkiv = exempelby
-        kalla = replace(exempelby.kallor[0], wayback=("bun", "fsn"))
-        self.kommun = replace(exempelby, kallor=(kalla,))
+        self.kommun = med_kallan(exempelby, wayback=("bun", "fsn"))
 
     def test_utan_arkiv_i_konfigurationen_fragas_inget(self):
         self.assertEqual(

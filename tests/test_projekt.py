@@ -3,7 +3,6 @@ projekt.py."""
 
 import tempfile
 import unittest
-from dataclasses import replace
 from pathlib import Path
 
 from kommunhandlingar.fel import Datafel
@@ -13,6 +12,7 @@ from kommunhandlingar.webbplats.sparkort import projektet
 from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from tests.poolfall import tillfallig_pool
 from tests.test_detaljplaner import ROT, sida
+from tests.test_konfiguration import med_kallan
 from tests.test_webbplats import dokument, exempelby
 
 RUBRIK = "organ,detaljplan,projekt,tolkad\n"
@@ -21,9 +21,7 @@ LISTA = "https://exempelby.se/projekt"
 
 
 def kommunen():
-    kommun = exempelby()
-    kalla = replace(kommun.kallor[0], projekt={"fsn": LISTA})
-    return replace(kommun, kallor=(kalla,))
+    return med_kallan(exempelby(), projekt={"fsn": LISTA})
 
 
 # Varje fil som namn i poolen och filnamn i källans adress.
