@@ -73,9 +73,10 @@ organ finns.
 
 ### Confirmation
 
-`tests/test_kalender.py` prövar knappen och källtabellens antal med en
-påhittad kommun, och att Kungsbackas fil, med de tidigare raderna, går
-igenom kontrollen mot poolen.
+`tests/test_kalender.py` och `tests/test_kalenderkvalitet.py` prövar
+knappen och källtabellens antal med en påhittad kommun, och
+`tests/test_kalenderfil.py` att Kungsbackas fil, med de tidigare raderna,
+går igenom kontrollen mot poolen.
 
 ## Pros and Cons of the Options
 

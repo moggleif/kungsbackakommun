@@ -8,7 +8,7 @@ from pathlib import Path
 from kommunhandlingar.webbplats import kalender
 from kommunhandlingar.webbplats.kalendersida import kalendersida
 from kommunhandlingar.webbplats.mall import Mall
-from tests.test_kalender import REPO, TID, kommun, pool
+from tests.kalenderfall import REPO, TID, kommun, pool
 
 
 class TestSammantradetsSida(unittest.TestCase):

@@ -1,5 +1,6 @@
 """Krav: K22, K32, K49 och K56 i docs/02-KRAV.md, ADR-0032, ADR-0053 och ADR-0072.
-Test: tests/test_kalender.py och tests/test_gruppmoten.py.
+Test: tests/test_kalender.py, tests/test_kalenderlankar.py och
+tests/test_gruppmoten.py.
 
 Kalenderns två vyer: en tabell per månad, måndag först, med en ruta per
 sammanträde, och en lista med en tabell per månad och en knapp för det som
@@ -105,13 +106,8 @@ def lista(sammantraden: list[Sammantrade], namn: dict[str, str]) -> str:
 
 
 def listrad(s: Sammantrade, namn: dict[str, str]) -> str:
-    osakert = (
-        f'<br><a href="#osakra" title="{escape(s.osakert)}">osäkert</a>'
-        if s.osakert
-        else ""
-    )
     celler = [
-        datumtext(s) + osakert,
+        datumtext(s) + osakert(s),
         f'<span class="ruta o-{s.organ}">{kort(s.organ)}</span> '
         + lankad(escape(namn[s.organ]), s.sida),
         escape(s.tid),
@@ -121,6 +117,12 @@ def listrad(s: Sammantrade, namn: dict[str, str]) -> str:
         + "".join(f"<td>{c}</td>" for c in celler)
         + "</tr>"
     )
+
+
+def osakert(s: Sammantrade) -> str:
+    if not s.osakert:
+        return ""
+    return f'<br><a href="#osakra" title="{escape(s.osakert)}">osäkert</a>'
 
 
 def datumtext(s: Sammantrade) -> str:

@@ -14,7 +14,7 @@ from pathlib import Path
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.webbplats import kalender, mal, projekt, spar, uppfoljningar
 from kommunhandlingar.webbplats.slagen import SLAGEN
-from tests.test_kalender import kommun as kalenderns_kommun
+from tests.kalenderfall import kommun as kalenderns_kommun
 from tests.test_projekt import kommunen as projektens_kommun
 from tests.test_webbplats import exempelby
 
