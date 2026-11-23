@@ -1,14 +1,18 @@
-"""Var webbplatsens sidor ligger. Sidorna i en kommuns katalog har adresser
-relativa till katalogen, som poolens dokument (ADR-0003); `i_kommunen` gör
-dem relativa till webbplatsens rot. En sida som har en katalog ligger bredvid
-den: organets `ks.html` bredvid `ks/`, sammanträdets `2026-10-20.html`
-bredvid `2026-10-20/` (K54).
+"""Var webbplatsens sidor ligger, och bara här. En sida som har en katalog
+ligger bredvid den: översikten `kungsbacka.html` bredvid `kungsbacka/`,
+organets `ks.html` bredvid `ks/`, sammanträdets `2026-10-20.html` bredvid
+`2026-10-20/` (K54).
 """
-
-from datetime import date
 
 STARTSIDA = "index.html"
 AVVIKELSER = "avvikelser.html"
+
+
+def bredvid(katalog: str) -> str:
+    return f"{katalog}.html"
+
+
+# Relativa till webbplatsens rot.
 
 
 def rot(adress: str) -> str:
@@ -17,10 +21,6 @@ def rot(adress: str) -> str:
 
 def i_kommunen(kommun_id: str, adress: str) -> str:
     return f"{kommun_id}/{adress}"
-
-
-def bredvid(katalog: str) -> str:
-    return f"{katalog}.html"
 
 
 def oversikt(kommun_id: str) -> str:
@@ -35,22 +35,30 @@ def status(kommun_id: str) -> str:
     return i_kommunen(kommun_id, "status.html")
 
 
-def organsida(organ: str) -> str:
+def organsida(kommun_id: str, organ: str) -> str:
+    return i_kommunen(kommun_id, organ_i_katalogen(organ))
+
+
+def over_tid(kommun_id: str, organ: str, sida: str) -> str:
+    return i_kommunen(kommun_id, over_tid_i_katalogen(organ, sida))
+
+
+# Relativa till kommunens katalog, som dokumentens adresser i poolen.
+
+UR_ORGANETS_KATALOG = "../"
+
+
+def organ_i_katalogen(organ: str) -> str:
     return bredvid(organ)
 
 
-def organets_sida(kommun_id: str, organ: str) -> str:
-    return i_kommunen(kommun_id, organsida(organ))
+def over_tid_i_katalogen(organ: str, sida: str) -> str:
+    return f"{organ}/{sida}.html"
 
 
-# Organets sidor över tid ligger i dess katalog; `organet` är katalogen,
-# relativ till kommunens katalog eller till roten.
-def over_tid(organet: str, sida: str) -> str:
-    return f"{organet}/{sida}.html"
-
-
-def sammantrade(organ: str, datum: date) -> str:
-    return bredvid(f"{organ}/{datum.year}/{datum.isoformat()}")
+# `katalog` är sammanträdets katalog, datumet med löpnumret när det har ett.
+def sammantrade(organ: str, katalog: str) -> str:
+    return bredvid(f"{organ}/{katalog[:4]}/{katalog}")
 
 
 def dokumentsida(kalla: str) -> str:

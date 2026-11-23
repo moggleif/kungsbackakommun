@@ -35,7 +35,7 @@ BESLUTEN = "/blob/main/docs/decisions/"
 
 
 def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
-    return adresser.over_tid(adresser.i_kommunen(kommun.id, organ), slag.id)
+    return adresser.over_tid(kommun.id, organ, slag.id)
 
 
 def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:

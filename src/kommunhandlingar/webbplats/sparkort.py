@@ -142,6 +142,7 @@ def kalla(kalla: str, kommun: Kommun) -> tuple[str, str]:
     dokument, sidor = kalla.split("#sida-")
     organ, _, datum, fil = dokument.split("/")
     namn = next(o.namn[0] for o in kommun.organ if o.id == organ)
-    adress = f"../{adresser.dokumentsida(dokument)}#sida-{sidor.split('-')[0]}"
+    adress = adresser.UR_ORGANETS_KATALOG + adresser.dokumentsida(dokument)
+    adress += f"#sida-{sidor.split('-')[0]}"
     sorten = fil.removesuffix(".md").split("-")[0]
     return adress, f"{namn}, {sorten} {datum}, sida {sidor.replace('-', '–')}"

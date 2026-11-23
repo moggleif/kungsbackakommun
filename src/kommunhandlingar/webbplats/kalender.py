@@ -62,7 +62,7 @@ def med_sidor(sammantraden: list[Sammantrade], katalog: Path) -> list[Sammantrad
 
 
 def med_sida(s: Sammantrade, katalog: Path) -> Sammantrade:
-    adress = adresser.sammantrade(s.organ, s.datum)
+    adress = adresser.sammantrade(s.organ, s.datum.isoformat())
     return replace(s, sida=adress) if (katalog / adress).is_file() else s
 
 

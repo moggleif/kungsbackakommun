@@ -126,7 +126,7 @@ def tabell(rubriker: list, rader: str) -> str:
 def kallcell(organ: str, cell: dict[str, int]) -> str:
     lankar = [kallank(k) for k in cell if k]
     if cell.get(""):
-        adress = adresser.organsida(organ)
+        adress = adresser.organ_i_katalogen(organ)
         lankar.append(f'<a href="{adress}">{cell[""]} sammanträden i poolen</a>')
     return "<br>".join(lankar)
 

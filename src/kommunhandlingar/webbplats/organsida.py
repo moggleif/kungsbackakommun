@@ -28,7 +28,7 @@ def organsida(sammanhang: Sammanhang, rad: Organrad, dokument: list[dict]) -> st
     for mote in sorted(moten, key=ordning, reverse=True):
         rubrik = moterubrik(mote, sammanhang.kommun, moten[mote])
         ar[mote[0][:4]].append(motesavsnitt(rubrik, moten[mote], saknas.get(mote, ())))
-    adress = adresser.organets_sida(sammanhang.kommun.id, rad.id)
+    adress = adresser.organsida(sammanhang.kommun.id, rad.id)
     innehall = flikar(sammanhang.underlag, rad.id, SAMMANTRADEN) + (
         "".join(f"<h2>{escape(a)}</h2>{''.join(m)}" for a, m in ar.items())
         or "<p>Inget hämtat än.</p>"

@@ -94,7 +94,7 @@ def fore_malen(forsta_dokument: int, forsta_mal: int) -> str:
 
 
 def adress(kommun: Kommun, organ: str) -> str:
-    return adresser.over_tid(adresser.i_kommunen(kommun.id, organ), MAL)
+    return adresser.over_tid(kommun.id, organ, MAL)
 
 
 # Alla mål är samma organs, och åren är kommunens (K60). Ett år fram till

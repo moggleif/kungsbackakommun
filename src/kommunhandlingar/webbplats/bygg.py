@@ -109,7 +109,7 @@ def bygg_organen(bygge: Bygge, kommun: Kommun, dokument: list[dict]) -> None:
     for rad in rakna(kommun, dokument, bygge.mall.byggd.date()):
         organets = [d for d in dokument if d["organ"] == rad.id]
         html = organsida(sammanhang, rad, organets)
-        bygge.skriv(adresser.organets_sida(kommun.id, rad.id), html)
+        bygge.skriv(adresser.organsida(kommun.id, rad.id), html)
         if malen := [m for m in sammanhang.underlag.malen if m.organ == rad.id]:
             html = malsida(sammanhang, malen, organets)
             bygge.skriv(malsidans_adress(kommun, rad.id), html)

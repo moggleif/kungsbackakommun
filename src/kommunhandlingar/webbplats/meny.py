@@ -106,7 +106,7 @@ def oversikt(kommun_id: str, kalendrar: frozenset[str]) -> list[tuple[str, str]]
 
 def organlankar(kommun_id: str, organen: list[Organ]) -> list[tuple[str, str]]:
     return [
-        (adresser.organets_sida(kommun_id, o.id), o.namn[0])
+        (adresser.organsida(kommun_id, o.id), o.namn[0])
         for o in organen
         if not o.hor_till
     ]
@@ -143,5 +143,5 @@ def post(adress: str, namn: str, aktuell: str) -> str:
 
 def lank(adress: str, namn: str, aktuell: str) -> str:
     markering = ' aria-current="page"' if adress == aktuell else ""
-    upp = "../" * aktuell.count("/")
+    upp = adresser.rot(aktuell)
     return f'<a href="{upp}{adress}"{markering}>{escape(namn)}</a>'

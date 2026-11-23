@@ -31,10 +31,12 @@ def overtid(underlag: Kommununderlag, organ: str) -> dict[str, int]:
 # `aktuell` är den visade flikens id. Adresserna är relativa till den
 # visade sidan: organets sida eller, ett steg ner, en sida över tid.
 def flikar(underlag: Kommununderlag, organ: str, aktuell: str) -> str:
-    upp = "" if aktuell == SAMMANTRADEN else "../"
+    upp = "" if aktuell == SAMMANTRADEN else adresser.UR_ORGANETS_KATALOG
     antal = overtid(underlag, organ)
-    poster = [(upp + adresser.organsida(organ), SAMMANTRADEN, "Sammanträden")] + [
-        (upp + adresser.over_tid(organ, sida), sida, rubrik)
+    poster = [
+        (upp + adresser.organ_i_katalogen(organ), SAMMANTRADEN, "Sammanträden")
+    ] + [
+        (upp + adresser.over_tid_i_katalogen(organ, sida), sida, rubrik)
         for sida, rubrik, _ in SIDOR
         if antal[sida]
     ]

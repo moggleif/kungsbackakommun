@@ -2309,8 +2309,8 @@ Issue [#352](https://github.com/moggleif/kungsbackakommun/issues/352).
 - **Så** syns varje ändrat tecken i diffen.
 
 - **Givet** ögonblicksbilden
-- **När** en sida där länkar med en relativ adress till en fil som inte
-  finns i bilden
+- **När** en sida i bilden länkar med en relativ adress till en fil som
+  inte finns där
 - **Så** faller ett test och visar sidan och länken
   (`tests/test_lankar.py`, issue
   [#388](https://github.com/moggleif/kungsbackakommun/issues/388)).

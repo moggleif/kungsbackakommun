@@ -103,9 +103,10 @@ def namnet(d: dict) -> tuple[bool, str]:
     return not frontmatter.saknas(d["namn"]), d["namn"]
 
 
-# Sammanträdets katalog med `.html`, i kommunens katalog: `ks/2026/2026-10-20.html`.
+# Sammanträdets sida i kommunens katalog: `ks/2026/2026-10-20.html`.
 def adress(dokument: list[dict]) -> str:
-    return adresser.bredvid(mappen(dokument[0]))
+    d = dokument[0]
+    return adresser.sammantrade(d["organ"], PurePosixPath(mappen(d)).name)
 
 
 def har_sida(kommun: Kommun, dokument: list[dict]) -> bool:

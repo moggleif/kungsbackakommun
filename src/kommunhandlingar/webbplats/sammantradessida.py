@@ -24,12 +24,10 @@ def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
     sidans = adresser.i_kommunen(kommun.id, adress(mote.dokument))
     namn = organnamn(kommun)
     lankar = Lankar(adresser.rot(sidans), handlingarna(kommun.id, mote.dokument), namn)
-    organets = adresser.organets_sida(kommun.id, forsta["organ"])
-    till_rot = lankar.rot
-    vag = [
-        (till_rot + adresser.oversikt(kommun.id), oversiktsnamn(mall.kommuner, kommun)),
-        (till_rot + organets, namn[forsta["organ"]]),
-    ]
+    organ = forsta["organ"]
+    oversikten = lankar.rot + adresser.oversikt(kommun.id)
+    organets = lankar.rot + adresser.organsida(kommun.id, organ)
+    vag = [(oversikten, oversiktsnamn(mall.kommuner, kommun)), (organets, namn[organ])]
     innehall = (
         stig(vag)
         + stil("mal.css", "mote.css")
@@ -37,7 +35,7 @@ def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
         + dokumentlista(kommun.id, mote.dokument, lankar.rot)
         + dagordningen(arenden, lankar)
     )
-    rubrik = f"{namn[forsta['organ']]} {motesnamn(forsta['datum'], forsta['lopnr'])}"
+    rubrik = f"{namn[organ]} {motesnamn(forsta['datum'], forsta['lopnr'])}"
     return sida(mall, sidans, rubrik, innehall)
 
 

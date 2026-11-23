@@ -19,7 +19,7 @@ def dokumentsida(sammanhang: Sammanhang, falt: dict[str, str], text: str) -> str
     organ = next(o.namn[0] for o in kommun.organ if o.id == falt["organ"])
     mote = motesnamn(falt["datum"], falt["lopnr"])
     till_rot = adresser.rot(adress)
-    organsida = till_rot + adresser.organets_sida(kommun.id, falt["organ"])
+    organsida = till_rot + adresser.organsida(kommun.id, falt["organ"])
     oversikten = (
         till_rot + adresser.oversikt(kommun.id),
         oversiktsnamn(mall.kommuner, kommun),

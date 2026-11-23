@@ -9,6 +9,8 @@ börjar på kommunens sida, som då heter "Handlingar och protokoll" i stället 
 sajtens namn (K58, ADR-0082).
 """
 
+from collections.abc import Callable
+from functools import partial
 from html import escape
 
 from kommunhandlingar.konfiguration import Kommun, Organ
@@ -39,7 +41,7 @@ def oversikt(
         f"<tbody>{grupprad(namn, len(sidor) + 2)}"
         + "".join(
             organrad(kommun.id, o, sammantraden[o.id])
-            + celler(adresser.i_kommunen(kommun.id, o.id), antal[o.id], sidor)
+            + celler(partial(adresser.over_tid, kommun.id, o.id), antal[o.id], sidor)
             + "</tr>"
             for o in organen
         )
@@ -76,10 +78,9 @@ def grupprad(namn: str, kolumner: int) -> str:
     )
 
 
-def celler(organet: str, antal: dict[str, int], sidor: list) -> str:
+def celler(over_tid: Callable[[str], str], antal: dict[str, int], sidor: list) -> str:
     return "".join(
-        f'<td><a href="{adresser.over_tid(organet, sida)}">'
-        f"{antal[sida]} {escape(enhet)}</a></td>"
+        f'<td><a href="{over_tid(sida)}">{antal[sida]} {escape(enhet)}</a></td>'
         if antal[sida]
         else TOM
         for sida, _, enhet in sidor
@@ -88,7 +89,7 @@ def celler(organet: str, antal: dict[str, int], sidor: list) -> str:
 
 def organrad(kommun_id: str, organ: Organ, sammantraden: int) -> str:
     klass = ' class="utskott"' if organ.hor_till else ""
-    organets = adresser.organets_sida(kommun_id, organ.id)
+    organets = adresser.organsida(kommun_id, organ.id)
     return (
         f'<tr><th scope="row"{klass}><a href="{organets}">'
         f"{escape(organ.namn[0])}</a></th>"
