@@ -37,29 +37,34 @@ def skriv(resultat: Resultat, ut: Path) -> None:
     with (ut / "rader.csv").open("w", encoding="utf-8", newline="") as fil:
         skrivare = csv.DictWriter(fil, KOLUMNER)
         skrivare.writeheader()
-        for prov, nummer, sida in resultat.sidor:
-            for rad in sida.rader:
-                skrivare.writerow(
-                    {"fil": prov.fil, "sida": nummer}
-                    | {"sidan_bekraftad": sida.bekraftad}
-                    | asdict(rad)
-                )
+        skrivare.writerows(
+            {"fil": prov.fil, "sida": nummer}
+            | {"sidan_bekraftad": sida.bekraftad}
+            | asdict(rad)
+            for prov, nummer, sida in resultat.sidor
+            for rad in sida.rader
+        )
     (ut / "rapport.md").write_text(sammanfattning(resultat), encoding="utf-8")
 
 
 def sammanfattning(resultat: Resultat) -> str:
     rader = Counter(r.utfall for _, _, s in resultat.sidor for r in s.rader)
-    orsaker = Counter(
-        r.hur for _, _, s in resultat.sidor for r in s.rader if r.utfall == "obekraftad"
-    )
     delar = [
         "# Kalibrering av väg H (K84)\n",
         f"Mätta sidor: {len(resultat.sidor)} av {resultat.antal}. "
         f"Ej mätta: {len(resultat.ej_matta)}.\n",
         tabell("Rader", rader),
-        tabell("Obekräftade rader per orsak", orsaker),
+        tabell("Obekräftade rader per orsak", orsaker(resultat)),
         tabell("Sidor", sidor(resultat)),
         f"**{utlatande(resultat)}**\n",
+        *listan(resultat),
+    ]
+    return "\n".join(delar) + "\n"
+
+
+def listan(resultat: Resultat) -> list[str]:
+    """De falska bekräftelserna och sedan sidorna som inte mättes."""
+    return [
         *(
             f"- `{p.fil}` sida {n}: {r.utfall}, läst `{r.tal}`, textlagret "
             f"`{r.facit}` (RapidOCR `{r.rapid}`, Tesseract `{r.tesseract}`)"
@@ -67,7 +72,12 @@ def sammanfattning(resultat: Resultat) -> str:
         ),
         *(f"- Ej mätt: `{p.fil}`, {orsak}" for p, orsak in resultat.ej_matta),
     ]
-    return "\n".join(delar) + "\n"
+
+
+def orsaker(resultat: Resultat) -> Counter:
+    return Counter(
+        r.hur for _, _, s in resultat.sidor for r in s.rader if r.utfall == "obekraftad"
+    )
 
 
 def sidor(resultat: Resultat) -> Counter:

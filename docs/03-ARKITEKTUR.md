@@ -1910,13 +1910,12 @@ som läser varje fil en gång. Hur och varför skripten kontrolleras står i
 [ADR-0104](decisions/0104-webbplatsens-skript-med-eslint-och-jsdom.md)
 (K83).
 
-- **ESLint** håller de hårda gränserna i "Ren kod – strikt" för skripten
-  och deras tester, med `eslint.config.mjs`, och JavaScripts vanliga
-  felkontroller. Ett skript räknas som Python: varje rad i en funktion,
-  också tomma och kommentarer. Funktionen som omsluter ett helt skript
-  räknas inte, som modulnivån i Python. `eslint.mal.config.mjs` lägger
-  målen ovanpå, som `mal.toml`. ESLints komplexitet räknar också `&&`,
-  `||` och `?:`, vilket ruffs inte gör, så skripten mäts något strängare.
+- **ESLint** håller gränserna i "Ren kod – strikt", målen för skripten
+  och de högre gränserna för deras tester (K87), med `eslint.config.mjs`,
+  och JavaScripts vanliga felkontroller. Ett skript räknas som Python:
+  varje rad i en funktion, också tomma och kommentarer. Funktionen som
+  omsluter ett helt skript räknas inte, som modulnivån i Python. ESLints
+  komplexitet räknar också `&&`, `||` och `?:`, vilket ruffs inte gör, så skripten mäts något strängare.
   Skriptens rubriker pekar ännu bara på Python-testerna, och
   `perspektiv.js` säger att beteendet prövas för hand; rubriken bäddas in
   i sidan och står i den låsta bilden, så den rättas när skripten ändras

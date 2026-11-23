@@ -40,22 +40,20 @@ def kandidater(data: Path, fro: int) -> Iterator[Prov]:
     sedda = set()
     for fil, falt, text in dokument:
         namn = str(fil.relative_to(data))
-        prov = provet(namn, falt, text, random.Random(f"{fro}:{namn}"))
-        if prov is not None and prov.sha256 not in sedda:
-            sedda.add(prov.sha256)
-            yield prov
+        sidor = valda(falt, text, random.Random(f"{fro}:{namn}"))
+        if sidor and falt["sha256"] not in sedda:
+            sedda.add(falt["sha256"])
+            yield Prov(namn, falt["kalla_url"], falt["sha256"], sidor)
 
 
-def provet(namn: str, falt: dict, text: str, slump: random.Random) -> Prov | None:
+def valda(falt: dict, text: str, slump: random.Random) -> list[int]:
+    """Dokumentets slumpade sidor, eller inga när det inte kan ge några."""
     if falt["kalla_url"].startswith(("[", "null")):
-        return None
+        return []
     if falt["bytes"] == "null" or int(falt["bytes"]) > STORST:
-        return None
+        return []
     sidor = mojliga(falt, frontmatter.brodtext(text))
-    if not sidor:
-        return None
-    valda = sorted(slump.sample(sidor, min(PER_DOKUMENT, len(sidor))))
-    return Prov(namn, falt["kalla_url"], falt["sha256"], valda)
+    return sorted(slump.sample(sidor, min(PER_DOKUMENT, len(sidor))))
 
 
 def mojliga(falt: dict[str, str], brodtext: str) -> list[int]:

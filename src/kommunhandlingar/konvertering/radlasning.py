@@ -66,17 +66,22 @@ def las(bild: Image.Image, tsv: str) -> Sidlasning:
         pa_raden = radens_ord(ord_, ruta)
         tess = " ".join(o.text for o in pa_raden)
         if vag_h.tal(text) or vag_h.tal(tess):
-            avgorande = avgor(bild, ruta, (text, tess), rutor)
+            avgorande = hinder(ruta, rutor) or avgor(bild, ruta, (text, tess))
             rader.append(Rad(ruta, text, pa_raden, avgorande))
     utanfor = [o for o in ord_ if not any(inom(o, r) for r in rutor)]
     return Sidlasning(rader, rutor, sum(len(vag_h.tal(o.text)) for o in utanfor))
 
 
-def avgor(bild: Image.Image, ruta: Ruta, texter: tuple[str, str], rutor: list):
+def hinder(ruta: Ruta, rutor: list[Ruta]) -> vag_h.Avgorande | None:
+    """Varför grannarna hindrar att raden bekräftas, eller None."""
     if upphojt.upphojd_rad(ruta, rutor):
         return vag_h.Avgorande(None, "upphojd-rad")
     if overlappar(ruta, rutor):
         return vag_h.Avgorande(None, "overlappar")
+    return None
+
+
+def avgor(bild: Image.Image, ruta: Ruta, texter: tuple[str, str]) -> vag_h.Avgorande:
     utsnitt = med_marginal(ruta, bild)
     rad = (int(ruta[1]) - utsnitt[1], int(ruta[3]) - utsnitt[1])
     if upphojt.har_upphojt(bild.crop(utsnitt), rad):

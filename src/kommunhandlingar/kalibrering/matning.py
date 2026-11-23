@@ -40,9 +40,15 @@ def mat(pdf: pdfium.PdfDocument, plumber: pdfplumber.PDF, nummer: int) -> Sidutf
     bild = ocr.rendera(pdf[nummer - 1])
     lasning = radlasning.las(bild, radlasning.tesseracts_tsv(bild))
     sida = facit.las(plumber.pages[nummer - 1])
-    rader = [utfall(rad, sida) for rad in lasning.rader]
+    rader = [utfall(rad, sida) for rad in lasning.rader] + missade(lasning, sida)
+    alla = all(r.avgorande.tal is not None for r in lasning.rader)
+    return Sidutfall(rader, alla and lasning.tal_utanfor == 0)
+
+
+def missade(lasning: radlasning.Sidlasning, sida: facit.Facitsida) -> list[Utfall]:
+    """Textlagrets tal på rader utan tal i läsningen, och utanför raderna."""
     med_tal = {r.ruta for r in lasning.rader}
-    rader += [
+    rader = [
         Utfall("", "missad", "", " ".join(tal), "", "")
         for ruta in lasning.rutor
         if ruta not in med_tal and (tal := facit.radens_tal(sida, ruta))
@@ -50,8 +56,7 @@ def mat(pdf: pdfium.PdfDocument, plumber: pdfplumber.PDF, nummer: int) -> Sidutf
     utanfor = facit.tal_utanfor(sida, lasning.rutor)
     if utanfor:
         rader.append(Utfall("", "utanfor", "", " ".join(utanfor), "", ""))
-    alla = all(r.avgorande.tal is not None for r in lasning.rader)
-    return Sidutfall(rader, alla and lasning.tal_utanfor == 0)
+    return rader
 
 
 def utfall(rad: radlasning.Rad, sida: facit.Facitsida) -> Utfall:

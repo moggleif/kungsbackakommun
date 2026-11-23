@@ -2242,25 +2242,10 @@ Issue [#349](https://github.com/moggleif/kungsbackakommun/issues/349).
 
 ## K76 — Allt över målen i Ren kod går att lista
 
-Hur listan tas fram står under
-[Över målen](01-BIDRA.md#över-målen) i 01-BIDRA.md. Issue
+Ersatt av [K87](#k87--koden-håller-målen-i-ren-kod-och-ci-faller-annars):
+när CI håller målen behövs ingen lista över det som ligger över dem
+([ADR-0108](decisions/0108-ci-haller-malen-for-koden.md)). Issue
 [#350](https://github.com/moggleif/kungsbackakommun/issues/350).
-
-- **Givet** målen i "Ren kod – strikt" i `AGENTS.md`
-- **När** någon kör `scripts/kontrollera_storlek.py --mal`
-- **Så** listas varje fil över 150 rader och varje funktion över
-  15 rader, den längsta först, och en funktion med `# undantag: <skäl>`
-  listas inte.
-
-- **Givet** samma mål
-- **När** någon kör `ruff check --config mal.toml`
-- **Så** listas varje funktion med fler än 3 parametrar, fler än 2
-  nästlingsnivåer eller en cyklomatisk komplexitet över 5.
-
-- **Givet** filer och funktioner över målen men inom de hårda gränserna
-- **När** kontrollen körs utan `--mal`, som i CI
-- **Så** godkänns de som förut, och med `--mal` är slutkoden alltid 0,
-  eftersom listan är till för att läsas.
 
 ## K77 — En omkörning av konverteringen ändrar inte ett enda tecken
 
@@ -2435,17 +2420,12 @@ och prövas i `tests/js/`, i jsdom. Hur står under
 [Webbplatsens skript](03-ARKITEKTUR.md#webbplatsens-skript).
 Issue [#359](https://github.com/moggleif/kungsbackakommun/issues/359).
 
-- **Givet** ett skript eller ett test i JavaScript med en funktion över
-  30 rader, en fil över 250 rader, fler än 4 parametrar, nästling över 3
-  eller komplexitet över 8
+- **Givet** ett skript med en funktion över 15 rader, en fil över 150
+  rader, fler än 3 parametrar, nästling över 2 eller komplexitet över 5,
+  eller ett test i JavaScript över testernas gränser (30, 250, 4, 3 och 8)
 - **När** kontrollen körs i CI
 - **Så** faller den och pekar ut raden, som för Python ("Ren kod –
-  strikt" i AGENTS.md).
-
-- **Givet** samma skript
-- **När** någon kör ESLint med `eslint.mal.config.mjs`
-- **Så** listas allt över målen (15, 150, 3, 2 och 5), som för Python
-  (K76).
+  strikt" i AGENTS.md, K87).
 
 - **Givet** kalendern i ögonblicksbilden av webbplatsen (K78) och en fast
   klocka
@@ -2610,3 +2590,31 @@ skulle ha rättat.
 - **När** poolen har en nyare version än dokumentets
 - **Så** hämtas och konverteras det om, eftersom felet kan ha varit
   tillfälligt.
+
+## K87 — Koden håller målen i Ren kod, och CI faller annars
+
+[ADR-0108](decisions/0108-ci-haller-malen-for-koden.md). Issue
+[#395](https://github.com/moggleif/kungsbackakommun/issues/395). Hur
+gränserna kontrolleras står i
+[01-BIDRA.md](01-BIDRA.md#allt-grönt-före-incheckning). Målen i "Ren kod –
+strikt" i `AGENTS.md` prövades förut bara i granskningen, och det som
+låg över dem togs bort i #347; utan en spärr växer det tillbaka.
+
+- **Givet** en funktion i `src/` eller `scripts/`, i Python eller i
+  webbplatsens skript, med fler än 15 rader, fler än 3 parametrar,
+  nästling över 2 eller komplexitet över 5
+- **När** kontrollen körs i CI
+- **Så** faller den och pekar ut funktionen, utom när raden har ett
+  undantag med skäl.
+
+- **Givet** en Pythonfil i `src/` eller `scripts/` med fler än 150 men
+  högst 250 rader
+- **När** kontrollen körs i CI
+- **Så** godkänns den tills spårslagen har delats i en fil per slag
+  (#384), och 150 prövas i granskningen; därefter faller den.
+
+- **Givet** ett test i `tests/` som ligger över målen men inom testernas
+  gränser (30 rader per funktion, 250 per fil, 4 parametrar, nästling 3
+  och komplexitet 8)
+- **När** kontrollen körs i CI
+- **Så** godkänns det, och över testernas gränser faller det.

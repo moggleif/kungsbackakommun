@@ -1,0 +1,12 @@
+# Testernas gränser i "Ren kod – strikt" i AGENTS.md (K87, ADR-0108), ovanpå
+# målen i pyproject.toml.
+extend = "../pyproject.toml"
+# Importerna sorteras som i resten av repot.
+src = ["..", "../src"]
+
+[lint.mccabe]
+max-complexity = 8
+
+[lint.pylint]
+max-args = 4
+max-nested-blocks = 3

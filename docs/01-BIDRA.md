@@ -64,10 +64,15 @@ en tidigare körning. Testerna går också att köra utan mätning med
 `python3 -m unittest discover -s tests -t .`.
 
 Gränserna för storlek och komplexitet står i "Ren kod – strikt" i
-`AGENTS.md`. Ruff kontrollerar parametrar, nästling och komplexitet
-(`pyproject.toml`); `scripts/kontrollera_storlek.py` kontrollerar rader per
-funktion och fil, som ruff saknar regler för. Markdown-lint (ADR-0021)
-körs med [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+`AGENTS.md`: målen för koden i `src/` och `scripts/` och de högre
+gränserna för testerna i `tests/` (K87, ADR-0108). Ruff kontrollerar
+parametrar, nästling och komplexitet, för koden med `pyproject.toml` och
+för testerna med `tests/ruff.toml`; `scripts/kontrollera_storlek.py`
+kontrollerar rader per funktion och fil, som ruff saknar regler för. Rader
+per fil hålls där vid 250 också för koden tills spårslagen i
+`webbplats/sparslag.py` har delats (#384); då sänks `KOD.fil` till 150.
+
+Markdown-lint (ADR-0021) körs med [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
 och Node på de `.md` som ändrats, med reglerna i
 `.markdownlint-cli2.jsonc`; hela poolen tar en halvtimme. `pip-audit`
 letar efter kända sårbarheter i projektets beroenden, och Dependabot
@@ -77,31 +82,9 @@ kontrollerar också att inga binärer är incheckade.
 
 Webbplatsens skript i `src/kommunhandlingar/webbplats/*.js` och deras
 tester i `tests/js/` kontrolleras av ESLint, med samma gränser
-(`eslint.config.mjs`). `npm test` kör testerna, som läser sidor ur
-ögonblicksbilden av webbplatsen; hur står under
+(`eslint.config.mjs`), också 150 rader per fil för skripten. `npm test`
+kör testerna, som läser sidor ur ögonblicksbilden av webbplatsen; hur står under
 [Webbplatsens skript](03-ARKITEKTUR.md#webbplatsens-skript).
-
-## Över målen
-
-CI håller de hårda gränserna. Målen i "Ren kod – strikt" prövas i
-granskningen, och allt som ligger över dem listas med (K76):
-
-```sh
-python3 scripts/kontrollera_storlek.py --mal
-ruff check --config mal.toml --statistics
-npx eslint --config eslint.mal.config.mjs
-```
-
-Det första listar filer och funktioner över målen för rader, den längsta
-först; det andra parametrar, nästling och komplexitet över målen, med
-ruffs inställningar i `mal.toml` ovanpå `pyproject.toml`; det tredje
-allt över målen i webbplatsens skript (K83). Ett undantag
-(se [Undantag](#undantag)) räknas som mot de hårda gränserna. Alla tre är
-till för att läsas: `--mal` har alltid slutkoden 0, och ruff och ESLint
-ger 1 så länge något ligger över. Kommandona körs från repots rot. Antalet före
-och efter en refaktorisering är antalet rader i den första listan och
-summan i ruffs "Found N errors" och ESLints "N problems". Alla räknar
-också `tests/`, som den hårda kontrollen.
 
 ## Webbplatsen
 
@@ -247,8 +230,8 @@ sidkvalitet (K73, ADR-0100). Vad som räknas står under "Känd inläsning" i
   inget undantag; blir den för lång delas den.
 - Ruffs gränser: `# noqa: <regel>  # undantag: <skäl>` på raden ruff pekar ut.
 - ESLints gränser: `// eslint-disable-next-line <regel> -- undantag: <skäl>`
-  på raden före den ESLint pekar ut. Det tystar regeln för den raden,
-  också mot målen. En fil har inget undantag, som i Python.
+  på raden före den ESLint pekar ut. Det tystar regeln för den raden.
+  En fil har inget undantag, som i Python.
 
 ## Avvikelser i källan
 
