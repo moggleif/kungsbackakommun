@@ -1,6 +1,7 @@
-"""Krav: K26, K27, K29, K35, K39, K50 och K60 i docs/02-KRAV.md, ADR-0044,
-ADR-0045, ADR-0050, ADR-0051, ADR-0056, ADR-0073 och ADR-0086. Test: tests/test_mal.py,
-tests/test_malkort.py, tests/test_malar.py och tests/test_fokusomraden.py.
+"""Krav: K26, K27, K28, K29, K35, K39, K50 och K60 i docs/02-KRAV.md,
+ADR-0044, ADR-0045, ADR-0046, ADR-0050, ADR-0051, ADR-0056, ADR-0073 och
+ADR-0086. Test: tests/test_mal.py, tests/test_malkort.py, tests/test_malar.py,
+tests/test_fokusomraden.py och tests/test_uppfoljningar.py.
 
 Sidan om ett organs mål och direktiv: en hopfälld del om metoden, antalet
 per år (`malstatistik.py`), ett urval och tre perspektiv: tidslinjen
@@ -15,6 +16,7 @@ from collections import defaultdict
 
 from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.konvertering.kvalitet import UTAN_TEXT
 from kommunhandlingar.webbplats import adresser, ram
 from kommunhandlingar.webbplats.flikar import MAL, flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
@@ -23,7 +25,7 @@ from kommunhandlingar.webbplats.malar import aren
 from kommunhandlingar.webbplats.malkort import korten
 from kommunhandlingar.webbplats.mall import sida
 from kommunhandlingar.webbplats.malspar import Underlag
-from kommunhandlingar.webbplats.malstatistik import protokollar, statistik
+from kommunhandlingar.webbplats.malstatistik import statistik
 from kommunhandlingar.webbplats.maltexter import (
     AREN,
     FOKUS,
@@ -85,10 +87,19 @@ def underlaget(
     return Underlag(sparen(malen), ar, luckor, uppfoljda, protokollar(organets))
 
 
+# Uppföljningarna i protokollen räknas bara år med ett protokoll med text.
+def protokollar(organets: list[dict]) -> set[int]:
+    return {
+        frontmatter.ar(d)
+        for d in organets
+        if d["typ"] == "protokoll" and d["kvalitet"] not in UTAN_TEXT
+    }
+
+
 def perspektiven(underlag: Underlag) -> str:
     malen = underlag.malen
     return (
-        statistik(malen, underlag.uppfoljda, underlag.protokollar, underlag.ar)
+        statistik(underlag)
         + urval(max(m.ar for m in malen), {m.slag for m in malen})
         + PERSPEKTIV
         + vy("tidslinje", tidslinje(underlag))
