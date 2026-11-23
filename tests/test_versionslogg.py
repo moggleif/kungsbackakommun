@@ -1,5 +1,5 @@
-"""Krav: K53 i docs/02-KRAV.md, ADR-0077. Kod: src/kommunhandlingar/versionslogg.py
-och hamta.py."""
+"""Krav: K53 i docs/02-KRAV.md, ADR-0077. Kod: src/kommunhandlingar/versionslogg.py,
+hamta.py och provning.py."""
 
 import tempfile
 import unittest

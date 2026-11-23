@@ -52,7 +52,8 @@ def valda(rader: list[str]) -> list[Avsnitt]:
             continue
         if forra and forra.nummer == avsnitt.nummer and forra.slut == avsnitt.start:
             avsnitt = avsnitt._replace(start=forra.start)
-        per_nummer[avsnitt.nummer] = forra = avsnitt
+        per_nummer[avsnitt.nummer] = avsnitt
+        forra = avsnitt
     return sorted(per_nummer.values(), key=lambda avsnitt: avsnitt.start)
 
 

@@ -55,35 +55,28 @@ def las(sokvag: Path) -> Kommun:
         return tolka(sokvag.stem, tomllib.load(fil))
 
 
-def tolka(kommun_id: str, data: dict) -> Kommun:
+def tolka(kommun_id: str, data: dict) -> Kommun:  # undantag: följden avgör felet
     schema.kontrollera_falt(data, KOMMUNFALT, "kommunen")
     namn = schema.varde(data, "namn", str, "kommunen")
     organ = organen(poster(data, "organ"))
     grupper = schema.textlista(data, "grupper", "kommunen")
     kontrollera_grupper(organ, grupper)
-    return Kommun(
-        namn=namn,
-        organ=organ,
-        grupper=grupper,
-        **efter_organen(data, [o.id for o in organ]),
-        id=schema.katalognamn(kommun_id, "kommunen"),
-        sidor_med_text=sidor_med_text_av(data),
-    )
-
-
-def efter_organen(data: dict, organ_id: list[str]) -> dict:
-    """Källorna per adapter, omkonverteringen och gruppmötet, i den ordning
-    de prövas; källorna och gruppmötet pekar på organen."""
+    organ_id = [o.id for o in organ]
     kallor = [kalla_av(p, i, organ_id) for i, p in enumerate(poster(data, "kalla"), 1)]
     omkonvertera = schema.valfritt(data, "omkonvertera", bool, "kommunen") or False
     gruppmote = schema.valfritt(data, "gruppmote", dict, "kommunen")
-    return {
-        "kallor": av_slag(kallor, sitevision.Kalla),
-        "arkivkallor": av_slag(kallor, episerver.Kalla),
-        "meetingsplus_kallor": av_slag(kallor, meetingsplus.Kalla),
-        "omkonvertera": omkonvertera,
-        "gruppmote": None if gruppmote is None else gruppmote_av(gruppmote, organ_id),
-    }
+    return Kommun(
+        id=schema.katalognamn(kommun_id, "kommunen"),
+        namn=namn,
+        organ=organ,
+        kallor=av_slag(kallor, sitevision.Kalla),
+        omkonvertera=omkonvertera,
+        arkivkallor=av_slag(kallor, episerver.Kalla),
+        grupper=grupper,
+        gruppmote=None if gruppmote is None else gruppmote_av(gruppmote, organ_id),
+        meetingsplus_kallor=av_slag(kallor, meetingsplus.Kalla),
+        sidor_med_text=sidor_med_text_av(data),
+    )
 
 
 def av_slag[T](kallor: list, slag: type[T]) -> tuple[T, ...]:

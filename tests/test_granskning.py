@@ -1,5 +1,6 @@
 """Krav: K34, ADR-0055.
-Kod: src/kommunhandlingar/behandla.py, datakontroll.py och konvertering/ocr.py."""
+Kod: src/kommunhandlingar/behandla.py, datakontroll.py, datakontroll_varden.py
+och konvertering/ocr.py."""
 
 import unittest
 from dataclasses import replace

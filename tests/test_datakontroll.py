@@ -1,5 +1,6 @@
 """Krav: K11 och K72, ADR-0006, ADR-0009 och ADR-0099.
-Kod: src/kommunhandlingar/datakontroll.py och datakontroll_tabeller.py."""
+Kod: src/kommunhandlingar/datakontroll.py, datakontroll_tabeller.py och
+datakontroll_varden.py."""
 
 import shutil
 import tempfile

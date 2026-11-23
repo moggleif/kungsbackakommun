@@ -20,7 +20,7 @@ def varde(post: dict, falt: str, slag: type, var: str):  # noqa: PLR0913  # unda
     return valfritt(post, falt, slag, var)
 
 
-def valfritt(post: dict, falt: str, slag: type, var: str):  # noqa: PLR0913  # undantag: som varde
+def valfritt(post: dict, falt: str, slag: type, var: str):  # noqa: PLR0913  # undantag: samma fyra som varde, som anropar den
     if falt in post and not ar_av_slag(post[falt], slag):
         raise Konfigurationsfel(f"{var}: {falt} ska vara {slag.__name__}")
     return post.get(falt)
