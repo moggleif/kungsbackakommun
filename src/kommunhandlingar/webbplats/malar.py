@@ -7,12 +7,12 @@ och protokollens uppföljningar och dragningar det året. Efter en lucka går
 det inte att veta vad som är nytt, så då jämförs inte.
 """
 
-from dataclasses import dataclass
 from html import escape
 
 from kommunhandlingar.webbplats.mal import SLAG, Mal
 from kommunhandlingar.webbplats.malkort import kallank, rubrik, status
 from kommunhandlingar.webbplats.malspar import (
+    Underlag,
     egenskaper,
     forsta,
     fristaende,
@@ -20,16 +20,6 @@ from kommunhandlingar.webbplats.malspar import (
     under,
 )
 from kommunhandlingar.webbplats.malstatistik import arets_ruta
-from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
-
-
-@dataclass(frozen=True)
-class Underlag:
-    spar: list[list[Mal]]
-    ar: range
-    luckor: set[int]
-    uppfoljda: list[Uppfoljning]
-    protokollar: set[int]
 
 
 def aren(underlag: Underlag) -> str:
@@ -60,9 +50,8 @@ def innehall(underlag: Underlag, ar: int) -> str:
             f"<h3>{ar}</h3><p>Poolen har inga av organets mål för {ar}.</p>"
             + protokollen(underlag, ar)
         )
-    malen = [m for spar in underlag.spar for m in spar]
     return (
-        arets_ruta(malen, underlag.uppfoljda, underlag.protokollar, ar)
+        arets_ruta(underlag.malen, underlag.uppfoljda, underlag.protokollar, ar)
         + jamforelse(underlag, ar)
         + '<div class="malkort">'
         + "".join(arskort(underlag, nr, ar) for nr in ordnade(underlag, ar))

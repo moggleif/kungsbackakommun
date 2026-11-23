@@ -17,7 +17,7 @@ from kommunhandlingar.webbplats import adresser, ram
 from kommunhandlingar.webbplats.flikar import flikar
 from kommunhandlingar.webbplats.inbaddning import skript, stil
 from kommunhandlingar.webbplats.mall import sida
-from kommunhandlingar.webbplats.malsida import AREN
+from kommunhandlingar.webbplats.maltexter import AREN
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 from kommunhandlingar.webbplats.spar import Slag, Steg

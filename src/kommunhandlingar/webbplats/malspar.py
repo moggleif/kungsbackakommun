@@ -1,15 +1,33 @@
 """Krav: K29, K35 och K50 i docs/02-KRAV.md, ADR-0050, ADR-0056 och ADR-0073.
 Test: tests/test_malkort.py, tests/test_fokusomraden.py och tests/test_malar.py.
 
-Det tidslinjen, korten och Ett år i taget alla behöver veta om ett spår: dess rubriker,
-slag och egenskaper för urvalet, vad som visas för ett år, och vilka
-fokusområden som står under ett kommunmål.
+Det tidslinjen, korten och Ett år i taget alla behöver: underlaget, och om
+ett spår dess rubriker, slag och egenskaper för urvalet, vad som visas för
+ett år, och vilka fokusområden som står under ett kommunmål.
 """
+
+from dataclasses import dataclass
 
 from kommunhandlingar.webbplats.mal import SLAG, Mal
 from kommunhandlingar.webbplats.statusikon import bild, ikon
+from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 
 FORETRADE = ("utfall", "rapport", "prognos", "")
+
+
+# Sidans spår, kommunens år, organets luckor och protokollens uppföljningar,
+# som alla tre perspektiven utgår från.
+@dataclass(frozen=True)
+class Underlag:
+    spar: list[list[Mal]]
+    ar: range
+    luckor: set[int]
+    uppfoljda: list[Uppfoljning]
+    protokollar: set[int]
+
+    @property
+    def malen(self) -> list[Mal]:
+        return [m for spar in self.spar for m in spar]
 
 
 def arets(rader: list[Mal]) -> str:

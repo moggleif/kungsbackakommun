@@ -13,7 +13,13 @@ from html import escape
 
 from kommunhandlingar.webbplats.kallprov import jamforbar
 from kommunhandlingar.webbplats.mal import SLAG, Mal
-from kommunhandlingar.webbplats.malspar import arets, egenskaper, fristaende, under
+from kommunhandlingar.webbplats.malspar import (
+    Underlag,
+    arets,
+    egenskaper,
+    fristaende,
+    under,
+)
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.statusikon import teckenforklaring
 from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
@@ -27,10 +33,12 @@ BYTEN = (
 )
 
 
-def tidslinje(spar: list[list[Mal]], ar: range, luckor: set[int], namnden: str) -> str:
-    med_mal = {m.ar for malen in spar for m in malen}
+def tidslinje(underlag: Underlag) -> str:
+    ar, luckor = underlag.ar, underlag.luckor
+    med_mal = {m.ar for m in underlag.malen}
     huvud = "".join(arskolumn(a, a in luckor, a in med_mal) for a in ar)
-    grupper = "".join(slagets(slag, spar, ar) for slag in SLAG)
+    grupper = "".join(slagets(slag, underlag.spar, ar) for slag in SLAG)
+    namnden = namnden_rad(underlag.uppfoljda, underlag.protokollar, ar)
     return (
         f'<h2 id="tidslinje">Tidslinje</h2>{teckenforklaring()}{BYTEN}'
         f'<div class="tabell"><table class="tidslinje">{kolumner(ar)}'
