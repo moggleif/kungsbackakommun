@@ -16,6 +16,7 @@ import argparse
 import hashlib
 import sys
 import tempfile
+from contextlib import closing
 from dataclasses import replace
 from pathlib import Path
 from typing import NamedTuple
@@ -36,12 +37,7 @@ class Pdf(NamedTuple):
 
 
 def main(argv: list[str] | None = None) -> None:
-    tolk = argparse.ArgumentParser(prog="python -m kommunhandlingar.kalibrering")
-    tolk.add_argument("data", type=Path)
-    tolk.add_argument("ut", type=Path)
-    tolk.add_argument("--antal", type=int, default=300)
-    tolk.add_argument("--fro", type=int, default=411)
-    a = tolk.parse_args(argv)
+    a = argumenten(argv)
     klient = Klient(installningar.las(a.data.parent / installningar.VAR))
     resultat = rapport.Resultat(a.antal)
     for prov in urval.kandidater(a.data, a.fro):
@@ -53,6 +49,15 @@ def main(argv: list[str] | None = None) -> None:
     rapport.skriv(resultat, a.ut)
     if not rapport.uppfyllt(resultat):
         sys.exit(1)
+
+
+def argumenten(argv: list[str] | None) -> argparse.Namespace:
+    tolk = argparse.ArgumentParser(prog="python -m kommunhandlingar.kalibrering")
+    tolk.add_argument("data", type=Path)
+    tolk.add_argument("ut", type=Path)
+    tolk.add_argument("--antal", type=int, default=300)
+    tolk.add_argument("--fro", type=int, default=411)
+    return tolk.parse_args(argv)
 
 
 def mat_dokument(klient: Klient, prov: urval.Prov, resultat: rapport.Resultat):
@@ -70,20 +75,21 @@ def mat_dokument(klient: Klient, prov: urval.Prov, resultat: rapport.Resultat):
 
 
 def mat_sidor(fil: Path, prov: urval.Prov, resultat: rapport.Resultat) -> None:
-    with pdfplumber.open(fil) as plumber:
-        pdf = Pdf(pdfium.PdfDocument(fil), plumber)
-        try:
-            for nummer in prov.sidor:
-                mat_sida(pdf, prov, nummer, resultat)
-        finally:
-            pdf.pdfium.close()
+    with pdfplumber.open(fil) as plumber, closing(pdfium.PdfDocument(fil)) as dok:
+        utfall = {nummer: mat_sida(Pdf(dok, plumber), nummer) for nummer in prov.sidor}
+    for nummer, sida in utfall.items():
+        if isinstance(sida, str):
+            resultat.ej_matta.append((prov, sida))
+        else:
+            resultat.sidor.append((prov, nummer, sida))
 
 
-def mat_sida(pdf: Pdf, prov: urval.Prov, nummer: int, resultat: rapport.Resultat):
+def mat_sida(pdf: Pdf, nummer: int) -> matning.Sidutfall | str:
+    """Sidans utfall, eller varför den inte gick att mäta."""
     try:
-        resultat.sidor.append((prov, nummer, matning.mat(*pdf, nummer)))
+        return matning.mat(*pdf, nummer)
     except radlasning.Fallerade:
-        resultat.ej_matta.append((prov, f"Tesseract fallerade på sidan {nummer}"))
+        return f"Tesseract fallerade på sidan {nummer}"
 
 
 if __name__ == "__main__":

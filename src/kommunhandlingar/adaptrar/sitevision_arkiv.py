@@ -17,6 +17,9 @@ from kommunhandlingar.fel import Hamtfel
 from kommunhandlingar.hamtning.hamtare import Lasare
 from kommunhandlingar.kandidat import Avvisad, Fynd
 
+# Ögonblicksbilderna (adress, HTML) och varför andra inte gick att läsa.
+Bilder = tuple[list[tuple[str, str]], list[str]]
+
 
 def upptack(kalla: sitevision.Kalla, klient: Lasare) -> Fynd:
     try:
@@ -52,9 +55,7 @@ def rang(kopia: wayback.Kopia) -> tuple[int, int, int]:
     return int(NEDLADDNING.match(kopia.original)[2]), *wayback.storst(kopia)
 
 
-def ogonblicksbilder(
-    klient: Lasare, sidadress: str
-) -> tuple[list[tuple[str, str]], list[str]]:
+def ogonblicksbilder(klient: Lasare, sidadress: str) -> Bilder:
     """Den sista ögonblicksbilden per år, den nyaste först, med sin HTML."""
     try:
         kopior = wayback.fraga(klient, sidadress, "text/html")
@@ -70,7 +71,7 @@ def ogonblicksbilder(
     return bilder, fel
 
 
-def bild(klient: Lasare, adress: str) -> tuple[list[tuple[str, str]], list[str]]:
+def bild(klient: Lasare, adress: str) -> Bilder:
     """Ögonblicksbilden med sin HTML, eller varför den inte går att läsa."""
     try:
         html = klient.text(adress)

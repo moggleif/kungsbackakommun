@@ -42,9 +42,9 @@ concurrency = ["multiprocessing"]
 fail_under = 96
 
 [tool.ruff.lint]
-# Vanliga felkontroller plus gränserna i "Ren kod – strikt" i AGENTS.md.
+# Vanliga felkontroller plus målen i "Ren kod – strikt" i AGENTS.md, som
+# koden håller (K87, ADR-0108); testerna har sina gränser i tests/ruff.toml.
 # Rader per funktion och fil kontrolleras av scripts/kontrollera_storlek.py.
-# Målen, som är lägre, listas med mal.toml (K76).
 preview = true
 explicit-preview-rules = true
 select = [
@@ -56,8 +56,8 @@ select = [
 ]
 
 [tool.ruff.lint.mccabe]
-max-complexity = 8
+max-complexity = 5
 
 [tool.ruff.lint.pylint]
-max-args = 4
-max-nested-blocks = 3
+max-args = 3
+max-nested-blocks = 2

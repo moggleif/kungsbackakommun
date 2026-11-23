@@ -50,19 +50,19 @@ class Las(unittest.TestCase):
         rapid = "Budgeten for 2027 omfattar 4 078 tkr i intakter."
         tesseract = rapid.replace("2027", "2021")
         ruta = self.lasning.rader[0].ruta
-        rad = radlasning.avgor(sidbild(), ruta, (rapid, tesseract), [])
+        rad = radlasning.avgor(sidbild(), ruta, (rapid, tesseract))
         self.assertEqual(rad.hur, "tredje-och-rapid")
 
     def test_upphojd_rad_bekraftas_inte(self):
         raden = self.lasning.rader[0].ruta
         siffra = (raden[2], raden[1] - 4, raden[2] + 30, raden[3] - 20)
-        rad = radlasning.avgor(sidbild(), siffra, ("4", "4"), [raden, siffra])
+        rad = radlasning.hinder(siffra, [raden, siffra])
         self.assertEqual(rad.hur, "upphojd-rad")
 
     def test_rad_som_gar_in_i_grannen_bekraftas_inte(self):
         raden = self.lasning.rader[0].ruta
         grannen = (raden[2] - 20, raden[1], raden[2] + 200, raden[3])
-        rad = radlasning.avgor(sidbild(), raden, ("4", "4"), [raden, grannen])
+        rad = radlasning.hinder(raden, [raden, grannen])
         self.assertEqual(rad.hur, "overlappar")
 
 

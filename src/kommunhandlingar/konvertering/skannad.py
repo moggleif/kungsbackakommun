@@ -55,18 +55,20 @@ def las(rendering: pdfium.PdfPage) -> Skannad:
     if text is None:
         text = omlast(gra, skalad(yta.ruta, 1 / skala) if figur else None)
     if text is not None:
-        return med_vag_h(gra, forsta, text, figur)
+        return bekraftad(gra, forsta, figur) or Skannad(kvalitet.OCR, text, figur)
     return sakra(gra, forsta.tsv, figur) or utan_text(yta, farg, forsta.ordantal)
 
 
-def med_vag_h(gra: Image.Image, forsta: ocr.Lasning, text: str, figur: bool):
-    """Sidan med väg H:s text när väg H bekräftar dess tal (K85), annars
-    med OCR-texten."""
-    if forsta.for_vag_h is not None:
-        bekraftad = bekraftade.text(gra, forsta.for_vag_h)
-        if bekraftad is not None:
-            return Skannad(kvalitet.OCR, bekraftad, figur, tal_bekraftade=True)
-    return Skannad(kvalitet.OCR, text, figur)
+def bekraftad(gra: Image.Image, forsta: ocr.Lasning, figur: bool) -> Skannad | None:
+    """Sidan med väg H:s text när väg H bekräftar dess tal (K85), annars None."""
+    if forsta.for_vag_h is None:
+        return None
+    text = bekraftade.text(gra, forsta.for_vag_h)
+    return (
+        None
+        if text is None
+        else Skannad(kvalitet.OCR, text, figur, tal_bekraftade=True)
+    )
 
 
 def sakra(gra: Image.Image, tsv: str, figur: bool) -> Skannad | None:
