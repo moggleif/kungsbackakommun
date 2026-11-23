@@ -1,17 +1,17 @@
 """Krav: K22, K49 och K56 i docs/02-KRAV.md, ADR-0032 och ADR-0072.
-Test: tests/test_kalender.py och tests/test_gruppmoten.py.
+Test: tests/test_kalenderfil.py, tests/test_kalenderlankar.py och
+tests/test_gruppmoten.py.
 
 Läser `kalender/<kommun>.csv` och stoppar bygget med raden när den inte
 går ihop med kommunfilen och poolen (docs/03-ARKITEKTUR.md#kalendern), och
-räknar fram partiernas gruppmöten ur organets sammanträden.
+lägger till sammanträdenas egna sidor.
 """
 
 import re
 from dataclasses import dataclass, replace
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
-from kommunhandlingar.gruppmote import Gruppmote
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import adresser, radfil
 
@@ -70,23 +70,3 @@ def med_sida(s: Sammantrade, katalog: Path) -> Sammantrade:
 def i_poolen(kalla: str, data: Path) -> bool:
     delar = kalla.split("/")
     return len(delar) == 4 and kalla.endswith(".md") and (data / kalla).is_file()
-
-
-# Ett gruppmöte är en vana, inte ett sammanträde med källa, och ärver inte
-# sammanträdets osäkerhet. Två sammanträden samma vecka ger ett gruppmöte.
-def gruppmoten(
-    sammantraden: list[Sammantrade], regel: Gruppmote | None, idag: date
-) -> list[Sammantrade]:
-    if regel is None:
-        return []
-    dagar = {
-        dag
-        for s in sammantraden
-        if s.organ == regel.fore
-        and (dag := dagen_fore(s.datum, regel.veckodag)) >= idag
-    }
-    return [Sammantrade(GRUPPMOTE, dag, regel.tid, "", "", "") for dag in sorted(dagar)]
-
-
-def dagen_fore(datum: date, veckodag: int) -> date:
-    return datum - timedelta(days=(datum.weekday() - veckodag - 1) % 7 + 1)

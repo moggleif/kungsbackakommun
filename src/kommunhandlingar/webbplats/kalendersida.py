@@ -1,142 +1,86 @@
 """Krav: K22, K32, K49, K51 och K58 i docs/02-KRAV.md, ADR-0032, ADR-0053,
 ADR-0072, ADR-0074 och ADR-0084. Test: tests/test_kalender.py,
-tests/test_gruppmoten.py, tests/test_tema.py och tests/test_navigering.py.
+tests/test_kalenderkvalitet.py, tests/test_gruppmoten.py, tests/test_tema.py
+och tests/test_navigering.py.
 
-Kalendersidan: en hopfälld del om kvaliteten med de osäkra datumen och
-källorna per organ och år, urvalet av organ, en tabell per månad och
-listan, med partiernas gruppmöten bland sammanträdena. Skriptet i
-`kalender.js` visar en månad i taget och döljer det som valts bort; utan
-det står allt på sidan.
+Kalendersidan: en hopfälld del om kvaliteten (`kalenderkvalitet.py`), urvalet
+av organ, en tabell per månad och listan, med partiernas gruppmöten bland
+sammanträdena. Skriptet i `kalender.js` visar en månad i taget och döljer
+det som valts bort; utan det står allt på sidan.
 """
 
-from collections import defaultdict
+from datetime import date
 from html import escape
-from urllib.parse import urlparse
 
-from kommunhandlingar.gruppmote import VECKODAGAR
+from kommunhandlingar.gruppmote import VECKODAGAR, Gruppmote
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import adresser, kalendervyer
 from kommunhandlingar.webbplats.inbaddning import las, skript
-from kommunhandlingar.webbplats.kalender import GRUPPMOTE, Sammantrade, gruppmoten
+from kommunhandlingar.webbplats.kalender import GRUPPMOTE, Sammantrade
 from kommunhandlingar.webbplats.kalenderfarger import farger, organstil
+from kommunhandlingar.webbplats.kalenderkvalitet import kvalitet
 from kommunhandlingar.webbplats.mall import Mall, sida
 from kommunhandlingar.webbplats.meny import kommunens
-from kommunhandlingar.webbplats.ram import hur_och_varfor
 
-ADR_0032 = "0032-kalendern-las-ur-besluten-och-skrivs-for-hand.md"
-ADR_0053 = "0053-tidigare-sammantraden-las-ur-poolens-mappar.md"
 INLEDNING = (
     "<p>Organens sammanträden månad för månad och som lista från idag. "
     "Tidigare sammanträden finns bakåt i månadsvyn och under en knapp i "
     "listan. Välj vilka organ som visas.</p>"
 )
-METOD = (
-    "<p>Datumen är lästa ur organens mötessidor och ur deras beslut om "
-    "sammanträdesdagar; källorna står per organ och år under rubriken Källor "
-    "nedan, och tidigare sammanträden ur poolen, med sitt eget protokoll som "
-    "källa; ett tidigare sammanträde utan dokument i poolen saknas, och ett "
-    "utan protokoll är märkt osäkert. Inställda möten och "
-    "planeringsdagar är inte med. Tiden står där "
-    "källan anger den, och platsen visas när man håller över rutan i "
-    "månadsvyn. Ett datum är osäkert när källan är svår att läsa, eller när "
-    "den anger en veckodag som datumet inte stämmer med. Ett osäkert datum "
-    "har ett frågetecken i månadsvyn och ordet osäkert i listan.</p>"
-)
 
 
 def kalendersida(mall: Mall, kommun: Kommun, sammantraden: list[Sammantrade]) -> str:
-    adress = adresser.kalender(kommun.id)
-    namn = kommun.organnamnen()
-    farg = farger(kommun, {s.organ for s in sammantraden})
     moten = gruppmoten(sammantraden, kommun.gruppmote, mall.byggd.date())
-    if moten:
-        namn[GRUPPMOTE] = f"Partiernas gruppmöte inför {namn[kommun.gruppmote.fore]}"
-    innehall = (
+    meny = kommunens(mall.kommuner, "Kalender", kommun)
+    innehall = innehallet(kommun, sammantraden, moten)
+    return sida(mall, adresser.kalender(kommun.id), meny, innehall)
+
+
+def innehallet(
+    kommun: Kommun, sammantraden: list[Sammantrade], moten: list[Sammantrade]
+) -> str:
+    namn = namnen(kommun, moten)
+    farg = farger(kommun, {s.organ for s in sammantraden})
+    return (
         f"<style>{las('kalender.css')}{organstil(farg)}</style>"
         + INLEDNING
         + kvalitet(sammantraden, namn)
-        + om_gruppmoten(kommun, moten, namn)
+        + om_gruppmoten(kommun, moten)
         + urval([*farg, *([GRUPPMOTE] if moten else [])], namn)
         + kalendervyer.manader(sammantraden + moten)
         + kalendervyer.lista(sammantraden + moten, namn)
         + skript("kalender.js")
     )
-    return sida(mall, adress, kommunens(mall.kommuner, "Kalender", kommun), innehall)
 
 
-def kvalitet(sammantraden: list[Sammantrade], namn: dict[str, str]) -> str:
-    osakra = [s for s in sammantraden if s.osakert]
-    return (
-        f'<details id="kvalitet"><summary>Kvalitet: {len(osakra)} av '
-        f"{len(sammantraden)} datum är osäkra</summary>{METOD}"
-        + hur_och_varfor(ADR_0032, ADR_0053)
-        + f'<h2 id="osakra">Osäkra datum</h2>{osakra_tabell(osakra, namn)}'
-        f'<h2 id="kallor">Källor</h2>'
-        f"{kallor(sammantraden, namn)}</details>"
-    )
+# Ett gruppmöte är en vana, inte ett sammanträde med källa, och ärver inte
+# sammanträdets osäkerhet.
+def gruppmoten(
+    sammantraden: list[Sammantrade], regel: Gruppmote | None, idag: date
+) -> list[Sammantrade]:
+    if regel is None:
+        return []
+    dagar = regel.dagarna(((s.organ, s.datum) for s in sammantraden), idag)
+    return [Sammantrade(GRUPPMOTE, dag, regel.tid, "", "", "") for dag in dagar]
 
 
-def osakra_tabell(osakra: list[Sammantrade], namn: dict[str, str]) -> str:
-    if not osakra:
-        return "<p>Inga.</p>"
-    rader = "".join(
-        f"<tr><td>{kalendervyer.datumtext(s)}</td><td>{escape(namn[s.organ])}</td>"
-        f"<td>{escape(s.osakert)}</td><td>{kallank(s.kalla)}</td></tr>"
-        for s in osakra
-    )
-    return tabell(["Datum", "Organ", "Skäl", "Källa"], rader)
+def namnen(kommun: Kommun, moten: list[Sammantrade]) -> dict[str, str]:
+    namn = kommun.organnamnen()
+    if moten:
+        namn[GRUPPMOTE] = f"Partiernas gruppmöte inför {namn[kommun.gruppmote.fore]}"
+    return namn
 
 
-# Sammanträden med sitt eget dokument som källa (ADR-0053) räknas under
-# nyckeln "" i stället för att länkas ett och ett.
-def kallor(sammantraden: list[Sammantrade], namn: dict[str, str]) -> str:
-    celler = defaultdict(dict)
-    for s in sammantraden:
-        nyckel = "" if eget_dokument(s) else s.kalla
-        cell = celler[(s.organ, s.datum.year)]
-        cell[nyckel] = cell.get(nyckel, 0) + 1
-    ar = sorted({a for _, a in celler})
-    organen = {o for o, _ in celler}
-    rader = "".join(
-        f'<tr><th scope="row">{escape(namn[organ])}</th>'
-        + "".join(f"<td>{kallcell(organ, celler.get((organ, a), {}))}</td>" for a in ar)
-        + "</tr>"
-        for organ in namn
-        if organ in organen
-    )
-    return tabell(["Organ", *ar], rader)
-
-
-def eget_dokument(s: Sammantrade) -> bool:
-    return s.kalla.split("/")[:3] == [s.organ, str(s.datum.year), s.datum.isoformat()]
-
-
-def tabell(rubriker: list, rader: str) -> str:
-    huvud = "".join(f'<th scope="col">{r}</th>' for r in rubriker)
-    return (
-        f'<div class="tabell"><table><thead><tr>{huvud}</tr></thead>'
-        f"<tbody>{rader}</tbody></table></div>"
-    )
-
-
-def kallcell(organ: str, cell: dict[str, int]) -> str:
-    lankar = [kallank(k) for k in cell if k]
-    if cell.get(""):
-        adress = adresser.organ_i_katalogen(organ)
-        lankar.append(f'<a href="{adress}">{cell[""]} sammanträden i poolen</a>')
-    return "<br>".join(lankar)
-
-
-def om_gruppmoten(kommun: Kommun, moten: list[Sammantrade], namn: dict) -> str:
+def om_gruppmoten(kommun: Kommun, moten: list[Sammantrade]) -> str:
     if not moten:
         return ""
     regel = kommun.gruppmote
     return (
         "<p>Partierna har gruppmöte "
         f"{VECKODAGAR[regel.veckodag]}en före varje sammanträde i "
-        f"{escape(namn[regel.fore])}. Det är en vana hos partierna, inget "
-        "beslutat sammanträde. Datumen är räknade ur sammanträdena, inte lästa "
-        "i någon källa, och bara kommande gruppmöten visas.</p>"
+        f"{escape(kommun.organnamn(regel.fore))}. Det är en vana hos partierna, "
+        "inget beslutat sammanträde. Datumen är räknade ur sammanträdena, inte "
+        "lästa i någon källa, och bara kommande gruppmöten visas.</p>"
     )
 
 
@@ -150,12 +94,3 @@ def urval(organen: list[str], namn: dict[str, str]) -> str:
     alla = '<p class="alla" hidden><button type="button">Dölj alla</button></p>'
     rubrik = f"<legend>Organ som visas</legend>{alla}"
     return f'<fieldset class="urval">{rubrik}{rutor}</fieldset>'
-
-
-def kallank(kalla: str) -> str:
-    if kalla.startswith("https://"):
-        return f'<a href="{escape(kalla)}">{escape(urlparse(kalla).netloc)}</a>'
-    organ, _, datum, fil = kalla.split("/", 3)
-    adress = adresser.dokumentsida(kalla)
-    text = f"{organ.upper()} {datum}, {fil.split('-')[0].removesuffix('.md')}"
-    return f'<a href="{escape(adress)}">{escape(text)}</a>'

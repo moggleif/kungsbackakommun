@@ -2337,7 +2337,8 @@ En kommun med en fil `kalender/<kommun>.csv` får sidan
   raden prövas i filens egen modul. En kalenderfil utan kommunfil stoppar
   också bygget.
 - **Sidan** (`webbplats/kalendersida.py` och `kalendervyer.py`) börjar
-  med en kort inledning och en hopfälld del, `<details>`, om kvaliteten:
+  med en kort inledning och en hopfälld del, `<details>`, om kvaliteten
+  (`webbplats/kalenderkvalitet.py`):
   antalet osäkra datum av alla i rubriken, hur datumen tas fram, en
   tabell med varje osäkert sammanträde, skälet och källan, och under
   rubriken Källor en tabell med en rad per organ och en kolumn per år,
@@ -2360,9 +2361,9 @@ En kommun med en fil `kalender/<kommun>.csv` får sidan
   ordning, och ett utskott en ljusare nyans av sin grupps ton.
 - **Gruppmötena** (K49,
   [ADR-0072](decisions/0072-gruppmotena-raknas-fram-ur-kommunstyrelsens-datum.md))
-  räknas fram när sidan byggs, ur kommunfilens `gruppmote`: ett den
-  närmaste veckodagen före varje sammanträde i organet, från dagen sidan
-  byggs. De står inte i kalenderfilen och har ingen källa. Rutan har
+  räknas fram när sidan byggs, ur kommunfilens `gruppmote` (`gruppmote.py`):
+  ett den närmaste veckodagen före varje sammanträde i organet, från dagen
+  sidan byggs. De står inte i kalenderfilen och har ingen källa. Rutan har
   prickad grå kant och texten "Gruppmöte" med tiden, urvalet och listan
   kallar dem partiernas gruppmöte inför organet, och en mening över
   urvalet säger att det är en vana hos partierna, inget beslutat

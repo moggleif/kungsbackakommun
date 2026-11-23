@@ -7,11 +7,11 @@ from datetime import UTC, date, datetime
 from pathlib import Path
 
 from kommunhandlingar.fel import Konfigurationsfel
-from kommunhandlingar.gruppmote import Gruppmote
+from kommunhandlingar.gruppmote import Gruppmote, dagen_fore
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.konfiguration import tolka
-from kommunhandlingar.webbplats.kalender import Sammantrade, dagen_fore, gruppmoten
-from kommunhandlingar.webbplats.kalendersida import kalendersida
+from kommunhandlingar.webbplats.kalender import Sammantrade
+from kommunhandlingar.webbplats.kalendersida import gruppmoten, kalendersida
 from kommunhandlingar.webbplats.mall import Mall
 
 FIXTURER = Path(__file__).parent / "fixtures"
@@ -83,6 +83,11 @@ class TestGruppmoten(unittest.TestCase):
         tva = [sammantrade("fsn", "2026-11-17"), sammantrade("fsn", "2026-11-19")]
         moten = gruppmoten(tva, REGEL, date(2026, 11, 1))
         self.assertEqual([m.datum for m in moten], [date(2026, 11, 16)])
+
+    def test_dagarna_ur_organ_och_datum(self):
+        sammantraden = [("fsn", date(2026, 11, 17)), ("bun", date(2026, 11, 24))]
+        dagar = REGEL.dagarna(sammantraden, date(2026, 11, 1))
+        self.assertEqual(dagar, [date(2026, 11, 16)])
 
     def test_utan_regel_inga(self):
         self.assertEqual(gruppmoten(SAMMANTRADEN, None, date(2026, 1, 1)), [])

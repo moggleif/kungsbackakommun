@@ -85,9 +85,9 @@ tolkning som måste skrivas om när formen ändras.
 
 ### Confirmation
 
-`tests/test_kalender.py` prövar läsningen, kontrollerna, färgerna och
-sidan med en påhittad kommun, och att Kungsbackas fil går igenom
-kontrollen mot poolen.
+`tests/test_kalenderfil.py` prövar läsningen och kontrollerna med en
+påhittad kommun, och att Kungsbackas fil går igenom kontrollen mot
+poolen. `tests/test_kalender.py` prövar färgerna och sidan.
 
 ## Pros and Cons of the Options
 

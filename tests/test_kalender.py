@@ -1,98 +1,28 @@
 """Krav: K22 i docs/02-KRAV.md, ADR-0032. Kod: src/kommunhandlingar/webbplats/
-kalender.py, kalenderfarger.py, kalendervyer.py och kalendersida.py."""
+kalenderfarger.py, kalendervyer.py och kalendersida.py. Filen prövas i
+tests/test_kalenderfil.py och kvalitetsavsnittet i tests/test_kalenderkvalitet.py."""
 
 import re
 import shutil
 import tempfile
-import tomllib
 import unittest
-from contextlib import contextmanager
-from datetime import UTC, datetime
 from pathlib import Path
 
 from kommunhandlingar.fel import Datafel
-from kommunhandlingar.konfiguration import las as las_kommun
-from kommunhandlingar.konfiguration import tolka
-from kommunhandlingar.webbplats import kalender
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.kalenderfarger import farger
 from kommunhandlingar.webbplats.kalendersida import kalendersida
 from kommunhandlingar.webbplats.mall import Mall
-from tests.poolfall import tillfallig_pool
-
-FIXTURER = Path(__file__).parent / "fixtures"
-ROT = Path(__file__).parent.parent
-REPO = "https://github.com/exempel/kommunhandlingar"
-TID = datetime(2026, 10, 7, 20, 15, tzinfo=UTC)
-RUBRIK = "organ,datum,tid,plats,kalla,osakert\n"
-PROTOKOLL = "fsn/2026/2026-09-17/protokoll.md"
-KALLELSE = "fsn/2026/2026-09-17/kallelse.md"
-NASTA = "fsn/2026/2026-09-24/protokoll.md"
-RADER = (
-    f"fsn,2027-01-14,17:00,Stadshuset,{PROTOKOLL},\n"
-    f"fsn-au,2027-01-14,,,{PROTOKOLL},\n"
-    "bun,2026-12-05,,,https://exempelby.se/bun,Källan säger lördag <5 dec>.\n"
+from tests.kalenderfall import (
+    FIXTURER,
+    PROTOKOLL,
+    RADER,
+    REPO,
+    RUBRIK,
+    TID,
+    kommun,
+    pool,
 )
-
-
-def kommun():
-    with (FIXTURER / "exempelby.toml").open("rb") as fil:
-        data = tomllib.load(fil)
-    data["organ"].append(
-        {"id": "fsn-au", "namn": ["Arbetsutskottet"], "hor_till": "fsn"}
-    )
-    return tolka("exempelby", data)
-
-
-@contextmanager
-def pool(rader: str = RADER, rubrik: str = RUBRIK):
-    """Läser en kalenderfil mot en pool med protokollet, i en temporär katalog."""
-    texter = dict.fromkeys((PROTOKOLL, KALLELSE, NASTA), "---\n---\n")
-    with tillfallig_pool(rubrik, rader, texter) as (fil, data):
-        yield kalender.las(fil, kommun(), data)
-
-
-class TestLasning(unittest.TestCase):
-    def test_raderna_lases(self):
-        with pool() as sammantraden:
-            self.assertEqual(len(sammantraden), 3)
-            self.assertEqual(sammantraden[0].tid, "17:00")
-            self.assertEqual(sammantraden[2].osakert, "Källan säger lördag <5 dec>.")
-
-    def stoppas(self, rader: str, rubrik: str = RUBRIK) -> str:
-        with self.assertRaises(Datafel) as fel, pool(rader, rubrik):
-            pass
-        return str(fel.exception)
-
-    def test_fel_rubriker(self):
-        self.assertIn("rubrikerna", self.stoppas(RADER, "organ,datum\n"))
-
-    def test_okant_organ(self):
-        fel = self.stoppas(f"kun,2027-01-14,,,{PROTOKOLL},\n")
-        self.assertIn("rad 2", fel)
-        self.assertIn("'kun'", fel)
-
-    def test_datum_som_inte_finns(self):
-        self.assertIn("rad 2", self.stoppas(f"fsn,2027-02-30,,,{PROTOKOLL},\n"))
-
-    def test_samma_organ_samma_dag(self):
-        fel = self.stoppas(RADER + f"fsn,2027-01-14,,,{PROTOKOLL},\n")
-        self.assertIn("rad 5", fel)
-
-    def test_kalla_som_inte_ar_ett_dokument_i_poolen(self):
-        for kalla in ("fsn/2027/protokoll.md", "fsn/2026/2026-09-17/saknas.md"):
-            fel = self.stoppas(f"fsn,2027-01-14,,,{kalla},\n")
-            self.assertIn("inget dokument i poolen", fel)
-
-    def test_datum_i_annan_form(self):
-        self.assertIn("ÅÅÅÅ-MM-DD", self.stoppas(f"fsn,20270114,,,{PROTOKOLL},\n"))
-
-    def test_helgdag_som_inte_ar_markt(self):
-        fel = self.stoppas("bun,2026-12-05,,,https://exempelby.se/bun,\n")
-        self.assertIn("lördag eller söndag", fel)
-
-    def test_fel_antal_falt(self):
-        self.assertIn("rad 2", self.stoppas("fsn,2027-01-14\n"))
 
 
 class TestFarger(unittest.TestCase):
@@ -133,47 +63,11 @@ class TestSidan(unittest.TestCase):
         self.assertIn(">ADR-0032</a> och <a", kvalitet)
         self.assertIn("0053-tidigare-sammantraden-las-ur-poolens-mappar.md", kvalitet)
 
-    def test_inga_osakra(self):
-        with pool(f"fsn,2027-01-14,,,{PROTOKOLL},\n") as sammantraden:
-            html = kalendersida(Mall([kommun()], REPO, TID), kommun(), sammantraden)
-        self.assertIn("Kvalitet: 0 av 1 datum är osäkra", html)
-        self.assertIn('<h2 id="osakra">Osäkra datum</h2><p>Inga.</p>', html)
-
     def test_alla_manader_och_rader_star_i_sidan(self):
         self.assertIn('data-manad="2026-12"', self.html)
         self.assertIn('data-manad="2027-01"', self.html)
         self.assertEqual(self.html.count('class="manad"'), 2)
         self.assertEqual(self.html.count("<tr data-organ="), 3)
-
-    def test_kallorna_per_organ_och_ar_under_kvalitet(self):
-        kvalitet = self.html.split('<details id="kvalitet">')[1].split("</details>")[0]
-        kallor = kvalitet.split('<h2 id="kallor">Källor</h2>')[1]
-        self.assertIn('<th scope="col">2026</th><th scope="col">2027</th>', kallor)
-        self.assertIn(
-            '<td><a href="https://exempelby.se/bun">exempelby.se</a></td><td></td>',
-            kallor,
-        )
-        self.assertEqual(kallor.count("protokoll.html"), 2)
-        self.assertIn('<th scope="row">Arbetsutskottet</th>', kallor)
-
-    def test_samma_kalla_en_gang_per_organ_och_ar(self):
-        with pool(RADER + f"fsn,2027-02-11,,,{PROTOKOLL},\n") as sammantraden:
-            html = kalendersida(Mall([kommun()], REPO, TID), kommun(), sammantraden)
-        self.assertEqual(html.split('id="kallor"')[1].count("protokoll.html"), 2)
-        lista = self.html.split("<h2>Lista</h2>")[1].split("<script>")[0]
-        self.assertNotIn("<a href", lista.replace('<a href="#osakra"', ""))
-
-    def test_sammantraden_med_egna_dokument_raknas(self):
-        rader = f"fsn,2026-09-17,,,{PROTOKOLL},\nfsn,2026-09-24,,,{NASTA},\n"
-        with pool(rader + f"fsn,2026-10-01,,,{KALLELSE},\n") as sammantraden:
-            html = kalendersida(Mall([kommun()], REPO, TID), kommun(), sammantraden)
-        kallor = html.split('id="kallor"')[1]
-        self.assertIn(
-            '<td><a href="fsn/2026/2026-09-17/kallelse.html">FSN 2026-09-17, '
-            'kallelse</a><br><a href="fsn.html">2 sammanträden i poolen</a></td>',
-            kallor,
-        )
-        self.assertNotIn("protokoll.html", kallor)
 
     def test_knapp_for_tidigare_sammantraden_i_listan(self):
         lista = self.html.split("<h2>Lista</h2>")[1]
@@ -235,13 +129,3 @@ class TestBygg(unittest.TestCase):
         ut = self.bygg(med_kalender=False)
         self.assertFalse((ut / "exempelby" / "kalender.html").exists())
         self.assertNotIn("kalender.html", (ut / "exempelby.html").read_text())
-
-
-class TestKungsbacka(unittest.TestCase):
-    def test_filen_gar_ihop_med_kommunfilen_och_poolen(self):
-        kungsbacka = las_kommun(ROT / "kommuner" / "kungsbacka.toml")
-        fil = ROT / "kalender" / "kungsbacka.csv"
-        sammantraden = kalender.las(fil, kungsbacka, ROT / "data" / "kungsbacka")
-        self.assertNotIn("revision", {s.organ for s in sammantraden})
-        self.assertEqual(min(s.datum for s in sammantraden).year, 2024)
-        self.assertEqual(fil.read_bytes().count(b"\r"), 0)
