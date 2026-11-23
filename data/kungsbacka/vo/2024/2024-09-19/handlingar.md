@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.49d36ef2191e50b885087c30/1726492429
 sha256: 9acd019678948dcfef0df259d49e09fa74c579a411e9fe8b4e6baed4bdb086d0
 bytes: 21907192
 sidor: 545
-hamtad: 2026-11-22T12:23:13+00:00
-konverterad: 2026-11-22T12:26:19+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:34:54+00:00
+konverterad: 2026-11-23T12:41:07+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 190, 191, 192, 193, 194, 195, 196]
+tal_obekraftade: [134, 137, 138, 139, 141, 142, 145, 146, 147, 150, 151, 152, 153, 154, 155, 156, 158, 161, 163, 164, 166, 168, 169, 170, 171, 172, 173, 174, 175, 179, 180, 181, 182, 186, 188, 190, 195, 196]
 figurer: [1, 51, 58, 60, 63, 65, 66, 73, 75, 77, 79, 84, 89, 105, 113, 114, 116, 137, 141, 145, 152, 155, 157, 160, 163, 166, 168, 172, 174, 176, 178, 181, 183, 185, 188, 191, 193, 196]
 tolkade: []
 granskad: null
@@ -5839,7 +5839,7 @@ Bedagården Manetvägen 2—8 Onsala 27
 
 KUNGSBACKA KOMMUN
 
-Löftagården Frillesåsvägen 6 Frillesås 41 ee
+Löftagården Frillesåsvägen 6 Frillesås 41 3 (4)
 Måhaga Måhagavägen 11 Fjärås 58
 Blåvingevägen Blåvingevägen 33 Vallda 62
 Ekhaga Mariedalsvägen 3 Onsala 94
@@ -6147,7 +6147,7 @@ Fax
 
 KUNGSBACKA KOMMUN
 
-214\)
+2 (4)
 trygghetslarmet och dess tillbehör inte fungerar som tänkt. Fungerar inte trygghetslarmet som tänkt finns
 det risk för att vi inte uppfyller kraven för en god och säker vård.
 
@@ -6409,7 +6409,7 @@ Kolla Askvägen 25 Kungsbacka
 
 KUNGSBACKA KOMMUN
 
-Sandlyckan Sandlyckans väg 40 Kullavik 0
+Sandlyckan Sandlyckans väg 40 Kullavik 3 (4)
 Smedjan Tölövägen 25 Kungsbacka
 
 Särö Västra Särövägen 39 Särö
@@ -7077,7 +7077,7 @@ Socialtjänst (SOL)
 personal Hälso- och
 sjukvård (HSV)
 \+ praktikanter.
-Totalt antal personer SOL och 139
+Totalt antal personer SOL och 39
 HSV
 
 <!-- sida 161 -->
@@ -7484,7 +7484,7 @@ Kan med fördel samordnas med övriga digitala verksamheter inom Vård & Omsorg 
 Planeringsteamet jourverksamhet.
 
 ANDRA FUNKTIONER SOM BEHÖVS:
-I kontorsplats
+1 kontorsplats
 14 cellkontor/tysta arbetsplatser.
 
 Alternativt lösning för att säkerställa en ostörd kontorsplats, ljudisolerad och utan insyn
@@ -8030,7 +8030,7 @@ TYP AV CA ANTAL TYP AV ÖVRIGT
 
 PERSONAL/VERKSAMHET ANVÄNDNING
 
-Chef HSV d Stadigvarande Dag
+Chef HSV 1 Stadigvarande Dag
 Arbetsplats
 
 Praktikant 2 Bas/ utgångspunkt | Dag
@@ -8812,9 +8812,9 @@ ANDRA FUNKTIONER SOM BEHÖVS:
 40 Kontorsplatser/flexarbetsplatser för dokumentation med Hemsjukvård
 6 st cellkontor/tysta arbetsplatser.
 
-I st mindre samtalsrum.
+1 st mindre samtalsrum.
 
-| st mötesrum för ca 6 personer, utrustad med större skärm att koppla upp sig till inklusive
+1 st mötesrum för ca 6 personer, utrustad med större skärm att koppla upp sig till inklusive
 whiteboard.
 
 <!-- sida 195 -->
