@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.77fd706f1a08662c7eab6a6c/1789388869
 sha256: 7747ef87e33809a3e0c6d8a446e1ff689cca145100ed24cf7f8ec4bd924f7274
 bytes: 32925373
 sidor: 782
-hamtad: 2026-11-22T12:43:05+00:00
-konverterad: 2026-11-22T12:47:35+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T13:07:24+00:00
+konverterad: 2026-11-23T13:15:46+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [434, 651, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 689, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 705, 706, 707, 708, 709, 710, 711, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750]
+tal_obekraftade: [434, 651, 666, 667, 670, 675, 676, 679, 682, 687, 689, 693, 694, 697, 699, 701, 703, 705, 707, 708, 709, 711, 713, 715, 716, 718, 719, 720, 721, 722, 723, 724, 727, 730, 732, 733, 734, 735, 738, 739, 742, 743, 744, 746, 747, 748, 749, 750]
 figurer: [31, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 61, 206, 228, 235, 277, 292, 294, 295, 297, 436, 645, 656, 657, 658, 659, 660, 718, 729, 737, 742, 745]
 tolkade: []
 granskad: null
@@ -29503,15 +29503,15 @@ Lokalbehov 2028-2032 5
 
 Nämnden för Vård & Omsorg Kungsbacka kommun
 
-Cirka 1 24 av befolkningen i denna grupp bedöms ha behov av plats på ett vård- och
+Cirka 1 % av befolkningen i denna grupp bedöms ha behov av plats på ett vård- och
 omsorgsboende, vilket ligger i linje med SKR:s bedömning.
 
 Åldersgrupp 80 år och äldre
 
-Cirka 10,5 260 av befolkningen i denna grupp bedöms ha behov av plats på ett vård- och
+Cirka 10,5 % av befolkningen i denna grupp bedöms ha behov av plats på ett vård- och
 omsorgsboende.
 
-Andelen för 80+ har justerats från cirka 11 940 till cirka 10,5 24 för att bättre spegla utvecklingen,
+Andelen för 80+ har justerats från cirka 11 % till cirka 10,5 % för att bättre spegla utvecklingen,
 och den förväntade förändringen i behovsnivån - exempelvis till följd av förbättrad hälsa, ökade
 möjligheter till kvarboende med stöd. Kommunen arbetar enligt principen digitalt först, med
 strategiska satsningar på digitalisering och välfärdsteknik.
@@ -29520,7 +29520,7 @@ strategiska satsningar på digitalisering och välfärdsteknik.
 
 För att verksamheten inom vård och omsorg ska kunna arbeta effektivt och samtidigt möta
 individens behov på bra sätt, har nämnden valt att införa en planerad kö på cirka 50 personer (5—
-7 9260 av behovet) till vård- och omsorgsboende. Att acceptera en kö innebär att det vid varje givet
+7 % av behovet) till vård- och omsorgsboende. Att acceptera en kö innebär att det vid varje givet
 tillfälle finns 50 färre platser än det faktiska behovet.
 
 Planerad underkapacitet möjliggör en mer flexibel och behovsstyrd boendeplanering, samtidigt som
@@ -29918,7 +29918,7 @@ Korttids/ Totalt antal Korttidsplats Korttidsplats Växelvård Akutlägenhet
 växelvård lägenheter demens (antal) | somatik (antal) | demens/somatik | (antal)
 Smedjans
 
-korttids o 50 25 25 [6] 0
+korttids o 50 25 25 0 0
 växelvård
 
 Björkris våbo 1 1 geropsyk 0 0 0
@@ -30412,7 +30412,7 @@ Plan 2033 Plan 2034 Plan 2035 Plan 2036 Plan 2037
 
 Nämndens behov av platser på
 
-Dagomsorg under planperioden 6 56 6 56 56
+Dagomsorg under planperioden 56 56 56 56 56
 
 Fotnot 1: Inga ytterligare behov av lokaler för dagomsorg har identifierats för utblicksåren
 
@@ -31436,7 +31436,7 @@ KUB6000, 2.0, 2012-05-23
 
 KUNGSBACKA KOMMUN
 
-. Fler medarbetare krävs i verksamheten över tid 207)
+. Fler medarbetare krävs i verksamheten över tid 2(7)
 
 e Verksamheten blir mer komplex, med fler samtidiga insatser och fler samverkanskontakter
 . Kraven på planering, samordning och dokumentation ökar
@@ -31850,7 +31850,7 @@ KUB6000, 2.0, 2012-05-23
 KUNGSBACKA KOMMUN
 
 Nuvarande placering på Signeshus (2026), i nuläget samnyttjar nattpatrullen bilar med hemsjukvården
-som arbetar dagtid på Signeshus. å
+som arbetar dagtid på Signeshus. 2 (6)
 
 VARFÖR BEHÖVER NÅGOT GÖRAS, VAD HAR FÖRANLETT BEHOVET?
 
@@ -33088,27 +33088,27 @@ omfattning
 20 st Flexarbetsplatser för
 dokumentation
 
-AQ st Flexarbetsplatser för
+40 st Flexarbetsplatser för
 dokumentation
 
 6 st För koncentrerat arbete
 
-I st För enskilda samtal
+1 st För enskilda samtal
 
-I st Ca 6 personer, skärm +
+1 st Ca 6 personer, skärm +
 whiteboard
 
-I st För ca 70 personer, skärm +
+1 st För ca 70 personer, skärm +
 whiteboard
 
-I st Möjlighet till rast då lunchrum
+1 st Möjlighet till rast då lunchrum
 är upptaget i möte.
 
 1 st För återhämtning
 
-I st Med WC och dusch
+1 st Med WC och dusch
 
-I st Med WC och dusch
+1 st Med WC och dusch
 
 <!-- sida 732 -->
 
@@ -33611,9 +33611,9 @@ tjänsten
 Förråd för rena arbetskläder
 
 ms a - Cirkulationstvätt — rena med hyllor. Kräver yta för
-Tvätt och logistik kläder Ist dagligt ombyte av
+Tvätt och logistik kläder 1 st dagligt ombyte av
 arbetskläder.
-Cirkulationstvätt — I st Separat förråd för smutsig tvätt
+Cirkulationstvätt — 1 st Separat förråd för smutsig tvätt
 smutsig tvätt (säckar/vagnar).
 
 Dörrfoder ska förstärkas för att
@@ -33644,14 +33644,14 @@ tvätt
 
 Tvättmaskin, torktumlare samt
 
-Tvättetrysmns Iokalvärd Ia förråd för lokalvårdens behov
+Tvättetrysmns Iokalvärd 1 st förråd för lokalvårdens behov
 
 Teknik och
 
 utrustning Skrivare - Gemensam tillgång
 Sekretesskärl - För känsligt material
 Synkstation (digitala a
-mirrn I st Enligt upphandlat system
+mirrn 1 st Enligt upphandlat system
 Laddstationer - För telefoner
 Nyckelskåp 1 st För bilnycklar
 
@@ -33672,7 +33672,7 @@ Fordon — Tjänstebilsparkering = 61 st
 Laddinfrastruktur Laddstolpar 65 st
 (tjänstebilar)
 Cykelförråd / säkra
-Cyklar oykelstll Hat
+Cyklar oykelstll 40 st
 Cyklar — personal Cykelställ 20 st
 ÖVRIGT
 Behovsbeskrivning - Övrigt
@@ -33905,7 +33905,7 @@ BESVARAS
 Se tabell nedan.
 TYP AV CA ANTAL TYP AV ÖVRIGT
 PERSONAL/VERKSAMHET ANVÄNDNING
-Chef HSV I Stadigvarande Dag
+Chef HSV 1 Stadigvarande Dag
 Arbetsplats
 Praktikant 2 Bas/ utgångspunkt | Dag
 Arbetsterapeuter 9 Bas/ utgångspunkt | Dag
