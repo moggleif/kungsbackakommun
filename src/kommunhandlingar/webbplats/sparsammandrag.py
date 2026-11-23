@@ -1,4 +1,5 @@
-"""Krav: K36, K37 och K39 i docs/02-KRAV.md, ADR-0057 och ADR-0058.
+"""Krav: K36, K37, K38 och K39 i docs/02-KRAV.md, ADR-0057, ADR-0058 och
+ADR-0059.
 Test: tests/test_lokalbehov.py, tests/test_initiativ.py, tests/test_ram.py.
 
 Spårsidans sammandrag – antalet saker per fas och, när slaget har en

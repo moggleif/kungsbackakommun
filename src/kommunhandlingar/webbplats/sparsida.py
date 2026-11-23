@@ -34,14 +34,11 @@ def adress(kommun: Kommun, organ: str, slag: Slag) -> str:
 def sparsida(sammanhang: Sammanhang, slag: Slag, stegen: list[Steg]) -> str:
     organ, vy = stegen[0].organ, sammanhang.vy(slag)
     namn = vy.kommun.organnamn(organ)
-    innehall = (
-        ramen(sammanhang, organ, slag) + innehallet(vy, stegen) + skript("mal.js")
-    )
+    allt = ramen(sammanhang, organ, slag) + innehallet(vy, stegen) + skript("mal.js")
     sidans = adress(vy.kommun, organ, slag)
-    return sida(sammanhang.mall, sidans, f"{slag.rubrik} – {namn}", innehall)
+    return sida(sammanhang.mall, sidans, f"{slag.rubrik} – {namn}", allt)
 
 
-# Flikarna, stilen, inledningen och den hopfällda delen om sidan.
 def ramen(sammanhang: Sammanhang, organ: str, slag: Slag) -> str:
     return (
         flikar(sammanhang.underlag, organ, slag.id)

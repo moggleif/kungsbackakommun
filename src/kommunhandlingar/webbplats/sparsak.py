@@ -1,5 +1,7 @@
-"""Krav: K36, K37 och K39 i docs/02-KRAV.md, ADR-0057 och ADR-0058.
-Test: tests/test_lokalbehov.py, tests/test_initiativ.py.
+"""Krav: K36, K37, K38 och K39 i docs/02-KRAV.md, ADR-0057, ADR-0058 och
+ADR-0059.
+Test: tests/test_lokalbehov.py, tests/test_initiativ.py,
+tests/test_kortkoppling.py.
 
 En sak på en spårsida – ett lokalbehov, ett initiativ, en plan – med sina
 steg i år- och fasordning och märkena för urvalet utöver faserna: vem som
