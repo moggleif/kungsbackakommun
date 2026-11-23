@@ -74,9 +74,6 @@ class TestKontrolleraStorlek(unittest.TestCase):
         kallkod = "x = 1\n" * (KOD.fil + 1)
         self.assertEqual(len(self.kontrollera(kallkod)), 1)
 
-    def test_kodfil_over_malet_150_underkanns(self):
-        self.assertEqual(len(self.kontrollera("x = 1\n" * 151)), 1)
-
     def test_fil_over_gransen_har_inget_undantag(self):
         kallkod = "# undantag: genererad\n" + "x = 1\n" * KOD.fil
         self.assertEqual(len(self.kontrollera(kallkod)), 1)
