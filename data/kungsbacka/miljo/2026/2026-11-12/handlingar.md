@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.3ffb847f1a1a1715bb884c5f/1794208275
 sha256: 91ae8c4f7406ad0c00619e187bb5421457b3bd2b2185ca080feb928b8691c65a
 bytes: 34411534
 sidor: 120
-hamtad: 2026-11-22T12:18:24+00:00
-konverterad: 2026-11-22T12:21:34+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T12:16:54+00:00
+konverterad: 2026-11-23T12:22:37+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, bild, ocr, bild, ocr, bild, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok]
-tal_obekraftade: [8, 11, 12, 13, 14, 23, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 111, 112, 119, 120]
+tal_obekraftade: [8, 11, 12, 13, 14, 23, 42, 45, 49, 50, 51, 57, 58, 61, 62, 64, 66, 73, 74, 80, 81, 83, 84, 86, 88, 89, 91, 92, 93, 94, 95, 96, 98, 100, 101, 111, 112, 119, 120]
 figurer: [40, 42, 44, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 62, 66, 70, 72, 73, 74, 75, 77, 78, 80, 81, 83, 84, 88, 89, 92, 93, 94, 96, 97, 98, 99, 110, 111, 113, 114, 120]
 tolkade: []
 granskad: null
@@ -3457,7 +3457,7 @@ Planprogram för Åsaberg i Åsa, Kungsbacka kommun Datum: 2026-05-13, rev 2026-
 Strandskydd
 
 Inom programområdet finns inga sjöar eller vattendrag som bedöms beröras av det generella
-strandskyddet enligt Miljöbalken 7 kap 13-148§8§. Inte heller i anslutning till området finns
+strandskyddet enligt Miljöbalken 7 kap 13-14§§. Inte heller i anslutning till området finns
 sjöar eller vattendrag vars strandskydd påverkar områdets möjligheter för exploatering.
 
 Skogsbruk
