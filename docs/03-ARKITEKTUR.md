@@ -2632,8 +2632,9 @@ En kommun med en fil `lokalbehov/<kommun>.csv` får en sida
 - **Delat med initiativärendena** (ADR-0058): läsningen, kontrollen och
   sidan är gemensamma för spår över tid. Det som skiljer lokalbehoven
   från [initiativärendena](#initiativärenden) – kolumnens namn, faserna
-  med ikoner, värdenas form och sidans text – står i
-  `webbplats/sparslag.py`.
+  med ikoner, värdenas form och sidans text – står i slagets egen fil,
+  `webbplats/lokalbehovsslag.py` och `webbplats/initiativslag.py`, och
+  listan över alla slag i `slagen.py`.
 
 ## Initiativärenden
 

@@ -9,8 +9,8 @@ from pathlib import Path
 from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import projekt, spar
+from kommunhandlingar.webbplats.detaljplansslag import DETALJPLANER
 from kommunhandlingar.webbplats.sparkort import projektet
-from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from tests.poolfall import tillfallig_pool
 from tests.test_detaljplaner import ROT, sida
 from tests.test_webbplats import dokument, exempelby

@@ -9,12 +9,12 @@ uppföljningar, spår och projekt läser; menyn och sidfoten läser bara mallen.
 from dataclasses import dataclass, field
 
 from kommunhandlingar.konfiguration import Kommun
+from kommunhandlingar.webbplats.detaljplansslag import DETALJPLANER
 from kommunhandlingar.webbplats.mal import Mal
 from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.projekt import Projekt
 from kommunhandlingar.webbplats.spar import Slag, Steg
 from kommunhandlingar.webbplats.sparkort import Vy
-from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 
 

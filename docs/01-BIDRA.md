@@ -68,9 +68,7 @@ Gränserna för storlek och komplexitet står i "Ren kod – strikt" i
 gränserna för testerna i `tests/` (K87, ADR-0108). Ruff kontrollerar
 parametrar, nästling och komplexitet, för koden med `pyproject.toml` och
 för testerna med `tests/ruff.toml`; `scripts/kontrollera_storlek.py`
-kontrollerar rader per funktion och fil, som ruff saknar regler för. Rader
-per fil hålls där vid 250 också för koden tills spårslagen i
-`webbplats/sparslag.py` har delats (#384); då sänks `KOD.fil` till 150.
+kontrollerar rader per funktion och fil, som ruff saknar regler för.
 
 Markdown-lint (ADR-0021) körs med [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
 och Node på de `.md` som ändrats, med reglerna i

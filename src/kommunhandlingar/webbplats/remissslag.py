@@ -2,7 +2,7 @@
 
 Remisser och yttranden som ett slag av spår över tid: från remissen eller
 begäran om yttrande till organets svar och det beslut som svaret gällde.
-Motioner står bland initiativärendena (`sparslag.py`).
+Motioner står bland initiativärendena (`initiativslag.py`).
 """
 
 from kommunhandlingar.webbplats.spar import Slag
