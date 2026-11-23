@@ -22,18 +22,21 @@ def pdfsidor(text: str, falt: dict[str, str]) -> str:
     kvalitet = lista(falt["kvalitet_per_sida"])
     obekraftade = set(lista(falt["tal_obekraftade"]))
     return "".join(
-        pdfsida(nr, markdown, kvalitet[int(nr) - 1], nr in obekraftade)
+        pdfsida(nr, markdown, markering(kvalitet[int(nr) - 1], nr in obekraftade))
         for nr, markdown in sidorna(frontmatter.brodtext(text)).items()
     )
 
 
-def pdfsida(nr: str, markdown: str, kvalitet: str, obekraftad: bool) -> str:
-    markering = f"Kvalitet: {kvalitet}." + (
+def markering(kvalitet: str, obekraftad: bool) -> str:
+    return f"Kvalitet: {kvalitet}." + (
         " Talen på sidan är obekräftade." if obekraftad else ""
     )
+
+
+def pdfsida(nr: str, markdown: str, rad: str) -> str:
     return (
         f'<section class="sida"><h2 id="sida-{nr}">Sida {nr}</h2>'
-        f'<p class="markering">{escape(markering)}</p>{rendera(markdown)}</section>'
+        f'<p class="markering">{escape(rad)}</p>{rendera(markdown)}</section>'
     )
 
 

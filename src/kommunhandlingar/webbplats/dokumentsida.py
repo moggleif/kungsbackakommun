@@ -4,6 +4,7 @@ from html import escape
 
 from kommunhandlingar import frontmatter
 from kommunhandlingar.frontmatter import FALT, lista
+from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.luckor import motesnamn
 from kommunhandlingar.webbplats.mall import lank, sida, stig
@@ -17,25 +18,40 @@ def dokumentsida(sammanhang: Sammanhang, falt: dict[str, str], text: str) -> str
     mall, kommun = sammanhang.mall, sammanhang.kommun
     adress = adresser.i_kommunen(kommun.id, falt["adress"])
     organ = kommun.organnamn(falt["organ"])
-    mote = motesnamn(falt["datum"], falt["lopnr"])
-    till_rot = adresser.rot(adress)
-    organsida = till_rot + adresser.organsida(kommun.id, falt["organ"])
-    oversikten = (
-        till_rot + adresser.oversikt(kommun.id),
-        oversiktsnamn(mall.kommuner, kommun),
-    )
-    vag = [oversikten, (organsida, organ)]
     md = f"{mall.repo}/blob/main/data/{adresser.kallfil(adress)}"
-    # En typ utanför kommunfilens `sidor_med_text` visar bara härkomsten, så
-    # att en stor pool ryms under GitHub Pages gräns (K18, ADR-0080).
-    med_text = kommun.sidor_med_text is None or falt["typ"] in kommun.sidor_med_text
+    med_text = visar_texten(kommun, falt["typ"])
     innehall = (
-        stig([*vag, (f"{organsida}#{mote}", mote)])
+        stig(vagen(sammanhang, falt, adress))
         + harkomst(falt, md, med_text)
         + (texten(falt, text) if med_text else utan_text(md))
     )
-    rubrik = f"{organ} {mote}: {dokumentrubrik(falt)}"
+    rubrik = (
+        f"{organ} {motesnamn(falt['datum'], falt['lopnr'])}: {dokumentrubrik(falt)}"
+    )
     return sida(mall, adress, rubrik, innehall)
+
+
+# En typ utanför kommunfilens `sidor_med_text` visar bara härkomsten, så
+# att en stor pool ryms under GitHub Pages gräns (K18, ADR-0080).
+def visar_texten(kommun: Kommun, typ: str) -> bool:
+    return kommun.sidor_med_text is None or typ in kommun.sidor_med_text
+
+
+def vagen(
+    sammanhang: Sammanhang, falt: dict[str, str], adress: str
+) -> list[tuple[str, str]]:
+    kommun = sammanhang.kommun
+    till_rot = adresser.rot(adress)
+    organsida = till_rot + adresser.organsida(kommun.id, falt["organ"])
+    mote = motesnamn(falt["datum"], falt["lopnr"])
+    return [
+        (
+            till_rot + adresser.oversikt(kommun.id),
+            oversiktsnamn(sammanhang.mall.kommuner, kommun),
+        ),
+        (organsida, kommun.organnamn(falt["organ"])),
+        (f"{organsida}#{mote}", mote),
+    ]
 
 
 def texten(falt: dict[str, str], text: str) -> str:

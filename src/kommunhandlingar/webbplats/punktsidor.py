@@ -48,11 +48,21 @@ def handlingen(handlingar: dict[int, str], punkter: list[Punkt]) -> dict[int, ra
 def borjan(handlingar: dict[int, str], punkter: list[Punkt]) -> dict[int, int]:
     starter, fran = {}, min(handlingar, default=1)
     for punkt in punkter:
-        for nr in range(fran, max(handlingar, default=0) + 1):
-            if any(ar_punktens(n, punkt) for n in diarienummer(handlingar[nr])):
-                starter[punkt.nummer], fran = nr, nr + 1
-                break
+        nr = forsta_sidan(handlingar, punkt, fran)
+        if nr is not None:
+            starter[punkt.nummer], fran = nr, nr + 1
     return starter
+
+
+def forsta_sidan(handlingar: dict[int, str], punkt: Punkt, fran: int) -> int | None:
+    return next(
+        (
+            nr
+            for nr in range(fran, max(handlingar, default=0) + 1)
+            if any(ar_punktens(n, punkt) for n in diarienummer(handlingar[nr]))
+        ),
+        None,
+    )
 
 
 def sammanfattning(handlingar: dict[int, str], omfang: range) -> tuple[str, ...]:

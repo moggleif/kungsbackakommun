@@ -29,7 +29,6 @@ GEMENSAM = (
 
 Grupp = tuple[str, list[tuple[str, str]]]
 
-
 EN_KOMMUN = "Handlingar och protokoll"
 
 
@@ -55,19 +54,19 @@ def en_kommuns_poster(
     kalenderpost = (
         [post(kalender, "Kalender", aktuell)] if kommun.id in kalendrar else []
     )
-    om_poolen = [
-        (adresser.status(kommun.id), "Poolens status"),
+    grupper = [*organgrupper(kommun), ("Om poolen", om_poolen(kommun.id))]
+    return [
+        post(adresser.STARTSIDA, EN_KOMMUN, aktuell),
+        *kalenderpost,
+        *(enkel_undermeny(namn, lankar, aktuell) for namn, lankar in grupper),
+    ]
+
+
+def om_poolen(kommun_id: str) -> list[tuple[str, str]]:
+    return [
+        (adresser.status(kommun_id), "Poolens status"),
         (adresser.AVVIKELSER, "Avvikelser"),
     ]
-    return (
-        [post(adresser.STARTSIDA, EN_KOMMUN, aktuell)]
-        + kalenderpost
-        + [
-            enkel_undermeny(namn or "Organen", organlankar(kommun.id, organen), aktuell)
-            for namn, organen in grupperade(kommun)
-        ]
-        + [enkel_undermeny("Om poolen", om_poolen, aktuell)]
-    )
 
 
 # Med en enda kommun upprepar varken översiktens namn eller en rubrik
@@ -86,10 +85,14 @@ def sajtnamn(kommuner: list[Kommun]) -> str:
     return kommuner[0].namn if len(kommuner) == 1 else NAMN
 
 
-# Översikten först, sedan organen i kommunfilens grupper; utskotten nås från
-# sitt organ. En kommunfil utan grupper får gruppen "Organen".
+# Översikten först, sedan organen; utskotten nås från sitt organ.
 def sidorna(kommun: Kommun, kalendrar: frozenset[str]) -> list[Grupp]:
-    return [("Översikt", oversikt(kommun.id, kalendrar))] + [
+    return [("Översikt", oversikt(kommun.id, kalendrar)), *organgrupper(kommun)]
+
+
+# Kommunfilens grupper; en kommunfil utan grupper får gruppen "Organen".
+def organgrupper(kommun: Kommun) -> list[Grupp]:
+    return [
         (namn or "Organen", organlankar(kommun.id, i_gruppen))
         for namn, i_gruppen in grupperade(kommun)
     ]

@@ -22,19 +22,33 @@ def av_dokument(falt: dict[str, str], text: str, katalog: Path) -> list[str]:
 def rad(falt: dict[str, str], paragraf: Paragraf, katalog: Path) -> str:
     plats = platser(falt, katalog)
     plats["sida"] += f"#sida-{paragraf.sida}"
-    objekt = {
+    objekt = motet(falt) | paragrafen(paragraf) | sidan(falt, paragraf.sida)
+    return json.dumps(objekt | plats, ensure_ascii=False)
+
+
+def motet(falt: dict[str, str]) -> dict:
+    return {
         "organ": falt["organ"],
         "datum": falt["datum"],
         "lopnr": varde("lopnr", falt["lopnr"]),
+    }
+
+
+def paragrafen(paragraf: Paragraf) -> dict:
+    return {
         "paragraf": paragraf.nummer,
         "rubrik": paragraf.rubrik,
         "diarienummer": paragraf.diarienummer,
         "beslut": paragraf.beslut,
         "sidnummer": paragraf.sida,
-        "kvalitet": lista(falt["kvalitet_per_sida"])[paragraf.sida - 1],
-        "tal_obekraftade": str(paragraf.sida) in lista(falt["tal_obekraftade"]),
     }
-    return json.dumps(objekt | plats, ensure_ascii=False)
+
+
+def sidan(falt: dict[str, str], sida: int) -> dict:
+    return {
+        "kvalitet": lista(falt["kvalitet_per_sida"])[sida - 1],
+        "tal_obekraftade": str(sida) in lista(falt["tal_obekraftade"]),
+    }
 
 
 def skriv(ut: Path, rader: list[str], katalog: Path) -> None:

@@ -36,23 +36,30 @@ def statussida(mall: Mall, kommun: Kommun, dokument: list[dict[str, str]]) -> st
     innehall = (
         sammanfattning(dokument)
         + kand_inlasning_rad(rader)
-        + "<h2>Dokument per organ</h2>"
-        + dokumenttabell(rader)
-        + "<h2>Kvalitet per organ</h2>"
-        + f'<p>Nivåerna förklaras i <a href="{escape(KALLKOD + ARKITEKTUR)}'
-        '#konvertering-och-kvalitet">arkitekturen</a>.</p>'
-        + kvalitetstabell(rader)
-        + "<h2>Sidor per organ</h2>"
-        + f'<p>Sidkvaliteterna förklaras i <a href="{escape(KALLKOD + ARKITEKTUR)}'
-        '#känd-inläsning">arkitekturen</a>.</p>'
-        + sidtabell(rader)
+        + tabellerna(rader)
         + luckavsnitt(kommun, rader)
     )
-    return sida(
-        mall,
-        adresser.status(kommun.id),
-        kommunens(mall.kommuner, "Poolens status", kommun),
-        innehall,
+    rubrik = kommunens(mall.kommuner, "Poolens status", kommun)
+    return sida(mall, adresser.status(kommun.id), rubrik, innehall)
+
+
+def tabellerna(rader: list[Organrad]) -> str:
+    return (
+        "<h2>Dokument per organ</h2>"
+        + dokumenttabell(rader)
+        + "<h2>Kvalitet per organ</h2>"
+        + forklaras("Nivåerna", "konvertering-och-kvalitet")
+        + kvalitetstabell(rader)
+        + "<h2>Sidor per organ</h2>"
+        + forklaras("Sidkvaliteterna", "känd-inläsning")
+        + sidtabell(rader)
+    )
+
+
+def forklaras(vad: str, avsnitt: str) -> str:
+    return (
+        f'<p>{vad} förklaras i <a href="{escape(KALLKOD + ARKITEKTUR)}'
+        f'#{avsnitt}">arkitekturen</a>.</p>'
     )
 
 
