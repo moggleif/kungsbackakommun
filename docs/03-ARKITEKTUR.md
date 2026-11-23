@@ -2501,8 +2501,8 @@ filen (K26), länkad från organets sida.
     jämförelse som när bygget prövar källan, utan versaler. Ett slagbyte
     med samma rubrik ger ingen ny rad. Rubriken länkar till kortet. Med en
     uppföljningsfil står sist protokollens uppföljningar och dragningar om
-    målen, en markering per paragraf, och ett streck för år utan protokoll
-    med text. Ett spår som varit både nämndmål och direktiv står under sitt
+    målen (`webbplats/malprotokoll.py`), en markering per paragraf, och
+    ett streck för år utan protokoll med text. Ett spår som varit både nämndmål och direktiv står under sitt
     senaste slag, med det andra slaget vid de rubriker som hade det. Ett
     fokusområde står direkt under sitt kommunmål, indraget och märkt
     "Fokusområde:" för skärmläsare.

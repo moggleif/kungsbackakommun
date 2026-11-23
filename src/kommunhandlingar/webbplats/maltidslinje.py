@@ -3,16 +3,15 @@ Test: tests/test_malkort.py och tests/test_fokusomraden.py.
 
 Tidslinjen på sidan om ett organs mål och direktiv: en rad per rubrik i
 varje spår, grupperad på slag, med ett kommunmåls fokusområden under det,
-och en kolumn per år. Ett år med rubriken
-är en del av ett band med årets status. Sist kommer protokollens uppföljningar
-och dragningar om målen ur protokollen, med ett streck för år utan
-protokoll med text.
+och en kolumn per år. Ett år med rubriken är en del av ett band med årets
+status. Sist kommer raden med protokollen om målen (`malprotokoll.py`).
 """
 
 from html import escape
 
 from kommunhandlingar.webbplats.kallprov import jamforbar
 from kommunhandlingar.webbplats.mal import SLAG, Mal
+from kommunhandlingar.webbplats.malprotokoll import namnden_rad
 from kommunhandlingar.webbplats.malspar import (
     Underlag,
     arets,
@@ -22,10 +21,7 @@ from kommunhandlingar.webbplats.malspar import (
 )
 from kommunhandlingar.webbplats.mandatperiod import kolumner, rubriker
 from kommunhandlingar.webbplats.statusikon import teckenforklaring
-from kommunhandlingar.webbplats.uppfoljningar import Uppfoljning
 
-MARKERINGAR = {"uppföljning": "godkänd uppföljning", "dragning": "dragning om målen"}
-KLASS = {"uppföljning": "godkand", "dragning": "dragning"}
 BYTEN = (
     '<p class="byten"><span><span aria-hidden="true">↳</span> ny rubrik för '
     'samma mål</span> <span><span class="ny-formulering"></span> ny '
@@ -126,38 +122,3 @@ def ny_formulering(malen: list[Mal], ar: int) -> str:
 
 def lik(formulering: str) -> str:
     return jamforbar(formulering).casefold()
-
-
-def namnden_rad(uppfoljda: list[Uppfoljning], protokollar: set[int], ar: range) -> str:
-    if not uppfoljda:
-        return ""
-    celler = "".join(i_namnden(uppfoljda, a, a in protokollar) for a in ar)
-    return (
-        '<tbody class="namnden"><tr><th scope="row">Protokollen om målen'
-        f"{forklaring()}</th>{celler}</tr></tbody>"
-    )
-
-
-def i_namnden(uppfoljda: list[Uppfoljning], ar: int, protokoll: bool) -> str:
-    if not protokoll:
-        return '<td class="saknas" title="Inga protokoll med text i poolen">–</td>'
-    markeringar = " ".join(
-        markering(u.slag, f"{u.datum} § {u.paragraf}: {u.rubrik}")
-        for u in uppfoljda
-        if u.ar == ar
-    )
-    return f"<td>{markeringar}</td>"
-
-
-def markering(slag: str, text: str) -> str:
-    return (
-        f'<span class="{KLASS[slag]}" role="img" aria-label="{escape(text)}" '
-        f'title="{escape(text)}"></span>'
-    )
-
-
-def forklaring() -> str:
-    return "".join(
-        f'<br><small><span class="{KLASS[slag]}"></span> {text}</small>'
-        for slag, text in MARKERINGAR.items()
-    )

@@ -1,5 +1,5 @@
 """Krav: K29 i docs/02-KRAV.md, ADR-0050 och ADR-0051. Kod:
-src/kommunhandlingar/webbplats/maltidslinje.py, malkort.py,
+src/kommunhandlingar/webbplats/maltidslinje.py, malprotokoll.py, malkort.py,
 malsida.py, malstatistik.py och mal.js."""
 
 import re
