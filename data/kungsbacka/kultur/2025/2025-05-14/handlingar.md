@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.69ba44111969f9e42704c14f/1746688230
 sha256: 253e5793805bac8278af1a01cb8337e50c2308b1e19cac4ebf170fa2307a5ca6
 bytes: 16741418
 sidor: 52
-hamtad: 2026-11-22T11:52:52+00:00
-konverterad: 2026-11-22T11:55:38+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T11:39:36+00:00
+konverterad: 2026-11-23T11:44:42+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ointressant, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
+tal_obekraftade: [1, 2, 5, 6, 7, 9, 10, 13, 14, 16, 17, 18, 20, 21, 22, 25, 26, 28, 32, 37, 43, 44, 45, 46, 47, 49, 50]
 figurer: [1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
 tolkade: []
 granskad: null
@@ -473,11 +473,11 @@ Förvaltningschef
 
 Från: Samhällsbyggnadskontoret
 
-Skickat: den 4 mars 2025 11:5
+Skickat: den 4 mars 2025 11:53
 
 Till:
 
-Ämne: Kungsbacka stad 2 ranskning av fördjupad översiktsplan 4 mars - 31 maj
+Ämne: Kungsbacka stad 2050 - Granskning av fördjupad översiktsplan 4 mars - 31 maj
 2025
 
 Hej!
@@ -646,7 +646,7 @@ lek och utveckling på platser där bullerpåverkan är mindre.
 e att tillgänglighetslösningar till grönområden för friluftsliv och möjligheter för fysisk aktivitet
 behöver planeras in.
 
-I (1)
+1 (1)
 
 Nämnden för Kultur & Fritid Kungsbacka kommun
 
@@ -1211,7 +1211,7 @@ kostnadsfördelning och vidare projektering. Vi är också intresserad av kontak
 samordningsmöjligheter för att leverera fiber till området.
 
 Kommentar: Synpunkterna är beaktade inom ramen för arbetet med genomförandestudien
-(Sigma Civil 2035-01-24). Flertalet möten med Scanova har genomförts för att
+(Sigma Civil 205-01-24). Flertalet möten med Scanova har genomförts för att
 hitta lösningar för placering av kabelstråk.
 
 <!-- sida 28 -->
@@ -1288,7 +1288,7 @@ Kostnader för eventuell flyttning/ombyggnation eller skada av E.Ons anläggning
 plangenomförandet bekostas av exploatören, vilket bör framgå i genomförandebeskrivningen.
 
 Kommentar: Synpunkterna är beaktade inom ramen för arbetet med genomförandestudien
-(Sigma Civil 2035-01-24). Flertalet möten med E.ON har genomförts för att hitta
+(Sigma Civil 205-01-24). Flertalet möten med E.ON har genomförts för att hitta
 lösningar för placering av kabelstråk samt transformatorstationer.
 
 Kommunala förvaltningar och nämnder
@@ -1476,7 +1476,7 @@ ges förrän marken är sanerad.
 
 I det fall markföroreningar eller misstanke om markförorening uppstår under entreprenaden ska arbetet
 avbrytas och marken analyseras innan arbetet återupptas. Samtliga påträffade föroreningar ska anmälas
-till Miljö och Hälsoskydd i enlighet med 10 kap. 118 miljöbalken.
+till Miljö och Hälsoskydd i enlighet med 10 kap. 11§ miljöbalken.
 
 Kommentar: Uppdaterad bullerutredning är framtagen. Vibrationsutredning är framtagen.
 Planområdet har höjdsats i plankartan. Saneringskrav är infört som
@@ -1665,7 +1665,7 @@ www.kungsbacka.se
 <!-- sida 38 -->
 
 KUNGSBACKA KOMMUN
-24\)
+2 (4)
 
 Trygghet
 För sydöstra centrum etapp 1 planeras det för två stycken nya parkeringshus. Det är av stor vikt att de
@@ -1776,7 +1776,7 @@ Beslutet skickas till
 
 Samhällsbyggnadskontoret
 
-34\)
+3 (4)
 
 <!-- sida 40 -->
 
@@ -2219,7 +2219,7 @@ Karl Persson
 
 Förvaltningschef
 
-202\)
+2 (2)
 
 <!-- sida 52 -->
 

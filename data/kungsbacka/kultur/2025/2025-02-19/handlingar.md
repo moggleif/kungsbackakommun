@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.6725411a194d849cc4be1583/1739444896
 sha256: 717bec89a9600a0ee046c4a24e842b09ea1f045b3981b6cd6d81b7f3ab1129c1
 bytes: 11254890
 sidor: 161
-hamtad: 2026-11-22T11:51:01+00:00
-konverterad: 2026-11-22T11:51:40+00:00
-pipeline: kommunhandlingar 0.15.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-23T11:38:31+00:00
+konverterad: 2026-11-23T11:39:36+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [11, 12, 23, 31, 139, 149, 150]
+tal_obekraftade: [12, 23, 139, 149]
 figurer: [6, 7, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 47, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 96, 111]
 tolkade: []
 granskad: null
@@ -345,7 +345,7 @@ För att motverka missbruket av lustgas och skydda våra invånare, särskilt
 ungdomar, föreslår Sverigedemokraterna ett lokalt förbud mot användning
 av lustgas i berusningssyfte inom specifika offentliga områden i
 Kungsbacka kommun. Förbudet ska utformas enligt Ordningslagen 3 kap
-12 8 och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
+12 § och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
 alkoholförtäring redan är förbjuden, vilket skulle ge polisen ett tydligt
 mandat att ingripa och förhindra missbruk på offentliga platser.
 
