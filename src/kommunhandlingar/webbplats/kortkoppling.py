@@ -44,7 +44,7 @@ def tacker(index: Sidindex, kalla: str) -> list[list[str]]:
 
 
 def kortlankar(kommun: Kommun, sparen: Spar, index: Sidindex):
-    lankar, namnen = defaultdict(list), organnamn(kommun)
+    lankar, namnen = defaultdict(list), kommun.organnamnen()
     for slag, organ, nr, (namn, stegen, _) in alla_saker(sparen):
         sidans = f"{adress(kommun, organ, slag)}#sak-{nr}"
         rubrik = f"{slag.rubrik}, {namnen[organ]}: {namn}"
@@ -71,7 +71,3 @@ def kopplingar(index: Sidindex, stegen: list[Steg]) -> dict[str, bool]:
             tolkad = any(dnr not in numren for numren in paragraferna)
             funna[dnr] = funna.get(dnr, True) and tolkad
     return funna
-
-
-def organnamn(kommun: Kommun) -> dict[str, str]:
-    return {o.id: o.namn[0] for o in kommun.organ}

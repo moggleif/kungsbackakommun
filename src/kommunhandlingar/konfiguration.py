@@ -43,6 +43,12 @@ class Kommun:
     # Typerna som visar texten på dokumentets sida; None är alla (K18).
     sidor_med_text: tuple[str, ...] | None = None
 
+    def organnamn(self, organ_id: str) -> str:
+        return next(o.namn[0] for o in self.organ if o.id == organ_id)
+
+    def organnamnen(self) -> dict[str, str]:
+        return {o.id: o.namn[0] for o in self.organ}
+
 
 def las(sokvag: Path) -> Kommun:
     with sokvag.open("rb") as fil:

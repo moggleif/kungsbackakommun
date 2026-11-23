@@ -15,11 +15,10 @@ from pathlib import Path
 
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats.kalendervyer import MANADER
-from kommunhandlingar.webbplats.kortkoppling import organnamn
 
 
 def grupp(kommun: Kommun, paragraferna: list[dict]) -> dict:
-    namn = organnamn(kommun)
+    namn = kommun.organnamnen()
     ordnade = sorted(paragraferna, key=nyast_forst, reverse=True)
     return {
         "rubrik": f"Protokollen i {kommun.namn}",

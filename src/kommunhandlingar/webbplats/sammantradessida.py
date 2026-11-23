@@ -10,7 +10,6 @@ from html import escape
 from kommunhandlingar import frontmatter
 from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.inbaddning import stil
-from kommunhandlingar.webbplats.kortkoppling import organnamn
 from kommunhandlingar.webbplats.luckor import motesnamn
 from kommunhandlingar.webbplats.mall import Mall, sida, stig
 from kommunhandlingar.webbplats.meny import oversiktsnamn
@@ -22,7 +21,7 @@ from kommunhandlingar.webbplats.sammantrade import Arende, Mote, adress, ordnade
 def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
     kommun, forsta = mote.kommun, mote.dokument[0]
     sidans = adresser.i_kommunen(kommun.id, adress(mote.dokument))
-    namn = organnamn(kommun)
+    namn = kommun.organnamnen()
     lankar = Lankar(adresser.rot(sidans), handlingarna(kommun.id, mote.dokument), namn)
     organ = forsta["organ"]
     oversikten = lankar.rot + adresser.oversikt(kommun.id)
