@@ -23,7 +23,7 @@ if TYPE_CHECKING:
 class Kontroll:
     def __init__(self) -> None:
         self.sedda: set[tuple] = set()
-        self.kopplingar: dict[tuple, tuple[str, str]] = {}
+        self.kopplingar: dict[tuple, tuple[str, str, str]] = {}
         self.moten: dict[tuple, bool] = {}
         self.ar: dict[tuple, tuple] = {}
 
@@ -39,6 +39,7 @@ class Kontroll:
         if mal.tolkad not in ("", "ja") or (mal.tolkad and not mal.grupp):
             raise ValueError(f"tolkad {mal.tolkad!r} är varken tom eller ja i en grupp")
         self.mot_tidigare(mal)
+        self.samma_tillfalle(mal)
 
     def mot_tidigare(self, mal: "Mal") -> None:
         if (mal.namn, mal.kalla) in self.sedda:
@@ -49,6 +50,8 @@ class Kontroll:
             raise ValueError(
                 "rubriken har en annan grupp, tolkning eller huvudmål tidigare"
             )
+
+    def samma_tillfalle(self, mal: "Mal") -> None:
         # Budgeten och uppföljningen kan skriva samma mål på olika sätt.
         if self.ar.setdefault((mal.spar, mal.ar, mal.dokument), mal.namn) != mal.namn:
             raise ValueError("två rubriker i samma spår samma år i samma dokument")
@@ -60,14 +63,10 @@ class Kontroll:
             )
 
     # En grupp är en rubrik i filen som inte själv står i en grupp, och ett
-    # huvudmål ett kommunmål utan grupp.
+    # huvudmål ett av kommunmålen.
     def grupperna(self) -> None:
         egna = {(o, r): g for (o, _, r), (g, _, _) in self.kopplingar.items()}
-        kommunmal = {
-            (o, r)
-            for (o, s, r), (g, _, _) in self.kopplingar.items()
-            if s == "kommunmål" and not g
-        }
+        kommunmal = self.kommunmalen()
         for (organ, _, _), (grupp, _, huvudmal) in self.kopplingar.items():
             if grupp and egna.get((organ, grupp.casefold()), "x") != "":
                 raise ValueError(
@@ -77,3 +76,11 @@ class Kontroll:
                 raise ValueError(
                     f"huvudmålet {huvudmal!r} är inget kommunmål i filen utan grupp"
                 )
+
+    # Kommunmålen är de utan grupp.
+    def kommunmalen(self) -> set[tuple[str, str]]:
+        return {
+            (o, r)
+            for (o, s, r), (g, _, _) in self.kopplingar.items()
+            if s == "kommunmål" and not g
+        }
