@@ -9,7 +9,7 @@ from pathlib import Path
 from unittest import mock
 
 from kommunhandlingar.konfiguration import las
-from kommunhandlingar.webbplats import malsida, sparsida
+from kommunhandlingar.webbplats import malsida, sparsammandrag
 from kommunhandlingar.webbplats.granskningsslag import GRANSKNINGAR
 from kommunhandlingar.webbplats.ram import (
     BESLUTEN,
@@ -67,8 +67,8 @@ class TestUrval(unittest.TestCase):
         self.assertNotIn("<slag>", text)
 
     def test_sparsidan_escapar(self):
-        with mock.patch.object(sparsida, "avsandarna", return_value=["<M>"]):
-            text = sparsida.urval(GRANSKNINGAR, [])
+        with mock.patch.object(sparsammandrag, "avsandarna", return_value=["<M>"]):
+            text = sparsammandrag.urval(GRANSKNINGAR, [])
         self.assertIn(">&lt;M&gt;</button>", text)
         self.assertNotIn("<M>", text)
 

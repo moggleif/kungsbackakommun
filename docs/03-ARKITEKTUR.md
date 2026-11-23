@@ -2617,7 +2617,8 @@ En kommun med en fil `lokalbehov/<kommun>.csv` får en sida
   nämnden beslutat enligt förslaget innan protokollet finns i poolen, står
   steget med handlingarna som källa, och källan byts mot protokollet när
   det kommer.
-- **Sidan** (`webbplats/sparsida.py`, `sparkort.py`, `sparikon.py`)
+- **Sidan** (`webbplats/sparsida.py`, `sparsak.py`, `sparsammandrag.py`,
+  `sparkort.py`, `sparikon.py`)
   följer målsidan: en hopfälld del om metoden, antalet behov
   som nått varje fas, ett urval, en tidslinje med en rad per behov och en
   kolumn per år, med mandatperioderna ovanför, och ett kort per behov med
