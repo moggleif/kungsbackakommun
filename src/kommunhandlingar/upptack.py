@@ -1,10 +1,11 @@
-"""Krav: K2, K13, K16, K23, K45, K57 och K80 i docs/02-KRAV.md, ADR-0013,
-ADR-0018, ADR-0039, ADR-0061, ADR-0068 och ADR-0080.
+"""Krav: K2, K13, K16, K23, K45, K57, K80 och K88 i docs/02-KRAV.md,
+ADR-0013, ADR-0018, ADR-0039, ADR-0061, ADR-0068, ADR-0080 och ADR-0109.
 Test: tests/test_upptack.py och tests/test_upptack_kommando.py.
 
 Steg 1: `python -m kommunhandlingar.upptack <kommunfil> <arbetskatalog>
 [--arkiv] [--start N]`. Hämtar kommunens källsidor, kör adaptern och
-skriver kandidatlistan; med `--arkiv` arkivets lista, som blir tom när
+skriver kandidatlistan, utan att veta vilken plattform en källa är på
+(`adaptrar/kallor.py`); med `--arkiv` arkivets lista, som blir tom när
 tidsbudgetens mjuka gräns räknat från `--start` är passerad, eller när den
 hårda nås under upptäckten (`arkivupptackt.py`). `hamtning.toml` läses
 från repot som kommunfilen ligger i.
@@ -13,12 +14,10 @@ från repot som kommunfilen ligger i.
 import argparse
 import sys
 from collections import Counter
-from dataclasses import replace
 from functools import partial
 from pathlib import Path
 
 from kommunhandlingar import arkivupptackt, konfiguration, tidsbudget
-from kommunhandlingar.adaptrar import meetingsplus, sitevision, sitevision_projekt
 from kommunhandlingar.fel import Hamtfel, Konfigurationsfel
 from kommunhandlingar.hamtning import installningar
 from kommunhandlingar.hamtning.hamtare import Lasare
@@ -27,36 +26,16 @@ from kommunhandlingar.kandidat import Fynd, lista, ordna, ordna_bakat, skriv
 
 
 def upptack(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
-    motena = sum((motessidorna(kalla, klient) for kalla in kommun.kallor), Fynd())
-    projekt = projekten(kommun, klient, {k.kallnyckel for k in motena.kandidater})
-    meetingsplus_fynd = meetingsplus_kallorna(kommun, klient)
+    hamta = partial(sida, klient)
+    fynden = [(kalla.bakat, kalla.levande(hamta)) for kalla in kommun.kallor]
+    framat = sum((fynd for bakat, fynd in fynden if not bakat), Fynd())
+    nyast_forst = sum((fynd for bakat, fynd in fynden if bakat), Fynd())
     organordning = [o.id for o in kommun.organ]
-    # Meetings Plus har hela historiken levande: nyast först, som arkivet (ADR-0080).
     return Fynd(
-        ordna(motena.kandidater + projekt.kandidater, organordning)
-        + ordna_bakat(meetingsplus_fynd.kandidater, organordning),
-        motena.avvisade + projekt.avvisade + meetingsplus_fynd.avvisade,
+        ordna(framat.kandidater, organordning)
+        + ordna_bakat(nyast_forst.kandidater, organordning),
+        [avvisad for _, fynd in fynden for avvisad in fynd.avvisade],
     )
-
-
-def motessidorna(kalla: sitevision.Kalla, klient: Lasare) -> Fynd:
-    html = {adress: sida(klient, adress) for adress in kalla.sidor.values()}
-    return sitevision.upptack(kalla, html)
-
-
-def meetingsplus_kallorna(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
-    hamta = partial(sida, klient)
-    kallorna = kommun.meetingsplus_kallor
-    return sum((meetingsplus.upptack(k, hamta) for k in kallorna), Fynd())
-
-
-def projekten(kommun: konfiguration.Kommun, klient: Lasare, moten: set[str]) -> Fynd:
-    """Projektsidornas filer; en fil som också står på en mötessida är mötets."""
-    hamta = partial(sida, klient)
-    listorna = (sitevision_projekt.upptack(k.projekt, hamta) for k in kommun.kallor)
-    fynd = sum(listorna, Fynd())
-    egna = [k for k in fynd.kandidater if k.kallnyckel not in moten]
-    return replace(fynd, kandidater=egna)
 
 
 def sida(klient: Lasare, adress: str) -> str:

@@ -39,7 +39,7 @@ class Projekt:
 
 
 def las(fil: Path, kommun: Kommun, data: Path) -> dict[str, Projekt]:
-    listor = {o: a for k in kommun.kallor for o, a in k.projekt.items()}
+    listor = {o: a for k in kommun.kallor for o, a in k.projektlistor().items()}
     planerna: set[str] = set()
     rader = radfil.las(fil, KOLUMNER, lambda rad: provad_rad(rad, listor, planerna))
     namnen = {forled(r[2]) for r in rader}

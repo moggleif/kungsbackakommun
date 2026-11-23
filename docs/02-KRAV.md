@@ -2618,3 +2618,27 @@ låg över dem togs bort i #347; utan en spärr växer det tillbaka.
   och komplexitet 8)
 - **När** kontrollen körs i CI
 - **Så** godkänns det, och över testernas gränser faller det.
+
+## K88 — Upptäckten når varje källa genom samma gränssnitt
+
+[ADR-0109](decisions/0109-kallorna-bakom-ett-gransnitt.md). Issue
+[#370](https://github.com/moggleif/kungsbackakommun/issues/370). Hur
+gränssnittet ser ut står i
+[03-ARKITEKTUR.md](03-ARKITEKTUR.md#källorna). En ny
+publiceringsplattform ska bara behöva sin adapter, ett omslag med
+gränssnittets delar och en rad i registret i `adaptrar/kallor.py`, inte
+ändringar i upptäckten, konfigurationen och webbplatsen. En projektsidas
+fil jämförs med mötessidorna i samma Sitevision-källa.
+
+- **Givet** en källa på en plattform som upptäckten inte känner, med ett
+  levande fynd, ett arkiv och en ordning
+- **När** steg 1 körs för det levande och för arkivet
+- **Så** kommer källans kandidater med i sin ordning, och upptäckten
+  importerar ingen enskild adapter.
+
+- **Givet** Kungsbackas och regionens kommunfiler och samma svar från
+  källorna
+- **När** steg 1 körs före och efter gränssnittet, för det levande med
+  inspelade svar och för arkivet med testernas fixturer
+- **Så** blir kandidatlistorna och sammanfattningarna identiska, och
+  kommunfilernas format är oförändrat.

@@ -4,14 +4,22 @@ Kod: src/kommunhandlingar/konfiguration.py och organ.py."""
 import copy
 import tomllib
 import unittest
+from dataclasses import replace
 from datetime import date, datetime
 from pathlib import Path
 
 from kommunhandlingar.fel import Konfigurationsfel
-from kommunhandlingar.konfiguration import las, tolka
+from kommunhandlingar.konfiguration import Kommun, las, tolka
 
 FIXTURER = Path(__file__).parent / "fixtures"
 ROT = Path(__file__).parent.parent
+
+
+def med_kallan(kommun: Kommun, **falt) -> Kommun:
+    """Kommunen med fälten ändrade i den första källans adapter."""
+    forsta = kommun.kallor[0]
+    andrad = replace(forsta, kalla=replace(forsta.kalla, **falt))
+    return replace(kommun, kallor=(andrad, *kommun.kallor[1:]))
 
 
 def exempelby() -> dict:
@@ -26,7 +34,7 @@ class TestKommunfilen(unittest.TestCase):
         self.assertEqual([o.id for o in kommun.organ], ["bun", "fsn"])
         self.assertEqual(kommun.organ[1].foregangare, ("bun",))
         self.assertEqual(
-            kommun.kallor[0].rattelser, {"sitevision:18.abc": date(2024, 5, 2)}
+            kommun.kallor[0].kalla.rattelser, {"sitevision:18.abc": date(2024, 5, 2)}
         )
 
     def test_sammantradessidor_ar_ett_ar(self):
@@ -55,11 +63,11 @@ class TestKommunfilen(unittest.TestCase):
         self.assertEqual(kommun.organ[0].id, "ga")
         moten = [o.id for o in kommun.organ[:-1]]
         self.assertEqual(moten[-3:], ["ks", "ks-au", "kf"])
-        self.assertEqual(kommun.kallor[0].wayback, tuple(moten))
-        self.assertEqual(list(kommun.kallor[0].projekt), ["bygg-projekt"])
+        self.assertEqual(kommun.kallor[0].kalla.wayback, tuple(moten))
+        self.assertEqual(list(kommun.kallor[0].kalla.projekt), ["bygg-projekt"])
 
     def test_utan_arkiv(self):
-        self.assertFalse(las(FIXTURER / "exempelby.toml").kallor[0].wayback)
+        self.assertFalse(las(FIXTURER / "exempelby.toml").kallor[0].kalla.wayback)
 
     def test_utan_omkonvertering(self):
         self.assertFalse(las(FIXTURER / "exempelby.toml").omkonvertera)
@@ -153,7 +161,7 @@ class TestFelStopparKorningen(unittest.TestCase):
         self.stoppas(lambda d: d["kalla"][0].update(projekt="https://x"))
 
     def test_utan_projektlista_ar_den_tom(self):
-        self.assertEqual(las(FIXTURER / "exempelby.toml").kallor[0].projekt, {})
+        self.assertEqual(las(FIXTURER / "exempelby.toml").kallor[0].kalla.projekt, {})
 
     def test_omkonvertera_ar_sant_eller_falskt(self):
         self.stoppas(lambda d: d.update(omkonvertera="nej"))

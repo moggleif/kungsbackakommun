@@ -1,4 +1,5 @@
-"""Krav: K11, K16 och K23 i docs/02-KRAV.md, ADR-0018, ADR-0039 och ADR-0075.
+"""Krav: K11, K16, K23 och K88 i docs/02-KRAV.md, ADR-0018, ADR-0039, ADR-0075
+och ADR-0109.
 Test: tests/test_upptack.py och tests/test_upptack_kommando.py.
 
 Steg 1 för arkivet: Wayback-kopiorna av källornas sidor och Episervers
@@ -10,7 +11,6 @@ from dataclasses import replace
 from datetime import UTC, datetime
 
 from kommunhandlingar import konfiguration, tidsbudget
-from kommunhandlingar.adaptrar import episerver_arkiv, sitevision_arkiv
 from kommunhandlingar.hamtning.hamtare import Lasare
 from kommunhandlingar.kandidat import Fynd, ordna_bakat
 from kommunhandlingar.tidsbudget import Tidsgrans
@@ -32,9 +32,6 @@ def upptack(
 
 
 def las(kommun: konfiguration.Kommun, klient: Lasare) -> Fynd:
-    lasningar = [(sitevision_arkiv.upptack, k) for k in kommun.kallor if k.wayback] + [
-        (episerver_arkiv.upptack, k) for k in kommun.arkivkallor
-    ]
-    fynd = sum((upptack_kallan(k, klient) for upptack_kallan, k in lasningar), Fynd())
+    fynd = sum((kalla.arkivet(klient) for kalla in kommun.kallor), Fynd())
     organordning = [o.id for o in kommun.organ]
     return replace(fynd, kandidater=ordna_bakat(fynd.kandidater, organordning))

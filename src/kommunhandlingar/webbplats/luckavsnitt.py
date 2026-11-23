@@ -1,4 +1,5 @@
-"""Krav: K7 i docs/02-KRAV.md, ADR-0020 och ADR-0062. Test: tests/test_webbplats.py."""
+"""Krav: K7 och K88 i docs/02-KRAV.md, ADR-0020, ADR-0062 och ADR-0109.
+Test: tests/test_webbplats.py och tests/test_kallor.py."""
 
 from html import escape
 
@@ -42,18 +43,13 @@ def tomma(ar: list[str]) -> str:
 
 
 def kallor(kommun: Kommun, organ_id: str) -> str:
-    sitevision = [
-        f'<a href="{escape(kalla.sidor[organ_id])}">mötessidan</a>'
-        + (" och Internet Archive" if organ_id in kalla.wayback else "")
-        for kalla in kommun.kallor
-        if organ_id in kalla.sidor
-    ]
-    meetingsplus = [
-        f'<a href="{escape(kalla.sidor[organ_id])}">organets sida på Meetings Plus</a>'
-        for kalla in kommun.meetingsplus_kallor
-        if organ_id in kalla.sidor
-    ]
-    return ", ".join(sitevision + meetingsplus)
+    sidorna = (kalla.organsida(organ_id) for kalla in kommun.kallor)
+    return ", ".join(
+        f'<a href="{escape(sida.adress)}">{escape(sida.text)}</a>'
+        + (" och Internet Archive" if sida.i_arkivet else "")
+        for sida in sidorna
+        if sida
+    )
 
 
 def post(lucka: Lucka) -> str:

@@ -87,7 +87,7 @@ def arkivet() -> Klient:
 class TestArkivetsUpptackt(unittest.TestCase):
     def setUp(self):
         self.kalla = replace(
-            las(FIXTURER / "exempelby.toml").kallor[0], wayback=("bun", "fsn")
+            las(FIXTURER / "exempelby.toml").kallor[0].kalla, wayback=("bun", "fsn")
         )
         self.klient = arkivet()
         self.cdx, self.sidor = self.klient.cdx, self.klient.sidor
@@ -170,7 +170,7 @@ class TestDatumIArkivet(unittest.TestCase):
     """ADR-0062: under ett annat möte samma år gäller filnamnets datum."""
 
     def arkivet(self, rubrik: str, filnamn: str):
-        kalla = las(FIXTURER / "exempelby.toml").kallor[0]
+        kalla = las(FIXTURER / "exempelby.toml").kallor[0].kalla
         html = sida((rubrik, lank("a1", filnamn)))
         return las_sidor(replace(kalla, arkiv=True), [("bun", BUN, html)])
 

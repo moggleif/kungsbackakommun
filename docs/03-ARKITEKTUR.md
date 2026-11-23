@@ -330,7 +330,9 @@ src/kommunhandlingar/
                    sitevision_arkiv.py läser sidorna och filerna ur arkivet,
                    sitevision_projekt.py listan med projekt och projektsidorna,
                    meetingsplus_html.py läser Meetings Plus sidor,
-                   meetingsplus.py tolkar dem
+                   meetingsplus.py tolkar dem,
+                   kallor.py registret och gränssnittet som upptäckten
+                   når varje källa genom (K88)
   upptack.py       steg 1: hämtar källsidorna och skriver kandidatlistan
   arkivupptackt.py steg 1 för arkivet, inom tidsbudgeten (K16)
   hamtning/        artig HTTP-klient: robots.txt, intervall och nya försök
@@ -478,6 +480,31 @@ regex = '^Protokoll för (?P<organ>.+?)\s+(?P<ar>\d{4})-(?P<manad>\d{2})-(?P<dag
 - **Ett organ som byter namn** får ett namn till. Ett organ som ersätts av
   ett nytt blir ett nytt organ, med det gamla som föregångare; de kan ha
   samma namn om perioderna inte överlappar.
+
+### Källorna
+
+Hur och varför står i
+[ADR-0109](decisions/0109-kallorna-bakom-ett-gransnitt.md), och beteendet
+i K88. Varje `kalla` i kommunfilen blir en källa i `Kommun.kallor`, i
+filens ordning, genom registret `ADAPTRAR` i `adaptrar/kallor.py`: adapterns
+tolkning av posten och ett omslag med samma gränssnitt för alla
+plattformar.
+
+| Del                     | Vad den ger                                                  |
+| ----------------------- | ------------------------------------------------------------ |
+| `levande(hamta)`        | Källans levande fynd, med en hämtfunktion som sätter sidans adress på ett fel. |
+| `arkivet(klient)`       | Arkivets fynd, med klienten ([Arkivet](#arkivet)).           |
+| `bakat`                 | Om de levande kandidaterna står nyast först (Meetings Plus, ADR-0080). |
+| `projektlistor()`       | Organ och adress till kommunens lista med projekt ([Projektsidorna](#projektsidorna)). |
+| `organsida(organ)`      | Organets sida i källan, som luckorna länkar till, eller ingen. |
+
+En ny plattform är adapterns moduler, ett omslag i `kallor.py` med de
+fem delarna och en rad i `ADAPTRAR`. Det levande fyndet har inga
+noteringar. En källa utan levande sidor (Episerver) eller utan arkiv
+(Meetings Plus, och Sitevision utan `wayback`) ger ett tomt fynd. Steg 1 ordnar de
+levande kandidaterna från källorna framåt i K13:s ordning först och
+sedan de från källorna bakåt nyast först; arkivets ordnas alla nyast
+först.
 
 ### Sitevision
 

@@ -1,5 +1,5 @@
-"""Krav: K1, K18, K22, K23, K49 och K57 i docs/02-KRAV.md, ADR-0019, ADR-0032,
-ADR-0039, ADR-0072 och ADR-0080.
+"""Krav: K1, K18, K22, K23, K49, K57 och K88 i docs/02-KRAV.md, ADR-0019, ADR-0032,
+ADR-0039, ADR-0072, ADR-0080 och ADR-0109.
 Test: tests/test_konfiguration.py, tests/test_gruppmoten.py och
 tests/test_meetingsplus.py."""
 
@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from kommunhandlingar import schema
-from kommunhandlingar.adaptrar import episerver, meetingsplus, sitevision
+from kommunhandlingar.adaptrar import kallor as adaptrarna
 from kommunhandlingar.fel import Konfigurationsfel
 from kommunhandlingar.gruppmote import Gruppmote, gruppmote_av
 from kommunhandlingar.kandidat import TYPORDNING
@@ -30,16 +30,13 @@ class Kommun:
     id: str
     namn: str
     organ: tuple[Organ, ...]
-    kallor: tuple[sitevision.Kalla, ...]
+    # Alla källor, i kommunfilens ordning (ADR-0109).
+    kallor: tuple[adaptrarna.Kalla, ...]
     omkonvertera: bool
-    # Källor som bara finns i Internet Archive (ADR-0039).
-    arkivkallor: tuple[episerver.Kalla, ...]
     # Grupperna på kommunens sida, i sin ordning (K39).
     grupper: tuple[str, ...] = ()
     # Partiernas gruppmöten inför ett organs sammanträden (K49).
     gruppmote: Gruppmote | None = None
-    # Källor på Formpipe Meetings Plus (ADR-0080).
-    meetingsplus_kallor: tuple[meetingsplus.Kalla, ...] = ()
     # Typerna som visar texten på dokumentets sida; None är alla (K18).
     sidor_med_text: tuple[str, ...] | None = None
 
@@ -69,18 +66,12 @@ def tolka(kommun_id: str, data: dict) -> Kommun:  # undantag: följden avgör fe
         id=schema.katalognamn(kommun_id, "kommunen"),
         namn=namn,
         organ=organ,
-        kallor=av_slag(kallor, sitevision.Kalla),
+        kallor=tuple(kallor),
         omkonvertera=omkonvertera,
-        arkivkallor=av_slag(kallor, episerver.Kalla),
         grupper=grupper,
         gruppmote=None if gruppmote is None else gruppmote_av(gruppmote, organ_id),
-        meetingsplus_kallor=av_slag(kallor, meetingsplus.Kalla),
         sidor_med_text=sidor_med_text_av(data),
     )
-
-
-def av_slag[T](kallor: list, slag: type[T]) -> tuple[T, ...]:
-    return tuple(k for k in kallor if isinstance(k, slag))
 
 
 def sidor_med_text_av(data: dict) -> tuple[str, ...] | None:
@@ -99,16 +90,10 @@ def poster(data: dict, falt: str) -> list[dict]:
     return lista
 
 
-ADAPTRAR = {
-    "sitevision": sitevision.kalla_av,
-    "episerver": episerver.kalla_av,
-    "meetingsplus": meetingsplus.kalla_av,
-}
-
-
-def kalla_av(post: dict, nummer: int, organ_id: list[str]):
+def kalla_av(post: dict, nummer: int, organ_id: list[str]) -> adaptrarna.Kalla:
     var = f"kalla {nummer}"
     adapter = schema.varde(post, "adapter", str, var)
-    if adapter not in ADAPTRAR:
+    if adapter not in adaptrarna.ADAPTRAR:
         raise Konfigurationsfel(f"{var}: okänd adapter {adapter!r}")
-    return ADAPTRAR[adapter](post, organ_id, var)
+    tolkning, omslag = adaptrarna.ADAPTRAR[adapter]
+    return omslag(tolkning(post, organ_id, var))
