@@ -2219,6 +2219,18 @@ datakontrollen och bygget delar.
   diarienummer), `traff` (rubriken och diarienumren i små bokstäver) och
   `text` (organet i små bokstäver), så att ett ord som också är ett organs
   namn ger paragraferna med ordet i rubriken först.
+- **Dokumenten i `sok.json`** (`webbplats/sokdokument.py`, K96,
+  [ADR-0119](decisions/0119-dokumenten-i-sokindexet-och-texten-pa-github.md))
+  står i en andra grupp per kommun, *Dokumenten i* och kommunens namn,
+  efter protokollens: en post per dokument, nyast först. `rubrik` är typen
+  och namnet som på organets sida, `adress` dokumentets sida, `om`
+  organets namn, datumet i klartext, kvaliteten och, när de finns,
+  antalet sidor med obekräftade tal och med osäkra tabeller
+  (`tabell-osaker`). `traff` är rubriken med namnets bindestreck som
+  mellanslag, och `text` organet och datumet i klartext.
+- **Hela texten** söks på GitHub: kommunens översikt länkar till
+  kodsökningen med `repo:` och `path:data/<kommun>/` ifyllda, ur
+  webbplatsens repoadress.
 
 ## Webbplatsen
 
