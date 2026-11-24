@@ -70,7 +70,7 @@ fjärdedels teckenbredd, inte en femtedel av teckenhöjden som för text på
 högkant, eftersom textlagret inte ger teckenhöjden för text snett;
 med den läses mellanslagen i stickprovets kartetiketter rätt.
 
-Poolens version höjs till 0.18.0 och alla dokument konverteras om, eftersom
+Poolens version höjs till 0.19.0 och alla dokument konverteras om, eftersom
 vilka sidor som har text snett inte syns i front matter.
 
 ### Consequences
