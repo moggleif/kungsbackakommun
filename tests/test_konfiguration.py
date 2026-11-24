@@ -37,15 +37,6 @@ class TestKommunfilen(unittest.TestCase):
             kommun.kallor[0].kalla.rattelser, {"sitevision:18.abc": date(2024, 5, 2)}
         )
 
-    def test_sammantradessidor_ar_ett_ar(self):
-        data = exempelby()
-        self.assertIsNone(tolka("exempelby", data).organ[1].sammantradessidor)
-        data["organ"][1]["sammantradessidor"] = 2024
-        self.assertEqual(tolka("exempelby", data).organ[1].sammantradessidor, 2024)
-        data["organ"][1]["sammantradessidor"] = "2024"
-        with self.assertRaises(Konfigurationsfel):
-            tolka("exempelby", data)
-
     def test_sidor_med_text_ar_typer(self):
         data = exempelby()
         self.assertIsNone(tolka("exempelby", data).sidor_med_text)

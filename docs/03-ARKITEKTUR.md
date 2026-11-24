@@ -438,7 +438,6 @@ regex = '^Protokoll för (?P<organ>.+?)\s+(?P<ar>\d{4})-(?P<manad>\d{2})-(?P<dag
 | `sidor_med_text`       | Typerna vars dokument visar texten på sin sida på [webbplatsen](#webbplatsen), som `["kallelse", "protokoll"]`. Övriga dokuments sidor visar härkomsten och länkar till `.md` i repot. Utelämnas när alla ska visa texten. |
 | `grupper`              | Rubrikerna som delar in kommunens sida ([Webbplatsen](#webbplatsen)), i sin ordning. Utelämnas när sidan inte ska delas in. |
 | `organ.grupp`          | Gruppen ur `grupper` som organet står i. Krävs med grupper för varje organ utan `hor_till`, och utelämnas för utskott. |
-| `organ.sammantradessidor` | Första året organets sammanträden får en egen sida punkt för punkt ([Sammanträdets sida](#sammanträdets-sida)). Utelämnas annars. |
 | `gruppmote`            | Partiernas gruppmöten i [kalendern](#kalendern): `fore` (organets id), `veckodag` (`måndag` … `söndag`) och `tid` (texten som visas). Utelämnas när kommunen inte har några. |
 | `kalla.adapter`        | Adaptern som läser källan.                                   |
 | `kalla.monster`        | Hur adaptern översätter en rubrik, ett filnamn eller en sökväg till organ, datum och typ. |
@@ -2187,8 +2186,8 @@ varje push till `main`, för hand och när ett issue med etiketten
   (`<kommun>.html`; med en enda kommun är översikten också
   startsidan), en statussida per kommun (`<kommun>/status.html`),
   en sida per organ i kommunfilen
-  (`<kommun>/<organ>.html`), en sida per sammanträde punkt för punkt för
-  organ med `sammantradessidor` (`<kommun>/<organ>/<år>/<sammanträde>.html`,
+  (`<kommun>/<organ>.html`), en sida per sammanträde med kallelse punkt
+  för punkt (`<kommun>/<organ>/<år>/<sammanträde>.html`,
   [Sammanträdets sida](#sammanträdets-sida)), en sida per dokument i poolen, på samma
   sökväg som under `data/` med `.html` i stället för `.md`, och en
   kalender per kommun med en kalenderfil (`<kommun>/kalender.html`,
@@ -2951,13 +2950,14 @@ en kommun, så att de går att jämföra.
 
 Hur och varför står i
 [ADR-0078](decisions/0078-sammantradet-punkt-for-punkt-ur-kallelsen.md)
+och [ADR-0113](decisions/0113-varje-sammantrade-med-kallelse-far-sin-sida.md)
 (K54). Sidan räknas fram när webbplatsen byggs, ur sammanträdets
 kallelse, handlingar och protokoll och ur kommunens paragrafer
 ([Paragraferna och ärendena](#paragraferna-och-ärendena)). Inget lagras.
 
-- **Vilka sammanträden:** organ med `sammantradessidor` i kommunfilen,
-  från det året, när sammanträdet har en kallelse; ett kommande
-  sammanträde får alltså sin sida när kallelsen hämtats. Sidan ligger bredvid
+- **Vilka sammanträden:** varje sammanträde med en kallelse i poolen, i
+  alla organ och alla år; ett kommande sammanträde får alltså sin sida
+  när kallelsen hämtats, och ett utan kallelse har ingen. Sidan ligger bredvid
   sammanträdets katalog, `<kommun>/<organ>/<år>/<sammanträde>.html`, och
   sammanträdets rubrik på organets sida länkar dit ("punkt för punkt").
 - **Överst** står en rad per dokument från sammanträdet, i
@@ -2968,7 +2968,9 @@ kallelse, handlingar och protokoll och ur kommunens paragrafer
 - **Dagordningen** (`dagordning.py`) är kallelsens tabellrader som börjar
   med punktens nummer: rubriken (till första raden som börjar med
   `Föredragande`, `Föredragare` eller en tidpunkt, `13.00–13.45`,
-  `Kl. 17:05-17:45`, och utan `Föredragare:` med det som följer inne i en
+  `Kl. 17:05-17:45`, `Klockan 13.00-13.30`, `(kl. 14.10-14.20)`,
+  `Tid: 19:30 – 19:45`, `ca 13.00-15.00` eller `Kl.14.00-14.05`, och
+  utan `Föredragare:` med det som följer inne i en
   rad),
   diarienumret och förslaget. Diarienumret är det första numret i
   beteckningens cell när raderna fogats ihop, så att ett nummer som är
@@ -2990,7 +2992,10 @@ kallelse, handlingar och protokoll och ur kommunens paragrafer
   blir ingen punkts början. Punkten
   slutar sidan före nästa punkts början. En punkt utan en sådan sida har
   ingen handling. Har sammanträdet flera handlingar delas den första,
-  den utan namn.
+  den utan namn. Har det inga handlingar i poolen, som flera äldre
+  sammanträden, eller gick de inte att hämta eller läsa, säger sidan
+  det i stället för hur många som hittades. En kallelse som inte gick
+  att hämta ger en sida som säger det i stället för dagordningen.
 - **Sammanfattningen** är texten efter raden `Sammanfattning av ärendet`
   eller `Sammanfattning` på punktens sidor, till nästa rubrik i
   tjänsteskrivelsen (`Beskrivning av ärendet`, `Beslutsunderlag`,

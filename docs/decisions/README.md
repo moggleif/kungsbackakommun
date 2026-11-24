@@ -127,3 +127,4 @@ Regler för det här repot, utöver MADR:
 | 0109 | [Varje källa upptäcker sitt levande och sitt arkiv bakom samma gränssnitt](0109-kallorna-bakom-ett-gransnitt.md) | accepted |
 | 0110 | [Diarienumret efter etiketten läses också med förledet två gånger](0110-diarienumret-med-dubblerat-forled.md) | accepted |
 | 0112 | [Text snett och upp och ned räknas som text på högkant](0112-snett-och-upp-och-ned-som-hogkant.md) | accepted |
+| 0113 | [Varje sammanträde med kallelse får sin sida, i alla organ och alla år](0113-varje-sammantrade-med-kallelse-far-sin-sida.md) | accepted |
