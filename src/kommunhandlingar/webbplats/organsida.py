@@ -1,6 +1,6 @@
-"""Krav: K18, K26, K36, K37, K39 och K54 i docs/02-KRAV.md, ADR-0023.
-Test: tests/test_webbplats_dokument.py, tests/test_mal.py, tests/test_lokalbehov.py,
-tests/test_initiativ.py."""
+"""Krav: K18, K26, K36, K37, K39, K54 och K96 i docs/02-KRAV.md, ADR-0023.
+Test: tests/test_webbplats_dokument.py, tests/test_sokdokument.py, tests/test_mal.py,
+tests/test_lokalbehov.py, tests/test_initiativ.py."""
 
 from collections import defaultdict
 from html import escape
@@ -46,6 +46,20 @@ def dokumentrubrik(d: dict) -> str:
     return d["typ"] + ("" if frontmatter.saknas(d["namn"]) else f" – {d['namn']}")
 
 
+# Kvaliteten som organets sida och sökindexet (K96) skriver den.
+def kvaliteten(d: dict) -> list[str]:
+    obekraftade = len(frontmatter.lista(d["tal_obekraftade"]))
+    tabeller = frontmatter.lista(d["kvalitet_per_sida"]).count("tabell-osaker")
+    return [f"kvalitet {d['kvalitet']}"] + [
+        f"{vad} på {antal} {'sida' if antal == 1 else 'sidor'}"
+        for vad, antal in (
+            ("obekräftade tal", obekraftade),
+            ("osäkra tabeller", tabeller),
+        )
+        if antal
+    ]
+
+
 # Rubriken länkar till sammanträdets sida när den finns (K54).
 def moterubrik(mote: Mote, kommun: Kommun, dokument: list[dict]) -> str:
     namn = escape(motesnamn(*mote))
@@ -63,11 +77,8 @@ def motesavsnitt(rubrik: str, dokument: list[dict], saknas: tuple[str, ...]) -> 
 
 
 def dokumentpost(d: dict) -> str:
-    rader = [f"kvalitet {d['kvalitet']}"]
-    if obekraftade := len(frontmatter.lista(d["tal_obekraftade"])):
-        rader.append(f"obekräftade tal på {obekraftade} sidor")
     post = f'<a href="{escape(d["adress"])}">{escape(dokumentrubrik(d))}</a>: '
-    post += escape(", ".join(rader))
+    post += escape(", ".join(kvaliteten(d)))
     if not frontmatter.saknas(d["fel"]):
         post += f", fel {escape(d['fel'])}, " + lank(
             frontmatter.adresser(d["kalla_url"])[0], "källan"

@@ -112,7 +112,7 @@ Regler för det här repot, utöver MADR:
 | 0086 | [Alla sidor över tid visar samma år, från poolens första till innevarande](0086-alla-sidor-over-tid-visar-samma-ar.md) | accepted |
 | 0087 | [Kanten där två fyllda cellrutor möts är en cellgräns](0087-kanten-mellan-tva-cellrutor-ar-en-cellgrans.md) | accepted |
 | 0088 | [Nattkörningen sparar det klara var 15:e minut](0088-nattkorningen-sparar-var-femtonde-minut.md) | accepted (0118 checkar in delarna lokalt och pushar grenen i PR-jobbet) |
-| 0089 | [Sökindex över protokollens paragrafer, i Giffås format](0089-sokindex-over-protokollens-paragrafer.md) | accepted |
+| 0089 | [Sökindex över protokollens paragrafer, i Giffås format](0089-sokindex-over-protokollens-paragrafer.md) | accepted (0119 lägger till dokumenten) |
 | 0098 | [Regionens fullmäktigemål är ett eget slag, regionmål](0098-regionmal-ar-ett-eget-slag.md) | accepted |
 | 0099 | [Inskannade bilder märks som bild, bildytor maskas, och vridna sidor vänds](0099-inskannade-bilder-markas-och-vridna-sidor-vands.md) | accepted (0100 läser säkra rader före bild, och en sida som inte är bild eller tom blir `ointressant`; 0107 ersätter undantaget för `full`) |
 | 0100 | [Säkra rader läses, och en sida utan text att lagra märks `ointressant`](0100-sakra-rader-lases-och-resten-ar-ointressant.md) | accepted |
@@ -134,3 +134,4 @@ Regler för det här repot, utöver MADR:
 | 0117 | [Hela beroendeträdet installeras ur incheckade låsfiler med hashar: `uv.lock` för Python och `package-lock.json` för npm](0117-transitiva-beroenden-installeras-ur-lasfiler.md) | accepted |
 | 0118 | [Nattkörningens jobb som läser det hämtade har bara läsrätt, och ett eget jobb pushar grenen](0118-nattkorningens-tolkning-utan-skrivratt.md) | accepted |
 | 0116 | [Väg H bekräftar inte en rad med ett o som kan vara en nolla, och facit räknar inte utfyllnad under ett tecken](0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md) | accepted |
+| 0119 | [Dokumenten i sökindexet, och hela texten söks på GitHub](0119-dokumenten-i-sokindexet-och-texten-pa-github.md) | accepted |

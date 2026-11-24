@@ -2127,7 +2127,8 @@ och [Paragraferna och ärendena](03-ARKITEKTUR.md#paragraferna-och-ärendena); s
 - **Givet** poolens protokoll
 - **När** webbplatsen byggs
 - **Så** finns `sok.json` i webbplatsens rot med en grupp per kommun,
-  *Protokollen i* och kommunens namn, och en post per paragraf, nyast först, med
+  *Protokollen i* och kommunens namn (dokumentens grupp står i K96), och
+  en post per paragraf, nyast först, med
   paragrafens rubrik, länken till dess sida i protokollet, organet,
   datumet, paragrafens nummer och diarienumren.
 - **Givet** knappen *Sök* i projektets sajtrad
@@ -2837,3 +2838,32 @@ kan ha fel. En fil som tar över en tolk ska inte kunna skriva i repot.
 - **När** arkivets jobb startar
 - **Så** har mötenas gren redan pushats och prövats, och ingenting pushar
   till den efter att dess PR öppnats.
+
+## K96 — Poolens dokument går att söka från sajtraden, och hela texten på GitHub
+
+Hur och varför står i
+[ADR-0119](decisions/0119-dokumenten-i-sokindexet-och-texten-pa-github.md)
+och [Paragraferna och ärendena](03-ARKITEKTUR.md#paragraferna-och-ärendena).
+Issue [#67](https://github.com/moggleif/kungsbackakommun/issues/67).
+Sökningen i K62 hittar bara protokollens paragrafer. Den som söker ska
+också hitta dokumenten, och se om de är osäkra innan de öppnas.
+
+- **Givet** poolens dokument
+- **När** webbplatsen byggs
+- **Så** har `sok.json` för varje kommun också en grupp *Dokumenten i*
+  och kommunens namn, med en post per dokument, nyast först, med
+  dokumentets typ och namn, länken till dokumentets sida, organet,
+  datumet och kvaliteten.
+- **Givet** ett dokument med obekräftade tal eller osäkra tabeller
+- **När** det står bland träffarna
+- **Så** säger posten, som dokumentets rad på organets sida, på hur
+  många sidor talen är obekräftade och tabellerna osäkra.
+- **Givet** knappen *Sök* i projektets sajtrad
+- **När** någon söker på ett ord i dokumentets namn, dess typ, organet
+  eller datumet i klartext
+- **Så** står dokumentet bland träffarna under poolens namn.
+- **Givet** kommunens översikt
+- **När** den visas
+- **Så** länkar den till en sökning i hela texten i kommunens mapp i
+  repot på GitHub, och säger att den kräver inloggning och inte söker i
+  de största filerna.
