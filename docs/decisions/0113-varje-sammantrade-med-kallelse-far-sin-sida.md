@@ -39,17 +39,22 @@ utan kallelse i poolen, får ingen sida; organets sida listar dess dokument
 som förut. Två saker i äldre kallelser läses nu:
 
 * Rubriken slutar också vid `Klockan 13.00-13.30`, `(kl. 14.10-14.20)`,
-  `Tid: 19:30 – 19:45` och `ca 13.00-15.00`, så att föredragningens tid
+  `Tid: 19:30 – 19:45`, `ca 13.00-15.00` och `Kl.14.00-14.05`, så att föredragningens tid
   och föredragandenas namn efter den inte står i rubriken.
-* Ett sammanträde med kallelse men utan handlingar i poolen säger det,
-  i stället för "Handlingen hittades för 0 av …".
+* Tomt är inte noll: ett sammanträde utan handlingar i poolen säger
+  det, handlingar som finns men inte gick att hämta eller läsa säger det,
+  och en kallelse som inte gick att hämta säger det, i stället för
+  "Handlingen hittades för 0 av …" eller "Dagordningen gick inte att
+  läsa".
 
 ### Consequences
 
 * Good, eftersom en kodrad, ett fält i kommunfilen och dess test försvinner.
 * Good, eftersom en ny kommun får sidorna utan att ange något.
-* Bad, eftersom de äldsta kallelserna är svårare att läsa: 237 av 1 487
-  sidor säger att dagordningen inte gick att läsa, och handlingen hittas
+* Bad, eftersom de äldsta kallelserna är svårare att läsa: 232 av 1 487
+  sidor säger att dagordningen inte gick att läsa och 5 att kallelsen
+  inte gick att hämta. 255 sammanträden har inga handlingar i poolen och
+  101 har handlingar som inte gick att hämta eller läsa. Handlingen hittas
   för omkring en tredjedel av punkterna, mot omkring sju av tio för
   kommunstyrelsen 2021–2026.
 * Bad, eftersom föredragandens namn fortfarande kan stå i rubriken när en

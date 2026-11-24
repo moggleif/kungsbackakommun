@@ -2958,7 +2958,8 @@ kallelse, handlingar och protokoll och ur kommunens paragrafer
   med punktens nummer: rubriken (till första raden som börjar med
   `Föredragande`, `Föredragare` eller en tidpunkt, `13.00–13.45`,
   `Kl. 17:05-17:45`, `Klockan 13.00-13.30`, `(kl. 14.10-14.20)`,
-  `Tid: 19:30 – 19:45` eller `ca 13.00-15.00`, och utan `Föredragare:` med det som följer inne i en
+  `Tid: 19:30 – 19:45`, `ca 13.00-15.00` eller `Kl.14.00-14.05`, och
+  utan `Föredragare:` med det som följer inne i en
   rad),
   diarienumret och förslaget. Diarienumret är det första numret i
   beteckningens cell när raderna fogats ihop, så att ett nummer som är
@@ -2981,7 +2982,9 @@ kallelse, handlingar och protokoll och ur kommunens paragrafer
   slutar sidan före nästa punkts början. En punkt utan en sådan sida har
   ingen handling. Har sammanträdet flera handlingar delas den första,
   den utan namn. Har det inga handlingar i poolen, som flera äldre
-  sammanträden, säger sidan det i stället för hur många som hittades.
+  sammanträden, eller gick de inte att hämta eller läsa, säger sidan
+  det i stället för hur många som hittades. En kallelse som inte gick
+  att hämta ger en sida som säger det i stället för dagordningen.
 - **Sammanfattningen** är texten efter raden `Sammanfattning av ärendet`
   eller `Sammanfattning` på punktens sidor, till nästa rubrik i
   tjänsteskrivelsen (`Beskrivning av ärendet`, `Beslutsunderlag`,

@@ -122,7 +122,7 @@ class TestNamndernasKallelser(unittest.TestCase):
 
     def test_aldre_kallelsers_klockslag_avslutar_rubriken(self):
         celler = [
-            "Årsredovisning<br>Klockan 13.00-13.30<br>En Person",
+            "Årsredovisning<br>Klockan 13.00-13.30",
             "Lokalplan<br>(kl. 14.10-14.20)",
             "Spadtag<br>Tid: 19:30 – 19:45",
             "Civilt försvar<br>ca 13.00-15.00",

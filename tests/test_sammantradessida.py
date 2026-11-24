@@ -6,8 +6,8 @@ import unittest
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.dagordning import Punkt
 from kommunhandlingar.webbplats.punktkort import Lankar, punktkort, sammanfattning
-from kommunhandlingar.webbplats.sammantrade import Arende
-from kommunhandlingar.webbplats.sammantradessida import dagordningen
+from kommunhandlingar.webbplats.sammantrade import Arende, Mote
+from kommunhandlingar.webbplats.sammantradessida import dagordningen, om_handlingen
 from tests.test_dokumentindex import Index
 from tests.test_webbplats import REPO, TID, dokument
 
@@ -97,6 +97,7 @@ class TestSammantradessida(Index):
             'href="../../../exempelby/fsn/2024/2024-05-02/kallelse.html"', html
         )
         self.assertIn("Dagordningen, 3 punkter", html)
+        self.assertIn("Handlingen hittades för 1 av 3.", html)
         self.assertLess(html.index('id="punkt-1"'), html.index('id="punkt-2"'))
 
     def test_punkten_med_forslag_handling_sammanfattning_och_beslut(self):
@@ -164,10 +165,36 @@ class TestSammantradessida(Index):
         self.assertIn("Sammanträdet har inga handlingar i poolen.", html)
 
 
+def mote(kallelse: str, handlingar: str | None, sidor: dict) -> Mote:
+    dokument = [{"typ": "kallelse", "namn": "null", "kvalitet": kallelse}]
+    if handlingar:
+        dokument.append({"typ": "handlingar", "namn": "null", "kvalitet": handlingar})
+    return Mote(None, dokument, "", sidor, [])
+
+
 class TestDagordningen(unittest.TestCase):
     def test_utan_punkter_sags_det(self):
-        html = dagordningen([], Lankar("", "", {}), False)
+        html = dagordningen([], Lankar("", "", {}), mote("ok", None, {}))
         self.assertIn("Dagordningen gick inte att läsa ur kallelsen.", html)
+
+    def test_en_kallelse_som_inte_hamtats_sags(self):
+        html = dagordningen([], Lankar("", "", {}), mote("ej-hamtad", None, {}))
+        self.assertIn("Kallelsen gick inte att hämta, så dagordningen saknas.", html)
+
+    def test_handlingarna_som_saknas_skiljs_fran_de_som_inte_lastes(self):
+        arenden = [Arende(Punkt(1, "A", "", ()), "", range(1, 2), (), None, [], [])]
+        self.assertEqual(
+            om_handlingen(arenden, mote("ok", None, {})),
+            "Sammanträdet har inga handlingar i poolen.",
+        )
+        self.assertEqual(
+            om_handlingen(arenden, mote("ok", "ej-hamtad", {})),
+            "Handlingarna gick inte att hämta eller läsa.",
+        )
+        self.assertEqual(
+            om_handlingen(arenden, mote("ok", "ok", {1: "text"})),
+            "Handlingen hittades för 1 av 1.",
+        )
 
     def test_en_handling_utan_sammanfattning_sags(self):
         self.assertIn(

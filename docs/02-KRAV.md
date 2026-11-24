@@ -1875,14 +1875,19 @@ och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
   sin handling (ADR-0110, issue
   [#289](https://github.com/moggleif/kommunhandlingar/issues/289)).
 - **Givet** en äldre kallelse där rubriken följs av klockslaget som
-  `Klockan 13.00-13.30`, `(kl. 14.10-14.20)`, `Tid: 19:30 – 19:45` eller
-  `ca 13.00-15.00`
+  `Klockan 13.00-13.30`, `(kl. 14.10-14.20)`, `Tid: 19:30 – 19:45`,
+  `ca 13.00-15.00` eller `Kl.14.00-14.05`
 - **När** dagordningen läses
 - **Så** slutar rubriken före klockslaget.
-- **Givet** ett sammanträde med kallelse men utan handlingar i poolen
+- **Givet** ett sammanträde med kallelse men utan handlingar i poolen,
+  eller med handlingar som inte gick att hämta eller läsa
 - **När** sidan byggs
-- **Så** säger sidan att sammanträdet inte har några handlingar i poolen,
-  i stället för hur många punkters handling som hittades.
+- **Så** säger sidan vilket av dem det är, i stället för hur många
+  punkters handling som hittades.
+- **Givet** ett sammanträde vars kallelse inte gick att hämta
+- **När** sidan byggs
+- **Så** säger sidan det, i stället för att dagordningen inte gick att
+  läsa.
 - **Givet** ett sammanträde utan kallelse i poolen
 - **När** webbplatsen byggs
 - **Så** har det ingen egen sida, och organets sida listar dess dokument

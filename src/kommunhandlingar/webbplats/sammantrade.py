@@ -109,8 +109,7 @@ def adress(dokument: list[dict]) -> str:
     return adresser.sammantrade(d["organ"], PurePosixPath(mappen(d)).name)
 
 
-# Varje sammanträde med en kallelse i poolen, i alla organ och alla år
-# (ADR-0113).
+# ADR-0113.
 def har_sida(dokument: list[dict]) -> bool:
     return any(d["typ"] == "kallelse" for d in dokument)
 
