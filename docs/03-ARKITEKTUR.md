@@ -442,6 +442,7 @@ regex = '^Protokoll för (?P<organ>.+?)\s+(?P<ar>\d{4})-(?P<manad>\d{2})-(?P<dag
 | `sidor_med_text`       | Typerna vars dokument visar texten på sin sida på [webbplatsen](#webbplatsen), som `["kallelse", "protokoll"]`. Övriga dokuments sidor visar härkomsten och länkar till `.md` i repot. Utelämnas när alla ska visa texten. |
 | `grupper`              | Rubrikerna som delar in kommunens sida ([Webbplatsen](#webbplatsen)), i sin ordning. Utelämnas när sidan inte ska delas in. |
 | `organ.grupp`          | Gruppen ur `grupper` som organet står i. Krävs med grupper för varje organ utan `hor_till`, och utelämnas för utskott. |
+| `sammantradessidor`    | Första året sammanträdena får en sida punkt för punkt ([Sammanträdets sida](#sammanträdets-sida)), för alla organ. Utelämnas när alla år ska ha den. |
 | `gruppmote`            | Partiernas gruppmöten i [kalendern](#kalendern): `fore` (organets id), `veckodag` (`måndag` … `söndag`) och `tid` (texten som visas). Utelämnas när kommunen inte har några. |
 | `kalla.adapter`        | Adaptern som läser källan.                                   |
 | `kalla.monster`        | Hur adaptern översätter en rubrik, ett filnamn eller en sökväg till organ, datum och typ. |
@@ -2965,7 +2966,8 @@ kallelse, handlingar och protokoll och ur kommunens paragrafer
 ([Paragraferna och ärendena](#paragraferna-och-ärendena)). Inget lagras.
 
 - **Vilka sammanträden:** varje sammanträde med en kallelse i poolen, i
-  alla organ och alla år; ett kommande sammanträde får alltså sin sida
+  alla organ, från året i kommunfilens `sammantradessidor` eller alla år
+  utan det; ett kommande sammanträde får alltså sin sida
   när kallelsen hämtats, och ett utan kallelse har ingen. Sidan ligger bredvid
   sammanträdets katalog, `<kommun>/<organ>/<år>/<sammanträde>.html`, och
   sammanträdets rubrik på organets sida länkar dit ("punkt för punkt").

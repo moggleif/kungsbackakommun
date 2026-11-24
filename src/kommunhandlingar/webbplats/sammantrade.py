@@ -81,7 +81,7 @@ def moten(underlag: Underlag) -> list[list[dict]]:
     per_mote = defaultdict(list)
     for d in underlag.dokument:
         per_mote[mappen(d)].append(d)
-    return [m for m in per_mote.values() if har_sida(m)]
+    return [m for m in per_mote.values() if har_sida(underlag.kommun, m)]
 
 
 def mappen(dokument: dict) -> str:
@@ -110,8 +110,10 @@ def adress(dokument: list[dict]) -> str:
 
 
 # ADR-0113.
-def har_sida(dokument: list[dict]) -> bool:
-    return any(d["typ"] == "kallelse" for d in dokument)
+def har_sida(kommun: Kommun, dokument: list[dict]) -> bool:
+    fran = kommun.sammantradessidor
+    aret = fran is None or frontmatter.ar(dokument[0]) >= fran
+    return aret and any(d["typ"] == "kallelse" for d in dokument)
 
 
 def arenden(mote: Mote, underlag: Underlag) -> list[Arende]:
