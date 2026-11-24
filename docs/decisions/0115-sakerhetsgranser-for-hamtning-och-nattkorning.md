@@ -118,14 +118,16 @@ jobb och historiken.
   `--match-head-commit` när en commit pushas efter att automatisk merge
   slagits på. Arkivets jobb, som kör samtidigt som mötenas PR-jobb, har
   skrivrätt och kunde i så fall pusha till mötenas gren efter prövningen.
-  Skyddet mot det är alternativ C, som väljs bort nedan.
+  Skyddet mot det är alternativ C, som väljs bort nedan och står kvar i
+  [#483](https://github.com/moggleif/kungsbackakommun/issues/483).
 * Bad, eftersom en hämtning bara har tidsgränsen per läsning, 60
   sekunder. En server som skickar lite i taget hålls kvar tills
   tidsbudgetens hårda gräns avbryter jobbet (ADR-0088); en egen gräns per
   hämtning är inte infört.
 * Bad, eftersom npm-paketens egna beroenden fortfarande kan komma i nyare
   versioner: låsfilen checkas inte in (ADR-0104), och inte heller pip har
-  en låsfil för de transitiva beroendena. Det blir ett eget issue.
+  en låsfil för de transitiva beroendena. Det står i
+  [#482](https://github.com/moggleif/kungsbackakommun/issues/482).
 
 ### Confirmation
 
