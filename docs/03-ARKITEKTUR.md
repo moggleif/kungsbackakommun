@@ -186,6 +186,10 @@ två startas står i K11.
   jobbet får hemligheten. Utan hemligheten öppnar en människa eller agent
   PR:en. Jobbet är ett återanvänt workflow,
   `.github/workflows/nattkorning-pr.yml`, som båda jobben anropar.
+  Jobbet hämtar grenens och `main`s commits och träd utan filinnehåll och
+  öppnar ingen PR om grenen ändrar något annat än vanliga filer i `data/`
+  och `versioner/`, eller har en merge-commit; den automatiska mergen
+  slås på för den prövade commiten (K92, ADR-0115).
   Arkivets jobb checkar ut mötenas gren medan dess PR kan mergas; det
   förutsätter att GitHub inte tar bort grenar efter merge (*Automatically
   delete head branches* är avslaget).
@@ -731,6 +735,10 @@ standardbiblioteket.
 | `user_agent` | User-Agent i varje anrop: vem vi är och hur vi nås.             |
 | `intervall`  | Minsta antalet sekunder mellan anrop till samma värd, räknat från slutet av det förra. |
 
+- **Bara https** hämtas, och en sida läses högst 50 MB och en fil högst
+  1 GiB (K92, ADR-0115). En annan adress ger orsaken `inte-https` utan
+  att något hämtas, och en läsning över taket avbryts med orsaken
+  `for-stor`, utan nytt försök.
 - **Intervallet** hålls för varje värd för sig, över alla kommuner i
   körningen; en ny kommun på en ny värd ändrar alltså inte filen.
 - **`robots.txt`** läses en gång per värd och körning, när den gick att
@@ -941,7 +949,7 @@ Varje sida får en kvalitet:
 
 | Sida             | Betyder                                                          |
 | ---------------- | ---------------------------------------------------------------- |
-| `ej-konverterad` | Sidan har fler än 500 000 tecken, eller Tesseract fallerade eller blev inte klar på fem minuter. Ingen text från sidan skrivs. |
+| `ej-konverterad` | Sidan har fler än 500 000 tecken, är för stor att rendera (K92), eller Tesseract fallerade eller blev inte klar på fem minuter. Ingen text från sidan skrivs. |
 | `bild`           | Sidan skulle läsas med OCR, nådde inte tröskeln, gav för få säkra rader och är till största delen ett foto, en karta eller en ritning (K72). Ingen text från sidan skrivs. |
 | `ointressant`    | Sidan skulle läsas med OCR, nådde inte tröskeln och gav för få säkra rader, och är inte en bild eller tom: en ritning, en ljus karta, handskrift, ett omslag eller för liten text (K73). Granskaren kan också sätta den för hand. Ingen text från sidan skrivs. |
 | `ocr`            | Sidan lästes med OCR. Den får inga CSV:er.                       |
@@ -953,6 +961,10 @@ Först räknas sidans tecken med pypdfium2. Har textlagret fler än 500 000
 tecken läses sidan inte: den blir `ej-konverterad` och står i `figurer`
 (K55,
 [ADR-0079](decisions/0079-en-sida-med-fler-an-en-halv-miljon-tecken-lases-inte.md)).
+Detsamma gäller en sida som i 300 dpi skulle bli en större bild än
+Pillows gräns för en dekompressionsbomb, `2 × MAX_IMAGE_PIXELS`, lite mer
+än en A0 (K92,
+[ADR-0115](decisions/0115-sakerhetsgranser-for-hamtning-och-nattkorning.md)).
 Annars prövas
 sidan i den här ordningen, och den första regeln som stämmer gäller:
 
@@ -1960,8 +1972,8 @@ som läser varje fil en gång. Hur och varför skripten kontrolleras står i
   läsare. Klockan är fast. Ett fall som bilden saknar, som ett bytt mål
   eller ett fokusområde, ställs upp genom att sidan ändras före skriptet.
 - **Versionerna** står exakt i `package.json`, som CI installerar med
-  `npm install`. `package-lock.json` checkas inte in (ADR-0104). Paketet
-  som datarepona installerar påverkas inte.
+  `npm install --ignore-scripts` (ADR-0115). `package-lock.json` checkas
+  inte in (ADR-0104). Paketet som datarepona installerar påverkas inte.
 
 ## Tolkade figurer
 

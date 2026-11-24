@@ -1,6 +1,9 @@
 # PR:en från en av nattkörningens grenar, med automatisk merge (ADR-0052).
 # Ett eget jobb på en ny runner, utan utcheckning, så att inget som hämtats
-# kan nå token; båda nattkörningens jobb anropar det (ADR-0077).
+# kan nå token; båda nattkörningens jobb anropar det (ADR-0077). Grenen
+# mergas bara om den ändrar enbart data/ och versioner/, och bara på den
+# commit som prövats: ett jobb som tagits över av en fil det läst ska inte
+# kunna föra in kod i main (K92, ADR-0115).
 name: Nattkörningens PR
 
 on:
@@ -15,6 +18,12 @@ on:
 
 permissions: {}
 
+# Utan den kör Actions `bash -e` utan pipefail, också i ett anropat
+# workflow, och ett fel i prövningen skulle släppa igenom grenen.
+defaults:
+  run:
+    shell: bash
+
 jobs:
   pr:
     name: PR med automatisk merge
@@ -28,8 +37,29 @@ jobs:
             echo "Datat ligger på grenen \`$GREN\`; öppna en PR därifrån (ADR-0015)." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          # Grenens och mains commits och träd, utan att något ur repot körs.
+          # Bara vanliga filer och borttagningar under data/ och versioner/,
+          # inga namnbyten, länkar eller undermoduler, och inga merge-commits,
+          # så att diffen från merge-basen är det som mergas.
+          git init -q granskning && cd granskning
+          git fetch -q --filter=blob:none "https://github.com/$GITHUB_REPOSITORY" \
+            "+refs/heads/main:refs/remotes/main" "+refs/heads/$GREN:refs/remotes/gren"
+          COMMIT=$(git rev-parse refs/remotes/gren)
+          MERGES=$(git rev-list --merges refs/remotes/main..refs/remotes/gren)
+          ANDRAT=$(git -c core.quotePath=false diff --raw --no-renames --no-abbrev \
+            refs/remotes/main...refs/remotes/gren)
+          # grep ger 1 när allt är data; ett annat fel stoppar steget.
+          UTANFOR=$(grep -Ev \
+            $'^:[0-7]{6} (100644|100755|000000) [0-9a-f]{40} [0-9a-f]{40} [AMD]\t(data|versioner)/' \
+            <<< "$ANDRAT" || [ $? -eq 1 ])
+          if [ -n "$MERGES$UTANFOR" ]; then
+            printf '%s\n' "$MERGES" "$UTANFOR"
+            echo "Grenen \`$GREN\` ändrar annat än filer i data/ och versioner/; den mergas inte (ADR-0115)." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$GREN" \
             --title "Nattkörning ${GREN:12:10}, ${GREN##*-}" \
             --body "Datat från nattkörningen; mergas när kontrollen gått igenom (ADR-0052)."
-          gh pr merge "$GREN" --repo "$GITHUB_REPOSITORY" --auto --merge
+          gh pr merge "$GREN" --repo "$GITHUB_REPOSITORY" --auto --merge --match-head-commit "$COMMIT"
           echo "PR från \`$GREN\` mergas när kontrollen gått igenom (ADR-0052)." >> "$GITHUB_STEP_SUMMARY"
