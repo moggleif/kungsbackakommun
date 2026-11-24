@@ -2,7 +2,7 @@
 
 Lokaler och investeringar som ett slag av spår över tid: från behovet
 eller förslaget till beslutet, arbetet och den färdiga lokalen.
-Lokalbehoven (`sparslag.py`) följer en kommuns lokalplan; det här slaget
+Lokalbehoven (`lokalbehovsslag.py`) följer en kommuns lokalplan; det här slaget
 följer organets egna beslut om lokaler, hyresavtal och investeringar.
 """
 

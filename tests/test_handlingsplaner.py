@@ -1,14 +1,14 @@
 """Krav: K38 i docs/02-KRAV.md, ADR-0059. Kod: src/kommunhandlingar/webbplats/
-spar.py, sparslag.py, sparsida.py, sparsak.py, sparsammandrag.py, sparkort.py,
-inlasning.py och bygg.py."""
+spar.py, handlingsplansslag.py, sparsida.py, sparsak.py, sparsammandrag.py,
+sparkort.py, inlasning.py och bygg.py."""
 
 import unittest
 from contextlib import contextmanager
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
+from kommunhandlingar.webbplats.handlingsplansslag import HANDLINGSPLANER
 from kommunhandlingar.webbplats.sparsida import sparsida
-from kommunhandlingar.webbplats.sparslag import HANDLINGSPLANER
 from tests.aren import aren
 from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_mal import ROT

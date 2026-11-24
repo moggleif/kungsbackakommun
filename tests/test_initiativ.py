@@ -1,6 +1,6 @@
 """Krav: K37 i docs/02-KRAV.md, ADR-0058. Kod: src/kommunhandlingar/webbplats/
-spar.py, sparslag.py, sparsida.py, sparsak.py, sparsammandrag.py, sparkort.py,
-sparikon.py, organsida.py, inlasning.py och bygg.py."""
+spar.py, initiativslag.py, sparsida.py, sparsak.py, sparsammandrag.py,
+sparkort.py, sparikon.py, organsida.py, inlasning.py och bygg.py."""
 
 import shutil
 import tempfile
@@ -12,9 +12,9 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
 from kommunhandlingar.webbplats.bygg import bygg
+from kommunhandlingar.webbplats.initiativslag import INITIATIV
 from kommunhandlingar.webbplats.partier import former, star_pa
 from kommunhandlingar.webbplats.sparsida import sparsida
-from kommunhandlingar.webbplats.sparslag import INITIATIV
 from tests.aren import aren
 from tests.poolfall import dokumenten, sammanhang, skriv, tillfallig_pool
 from tests.test_mal import ROT

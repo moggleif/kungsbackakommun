@@ -20,13 +20,13 @@ from kommunhandlingar.fel import Datafel
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import kalender, mal, projekt, spar, uppfoljningar
 from kommunhandlingar.webbplats.arspann import arspann, poolens_ar
+from kommunhandlingar.webbplats.detaljplansslag import DETALJPLANER
 from kommunhandlingar.webbplats.kalender import Sammantrade
 from kommunhandlingar.webbplats.mall import Mall
 from kommunhandlingar.webbplats.projekt import Projekt
 from kommunhandlingar.webbplats.sammanhang import Kommununderlag
 from kommunhandlingar.webbplats.slagen import SLAGEN
 from kommunhandlingar.webbplats.spar import Steg
-from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 
 
 # Poolens rot och kommunerna, för kataloger med en fil per kommun, som

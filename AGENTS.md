@@ -29,11 +29,9 @@ som inte löser ett verkligt problem.
 
 Små, enkla filer och funktioner. Koden i `src/` och `scripts/` håller
 gränserna i tabellen, och CI faller när den går över dem. Testerna i
-`tests/` har de högre gränserna i den sista kolumnen. Rader per fil hålls
-i CI vid 250 också för koden tills spårslagen har delats (#384); till
-dess prövas 150 i granskningen (fas 6). Ett undantag kräver ett skäl i
-koden; hur det skrivs, och hur gränserna kontrolleras, står i
-`docs/01-BIDRA.md`.
+`tests/` har de högre gränserna i den sista kolumnen. Ett undantag
+kräver ett skäl i koden; hur det skrivs, och hur gränserna kontrolleras,
+står i `docs/01-BIDRA.md`.
 
 | Mått                         | Koden | Testerna |
 | ---------------------------- | ----- | -------- |

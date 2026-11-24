@@ -10,8 +10,8 @@ from pathlib import Path
 from kommunhandlingar.webbplats.arspann import arspann, poolens_ar
 from kommunhandlingar.webbplats.inlasning import kommunens_underlag
 from kommunhandlingar.webbplats.malsida import malsida
+from kommunhandlingar.webbplats.redovisningsslag import REDOVISNINGAR
 from kommunhandlingar.webbplats.sparsida import sparsida
-from kommunhandlingar.webbplats.sparslag import REDOVISNINGAR
 from tests.poolfall import sammanhang
 from tests.test_mal import pool
 from tests.test_malkort import GRUPPER

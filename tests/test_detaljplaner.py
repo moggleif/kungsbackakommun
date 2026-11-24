@@ -1,12 +1,12 @@
 """Krav: K44 i docs/02-KRAV.md, ADR-0067. Kod: src/kommunhandlingar/webbplats/
-sparslag.py."""
+detaljplansslag.py."""
 
 import unittest
 
 from kommunhandlingar.konfiguration import las as las_kommun
 from kommunhandlingar.webbplats import spar
+from kommunhandlingar.webbplats.detaljplansslag import DETALJPLANER
 from kommunhandlingar.webbplats.sparsida import sparsida
-from kommunhandlingar.webbplats.sparslag import DETALJPLANER
 from tests.aren import aren
 from tests.poolfall import dokumenten, sammanhang, tillfallig_pool
 from tests.test_mal import ROT

@@ -28,7 +28,7 @@ Argumentera mot ändringen ur vart och ett av dessa sex perspektiv:
   användningsfall, varje oanvänd parameter eller gren, varje skydd mot ett
   tillstånd som inte kan uppstå, varje kommentar som återberättar koden,
   varje nytt undantag (`# undantag:`) vars skäl inte håller och varje ny
-  eller ändrad fil i koden över 150 rader (CI håller 250 tills #384).
+  eller ändrad fil i koden över 150 rader.
   Föreslå vad som kan strykas.
 
 Kontrollera dessutom, oavsett perspektiv, regeln **Inga personnamn** i

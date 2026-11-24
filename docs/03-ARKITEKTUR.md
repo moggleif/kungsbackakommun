@@ -2659,8 +2659,9 @@ En kommun med en fil `lokalbehov/<kommun>.csv` får en sida
 - **Delat med initiativärendena** (ADR-0058): läsningen, kontrollen och
   sidan är gemensamma för spår över tid. Det som skiljer lokalbehoven
   från [initiativärendena](#initiativärenden) – kolumnens namn, faserna
-  med ikoner, värdenas form och sidans text – står i
-  `webbplats/sparslag.py`.
+  med ikoner, värdenas form och sidans text – står i slagets egen fil,
+  `webbplats/lokalbehovsslag.py` och `webbplats/initiativslag.py`, och
+  listan över alla slag i `slagen.py`.
 
 ## Initiativärenden
 
@@ -2724,6 +2725,7 @@ Filen, kontrollen och sidan är initiativärendenas
   står med, och kommunens planer där organet har ett eget steg. Planer
   som bara nämns, den interna kontrollplanen och planer för enskilda
   elever står inte med.
+- **Slaget** står i `webbplats/handlingsplansslag.py`.
 - **Faserna** är `uppdrag` (ett förslag, en motion, ett uppdrag eller ett
   arbete som pågår), `yttrande` (organet yttrar sig över planen eller en
   motion om den), `plan` (sidan där själva planen står), `antagen`
@@ -2762,6 +2764,7 @@ En kommun med en fil `redovisningar/<kommun>.csv` får en sida
   och revisionens rapporter står inte med. Fullmäktiges redovisningar är
   de återkommande rapporterna nämnderna lämnar till fullmäktige och
   återrapporterna av fullmäktiges uppdrag.
+- **Slaget** står i `webbplats/redovisningsslag.py`.
 - **Faserna** är `direktiv` (direktivet står i nämndbudgeten, eller i
   delårsrapporten eller årsredovisningen som listar budgetens direktiv,
   eller fullmäktiges uppdrag),
@@ -2796,6 +2799,7 @@ skillnaderna:
   informationen, avstämningarna och beslut som inte är ett av stegen
   (som att utöka planområdet) står inte med, och ett planbesked bara
   när det blev en plan i filen.
+- **Slaget** står i `webbplats/detaljplansslag.py`.
 - **Faserna** är `planbesked`, `uppdrag` (planuppdraget från nämnden
   eller arbetsutskottet, eller kommunstyrelsens projektbeställning som
   lämnar över planen), `samrad`, `granskning`, `godkannande` (nämnden

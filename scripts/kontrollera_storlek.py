@@ -1,10 +1,8 @@
 """Krav: "Ren kod – strikt" i AGENTS.md, K87 och ADR-0108.
 Test: tests/test_kontrollera_storlek.py.
 
-Koden i `src/` och `scripts/` håller målen för rader per funktion, och
-testerna de högre gränserna. Rader per fil hålls vid 250 också för koden
-tills spårslagen delats i en fil per slag (#384); då sänks `KOD.fil` till
-målet 150."""
+Koden i `src/` och `scripts/` håller målen för rader per funktion och
+fil, och testerna de högre gränserna."""
 
 import ast
 import re
@@ -18,7 +16,7 @@ class Granser(NamedTuple):
     funktion: int
 
 
-KOD = Granser(fil=250, funktion=15)
+KOD = Granser(fil=150, funktion=15)
 TESTER = Granser(fil=250, funktion=30)
 KATALOGER = {"src": KOD, "scripts": KOD, "tests": TESTER}
 UNDANTAG = re.compile(r"#\s*undantag:\s*\S")

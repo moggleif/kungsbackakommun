@@ -3,6 +3,7 @@ Kod: src/kommunhandlingar/webbplats/kortkoppling.py."""
 
 import unittest
 
+from kommunhandlingar.webbplats.initiativslag import INITIATIV
 from kommunhandlingar.webbplats.kortkoppling import (
     Kortlank,
     kortlankar,
@@ -10,7 +11,6 @@ from kommunhandlingar.webbplats.kortkoppling import (
     tacker,
 )
 from kommunhandlingar.webbplats.spar import Steg
-from kommunhandlingar.webbplats.sparslag import INITIATIV
 from tests.test_webbplats import exempelby
 
 FIL = "fsn/2024/2024-05-02/protokoll.md"
