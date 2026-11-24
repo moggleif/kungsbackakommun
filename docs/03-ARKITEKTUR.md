@@ -1972,8 +1972,26 @@ som läser varje fil en gång. Hur och varför skripten kontrolleras står i
   läsare. Klockan är fast. Ett fall som bilden saknar, som ett bytt mål
   eller ett fokusområde, ställs upp genom att sidan ändras före skriptet.
 - **Versionerna** står exakt i `package.json`, som CI installerar med
-  `npm install --ignore-scripts` (ADR-0115). `package-lock.json` checkas
-  inte in (ADR-0104). Paketet som datarepona installerar påverkas inte.
+  `npm ci --ignore-scripts` (ADR-0115) ur den incheckade
+  `package-lock.json` (ADR-0117). Paketet som datarepona installerar påverkas inte.
+
+## Låsta beroenden
+
+Hur och varför står i
+[ADR-0117](decisions/0117-transitiva-beroenden-installeras-ur-lasfiler.md)
+(K94).
+
+- **Python.** `uv.lock` låser hela trädet med hashar, också setuptools i
+  gruppen `bygg`. Varje jobb installerar med
+  `.github/actions/installera`: `uv export --locked` skriver trädet till
+  `$RUNNER_TEMP/krav.txt`, pip installerar det med `--require-hashes
+  --no-deps` och sedan paketet utan beroenden och utan byggisolering.
+  Kontrollen ger flaggan `--extra utveckling` och låter `pip-audit`
+  granska samma fil.
+- **npm.** `package-lock.json` låser ESLint, jsdom och markdownlint-cli2
+  med deras beroenden, och CI installerar med `npm ci --ignore-scripts`.
+- **Uppdateringar.** Dependabot följer `uv` och `npm` och uppdaterar
+  manifestet och låsfilen i samma PR.
 
 ## Tolkade figurer
 

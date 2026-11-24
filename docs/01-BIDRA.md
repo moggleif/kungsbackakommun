@@ -17,16 +17,21 @@ git clone https://github.com/moggleif/kungsbackakommun.git
 cd kungsbackakommun
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[utveckling]"
-npm install --ignore-scripts
+uv export --locked --no-emit-project --group bygg --extra utveckling -o krav.txt
+pip install --require-hashes --no-deps -r krav.txt
+pip install --no-deps --no-build-isolation -e .
+npm ci --ignore-scripts
 ```
 
+Beroendena installeras ur låsfilerna, `uv.lock` och `package-lock.json`,
+med hashar för hela trädet, så som CI gör (K94, ADR-0117).
 `pip install -e .` gör paketet i `src/kommunhandlingar/` importerbart, så
 att testerna når det, och drar in markdown-it-py, som webbplatsen och
 testerna renderar Markdown med, och RapidOCR och onnxruntime för väg H
-(K84, K85). `[utveckling]` tar med ruff, pip-audit och coverage, i de
+(K84, K85). `--extra utveckling` tar med ruff, pip-audit och coverage, i de
 versioner som
-står i `pyproject.toml`, samma som CI installerar; ruffs förhandsregler
+står i `pyproject.toml`, samma som CI installerar, och gruppen `bygg`
+setuptools, som paketet byggs med; ruffs förhandsregler
 kan ändras mellan versioner. Med
 [uv](https://docs.astral.sh/uv/) går samma ruff att köra utan
 installation: `uvx ruff@<versionen i pyproject.toml> check .`.
@@ -34,11 +39,14 @@ Testerna av väg H (`tests/test_radlasning.py` och `tests/test_bekraftade.py`) o
 av skannade sidor kör RapidOCR, som hämtar
 den latinska modellen från nätet första gången och kontrollerar dess
 sha256; CI hämtar den i varje körning.
-`npm install` installerar ESLint och jsdom i `node_modules/`, i de
-versioner som står i `package.json`, för webbplatsens skript (K83), utan
-paketens installationsskript, som CI (ADR-0115).
-`package-lock.json` checkas inte in, eftersom den bär
-tredjepartspaketens konto- och sponsornamn (ADR-0104).
+`npm ci` installerar ESLint, jsdom och markdownlint-cli2 i
+`node_modules/`, i de versioner som står i `package-lock.json`, för
+webbplatsens skript (K83) och Markdown-lint, utan paketens
+installationsskript, som CI (ADR-0115).
+Ändras ett beroende i `pyproject.toml` körs `uv lock`, och i
+`package.json` `npm install --package-lock-only --ignore-scripts`, och
+låsfilen följer med i samma ändring; CI faller annars. Dependabot gör
+det själv.
 
 ## Allt grönt före incheckning
 
@@ -54,8 +62,8 @@ coverage combine -q
 coverage report --sort=cover
 npx eslint
 npm test
-npx markdownlint-cli2@<versionen i kontroll.yml> <ändrade .md-filer>
-pip-audit .
+npx markdownlint-cli2 <ändrade .md-filer>
+pip-audit --disable-pip --require-hashes -r krav.txt
 ```
 
 Testerna körs under `coverage` (K75, ADR-0102): `coverage report` visar

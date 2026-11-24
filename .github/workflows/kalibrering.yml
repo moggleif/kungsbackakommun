@@ -48,7 +48,7 @@ jobs:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - run: pip install -e .
+      - uses: ./.github/actions/installera
       - name: Mätningen
         run: python -m kommunhandlingar.kalibrering data kalibrering --antal "${ANTAL:-300}"
         env:

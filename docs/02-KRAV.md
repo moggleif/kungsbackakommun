@@ -2737,3 +2737,29 @@ minnet, eller föra in kod i `main`.
 - **Så** faller den om en PDF är incheckad utanför `tests/fixtures/` eller
   en extern action står på en tagg i stället för en commit, och
   npm-paketen installeras utan sina installationsskript.
+
+## K94 — Beroendenas egna beroenden installeras i låsta versioner
+
+[ADR-0117](decisions/0117-transitiva-beroenden-installeras-ur-lasfiler.md).
+Issue [#482](https://github.com/moggleif/kungsbackakommun/issues/482).
+En ny version av ett paket som projektet bara använder genom ett annat ska
+inte nå CI eller nattkörningen utan en ändring i repot.
+
+- **Givet** ett jobb i CI, nattkörningen, webbplatsen eller kalibreringen
+- **När** det installerar projektets Python-paket
+- **Så** installeras varje paket i trädet, också setuptools som paketet
+  byggs med, i versionen i `uv.lock`, och varje fil prövas mot sin hash.
+
+- **Givet** en ändring av ett beroende i `pyproject.toml` utan en ny
+  `uv.lock`, eller i `package.json` utan en ny `package-lock.json`
+- **När** CI kör "Ren kod och tester"
+- **Så** faller den innan något installeras.
+
+- **Givet** npm-paketen för webbplatsens skript och Markdown-lint
+- **När** CI installerar dem
+- **Så** installeras de ur `package-lock.json`, och varje paket prövas mot
+  sin `integrity`.
+
+- **Givet** de installerade Python-paketen
+- **När** CI letar efter kända sårbarheter
+- **Så** granskas de versioner som står i `uv.lock`.
