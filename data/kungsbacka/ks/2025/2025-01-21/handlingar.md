@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.76caecda1944036d2d5d17dd/1737014048
 sha256: ef3b644057ea81904f787853695b6f74e995b77bad16061eeeda570c6c99e76a
 bytes: 298166803
 sidor: 286
-hamtad: 2026-11-18T13:02:31+00:00
-konverterad: 2026-11-18T13:14:11+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T02:35:15+00:00
+konverterad: 2026-11-24T02:51:08+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 149, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257]
-figurer: [64, 72, 73, 76, 77, 83, 90, 91, 93, 94, 95, 96, 109, 134, 141, 142, 143, 148, 155, 156, 158, 160]
+kvalitet_per_sida: [ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [100, 101, 102, 103, 104, 105, 107, 108, 115, 116, 118, 119, 120, 121, 122, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 149, 193, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 211, 212, 215, 217, 219, 220, 221, 222, 223, 224, 225, 226, 228, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 256]
+figurer: [64, 72, 73, 76, 77, 83, 90, 91, 93, 94, 95, 96, 106, 107, 108, 109, 131, 132, 133, 134, 141, 142, 143, 148, 149, 155, 156, 158, 160, 200, 205, 221, 236, 237, 253]
 tolkade: []
 granskad: null
 ---
@@ -4646,7 +4646,7 @@ Kommundirektör
 Kungsbacka 2024-
 för Hede Fashion Outlet AB
 
-719
+7/9
 
 Namnförtydligande
 
@@ -4677,7 +4677,7 @@ Kungsbacka kommun SAMMANTRÄDESPROTOKOLL 13 (52)
 Byggnadsnämndens arbetsutskott Datum
 2023-08-10
 
-8 211
+§211
 
 Uppdrag att upprätta förslag till detaljplan för
 handel-, kontor- och verksamhetsändamål inom
@@ -5935,9 +5935,102 @@ Sign.
 
 <!-- sida 131 -->
 
+Traktnamn,
+Uthus fasad, rosp tak
+Höjdpunkt
+flerb
+GRÄNSER
+ANVÄNDNING AV MARK OCH VATTEN
+Allmän platsmark mod kommunalt
+huvudmannaskap
+”] Allmän platsmark med enskilt huvudmannaskap
+Egenskapsbestämmelser för allmän plats
+Utformning av allmän plats
+av undantag för gång- och
+anläggas. Marken tår inte hårdgöras för att
+och för ökad
+stabilitet, samt för skötsel och underhåll av
+Egenskapsbestämmelser för
+kvartersmark
+Bebyggandets omfattning
+byggnadsarea är 850 kvadratmeter
+byggnadsarea är 1000 kvadratmeter
+Höjd på byggnader
+PBL (2010, 000) 4kap 55
+PBL (2010, 000) 4kap 59
+PBL (2010 000) 4kap 55
+Lagstöd
+Lagstöd
+Marken ska vara lämpad för PBL (2010, 000) 4kap 105
+ADMINISTRATIVA BESTÄMMELSER Lagstöd
+Lagstöd
+A bestä
+platser
+PBL (2010, 900) 4kap 116 Gemensamhetsanläggning
+utevistelse,
+Administrativa bestämmelser Hela
+planområdet
+PBL (2010, 000) 4kap 185
+ska placeras minst 5
+meter och högsta nockhöjd är 7 meter
+PBL (2010, 000) 4kap 165
+Detaljplan för bostäder och förskola
+Antagandehandling
+i Fjärås
+Upprättad I mars 2019, reviderad april 2019
+Verksamhetschef Plan
+Björn Vikström
+Detaljplanen är upprättad enligt
+
 <!-- sida 132 -->
 
+[Bilaga B till exploateringsavtal | |
+Endast angiven användning och utformning ar tillåton. Dar
+GRÄNSER
+PBL (2010, 900) 4kap 55
+placeras minst 1,5 meter från
+tastighetsgrans. Garagoport placeras minst
+6 meter från fastighotsgrans mot gatan för
+får finnas I fasad mot allmän plats med ott
+tryta från omgivando trafikleder är 55 dBA,
+dock så ska för minst hälften av friytan, into
+ADMINISTRATIVA BESTÄMMELSER
+Placering planområdet
+PBL (2010, 900) 4kap 165]
+fastighotsgrans mot gatan för att
+Utformning
+ANVÄNDNING AV MARK OCH VATTEN Lagstöd Huvudbyggnaden ska placoras minst 5
+Allmän platsmark med kommunalt mm
+har: Största tillåtna sammanlagda
+Anlagd park PBL (2010, 900) 4kap 55 byggnadsarea ar 200 kvadratmeter por
+Allmän med enskilt kvadratmeter. Hogsta byggnadshojd 4,5
+Egenskapsbestämmelser för allmän plats Lagstöd kvadratmetor. Hogsta byggnadshöjd ar 4,5
+möjliggöra infikration av dagvatten Skydd mot stömingar
+Lagstöd
+Egenskapsbestämmelser för Lagstöd
+kvartersmark Administrativa bestämmelser Allmänna
+Bebyggandets omfattning platser
+byggnadsarea ar 1630 kvadratmetor G förandotid
+o Marken ska vara tillgänglig för PBL (2010, 900) 4kap 186
+långsidan parallell mot
+Detaljplan för bostäder och förskola Antagandehandling
+APELSINEN Traktnamn, Höjdkurva 5 m - Beslutsdatum | instans
+Upprättad i mars 2019, reviderad april 2019 Sääkå
+
 <!-- sida 133 -->
+
+— I Bilaga C till exploateringsavtal Ha
+er placeras minst 1,5 meter från
+GRÄNSER
+TTEN Lagstöd Huvudbyggnaden ska placeras minst 5
+Allmän platsmark med kommunalt -
+har. Största
+kvartersmark Administrativa bestämmelser Allmänna
+| Bebyggandets omfattning platser
+p Huvudbyggnad ska placeras med PBL (2010, 000) 4kap 185
+Jenny Olsson Björn Vikström
+Detaljplanen är upprättad enligt
+Standard planförfarande | P8L2010:000 med
 
 <!-- sida 134 -->
 
@@ -8193,10 +8286,10 @@ av nytt skyddsrum om 2 400 000 kr.
 Köpekontraktet kommer att innehålla villkor om reglering av verklig kostnad av
 uppförande av skyddsrum samt att tilläggsköpeskilling ska utgå för det fall antal
 kvm BTA överstiger antal kvm BTA som ligger till grund för beräkning av
-köpeskillingen med mer än 5 260. Köpekontraktet kommer även att innehålla
+köpeskillingen med mer än 5 %. Köpekontraktet kommer även att innehålla
 villkor om att ersättning ska utgå till Bolaget om antal kvm BTA i
 lagakraftvunna bygglov understiger antal kvm BTA som ligger till grund för
-beräkning av köpeskillingen med mer än 5 20. Om reglering av köpeskillingen
+beräkning av köpeskillingen med mer än 5 %. Om reglering av köpeskillingen
 kommer att genomföras ska köpeskillingen justeras i enlighet med de
 kvadratmeterpriser som framgår av punkt 3.1 första stycket. Justering av
 köpeskillingen ska då ske för all avvikelse i förhållande till de preliminära BTA
@@ -9163,7 +9256,7 @@ I Kvarteret Gjutaren finns idag äldre industri- och verksamhetsbyggnader. Dessa
 plats åt nyproducerade bostadsbyggnader. Inför åtgärderna har Kungsbacka kommun låtit utföra
 materialinventering av byggnader med avseende på farligt avfall, där bl.a. markförlagda cisterner
 uppmärksammades, samt översiktlig miljöteknisk markundersökning. Vid markundersökningen
-påvisades förhöjda halter i några provpunkter, vilket föranleder anmälan enl. 288 förordningen om
+påvisades förhöjda halter i några provpunkter, vilket föranleder anmälan enl. 28§ förordningen om
 miljöfarlig verksamhet och hälsoskydd inför kommande arbeten.
 
 Administrativa uppgifter
@@ -9297,8 +9390,8 @@ förekomst i ytliga fyllnadsmassor har påvisats.
 
 Vid nuvarande markanvändning har massorna bedömts inte utgöra risk. Generellt riktvärde
 för KM överskrids, så risk kan föreligga vid förändrad markanvändning till bostadsändamål —
-om marken används till odling som motsvarar 1096 av det totala intaget av växter för de
-boende (Intag växter är styrande för KM, och baseras i det fallet på att 10960 av totala intaget
+om marken används till odling som motsvarar 10% av det totala intaget av växter för de
+boende (Intag växter är styrande för KM, och baseras i det fallet på att 10% av totala intaget
 växter kommer från den aktuella platsen).
 
 Vid schaktarbete bör säkerställas att PCB-förorenad jord inte sprids till omgivning, utan
@@ -9534,6 +9627,90 @@ Första Långgatan 16 A 031 333 66 60
 Sida 7 av 7
 
 <!-- sida 221 -->
+
+BILAGA 1 SITUATIONSPLAN
+
+fre vtr Hett tet FM FIRAR 1
+
+halt i nivå med/strax över KM
+0,5-1m.u.my. Ingen åtgärd
+planeras.
+
+rr O
+
+25
+
+50 Meters
+\|
+
+Teckenförklaring
+
+\>& Skruvborr
+
+\>& Skruvborr + grundvatten
+
+p-5
+
+L — us Fastighetsgräns
+
+Delområde med påvisad
+förorening (okänd utbredning),
+punktsanering ska utföras
+Markförlagd oljecistern, risk för
+
+oljeförorening,
+uppgrävning
+
+kontrolleras vid
+
+Provpunkt där halter i nivå
+med/strax över KM påvisats,
+ingen åtgärd planeras
+
+Byggnad där oljeförorenad
+betongplatta påvisats och
+
+undersökning
+
+Urspiung underlagskarta: Metria
+
+ProjektyMTU Gjutaren
+
+Kungsbacka kommun
+Fastighet
+Rapport
+Bilaga 1
+
+ENS
+
+Provpunkt där PCB påvisats i
+halt över KM.
+
+mark ska utföras efter rivning.
+ordinatsystem: SWEREF 99 12 00
+
+av underliggande
+
+N!
+
+Ritad av: OskgyAndahi
+
+Handläggare; Oskar Vikdahl
+Judy Fabienn& Kool
+
+Projektogale: David Lundh
+
+Granskad av: DÅ Lunda
+
+Datyf: 2023-02-20
+
+IGranskningsdatum: 2023-02-23
+
+ormat: A3
+
+Skala: 1:400
+
+Mall reviderad 2020-11-12, Faststäld av: Oskar Karlsson
 
 <!-- sida 222 -->
 
@@ -10569,7 +10746,7 @@ Sida 2 av 3
 
 fred ere —tng RN FRYS FM DRAGNA
 
-Metria FastighetSök - Kungsbacka Gjutaren I
+Metria FastighetSök - Kungsbacka Gjutaren 1
 . Taxeringsuppgifter
 
 : Taxeringsenhet

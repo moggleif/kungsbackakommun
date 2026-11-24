@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.33d6d97191e4f00c90c8a98/17266613739
 sha256: b445137a352d0c771dffff2bd603f93599a6ec0d3fee931d9595ec98414f2181
 bytes: 76037184
 sidor: 630
-hamtad: 2026-11-18T12:20:44+00:00
-konverterad: 2026-11-18T12:26:27+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T01:44:29+00:00
+konverterad: 2026-11-24T01:52:37+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ej-konverterad, ej-konverterad, ok, ok, ocr, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ok, tom, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [10, 65, 66, 67, 68, 69, 70, 71, 72, 108, 110, 112, 113, 114, 115, 117, 118, 120, 123, 124, 167, 168, 169, 173, 175, 176, 220, 229, 234, 236, 237, 238, 315, 316, 317, 318, 319, 320, 322, 325, 326, 327, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 341, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 379, 380, 381, 414, 415, 416, 459, 462, 465, 483, 486, 630]
-figurer: [10, 30, 65, 66, 67, 68, 69, 70, 71, 72, 80, 84, 103, 109, 110, 111, 113, 114, 116, 117, 118, 119, 120, 121, 122, 123, 124, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 143, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 182, 192, 215, 217, 227, 234, 243, 247, 248, 249, 250, 251, 252, 255, 257, 259, 260, 262, 265, 273, 277, 279, 280, 281, 282, 284, 285, 288, 292, 293, 297, 298, 299, 301, 303, 304, 305, 310, 311, 312, 313, 314, 320, 345, 346, 347, 348, 349, 354, 362, 363, 364, 365, 367, 368, 370, 374, 375, 376, 377, 379, 380, 382, 387, 388, 389, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 416, 420, 421, 422, 423, 424, 426, 427, 429, 432, 433, 434, 435, 437, 450, 454, 457, 459, 460, 462, 464, 465, 467, 472, 475, 478, 481, 483, 486, 489, 494, 495, 508, 548, 580, 581]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ointressant, ocr, ok, ok, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ointressant, ointressant, ok, tom, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [10, 69, 70, 71, 108, 110, 112, 117, 118, 168, 169, 220, 229, 234, 236, 237, 238, 315, 316, 317, 318, 320, 322, 325, 326, 327, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 341, 343, 344, 345, 347, 348, 349, 350, 351, 352, 379, 415, 416, 459, 462, 465, 483, 486]
+figurer: [10, 30, 65, 66, 67, 68, 69, 70, 71, 72, 80, 84, 103, 109, 110, 111, 113, 114, 116, 117, 118, 119, 120, 121, 122, 123, 124, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 143, 144, 145, 146, 148, 149, 150, 151, 152, 153, 154, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 182, 192, 215, 217, 227, 234, 243, 247, 248, 249, 250, 251, 252, 255, 257, 259, 260, 262, 265, 273, 277, 279, 280, 281, 282, 284, 285, 288, 292, 293, 297, 298, 299, 301, 303, 304, 305, 310, 311, 312, 313, 314, 320, 345, 347, 348, 349, 354, 362, 363, 364, 365, 367, 368, 370, 374, 375, 376, 377, 379, 382, 387, 388, 389, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 416, 420, 421, 422, 423, 424, 426, 427, 429, 432, 433, 434, 435, 437, 450, 454, 457, 459, 460, 462, 464, 465, 467, 472, 475, 478, 481, 483, 486, 489, 494, 495, 508, 548, 580, 581]
 tolkade: []
 granskad: null
 ---
@@ -9795,6 +9795,18 @@ Transaktionsidentitet: B8CC32764C2DD819FAEF342024A98A8C0975CEF939
 
 <!-- sida 234 -->
 
+FÖRSLAG TILL
+STADSPLAN FÖR DEL AV
+FORS OMRÅDET
+OMFATTANDE DEL AV
+FASTIGHETERNA FORS 13 OCH STAMFAST.
+JÄMTE ÄNDRING I STADSPLANEN FÖR
+HÅLABÄCKSOMRÅDET
+I KUNGSBACKA KOMMUN
+HALLANDS LÄN
+I FEBRUARI 1972
+BETECKNINGAR
+
 <!-- sida 235 -->
 
 KUNGSBACKA KOMMUN                  SAMMANTRÄDESPROTOKOLL          6 (19)
@@ -12983,11 +12995,116 @@ Page 68 of 112
 
 <!-- sida 315 -->
 
+Sandö hamn och bålägare
+Dåvarande nalurskyddsrådet i länet har i skrivelse 19.10.4722
+ade natur.
+Prams tällningen har tillstyrkts av förutvarande stat
+luftslivet.
+faturvärdsinventering av Vallda Sandö har utförts ov fil är
+i avbidan på et
+gen förordnat on
+Inom området finns ett 2 rö
+länsstyrelsen 12.
+Page 69 of 112
+
 <!-- sida 316 -->
+
+Bila
+ga ) BESLUT
+( III R 57
+Naturvåråsrådet i länet har föreslagit viss jämkning av
+fråga.
+styrelsen avser att i särskild ordning besluta i denna
+Vallda Sandö kännetecknas av klipnor och hällmarker ned
+lägre partier utgöres av strandängar, vilka har högt botc--
+ängarna är häckningsp ats för en mångfald fågelarter och
+rastplats särskilt för vadarfåglar
+vårdas på grund av sin betydelse för kännedom om Jlandac
+natur, landskapsbilden och för allmänhetens friluftsliv.
+grund härav förklarar länsstyrelsen mod stöda av 7
+våräslajen som naturreservat det orråde, som på bila
+karta markerats med heläragen röd linje.
+av området ut-
+De är förbjudet
+alt utan lärssiyrelsens tillstånd uppföra ny byggnad eller
+att bedriva tikt av sten, grus, sard, lera eller natjori
+Jordbrukets vehov
+jande
+vlaniera eller så skog
+Hospitalsgatan 025-11 &3 20 351 83-3
+Page 70 of 112
 
 <!-- sida 317 -->
 
+Bila
+Det är förbjuiot
+att
+eller
+stånd
+heterna
+slutning vill
+vu eller
+att grö
+att
+att
+att slö
+att
+och anvisa
+endast för den besökande
+av 50 neter ii
+belasda områd
+inje
+eld
+Härutöver erinras om vissa
+åsom förbud mot
+v har
+inskrift eller
+att skräpa ned utomhus ( 23 § natu
+att olovligen
+annat söt
+Vård-
+växande iräd taga gren eller
+v Skada växande vräd ( 12 kap 2 Y
+döda, jaga, fånga, skada djur bortit
+2 YI jaktlagen och 1 och
+skall skötas
+ocn
+den socia
+vå annat sätt skada eller
+naturföremal eller ytbildning
+skada växtligheten,
+beträda
+det
+Ställa upp husvagn
+visade vägar och parkeringspla
+anvisade platcer
+lös
+gällande bes
+för
+strandängarna
+avser oj den
+san verka störande på djurlivet,
+exempelvis att från nära håll fotografera boplats
+Telefon
+Page 71 of 112
+
 <!-- sida 318 -->
+
+råd med vederbörande markägare. Den kronan tillhöriga ön
+Klöven skall dock förvaltas av domänverket eller den
+dessa åtgärder.
+åe anvisninzar som utfärdats av statens nat rvårdsverk.
+22:6, 24:8 och 39:1.
+Besvär över detta beslut kan anföras genom skrivelse vill
+Pack, 103 10 Siockholm 2, och ha kommit in dit inom tre veckor
+från den dag klasanden fått del av beslutet. I besvä irsskrivelsen
+Vidare bör klaganden meådela sin fullständiga adress. |
+länsråd och länsnotarie, även naturvårdsintendenten Ove Olsson
+Kopia u a
+Statens planverk
+Dtla i kba dt
+Hospitalsgatan 035-11 53 20 35183-3
+Page 72 of 112
 
 <!-- sida 319 -->
 
@@ -14506,6 +14623,22 @@ Page 99 of 112
 <!-- sida 346 -->
 
 <!-- sida 347 -->
+
+NATURRESERVAT
+VEGETATIONSKARTA
+Tomtmark
+Strandäng
+Ängs- och hedmark
+Tallskog
+Lövträd
+Kärr
+FT Odlad jord, åkermark eller vall
+Utfyllnad
+Nivåkurvor, 5 m ekvidistans
+Å Radiomast
+Upprättad av PM Åhren. mars 1980
+Skala 1:10 000
+Page 103 of 112
 
 <!-- sida 348 -->
 
@@ -16484,7 +16617,7 @@ avseende främst högsta tillåtna byggnadsarea.
 AVVÄGNING ENLIGT MILJÖBALKEN
 
 Förslaget bedöms vara förenligt med miljöbalkens 3, 4 och 5 kapitel.
-Planområdet omfattas av strandskyddsförordnande enligt 7 kapitlet 158, andra
+Planområdet omfattas av strandskyddsförordnande enligt 7 kapitlet 15§, andra
 stycket.
 
 Kommunen avser att under samrådet ansöka om upphävande av strandskydd.
@@ -16519,7 +16652,7 @@ Kommunen skall göra sin bedömning enligt de kriterier som anges i bilaga 4 til
 förordningen om miljökonsekvensbeskrivningar.
 
 \-  Detaljplanerna bedöms inte medge användning som innebär betydande
-påverkan på miljön. (PBL 5 kap 188)
+påverkan på miljön. (PBL 5 kap 18§)
 
 \-  Detaljplanerna bedöms inte innehålla verksamheter som kan påverka ett
 Natura 2000-område.

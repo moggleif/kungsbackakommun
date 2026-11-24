@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.6c78981e191785767f26ec9/17247399721
 sha256: 8c4e59ddadf0fff7950c74fc51617e7220045b0d6a0278959aabb7fc197ea21e
 bytes: 79980515
 sidor: 237
-hamtad: 2026-11-18T12:17:34+00:00
-konverterad: 2026-11-18T12:20:44+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T01:40:23+00:00
+konverterad: 2026-11-24T01:44:29+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224]
-figurer: [15, 207, 215, 217, 223]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [207, 209, 210, 211, 212, 213, 214, 216, 217, 218, 219, 220, 221, 222, 223, 224]
+figurer: [15, 207, 208, 214, 215, 217, 218, 221, 223]
 tolkade: []
 granskad: null
 ---
@@ -9786,7 +9786,7 @@ Datum . a Ort )
 
 <!-- sida 215 -->
 
-113\)
+1 (3)
 
 Kungsbacka
 
@@ -9798,7 +9798,7 @@ Utdelningsadress E-postadress
 Postnummer Postort Telefonnummer
 
 A Sammanställning Kronor Granskares anteckningar
-Kvarstående partistöd från föregående period (år) 386 887
+Kvarstående partistöd från föregående period (år) 86 887
 Beviljat partistöd för perioden + 230 000
 Utgifter under perioden (summa B + C) - 139 030
 Kvarstående partistöd inför kommande period (summa) =177 857
@@ -9812,7 +9812,7 @@ Kommunikation — annonsering
 
 Kommunikation — trycksaker
 
-2418
+2 418
 
 Kommunikation — övrigt
 Löner och ersättningar till anställd personal
@@ -9871,6 +9871,32 @@ Underskrift Telefon
 Namnförtydligande Datum
 
 <!-- sida 217 -->
+
+Kungsbacka
+Redovisning av kommunalt partistöd
+Partiuppgifter
+Parti Organisationsnummer Kontonummer
+Utdelningsadress | E-postadress
+Postnummer Postort Telefonnummer
+A Sam man stå lIn ing Kronor 'Granskares anteckningar
+Kvarstående partistöd från föregående period (år) 0
+Beviljat partistöd för perioden + 230000
+Utgifter under perioden (summa B + C) - 136584, 60
+Kvarstående partistöd inför kommande period (summa) - 93415,40
+B Redovisning av hur partistödet använts aktiviteter) Kronor Granskares anteckningar
+Aktivitet
+Kommunikation — webb
+Kommunikation — annonsering
+Kommunikation — trycksaker
+| Kommunikation — övrigt
+Löner och ersättningar till anställd personal
+Deltagande i utbildningar, konferenser m.m.
+Lokalkostnader
+| Material (t.ex. IT, kontorsmaterial)
+Övrigt, vänligen specificera |
+Bank o externt 2050
+Summa utgifter för aktiviteter under perioden
+Internal
 
 <!-- sida 218 -->
 

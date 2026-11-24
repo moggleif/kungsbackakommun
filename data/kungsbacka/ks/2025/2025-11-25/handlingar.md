@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.7573952919a7bcb3bbe802f6/1763735030
 sha256: 20f709db365993db67a79cf78cc77b78722809826a517c6a70f10d26b6393445
 bytes: 232738866
 sidor: 1082
-hamtad: 2026-11-18T22:34:03+00:00
-konverterad: 2026-11-18T22:46:12+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T04:32:09+00:00
+konverterad: 2026-11-24T04:53:26+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [14, 126, 133, 134, 135, 136, 137, 173, 202, 217, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 398, 399, 429, 470, 474, 477, 478, 809, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 906, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 1042, 1043, 1044, 1045, 1046, 1047, 1048, 1049]
-figurer: [61, 123, 126, 138, 143, 144, 145, 148, 153, 154, 156, 162, 164, 179, 202, 210, 211, 212, 213, 214, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 237, 241, 244, 254, 257, 258, 262, 265, 267, 280, 283, 288, 295, 297, 298, 299, 300, 304, 305, 310, 327, 330, 336, 337, 342, 359, 363, 366, 376, 383, 414, 442, 453, 455, 458, 459, 460, 461, 464, 469, 474, 477, 478, 480, 481, 482, 483, 484, 486, 487, 488, 489, 491, 492, 493, 494, 501, 502, 503, 573, 574, 656, 657, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 695, 696, 697, 700, 701, 704, 705, 706, 707, 708, 711, 714, 717, 718, 721, 723, 725, 726, 729, 732, 736, 740, 741, 745, 746, 751, 754, 756, 760, 761, 763, 769, 772, 776, 777, 783, 803, 809, 886, 906, 907, 922, 942, 943, 947, 948, 949, 950, 954, 959, 960, 961, 962, 967, 968, 969, 970, 971, 973, 979, 983, 984, 992, 993, 1011, 1081]
+kvalitet_per_sida: [ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [133, 134, 137, 173, 222, 223, 224, 225, 226, 227, 228, 229, 230, 234, 235, 236, 237, 398, 429, 470, 809, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 864, 865, 866, 867, 868, 869, 870, 872, 873, 874, 876, 877, 878, 879, 880, 906, 915, 916, 917, 918, 919, 921, 922, 923, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 1042, 1043, 1044, 1048, 1049]
+figurer: [14, 61, 123, 126, 137, 138, 143, 144, 145, 148, 153, 154, 156, 162, 164, 173, 179, 210, 211, 212, 213, 214, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 241, 244, 254, 257, 258, 262, 265, 267, 280, 283, 288, 295, 297, 298, 299, 300, 304, 305, 310, 327, 330, 336, 337, 342, 359, 363, 366, 376, 383, 414, 442, 453, 455, 458, 459, 460, 461, 464, 469, 470, 474, 477, 478, 480, 481, 482, 483, 484, 486, 487, 488, 489, 491, 492, 493, 494, 501, 502, 503, 573, 574, 656, 657, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 695, 696, 697, 700, 701, 704, 705, 706, 707, 708, 711, 714, 717, 718, 721, 723, 725, 726, 729, 732, 736, 740, 741, 745, 746, 751, 754, 756, 760, 761, 763, 769, 772, 776, 777, 783, 803, 809, 872, 873, 874, 875, 876, 877, 878, 879, 880, 886, 906, 907, 920, 922, 925, 928, 930, 942, 943, 947, 948, 949, 950, 954, 959, 960, 961, 962, 967, 968, 969, 970, 971, 973, 979, 983, 984, 992, 993, 1011, 1049, 1081]
 tolkade: []
 granskad: null
 ---
@@ -4136,7 +4136,7 @@ parkering inte ska vara en del av bostadens månadshyra/avgift.
 
 g) Cykelpool med specialcyklar - Cykelpool med specialcyklar såsom exempelvis
 lastcyklar ordnas i ett lättillgängligt läge inom området. En vanlig uppdelning är
-50240 el-cyklar och 50240 el-lastcyklar. Cykelpoolen bör initialt vara kostnadsfri för
+50% el-cyklar och 50% el-lastcyklar. Cykelpoolen bör initialt vara kostnadsfri för
 de boende och omfatta minst tre fordon per 100 lägenheter. Efterfrågan bör följas
 upp årligen och justeras vid behov. Syftet är att möjliggöra fler typer av ärenden
 med cykel. Cykelpoolen ska inkludera ett serviceupplägg där service görs av
@@ -8478,6 +8478,229 @@ Sign.
 <!-- sida 236 -->
 
 <!-- sida 237 -->
+
+o
+
+gt |
+
+meter
+
+Skala 1:1000 i AT, skala 1:2000 i A3
+TECKENFÖRKLARING KARTDATA
+
+2
+
+Liljan
+
+14 5
++4.5
+
+Rogisternummer, tomtnummer
+Hojdpunkt
+Traktnamn, kvartarsnamn
+
+\- Fastighetsgråns
+\+ Gang: och cykolbana
+
+Höjdkurva 1,0 m
+
+| GATA,
+ONES fn mn SRA
+NICE Så
+
+[rna öråkens
+
+;
+
+te
+r AS i a
+
+ESS
+
+RK ÖR
+Ls
+
+100 Detaljplanen är baserad på koordinatsystemet SWEREF 99
+1260 och höjdsystemet RH 2000
+
+Aktualitetsdatum: 2025-05-13
+
+mn Höjdkutva 5,0 m
+
+Vagbana
+
+Bostadshus fasad, resp. tak
+Ulhus fasad, rasp, tak
+Skårmtak
+
+renen —
+
+Å
+N
+
+PLANBESTÄMMELSER
+
+Fa gäller Inom omraden med
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+
+. Endast angiven
+
+ar tillåten. Där inom hela omradet.
+
+saknas gäller
+
+GRÄNSER
+— + & Planomradesgrans.
+
+Anvandningsgräns.
+
+FE Egenskapsgräns.
+
+— Ilustratronsgråans.
+
+— + -— + — Sekundär egenskapsgrans.
+
++++ : Sammanfallande sekundär och egenskapsgräns.
+
+ANVÄNDNING AV MARK OCH VATTEN
+Allmän platsmark
+' Huvudgata.
+
+"I Lokalgata.
+: Gäng- och cykelväg.
+NÄVUR > Natur.
+
+PARK = Park
+Kvartersmark
+i Bostäder,
+Bostäder i flerbostadshus.
+Transformatorstation.
+Pumpstation.
+LJ Parkering.
+Valtenområde
+W — ' Valtenomrade.
+CW "| Vattenområde.
+
+Beteckningar inom parentes
+
+i. (X)  |Beteckningikartan som omgärdas av parentes anger bestämmelse i annat
+plan an markplan,
+
+EGENSKAPSBESTÄMMELSER FÖR ALL ALLMÄN PLATS
+
+Upphävande av strandskydd
+
+Strandskyddet är upphavt.
+
+EGENSKAPSBESTÄMMELSER FÖR ALL KVARTERSMARK
+Begränsning av markens utnyttjande
+
+Marken fär inte förses med byggnad eller annan anläggning som är högre an 0,7 meter inom
+1 meter från allmän plats.
+
+Höjd på byggnadsverk
+
+Högsta nockhöjd på komptementbyggnad år 4,5 meter.
+
+Skydd mot störningar
+
+Fårdigt golv ska anläggas minst 0,3 meter över angransande gata.
+Upphävande av strandskydd
+
+Strandskyddet är upphävt,
+
+EGENSKAPSBESTÄMMELSER FÖR ALLT VATTENOMRÅDE
+Upphävande av strandskydd
+Strandskyddet är upphävt.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+
+via k äns och
+Huvudmannaskap
+a Huvudmannaskapel är enskilt för den allmänna platsen.
+
+Utformning av allmän plats
+
+damm, Damm för hantering av dagvatten.
+Varsamhet
+k, Befintlig stenmur ska bevaras.
+
+"ORIENTERINGSKARTA
+
+via äns och
+Begränsning &v markens utnyttjande
+SS . Marken får inte förses med byggnad.
+
+5 Marken far endast förses med carport och anläggning för dagvattenrening.
+Byggnaders användning
+
+S, För bostader som överstiger 35 m” ska minst hälften av bostadsrummen i varje
+
+lägenhet orienteras mot en ljuddampad sida.
+
+Fastighetsstorlek
+
+d. Minsta fastighetsstorlek är \<angivet> m?,
+Höjd på byggnadsverk
+
+h, Högsta nockhojd pa huvudbyggnad ar \<angivet> meter.
+
+Markens anordnande och vegetation
+uu Största lutning är 1:4, (Pilen pekar uppat).
+
+n, Dagvattenbrunn ska anordnas, där ovankanten på brunnen ska vara högst
++10,2 meter över angivet nollplan.
+ny, Stenmur ska uppföras och bevaras.
+Markreservat för allmännyttiga ändamål
+för all ytlig: ledningar.
+Mörkresorvat för gemensamhetsanläggningar
+9\. Markreservat för gemensamhelsanlaggning.
+
+Stängsel, utfart och annan utgång
+b O- — — gUtfarisförbud.
+
+Takvinkel
+ov Minsta takvinkel ar \<angivet> grader.
+0; Största takvinkel är 37 grader.
+Utformning
+f, Endast kedjehus eller parhus.
+f, Endast flerbostadshus.
+' Endast friliggande hus, parhus, radhus eller kedjehus.
+Utnyttjandegrad
+e, Storsta byggnadsarea är 400 m? per huvudbyggnad.
+[CE Största för är 1600 kvm. Utöver
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+d via äns och ändi
+Begränsning av markens utnyttjande
+"ST Marken får endast förses med komplementbyggnad, uterum, stodmur och
+
+parkering.
+och
+mm Befintlig stenmur ska bevaras.
+Markreservat för allmännyttiga ändamål
+u, för yttig ledningar,
+GENOMFÖRANDETID
+Genomförandetiden ar 10 ar.
+Bilaga B
+Detaljplan för bostäder inom Granskningshandling
+a Beslutsdatum] — Instans
+Rågelund 1:127 m.fl. eve NT I
+i Frillesås 2023-12-14 Jen 8243
+Kungsbacka kommun Kungsbacka | 2026 gone ERE |
+Upprättad 2025-05-15 Snlagande BINJKX 5 xx
+lr — Laga kraft | =
+KIKAR
+Ida Lennartsson Johanna Vinterhav ft aa
+Verksamhetschef Pen Planarkitekt =
+PLANKARTA j2010800 mea standaratörtarande TKBXXX
+
+NN
+
+detta får ball och I uppföras.
+
+Detalj år ittad enligt PBL
 
 <!-- sida 238 -->
 
@@ -36794,9 +37017,908 @@ Beslut om antagande av detaljplan fick laga kraft:
 
 <!-- sida 872 -->
 
+| Skydd;
+
+\+ Skyuu
+i fog Kbelastoingi jr
+
+EN
+
+7? IR 1
+NT On
+kor
+
+bib Db
+
+(C) (K)
+
+UTREOET
+
+I
+I
+I
+I
+I
+
+R
+
+GATA,
+(B),
+
+Yu 432 ol
+
+s
+
+2
+
+NE
+Mmarkbelestaing, E
+
+0 meter
+1
+
+100 Detaljplanen är baserad pa koordinatsystemet SWEREF 99
+
+kala 1:1000 i A1, skala 1:2000 i A3
+JECKENFÖRKLARING KARTDATA
+
+Aktualitetsdatum: 2025-04-23
+
+heden
+
+1200 och höjdsystemet RH 2000
+
+2714 5 — Rogistornummer, tomtnummer
+
++4,5 Hojdpunkt
+
+Liljan Traktnamn, kvartersnamn
+Fastighotsgrans
+
+Gang- och cykelbana
+
+Vägbana
+
+Bostadshus fasad. resp. tak
+
+Uthus fasad, resp. tak
+
+— Höjdkurva 1,0 m
+— Höjdkurva 5,0 m
+
+N
+SN Ba
+X
+
+AN
+
+FENTERINGSKA ;
+
+SIMA
+
+PLANBESTÄMMELSER
+
+Följande gäller inom omraden med nedanstående beteckningar. Endast
+angiven användning och utformning är tillaten. Dar beteckning saknas
+gäller bestämmelsen inom hela omradet.
+
+GRÄNSER
+
+— & a Planomradesgräns.
+
+Användningsgrans.
+
+—.—-.—-. Egenskapsgrans.
+— 4 — 4 — Sekundar egenskapsgrans.
+
+sckundar och
+
+'A via och
+I
+| Utformning av allmän plats
++0,0 Markens höjd over nollplanet ska vara \<angivet>
+meter.
+
+markbelastning Maximal tillaten markbelastning ur
+stabilitetssynpunkt ar 5 kPa.
+
+stödmur.  Stodmur eller liknande till en höjd av 0,3 meter far
+uppföras.
+träd, Trädrad ska finnas.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+via äns och i
+
+++ +
+
+ANVÄNDNING AV MARK
+
+Allman platsmark
+
+GATA Gata.
+
+GATA, Gata upp till en hojd av 2,7 meter ovan mark.
+
+GATA. Gata upp till en höjd av 4.7 meter ovan mark.
+
+GATA, | Gata upp till en höjd av 6,8 meter ovan mark,
+
+PARK — | Park.
+
+VÄG väg.
+
+VÄG, | Väg upp till en höjd av 3,8 meter ovan mark.
+Kvartersmark
+
+B Bostader.
+
+| Tekniska anläggningar.
+
+| Pumpstation.
+
+fö Nn ADS Detaljhandel,
+
+| | Industn.
+| P, | Parkeringshus,
+B, Bostäder fran och med en höjd av 2,7 meter ovan
+
+mark dar balkonger och bursprak är tillatna att kraga
+
+ut over allman plats.
+& Laddning av elfordon.
+P Underjordiskt garage. Parkering for flerbostadshus
+
+far endast uppföras I garage, undantaget
+handikapparkering.
+Beteckningar inom parentes
+
+(X) Beteckning i kartan som omgardas av parentes
+anger bestammelse i annat plan än markplan.
+EGENSKAPSBESTÄMMELSER FÖR ALL
+KVARTERSMARK
+Fastighetsindelningsbestammelser
+upphävs inom
+
+Skydd mot störningar
+luftintag ska placeras hogt och pa motsatt sida av Västkustbanan pa
+bebyggelse inom 150 meter fran Västkustbanan.
+Vibrationsniva i bostad far ej överskrida 0,4 mm/s vagd RMS.
+Om ekvivalent ljudniva vid bostadens fasad är >60 dBA ska minst hälften
+av bostadsrummen vara vanda mot ljuddämpad sida. För bostader med
+en storsta boarea om 35 kvm galler istället att minst hälften av
+bostadsrummen ska vara vända mot ljuddämpad sida om ekvivalent
+ljudniva vid bostadens fasad ar >65dBA. Med ljuddampad sida menas
+fasad som har en ekvivalent ljudniva om hogst 55 dBA och maximal
+ljudniva nattetid om hogst 70 dBA.
+Utförande
+Lägsta niva pa färdigt golv ska ligga minst 0,3 meter over markniva I
+
+för att med självfall ska tillatas.
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska hansyn
+tas till Detta innebar att ska
+dimensioneras sa att fortskridande ras inte inträffar vid en explosion
+
+10 kg gasol med vid närmaste räl.
+
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska fasad vara
+[0
+
+material och
+motsvarande klass E30.
+Tak och andra byggnadsdelar som avger kemiska föroreningar far inte
+
+uppföras. Koppar, zink eller plastbelagda plattak är inte tillatet. Plattak ska
+
+lackeras enligt SS-EN 10169:2022,
+
+Villkor för startbesked
+
+Startbesked far inte ges för byggnad forran markförorening sanerats I
+enlighet med riktvärden for avsedd markanvändning.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+
+gi ig av markens
+: +." Marken far inte förses med byggnad. Balkonger och
+bursprak far kraga ut hogst 1,5 meter fran fasad och
+3,5 meter ovan mark, Skärmtak far finnas.
+
+Marken far endast förses med komplementbyggnad.
+
+Höjd pa byggnadsverk
+
+h, Högsta nockhojd ar \<angivet> meter over angivet
+nollplan.
+
+h, Högsta nockhojd pa byggnad ar \<angivet> meter
+over angivet nollplan som far uppföras i hogst fem
+vaningar.
+
+Ne Högsta nockhöjd pa byggnad ar \<angivet> meter
+över angivet nollplan som far uppföras I hogst sju
+vaningar.
+
+h. Högsta nockhöjd pa byggnad är \<angivet> meter
+över angivet nollplan som far uppföras i högst sex
+vaningar.
+
+h. Högsta nockhojd pa byggnad är \<angivet> meter
+over angivet nollplan som far uppföras I hogst fyra
+
+I vaningar.
+
+he Högsta nockhöjd pa byggnad är +51,5 meter over
+angivet nollplan som far uppföras i hogst fjorton (14)
+vaningar,
+
+h, Hogsta nockhojd på byggnad är \<angivet> meter
+över angivet nollplan som far uppföras I hogst tva
+vaningar.
+
+Markens anordnande och vegetation
+
+Nn, Marken far inte förses med byggnad eller anläggning
+ovan mark, undantaget parkering for rörelsehindrad
+samt cykelparkering. Balkonger och bursprak far
+kraga ut 1,5 meter 4,0 meter ovan mark.
+
+Nn, Maximalt tillaten markbelastning ur
+" stabilitetssynpunkt ar 10 kPa.
+n, Tradet far endast fallas om det ar sjukt eller utgör en
+säkerhetsrisk.
+Nn, Marken far inte förses med byggnad eller anläggning
+
+ovan mark, undantaget parkering for rörelsehindrad
+samt cykelparkering. Balkonger och burspråk far
+
+kraga ut 1,5 meter 4,7 meter ovan mark.
+Markreservat för allmännyttiga andamal
+u, för
+ledningar.
+| Skydd mot störningar
+m, Plank eller mur ska finnas för att förhindra att vätska
+fran olycka pa järnvägen lacker ut och rinner in på
+omradet.
+m, 'Omradet utformas frilt fran oeftergivliga och spetsiga
+
+foremal som kan punktera avakande godsbehallare.
+
+Mm, Fasader ska utformas I obrannbart material som
+vetter mot jarnvagen. Luftintag placeras högt och på
+fasad som vetter bort fran järnvägen.
+
+m, Högst en in- och utfart för fordon far anordnas samt
+högst tva entréer för fotgangare far anordnas i fasad
+som vetter mot järnvägen.
+
+Stangsel, utfart och annan utgang
+
+O- = = O- g Utfantstorbud.
+
+Takvinkel
+0, Sadeltak är inte tillatet.
+Utformning
+f Vaningshöjden i sockelvaning ska vara lägst 3,6
+
+meter.Ett demonterbart mellanbjälklag som inte är en
+bärande
+
+fö
+far uppföras.
+
+f, Utöver angivet antal våningar far vind inredas för
+lägenheter. For vindsvaning far takkupor och
+frontespiser anordnas till en längd motsvarande 5096
+av fasadens langd.
+
+f. Mast för teknisk anlaggning tillats sticka upp ovan
+högsta tillatna nockhöjd.
+
+tf, Byggnader inom egenskapsomradet ska uppföras I
+minst tva olika vaningsantal.
+
+fö Byggnader inom egenskapsomradet ska uppföras I
+minst tre olika vaningsantal.
+
+fe ska finnas mot
+
+ff Byggnader ska vara sammanbyggda mot
+Varbergsvagen.
+
+ha I bottenplan ska oppna passager in till garden finnas
+för varje kvarter. Bestammelsen gäller inom hela
+egenskapsomradet.
+
+fs Marken far inte förses med byggnad upp till en höjd
+av 4,7 meter ovan mark.
+
+fö Minst 2546 av bottenvaningen inom
+
+ska innehalla
+
+fur Marken far inte förses med byggnad upp till en höjd
+
+av 2,7 meter ovan mark.
+Utförande
+
+b, Fasad ska utformas I obrännbart material mot
+jarnvagen.
+
+b. Fasad ska utformas sa att utblick mot söder
+
+: förhindras.
+b, Takvaning ska utformas sa att utblick mot söder
+' förhindras,
+
+b, Byggnader tyngre än 10 kPa ska grundläggas
+genom palning.
+
+b, Passage för gaende och cyklister ska finnas mot
+GATA i norr och söder,
+
+bs Schaktning ska genomföras varsamt för att inte
+skada befintliga träd och dess rotsystem.
+
+Utnyttjandegrad
+e, Största byggnadsarea för komplementbyggnader ar
+
+40 kvm med en högsta nockhöjd om 4,0 meter.
+Utöver detta far infart till garage uppföras.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+i och
+
+användningsgräns
+Upphavande av strandskydd
+a, Strandskyddet ar upphavt.
+
+Utformning av allman plats
+
+Skydd, Plank, mur, dike eller annan höjdskillnad ska finnas
+för att förhindra att vätska fran olycka pa järnvägen
+läcker ut och rinner in pa omradet.
+
+Skydd, Inom Vastkustbanans sidoomrade ska omradet
+
+utformas fritt fran oeftergivliga och spetsiga foremal
+som kan punktera avakande godsbehallare.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+via och
+användningsgräns
+Markens anordnande och vegetation
+nn, Trädrad ska finnas.
+Upphavande av strandskydd
+a Strandskyddet ar upphavt.
+Utformning
+fä Vaningshöjden i sockelvaning ska vara lagst 3.6
+meter.Ett demonterbart mellanbjälklag som inte är en
+för bärande
+far uppföras.
+\- Endast lägenheter i boltenvaning medges ej inom
+kvarteret som helhet.
+ta Byggnadens djup far vara hogst 13,5 meter. Utöver
+delta far bursprak och balkonger finnas.
+tu ska innehalla
+Utförande
+b, Omrade inom vilket avlastning motsvarande 1,1
+meter lättfyllnad eller alternativ atgard ska
+genomföras.
+Villkor tor startbesked
+a, Startbesked far inte ges för parkeringshus förran
+
+stabiltetsatgärder för att säkra slänten mot
+Skolgatan/Hantverksgatan utförts.
+
+GENOMFÖRANDETID
+'Genomtorandetiden ar 15 är från den dag detaljplanen far laga kraft
+
+Endast lägenheter i bottenvaning medges ej inom
+kvarteret som helhet.
+
+Ida Lennartsson
+
+Verksamhetschef Plan
+
+PLANKARTA nes mod utökat fortarando
+
+Detaljplan för sydöstra centrum Antagandehandling
+etapp 1
+Verkmästaren 6 m.fl. Instans
+i Kungsbacka FO BN 590
+Kungsbacka kommun ranskning 2 NSEa
+Upprättad 2025-09-16, reviderad 2025-10-08 — | /Mtagande
+
+Laga kraft
+
+Diarenummer | ”lankostnads-
+
+Sofia Wiman 2020:00012
+
+Planarkitekt
+
+3peIWossuLRIeojdX4Y Vv e3eg
+
 <!-- sida 873 -->
 
+X
+W
+Be
+
+NG
+
+Oo
+
+Cd smal:
+
+hy
+
+o meter
+
+L
+Skala 1:1000 i A1, skala 1:2000 i A3
+TECKENFÖRKLARING KARTDATA
+
+100 Detaljplanen är baserad pa koordinatsystemet SWEREF 99
+1200 och höjdsystemet RH 2000 A
+Aktualitetsdatum: 2025-04-23 N
+
+214 5 — Registernummer, tomtnummer
+
++4,5
+
+Liljan
+
+Hojdpunkt
+
+Traktnamn. kvartersnamn
+Fastighotsgräns
+
+Gang- och cykelbana
+
+— Höjdkurva 1.0 m
+-— Hojdkurva 5,0 m
+Vägbana
+
+[7] [(-] Bostadshus fasad, resp. tak
+fore | — Uthus fasad. rosp. tak
+
+PLANBESTÄMMELSER
+
+Följande gäller inom omraden med nedanstående beteckningar. Endast
+angiven användning och utformning ar tillaten. Där beteckning saknas
+gäller bestammelsen inom hela omradet.
+
+GRÄNSER
+
+—LL +» «Planomradesgrans.
+
+Rn AnVändningsgräns.
+
+—..—..— .. Egenskapsgräns.
+
+4 — 4 — Sekundär egenskapsgrans.
+
+apr sinn dj sekundär och
+
+I via
+
+I och
+I Utformning av allmän plats
++0,0 Markens höjd over nollplanet ska vara \<angivet>
+
+meter.
+
+markbelastning Maximal tillaten markbelastning ur
+| stabilitetssynpunkt är 5 kPa.
+
+stödmur. Stödmur eller liknande till en höjd av 0.3 meter far
+uppföras.
+träd, Trädrad ska hinnas.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+äl via och i
+
+ANVÄNDNING AV MARK
+
+Allmän platsmark
+
+GATA = |Gata.
+
+GATA, Gata upp till en hojd av 2,7 meter ovan mark.
+| GATA, | Gata upp till en höjd av 4,7 meter ovan mark.
+| GATA, | Gata upp till en höjd av 6,8 meter ovan mark.
+
+PARK Park,
+
+VÄG vag.
+[ VÄG, 1 Väg upp till en höjd av 3.6 meter ovan mark.
+Kvartersmark
+B Bostader.
+FÖRSE Centrum.
+E | Tekniska anläggningar.
+r Ri ÄN Pumpstation.
+Ae Detaljhandel.
+
+| Industri.
+
+| P, | Parkeringshus.
+
+B, Bostäder från och med en höjd av 2,7 meter ovan
+mark dar balkonger och bursprak är tillatna att kraga
+ut över allmän plats.
+
+& Laddning av elfordon.
+
+P, Underjordiskt garage. Parkering för flerbostadshus
+
+far endast uppföras i garage, undantaget
+handikapparkering.
+Beteckningar inom parentes
+(X) Beteckning i kartan som omgardas av parentes
+anger bestammelse i annat plan än markplan.
+EGENSKAPSBESTÄMMELSER FÖR ALL
+KVARTERSMARK
+Fastighetsindelningsbestammelser
+upphävs inom
+
+Skydd mot störningar
+luftintag ska placeras högt och pa motsatt sida av Västkustbanan pa
+bebyggelse inom 150 meter från Västkustbanan.
+Vibrationsniva i bostad far ej överskrida 0,4 mm/s vagd RMS.
+'Om ekvivalent ljudniva vid bostadens fasad är >60 dBA ska minst hälften
+av vara vända mot sida. For bostäder med
+en största boarea om 35 kvm gäller istället att minst halften av
+bostadsrummen ska vara vända mot ljuddämpad sida om ekvivalent
+ljudniva vid bostadens fasad är >65dBA. Med ljuddampad sida menas
+fasad som har en ekvivalent ljudniva om hogst 55 dBA och maximal
+ljudniva nattetid om högst 70 dBA.
+Utförande
+Lagsta niva pa fardigt golv ska ligga minst 0,3 meter över markniva I
+med självfall ska tilatas.
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska hansyn
+tas till Detta innebär att ska
+dimensioneras sa att fortskridande ras inte inträffar vid en explosion
+
+10 kg gasol med vid närmaste räl,
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska fasad vara
+i material och ska vara
+motsvarande klass E30,
+Tak och andra byggnadsdelar som avger kemiska föroreningar far inte
+uppföras. Koppar, zink eller plastbelagda plattak ar inte tillatet. Plattak ska
+lackeras enligt SS-EN 10169:2022.
+Villkor för startbesked
+Startbesked far inte ges för byggnad förran markförorening sanerats i
+enlighet med riktvärden för avsedd markanvändning.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+
+g av markens
+
+\+ Marken far inte förses med byggnad. Balkonger och
+bursprak far kraga ut högst 1.5 meter fran fasad och
+3,5 meter ovan mark. Skarmtak far finnas.
+
+Flate a Marken far endast förses med komplementbyggnad.
+
+| Höjd pa byggnadsverk
+
+Högsta nockhöjd är \<angivet> meter over angivet
+
+nollplan.
+
+Högsta nockhöjd pa byggnad är \<angivet> meter
+
+över angivet nollplan som far uppföras i högst fem
+
+vaningar.
+
+Hogsta nockhöjd pa byggnad ar \<angivet> meter
+
+över angivet nollplan som far uppföras i högst sju
+
+vaningar.
+
+Högsta nockhojd pa byggnad ar \<angivet> meter
+
+över angivet nollplan som far uppföras I högst sex
+
+våningar.
+
+h. Högsta nockhöjd pa byggnad är \<angivet> meter
+
+i över angivet nollplan som far uppföras I hogst fyra
+
+vaningar.
+
+Hogsta nockhojd pa byggnad är +51,5 meter over
+
+angivet nollplan som får uppföras I hogst fjorton (14)
+
+väningar.
+
+Högsta nockhöjd på byggnad är \<angivet> meter
+
+över angivet nollplan som far uppföras i högst tva
+
+vaningar.
+
+Markens anordnande och vegetation
+
+n, Marken far inte förses med byggnad eller anläggning
+
+ovan mark, undantaget parkering for rörelsehindrad
+samt cykelparkering. Balkonger och bursprak far
+kraga ut 1,5 meter 4,0 meter ovan mark,
+
+Nn, Maximalt tillaten markbelastning ur
+stabilitetssynpunkt är 10 kPa.
+
+Tradet får endast fällas om det ar sjukt eller utgör en
+säkerhetsrisk.
+
+Marken får inte förses med byggnad eller anläggning
+ovan mark, undantaget parkering för rörelsehindrad
+samt cykelparkering. Balkonger och burspråk far
+kraga ut 1,5 meter 4,7 meter ovan mark.
+
+Markreservat för allmännyttiga ändamål
+
+u, för
+ledningar.
+Skydd mot störningar
+m, Plank eller mur ska finnas för att förhindra att vätska
+
+fran olycka pa järnvägen lacker ut och rinner in pa
+omradet.
+
+m, 'Omradet utformas fritt fran oeftergivliga och spetsiga
+\- föremal som kan punktera avakande godsbehallare.
+m, Fasader ska utformas I obrännbart material som
+vetter mot järnvägen. Luftintag placeras högt och pa
+fasad som vetter bort fran järnvägen.
+m, Högst en in- och utfart för fordon far anordnas samt
+
+högst tva entréer för fotgängare far anordnas i fasad
+som vetter mot järnvägen.
+
+Stängsel, utfart och annan utgang
+pb O- - - O-  Utfansförbud.
+
+Takvinkel
+0, Sadeltak är inte tillatet.
+Utformning
+f Vaningshöjden i sockelvaning ska vara lägst 3,6
+
+meter.Ett demonterbart mellanbjälklag som inte är en
+bärande
+
+föl
+far uppföras.
+fa Utöver angivet antal väningar far vind inredas för
+lägenheter. För vindsvåning far takkupor och
+frontespiser anordnas till en längd motsvarande 5096
+av fasadens längd.
+f, Endast lägenheter i bottenvaning medges ej inom
+kvarteret som helhet.
+
+f. Mast för teknisk anlaggning tillats sticka upp ovan
+högsta tillatna nockhöjd.
+fö Byggnader inom egenskapsomradet ska uppföras I
+minst tva olika vaningsantal.
+f, Byggnader inom egenskapsomradet ska uppföras I
+minst tre olika vaningsantal.
+f, ska finnas mot
+[É Byggnader ska vara sammanbyggda mot
+Varbergsvägen.
+fo I bottenplan ska öppna passager in till garden finnas
+för varje kvarter. Bestämmelsen gäller inom hela
+egenskapsomradet.
+\- Marken far inte förses med byggnad upp till en höjd
+av 4,7 meter ovan mark,
+fyr Minst 2546 av bottenvåningen inom
+\- ska innehalla
+fy Marken far inte förses med byggnad upp till en hojd
+av 2,7 meter ovan mark,
+Utförande
+b, Fasad ska utformas I obrannbart material mot
+Jarnvägen.
+b. Fasad ska utformas sa att utblick mot söder
+\- förhindras.
+b, Takvaning ska utformas sa att utblick mot söder
+förhindras.
+b, Byggnader tyngre än 10 kPa ska grundläggas
+genom palning.
+b, Passage för gaende och cyklister ska finnas mot
+GATA i norr och söder,
+b, Schaktning ska genomföras varsamt för att inte
+skada befintliga träd och dess rotsystem,
+Utnyttjandegrad
+e Största byggnadsarea för komplementbyggnader är
+
+40 kvm med en högsta nockhöjd om 4,0 meter.
+Utöver detta far infart till garage uppföras.
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+via och
+användningsgräns
+
+Upphävande av strandskydd
+
+är; Strandskyddet ar upphavt.
+Utformning av allmän plats
+Skydd, Plank, mur, dike eller annan höjdskillnad ska finnas
+för att förhindra att vätska fran olycka pa järnvägen
+läcker ut och rinner in pa omradet.
+Skydd; Inom Vastkustbanans sidoomrade ska omradet
+
+utformas fritt fran oeftergivliga och spetsiga föremal
+som kan punktera avakande godsbehallare.
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+via och
+användningsgräns
+Markens anordnande och vegetation
+Nn Trädrad ska finnas.
+
+Upphävande av strandskydd
+
+a, Strandskyddet ar upphavt
+Utformning
+f Vaningshöjden I sockelvaning ska vara lägst 3,6
+meter.Ett demonterbart mellanbjälklag som inte är en
+barande
+far uppföras,
+fu Endast lagenheter I boltenvaning medges ej inom
+kvarteret som helhet.
+fo Byggnadens djup far vara högst 13,5 meter, Utover
+detta far bursprak och balkonger finnas.
+fo ska innehalla
+Utförande
+b, 'Omrade inom vilket avlastning motsvarande 1,1
+
+meter latttyllnad eller alternativ atgard ska
+genomföras.
+Villkor för startbesked
+a, Startbesked far inte ges för parkeringshus förrän
+stabilitetsatgarder för att säkra slänten mot
+Skolgatan/Hantverksgatan utförts.
+
+GENOMFÖRANDETID
+Genomtorandetiden är 15 ar från den dag detaljplanen far laga kraft
+
+Detaljplan för
+
+sydöstra centrum Antagandehandling
+
+PLANKARTA
+
+etapp 1
+Verkmästaren 6 m.fl. Instans
+i Samrad
+KL fras 2022-03-17 |PN 590
+
+ungsbacka kommun Granskning
+
+? 2025-04-24 | BN§82
+Upprättad 2025-09-16, reviderad 2025-10-08 Anlagande
+Laga kraft
+Plankostnads-
+
+Ida Lennartsson Sofia Wiman Diarenummer | avtal
+Verksamhetschef Plan Planarkitekt 2020-00012 | Ja
+
+Detaljplanen ar upprättad enligt PBL.
+2010:900 med utökat förfarande
+
+us19JLoJdXY UTI SIOJIJAG WOS sjejd ugwy I eSeng
+
 <!-- sida 874 -->
+
+meter
+Skala 1:1000 i A1, skala 1:2000 i A3
+TECKENFÖRKLARING KARTDATA
+Detaljplanen är baserad pa koordinatsystemet SWEREF 99
+1200 och höjdsystemet RH 2000
+Aktualitetsdatum: 2025-04-23 N
+Liljan
+Rogisternummer. tomtnummor
+Höjdpunkt
+Traktnamn, kvartersnamn
+Höjdkurva 1,0 m
+Hojdkurva 5.0 m
+Vägbana
+| Bostadshus fasad. resp. tak
+PLANBESTÄMMELSER via äns och R Mast för teknisk anläggning tillats sticka upp ovan
+uppföras. f, Byggnader ska vara sammanbyggda mot
+—..—-.—-. Egenskapsgrans. fa I bottenplan ska öppna passager in till garden finnas
+. Marken far inte förses med byggnad upp till en hojd
+ANVÄNDNING AV MARK bursprak far kraga ut hogst 1,5 meter fran fasad och 2 ska innehalla
+Allmän platsmark 3,5 meter ovan mark. Skarmtak far finnas.
+GATA Gata. fo Marken far inte förses med byggnad upp till en höjd
+\- SA Marken far endast förses med komplementbyggnad. av 2,7 meter ovan mark.
+A Höjd pa byggnadsverk b Fasad ska utformas I obrännbart material mot
+GATA | Gata upp till on höjd av 4,7 meter ovan mark. h, Högsta nockhojd ar \<angivet> meter över angivet ' järnvägen.
+GATA Gata upp till en höjd av 6,8 meter ovan mark. nollplan. b. Fasad ska utformas sa att utblick mot söder
+PARK Park. över angivet nollplan som far uppföras i hogst fem b, Takvaning ska utformas sa att utblick mot soder
+VÄG ' h, Högsta nockhöjd pa byggnad ar sangivet> meter b, Byggnader tyngre än 10 kPa ska grundlaggas
+VÄG Väg upp till en höjd av 3,6 meter ovan mark över angivet nollplan som far uppföras I högst sju genom palning.
+Kvartersmark h, Hogsta nockhojd pa byggnad ar \<angivet> meter GATA i norr och söder.
+B Bostäder. over angivet nollplan som får uppföras i högst sex b, Schaktning ska genomföras varsamt for att inte
+Centrum, h. Högsta nockhojd pa byggnad är \<angivet> meter a
+FODER vm med en högsta nockhöjd om 4,0 meter,
+| SEN | fumpelitlion; I angivet nollplan som far uppföras i hogst fjorton (14) Utöver detta far infart till gärage uppföras.
+h, Högsta nockhojd på byggnad ar \<angivet> meter N via och
+ontor. Markens anordnande och vegetation Upphavande av strandskydd
+| P Parkeringshus. Nn, Marken far inte förses med byggnad eller anläggning a, Strandskyddet ar upphavt.
+B Bostäder fran och med en höjd av 2,7 meter ovan samt cykelparkering. Balkonger och bursprak far ENVENER ARE
+| mark där balkonger och bursprak ar tillatna att kraga | kraga ut 1,5 meter 4,0 meter ovan mark. Skydd, Plank, mur, dike eller annan höjdskillnad ska finnas
+ut över allmän plats. I för att förhindra att vätska fran olycka pa järnvägen
+ö Laddning av elfordon. | n, Maximalt tillaten markbelastning ur läcker ut och rinner in på omradet.
+P, Underjordiskt garage. Parkering för flerbostadshus n Trädet far endast fällas om det är sjukt eller utgor en utformas fritt fran oeftergivliga och spetsiga föremal
+far endast uppföras i garage, undantaget M säkerhetsrisk. som kan punktera avakande godsbehallare.
+n Marken far inte förses med byggnad eller anläggning
+(X) Beteckning I kartan som omgärdas av parentes samt cykelparkering. Balkonger och burspråk far ad via och
+anger bestämmelse i annat plan än markplan. kraga ut 1,5 meter 4,7 meter ovan mark. användningsgräns
+EGENSKAPSBESTÄMMELSER FÖR ALL Markreservat för allmännyttiga andamal Ä Trädrad ska finnas.
+KVARTERSMARK u för a
+upphävs inom Skydd mot störningar ö Strandskyddet är upphävt.
+Skydd mot störningar Plank eller mur ska finnas för att förhindra att vätska
+, mv fran olycka pa järnvägen lacker ut och rinner in på Utformning
+bebyggelse inom 150 meter från Västkustbanan. ”
+meter.Ett demonterbart mellanbjälklag som inte är en
+Vibrationsniva i bostad far ej överskrida 0,4 mm/s vagd RMS. m; 'Omradet utformas fritt fran oeftergivliga och spetsiga för bärande.
+Om ekvivalent ljudniva vid bostadens fasad är >60 dBA ska minst hälften föremal som kan punktera avakande godsbehallare. far uppföras.
+av bostadsrummen vara vända mot ljuddampad sida. For bostäder med f. Endast lägenheter i bottenvaning medges ej inom
+en största boarea om 35 kvm galler istället att minst hälften av
+bostadsrummen ska vara vända mot ljuddampad sida om ekvivalent
+ljudniva vid bostadens fasad är >65dBA,. Med ljuddampad sida menas
+fasad som har en ekvivalent ljudniva om högst 55 dBA och maximal
+ljudniva nattetid om högst 70 dBA.
+Utförande
+Lägsta niva på färdigt golv ska ligga minst 0,3 meter over markniva i
+för att med självfall ska tillatas.
+Vid centrumverksamhet inom 50 meter från Västkustbanan ska hänsyn
+tas till Detta innebär att ska
+dimensioneras sa att fortskridande ras inte inträffar vid en explosion
+10 kg gasol med vid närmaste räl.
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska fasad vara
+i material och
+motsvarande klass E30.
+Tak och andra byggnadsdelar som avger kemiska föroreningar far inte
+uppföras. Koppar, zink eller plastbelagda plattak ar inte tillatet. Plattak ska
+lackeras enligt SS-EN 10169.2022.
+Villkor för startbesked
+Startbesked far inte ges för byggnad förrän marklororening sanerats I
+enlighet med riktvarden for avsedd markanvändning.
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+m, Fasader ska utformas i obrännbart material som
+fasad som vetter bort fran järnvägen.
+m. Högst en in- och utfart för fordon far anordnas samt
+högst tva entréer för fotgängare far anordnas I fasad
+som vetter mot järnvägen.
+Stängsel, utfart och annan utgang
+Takvinkel
+Utformning
+bk Vaningshöjden I sockelvaning ska vara lagst 3,6
+meter.Ett demonterbart mellanbjälklag som inte är en
+fy Utöver angivet antal våningar far vind inredas för
+frontespiser anordnas till en längd motsvarande 5096
+av fasadens längd.
+kvarteret som helhet.
+kvarteret som helhet,
+Pa Byggnadens djup far vara högst 13,5 meter. Utöver
+b, 'Omrade inom vilket avlastning motsvarande 1,1
+meter lättfyllnad eller alternativ atgard ska
+ä Startbesked far inte ges för parkeringshus förrän
+stabiltetsatgärder för att säkra slänten mot
+GENOMFÖRANDETID
+'Genomforandetiden ar 15 ar från den dag detaljplanen far laga kraft
+PLANKARTA
+etapp 1
+Verkmästaren 6 m.fl. ås Instans
+Upprättad 2025-09-16, reviderad 2025-10-08 Antagande
+Laga kraft
+Verksamhetschef Plan Planarkitekt 2020-00012 | Ja
+Detaljplanen ar upprattad enligt PBL
 
 <!-- sida 875 -->
 
@@ -36804,9 +37926,728 @@ Bilaga D, Överlåtelse av kvartersmark inklusive servitut
 
 <!-- sida 876 -->
 
+2.2 BRF 46 EF-3
+3 BRF 114 EF-4 EF-5
+4 BRF 108 EF-6 EF-7
+6 BRF 119 EF-10 EF-11
+7 BRF 108 EF-12 EF-13
+8 BRF 77 EF-14
+Parkering AB-P (Bef)
+
 <!-- sida 877 -->
 
+moater
+
+100 Då är baserad pa koordinatsystemet SWEREF 99
+
+Skala 1:1000 i A1, skala 1:2000 i A3
+TECKENFÖRKLARING KARTDATA
+
+1200 och höjdsystemet RH 2000 A
+
+Aktualitetsdatum: 2025-04-23
+
+N
+
+214
++4,5
+Liljan
+
+5
+
+Rogisternummer, tomtnummor
+Höjdpunkt
+
+Traktnamn, kvartersnamn
+Fastighotsgräns
+
+(Gang- och cykelbana
+
+Höjdkurva 1,0 m
+Höjdkurva 5,0 m
+Vägbana
+
+[3 (Bostadshus fasad, rosp. tak
+Fd fö] Uthus fasad, tosp. tak
+
+INONae
+
+NÅ
+
+Följande gäller inom omraden med nedanstaende beteckningar, Endast
+angiven användning och utformning ar tillaten. Dar beteckning saknas
+gäller bestammelsen inom hela omradet.
+
+GRÄNSER
+
+— 6 a Planomradesgrans.
+
+—  ANVändningsgräns.
+
+FR . Egenskapsgräns.
+
+— + — 4 — Sekundär egenskapsgräns.
+
+sekundär och
+
+via och
+Utformning av allmän plats
++0,0 Markens höjd över nollplanet ska vara \<angivet>
+meter.
+
+markbelastning Maximal tillaten markbelastning ur
+stabilitetssynpunkt är 5 kPa.
+stödmur. Stödmur eller liknande till en höjd av 0,3 meter far
+uppföras.
+träd, Trädrad ska finnas.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+ä via äns och i cl]
+
+\+ + +
+
+ANVÄNDNING AV MARK
+
+Allmän platsmark
+GATA Gata.
+GATA, | Gata upp till en höjd av 2,7 meter ovan mark.
+
+GATA, | Gata upp till en höjd av 4,7 meter ovan mark.
+
+I GATA, | Gata upp till en höjd av 6,8 meter ovan mark.
+PARK — | Park.
+VÄG = |vag.
+VÄG, ' Vag upp till en höjd av 3,6 meter ovan mark.
+Kvartersmark
+B | Bostäder.
+
+Ä| Tekniska anläggningar.
+
+] Parkeringshus,
+
+B, Bostader fran och med en höjd av 2,7 meter ovan
+mark där balkonger och bursprak är tillatna att kraga
+ut över allmän plats.
+
+ö, Laddning av ellordon.
+
+P, Underjordiskt garage. Parkering för flerbostadshus
+far endast uppforas i garage, undantaget
+handikapparkering.
+
+Beteckningar inom parentes
+(X) Beteckning I kartan som omgardas av parentes
+anger bestammelse i annat plan an markplan.
+
+EGENSKAPSBESTÄMMELSER FÖR ALL
+KVARTERSMARK
+Fastighetsindelningsbestämmelser
+Fastighetsindelningsbestammelser upphävs inom planomradet.
+Skydd mot störningar
+luftintag ska placeras högt och pa motsatt sida av Västkustbanan pa
+bebyggelse inom 150 meter från Västkustbanan.
+Vibrationsniva I bostad far ej överskrida 0,4 mm/s vägd RMS.
+Om ekvivalent ljudniva vid bostadens fasad är >60 dBA ska minst hälften
+av bostadsrummen vara vända mot ljuddampad sida. För bostäder med
+en största boarea om 35 kvm gäller istallet att minst hälften av
+bostadsrummen ska vara vända mot ljuddärnpad sida om ekvivalent
+ljudniva vid bostadens fasad är >65dBA, Med ljuddampad sida menas
+fasad som har en ekvivalent ljudniva om högst 55 dBA och maximal
+ljudniva nattetid om hogst 70 dBA.
+Utförande
+Lägsta niva pa färdigt golv ska ligga minst 0,3 meter over markniva i
+för att med självfall ska tillatas.
+
+Vid centrumverksamhet inom 50 meter från Västkustbanan ska hänsyn
+tas till Detta innebar att ska
+dimensioneras sa att fortskridande ras inte inträffar vid en explosion
+
+10 kg gasol med vid närmaste räl.
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska fasad vara
+UI material och ska vara
+motsvarande klass E30.
+Tak och andra byggnadsdelar som avger kemiska föroreningar far inte
+uppföras. Koppar, zink eller plastbelagda plattak ar inte tillatet. Plattak ska
+lackeras enligt SS-EN 10169:2022.
+Villkor för startbesked
+Startbesked far inte ges för byggnad förran markförorening sanerats i
+enlighet med riktvärden för avsedd markanvändning.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+
+Ig av markens utnyttjande
+
+TÄTT TT Marken far inte förses med byggnad. Balkonger och
+bursprak far kraga ut hogst 1,5 meter fran fasad och
+3,5 meter ovan mark. Skärmtak far finnas.
+
+Flate Marken far endast förses med komplementbyggnad.
+
+Höjd pa byggnadsverk
+
+h, Högsta nockhöjd ar sangivet> meter over angivet
+nollplan.
+
+h. Högsta nockhojd pa byggnad är \<angivet> meter
+över angivet nollplan som far uppföras i högst fem
+vaningar.
+
+h, Högsta nockhöjd pa byggnad är \<angivet> meter
+över angivet nollplan som far uppföras I högst sju
+vaningar,
+
+h, Hogsta nockhöjd pa byggnad ar \<angivet> meter
+över angivet nollplan som far uppföras I hogst sex
+vaningar.
+
+h. Högsta nockhöjd pa byggnad är \<angivet> meter
+över angivet nollplan som far uppföras i hogst fyra
+vaningar,
+
+ho Hogsta nockhöjd pa byggnad ar +51,5 meter över
+angivet nollplan som far uppföras I högst fjorton (14)
+våningar,
+
+h, Högsta nockhöjd på byggnad är \<angivet> meter
+över angivet nollplan som far uppföras i högst tva
+vaningar.
+
+Markens anordnande och vegetation
+
+n, Marken far inte förses med byggnad eller anläggning
+ovan mark, undantaget parkering för rörelsehindrad
+samt cykelparkering. Balkonger och bursprak far
+kraga ut 1,5 meter 4,0 meter ovan mark,
+
+n, Maximalt tillaten markbelastning ur
+\- stabilitetssynpunkt är 10 kPa.
+n, Trädet far endast fällas om det ar sjukt eller utgör en
+säkerhetsrisk.
+Nn, Marken fär inte förses med byggnad eller anläggning
+
+ovan mark, undantaget parkering för rörelsehindrad
+samt cykelparkering. Balkonger och bursprak far
+kraga ut 1,5 meter 4,7 meter ovan mark.
+
+Markreservat för allmännyttiga andamal
+
+u, för
+ledningar.
+Skydd mot störningar
+m, Plank eller mur ska finnas för att förhindra att vätska
+fran olycka pa järnvägen läcker ut och rinner in pa
+omradet.
+
+'Omradet utformas fritt fran oeftergivliga och spetsiga
+föremal som kan punktera avakande godsbehallare.
+
+m, Fasader ska utformas I obrännbart material som
+vetter mot järnvägen, Luftintag placeras högt och pa
+fasad som vetter bort fran järnvägen.
+
+Mm, Högst en in- och utfart för fordon far anordnas samt
+högst tva entréer för fotgängare far anordnas I fasad
+som vetter mot järnvägen.
+
+Stångsel, utfart och annan utgang
+
+O- = = O- d Uttanstorbud.
+
+Takvinkel
+0, Sadeltak är inte tillatet.
+Utformning
+1 Vaningshöjden i sockelvaning ska vara lägst 3,6
+meter.Ett demonterbart mellanbjälklag som inte är en
+för bärande
+far uppföras.
+fa Utöver angivet antal våningar far vind inredas för
+
+lägenheter, För vindsvaning far takkupor och
+frontespiser anordnas till en langd motsvarande 50946
+av fasadens langd.
+
+f, Endast lägenheter i bottenvaning medges ej inom
+kvarteret som helhet.
+
+f. Mast för teknisk anläggning tillats sticka upp ovan
+” högsta tillatna nockhöjd.
+fe Byggnader inom egenskapsomradet ska uppföras i
+minst tva olika vaningsantal.
+t; Byggnader inom egenskapsomradet ska uppföras i
+minst tre olika vaningsantal.
+f, ska finnas mot
+f, Byggnader ska vara sammanbyggda mot
+Varbergsvagen.
+fe I bottenplan ska oppna passager in till garden finnas
+för varje kvarter. Bestammelsen gäller inom hela
+egenskapsomradet.
+Te Marken far inte forses med byggnad upp till en höjd
+av 4,7 meter ovan mark,
+fu Minst 25446 av bottenvaningen inom
+ska innehalla
+fy Marken far inte förses med byggnad upp till en höjd
+av 2,7 meter ovan mark.
+Utförande
+b, Fasad ska utformas I obrännbart material mot
+jarnvagen.
+b. Fasad ska utformas sa att utblick mot söder
+| förhindras.
+b, Takvåning ska utformas sa att utblick mot söder
+förhindras.
+b, Byggnader tyngre än 10 kPa ska grundlaggas
+genom pålning.
+b, Passage för gaende och cyklister ska finnas mot
+GATA i norr och söder,
+b, Schaktning ska genomföras varsamt för att inte
+skada befintliga träd och dess rotsystem.
+Utnyttjandegrad
+e, Största byggnadsarea för komplementbyggnader är
+
+40 kvm med en högsta nockhojd om 4,0 meter.
+Utöver detta far infart till garage uppföras.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+och
+
+via
+användningsgräns
+Upphävande av strandskydd
+a, Strandskyddet ar upphavt.
+
+Utformning av allmän plats
+Skydd, Plank, mur, dike eller annan höjdskillnad ska finnas
+för att förhindra att vätska fran olycka pa järnvägen
+lacker ut och rinner in pa omradet.
+Skydd, Inom Västkustbanans sidoomrade ska omradet
+. utformas fritt fran oeftergivliga och spetsiga föremal
+som kan punktera avakande godsbehallare.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+
+via och
+användningsgräns
+Markens anordnande och vegetation
+n. Tradrad ska finnas.
+Upphavande av strandskydd
+a, Strandskyddet ar upphävt.
+Utformning
+bis Vaningshöjden i sockelvaning ska vara lägst 3,6
+meter.Ett demonterbart mellanbjälklag som inte är en
+för barande
+far uppföras,
+L- Endast lägenheter i bottenvaning medges ej inom
+kvarteret som helhet.
+a Byggnadens djup får vara högst 13,5 meter. Utöver
+detta far bursprak och balkonger finnas.
+fa ska innehalla
+Utförande
+b, 'Omrade inom vilket avlastning motsvarande 1,1
+meter lättfyllnad eller alternativ atgard ska
+genomföras.
+Villkor för startbesked
+a, Startbesked far inte ges för parkeringshus förrän
+
+stabilitetsatgärder för att säkra slänten mot
+Skolgatan/Hantverksgatan utförts.
+
+GENOMFÖRANDETID
+'Genomtörandetiden ar 15 är från den dag detaljplanen far laga kraft
+
+Detaljplan för
+
+sydöstra centrum Antagandehandling
+
+etapp 1
+
+Verkmästaren 6 m.fl. Instans
+i Kungsbacka Sö0s47 |BN590
+Kungsbacka kommun Granskning
+
+Kungsbacka | 2025-04-04. |-PNS82
+
+Upprättad 2025-09-16, reviderad 2025-10-08 — | Antagande
+
+Ida Lennartsson
+
+Verksamhetschef Plan
+
+PLANKARTA J20103001 mod utökat förlarande
+
+Laga kraft
+Sofia Wiman Diarenummer | Svar” ooee
+Planarkitekt 2020-00012 | Ja
+
+Detaljplar är ttad enligt PBL.
+
+sejd ugwjje sesurussejue euuguwjly 4 e3eng
+
 <!-- sida 878 -->
+
+hy sissn
+
+z
+märkbelestning,
+
+AG
+
+sB.Sm
+
+meter
+1
+
+Skala 1:1000 i A1, skala 1:2000 i A3
+TECKENFÖRKLARING KARTDATA
+
+100 Di ar baserad pa koordinatsystemet SWEREF 99
+1200 och höjdsystemet RH 2000
+Aktualitetsdatum: 2025-04-23 N
+
+214
++4,5
+
+Liljan
+
+5
+
+Rogisternummer. tomtnummer
+Höjdpunkt
+
+Traktnamn, kvartersnamn
+Fastighotsgräns
+
+Gang- och cykelbana
+
+— Höjdkurva 1.0 m =
+Höjdkurva 5,0 m
+Vägbana
+
+Bostadshus fasad, rosp. tak
+Uthus fasad, resp. tak
+
+PLANBESTÄMMELSER
+
+Följande gäller inom omraden med nedanstående beteckningar. Endast
+angiven användning och utformning är tillaten. Där beteckning saknas
+gäller bestammelsen inom hela omradet.
+
+GRÄNSER
+-— a Planomradesgräns.
+
+Anvandningsgrans.
+
+— .. Egenskapsgrans.
+— 4 — 4 — Sekundär egenskapsgräns.
+
+Ao + + - Sammanfallande sekundär och egenskapsgräns.
+
+ANVÄNDNING AV MARK
+Allmän platsmark
+GATA /Gata.
+GATA, Gata upp till en höjd av 2,7 meter ovan mark.
+GATA, | Gata upp till en höjd av 4,7 meter ovan mark.
+GATA, Gata upp till en höjd av 6,8 meter ovan mark.
+PARK Park.
+VÄG Väg.
+VÄG, Väg upp till en höjd av 3,6 meter ovan mark.
+Kvartersmark
+B Bostader.
+
+| Tekniska anläggningar.
+| Pumpstation.
+\|
+
+| Industa.
+
+P, | Parkeringshus.
+
+B, Bostäder fran och med en höjd av 2,7 meter ovan
+mark där balkonger och burspråk är tillatna att kraga
+ut över allman plats.
+
+[ch Laddning av elfordon.
+
+P, Underjordiskt garage. Parkering för flerbostadshus
+
+far endast uppföras I garage, undantaget
+handikapparkering.
+Beteckningar inom parentes
+(X) Beteckning i kartan som omgardas av parentes
+anger bestämmelse i annat plan än markplan.
+
+EGENSKAPSBESTÄMMELSER FÖR ALL
+KVARTERSMARK
+Fastighetsindelningsbestämmelser
+Fastighetsindelningsbestammelser upphävs inom planomradet.
+Skydd mot störningar
+luftintag ska placeras hogt och pa motsatt sida av Västkustbanan pa
+bebyggelse inom 150 meter från Västkustbanan.
+Vibrationsniva i bostad far ej överskrida 0,4 mm/s vagd RMS.
+Om ekvivalent ljudniva vid bostadens fasad är >60 dBA ska minst hälften
+av bostadsrummen vara vända mot ljuddämpad sida. För bostäder med
+en största boarea om 35 kvm gäller istället att minst hälften av
+bostadsrummen ska vara vända mot ljuddämpad sida om ekvivalent
+ljudniva vid bostadens fasad är >65dBA. Med ljuddampad sida menas
+fasad som har en ekvivalent ljudniva om högst 55 dBA och maximal
+ljudniva nattetid om högst 70 dBA.
+Utförande
+Lägsta niva pa färdigt golv ska ligga minst 0,3 meter över markniva I
+för att med självfall ska tillatas.
+
+Vid centrumverksamhet inom 50 meter från Västkustbanan ska hänsyn
+tas till tta innebär att ska
+dimensioneras sa att fortskridande ras inte inträffar vid en explosion
+
+10 kg gasol med vid närmaste räl.
+Vid centrumverksamhet inom 50 meter fran Västkustbanan ska fasad vara
+[0 material och
+motsvarande klass E30,
+Tak och andra byggnadsdelar som avger kemiska föroreningar far inte
+uppföras. Koppar, zink eller plastbelagda plattak ar inte tillatet. Plattak ska
+lackeras enligt SS-EN 10169:2022.
+Villkor för startbesked
+Startbesked far inte ges för byggnad förrän markförorening sanerats i
+enlighet med riktvärden for avsedd markanvändning.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+
+via
+Utformning av allmän plats
+
++0,0 Markens höjd över nollplanet ska vara \<angivet>
+meter.
+
+och
+
+markbelastning Maximal tillaten markbelastning ur
+
+stabilitetssynpunkt är 5 kPa.
+
+stödmur. Stödmur eller liknande till en höjd av 0,3 meter far
+uppföras.
+träd, Trädrad ska hinnas.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+via äns och ändni ä
+Begränsning av markens utnyttjande
+fött. tt" Marken far inte förses med byggnad. Balkonger och
+bursprak far kraga ut hogst 1,5 meter fran fasad och
+3,5 meter ovan mark. Skarmtak far finnas.
+
+Marken far endast förses med komplementbyggnad.
+
+Höjd pa byggnadsverk
+h, Högsta nockhöjd är \<angivet> meter över angivet
+nollplan.
+h, Högsta nockhöjd pa byggnad ar \<angivet> meter
+
+över angivet nollplan som far uppföras i högst fem
+
+vaningar.
+
+Hogsta nockhojd pa byggnad ar \<angivet> meter
+
+över angivet nollplan som far uppföras I högst sju
+
+vaningar.
+
+Högsta nockhöjd pa byggnad ar \<angivet> meter
+
+över angivet nollplan som far uppföras i högst sex
+
+vaningar.
+
+Hogsta nockhöjd pa byggnad är \<angivet> meter
+
+över angivet nollplan som far uppföras I hogst fyra
+
+vaningar.
+
+Hogsta nockhöjd pa byggnad är +51,5 meter över
+
+angivet nollplan som far upptöras I hogst fjorton (14)
+
+vaningar.
+
+Högsta nockhöjd på byggnad är \<angivet> meter
+
+över angivet nollplan som far uppföras I högst tva
+
+vaningar.
+
+Markens anordnande och vegetation
+
+n, Marken far inte förses med byggnad eller anläggning
+
+ovan mark, undantaget parkering för rörelsehindrad
+samt cykelparkering. Balkonger och bursprak far
+kraga ut 1,5 meter 4,0 meter ovan mark.
+
+h;
+
+n Maximalt tillaten markbelastning ur
+stabilitetssynpunkt är 10 kPa.
+
+Trädet får endast fällas om det ar sjukt eller utgör en
+säkerhetsrisk.
+
+Marken fär inte förses med byggnad eller anläggning
+ovan mark, undantaget parkering för rörelsehindrad
+samt cykelparkering. Balkonger och bursprak far
+kraga ut 1.5 meter 4,7 meter ovan mark.
+
+Markreservat för allmännyttiga andamal
+
+lv tor
+ledningar.
+Skydd mot störningar
+m, Plank eller mur ska finnas för att förhindra att vätska
+fran olycka pa järnvägen lacker ut och rinner in pa
+omradet
+m; 'Omradet utformas fritt fran oeftergivliga och spetsiga
+\- föremal som kan punktera avakande godsbehallare.
+m, Fasader ska utformas i obrännbart material som
+vetter mot järnvägen. Luftintag placeras högt och pa
+fasad som vetter bort fran järnvägen.
+m. Högst en in- och utfart för fordon far anordnas samt
+
+högst tva entréer för fotgängare far anordnas i fasad
+som velter mot järnvägen.
+
+Stangsel, utfart och annan utgang
+b O- = = O- d Utfartsforbud,
+
+Takvinkel
+Oo, Sadeltak är inte tillatet.
+Utformning
+f Vaningshöjden i sockelvaning ska vara lägst 3,6
+meter.Ett demonterbart mellanbjälklag som inte är en
+för barande
+far uppföras.
+fa Utöver angivet antal väningar far vind inredas för
+lägenheter. För vindsvaning far takkupor och
+frontespiser anordnas till en längd motsvarande 5026
+av fasadens längd.
+f, Endast lägenheter I bottenvaning medges ej inom
+
+kvarteret som helhet.
+
+Mast för teknisk anläggning tillats sticka upp ovan
+
+hågsta tillatna nockhojd.
+
+f. Byggnader inom egenskapsomradet ska uppföras I
+minst två olika vaningsantal.
+
+f, Byggnader inom egenskapsomradet ska uppföras I
+minst tre olika vaningsantal.
+f, ska finnas mot
+(0 Byggnader ska vara sammanbyggda mot
+Varbergsvägen.
+fo I bottenplan ska oppna passager in till garden finnas
+för varje kvarter. Bestämmelsen gäller inom hela
+egenskapsomradet.
+fö Marken far inte förses med byggnad upp till en höjd
+av 4,7 meter ovan mark.
+fa Minst 25446 av bottenvåningen inom
+ska innehalla
+ft, Marken far inte förses med byggnad upp till en hojd
+av 2,7 meter ovan mark,
+Utförande
+b, Fasad ska utformas i obrännbart material mot
+järnvägen.
+b. Fasad ska utformas sa att utblick mot soder
+\- förhindras,
+b, Takvaning ska utformas sa att utblick mot söder
+förhindras.
+b, Byggnader tyngre än 10 kPa ska grundläggas
+genom palning.
+b, Passage för gaende och cyklister ska finnas mot
+GATA i norr och soder.
+b, Schaktning ska genomloras varsamt för att inte
+skada befintliga träd och dess rotsystem.
+Utnyttjandegrad
+e, Största byggnadsarea for komplementbyggnader ar
+
+40 kvm med en hogsta nockhojd om 4,0 meter.
+Utöver detta far infart till garage uppföras.
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+ä via och
+användningsgräns
+Upphävande av strandskydd
+a, Strandskyddet ar upphavt.
+
+Utformning av allmän plats
+
+Skydd, Plank, mur, dike eller annan höjdskillnad ska finnas
+för att förhindra att vätska fran olycka pa järnvägen
+lacker ut och rinner in på omradet.
+
+Skydd, Inom Västkustbanans sidoomrade ska omradet
+
+utformas fritt fran oeftergivliga och spetsiga föremal
+som kan punktera avakande godsbehallare.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+och
+
+via
+användningsgräns
+Markens anordnande och vegetation
+Nn. Trädrad ska finnas.
+
+Upphavande av strandskydd
+
+a, Strandskyddet är upphavt.
+Utformning
+tf Vaningshöjden i sockelvaning ska vara lägst 3,6
+meter.Ett demonterbart mellanbjälklag som inte är en
+för bärande
+far uppföras.
+hn. Endast lägenheter i bottenvaning medges ej inom
+kvarteret som helhet.
+la Byggnadens djup far vara hogst 13,5 meter. Utover
+ka detta far bursprak och balkonger finnas.
+fe ska innehalla
+Utförande
+b, Omrade inom vilket avlastning motsvarande 1,1
+meter lättfyllnad eller alternativ atgard ska
+genomföras,
+Villkor för startbesked
+a, Startbesked far inte ges för parkeringshus förran
+
+stabilitetsatgärder för att säkra slänten mot
+Skolgatan/Hantverksgatan utförts.
+
+GENOMFÖRANDETID
+'Genomförandetiden är 15 år från den dag detaljplanen far laga kraft
+
+Detaljplan för
+
+sydöstra centrum
+
+PLANKARTA |
+
+Antagandehandlin
+
+etapp 1 g g
+Verkmästaren 6 m.fl. Instans
+i Samrad
+KUR ka 2022-03-17 |2N 990
+
+ungsbacka kommun Korea Granskning Inger
+Upprättad 2025-09-16, reviderad 2025-10-08 Ansonnide
+
+Laga kraft
+
+Ida Lennartsson Sofia Wiman Diarenummer | byar” nade
+Verksamhetschef Plan Planarkitekt 2020-00012 | Ja
+
+Detaljplanen ar upprättad enligt PBL
+2010:900 med utokat förfarande
+
+NA
+
+In e334q uPY Ad IOJeojdxI wos sjejd urwy I eseng
 
 <!-- sida 879 -->
 
@@ -39501,6 +41342,17 @@ Page 11 of 16
 Q
 
 <!-- sida 937 -->
+
+Skåne
+BESLUT
+Länsstyrelsen
+Förstag till Ändring av Översiktsplan 2013
+ZONERING FÖR BEBYGGELSE INOM
+RISK FÖR ÖVERSVÄMNING
+Figur 7: Planområdet markeras med rod cirkel och ligger inom ett högriskområde för översvämning från havet
+Översiktsplan 2013, sidan 33.
+enligt kommunens egen bedömning. Källa: Kristianstads kommuns utställningshandling till ändring äv
+Page 12 of 16
 
 <!-- sida 938 -->
 
@@ -44496,7 +46348,7 @@ och av Köparen i den mån de belöper på tiden därefter. Kommunen tillhandah�
 preliminär likvidavräkning i samband med att Kommunen utfärdar köpebrev enligt
 punkt 7.
 
-11.2 — Ägare till Fastigheten den I januari inkomståret ska betala fastighetsskatten för hela
+11.2 Ägare till Fastigheten den 1 januari inkomståret ska betala fastighetsskatten för hela
 kalenderåret. Kostnaden för fastighetsskatt ska fördelas så att Köparen till Kommunen
 betalar den andel som belöper på tiden efter Tillträdesdagen.
 
@@ -44523,7 +46375,7 @@ avhjälpandeåtgärder som genomförts inom Fastigheten, se vidare punkt 15. Kö
 
 <!-- sida 1046 -->
 
-1233
+12.3
 
 12.4
 
@@ -44608,7 +46460,7 @@ handlingar beträffande ärendet tillsänds samhällsbyggnadskontoret.
 
 15\.
 
-5
+15.1
 
 16\.
 
@@ -44616,7 +46468,7 @@ handlingar beträffande ärendet tillsänds samhällsbyggnadskontoret.
 
 17\.
 
-NA
+17.1
 
 18\.
 

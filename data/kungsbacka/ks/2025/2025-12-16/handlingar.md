@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.2f66052419afce94c17194bc/1765442358
 sha256: b300f6d21c0578f62568c01a23fda64d75b72a8229f98cedf09021846426f4df
 bytes: 102246330
 sidor: 665
-hamtad: 2026-11-18T22:47:28+00:00
-konverterad: 2026-11-18T22:56:04+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T04:55:12+00:00
+konverterad: 2026-11-24T05:13:22+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, ok, ocr, ocr, ok, ocr, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ocr, ocr, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ok, ocr, ok, ocr, ocr, ok, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ok, ocr, ocr, ok, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ej-konverterad, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ocr, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, tom, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ok, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [14, 15, 16, 18, 19, 20, 21, 22, 24, 25, 27, 29, 30, 31, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 46, 48, 49, 51, 52, 53, 55, 56, 58, 59, 60, 63, 64, 66, 67, 69, 71, 77, 78, 79, 81, 82, 83, 84, 86, 87, 92, 93, 96, 97, 99, 101, 102, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 152, 153, 155, 156, 158, 159, 160, 161, 163, 164, 166, 167, 168, 169, 171, 173, 174, 175, 176, 177, 179, 184, 185, 186, 187, 188, 189, 190, 191, 192, 194, 196, 197, 198, 199, 201, 202, 203, 205, 206, 208, 209, 210, 211, 213, 214, 215, 217, 218, 219, 254, 255, 257, 258, 259, 267, 268, 269, 270, 348, 349, 372, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 401, 408, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 425, 542]
-figurer: [11, 21, 22, 54, 74, 77, 88, 91, 98, 105, 106, 107, 108, 178, 221, 228, 230, 232, 235, 248, 262, 273, 276, 282, 348, 349, 354, 355, 357, 358, 359, 360, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 389, 390, 391, 392, 401, 409, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 494, 520, 549, 557, 559, 568, 569, 577, 585, 586, 587, 588, 589, 602, 609, 612, 616, 619, 621, 622, 654, 656, 661]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ointressant, ok, ocr, ocr, ok, ocr, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ocr, ocr, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ok, ocr, ok, ocr, ocr, ok, ocr, bild, bild, bild, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ocr, ocr, ok, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ointressant, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ocr, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, tom, ok, ok, ok, ok, ok, ok, bild, ointressant, ok, ointressant, ointressant, bild, ok, ok, ok, ok, ok, ok, ok, bild, bild, bild, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [14, 15, 16, 18, 19, 21, 27, 30, 31, 34, 35, 36, 38, 39, 40, 41, 42, 44, 46, 48, 49, 51, 52, 53, 55, 56, 58, 60, 63, 64, 67, 69, 71, 77, 78, 83, 84, 87, 92, 96, 97, 99, 101, 102, 105, 106, 107, 108, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 133, 135, 136, 137, 138, 139, 140, 141, 143, 144, 145, 146, 147, 149, 152, 155, 156, 158, 159, 161, 163, 164, 166, 167, 169, 171, 174, 175, 176, 177, 179, 184, 185, 186, 187, 191, 192, 196, 199, 201, 202, 203, 205, 206, 208, 209, 210, 211, 213, 215, 219, 254, 259, 267, 268, 269, 270, 349, 372, 379, 380, 381, 382, 383, 384, 385, 386, 387, 401, 408, 414, 415, 416, 418, 419, 420, 421, 422, 425, 542]
+figurer: [11, 21, 24, 27, 29, 34, 37, 38, 46, 49, 54, 58, 63, 66, 71, 74, 77, 81, 83, 88, 91, 96, 97, 98, 105, 106, 107, 108, 110, 155, 158, 163, 166, 178, 184, 188, 191, 194, 196, 201, 205, 221, 228, 230, 232, 235, 248, 254, 259, 262, 267, 268, 269, 270, 273, 276, 282, 348, 349, 354, 355, 357, 358, 359, 360, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 386, 389, 390, 391, 392, 401, 408, 409, 414, 419, 425, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 494, 520, 549, 557, 559, 568, 569, 577, 585, 586, 587, 588, 589, 602, 609, 612, 616, 619, 621, 622, 654, 656, 661]
 tolkade: []
 granskad: null
 ---
@@ -813,7 +813,7 @@ föreskrift.
 
 <!-- sida 20 -->
 
-Av 12 kap. 10 8 första stycket RF framgår att om ett offentligt organ finner att en
+Av 12 kap. 10 § första stycket RF framgår att om ett offentligt organ finner att en
 föreskrift står i strid med en bestämmelse i grundlag eller annan överordnad
 författning får föreskriften inte tillämpas. Detsamma gäller om stadgad ordning i
 något väsentligt hänseende har åsidosatts vid föreskriftens tillkomst.
@@ -961,7 +961,7 @@ Storckenfeldt \<axel.storckenfeldtQekungsbacka.se>; Magdalena Sundqvist
 \<elisabeth.svensson(Mkungsbacka.se>; Johan Tolinsson \<johan.tolinssonQkungsbacka.se>;
 Stefan Vilumsons \<stefan.vilumsonsQkungsbacka.se>; Marie Wadström
 \<marie.wadstrom(Mkungsbacka.se>; Shabnam Zamani \<shabnam.zamaniQMkungsbacka.se>
-Ämne: Komplettering till begäran om normprövning enligt RF 11 kap. 14 8 i ärende KS-2025-
+Ämne: Komplettering till begäran om normprövning enligt RF 11 kap. 14 § i ärende KS-2025-
 00287
 
 Varning: Det här e-postmeddelandet är skickat från en extern adress. Klicka inte på länkar
@@ -971,14 +971,14 @@ säkert.
 Till: Kommunstyrelsen i Kungsbacka kommun
 Datum: 2025-11-09
 
-Komplettering till begäran om normprövning enligt RF 11 kap. 14 8 i ärende KS-2025-00287
+Komplettering till begäran om normprövning enligt RF 11 kap. 14 § i ärende KS-2025-00287
 
 Jag hänvisar till min skrivelse den 6 november 2025 med begäran om normprövning enligt 11
-kap. 14 8 regeringsformen innan beslut i ärende KS-2025-00287.
+kap. 14 § regeringsformen innan beslut i ärende KS-2025-00287.
 
 <!-- sida 25 -->
 
-Som komplettering vill jag särskilt understryka att kommunens motiveringsskyldighet enligt 32 8
+Som komplettering vill jag särskilt understryka att kommunens motiveringsskyldighet enligt 32 §
 förvaltningslagen (2017:900) gäller ovillkorligt, oavsett ärendets karaktär, beslutsnivå eller
 utgång.
 
@@ -990,7 +990,7 @@ Avsaknad av en sådan motivering utgör ett formellt fel enligt förvaltningslag
 beslutet saknar rättsverkan.
 
 Jag begär därför att eventuellt beslut eller protokollsanteckning som avviker från min begäran
-tydligt redovisar de skäl som bestämt utgången i enlighet med 32 8 FL, samt att denna
+tydligt redovisar de skäl som bestämt utgången i enlighet med 32 § FL, samt att denna
 komplettering diarieförs tillsammans med tidigare skrivelse.
 
 Ansvarsfördelning före beslut i ärende KS-2025-00287
@@ -1000,15 +1000,15 @@ normprövningen eller utarbeta motiveringen enligt förvaltningslagen, utan att 
 som beslutande organ ska säkerställa att dessa moment är genomförda av förvaltningen innan
 beslut i sak fattas.
 
-Enligt RF 11 kap. 14 8 har Kommunstyrelsen som offentligt organ det yttersta ansvaret för att
+Enligt RF 11 kap. 14 § har Kommunstyrelsen som offentligt organ det yttersta ansvaret för att
 beslut inte strider mot grundlag, medan den underordnade förvaltningen enligt
 Förvaltningslagen (2017:900) har ansvar för att bereda ärendet i enlighet med legalitetsprincipen
-och motiveringsskyldigheten i 32 8 FL.
+och motiveringsskyldigheten i 32 § FL.
 
 Det innebär att allt beredningsarbete inför beslut måste innehålla:
 1\. En dokumenterad normprövning enligt RF 11:14, och
 
-2\. En fullständig motivering enligt FL 32 8 som redovisar de rättsregler och överväganden som
+2\. En fullständig motivering enligt FL 32 § som redovisar de rättsregler och överväganden som
 legat till grund för bedömningen.
 
 Syftet är inte att påverka beslutets politiska innehåll, utan att säkerställa att beslutet vilar på en
@@ -1137,7 +1137,7 @@ Storckenfeldt \<axel.storckenfeldtQekungsbacka.se>; Magdalena Sundqvist
 \<elisabeth.svensson(Mkungsbacka.se>; Johan Tolinsson \<johan.tolinssonQkungsbacka.se>;
 Stefan Vilumsons \<stefan.vilumsonsQkungsbacka.se>; Marie Wadström
 \<marie.wadstrom(ÅMkungsbacka.se>; Shabnam Zamani \<shabnam.zamaniQMkungsbacka.se>
-Ämne: Begäran om normprövning enligt RF 11 kap. 14 8 innan beslut i ärende KS-2025-00287
+Ämne: Begäran om normprövning enligt RF 11 kap.14 § innan beslut i ärende KS-2025-00287
 
 Varning: Det här e-postmeddelandet är skickat från en extern adress. Klicka inte på länkar
 eller öppna bifogade filer om du inte känner igen avsändaren och vet att innehållet är
@@ -1145,11 +1145,11 @@ säkert.
 
 Skrivelse till Kommunstyrelsen i Kungsbacka kommun
 
-Angående: Begäran om normprövning enligt RF 11 kap. 14 8 innan beslut i ärende KS-2025-
+Angående: Begäran om normprövning enligt RF 11 kap. 14 § innan beslut i ärende KS-2025-
 00287
 
 Inför Kommunstyrelsens behandling av ärendet KS-2025-00287 vill jag uppmärksamma att
-frågan berör tillämpningen av grundlag, och att en normprövning enligt RF 11 kap. 14 8 därför
+frågan berör tillämpningen av grundlag, och att en normprövning enligt RF 11 kap. 14 § därför
 måste göras innan beslut fattas.
 
 Bakgrund
@@ -2277,7 +2277,7 @@ väcker allvarliga frågor om saklighet, korrekthet och ansvar i myndighetskommu
 
 En sådan uppgift kan ge allmänheten intrycket av att kommunen har ett rättsligt stöd som i
 verkligheten inte finns. Det riskerar att vilseleda både medborgare och media samt att påverka
-enskildas rättsställning. Kommunen har, enligt 5 8 förvaltningslagen, ett särskilt ansvar att alltid
+enskildas rättsställning. Kommunen har, enligt 5 § förvaltningslagen, ett särskilt ansvar att alltid
 säkerställa att information som lämnas till allmänheten är korrekt, verifierbar och
 proportionerlig.
 
@@ -2285,14 +2285,14 @@ Det är därför både etiskt och moraliskt olämpligt att framföra påstående
 kunna visa upp det dokument som stöder uttalandet. En offentlig rättelse vore i så fall det
 naturliga och sakligt hederliga sättet att återställa förtroendet för kommunens objektivitet.
 
-Tillämpningen av 2 8 förvaltningslagen i detta specifika ärende
+Tillämpningen av 2 s förvaltningslagen i detta specifika ärende
 
-Tack för ditt förtydligande om att 10 och 12 88 förvaltningslagen (FL) enligt 2 8 inte skulle vara
+Tack för ditt förtydligande om att 10 och 12 ss förvaltningslagen (FL) enligt 2 § inte skulle vara
 tillämpliga för denna typ av beslut. Jag vill dock, med respekt för din tolkning, ställa några
 reflekterande frågor kring detta, eftersom ärendet i mitt fall inte riktigt framstår som ett typiskt
 politiskt beslut utan snarare rör myndighetsutövning mot enskild.
 
-Min förståelse är att undantaget i 2 8 FL främst avser beslut av rent politisk karaktär, där
+Min förståelse är att undantaget i 2 § FL främst avser beslut av rent politisk karaktär, där
 kommunen exempelvis fastställer mål eller prioriteringar. Men när ett ärende — som i detta fall -
 
 <!-- sida 60 -->
@@ -2552,7 +2552,7 @@ Kopia av denna skrivelse skickas även till samtliga ledamöter i kommunstyrelse
 
 DRÖJSMÅLSSKRIVELSE OCH FORMELL BEGÄRAN OM BESLUT
 
-med stöd av 5, 6, 7 och 12 8 förvaltningslagen (2017:900)
+med stöd av 5, 6, 7 och 12 § förvaltningslagen (2017:900)
 
 <!-- sida 67 -->
 
@@ -3476,7 +3476,7 @@ rimligt att vänta över ett halvår på ett svar som kommunen dessutom redan s�
 Ni har själva uppgett att lagstöd finns. Då borde det också vara möjligt att relativt omgående
 ange vilken rättsregel som avses. Att hänvisa till lagstöd är en självklar och rimlig begäran i ett
 demokratiskt samhälle, särskilt när det rör den enskildes grundlagsskyddade äganderätt enligt 2
-kap. 15 8 regeringsformen, med stöd även i civilrätten.
+kap. 15 § regeringsformen, med stöd även i civilrätten.
 
 Jag vill också framhålla att det är en väsentlig skillnad mellan att en detaljplan har formell
 rättskraft som norm enligt plan- och bygglagen och att en planbestämmelse får materiell
@@ -3487,12 +3487,12 @@ rättskraft genom fastighetsrättsliga åtgärder, till exempel lantmäteriförr
 Kommunens handlande under de senaste 20 åren har dock gått längre än den formella
 rättskraften. Genom att behandla planbestämmelsen som om den redan vore realiserad har
 kommunen i praktiken tillämpat den med materiell verkan. Det är just detta som utgör en olaglig
-rådighetsinskränkning och som därmed utlöser rätt till ersättning enligt 2 kap. 15 8
-regeringsformen och 4 kap. 3 a 8 expropriationslagen.
+rådighetsinskränkning och som därmed utlöser rätt till ersättning enligt 2 kap. 15 §
+regeringsformen och 4 kap. 3 a § expropriationslagen.
 
 Detta innebär dessutom att kommunen genom sitt agerande skapar en konflikt mellan offentlig
 rätt (detaljplanens normativa verkan enligt PBL) och civilrätt (äganderätten med skydd i
-jordabalken, expropriationslagen och 2 kap. 15 8 regeringsformen). En sådan konflikt är inte
+jordabalken, expropriationslagen och 2 kap. 15 § regeringsformen). En sådan konflikt är inte
 förenlig med svensk rättsordning. Offentlig rätt kan inte ensidigt tränga undan civilrätt utan
 lagstöd och utan att de grundläggande reglerna om ersättning iakttas.
 
@@ -3910,7 +3910,7 @@ som underlag för kommunens tjänstemän och förtroendevalda.
 Jag begär därför att:
 1\.
 
-Kommunstyrelsen i sitt kommande beslut beaktar PBL 4 kap. 17 a 8 och MB 7 kap. 18 j 8 i
+Kommunstyrelsen i sitt kommande beslut beaktar PBL 4 kap. 17 a § och MB 7 kap. 18 j § i
 bedömningen av planbestämmelsens rättsverkan.
 
 2\.
@@ -5046,9 +5046,9 @@ Utan avgift, Länsarkitekten (+karta).
 
 <!-- sida 134 -->
 
-mn
+2\.
 
-2 da
+§1.
 
 Byggnadsplaneområdets användning.:'
 Mom. 1. Byggnadskvarter,.
@@ -7114,7 +7114,7 @@ Hej,
 Som en del av en informationsinsats rörande rättssäkerheten i Kungsbacka kommun begär jag
 härmed att få ta del av kommunens styrdokument kopplade till lagprövning (normprövning).
 
-Lagprövningsplikten i Regeringsformen 11 kap. 14 8 är en av de mest grundläggande
+Lagprövningsplikten i Regeringsformen 11 kap. 14 § är en av de mest grundläggande
 funktionerna i en rättsstat. Den utgör medborgarnas skydd mot att myndigheter tillämpar regler,
 rutiner eller beslut som strider mot grundlag eller annan överordnad rätt.
 
@@ -7318,14 +7318,14 @@ säkert.
 
 Hej,
 
-Min tidigare begäran avseende Regeringsformen 11 kap. 14 8 ska naturligtvis även beröra 12 kap.
-10 8 RF.
+Min tidigare begäran avseende Regeringsformen 11 kap. 14 § ska naturligtvis även beröra 12 kap.
+10 § RF.
 
 Jag vill således göra en kort och förtydligande komplettering till den information jag tidigare
 skickat gällande normprövningsplikten och det s.k. tjänstemannaansvaret i Regeringsformen
 som jag efterfrågat.
 
-I mitt tidigare mejl hänvisade jag endast till Regeringsformen 11 kap. 14 8, som beskriver
+I mitt tidigare mejl hänvisade jag endast till Regeringsformen 11 kap. 14 §, som beskriver
 normprövningens princip på ett övergripande plan. Den paragrafen är helt korrekt och relevant,
 eftersom den utgör grunden för att en föreskrift eller tillämpning inte får användas om den strider
 mot högre lag.
@@ -7334,7 +7334,7 @@ För tydlighetens skull vill jag här komplettera med en närliggande och ännu 
 bestämmelse som gäller för just myndigheter och tjänstemän i den dagliga förvaltningen,
 nämligen:
 
-Regeringsformen 12 kap. 10 8, som uttryckligen föreskriver att ett offentligt organ inte får
+Regeringsformen 12 kap. 10 s, som uttryckligen föreskriver att ett offentligt organ inte får
 tillämpa en föreskrift som strider mot grundlag eller annan överordnad författning, eller som har
 tillkommit utan att stadgad ordning följts.
 
@@ -7450,9 +7450,9 @@ tjänsteansvaret fungerar i svensk rätt.
 
 Jag vill samtidigt informera dig om att denna skrivelse också syftar till att skapa spårbar och
 rättssäker dokumentation av att du, i egenskap av ansvarig handläggare, har informerats om
-kommunens normprövningsskyldighet enligt Regeringsformen 12 kap. 10 8 (gällande
-kommunens prövningsplikt) och principen som återfinns i 11 kap. 14 8. Mot denna bakgrund och
-med beaktande av kommunens serviceskyldighet enligt 6 8 förvaltningslagen utgår jag från att
+kommunens normprövningsskyldighet enligt Regeringsformen 12 kap. 10 § (gällande
+kommunens prövningsplikt) och principen som återfinns i 11 kap. 14 §. Mot denna bakgrund och
+med beaktande av kommunens serviceskyldighet enligt 6 § förvaltningslagen utgår jag från att
 du i den fortsatta handläggningen säkerställer att tillämpade föreskrifter, beslut och rutiner
 prövas mot grundlagen och att relevant lagstöd redovisas. Detta klargörande görs just för att
 undvika framtida missförstånd kring vilket ansvar som faktiskt följer av din roll som tjänsteman.
@@ -8070,18 +8070,18 @@ förutsebarheten för medborgaren försvinner. Att agera utan sådan kunskap inn
 civilrättsligt fel utan kan vara straffrättsligt ansvar.
 
 Detta stärker betydelsen av att kommunen i detta ärende gör en korrekt normprövning enligt RF
-12 kap. 10 8 och att alla tjänstemän i berörda organ är medvetna om skyldigheten att ha lagstöd
+12 kap. 10 § och att alla tjänstemän i berörda organ är medvetna om skyldigheten att ha lagstöd
 innan tillämpning. I detta ärende rör det sig uttryckligen om myndighetsutövning gentemot
 enskild fastighetsägare, vilket innebär att varje beslut eller underlåtenhet att göra lagprövning
-och ange lagstöd faller direkt inom det ansvar som regleras i BrB 20 kap. 1 8. Ansvarssystemet i
-BrB 20 kap. 1 8 säkerställer att myndighetsutövning sker korrekt och i enlighet med
+och ange lagstöd faller direkt inom det ansvar som regleras i BrB 20 kap. 1 §. Ansvarssystemet i
+BrB 20 kap. 1 § säkerställer att myndighetsutövning sker korrekt och i enlighet med
 legalitetsprincipen.
 
-Begäran om tillämpning av RF 12 kap. 10 8 (normprövningsskyldighet)
+Begäran om tillämpning av RF 12 kap. 10 § (normprövningsskyldighet)
 
 Mot bakgrund av att kommunen redan skriftligen bekräftat att lagstöd, rättsutredningar, rutiner
 och korrekt dokumentation saknas i detta ärende, begär jag härmed att kommunen i sitt
-kommande beslut tillämpar normprövningsskyldigheten enligt RF 12 kap. 10 8.
+kommande beslut tillämpar normprövningsskyldigheten enligt RF 12 kap. 10 §.
 
 Enligt denna bestämmelse får ett offentligt organ inte tillämpa en föreskrift som:
 e strider mot grundlag eller annan överordnad författning, eller
@@ -14100,6 +14100,25 @@ Sign
 
 <!-- sida 386 -->
 
+ÄNDRING AV DETALJPLAN
+m, Området 60 meter från Västkustbanan ska
+stfo för att minska aven
+utspårat tåg.
+Stängsel, utfart och annan utgång
+NATUR Natur. e, Största byggnadsarea är 5036 av
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS matenal.
+2031-11-11. Med dning av att den
+Utformning av allmän plats genomförandetiden inte löpt ut får ändring av detaljplan samma
+KVARTERSMARK Planbestämmelser som ändrats i ändring av detaljplan för FJP29
+Planbestämmelser som lagts till inom ändring av detaljplan för
+Begränsning av markens utnyttjande FJIP29
+Höjd på byggnadsverk D1 - Byggnadsverk ska utföras på et sågant sat att påverkan från Ingukton hindras.
+och 1 Planbestammelser som upphör att gälla inom ändring av detaljplan
+u, för
+byggnader uppförs som människor detaljplan för FJP29
+m, Lufintag och entréer ska så långt från
+västkust banan som möjligt.
+
 <!-- sida 387 -->
 
 Kartbilaga 2
@@ -15764,7 +15783,7 @@ Kommunen och Bolaget kallas gemensamt nedan för Parterna.
 2\. BAKGRUND OCH FÖRUTSÄTTNINGAR
 
 Kommunen antog en ny detaljplan för kvarteret Banken 2019-06-11 (KS/2019:341
-385), vilken vann laga kraft 2019-07-15. I samband med detaljplanens antagande
+§85), vilken vann laga kraft 2019-07-15. I samband med detaljplanens antagande
 godkändes även ett tillhörande exploateringsavtal avseende fastigheten Banken 13,
 tecknat mellan Parterna (KS/2019:220 §84)
 
@@ -22143,7 +22162,7 @@ r
 
 5
 
-e5
+e 5
 
 D e
 
@@ -22155,17 +22174,13 @@ m
 
 ls
 
-a-0
-
-m73
+a -0 m 73
 
 0
 
-N e
+N e D 2
 
-D2
-
-nu0
+nu 0
 
 2
 
@@ -22173,27 +22188,25 @@ A r
 
 1
 
-ie0
+ie 0
 
 –
 
 \-
 
-r-
+r -
 
 R ty
 
 5
 
-ia5
+ia 5
 
 6
 
 T s
 
-2
-
-D2
+2 D 2
 
 2
 
@@ -22299,27 +22312,27 @@ e
 
 a
 
-m0
+m 0
 
 e
 
 H
 
-m7
+m 7
 
 v
 
 n
 
-nu6
+nu 6
 
 ö
 
-ie0
+ie 0
 
 io
 
-r3
+r 3
 
 ia
 
@@ -22327,21 +22340,21 @@ e
 
 g
 
-d2
+d 2
 
 d
 
-lle
+ll e
 
-tS
+t S
 
 i
 
 r
 
-TR
+T R
 
-ER
+E R
 
 n
 

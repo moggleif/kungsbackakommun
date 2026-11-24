@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.42aac4b1194d846c2fcf1032/1739534411
 sha256: 6fa418c3de52ea0b5801063caf4b107176ececab8ce615aa85c3f47d9722ca15
 bytes: 55469329
 sidor: 727
-hamtad: 2026-11-18T13:15:52+00:00
-konverterad: 2026-11-18T13:19:08+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T02:52:52+00:00
+konverterad: 2026-11-24T02:56:22+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [9, 226, 436, 437, 438, 506, 507, 555, 596, 599, 688]
-figurer: [9, 38, 40, 43, 44, 46, 47, 48, 50, 52, 54, 55, 58, 60, 62, 64, 66, 67, 68, 69, 71, 73, 74, 83, 85, 86, 88, 89, 91, 93, 95, 97, 99, 102, 104, 105, 106, 108, 109, 110, 113, 114, 115, 116, 117, 118, 119, 120, 121, 123, 125, 127, 130, 131, 132, 133, 134, 139, 142, 143, 153, 154, 166, 169, 170, 173, 177, 185, 186, 187, 188, 189, 190, 194, 196, 197, 198, 199, 201, 202, 203, 204, 205, 206, 207, 208, 210, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 224, 281, 283, 286, 287, 289, 290, 291, 293, 295, 297, 298, 300, 303, 305, 307, 309, 311, 312, 313, 314, 316, 318, 319, 328, 330, 331, 333, 334, 336, 338, 340, 342, 344, 346, 348, 349, 350, 352, 353, 355, 358, 359, 360, 361, 362, 363, 364, 365, 366, 368, 370, 372, 374, 375, 377, 378, 379, 380, 381, 386, 389, 390, 400, 401, 413, 447, 448, 449, 450, 451, 464, 465, 497, 515, 516, 517, 518, 520, 555, 568, 571, 576, 579, 581, 582, 584, 585, 586, 587, 590, 595, 599, 600, 602, 603, 607, 608, 610, 611, 613, 614, 615, 616, 623, 624, 625, 656, 660, 661, 663, 667, 669, 683, 685, 686, 687, 688, 689, 690]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [9, 226, 506, 555, 596, 688]
+figurer: [9, 38, 40, 43, 44, 46, 47, 48, 50, 52, 54, 55, 58, 60, 62, 64, 66, 67, 68, 69, 71, 73, 74, 83, 85, 86, 88, 89, 91, 93, 95, 97, 99, 102, 104, 105, 106, 108, 109, 110, 113, 114, 115, 116, 117, 118, 119, 120, 121, 123, 125, 127, 130, 131, 132, 133, 134, 139, 142, 143, 153, 154, 166, 169, 170, 173, 177, 185, 186, 187, 188, 189, 190, 194, 196, 197, 198, 199, 201, 202, 203, 204, 205, 206, 207, 208, 210, 211, 212, 213, 214, 215, 216, 218, 219, 220, 221, 222, 223, 224, 226, 281, 283, 286, 287, 289, 290, 291, 293, 295, 297, 298, 300, 303, 305, 307, 309, 311, 312, 313, 314, 316, 318, 319, 328, 330, 331, 333, 334, 336, 338, 340, 342, 344, 346, 348, 349, 350, 352, 353, 355, 358, 359, 360, 361, 362, 363, 364, 365, 366, 368, 370, 372, 374, 375, 377, 378, 379, 380, 381, 386, 389, 390, 400, 401, 413, 447, 448, 449, 450, 451, 464, 465, 497, 515, 516, 517, 518, 520, 555, 568, 571, 576, 579, 581, 582, 584, 585, 586, 587, 590, 595, 596, 599, 600, 602, 603, 607, 608, 610, 611, 613, 614, 615, 616, 623, 624, 625, 656, 660, 661, 663, 667, 669, 683, 685, 686, 687, 688, 689, 690]
 tolkade: []
 granskad: null
 ---
@@ -15963,7 +15963,7 @@ Besöksadress: Olaus Magnus väg 35 E-post: sgiQMsgi.se Org.nr: 202100-0712
 
 <!-- sida 437 -->
 
-rr AA STATENS 23)
+rr AA STATENS 2(3)
 GEOTEKNISKA Yttrande
 
 INSTITUT Datum Diarienummer
@@ -15971,7 +15971,7 @@ INSTITUT Datum Diarienummer
 
 Kommunens hantering av geotekniska säkerhetsfrågor
 
-Enligt 2 kap 5 8 PBL ska bebyggelse och byggnadsverk lokaliseras till mark som är lämpad för
+Enligt 2 kap 5 § PBL ska bebyggelse och byggnadsverk lokaliseras till mark som är lämpad för
 ändamålet med hänsyn till bland annat människors hälsa och säkerhet samt med hänsyn till risken för
 olyckor, översvämning och erosion.
 
@@ -15984,7 +15984,7 @@ sådant ställningstagande formuleras i ÖP. Vi vill också framhålla vikten av
 lämplighet för avsett planändamål måste livslängden hos bebyggelse, anläggningar etc. vara
 utgångspunkten och därför behöver förväntade effekter av ett förändrat klimat beaktas.
 
-Vidare ska kommunen enligt 3 kap 5 8 p 4 i sin översiktsplan redovisa sin syn på risken för skador på
+Vidare ska kommunen enligt 3 kap 5 § p 4 i sin översiktsplan redovisa sin syn på risken för skador på
 den byggda miljön som kan följa av översvämning, ras, skred och erosion som är klimatrelaterade
 samt på hur sådana risker kan minska eller upphöra.
 
@@ -18802,7 +18802,7 @@ Bilaga J.
 
 § 3 Arbetstagarparten förklarar sig enig med arbetsgivaren.
 
-8 4 Överläggningen förklarades avslutad vid dagens datum.
+§ 4 Överläggningen förklarades avslutad vid dagens datum.
 
 Justeras datum 2024-09-13
 

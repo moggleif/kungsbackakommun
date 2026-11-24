@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.41c3c8151a01f3423c0131b2/1787300369
 sha256: 603f11ca59d1352bc9a01a239380f9fd33b44a3c98aacb00261540bd8a854896
 bytes: 205915322
 sidor: 950
-hamtad: 2026-11-18T23:15:17+00:00
-konverterad: 2026-11-18T23:30:14+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T05:42:09+00:00
+konverterad: 2026-11-24T06:07:14+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ok, ocr, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, tabell-osaker, ocr, tabell-osaker, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [80, 83, 84, 176, 180, 183, 184, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 333, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 610, 611, 623, 626, 629, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 643, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 659, 660, 661, 662, 663, 664, 665, 668, 670, 674, 675, 676, 677, 678, 680, 681, 682, 683, 684, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 706, 707, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 764, 765, 766, 767, 768, 769, 770, 771, 772, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 792, 793, 794, 795, 796, 797, 798, 799, 919, 920, 941, 950]
-figurer: [23, 34, 46, 50, 52, 54, 56, 57, 61, 62, 63, 64, 65, 66, 67, 71, 76, 80, 83, 84, 86, 90, 93, 94, 95, 97, 98, 99, 100, 107, 108, 109, 110, 119, 148, 159, 161, 164, 165, 166, 167, 170, 175, 180, 183, 184, 186, 187, 188, 189, 190, 192, 193, 194, 195, 197, 198, 199, 200, 209, 214, 215, 217, 218, 219, 220, 221, 222, 223, 224, 225, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 309, 313, 321, 323, 324, 325, 340, 341, 371, 374, 378, 379, 384, 386, 391, 397, 398, 399, 400, 401, 402, 404, 405, 406, 407, 410, 412, 414, 418, 420, 426, 430, 437, 442, 447, 450, 451, 453, 462, 464, 465, 466, 467, 473, 474, 475, 477, 478, 481, 495, 506, 510, 512, 514, 516, 517, 519, 520, 521, 524, 525, 528, 529, 532, 536, 537, 540, 544, 548, 549, 554, 558, 560, 562, 564, 566, 567, 571, 573, 574, 578, 591, 592, 593, 594, 596, 601, 603, 604, 605, 606, 607, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 641, 642, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 662, 664, 665, 666, 667, 668, 670, 674, 675, 676, 677, 678, 679, 683, 684, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 698, 699, 700, 701, 702, 703, 705, 706, 707, 709, 725, 740, 741, 742, 743, 744, 745, 817, 893]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, bild, bild, bild, ocr, ocr, ocr, ointressant, bild, bild, bild, ointressant, ocr, bild, bild, bild, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ok, ocr, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, tabell-osaker, ocr, tabell-osaker, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ointressant, bild, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [176, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 248, 249, 250, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263, 264, 265, 266, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 304, 305, 306, 307, 352, 353, 354, 355, 356, 359, 360, 361, 362, 363, 364, 365, 610, 611, 623, 626, 629, 631, 632, 633, 634, 635, 636, 637, 638, 640, 641, 643, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 659, 660, 661, 662, 663, 664, 665, 668, 670, 674, 675, 676, 677, 678, 681, 684, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 707, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 764, 765, 766, 767, 768, 769, 770, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 792, 793, 794, 795, 796, 797, 798, 799, 920, 941]
+figurer: [23, 34, 46, 50, 52, 54, 56, 57, 61, 62, 63, 64, 65, 66, 67, 71, 76, 80, 83, 84, 86, 90, 93, 94, 95, 97, 98, 99, 100, 107, 108, 109, 110, 119, 148, 159, 161, 164, 165, 166, 167, 170, 175, 176, 180, 183, 184, 186, 187, 188, 189, 190, 192, 193, 194, 195, 197, 198, 199, 200, 209, 214, 215, 217, 218, 219, 220, 221, 222, 223, 224, 225, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 248, 249, 250, 252, 253, 254, 255, 256, 258, 259, 260, 261, 262, 263, 264, 265, 266, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 309, 313, 321, 323, 324, 325, 340, 341, 358, 359, 364, 365, 371, 374, 378, 379, 384, 386, 391, 397, 398, 399, 400, 401, 402, 404, 405, 406, 407, 410, 412, 414, 418, 420, 426, 430, 437, 442, 447, 450, 451, 453, 462, 464, 465, 466, 467, 473, 474, 475, 477, 478, 481, 495, 506, 510, 512, 514, 516, 517, 519, 520, 521, 524, 525, 528, 529, 532, 536, 537, 540, 544, 548, 549, 554, 558, 560, 562, 564, 566, 567, 571, 573, 574, 578, 591, 592, 593, 594, 596, 601, 603, 604, 605, 606, 607, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 641, 642, 644, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 662, 664, 665, 666, 667, 668, 670, 674, 675, 676, 677, 678, 679, 683, 684, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 698, 699, 700, 701, 702, 703, 705, 706, 707, 709, 725, 740, 741, 742, 743, 744, 745, 775, 776, 817, 893, 941]
 tolkade: []
 granskad: null
 ---
@@ -12117,13 +12117,65 @@ Organisationsnhummer: 212000-1256 | infoQkungsbacka.se | kungsbacka.se
 
 <!-- sida 236 -->
 
+laga kraft
+Halmstad 1982-12-13
+Gunn Winge
+Länsstyrelsen har 1982-08-25 fastställt
+detta förslag. Beslutet har numera vunnit
+TILLHÖR BYGGNADSNÄMNDENS I KUNGSBACKA
+BESLUT 1982-03-04, 5 96, BETYGAR
+ANDERSSON
+ORDFÖRANDE
+KUNGSBACKA KOMMUN
+Förslag till ändring av byggnadsplanen
+i Släps registerområde avser
+planbestämmelser och planbeteckning
+Tillhör i november 1981 reviderade planbestämmelser.
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KBA KOMMUN
+Nl) e GÄLLANDE DETALJPLAN 1:2000
+all
+
 <!-- sida 237 -->
+
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KABA KOMMUN
+2026-01-24
+
+LJ LJ
+| I | JE ÖVERSIKTSPERSPEKTIV. GÄLLANDE DETALJPLAN
+
+Ärendenummer; 4257450 | Datum: 2026-01-27 18:04 Bilaga 1 sida 3 av 13.
 
 <!-- sida 238 -->
 
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KABA KOMMUN
+2026-01-24
+
+LJ LJ
+| | | JE ÖVERSIKTSPERSPEKTIV BEFINTLIGT UTSEENDE
+
+Ärendenummer; 4257450 | Datum: 2026-01-27 18:04 Bilaga 1 sida 4 av 13
+
 <!-- sida 239 -->
 
+lenummer: 4257450 | Datum: 2026-01-27 18:04
+
+HS
+
+ÖVERSIKTSPERSPEKTIV BLIV. UTSEENDE FÖRSLAG .
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KBA KOMMUN
+2026-01-24
+
+Bilaga 1 sida 5 av 13
+
 <!-- sida 240 -->
+
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KABA KOMMUN
+2026-01-24
+
+LJ LJ
+| | | JE ÖVERSIKTSPERSPEKTIV DETALJPLAN FÖRSLAG
+
+Ärendenummer; 4257450 | Datum: 2026-01-27 18:04 Bilaga 1 sida 6 av 13
 
 <!-- sida 241 -->
 
@@ -12133,9 +12185,36 @@ Organisationsnhummer: 212000-1256 | infoQkungsbacka.se | kungsbacka.se
 
 <!-- sida 244 -->
 
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KABA KOMMUN
+| | | JE ÖVERSIKTSPERSPEKTIV 2 FASTIGHETER FÖRSLAG
+immer: 4257450 | Datum: 2026-01-27 18:04 Bilaga 1sida 10 av 13
+
 <!-- sida 245 -->
 
+Hultaberget
+
+1:127
+
+KARTUNDERLAG 1:2000 LUCKTOMT
+
+1:1000 lilje KARTUNDERLAG 1:1000
+all
+
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KABA KOMMUN
+2026-01-24
+
 <!-- sida 246 -->
+
+Hultaberget
+
+KARTUNDERLAG 1:1000 FÖRSLAG
+1:1000
+
+ANSÖKAN OM PLANBESKED FÖR TVÅ FASTIGHETER PÅ BUKÄRR 22:36, KABA KOMMUN
+2026-01-24
+
+LJ LJ
+| | | JE KARTUNDERLAG 2 FASTIGHETER 1:1000
 
 <!-- sida 247 -->
 
@@ -12149,6 +12228,18 @@ Organisationsnhummer: 212000-1256 | infoQkungsbacka.se | kungsbacka.se
 
 <!-- sida 252 -->
 
+FASAD MOT NORR
+INTLIG MARK.
+BLIVANDE MARK.
+FASAD MOT VÄSTER
+BEFINTLIG MARK
+FASAD MOT SÖDER
+FASAD MOT ÖSTER
+BYGGRÄTT 1
+Ärendenummer; 4257450 | Datum: 2026-01-27 18:04
+FASADER
+Ort I 2026-01-24
+
 <!-- sida 253 -->
 
 <!-- sida 254 -->
@@ -12156,6 +12247,56 @@ Organisationsnhummer: 212000-1256 | infoQkungsbacka.se | kungsbacka.se
 <!-- sida 255 -->
 
 <!-- sida 256 -->
+
+UTBREDNING FÖRESLAGEN FASTIGHETSGRÄNS
+1035,8 m?
+
+FÖRRÅD
+
+TEKNIK
+
+FG. 1520
+
+BYA 135 M?
+
+<
+
+NORRA HULTAVÄGEN
+
+ENTRÉPLAN/SUTERRÄNG +15 200
+1:100
+
+OEETTTTTTTETTTTETTTTT
+PLAN 1 +18 000
+1:100
+Re
+MR BELT
+Mån
+it
+i
+FG.52080
+21900 Mm ooo foo
+sfeTele [ef
+VIND +20 800
+1:100
+TAKPLAN +23 600
+1:100
+
+ELMARKNIVÅ = MMN
+
+SEKTION A-A
+1:100
+
+BYGGRÄTT 2
+
+Ärendenummer; 4257450 | Datum: 2026-01-27 18:04
+
+PLANER OCH SEKTION
+Ort I 2026-01-24
+
+NVS
+
+Bilaga 3 sida 4 av 5
 
 <!-- sida 257 -->
 
@@ -12905,6 +13046,24 @@ Organisationsnhummer: 212000-1256 | infoQkungsbacka.se | kungsbacka.se
 Ärendenummer: 4260958 | Inskickat av: Datum: 2026-02-13 12:55 Sida 3 av3
 
 <!-- sida 276 -->
+
+Befintlig infart
+från Valldavägen
+
+används
+Befintlig byggnad blir
+en samlingsplats för umgänge/
+aktiviteter/förråd/cykelförråd
+Befintlig byggnad blir Befintlig
+övernattningslägenhet för besökande skogsområde
+N
+SITUATIONSPLAN | I
+
+1:1000 Å
+
+Ärendenummer: 4260958 | Datum: 2026-02-13 12:55 Bilaga 1 sida 1 av 1
+
+2025 CAD-RITNING
 
 <!-- sida 277 -->
 
@@ -17392,6 +17551,50 @@ Bilaga 1 — Plankarta, upphävd detaljplan för Frillesås-Rya 3:77 m.fl.
 Bilaga 2 — Markområdet
 
 <!-- sida 365 -->
+
+PLANBESTÄMMELSER
+GRÄNSER
+ANVÄNDNING AV MARK OCH VATTEN
+Allmän platsmark med kommunalt huvudmannaskap
+för
+Höjd på byggnader.
+Utformning takvinkel
+Skydd mot störningar
+Bebyggandets omfattning
+Lagstöd
+Lagstöd
+Markens anordnande och vegetation
+ADMINISTRATIVA BESTÄMMELSER
+Administrativa bestämmelser Kvartersmark
+Strandskydd
+Välkor för lov
+Administrativa bestämmelser Allmänna platser
+Övrigt
+Lagstöd
+Hela
+| Genomförandetid
+Detaljplanen är baserad på koordnatsystemet Skala 1:2000 i A1, skala 1:4000 i A3
+Detaljplanens syfte
+Syftet med detaljplanen är att möjliggöra ett
+k h råde för portil iv och i viss
+mån störande k h Detaljpl ska vara
+flexibel för att kunna inrymma både höglager och
+ytkrävande såväl som mindre verksamheter.
+ARING A
+Traktnamn, kvartersnamn
+Höjdkurva 5 m
+Uthus fasad, resp tak
+Höjdpunkt
+= Vägkant, mindre väg
+Detaljplan för verksamheter inom
+Antangandehandling
+del av Frillesås-Rya 3:77 m.fl.
+i Frillesås
+K kommun
+Granskning
+Upprättad 2021-12-23, reviderad augusti 2022
+Ida Lennartsson Johanna Vinterhav
+Plan Planarkitekt
 
 <!-- sida 366 -->
 
@@ -31905,26 +32108,26 @@ Samtliga aktier ägs av Kungsbacka kommun.
 NOT 26 - OBESKATTADE RESERVER
 KONCERN MODERBOLAG
 2025 2024 2025 2024
-Avskrivningar utöver plan (0) (0) 7 586 488 10 107 958
-Summa [0] [0] 1 586 488 10 107 958
+Avskrivningar utöver plan (0) (0) 11 586 488 10 107 958
+Summa [0] [0] 11 586 488 10 107 958
 NOT 27 - LÅNGFRISTIGA SKULDER
 KONCERN MODERBOLAG
 Förändring av räntebärande skulder kreditinstitut 2025 2024 2025 2024
 
 Skulder vid årets början
 
-3591 956 707
+3 591 956 707
 
-3598 801 691
+3 598 801 691
 
-3591 956 707
+3 591 956 707
 
-3598 801 691
+3 598 801 691
 
 Amorteringar -4 476 000 -6 844 984 -4 476 000 -6 844 984
 Lösen av lån [0 [0 (0) [0)
 Nyupplåning [0 [0 [0) [0)
-Skulder vid årets slut 3587 480 707 3591 956 707 3587 480 707 3591 956 707
+Skulder vid årets slut 3 587 480 707 3 591 956 707 3 587 480 707 3 591 956 707
 Kortfristig del av långfristig skuld -3 570 000 -5 994 000 -3 570 000 -5 994 000
 
 Summa
@@ -31943,7 +32146,7 @@ Senare än 1 år, men senast 5 år efter balansdagen
 3 585 962 707
 
 2024
-1007 799 594
+1 007 799 594
 2104 409 849
 
 3 583 910 707
@@ -31959,8 +32162,8 @@ Senare än 1 år, men senast 5 år efter balansdagen
 2104 409 849
 
 Senare än 5 år efter balansdagen 612 714 500 421 559 108 612 714 500 421 559 108
-Inom 1 år, skyddade av räntetak i avtal med ägaren 58 188156 58 188156 58 188156 58 188156
-Summa 3587 480 707 :3591956 707 <3 587480 707 3591 956 707
+Inom 1 år, skyddade av räntetak i avtal med ägaren 58 188 156 58 188 156 58 188 156 58 188 156
+Summa 3 587 480 707 3 591 956 707 3 587 480 707 3 591 956 707
 
 Långfristiga skulder omfattar fastighetslån och räntesäkringar i form av derivat. Derivaten
 är tillåtna i finanspolicyn och innebär att lån med rörlig ränta får karaktären av fast ränta.
@@ -31968,8 +32171,8 @@ Långfristiga skulder omfattar fastighetslån och räntesäkringar i form av der
 Värdet av dessa finansiella instrument förändras vid upp- eller nedgång i det allmänna ränteläget,
 vilket balanseras av förändringen hos de rörliga lån som är bas för säkringen.
 
-Under de senaste 12 månaderna har bolaget haft en snittränta på fastighetslånen om 1,95.
-Snittränta inklusive derivat ligger på 1,92 2 under de senaste 12 månader.
+Under de senaste 12 månaderna har bolaget haft en snittränta på fastighetslånen om 1,95%.
+Snittränta inklusive derivat ligger på 1,92 % under de senaste 12 månader.
 Således föreligger övervärden i derivaten (se även not 32).
 
 Dokument-ID 09222115557571174859 Signerat CK, HS, PW, AM, JB, IH, KW, ML, AL
@@ -32062,8 +32265,8 @@ Summa 833 204 165
 Styrelsen föreslår att ovanstående medel
 disponeras enligt följande:
 
-Utdelning 1680 000
-I ny räkning balanseras 831 524165
+Utdelning 1 680 000
+I ny räkning balanseras 831 524 165
 Summa 833 204 165
 
 NOT 34 - HÄNDELSER EFTER BALANSDAGEN
@@ -32106,7 +32309,7 @@ Dokument-ID 09222115557571174859
 ÅRS- OCH HÅLLBARHETSREDOVISNING 2025
 Signerat CK, HS, PW, AM, JB, IH, KWMLAL.— — HA
 
-Gl
+61
 
 <!-- sida 683 -->
 
@@ -35716,7 +35919,9 @@ il
 
 r g
 
-s g
+s
+
+g
 
 g
 
@@ -35740,7 +35945,9 @@ i
 
 i
 
-g n
+g
+
+n
 
 i
 
@@ -35916,7 +36123,9 @@ g
 
 n h g
 
-a g
+a
+
+g
 
 a
 
@@ -35926,9 +36135,7 @@ lg
 
 a
 
-a
-
-e
+a e
 
 t
 
@@ -35982,15 +36189,15 @@ t
 
 a
 
-N n
-
-n
+N n n
 
 la
 
 n
 
-ll n
+ll
+
+n
 
 h
 
@@ -36012,9 +36219,7 @@ r
 
 a
 
-t
-
-a
+t a
 
 o
 
@@ -36028,9 +36233,7 @@ ig
 
 s
 
-å
-
-g
+å g
 
 e
 
@@ -36108,9 +36311,7 @@ r
 
 m
 
-l
-
-ä
+l ä
 
 e k m
 
@@ -36124,9 +36325,7 @@ a m
 
 t
 
-t
-
-n
+t n
 
 s m
 
@@ -36172,9 +36371,7 @@ r m
 
 m u
 
-i
-
-n
+i n
 
 a a
 
@@ -36190,9 +36387,7 @@ u
 
 g
 
-g
-
-a
+g a
 
 re u
 
@@ -37322,7 +37517,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 9
 
-19 7 2
+19
+
+7 2
 
 02
 
@@ -37364,7 +37561,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 9
 
-6 7 4
+6
+
+7 4
 
 1
 
@@ -37428,7 +37627,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 8
 
-2 2 3
+2
+
+2 3
 
 1
 
@@ -37450,7 +37651,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 3
 
-3 3 9
+3
+
+3 9
 
 1
 
@@ -37498,7 +37701,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 7
 
-9 1 8
+9
+
+1 8
 
 02
 
@@ -37540,7 +37745,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 3
 
-48 8 0
+48
+
+8 0
 
 0
 
@@ -37582,7 +37789,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 1
 
-0 6 3
+0
+
+6 3
 
 0 1
 
@@ -37616,7 +37825,9 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 3
 
-5 9 7
+5
+
+9 7
 
 15
 
@@ -37684,9 +37895,7 @@ n
 
 e
 
-e
-
-r ke
+e r ke
 
 r
 
@@ -37724,7 +37933,9 @@ r
 
 r
 
-te a e ad
+te
+
+a e ad
 
 e e ad
 
@@ -37786,9 +37997,7 @@ n
 
 n
 
-s
-
-t s
+s t s
 
 t s
 
@@ -37822,7 +38031,9 @@ a n
 
 s o
 
-t s o k s o
+t s o
+
+k s o
 
 sa o o k a
 
@@ -37840,7 +38051,9 @@ s o k
 
 r o k
 
-k k k ts tn ö k ts
+k
+
+k k ts tn ö k ts
 
 n k ts
 
@@ -37854,9 +38067,7 @@ o k ts e k ts
 
 r
 
-t
-
-ft
+t ft
 
 f ft
 
@@ -37876,9 +38087,7 @@ v
 
 ft
 
-l
-
-i a s
+l i a s
 
 i a
 
@@ -37940,7 +38149,9 @@ In a D
 
 In
 
-. s D
+.
+
+s D
 
 t
 
@@ -38187,9 +38398,7 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 5
 
-0
-
-2 2
+0 2 2
 
 2
 
@@ -38473,9 +38682,7 @@ n
 
 k tn
 
-s
-
-k
+s k
 
 la
 
@@ -38697,9 +38904,7 @@ o
 
 ra ra ra
 
-O
-
-n
+O n
 
 O a n
 
@@ -38723,9 +38928,7 @@ S
 
 v v v
 
-N
-
-F T
+N F T
 
 N R B T
 
@@ -38777,9 +38980,7 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 4
 
-5 4
-
-9
+5 4 9
 
 4 4 7 3 6 3 4 5 4
 
@@ -38825,9 +39026,7 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 0
 
-2
-
-5
+2 5
 
 0
 
@@ -38851,9 +39050,7 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 2
 
-8 2
-
-4
+8 2 4
 
 2 6
 
@@ -38919,9 +39116,7 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 5
 
-2 3
-
-6
+2 3 6
 
 5 1 4 3 6 5 8 6 3
 
@@ -38993,9 +39188,7 @@ hhttttppss::////ssiiggnn..vviissmmaa..nneett//ssvv//ddooccuummeenntt--cchheecckk
 
 2
 
-5 1
-
-6
+5 1 6
 
 2 7
 
@@ -39425,9 +39618,7 @@ g
 
 g a
 
-G
-
-d
+G d
 
 t g
 
@@ -39455,7 +39646,9 @@ k
 
 a
 
-lu k
+lu
+
+k
 
 r
 
@@ -39553,9 +39746,7 @@ V
 
 N S
 
-N
-
-B Å S
+N B Å S
 
 N L U U U U U S P S
 
@@ -40690,17 +40881,17 @@ framskrider tekniskt och tidsmässigt.
 
 Genomförandeavtal Ledningsflytt Sid 8 (10)
 
-811
+§11
 
 & 11.1
 
 & 11.2
 
-812
+§ 12
 
-813
+§13
 
-314
+§14
 
 SAMORDNINGSANSVAR
 
@@ -40750,9 +40941,9 @@ Genomförandeavtal Ledningsflytt är giltigt när det är undertecknat av båda 
 
 Genomförandeavtal Ledningsflytt Sid 9 (10)
 
-815
+§15
 
-816
+§16
 
 Part har rätt att skriftligen säga upp detta Genomförandeavtal Ledningsflytt till
 omedelbart upphörande eller till den senare tidpunkt som uppsägande Part anger
@@ -40761,12 +40952,12 @@ om:
 Den andre Parten väsentligen bryter mot sina åtaganden enligt detta
 Genomförandeavtal Ledningsflytt och det inte är möjligt att vidta rättelse, eller om
 detta är möjligt, inte vidtagit rättelse inom sextio (60) dagar efter skriftlig anmodan
-ställd till den andra Parten med hänvisning till denna 8 16;
+ställd till den andra Parten med hänvisning tilldenna § 16;
 
 Den andre Parten ställer in betalningarna eller annars kan antas ha kommit på
 obestånd.
 
-I enlighet med 83.5 efter genomförd upphandling.
+I enlighet med §3.5 efter genomförd upphandling.
 
 Skulle Beställaren frånträda Genomförandeavtal Ledningsflytt ska Beställaren ersätta
 Ellevio i enlighet med kostnadsfördelning i § 5.2 för samtliga kostnader som Ellevio
@@ -40775,7 +40966,7 @@ Ellevio i enlighet med kostnadsfördelning i § 5.2 för samtliga kostnader som 
 För det fall Beställaren säger upp Genomförandeavtal Ledningsflytt, eller önskar att
 Ellevio väsentligen pausar framdriften av Ellevios arbeten enligt Genomförandeavtal
 Ledningsflytt, är Beställaren skyldig att betala i enlighet med kostnadsfördelning i
-85.2 för utförda eller beställda anslutnings- och anläggningsarbeten och övriga
+§5.2 för utförda eller beställda anslutnings- och anläggningsarbeten och övriga
 projektrelaterade kostnader som Beställaren ännu inte har ersatt, kostnader för
 nödvändiga och rimliga återställandearbeten som direkt föranleds av uppsägningen.
 

@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.4920649e196f63f72e9bd2cc/1748327376
 sha256: 2c07c83d67ce3b550e24265f15d2935cdff33de1fcc731a51538a28a43c62c22
 bytes: 69020174
 sidor: 513
-hamtad: 2026-11-18T13:42:33+00:00
-konverterad: 2026-11-18T13:50:00+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T03:25:24+00:00
+konverterad: 2026-11-24T03:37:10+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, tabell-osaker, ocr, tabell-osaker, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ocr, ok, ok, ok, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [71, 74, 75, 76, 77, 119, 120, 142, 143, 158, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 187, 205, 207, 208, 237, 238, 276, 277, 289, 292, 293, 295, 296, 297, 299, 300, 301, 302, 303, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 317, 319, 321, 323, 324, 325, 326, 327, 328, 329, 332, 334, 335, 338, 339, 340, 341, 342, 344, 345, 346, 347, 348, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 371, 372, 460, 468, 470, 472, 473, 474, 475, 477, 478, 479, 480, 481, 482, 483, 484, 485, 501, 502]
-figurer: [16, 27, 41, 53, 59, 60, 71, 75, 76, 77, 82, 90, 95, 99, 105, 124, 131, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 183, 184, 191, 193, 195, 196, 198, 202, 215, 216, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 320, 321, 322, 326, 328, 329, 330, 331, 332, 334, 338, 339, 340, 341, 342, 343, 347, 348, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 363, 364, 365, 366, 367, 368, 370, 371, 372, 374, 375, 376, 467, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 494, 495, 503]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ocr, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ocr, ocr, tabell-osaker, ocr, tabell-osaker, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ocr, ok, ok, ok, ointressant, ocr, ocr, ocr, ointressant, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [74, 119, 142, 158, 168, 169, 170, 171, 173, 174, 176, 177, 178, 180, 181, 183, 187, 205, 207, 208, 237, 238, 276, 277, 289, 292, 293, 295, 296, 297, 299, 301, 302, 303, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 319, 321, 323, 324, 325, 326, 327, 328, 329, 332, 334, 335, 338, 339, 340, 341, 342, 344, 345, 348, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 372, 460, 468, 470, 472, 474, 475, 477, 478, 480, 481, 482, 484, 485, 502]
+figurer: [16, 27, 41, 53, 59, 60, 71, 75, 76, 77, 82, 90, 95, 99, 105, 124, 131, 143, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 191, 193, 195, 196, 198, 202, 215, 216, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 320, 321, 322, 326, 328, 329, 330, 331, 332, 334, 338, 339, 340, 341, 342, 343, 347, 348, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 363, 364, 365, 366, 367, 368, 370, 371, 372, 374, 375, 376, 467, 472, 474, 475, 476, 477, 478, 480, 481, 482, 484, 485, 494, 495, 502, 503]
 tolkade: []
 granskad: null
 ---
@@ -5146,7 +5146,7 @@ där uppföljning är en stående punkt.
 
 § 3 Arbetstagarparten förklarar sig enig med arbetsgivaren.
 
-8 4 Förhandlingen förklarades avslutad vid dagen datum.
+§ 4 Förhandlingen förklarades avslutad vid dagen datum.
 
 Justeras den 2025-02-11
 
@@ -6104,9 +6104,9 @@ Arbetssituation och behov kommer att följas upp löpande under
 Uppföljning sker på APT och i lokal samverkansgrupp, LSG,
 där uppföljning är en stående punkt.
 
-8 3 Arbetstagarparten förklarar sig enig med arbetsgivaren.
+§ 3 Arbetstagarparten förklarar sig enig med arbetsgivaren.
 
-8 4 Förhandlingen förklarades avslutad vid dagen datum.
+§ 4 Förhandlingen förklarades avslutad vid dagen datum.
 
 Justeras den 2025-03-17
 
@@ -7579,7 +7579,7 @@ enligt gällande kommunala taxor. a
 
 20.1
 
-913\)
+9(13)
 
 Betalning till Kommunen ska ske i takt med genomförandet. Exploatören ska beredas
 möjlighet att granska samtliga handlingar som ligger till grund för betalning av
@@ -7807,6 +7807,14 @@ Bilaga C, utbyggnad gatuanläggningar
 Översikt åtgärd Borgåsliden/Kungsparksvägen
 
 <!-- sida 183 -->
+
+vattenledning
+Skala 1:1800 i A1, skala 1:2000 i A3
+ANVÄNDNING AV
+Detaljplanen är baserad på koordinatsystemet SWEREF 99
+1200 och höjdsystemet RH 2000
+Höjdpunkt Höjdkurva 5,0 m
+Bostadshus fasad, resp. tak
 
 <!-- sida 184 -->
 
@@ -13125,7 +13133,7 @@ je månad ihop med partner analyserar, utvärderar utveck-
 lingen och prognoser på lång och kort sikt. Varje månad
 görs olika former av prissäkringar. Resultatet för 2024 visar
 att vi lyckats ganska bra med att kombinera rörligt pris och
-prissäkringar För 2025 har vi säkrat 73 2 till en nivå kring 45
+prissäkringar. För 2025 har vi säkrat 73 % till en nivå kring 45
 öre/kWwW/h exkl skatter och avgifter.
 
 Dagligt miljöarbete
@@ -21351,15 +21359,78 @@ Löftaskog
 
 <!-- sida 480 -->
 
+Bilaga 6 — Förbud mot användande av lustgas i berusningssyfte:
+Kungsbacka stad och Fjärås/Hjälm
+Skolor + Förskolor + Gymnasier + Vuxenutbildning och badplatser inom tätortsområden samt badplatser Gäddeviken, Fjärås
+Bräcka, Hanhals Holme och Stora Iglakärr + Stegatorp och Gårdakottarna förskolor och Sveriges Ridgymnasium utanför
+Streva
+Hanhals
+Kungsbackafjorden
+
 <!-- sida 481 -->
 
+Bilaga 6 — Förbud mot användande av lustgas i berusningssyfte:
+
+Onsala och Vallda
+
+Skolor + Förskolor och badplatser inom tätortsområden samt badplatser Vallda Sandö, Smarholmen, Hagaholm och Gottskär
+Utholmen samt Sälungens förskola utanför tätortsområde
+
+7 ee
+
+Västra Hag
+
+&v
+
+Onsala Sandö
+
 <!-- sida 482 -->
+
+Bilaga 6 — Förbud mot användande av lustgas i berusningssyfte:
+Kullavik/Särö
+
+Skolor + Förskolor samt badplatser inom tätortsområde
+
+ällesås
+
+Kehöln. )
 
 <!-- sida 483 -->
 
 <!-- sida 484 -->
 
+Bilaga 6 — Förbud mot användande av lustgas i berusningssyfte:
+
+Åsa
+
+Skolor + Förskolor + badplatser inom tätortsområde samt badplatser Rågelund och Tjolöholm utanför tätortområde
+
+'å . - Ja Vv
+UT öre
+7 Sintor
+Få Ar
+.
+\+ NIE .
+;
+
+0\)
+Landabukten
+
 <!-- sida 485 -->
+
+Bilaga 6 — Förbud mot användande av lustgas i berusningssyfte:
+
+Frillesås
+Skolor + Förskolor inom tätortsområde samt badplatser Torstensvik och Vallersvik utanför tätortsområde
+
+( | Björberg Lannestoék 4” Skålltorp
+
+4
+
+. p
+Maen NV DA = z Å
+
+Löftabro 7
 
 <!-- sida 486 -->
 
@@ -21970,7 +22041,7 @@ För att motverka missbruket av lustgas och skydda våra invånare, särskilt
 ungdomar, föreslår Sverigedemokraterna ett lokalt förbud mot användning
 av lustgas i berusningssyfte inom specifika offentliga områden i
 Kungsbacka kommun. Förbudet ska utformas enligt Ordningslagen 3 kap
-12 8 och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
+12 § och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
 alkoholförtäring redan är förbjuden, vilket skulle ge polisen ett tydligt
 mandat att ingripa och förhindra missbruk på offentliga platser.
 
