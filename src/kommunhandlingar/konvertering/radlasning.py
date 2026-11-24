@@ -1,4 +1,4 @@
-"""Krav: K84 i docs/02-KRAV.md, ADR-0005 och ADR-0105. Test:
+"""Krav: K84 i docs/02-KRAV.md, ADR-0005, ADR-0105 och ADR-0116. Test:
 tests/test_radlasning.py.
 
 Väg H på en sidbild i 300 dpi. RapidOCR hittar raderna och läser dem.

@@ -1241,10 +1241,11 @@ tankstreck eller kolon mellan två siffror tagits bort, eftersom båda
 motorerna läser `09: 35` som `09:35`. Ett bindestreck med mellanslag på
 båda sidor räknas som ett tankstreck. En rad där en siffra står direkt
 intill en bokstav i någon av läsningarna bekräftas inte, eftersom båda
-motorerna läser `Kl.` som `K1.`. Inte heller en rad där ett ord efter
-radens första bara är `o` eller `O` i någon av läsningarna, eftersom en
-nolla i ett typsnitt med gemena siffror läses så; en sådan rad räknas
-som en rad med tal, så att sidan inte blir bekräftad
+motorerna läser `Kl.` som `K1.`. Inte heller en rad där `o` eller `O` står
+utan en bokstav intill i någon av läsningarna (`Årskurs o`, `o-5`),
+eftersom en nolla i ett typsnitt med gemena siffror läses så; en sådan
+rad räknas som en rad som kan ha tal, så att sidan inte blir bekräftad.
+`t.o.m.` och en punktlistas `o` först på raden räknas inte
 ([ADR-0116](decisions/0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md)).
 Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
@@ -1263,7 +1264,7 @@ modulernas docstring, och bara där. Inte heller en rad vars ruta går in i
 en annan ruta på samma rad bekräftas, eftersom RapidOCR då kan läsa en
 bit av grannens tal som ett eget.
 
-**Sidan** är bekräftad när varje rad med tal är det och inget tal i
+**Sidan** är bekräftad när varje rad som kan ha tal är det och inget tal i
 Tesseracts ord står utanför raderna.
 
 **Kalibreringen** (`kalibrering/`). `urval.py` väljer sidor med `ok`, utan
@@ -1277,7 +1278,7 @@ front matter mäts inte. `facit.py` och `matning.py` jämför varje rad med
 talen i textlagrets tecken vars mittpunkt ligger i radens ruta. Mellan två
 tecken räknas ett mellanslag när textlagret har ett eller när avståndet
 syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt.
-Ett blanksteg vars mittpunkt ligger i ett synligt tecken, som ett
+Ett blanksteg som börjar inne i ett synligt tecken, som ett
 kalkylarks utfyllnad ovanpå talet, är inget mellanrum (ADR-0116).
 En rad med en vriden eller spegelvänd siffra i textlagret har inget
 facit, eftersom tecknens ordning från vänster då inte är textens. Andra

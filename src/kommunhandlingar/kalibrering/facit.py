@@ -8,7 +8,7 @@ avstånd, eftersom pdfplumbers ord ibland läser ihop det som syns
 åtskilt (`2021-03-2215:33:39`) och en spärrad rad har luft mellan alla
 tecken. Det vanliga avståndet räknas bara när raden har minst fyra
 avstånd mellan tecken intill varandra, så att ett enda synligt mellanrum
-inte blir det vanliga. Ett blanksteg vars mittpunkt ligger i ett synligt
+inte blir det vanliga. Ett blanksteg som börjar inne i ett synligt
 tecken är inget mellanrum, eftersom en PDF ur ett kalkylark kan lägga
 cellens utfyllnad ovanpå talet, så att `730` blir `7`, blanksteg, `30`
 från vänster. En rad som rör en bild på sidan har inget facit,
@@ -77,20 +77,20 @@ def rak(tecken: dict) -> bool:
 
 def med_mellanrum(tecken: list[dict]) -> str:
     synliga = [t for t in tecken if not t["text"].isspace()]
-    tecken = [t for t in tecken if not under(t, synliga)]
     avstand = [b["x0"] - a["x1"] for a, b in pairwise(synliga) if intill(a, b)]
     vanligt = max(0, median(avstand)) if len(avstand) >= SPARRAD else 0
-    text = [tecken[0]["text"]] if tecken else []
-    for fore, t in pairwise(tecken):
+    raden = [t for t in tecken if not borjar_i_ett_tecken(t, synliga)]
+    text = [raden[0]["text"]] if raden else []
+    for fore, t in pairwise(raden):
         if t["x0"] - fore["x1"] - vanligt >= MELLANRUM * t["size"]:
             text.append(" ")
         text.append(t["text"])
     return "".join(" " if t.isspace() else t for t in text)
 
 
-def under(tecken: dict, synliga: list[dict]) -> bool:
-    mitt = (tecken["x0"] + tecken["x1"]) / 2
-    return tecken["text"].isspace() and any(s["x0"] < mitt < s["x1"] for s in synliga)
+def borjar_i_ett_tecken(blanksteg: dict, synliga: list[dict]) -> bool:
+    x = blanksteg["x0"]
+    return blanksteg["text"].isspace() and any(s["x0"] < x < s["x1"] for s in synliga)
 
 
 def har_upphojt(sida: Facitsida, ruta: Ruta) -> bool:

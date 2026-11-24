@@ -45,9 +45,9 @@ Orsakerna är två, och de är av olika slag.
 
 För nollan:
 
-* A – En rad med ett fristående `o` efter radens första ord kan ha ett
-  tal och bekräftas aldrig
-* B – Varje fristående `o`, också först på raden
+* A – En rad med ett `o` utan en bokstav intill kan ha ett tal och
+  bekräftas aldrig, utom `t.o.m.` och en punktlistas punkt
+* B – Bara ett fristående ord `o` efter radens första ord
 * C – Ingen ändring i väg H; sidan tas ur kalibreringen
 
 För facit:
@@ -60,21 +60,24 @@ För facit:
 
 Valt: A och D.
 
-**A.** En rad där ett ord i någon av de två läsningarna, utom radens
-första, bara består av `o` och `O`, eventuellt med en punkt, ett
-kommatecken eller ett kolon efter (`o`, `Oo`, `o.`), räknas som en rad
-som kan ha ett tal, även när ingen läsning har en siffra. Den bekräftas
-aldrig, med orsaken `o-som-nolla`, och sidan får då obekräftade tal.
-Regeln står i `vag_h.py` (`kan_ha_tal`, `osaker`) och gäller både
-kalibreringen och konverteringen, eftersom båda läser med
-`radlasning.las`. Radens första ord räknas inte, eftersom Word skriver en
-punktlistas andra nivå med `o` som punkt och Tesseract läser den så
-(`o 0-7 år`), medan en nolla först på raden är sällsynt. `t.o.m.` och
-`O:\` är inga fristående `o`.
+**A.** En rad där `o` eller `O`, ett eller flera i följd, står utan en
+bokstav intill i någon av de två läsningarna (`Årskurs o`,
+`Årskurs Oo`, `o-5`, `o,5 %`, `(o)`, en tabellcell med bara `o`) räknas
+som en rad som kan ha ett tal, även när ingen läsning har en siffra. Den
+bekräftas aldrig, med orsaken `o-som-nolla`, och sidan får då
+obekräftade tal. Ett `o` intill en siffra (`1o`) stoppas redan av regeln
+om en bokstav intill en siffra. Två undantag: ett `o` mellan en bokstav
+och en punkt (`t.o.m.`, `o.s.v.`), och ett `o` först på raden med text
+efter, eftersom Word skriver en punktlistas andra nivå med `o` som punkt
+och Tesseract läser den så (`o 0-7 år`). Regeln står i `vag_h.py`
+(`kan_ha_tal`, `aldrig_bekraftad`) och gäller både kalibreringen och
+konverteringen, eftersom båda läser med `radlasning.las`.
 
-**D.** I facit är ett blanksteg i textlagret inget mellanrum när dess
-mittpunkt ligger i ett synligt tecken på samma rad, eftersom det inte
-syns (`kalibrering/facit.py`).
+**D.** I facit är ett blanksteg i textlagret inget mellanrum när det
+börjar inne i ett synligt tecken på samma rad, eftersom det då ligger
+ovanpå tecknet och inte syns (`kalibrering/facit.py`). Ett blanksteg som
+börjar där tecknet före slutar räknas som förut, också när det är
+bredare än luckan.
 
 Poolens version höjs till 0.18.0, och bara dokument med sidor som läses
 med OCR konverteras om, eftersom regeln bara rör väg H (ADR-0107).
@@ -89,9 +92,12 @@ med OCR konverteras om, eftersom regeln bara rör väg H (ADR-0107).
   obekräftad också när talen lästs rätt. I den röda körningens 5 016 rätt
   bekräftade rader gäller det 5, alla där RapidOCR eller Tesseract läst
   linjer eller prickar som lösa bokstäver.
-* Dåligt, eftersom en nolla som läses som ett `o` först på raden
-  fortfarande inte märks. Den lämnas med avsikt, för punktlistornas
-  skull, och kalibreringen visar om det händer.
+* Dåligt, eftersom en nolla som läses som ett `o` först på raden, med
+  text efter (`o kr`), fortfarande inte märks. Den lämnas med avsikt,
+  för punktlistornas skull, och kalibreringen visar om det händer.
+* Dåligt, eftersom en sida där en motor läst en kryssruta eller en
+  prick som ett löst `o` på en rad utan tal nu blir obekräftad. Hur
+  många bekräftade sidor det kostar visar kalibreringen i PR:en.
 * Dåligt, eftersom gemena siffror har fler former som liknar bokstäver,
   som ettan i Georgia. Inget sådant fel har setts; regeln tar bara det
   som kalibreringen visat, och kalibreringen körs igen i varje PR som
@@ -100,25 +106,29 @@ med OCR konverteras om, eftersom regeln bara rör väg H (ADR-0107).
 
 ### Confirmation
 
-`tests/test_vag_h.py` prövar att `Årskurs o` och `Årskurs Oo` inte
-bekräftas och att `o` som punkt, `t.o.m.` och `O:\` inte räknas.
-`tests/test_kalibrering.py` prövar att ett blanksteg under en siffra inte
-delar talet. Kalibreringen i PR:en mäter 300 sidor ur poolen med det
+`tests/test_vag_h.py` prövar att `Årskurs o`, `Årskurs Oo`, `o-5`,
+`o,5 %`, `(o)` och en ensam `o` inte bekräftas och att `o` som punkt,
+`t.o.m.` och `o.s.v.` inte räknas. `tests/test_radlasning.py` prövar att
+en rad utan siffror med `Årskurs o` avgörs och gör sidan obekräftad.
+`tests/test_kalibrering.py` prövar att ett blanksteg ovanpå en siffra
+inte delar talet, och att ett brett blanksteg efter en siffra gör det. Kalibreringen i PR:en mäter 300 sidor ur poolen med det
 fasta fröet och ska ha noll falska bekräftelser.
 
 ## Pros and Cons of the Options
 
-### A – Ett fristående o efter radens första ord
+### A – Ett o utan en bokstav intill
 
-* Bra, eftersom den tar felet som kalibreringen hittade och nästan inga
-  rätt lästa rader.
-* Dåligt, eftersom en nolla först på raden inte märks.
+* Bra, eftersom den tar felet som kalibreringen hittade, och också en
+  nolla intill ett streck, ett komma eller ett procenttecken, där ett fel
+  tal annars kunde bekräftas (`o-5` som `-5`).
+* Bra, eftersom den kostar lika få rätt lästa rader som B.
+* Dåligt, eftersom en nolla först på raden med text efter inte märks.
 
-### B – Varje fristående o
+### B – Bara ett fristående ord o
 
-* Bra, eftersom också en nolla först på raden märks.
-* Dåligt, eftersom varje punktlista med `o` som punkt, och de är vanliga
-  i handlingarna, får obekräftade tal.
+* Bra, eftersom regeln blir enklast.
+* Dåligt, eftersom `o-5` och `o,5 %` bekräftas som `-5` och `5%`, och en
+  tabellcell med bara `o` inte märks. Det fann granskningen.
 
 ### C – Ingen ändring i väg H
 

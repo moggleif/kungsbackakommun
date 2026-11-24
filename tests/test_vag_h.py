@@ -51,13 +51,14 @@ class Avgor(unittest.TestCase):
         svar = avgor("Kl. 16:05", "K1. 16:05", inte_anropad)
         self.assertEqual(svar, Avgorande(None, "bokstav-vid-siffra"))
 
-    def test_ett_fristaende_o_kan_vara_en_nolla(self):
+    def test_ett_o_som_kan_vara_en_nolla(self):
         svar = avgor("Årskurs o", "Årskurs Oo", inte_anropad)
         self.assertEqual(svar, Avgorande(None, "o-som-nolla"))
-        self.assertTrue(kan_ha_tal("Årskurs o."))
+        for text in ("Barn o-5 år", "ränta o,5 %", "(o)", "o", "Totalt o."):
+            self.assertTrue(kan_ha_tal(text), text)
 
     def test_o_som_punkt_och_i_ord_ar_inget_tal(self):
-        for text in ("o Budgeten", "t.o.m. idag", "O:\\GBG"):
+        for text in ("o Budgeten", "t.o.m. idag", "o.s.v.", "och Oskar"):
             self.assertFalse(kan_ha_tal(text), text)
 
     def test_tre_olika_lasningar(self):

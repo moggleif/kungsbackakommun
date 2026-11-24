@@ -18,12 +18,13 @@ tal och inte `116-4`.
 En rad där en siffra står direkt intill en bokstav i någon av de två
 läsningarna bekräftas aldrig. Där läser båda motorerna gärna en bokstav
 som en siffra på samma sätt, som `Kl.` som `K1.`. Inte heller en rad där
-ett fristående `o` eller `O` står efter radens första ord i någon av
-läsningarna, eftersom nollan i en typsnittsfamilj med gemena siffror, som
-Georgia, ser ut som ett `o`, och båda motorerna läser `Årskurs 0` som
-`Årskurs o`. En sådan rad räknas som en rad med tal, så att sidan inte
-blir bekräftad. Radens första ord räknas inte, eftersom en punktlista
-med `o` som punkt är vanlig och en nolla först på raden sällsynt.
+`o` eller `O` står utan en bokstav intill i någon av läsningarna
+(`Årskurs o`, `o-5`, `o,5 %`, `(o)`), eftersom nollan i ett typsnitt med
+gemena siffror, som Georgia, ser ut som ett `o`, och båda motorerna läser
+`Årskurs 0` som `Årskurs o`. En sådan rad räknas som en rad som kan ha
+ett tal, så att sidan inte blir bekräftad. Undantagen är ett `o` mellan
+en bokstav och en punkt (`t.o.m.`, `o.s.v.`), och ett `o` först på raden
+med text efter, som är en punktlistas punkt (`o Budgeten`).
 """
 
 import re
@@ -36,7 +37,11 @@ KRING_TANKSTRECK = re.compile(r"(?<=\d)(?: *[–—][-–—]* *| +- +)(?=\d)")
 PROCENT = re.compile(r"(\d) %")
 BOKSTAV_VID_SIFFRA = re.compile(r"[^\W\d_]\d|\d[^\W\d_]")
 KRING_KOLON = re.compile(r"(?<=\d) *: *(?=\d)")
-O_SOM_NOLLA = re.compile(r"[oO]+[.,:]?")
+BOKSTAV = r"[^\W\d_]"
+O_SOM_NOLLA = re.compile(
+    rf"(?<!{BOKSTAV})(?<!{BOKSTAV}\.)[oO]+(?!{BOKSTAV})(?!\.{BOKSTAV})"
+)
+PUNKT = re.compile(r"^\s*[oO]\s+(?=\S)")
 
 
 @dataclass(frozen=True)
@@ -55,20 +60,20 @@ def kan_ha_tal(text: str) -> bool:
 
 
 def o_som_nolla(text: str) -> bool:
-    return any(O_SOM_NOLLA.fullmatch(o) for o in text.split()[1:])
+    return bool(O_SOM_NOLLA.search(PUNKT.sub("", text)))
 
 
-def osaker(texter: tuple[str, str]) -> str | None:
+def aldrig_bekraftad(rapid: str, tesseract: str) -> str | None:
     """Varför raden inte kan bekräftas, vad läsningarna än säger, eller None."""
-    if any(BOKSTAV_VID_SIFFRA.search(t) for t in texter):
+    if any(BOKSTAV_VID_SIFFRA.search(t) for t in (rapid, tesseract)):
         return "bokstav-vid-siffra"
-    if any(o_som_nolla(t) for t in texter):
+    if any(o_som_nolla(t) for t in (rapid, tesseract)):
         return "o-som-nolla"
     return None
 
 
 def avgor(rapid: str, tesseract: str, tredje: Callable[[], str]) -> Avgorande:
-    if hur := osaker((rapid, tesseract)):
+    if hur := aldrig_bekraftad(rapid, tesseract):
         return Avgorande(None, hur)
     forsta, andra = tal(rapid), tal(tesseract)
     if forsta == andra:
