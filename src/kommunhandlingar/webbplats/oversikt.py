@@ -7,7 +7,9 @@ vilka organ som har vilka sidor. Ett
 utskott står direkt under organet det hör till, och organen står i
 kommunfilens grupper när den har några. En webbplats med en enda kommun
 börjar på kommunens sida, som då heter "Handlingar och protokoll" i stället för
-sajtens namn (K58, ADR-0082).
+sajtens namn (K58, ADR-0082). Överst länkar sidan till GitHubs sökning
+i hela texten i kommunens mapp, som inte söker i filer över 350 kB
+(K96, ADR-0119).
 """
 
 from collections.abc import Callable
@@ -43,9 +45,17 @@ def oversikt(
         {rad.id: rad.sammantraden for rad in rader},
     )
     grupper = "".join(tabellen.grupp(namn, o) for namn, o in grupperade(kommun))
-    return inledning(sammanhang, dokument) + (
+    return (
+        inledning(dokument)
+        + fulltext(sammanhang.mall.repo, kommun.id)
+        + tabell(tabellen.huvud(), grupper)
+    )
+
+
+def tabell(huvud: str, grupper: str) -> str:
+    return (
         '<div class="tabell"><table class="oversikt"><thead><tr>'
-        f'<th scope="col">Organ</th><th scope="col">Sammanträden</th>{tabellen.huvud()}'
+        f'<th scope="col">Organ</th><th scope="col">Sammanträden</th>{huvud}'
         f"</tr></thead>{grupper}</table></div>"
     )
 
@@ -81,23 +91,23 @@ def kommunens_sidor(antal: dict[str, dict[str, int]]) -> list[tuple[str, str, st
     return [s for s in SIDOR if any(a[s[0]] for a in antal.values())]
 
 
-def inledning(sammanhang: Sammanhang, dokument: list[dict]) -> str:
+def inledning(dokument: list[dict]) -> str:
     datum = sorted(d["datum"] for d in dokument) or ["–"]
     antal = f"{len(dokument):,}".replace(",", " ")
     return (
         f"<p>{antal} dokument från {escape(datum[0])} till {escape(datum[-1])}. "
         "Välj ett organ, eller gå direkt till en av dess sidor över tid. "
         "Ett streck betyder att organet inte har sidan.</p>"
-    ) + fulltext(sammanhang.mall.repo, sammanhang.kommun.id)
+    )
 
 
-# GitHubs kodsökning i kommunens mapp i repot (K96, ADR-0119).
 def fulltext(repo: str, kommun_id: str) -> str:
     fraga = quote_plus(f"repo:{repo.removeprefix(GITHUB)} path:data/{kommun_id}/")
     adress = escape(f"{GITHUB}search?q={fraga}&type=code")
     return (
         f'<p><a href="{adress}">Sök i hela texten på GitHub</a> '
-        "(kräver inloggning på GitHub).</p>"
+        "(kräver inloggning på GitHub, och de största handlingarna, filer "
+        "över 350 kB, söks inte).</p>"
     )
 
 

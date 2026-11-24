@@ -181,6 +181,7 @@ class TestNavigering(unittest.TestCase):
             html,
         )
         self.assertIn("kräver inloggning", html)
+        self.assertIn("över 350 kB, söks inte", html)
 
     def test_organen_star_i_kommunfilens_grupper(self):
         kommun = kommun_med_utskott()

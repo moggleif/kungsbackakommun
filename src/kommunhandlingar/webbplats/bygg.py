@@ -74,10 +74,12 @@ def bygg_kommun(bygge: Bygge, katalog: Path, kommun: Kommun) -> list[dict]:
     )
     bygg_oversikten(bygge, kommun, dokument)
     bygg_organen(bygge, kommun, dokument)
-    return sokgrupper(kommun, underlag.paragrafer, dokument)
+    return kommunens_sokgrupper(kommun, underlag.paragrafer, dokument)
 
 
-def sokgrupper(kommun: Kommun, paragrafer: list[dict], dokument: list[dict]) -> list:
+def kommunens_sokgrupper(
+    kommun: Kommun, paragrafer: list[dict], dokument: list[dict]
+) -> list[dict]:
     return [sokindex.grupp(kommun, paragrafer), sokdokument.grupp(kommun, dokument)]
 
 

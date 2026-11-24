@@ -46,7 +46,7 @@ class TestSokdokument(Index):
             "kvalitet_per_sida": "[ok, tabell-osaker, ocr]",
         }
         self.assertEqual(
-            sokdokument.post(falt, "Kommunstyrelsen", "exempelby")["om"][2:],
+            sokdokument.post(falt, "Förskole- och skolnämnden", "exempelby")["om"][2:],
             [
                 "kvalitet ocr",
                 "obekräftade tal på 2 sidor",
@@ -59,12 +59,12 @@ class TestSokdokument(Index):
             "organ": "bun",
             "datum": "2024-05-02",
             "typ": "detaljplan",
-            "namn": "bostader-i-notegang-plankarta",
+            "namn": "skolan-i-exempelby-plankarta",
             "adress": "x.html",
             "kvalitet": "full",
             "tal_obekraftade": "[]",
             "kvalitet_per_sida": "[ok]",
         }
-        post = sokdokument.post(falt, "Byggnadsnämnden", "exempelby")
-        self.assertEqual(post["rubrik"], "Detaljplan – bostader-i-notegang-plankarta")
-        self.assertEqual(post["traff"], "detaljplan – bostader i notegang plankarta")
+        post = sokdokument.post(falt, "Barn- och ungdomsnämnden", "exempelby")
+        self.assertEqual(post["rubrik"], "Detaljplan – skolan-i-exempelby-plankarta")
+        self.assertEqual(post["traff"], "detaljplan – skolan i exempelby plankarta")

@@ -2223,14 +2223,16 @@ datakontrollen och bygget delar.
   [ADR-0119](decisions/0119-dokumenten-i-sokindexet-och-texten-pa-github.md))
   står i en andra grupp per kommun, *Dokumenten i* och kommunens namn,
   efter protokollens: en post per dokument, nyast först. `rubrik` är typen
-  och namnet som på organets sida, `adress` dokumentets sida, `om`
-  organets namn, datumet i klartext, kvaliteten och, när de finns,
+  och namnet som på organets sida, med stor första bokstav, `adress` dokumentets sida, `om`
+  organets namn, datumet i klartext och kvaliteten som organets sida
+  skriver den (`organsida.kvaliteten`): kvaliteten och, när de finns,
   antalet sidor med obekräftade tal och med osäkra tabeller
   (`tabell-osaker`). `traff` är rubriken med namnets bindestreck som
   mellanslag, och `text` organet och datumet i klartext.
 - **Hela texten** söks på GitHub: kommunens översikt länkar till
   kodsökningen med `repo:` och `path:data/<kommun>/` ifyllda, ur
-  webbplatsens repoadress.
+  webbplatsens repoadress. GitHub söker inte i filer över 350 kB, och
+  länken säger det.
 
 ## Webbplatsen
 

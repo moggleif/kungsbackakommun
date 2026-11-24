@@ -2842,8 +2842,8 @@ också hitta dokumenten, och se om de är osäkra innan de öppnas.
   datumet och kvaliteten.
 - **Givet** ett dokument med obekräftade tal eller osäkra tabeller
 - **När** det står bland träffarna
-- **Så** säger posten på hur många sidor talen är obekräftade och
-  tabellerna osäkra.
+- **Så** säger posten, som dokumentets rad på organets sida, på hur
+  många sidor talen är obekräftade och tabellerna osäkra.
 - **Givet** knappen *Sök* i projektets sajtrad
 - **När** någon söker på ett ord i dokumentets namn, dess typ, organet
   eller datumet i klartext
@@ -2851,4 +2851,5 @@ också hitta dokumenten, och se om de är osäkra innan de öppnas.
 - **Givet** kommunens översikt
 - **När** den visas
 - **Så** länkar den till en sökning i hela texten i kommunens mapp i
-  repot på GitHub, och säger att den kräver inloggning.
+  repot på GitHub, och säger att den kräver inloggning och inte söker i
+  de största filerna.

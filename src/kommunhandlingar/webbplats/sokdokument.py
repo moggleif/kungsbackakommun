@@ -6,10 +6,9 @@ sidorna med obekräftade tal och osäkra tabeller, så att den som söker ser
 det innan dokumentet öppnas. Namnet söks med bindestrecken som mellanslag.
 """
 
-from kommunhandlingar import frontmatter
 from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import adresser
-from kommunhandlingar.webbplats.organsida import dokumentrubrik
+from kommunhandlingar.webbplats.organsida import dokumentrubrik, kvaliteten
 from kommunhandlingar.webbplats.sokindex import klartext
 
 
@@ -33,16 +32,3 @@ def post(falt: dict, organ: str, kommun_id: str) -> dict:
         "traff": rubrik.replace("-", " ").lower(),
         "text": f"{organ} {datum}".lower(),
     }
-
-
-def kvaliteten(falt: dict) -> list[str]:
-    obekraftade = len(frontmatter.lista(falt["tal_obekraftade"]))
-    tabeller = frontmatter.lista(falt["kvalitet_per_sida"]).count("tabell-osaker")
-    return [f"kvalitet {falt['kvalitet']}"] + [
-        f"{vad} på {antal} {'sida' if antal == 1 else 'sidor'}"
-        for vad, antal in (
-            ("obekräftade tal", obekraftade),
-            ("osäkra tabeller", tabeller),
-        )
-        if antal
-    ]

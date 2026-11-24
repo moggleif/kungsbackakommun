@@ -46,7 +46,8 @@ redan sökbar i repot.
 
 Varje dokument blir en post i en egen grupp per kommun, *Dokumenten i*
 och kommunens namn, med typ och namn, organ, datum och kvalitet, och
-sidorna med obekräftade tal och osäkra tabeller räknade. Kommunens
+sidorna med obekräftade tal och osäkra tabeller räknade, med samma
+text som organets sida, som nu också räknar de osäkra tabellerna. Kommunens
 översikt länkar till GitHubs kodsökning med repot och kommunens mapp
 ifyllda.
 
@@ -61,6 +62,8 @@ ifyllda.
   handlingarna säger bara organ och datum, inte vad som står i dem.
 * Dåligt, eftersom GitHubs kodsökning kräver inloggning, bara söker i
   `main` och visar Markdown-filen, inte dokumentets sida.
+* Dåligt, eftersom GitHub inte söker i filer över 350 kB: 357 av
+  Kungsbackas 5 236 dokument, de största handlingarna. Länken säger det.
 
 ### Confirmation
 
