@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.311aaa10199f64f29ee3b02b/1760940413
 sha256: 97e79aa074dd0202f397a97b29d42fa51d6961eb312182b2aefbfd9fa01caf4d
 bytes: 230813884
 sidor: 409
-hamtad: 2026-11-18T22:25:06+00:00
-konverterad: 2026-11-18T22:34:03+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T04:16:43+00:00
+konverterad: 2026-11-24T04:30:23+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ok, ok, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 76, 77, 78, 79, 80, 81, 82, 83, 86, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 121, 122, 123, 124, 125, 126, 127, 128, 146, 207, 208, 209, 210, 211, 212, 213, 214, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 309, 310, 311, 312, 313, 314, 315, 316]
-figurer: [9, 14, 18, 20, 21, 23, 24, 31, 34, 35, 36, 65, 66, 68, 69, 70, 71, 84, 85, 138, 139, 154, 157, 159, 160, 161, 162, 163, 164, 165, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 186, 188, 200, 267, 268, 269, 270, 271, 272, 273, 274, 382]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [47, 48, 49, 50, 51, 76, 77, 78, 79, 80, 81, 82, 83, 86, 91, 92, 93, 94, 95, 96, 98, 99, 101, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 121, 122, 123, 124, 125, 127, 128, 146, 207, 283, 284, 285, 286, 288, 289, 290, 291, 294, 295, 296, 298, 300, 302, 303, 305, 306, 307, 309, 310, 311, 313, 315, 316]
+figurer: [9, 14, 18, 20, 21, 23, 24, 31, 34, 35, 36, 49, 51, 52, 53, 54, 55, 57, 65, 66, 68, 69, 70, 71, 77, 78, 79, 82, 84, 85, 86, 104, 107, 108, 110, 116, 128, 138, 139, 146, 154, 157, 159, 160, 161, 162, 163, 164, 165, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 186, 188, 200, 267, 268, 269, 270, 271, 272, 273, 274, 302, 303, 313, 382]
 tolkade: []
 granskad: null
 ---
@@ -3521,6 +3521,49 @@ blggre 3
 
 <!-- sida 83 -->
 
+FÖRSLAG TILL BYGGNADSPLAN FÖ
+KULLAVIKSOMRÅDET
+OMFATTANDE MELLERSTA DELEN
+I SÄRÖ KOMMUN, HALLANDS LÄN
+UPPRÄTTAT I JULI 1967, REVIDERAI I JANUARI OCH OKTOBER 1968 SAMT I FEBRUARI 1969
+GÖTEBORGS FÖRORTERS ARKITEKTKONTOR
+GRUNDKARTAN UPPGJORD ÅREN 1955-1959
+KOMPLETTERAD ÅR 1967 AV DISTRIK
+Tillhör länsstyrelsens
+i Hallands län beslut
+den 215 1969 §66 betygar;
+GRUNDKA
+SAMT +
+SLANTMATARE H BERG
+ALLMAN P
+BETECKNINGAR
+RTAN
+\- Stig
+Staket
+Stenmur, stodmur
+Hack
+Aker kant
+Dike
+Vattendrag
+Kraftledning
+Brunn
+Befintliga byggnader
+Nivåkurvor
+Polygonpunkt
+Pla
+med utfartsförbud
+Gröns melon vag och allmän piats, e€ avsedd att faststö las
+Vagmark
+Parkmark
+SKALA 1:200
+Område för bestadsändamå
+TECKNINGAR
+Mark för uthus eher garage
+bebyggas
+för underjordiska 'edninoar
+Mark som icke
+Våningsantal
+
 <!-- sida 84 -->
 
 Orienteringskarta,         Släps-Kullen       2:40
@@ -4410,7 +4453,7 @@ genomförande och avtal.
 
 De särskilt skyddsvärda träden inom planområdet skyddas med planbestämmelse (ni).
 
-Om träden trots detta behöver tas ner krävs ett samråd enligt 12 kap 68 Miljöbalken.
+Om träden trots detta behöver tas ner krävs ett samråd enligt 12 kap 6§ Miljöbalken.
 Regionen ansvarar för att samråd sker.
 
 Sign.
@@ -4528,6 +4571,100 @@ Sign.
 <!-- sida 103 -->
 
 <!-- sida 104 -->
+
+L l I L
+PLANBESTÄMMELSER
+
+Följande gäller inom områden med nedanstående beteckningar. Endast angiven användning och
+ing är tillåten. Där bi ing saknas gäller inom hela området.
+
+GRÄNSER
+
+— 2 a Planområdesgräns.
+
+—— 2nvändningsgräns. Bilaga B
+—a—— Egenskapsgräns.
+
+ANVÄNDNING AV MARK
+Allmän platsmark
+Kvartersmark
+
+Vård.
+
+Tekniska anläggningar.
+
+EGENSKAPSBESTÄMMELSER FÖR ALL KVARTERSMARK
+
+Fastighetsindelningsbestämmelse 37-Tölöverb: akt 1348-P86/2 och 13-KUN-1853 upphävs för
+Tölöberg 2, Tölö 1:2 och Kungsbacka 3:10.
+
+Ändrad lovplikt
+
+Bygglov krävs inte för murar och plank lägre än 80 cm. Bestämmelsen gäller under samma tid som
+detaljplanen.
+
+Bygglov krävs inte för under mark. gäller under samma tid som
+detaljplanen.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+
+Avgränsad via äns och ä ä
+
+Utformning av allmän plats
+
++9,2 Markens höjd över nollplanet ska vara 9,2 meter.
+damm, Damm för dagvattenhantering ska finnas.
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+
+Avgränsad via äns och ar
+Begränsning av markens utnyttjande
+dr VD SR Marken får inte förses med byggnad.
+tta tt Marken får endast förses med servi der, tekniska ir murar och
+förr ort plank.
+0200 0 Endast byggnadsverk under mark.
+AAA nA
+Höjd på byggnadsverk
+h, Högsta nockhöjd är \<angivet> meter över angivet nollplan.
+ha Högsta nockhöjd är 5,0 meter.
+och
+n, Trädet får endast fällas om det är sjukt eller utgör en säkerhetsrisk.
+n, Hällmark ska bevaras.
+n, Ädellövskog ska bevaras.
+n, Träd ska finnas.
+nr, Markens höjd får inte vara lägre än 9,7 meter över nollplanet.
+
+nm Markens höjd får inte vara högre än 9,9 meter över nollplanet.
+Markreservat för allmänn”""iga ändamål
+
+under ordiska
+Utformning
+A För byggnader högre än 4 våningar ska översta våningen vara indragen minst 2,5
+meter från lå fasadliv, ti äning ovan ly
+med operationsavdelning.
+Ändrad lovplikt
+a Marklov krävs även för fällning av träd med en stamdiameter större än 30 cm.
+GENOMFÖRANDETID
+
+'Genomförandetiden är 10 år.
+
+PA meter 198 Detaljplanen är baserad på koordinatsystemet SWEREF 99
+pr i - i 1200 och höjdsysternet RH 2000 ipl i i . g
+Skala 1:1000 TA1, skala 1:2000 i A3 ÅA Detaljplan för sjukhus inom Granskningshandling
+TECKENFÖRKLARING KARTDATA = Aktualltetsdatum: 2025-04-24 AA
+2:14 5 — Reqstemummer, tomtnummer SA Hödkurva 5.0 m är Instans
++4,5 Höjdpunkt — Vigprma Tölöberg 2 och Tölö 1:17 FEN
+Liljan Traktnamn. kvanersnamn CSE] (SZ) — Bostadshus tasad, resp tak i Kungsbacka 2024-07-04
+Fastighetsgrans = FS)  Uthustasad,resp tak Kungsbacka kommun Soda ga0g | BNdelbeslut
+(Gång: och cykelbana 2 Skamtak Upprättad 2025-05-06 Antagande
+RR Höjdkurva 10 m
+Laga kratt
+Ida Lennartsson Emma D avtal
+Verksamhetschef Plan Planarkitekt 291008 [sa
+PLANKARTA |2010 500 mea standardtortarande
+Vv AA AA
+
+u, för ga underjordiska lecni
 
 <!-- sida 105 -->
 
@@ -11711,9 +11848,9 @@ A. BAKGRUND OCH FÖRUTSÄTTNINGAR
 1\. Uppdrag, politiska beslut m.m.
 
 1.1 Byggnadsnämnden uppdrog 2018-11-28 åt samhällsbyggnadskontoret att upprätta ny
-detaljplan för Skällared 3:53.
+detaljplan för Skällared 3:55.
 
-1.22 - Kommunen har tagit fram ett förslag till Detaljplan för bostäder, verksamheter och
+1.2 - Kommunen har tagit fram ett förslag till Detaljplan för bostäder, verksamheter och
 restaurang inom Skällared 3:55 med flera i Gottskär, Kungsbacka kommun,
 Detaljplanen.
 
@@ -11737,7 +11874,7 @@ a) Detaljplanens planområde, Planområdet.
 3.1 Avtalet reglerar exploateringen inom Planområdet och genomförandet av åtgärderna
 inom Exploateringsområdet.
 
-3.22 — Detaljplanen syftar till att skapa förutsättningar för uppförande av bostäder,
+3.2 — Detaljplanen syftar till att skapa förutsättningar för uppförande av bostäder,
 verksamheter, restaurang och sjöbodar inom Skällared 3:55.
 
 Exploatören kommer inom planområdet uppföra ca 70-75 lägenheter i 3-4 våningar med
@@ -12894,7 +13031,7 @@ nedlagda plan- och utredningskostnader, vilket regleras i ett separat plankostna
 
 Överlåtelse av avtal och fastigheter
 
-Avtalet får inte utan Kommunens skriftliga medgivande överlåtas på annan. Exploatören
+35.1 Avtalet får inte utan Kommunens skriftliga medgivande överlåtas på annan. Exploatören
 ska i god tid innan avsedd överlåtelse begära sådant medgivande. Kommunens
 medgivande förutsätter att ny part övertar de skyldigheter som gäller för Exploatören
 enligt Avtalet. Vid överlåtelse till helägt bolag inom samma koncern som Exploatören
@@ -12956,6 +13093,8 @@ Exploateringsavtal Sign.
 
 <!-- sida 302 -->
 
+Bilaga B
+
 <!-- sida 303 -->
 
 Bilaga C
@@ -12963,6 +13102,22 @@ Bilaga C
 <!-- sida 304 -->
 
 <!-- sida 305 -->
+
+Exploatören står kostnaden borttagandet av befintliga vatten- och spillvattenledningar mellan gula markeringar på
+bilden ovan (nr 4-11). Om ett va-genomförandeavtal kan tecknas mellan Kommunen, genom förvaltningen för teknik,
+ansvarar Exploatören även för utförandet av borttagandet av befintliga vatten- och spillvattenledningar mellan gula
+markeringar på bilden ovan (nr 4-11).
+
+Exploatören står kostnaden för utbyggnaden av nya vatten och spillvattenledningar mellan gröna markeringar på
+bilden ovan (ungefär nr 5-11). Om ett va-genomförandeavtal kan tecknas mellan Kommunen, genom förvaltningen för
+
+teknik, ansvarar Exploatören även för utbyggnaden av nya vatten- och spillvattenledningar mellan gröna markeringar
+på bilden ovan (ungefär nr 5-11).
+
+Exploatören står kostnaden och kommunen ansvarar för borttagandet av befintliga vatten- och spillvattenledningar
+mellan nr 4-3 samt utbyggnaden av nya vatten- och spillvattenledningar mellan röda markeringar (ungefär nr 5-3).
+
+2(2)
 
 <!-- sida 306 -->
 
@@ -13286,7 +13441,7 @@ utöver vad som ovan angetts.
 Detta avtal är upprättat i tre likalydande exemplar varav parterna tagit ett vardera samt ett som
 bifogas ansökan om lantmäteriförrättning.
 
-Kungsbacka 202 - Kungsbacka 2025-09 25
+Kungsbacka 202 - Kungsbacka 2025-09-25
 för Kungsbacka kommun för Gottskärs Havsbad AB
 Skällared 4:1 källared 3:55
 

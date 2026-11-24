@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.756eabe81995849a92018907/1758178023
 sha256: 6c25ee27eab0ed0076289a931c30aeb7aebdddb9e64ad4d00c5973a2b9b9c9fc
 bytes: 132451004
 sidor: 672
-hamtad: 2026-11-18T22:15:18+00:00
-konverterad: 2026-11-18T22:23:47+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T04:05:14+00:00
+konverterad: 2026-11-24T04:16:43+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [18, 19, 20, 21, 22, 23, 24, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 62, 109, 151, 152, 348, 349, 358, 404, 613, 614, 627, 639, 655, 656, 672]
-figurer: [18, 19, 21, 22, 23, 24, 25, 32, 40, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 60, 62, 84, 85, 87, 88, 89, 90, 131, 132, 133, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 164, 166, 170, 171, 178, 180, 184, 185, 199, 202, 203, 204, 205, 207, 209, 210, 211, 212, 213, 214, 215, 217, 218, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 233, 242, 253, 279, 280, 282, 283, 284, 285, 286, 288, 289, 290, 291, 292, 293, 294, 295, 298, 299, 300, 302, 303, 305, 306, 350, 351, 354, 355, 358, 359, 360, 361, 366, 367, 368, 369, 371, 373, 374, 376, 377, 378, 382, 383, 403, 404, 439, 442, 448, 453, 461, 464, 529, 530, 533, 534, 535, 536, 537, 538, 539, 540, 548, 551, 552, 556, 578, 590, 593, 655, 656]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [18, 19, 20, 21, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 109, 151, 152, 348, 349, 404]
+figurer: [18, 19, 21, 22, 23, 24, 25, 32, 40, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 60, 62, 84, 85, 87, 88, 89, 90, 109, 131, 132, 133, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 164, 166, 170, 171, 178, 180, 184, 185, 199, 202, 203, 204, 205, 207, 209, 210, 211, 212, 213, 214, 215, 217, 218, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 233, 242, 253, 279, 280, 282, 283, 284, 285, 286, 288, 289, 290, 291, 292, 293, 294, 295, 298, 299, 300, 302, 303, 305, 306, 350, 351, 354, 355, 358, 359, 360, 361, 366, 367, 368, 369, 371, 373, 374, 376, 377, 378, 382, 383, 403, 404, 439, 442, 448, 453, 461, 464, 529, 530, 533, 534, 535, 536, 537, 538, 539, 540, 548, 551, 552, 556, 578, 590, 593, 639, 655, 656, 672]
 tolkade: []
 granskad: null
 ---
@@ -882,7 +882,7 @@ skapar behov av fler eller anpassade verksamhetslokaler för hemtjänst och hems
 tjänstebilsparkeringar och laddstolpar för elbilar.
 
 Lokaltyp och beskrivning 2026 2027 2028 2029 2030
-81 Vård- och omsorgsboenden, reservkraft Xx Xx
+811 Vård- och omsorgsboenden, reservkraft Xx Xx
 (11 st.)
 813 Administrativ lokal avveckling Xx
 817 Ekhaga vård-och omsorgsboende Xx
@@ -1011,7 +1011,7 @@ gg
 
 Foto: Berit Prohaszka
 
-Kommunbudget 2026 och plan 2027-2028 517
+Kommunbudget 2026 och plan 2027-2028 57
 
 <!-- sida 25 -->
 
@@ -17844,7 +17844,7 @@ Kolla Parkstad
 Orienteringskarta med planområdet markerat med gul figur.
 8 Planbeskrivning
 
-Södra in farten
+Södra infarten
 
 <!-- sida 359 -->
 
@@ -20022,6 +20022,75 @@ Plan skala 1:1500(A3)
 ILLUSTRATION FRAMTAGEN   AV MARELD
 
 <!-- sida 404 -->
+
+| INLAGSBY
+KUNGSBACKA
+SKALA 1:1000 A1
+TECKENFÖRKLARING
+APELSINEN
+FRAMSTÄLLNING
+Kommungräns
+Trakt-, kvartersgräns
+Fastighetsgräns
+Föreslagen fastighetsgräns
+Gränspunkt
+Traktnamn, kvartersnamn
+Registernummer, tomtnummer
+Bostadshus fasad, resp tak
+Uthus fasad, resp tak
+Skärmtak
+Transformator fasad, resp tak
+Altan
+Höjdpunkt
+Höjdkurva 1 m
+Höjdkurva 5 m
+Järnväg
+Perrong
+Vägkant, matarväg
+Vägkant, större väg
+Vägkant, mindre väg
+Gång- / Cykelväg, infart, stig
+Vägtunnel
+Gatunamn
+Adressnummer
+Trappa
+Strandlinje, åkant
+Dike, mindre bäck >0,8 m
+Dike, mindre bäck <0,8 m
+Vatten
+Bassäng
+Kaj
+Mur
+Räcke
+Släntfot
+Släntkrön
+Stödmur
+Staket
+Häck
+Belysningsmast
+Belysningsstolpe
+Elstolpe, trafiksignal
+Mast
+Luftledning, högspänning
+Ägoslagsgräns
+Ajourföring och kontroll av kartan innanför aktuellt planområde
+är genomförd av Geodataavdelningen, Kungsbacka kommun.
+Grundkartan är upprättad genom utdrag ur primärkartverk
+tillhörande Kungsbacka kommun och kompletterad i fält
+med terrestra mätningar.
+Rättigheter redovisas inom detaljplaneområdet.
+Aktualitetsdatum kartdata 2025-04-28
+Aktualitetsdatum fastighetsgränser 2025-04-29
+Grundkarta till detaljplan
+Granskningshandling
+Kungsbacka 4:65 och 4:6
+i Kungsbacka stad
+Ajourföringsdatum
+Koordinatsystem
+Kungsbacka kommun Kungsbacka | SWEREF99 12 00
+Upprättad 2025-04-29 Reviderad RH 2000
+Malin Lundgren Patrik Stenberg Piarenr
+Verksamhetschef Geodataavdelningen Mätningsingenjör 2019-00020
 
 <!-- sida 405 -->
 
@@ -29105,8 +29174,8 @@ rätt att delta i överläggningarna vid fullmäktiges sammanträden men inte i 
 
 Motivering:
 
-Kommunallagen (5 kap. 40 8 KL) ger kommunfullmäktige möjlighet att andra får bestämma
-än ledamöter och de som anges i 39 8 ska ha rätt att delta i överläggningar men inte i
+Kommunallagen (5 kap. 40 § KL) ger kommunfullmäktige möjlighet att andra får bestämma
+än ledamöter och de som anges i 39 § ska ha rätt att delta i överläggningar men inte i
 besluten. Att införa denna rättighet för icke tjänstgörande ersättare skulle bidra till en mer
 inkluderande och transparent beslutsprocess.
 
