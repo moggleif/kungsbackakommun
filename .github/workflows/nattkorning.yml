@@ -58,7 +58,7 @@ jobs:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - run: pip install -e .
+      - uses: ./.github/actions/installera
       - name: Mötessidorna, bara det nya och ändrade
         uses: ./.github/actions/levande
         with:
@@ -123,7 +123,7 @@ jobs:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - run: pip install -e .
+      - uses: ./.github/actions/installera
       # Upptäckten görs om, eftersom kandidatlistan låg på mötenas runner.
       - name: Omkonverteringen, och det som kommit sedan mötenas jobb
         uses: ./.github/actions/levande

@@ -31,14 +31,17 @@ jobs:
           if grep -rnP '^\s*(-\s*)?uses:\s*(?!\./)[^@\s]+@(?![0-9a-f]{40}\b)' .github; then exit 1; fi
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - run: pip install -e ".[utveckling]"
+      - id: installera
+        uses: ./.github/actions/installera
+        with:
+          utveckling: true
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22"
       # Utan paketens installationsskript, som annars körs med jobbets
       # rättigheter (ADR-0115).
-      - name: Webbplatsens skript, ESLint och jsdom (K83, ADR-0104)
-        run: npm install --no-fund --no-audit --ignore-scripts
+      - name: npm-paketen ur package-lock.json (K83, K94, ADR-0117)
+        run: npm ci --no-fund --no-audit --ignore-scripts
       - run: ruff check .
       - run: ruff format --check .
       - run: python scripts/kontrollera_storlek.py
@@ -60,10 +63,9 @@ jobs:
         # gör namnet till en sökväg och inte ett glob-mönster.
         run: |
           set -o pipefail
-          npm install --global --ignore-scripts markdownlint-cli2@0.23.3
           git diff -z --name-only --diff-filter=AMR HEAD^1 HEAD -- '*.md' \
-            | sed -z 's/^/:/' | xargs -0 -r -P 4 -n 25 markdownlint-cli2
+            | sed -z 's/^/:/' | xargs -0 -r -P 4 -n 25 npx --no markdownlint-cli2
       - name: Datakontrollerna (K11)
         run: python -m kommunhandlingar.datakontroll data
-      - name: Kända sårbarheter i projektets beroenden
-        run: pip-audit .
+      - name: Kända sårbarheter i projektets beroenden, ur låsfilen
+        run: pip-audit --disable-pip --require-hashes -r "${{ steps.installera.outputs.krav }}"
