@@ -79,6 +79,12 @@ class TestHandlingen(unittest.TestCase):
         )
         self.assertEqual(omfang, {5: range(4, 5), 6: range(5, 6)})
 
+    def test_forledet_tva_ganger_i_tjansteskrivelsen(self):
+        sidorna = sidor("<!-- sida 1 -->\n\nDiarienummer\nVO VO-2026-00191\n")
+        self.assertEqual(
+            handlingen(sidorna, [punkt(1, "2026-00191")]), {1: range(1, 2)}
+        )
+
     def test_forledet_saknas_i_kallelsen(self):
         self.assertTrue(ar_punktens("KS-2026-00543", punkt(1, "2026-00543")))
         self.assertTrue(ar_punktens("2022-00157", punkt(1, "2022-00157")))
