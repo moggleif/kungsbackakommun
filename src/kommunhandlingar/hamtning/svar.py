@@ -45,9 +45,10 @@ def spara(svar: HTTPResponse, mal: Path) -> None:
 
 def hel(svar: HTTPResponse, storlek: int) -> None:
     """http.client ger tomt i stället för IncompleteRead när en läsning i
-    bitar bryts av, så längden jämförs med vad servern lovade."""
+    bitar bryts av, så längden jämförs med vad servern lovade, när den
+    lovade ett tal."""
     langd = svar.headers.get("Content-Length")
-    if langd is not None and storlek != int(langd):
+    if langd is not None and langd.isdigit() and storlek != int(langd):
         raise NyttForsok("avbrutet-svar")
 
 

@@ -1,11 +1,15 @@
-"""Krav: K92, ADR-0115. Kod: src/kommunhandlingar/konvertering/dokument.py."""
+"""Krav: K92, ADR-0115. Kod: src/kommunhandlingar/konvertering/dokument.py och
+src/kommunhandlingar/tolkning.py."""
 
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
+import pypdfium2 as pdfium
 from PIL import Image
 
+from kommunhandlingar import tolkning
 from kommunhandlingar.konvertering import dokument
 from kommunhandlingar.konvertering.dokument import konvertera
 
@@ -50,10 +54,26 @@ class TestYttaket(unittest.TestCase):
         self.assertLess(A0, dokument.YTTAK)
 
     def test_sida_over_taket_blir_ej_konverterad_figur(self):
-        resultat = konverterad(14400, 14400)
+        # Läses sidan ändå faller testet i stället för att rendera gigabyte.
+        with mock.patch.object(dokument, "las_sida", side_effect=AssertionError):
+            resultat = konverterad(14400, 14400)
         self.assertEqual(resultat.kvalitet_per_sida, ["ej-konverterad"])
         self.assertEqual(resultat.sidor[0].text, "")
         self.assertEqual(resultat.figurer, [1])
+
+    def test_tolkningen_renderar_en_for_stor_sida_mindre(self):
+        with tempfile.TemporaryDirectory() as katalog:
+            pdf = Path(katalog) / "sida.pdf"
+            pdf.write_bytes(pdf_med_sida(14400, 14400))
+            with pdfium.PdfDocument(pdf) as dokumentet:
+                png = tolkning.spara(dokumentet, 1, Path(katalog))
+            with Image.open(png) as bild:
+                self.assertLess(bild.width * bild.height, 1.01 * tolkning.PIXLAR)
+                self.assertGreater(bild.width, 9000)
+
+    def test_tolkningen_renderar_en_a4_i_dubbel_skala(self):
+        with pdfium.PdfDocument(pdf_med_sida(595, 842)) as dokumentet:
+            self.assertEqual(tolkning.skala(dokumentet[0]), tolkning.SKALA)
 
     def test_sida_under_taket_lases(self):
         resultat = konverterad(595, 842)

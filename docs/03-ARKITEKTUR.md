@@ -186,9 +186,10 @@ två startas står i K11.
   jobbet får hemligheten. Utan hemligheten öppnar en människa eller agent
   PR:en. Jobbet är ett återanvänt workflow,
   `.github/workflows/nattkorning-pr.yml`, som båda jobben anropar.
-  Jobbet hämtar grenens och `main`s historik utan filinnehåll och öppnar
-  ingen PR om grenen ändrar något utanför `data/` och `versioner/`; den
-  automatiska mergen gäller bara den prövade commiten (K92, ADR-0115).
+  Jobbet hämtar grenens och `main`s commits och träd utan filinnehåll och
+  öppnar ingen PR om grenen ändrar något annat än vanliga filer i `data/`
+  och `versioner/`, eller har en merge-commit; den automatiska mergen
+  slås på för den prövade commiten (K92, ADR-0115).
   Arkivets jobb checkar ut mötenas gren medan dess PR kan mergas; det
   förutsätter att GitHub inte tar bort grenar efter merge (*Automatically
   delete head branches* är avslaget).
@@ -1964,8 +1965,7 @@ som läser varje fil en gång. Hur och varför skripten kontrolleras står i
   eller ett fokusområde, ställs upp genom att sidan ändras före skriptet.
 - **Versionerna** står exakt i `package.json`, som CI installerar med
   `npm install --ignore-scripts` (ADR-0115). `package-lock.json` checkas
-  inte in (ADR-0104). Paketet
-  som datarepona installerar påverkas inte.
+  inte in (ADR-0104). Paketet som datarepona installerar påverkas inte.
 
 ## Tolkade figurer
 

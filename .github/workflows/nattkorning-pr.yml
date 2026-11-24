@@ -18,6 +18,12 @@ on:
 
 permissions: {}
 
+# Utan den kör Actions `bash -e` utan pipefail, också i ett anropat
+# workflow, och ett fel i prövningen skulle släppa igenom grenen.
+defaults:
+  run:
+    shell: bash
+
 jobs:
   pr:
     name: PR med automatisk merge
@@ -31,14 +37,24 @@ jobs:
             echo "Datat ligger på grenen \`$GREN\`; öppna en PR därifrån (ADR-0015)." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
-          # Bara grenens historik, utan filinnehåll och utan att något körs.
+          # Grenens och mains commits och träd, utan att något ur repot körs.
+          # Bara vanliga filer och borttagningar under data/ och versioner/,
+          # inga namnbyten, länkar eller undermoduler, och inga merge-commits,
+          # så att diffen från merge-basen är det som mergas.
           git init -q granskning && cd granskning
           git fetch -q --filter=blob:none "https://github.com/$GITHUB_REPOSITORY" \
             "+refs/heads/main:refs/remotes/main" "+refs/heads/$GREN:refs/remotes/gren"
           COMMIT=$(git rev-parse refs/remotes/gren)
-          if git -c core.quotePath=false diff --name-only refs/remotes/main...refs/remotes/gren \
-            | grep -Ev '^(data|versioner)/'; then
-            echo "Grenen \`$GREN\` ändrar annat än data/ och versioner/; den mergas inte (ADR-0115)." \
+          MERGES=$(git rev-list --merges refs/remotes/main..refs/remotes/gren)
+          ANDRAT=$(git -c core.quotePath=false diff --raw --no-renames --no-abbrev \
+            refs/remotes/main...refs/remotes/gren)
+          # grep ger 1 när allt är data; ett annat fel stoppar steget.
+          UTANFOR=$(grep -Ev \
+            $'^:[0-7]{6} (100644|100755|000000) [0-9a-f]{40} [0-9a-f]{40} [AMD]\t(data|versioner)/' \
+            <<< "$ANDRAT" || [ $? -eq 1 ])
+          if [ -n "$MERGES$UTANFOR" ]; then
+            printf '%s\n' "$MERGES" "$UTANFOR"
+            echo "Grenen \`$GREN\` ändrar annat än filer i data/ och versioner/; den mergas inte (ADR-0115)." \
               | tee -a "$GITHUB_STEP_SUMMARY"
             exit 1
           fi

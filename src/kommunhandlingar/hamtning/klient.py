@@ -56,7 +56,7 @@ class Klient:
         self.med_forsok(url, lambda svar: spara(svar, mal))
 
     def prova(self, url: str) -> None:
-        if urlsplit(url).scheme.lower() != SCHEMA:
+        if urlsplit(url).scheme != SCHEMA:
             raise Hamtfel("inte-https")
         if not robots.tillater(self.robotregler(url), url):
             raise Hamtfel("robots")

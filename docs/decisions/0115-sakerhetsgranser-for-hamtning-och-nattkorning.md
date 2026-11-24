@@ -74,13 +74,20 @@ var, och inget i poolens nuvarande innehåll stoppas.
   en dekompressionsbomb, `2 × MAX_IMAGE_PIXELS` eller omkring 10,3
   miljoner kvadratpunkter, renderas inte: den blir `ej-konverterad` och
   står i `figurer`, som en sida över teckentaket (ADR-0079). En A0 är 8,0
-  miljoner kvadratpunkter och läses.
+  miljoner kvadratpunkter och läses. Tolkningen av figurer, som renderar
+  sådana sidor, minskar skalan så att bilden håller sig under Pillows
+  varningsgräns, `MAX_IMAGE_PIXELS`.
 * **Grenen prövas innan den mergas.** PR-jobbet, som redan körs utan
-  utcheckning på en ny runner, hämtar grenens och `main`s historik utan
-  filinnehåll och utan att köra något ur repot. Ändrar grenen något
-  utanför `data/` och `versioner/` öppnas ingen PR och jobbet faller.
-  Annars slås automatisk merge på med `--match-head-commit`, så att en
-  commit som pushas efter prövningen inte mergas.
+  utcheckning på en ny runner, hämtar grenens och `main`s commits och
+  träd, utan filinnehåll och utan att köra något ur repot. Grenen får bara
+  lägga till, ändra och ta bort vanliga filer under `data/` och
+  `versioner/`, utan namnbyten (`--no-renames`, så att en fil som flyttas
+  in i `data/` syns där den kom ifrån), utan symboliska länkar och
+  undermoduler, och utan merge-commits, så att diffen från merge-basen är
+  det som mergas. Annars öppnas ingen PR och jobbet faller. Jobbet kör med
+  `pipefail`, så att ett fel i prövningen stoppar den i stället för att
+  släppa igenom grenen. Automatisk merge slås på med
+  `--match-head-commit` för den prövade commiten.
 * **Actions fästa vid en commit**, med versionen i en kommentar som
   Dependabot håller uppdaterad. CI faller om en extern action står på en
   tagg.
@@ -107,6 +114,15 @@ jobb och historiken.
 * Bad, eftersom PR-jobbet hämtar grenen anonymt och förutsätter att repot
   är publikt. Blir det privat faller jobbet, i stället för att merga
   utan prövning.
+* Bad, eftersom det inte är prövat att GitHub håller fast vid
+  `--match-head-commit` när en commit pushas efter att automatisk merge
+  slagits på. Arkivets jobb, som kör samtidigt som mötenas PR-jobb, har
+  skrivrätt och kunde i så fall pusha till mötenas gren efter prövningen.
+  Skyddet mot det är alternativ C, som väljs bort nedan.
+* Bad, eftersom en hämtning bara har tidsgränsen per läsning, 60
+  sekunder. En server som skickar lite i taget hålls kvar tills
+  tidsbudgetens hårda gräns avbryter jobbet (ADR-0088); en egen gräns per
+  hämtning är inte infört.
 * Bad, eftersom npm-paketens egna beroenden fortfarande kan komma i nyare
   versioner: låsfilen checkas inte in (ADR-0104), och inte heller pip har
   en låsfil för de transitiva beroendena. Det blir ett eget issue.
@@ -115,9 +131,11 @@ jobb och historiken.
 
 `tests/test_hamtgranser.py` prövar https, sidtaket och filtaket mot en
 lokal server, och `tests/test_yttak.py` att en för stor sida blir
-`ej-konverterad` och att en A4 och en A0 ryms. PR-jobbets prövning
-kördes för hand mot en nattkörnings gren och mot en gren som ändrade
-koden. CI-stegen "Externa actions fästa vid en commit" och "Inga binärer
+`ej-konverterad` och att en A4 och en A0 ryms. `tests/test_yttak.py` prövar också att tolkningen renderar en för stor
+sida mindre. PR-jobbets prövning kördes för hand mot en nattkörnings gren
+och mot lokala grenar som ändrade data, tog bort data, ändrade koden,
+flyttade kod in i `data/`, lade en symbolisk länk i `data/` och hade en
+merge-commit; bara de två första släpptes igenom. CI-stegen "Externa actions fästa vid en commit" och "Inga binärer
 utom små testfixturer" faller på en tagg respektive en PDF i roten.
 
 ## Pros and Cons of the Options
@@ -154,11 +172,29 @@ utom små testfixturer" faller på en tagg respektive en PDF i roten.
 Agenten gick igenom punkterna i #348 en i taget. Underprocesserna
 (`tesseract.py`, `riktning.py`) tar argumenten som listor utan skal, och
 sökvägarna är tillfälliga filer som koden själv namnger; där fanns inget
-att rätta. Varje dokument har redan en tidsgräns på 30 minuter (ADR-0075)
-och varje Tesseract-anrop fem minuter. Webbplatsen renderar med
+att rätta. Varje dokument har redan en tidsgräns på 30 minuter (ADR-0075),
+som också gränsar sidantalet i praktiken, och varje Tesseract-anrop fem
+minuter. Webbplatsen renderar med
 markdown-it-py med rå HTML avslagen, som också vägrar `javascript:`- och
 `file:`-länkar, och skripten skriver ingen markup. `pip-audit .` löser
 upp projektets beroenden med de transitiva och granskar alla.
+
+Den oberoende granskningen (fas 6) fann två blockerande fel i PR-jobbets
+första version: ett namnbyte från koden in i `data/` syntes bara under
+det nya namnet, och utan `pipefail` släppte ett fel i `git diff` igenom
+grenen, eftersom ett anropat workflow inte ärver anroparens `shell`. Båda
+rättades och prövades som ovan, och granskningens förslag om symboliska
+länkar och merge-commits togs med. Granskningen pekade också på att
+`kalla_url` länkas på dokumentsidan utan kontroll av schemat; där går
+länken genom `mall.lank`, som bara gör `https://` och `http://` till
+länkar, så det behövde inte rättas. Ett trasigt `Content-Length` kraschar
+inte längre läsningen av en sida.
+
+Två saker kan agenten inte se och projektägaren kontrollerar i repots
+inställningar: att `NATTKORNING_TOKEN` är en finkornig token för bara det
+här repot, med *Contents* och *Pull requests* och ett utgångsdatum
+([01-BIDRA.md](../01-BIDRA.md)), och att *Secret scanning* och *Push
+protection* är påslagna under *Code security*.
 
 Historiken söktes igenom efter token, nycklar och lösenord i alla 883
 commits, utom poolens data. Inget hittades.

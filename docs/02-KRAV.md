@@ -2693,10 +2693,13 @@ minnet, eller föra in kod i `main`.
   lite mer än en A0)
 - **När** dokumentet konverteras
 - **Så** renderas sidan inte: den blir `ej-konverterad` och står i
-  `figurer`, och dokumentets övriga sidor läses som vanligt.
+  `figurer`, och dokumentets övriga sidor läses som vanligt. Tolkningen
+  av figurer renderar den i en så liten skala att bilden håller sig under
+  Pillows varningsgräns.
 
 - **Givet** en gren från nattkörningen som ändrar något utanför `data/`
-  och `versioner/`
+  och `versioner/`, flyttar en fil dit från annat håll, lägger en
+  symbolisk länk eller en undermodul där, eller har en merge-commit
 - **När** jobbet som öppnar PR:en körs
 - **Så** öppnas ingen PR, ingen automatisk merge slås på, och jobbet
   faller med grenens namn i sammanfattningen.

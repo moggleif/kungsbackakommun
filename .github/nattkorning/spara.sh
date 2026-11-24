@@ -10,7 +10,8 @@ set -euo pipefail
 gren="$1"
 python -m kommunhandlingar.datakontroll data
 git add -A
-if git -c core.quotePath=false diff --cached --name-only | grep -Ev '^(data|versioner)/'; then exit 1; fi
+# Samma regel prövas igen i nattkorning-pr.yml, utanför det här jobbet (ADR-0115).
+if git -c core.quotePath=false diff --cached --no-renames --name-only | grep -Ev '^(data|versioner)/'; then exit 1; fi
 if git diff --cached --numstat | grep '^-'; then exit 1; fi
 git diff --cached --quiet || git -c user.name="github-actions[bot]" \
   -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
