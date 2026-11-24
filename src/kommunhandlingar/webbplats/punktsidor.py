@@ -8,7 +8,7 @@ Sammanfattningen är tjänsteskrivelsens avsnitt om ärendet, som det står.
 
 import re
 
-from kommunhandlingar.diarienummer import MED_ETIKETT, normaliserat
+from kommunhandlingar.diarienummer import efter_etikett
 from kommunhandlingar.sidmarkor import sidorna
 from kommunhandlingar.webbplats.dagordning import Punkt, fogat
 
@@ -27,7 +27,7 @@ def sidor(text: str) -> dict[int, str]:
 
 
 def diarienummer(sida: str) -> list[str]:
-    return list(dict.fromkeys(normaliserat(n) for n in MED_ETIKETT.findall(sida)))
+    return list(dict.fromkeys(efter_etikett(sida)))
 
 
 # Kallelsen skriver numret utan organets förled: `2026-00543` är

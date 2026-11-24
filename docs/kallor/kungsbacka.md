@@ -1099,9 +1099,11 @@ poolen):
   numret. Rubrikcellen har ofta `Föredragande:` med namn och tiden
   (`17.30-17.45`, `Kl. 17:05-17:45`) efter rubriken, och ibland
   föredragandena utan etikett eller med stavningen `Föredagande:`. Punkter
-  som "Val av justerare" och "Paus" har ingen beteckning. Vård & Omsorgs
-  tjänsteskrivelser skriver numret efter `Diarienummer` med förledet två
-  gånger eller med mellanslag (`VO VO-2026-00191`, `VO- 2026-00017`).
+  som "Val av justerare" och "Paus" har ingen beteckning. Förvaltningarnas
+  tjänsteskrivelser skriver ofta numret efter `Diarienummer` med förledet
+  två gånger eller med mellanslag kring bindestrecket (`VO VO-2026-00191`,
+  `VO- 2026-00017`, `KS -2024-00583`), mest Vård & Omsorg och Individ &
+  Familj men också Teknik, Service och andra.
   Bygg- och miljönämndernas handlingar har tjänsteskrivelser för bara en
   del av punkterna.
 - Fullmäktige sänds och arkiveras som video (YouTube 2022–2024, Screen9 2024–),

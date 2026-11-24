@@ -2129,8 +2129,9 @@ datakontrollen och bygget delar.
   sidfoten, i ordning och utan dubbletter. Ett `Dnr` inne i rubriken är en
   annan myndighets och tas inte med. Ett tankstreck, och mellanslag kring
   bindestrecket eller mellan förled och år, blir ett bindestreck
-  (`BN 2016–000170` blir `BN-2016-000170`); annars skrivs numret som det
-  står.
+  (`BN 2016–000170` blir `BN-2016-000170`). Ett förled som står två
+  gånger efter etiketten läses en gång (`VO VO-2026-00191` blir
+  `VO-2026-00191`, ADR-0110); annars skrivs numret som det står.
 - **Beslutet** är raderna efter raden Beslut (med eller utan kolon) till
   nästa avsnitt. Avsnitten är en fast lista med protokollens rubriker
   (`AVSNITT` i `paragrafinnehall.py`). Beslutet är `null` när raden

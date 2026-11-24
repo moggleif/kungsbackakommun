@@ -1873,6 +1873,14 @@ och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 - **När** dagordningen läses
 - **Så** är punktens diarienummer det hela numret (`GA-2026-00059`), och
   rubriken slutar före föredragandena.
+- **Givet** en tjänsteskrivelse som skriver numret efter `Diarienummer`
+  med förledet två gånger (`VO VO-2026-00191`) eller med mellanslag
+  kring förledets bindestreck (`VO- 2026-00017`, `KS -2025-00357`)
+- **När** handlingens sidor söks
+- **Så** är numret `VO-2026-00191`, `VO-2026-00017` och `KS-2025-00357`,
+  och punkten får
+  sin handling (ADR-0110, issue
+  [#289](https://github.com/moggleif/kommunhandlingar/issues/289)).
 - **Givet** en punkt utan diarienummer i kallelsen, som "Val av
   justerare"
 - **När** sidan byggs
