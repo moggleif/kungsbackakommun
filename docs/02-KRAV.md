@@ -2669,6 +2669,28 @@ fil jämförs med mötessidorna i samma Sitevision-källa.
 - **Så** blir kandidatlistorna och sammanfattningarna identiska, och
   kommunfilernas format är oförändrat.
 
+## K89 — Ett rutnät som inte går ihop till en tabell märker sidan osäker
+
+[ADR-0111](decisions/0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md).
+Issue [#319](https://github.com/moggleif/kungsbackakommun/issues/319). Hur
+det prövas står i
+[Konvertering och kvalitet](03-ARKITEKTUR.md#konvertering-och-kvalitet).
+
+- **Givet** ett rutnät av linjer med minst två rader och två kolumner,
+  där ett ord inom rutnätets yta inte står i någon cell, till exempel en
+  riskmatris där en kolumn saknar högerkant under rubrikraden
+- **När** dokumentet konverteras
+- **Så** blir rutnätet ingen CSV, texten står kvar i sidans text, och
+  sidan märks `tabell-osaker`, också när texten inte har några siffror.
+- **Givet** samma rutnät där varje ord står i en cell
+- **När** dokumentet konverteras
+- **Så** blir det en säker tabell, och sidan kan vara `ok`, som förut.
+- **Givet** ett rutnät som inte går ihop, där texten ändå läses som en
+  tabell utan lodräta linjer
+- **När** dokumentet konverteras
+- **Så** märker rutnätet inte sidan, eftersom ingen text ur det står kvar
+  i sidans text.
+
 ## K92 — Det hämtade och nattkörningens gren kan inte ta sig förbi sina gränser
 
 [ADR-0115](decisions/0115-sakerhetsgranser-for-hamtning-och-nattkorning.md).
