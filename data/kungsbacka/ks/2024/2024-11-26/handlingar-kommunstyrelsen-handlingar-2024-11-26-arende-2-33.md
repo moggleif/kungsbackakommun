@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.1932ec3d19329b835ff59a7a/1732175237
 sha256: 9262dad02b3de84e7e66ff28dc41b16fb7a7a8b3c13ddc8b0b695e42c1c3102b
 bytes: 89165901
 sidor: 398
-hamtad: 2026-11-18T12:50:16+00:00
-konverterad: 2026-11-18T12:54:38+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T02:16:53+00:00
+konverterad: 2026-11-24T02:22:43+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [18, 54, 67, 113, 124, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 177, 178, 179, 190, 263, 323]
-figurer: [18, 46, 54, 75, 76, 78, 79, 80, 81, 84, 85, 87, 88, 89, 90, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 129, 147, 166, 167, 168, 169, 170, 171, 182, 183, 184, 186, 187, 188, 189, 235, 236, 238, 251, 252, 258, 262, 263, 264, 265, 266, 268, 272, 279, 285, 286, 287, 297, 312, 323, 367, 368]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, bild, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ointressant, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [18, 54, 67, 113, 135, 136, 138, 139, 141, 142, 143, 144, 145, 146, 147, 151, 152, 153, 154, 155, 156, 157, 158, 159, 161, 163, 164, 165, 177, 178, 179, 190, 263, 323]
+figurer: [18, 46, 54, 67, 75, 76, 78, 79, 80, 81, 84, 85, 87, 88, 89, 90, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 129, 144, 147, 159, 161, 166, 167, 168, 169, 170, 171, 182, 183, 184, 186, 187, 188, 189, 190, 235, 236, 238, 251, 252, 258, 262, 263, 264, 265, 266, 268, 272, 279, 285, 286, 287, 297, 312, 323, 367, 368]
 tolkade: []
 granskad: null
 ---
@@ -6468,6 +6468,62 @@ Sign
 
 <!-- sida 159 -->
 
+är baserad på
+TECKENFÖRKLARING A 2023-11-06
+ÄNDRING AV DETALJPLAN
+Följande gäller inom med il
+Endast angiven användning och utformning är tillåten. Där
+ing saknas gäller bestå inom hela området.
+GRÄNSER
+ANVÄNDNING AV MARK
+Allmän platsmark
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+gräö via äns och
+Utformning av allmän plats
+dagvattendamm, Dagvattendammar ska finnas.
+EGENSKAPSBESTÄMMELSER FÖR
+m, Området 80 meter från Västkustbanan ska
+utformas för att minska konsekvensema av en
+olycka.
+m, Inom 80 meter från Västkustbanan ska man
+förhindra att vätska rinner in på området genom
+barriär eller dike.
+m; Inom 80 meter från Västkustbanan ska
+sätt som begränsar konsekvenserna av ett
+utspårat tåg.
+Stängsel, utfart och annan utgång
+Utförande
+b, Byggnadsverk ska utföras på ett sådant sätt att
+påverkan från induktion hindras.
+Utnyttjandegrad
+e, Största byggnadsarea är 5096 av
+Ändrad lovplikt
+a Bygglov krävs även för stängsel i ledande
+material.
+GENOMFÖRANDETID
+ö iden för ursprunglig (FJP29) löper ut
+2031-11-11. Med anledning av att den ursprungliga
+genomförandetiden inte löpt ut får ändring av detaljplan samma
+prunglig lip det vill säga
+Planbestämmelser som ändrats i ändring av detaljplan för FIP29
+Planbestämmelser som lagts till inom ändring av detaljplan för
+Planbestämmelser som upphör att gälla inom ändring av detaljplan
+KVARTERSMARK
+grä via äns och användnii ä
+Begränsning av markens utnyttjande FJP29
+Höjd på byggnadsverk
+h, Högsta nockhöjd är \<angivet> meter.
+n, Plantering ska utföras. för FJP29
+ledningar.
+Skydd mot störningar
+byggnader uppförs sorn människor detaljplan för FJP29
+stadigvarande vistas i och de
+m, Lufintag och entréer ska placeras så långt från
+västkust banan som möjligt.
+som forsätter att gälla inom ändring av
+inom
+Duvehed 2:14
+
 <!-- sida 160 -->
 
 <!-- sida 161 -->
@@ -6477,6 +6533,26 @@ Kartbilaga 3
 <!-- sida 162 -->
 
 <!-- sida 163 -->
+
+SCANDI GRUPPEN AB
+
+Modell tomt A2
+2024-09-26
+
+: PERSPEKTIV NORDOST
+
+: Entré och kontorsutrymmen
+
+TTT
+
+i PERSPEKTIV SYDVÄST
+: Lastzoner
+
+: FÅGELPERSPEKTIV SYDOST
+
+: Lastzoner och entré
+
+p e3eNQAeS
 
 <!-- sida 164 -->
 

@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.2eac78ea193953fe2805ee18/1733995582
 sha256: 1157adc986408bf1cb59c9ac9a04b556bc81eb667aeed5c20a8e4129a289e02f
 bytes: 193217824
 sidor: 528
-hamtad: 2026-11-18T12:54:38+00:00
-konverterad: 2026-11-18T13:02:31+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T02:22:43+00:00
+konverterad: 2026-11-24T02:33:30+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ok, ok, ok, ocr, ok, ok, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [11, 12, 13, 14, 18, 19, 20, 21, 22, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 47, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 92, 122, 123, 158, 179, 264, 309, 310, 341, 342, 353, 354, 355, 356, 357, 358, 359, 363, 364, 365, 366]
-figurer: [84, 85, 86, 88, 92, 130, 135, 141, 152, 155, 156, 157, 158, 161, 163, 164, 165, 166, 167, 168, 169, 170, 174, 182, 183, 184, 199, 208, 216, 262, 265, 341, 342, 377, 411, 412, 450, 451, 491, 507]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, bild, ok, ok, ok, ocr, ok, ok, ocr, ocr, ocr, tom, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [11, 12, 13, 14, 18, 19, 20, 21, 22, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 47, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 62, 63, 64, 66, 67, 68, 69, 70, 71, 72, 74, 75, 76, 92, 158, 264, 309, 341, 355, 363, 364, 365, 366]
+figurer: [12, 19, 31, 42, 43, 60, 61, 62, 72, 73, 74, 84, 85, 86, 88, 92, 130, 135, 141, 152, 155, 156, 157, 158, 161, 163, 164, 165, 166, 167, 168, 169, 170, 174, 182, 183, 184, 199, 208, 216, 262, 265, 341, 342, 377, 411, 412, 450, 451, 491, 507]
 tolkade: []
 granskad: null
 ---
@@ -1303,6 +1303,95 @@ Sign
 
 <!-- sida 32 -->
 
+I | l Bilaga 1
+PLANBESTÄMMELSER På Komplementbyggnad ska placeras minst 2 meter från
+
+fastighetsgräns.
+
+Följande gäller inom områden med nedanstående beteckningar. Endast
+
+\- Z ; Fm ram p4 : Pa Huvudbyggnad ska placeras minst 4,5 meter från
+angiven användning och utformning är tillåten. Där beteckning saknas fastighetsgräns.
+gäller bestämmelsen inom hela området. on
+Störningsskydd
+
+GRÄNSER POL4 kap, 126
+
+Å , « ePlanområdesgräns. m, Vibrationsnivå i bostad får ej överskrida 0,4 mm/s vägd RMS.
+— :— Användningsgräns. my, Om ekvivalent ljudnivå vid bostadens fasad är >60 dBA ska
+—. Egenskapsgräns. kl hälften av bostadsrummen vara vända mot ljuddämpad
+—+— + — Administrativ gräns. För små bostäder med boarea max 35 kvm gäller istället att
+
+minst hälften av bostadsrummen ska vara vända mot
+
+\+ + -—+- Egenskaps- och administrativ gräns. ljuddämpad sida om ekvivalent ljudnivå vid bostadens fasad
+
+är >65 dBA.
+ANVÄNDNING AV MARK Med ljuddämpad sida menas fasad som har en ekvivalent
+Kvartersmark NORA 55 dBA och maximal ljudnivå nattetid på
+PBL 4 kap, 54
+B Bostäder. Ufa mnng
+-. i ip. 165
+ER Område av Skårby 2:3, markerat E Tekniska anläggningar. f, Endast flerbostadshus.
+med gul färg (B) och grå färg (PB
+/ ska FS JNekAs | en Separat (PE) P Parkering. f, Fasad ska utformas med träpanel.
+teen 4 fastighet och överlåtas till köparen. B Bostäder. f, Högsta nockhöjd för komplementbyggnad är 4 meter.
+\- Utförande
+; EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK POLA kop. 165
+/ Mark b, Luftintag på byggnader som ligger inom 150m från
+. PBL 4 kap, 134 Västkustbanan ska placeras på sida som inte vetter mot
+/ n, Marken får inte användas för parkering. Västkustbanan och placeras högt på byggnad.
+Tempohus ' Omfattning "ADMINISTRATIVA BESTÄMMELSER FÖR
+P8 4100. 114 KVARTERSMARK
+s / ss Marken får inte förses med byggnad. Gemensamhetsanläggning
+:/ bo ss Endast komplementbyggnad får placeras. PBL4 00188
+ST Mark ö äggning.
+4 Högsta nockhöjd är \<angivet> meter . [on jarkreservat för gemensamhetsanläggning.
+Skårby 2:3 ÄA Största takvinkel är \<angivet> grader. I Markreservat
+PBL 4 kup.
+e, Största byggnadsarea är \<angivet> m? per bostadsbyggnad . u, Markreservat för allmännyttiga underjordiska ledningar.
+e, Största byggnadsarea är \<angivet> m? per detta Strandskydd
+egenskapsområde. . Poramgyeng;
+e, Största byggnadsarea är \<angivet> m? per bostadsbyggnad. a Strandskyddet är upphävt. .
+Därutöver får komplementbyggnader uppföras.
+GENOMFÖRANDETID
+Placering Genomförandetiden är 5 år.
+PBL 41439, 16.6
+På Huvudbyggnad ska placeras 6 meter från fastighetsgräns.
+P2 Komplementbyggnad ska placeras minst 1 meter från
+fastighetsgräns.
+o motor 100,
+A Detaljplanen är baserad på koordinatsystemet SWEREF 99
+Skala 1:1000 i A1, skala 1:2000 i A3 N 1200 och höjdsystemet RH 2000
+TECKENFÖRKLARING GRUNDDATA = Aktualitetsdatum: 2022-09-07
+Registernummer, tomtnummer Höjdkurva 5 m
+gatunamn Vägkant, mindre väg
+Höjdpunkt Vägkant, störe väg
+Traktnamn, kvartersnamn Vägkant, matargata
+Faslighelsgräns Bostadshus fasad, resp. tak
+Gång- / cykelväg, infart, stig Uthus fasad, resp. fasad
+Höjdkurva 1 m Skämtak Detaljplan för bostäder inom Antagandehandling
+
+a 1 Beslutsdatum Instans
+äs Skårby 2:3 re
+Y i Anneberg 2010-08-48 |ENS276
+vn Kungsbacka kommun IEEE e BN 5 276
+åå Antagande J
+Upprättad 2022-10-21 2022-11-24 |BN§293
+
+Laga kraft
+2022-12-22
+
+Kungsbacka
+
+Plankostnad:
+Ida Lennartsson Sofia Wiman Diarenummer | avat nn
+
+Plan Planarkitekt 2021-00023 | Nej
+
+Detaljplanen är upprättad enligt PBL | Ä
+PLANKARTA | 25öas md ansndgindr" | ÄP23
+
 <!-- sida 33 -->
 
 Metria FastighetSök - Kungsbacka Skårby 2:3
@@ -1940,7 +2029,7 @@ Gemensamhetsanläggningar
 Kungsbacka Skårby GA:2
 Samfälligheter
 
-Kungsbacka Skårby S:3-9, 5:11, 5:15-18
+Kungsbacka Skårby S:3-9, S:11, S:15-18
 
 Skattetal
 Skattetal Skattetyp
@@ -15061,7 +15150,7 @@ rättigheter.
 
 Skollagen (2010:800)
 
-Enligt 10 kap 10 8 ska utbildningen i grundskolan vara avgiftsfri. Enligt samma kapitel 12 & ska lärare,
+Enligt 10 kap 10 § ska utbildningen i grundskolan vara avgiftsfri. Enligt samma kapitel 12 § ska lärare,
 eleven och elevens vårdnadshavare ha ett utvecklingssamtal minst en gång varje termin om hur elevens
 kunskapsutveckling och sociala utveckling bäst kan stödjas samt om vilka insatser som behövs för att
 eleven ska uppfylla betygskriterierna eller kriterierna för bedömning av kunskaper och i övrigt utvecklas så
