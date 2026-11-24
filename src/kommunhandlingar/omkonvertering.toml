@@ -46,3 +46,6 @@
 "0.15.0" = ["alla"]
 # Väg H (ADR-0106): bara sidor som läses med OCR.
 "0.16.0" = ["ocr"]
+# Ett rutnät som inte går ihop märker sidan `tabell-osaker` (ADR-0111):
+# bara sidor som var `ok`.
+"0.17.0" = ["ok"]

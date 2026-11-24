@@ -945,7 +945,7 @@ Varje sida får en kvalitet:
 | `bild`           | Sidan skulle läsas med OCR, nådde inte tröskeln, gav för få säkra rader och är till största delen ett foto, en karta eller en ritning (K72). Ingen text från sidan skrivs. |
 | `ointressant`    | Sidan skulle läsas med OCR, nådde inte tröskeln och gav för få säkra rader, och är inte en bild eller tom: en ritning, en ljus karta, handskrift, ett omslag eller för liten text (K73). Granskaren kan också sätta den för hand. Ingen text från sidan skrivs. |
 | `ocr`            | Sidan lästes med OCR. Den får inga CSV:er.                       |
-| `tabell-osaker`  | Textlagret är läst, men sidan har en osäker tabell, eller siffror ur en tabell med linjer som inte gick att läsa säkert. |
+| `tabell-osaker`  | Textlagret är läst, men sidan har en osäker tabell, siffror ur en tabell med linjer som inte gick att läsa säkert, eller text ur ett rutnät som inte gick ihop till en tabell. |
 | `ok`             | Textlagret är läst, och sidans tabeller är säkra.                |
 | `tom`            | Sidan har inga tecken och är, renderad, nästan helt vit, eller skulle läsas med OCR, nådde inte tröskeln, nästan inget på den är mörkt och Tesseract hittade inga ord (K72). |
 
@@ -1089,6 +1089,14 @@ nattkörningen checkar inte in något
   utanför de tabeller som lästs säkert, också när en del av den lästs
   som en tabell utan lodräta linjer, blir sidan `tabell-osaker`, och
   texten står kvar i sidans text.
+- **Ett rutnät som inte går ihop** har minst två rader och två
+  kolumner, men ett ord inom dess yta har mittpunkten utanför varje
+  cell, som när en kolumn saknar högerkant under rubrikraden. Det blir
+  ingen CSV, och texten blir löptext med kolumnerna ihopflätade på samma
+  rad. Står ett tecken ur det, med eller utan siffror, utanför de
+  tabeller som lästs, också de utan lodräta linjer, blir sidan
+  `tabell-osaker` (K89,
+  [ADR-0111](decisions/0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md)).
 - **En säker tabell utan lodräta linjer** läses ur de ord som står
   utanför tabellerna med linjer, enligt
   [Tabeller utan lodräta linjer](#tabeller-utan-lodräta-linjer).
