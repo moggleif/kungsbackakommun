@@ -1,4 +1,4 @@
-"""Krav: K10 i docs/02-KRAV.md, ADR-0013 och ADR-0061.
+"""Krav: K10 och K92 i docs/02-KRAV.md, ADR-0013, ADR-0061 och ADR-0115.
 Kod: src/kommunhandlingar/hamtning/."""
 
 import tempfile
@@ -43,7 +43,9 @@ class Server(BaseHTTPRequestHandler):
         pass
 
 
-class TestKlient(unittest.TestCase):
+class MedServer(unittest.TestCase):
+    """Klienten mot en lokal testserver; i test_hamtgranser.py också."""
+
     @classmethod
     def setUpClass(cls):
         cls.server = ThreadingHTTPServer(("127.0.0.1", 0), Server)
@@ -61,11 +63,17 @@ class TestKlient(unittest.TestCase):
         self.tid = 100.0
         self.vantat: list[float] = []
         self.klient = Klient(Installningar(UA, 5), lambda: self.tid, self.sov)
+        # Testservern svarar över http; i drift hämtas bara https (K92).
+        schema = mock.patch.object(klient, "SCHEMA", "http")
+        schema.start()
+        self.addCleanup(schema.stop)
 
     def sov(self, sekunder: float):
         self.vantat.append(sekunder)
         self.tid += sekunder
 
+
+class TestKlient(MedServer):
     def test_hamtar_text_med_var_user_agent(self):
         Server.svar["/sida"] = [(200, {"Content-Type": "text/html"}, "<h3>Möte</h3>")]
         self.assertEqual(self.klient.text(self.bas + "/sida"), "<h3>Möte</h3>")

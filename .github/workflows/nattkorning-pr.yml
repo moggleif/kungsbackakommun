@@ -1,6 +1,9 @@
 # PR:en från en av nattkörningens grenar, med automatisk merge (ADR-0052).
 # Ett eget jobb på en ny runner, utan utcheckning, så att inget som hämtats
-# kan nå token; båda nattkörningens jobb anropar det (ADR-0077).
+# kan nå token; båda nattkörningens jobb anropar det (ADR-0077). Grenen
+# mergas bara om den ändrar enbart data/ och versioner/, och bara på den
+# commit som prövats: ett jobb som tagits över av en fil det läst ska inte
+# kunna föra in kod i main (K92, ADR-0115).
 name: Nattkörningens PR
 
 on:
@@ -28,8 +31,19 @@ jobs:
             echo "Datat ligger på grenen \`$GREN\`; öppna en PR därifrån (ADR-0015)." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          # Bara grenens historik, utan filinnehåll och utan att något körs.
+          git init -q granskning && cd granskning
+          git fetch -q --filter=blob:none "https://github.com/$GITHUB_REPOSITORY" \
+            "+refs/heads/main:refs/remotes/main" "+refs/heads/$GREN:refs/remotes/gren"
+          COMMIT=$(git rev-parse refs/remotes/gren)
+          if git -c core.quotePath=false diff --name-only refs/remotes/main...refs/remotes/gren \
+            | grep -Ev '^(data|versioner)/'; then
+            echo "Grenen \`$GREN\` ändrar annat än data/ och versioner/; den mergas inte (ADR-0115)." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
           gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$GREN" \
             --title "Nattkörning ${GREN:12:10}, ${GREN##*-}" \
             --body "Datat från nattkörningen; mergas när kontrollen gått igenom (ADR-0052)."
-          gh pr merge "$GREN" --repo "$GITHUB_REPOSITORY" --auto --merge
+          gh pr merge "$GREN" --repo "$GITHUB_REPOSITORY" --auto --merge --match-head-commit "$COMMIT"
           echo "PR från \`$GREN\` mergas när kontrollen gått igenom (ADR-0052)." >> "$GITHUB_STEP_SUMMARY"

@@ -2668,3 +2668,47 @@ fil jämförs med mötessidorna i samma Sitevision-källa.
   inspelade svar och för arkivet med testernas fixturer
 - **Så** blir kandidatlistorna och sammanfattningarna identiska, och
   kommunfilernas format är oförändrat.
+
+## K92 — Det hämtade och nattkörningens gren kan inte ta sig förbi sina gränser
+
+[ADR-0115](decisions/0115-sakerhetsgranser-for-hamtning-och-nattkorning.md).
+Issue [#348](https://github.com/moggleif/kungsbackakommun/issues/348).
+Poolen läser filer och sidor från internet med tolkar som kan ha fel.
+Det som hämtas ska inte kunna läsa lokala filer, fylla disken eller
+minnet, eller föra in kod i `main`.
+
+- **Givet** en adress som inte börjar med `https://`, till exempel
+  `http:`, `file:` eller `ftp:`
+- **När** den ska hämtas
+- **Så** hämtas ingenting, inte heller `robots.txt`, och orsaken är
+  `inte-https`.
+
+- **Givet** en sida större än 50 MB eller en fil större än 1 GiB
+- **När** den hämtas
+- **Så** avbryts läsningen vid taket, inget nytt försök görs, och
+  orsaken är `for-stor`.
+
+- **Givet** en PDF-sida som i 300 dpi skulle bli en större bild än
+  Pillows gräns för en dekompressionsbomb (dubbla `MAX_IMAGE_PIXELS`,
+  lite mer än en A0)
+- **När** dokumentet konverteras
+- **Så** renderas sidan inte: den blir `ej-konverterad` och står i
+  `figurer`, och dokumentets övriga sidor läses som vanligt.
+
+- **Givet** en gren från nattkörningen som ändrar något utanför `data/`
+  och `versioner/`
+- **När** jobbet som öppnar PR:en körs
+- **Så** öppnas ingen PR, ingen automatisk merge slås på, och jobbet
+  faller med grenens namn i sammanfattningen.
+
+- **Givet** en gren från nattkörningen som fått en ny commit efter att
+  jobbet prövat den
+- **När** GitHub ska merga PR:en automatiskt
+- **Så** mergas den inte, eftersom mergen bara gäller den prövade
+  commiten.
+
+- **Givet** en ändring i en PR
+- **När** CI kör "Ren kod och tester"
+- **Så** faller den om en PDF är incheckad utanför `tests/fixtures/` eller
+  en extern action står på en tagg i stället för en commit, och
+  npm-paketen installeras utan sina installationsskript.

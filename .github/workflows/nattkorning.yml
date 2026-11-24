@@ -44,12 +44,12 @@ jobs:
             echo "DEL=moten"
             echo "GREN=nattkorning/$(date -u +%F)-${{ github.run_id }}-${{ github.run_attempt }}-moten"
           } >> "$GITHUB_ENV"
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
       - name: Utcheckningens commit, som spara.sh jämför med
         run: echo "BAS=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)
@@ -102,12 +102,12 @@ jobs:
             echo "DEL=arkiv"
             echo "GREN=nattkorning/$(date -u +%F)-${{ github.run_id }}-${{ github.run_attempt }}-arkiv"
           } >> "$GITHUB_ENV"
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ needs.moten.outputs.gren || 'main' }}
       - name: Utcheckningens commit, som spara.sh jämför med
         run: echo "BAS=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)

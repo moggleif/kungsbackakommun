@@ -1,9 +1,10 @@
-"""Krav: K10 i docs/02-KRAV.md, ADR-0013 och ADR-0061. Test:
-tests/test_klient.py.
+"""Krav: K10 och K92 i docs/02-KRAV.md, ADR-0013, ADR-0061 och ADR-0115.
+Test: tests/test_klient.py.
 
-Håller intervallet per värd, följer robots.txt, följer inga omdirigeringar
-och försöker igen vid 429, 5xx, tidsgräns och svar som bryts av; för
-robots.txt också vid omdirigering och när värden inte går att nå.
+Hämtar bara över https, håller intervallet per värd, följer robots.txt,
+följer inga omdirigeringar och försöker igen vid 429, 5xx, tidsgräns och
+svar som bryts av; för robots.txt också vid omdirigering och när värden
+inte går att nå.
 """
 
 import time
@@ -22,6 +23,7 @@ from kommunhandlingar.hamtning.svar import NyttForsok, http_fel, las_text, natfe
 FORSOK = 4
 FORSTA_VANTAN = 5
 TIDSGRANS = 60
+SCHEMA = "https"
 # Har visat sig gå över för robots.txt (ADR-0061).
 TILLFALLIGA_PA_ROBOTS = ("http-3", "anslutning")
 
@@ -54,6 +56,8 @@ class Klient:
         self.med_forsok(url, lambda svar: spara(svar, mal))
 
     def prova(self, url: str) -> None:
+        if urlsplit(url).scheme.lower() != SCHEMA:
+            raise Hamtfel("inte-https")
         if not robots.tillater(self.robotregler(url), url):
             raise Hamtfel("robots")
 

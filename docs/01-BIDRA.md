@@ -18,7 +18,7 @@ cd kungsbackakommun
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -e ".[utveckling]"
-npm install
+npm install --ignore-scripts
 ```
 
 `pip install -e .` gör paketet i `src/kommunhandlingar/` importerbart, så
@@ -35,7 +35,8 @@ av skannade sidor kör RapidOCR, som hämtar
 den latinska modellen från nätet första gången och kontrollerar dess
 sha256; CI hämtar den i varje körning.
 `npm install` installerar ESLint och jsdom i `node_modules/`, i de
-versioner som står i `package.json`, för webbplatsens skript (K83).
+versioner som står i `package.json`, för webbplatsens skript (K83), utan
+paketens installationsskript, som CI (ADR-0115).
 `package-lock.json` checkas inte in, eftersom den bär
 tredjepartspaketens konto- och sponsornamn (ADR-0104).
 
