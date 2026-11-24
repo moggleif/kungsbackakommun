@@ -1,4 +1,4 @@
-"""Krav: K1, K39 och K54 i docs/02-KRAV.md.
+"""Krav: K1 och K39 i docs/02-KRAV.md.
 Test: tests/test_konfiguration.py."""
 
 from dataclasses import dataclass
@@ -16,7 +16,6 @@ ORGANFALT = {
     "foregangare",
     "hor_till",
     "grupp",
-    "sammantradessidor",
 }
 
 
@@ -30,8 +29,6 @@ class Organ:
     hor_till: str | None = None
     # Gruppen organet står i på kommunens sida; ett utskott står i sitt organs.
     grupp: str | None = None
-    # Första året organets sammanträden får en egen sida (K54).
-    sammantradessidor: int | None = None
 
 
 def organen(poster: list[dict]) -> tuple[Organ, ...]:
@@ -52,7 +49,6 @@ def organ_av(post: dict) -> Organ:
         foregangare=schema.textlista(post, "foregangare", var),
         hor_till=schema.valfritt(post, "hor_till", str, var),
         grupp=schema.valfritt(post, "grupp", str, var),
-        sammantradessidor=schema.valfritt(post, "sammantradessidor", int, var),
     )
 
 
