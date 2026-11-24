@@ -1,9 +1,10 @@
-"""Krav: K84 i docs/02-KRAV.md, ADR-0005 och ADR-0105. Test:
+"""Krav: K84 i docs/02-KRAV.md, ADR-0005, ADR-0105 och ADR-0116. Test:
 tests/test_radlasning.py.
 
 Väg H på en sidbild i 300 dpi. RapidOCR hittar raderna och läser dem.
 Tesseract läser hela sidan, och varje ord hör till de rader vars ruta
-har ordets mittpunkt. Raderna där någon läsning har ett tal avgörs med
+har ordets mittpunkt. Raderna där någon läsning har ett tal, eller ett
+`o` som kan vara en nolla (`vag_h.kan_ha_tal`), avgörs med
 `vag_h.avgor`. En rad bekräftas aldrig när den har ett upphöjt tecken
 eller själv är upphöjd (`upphojt`), prövat i ett utsnitt med 15 pixlars
 marginal. Inte heller när rutan går in i en annan ruta på samma rad,
@@ -51,7 +52,7 @@ class Rad:
 
 @dataclass(frozen=True)
 class Sidlasning:
-    rader: list[Rad]  # raderna där någon läsning har ett tal
+    rader: list[Rad]  # raderna där någon läsning kan ha ett tal
     rutor: list[Ruta]  # alla rader
     tal_utanfor: int
 
@@ -65,7 +66,7 @@ def las(bild: Image.Image, tsv: str) -> Sidlasning:
     for ruta, text in hittade:
         pa_raden = radens_ord(ord_, ruta)
         tess = " ".join(o.text for o in pa_raden)
-        if vag_h.tal(text) or vag_h.tal(tess):
+        if vag_h.kan_ha_tal(text) or vag_h.kan_ha_tal(tess):
             avgorande = hinder(ruta, rutor) or avgor(bild, ruta, (text, tess))
             rader.append(Rad(ruta, text, pa_raden, avgorande))
     utanfor = [o for o in ord_ if not any(inom(o, r) for r in rutor)]

@@ -66,6 +66,17 @@ class Las(unittest.TestCase):
         self.assertEqual(rad.hur, "overlappar")
 
 
+class OSomNolla(unittest.TestCase):
+    def test_en_rad_utan_siffror_med_ett_o_avgors(self):
+        ruta = (100, 100, 400, 140)
+        tsv = "\t".join(["level", "page_num", "block_num", "par_num", "line_num"])
+        tsv += "\tleft\ttop\twidth\theight\tconf\ttext\n"
+        bild = Image.new("L", (600, 800), 255)
+        with patch.object(rapid, "rader", return_value=[(ruta, "Årskurs o")]):
+            lasning = radlasning.las(bild, tsv)
+        self.assertEqual([r.avgorande.hur for r in lasning.rader], ["o-som-nolla"])
+
+
 class Overlappar(unittest.TestCase):
     def test_bara_en_ruta_pa_samma_rad(self):
         raden = (100, 100, 400, 140)

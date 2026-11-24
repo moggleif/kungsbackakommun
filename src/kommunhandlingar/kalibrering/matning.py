@@ -1,14 +1,15 @@
-"""Krav: K84 i docs/02-KRAV.md och ADR-0105. Test: tests/test_kalibrering.py.
+"""Krav: K84 i docs/02-KRAV.md, ADR-0105 och ADR-0116. Test: tests/test_kalibrering.py.
 
 Mätningen på en textlagersida: sidan renderas som i konverteringen, läses
 med väg H, och varje rad jämförs med textlagret. En bekräftad rad är `ratt`
 när talen är textlagrets och annars `fel`, och `upphojt` när textlagret
 har ett upphöjt tecken på raden, eftersom det är just det skyddet ska
 stoppa. En rad som rör en bild eller har vridna tecken är `utan-facit`.
-En rad där ingen läsning har ett tal men textlagret har det är `missad`,
-och textlagrets tal utanför alla rader räknas som `utanfor`. En sida är
-bekräftad när alla dess rader med tal är det och inget tal i Tesseracts
-läsning står utanför raderna.
+En rad som väg H inte avgjort, eftersom ingen läsning kan ha ett tal
+(`vag_h.kan_ha_tal`), men där textlagret har ett är `missad`, och
+textlagrets tal utanför alla rader räknas som `utanfor`. En sida är
+bekräftad när alla rader som kan ha tal är det och inget tal i
+Tesseracts läsning står utanför raderna.
 """
 
 from dataclasses import dataclass
@@ -46,12 +47,12 @@ def mat(pdf: pdfium.PdfDocument, plumber: pdfplumber.PDF, nummer: int) -> Sidutf
 
 
 def missade(lasning: radlasning.Sidlasning, sida: facit.Facitsida) -> list[Utfall]:
-    """Textlagrets tal på rader utan tal i läsningen, och utanför raderna."""
-    med_tal = {r.ruta for r in lasning.rader}
+    """Textlagrets tal på rader som väg H inte avgjort, och utanför raderna."""
+    avgjorda = {r.ruta for r in lasning.rader}
     rader = [
         Utfall("", "missad", "", " ".join(tal), "", "")
         for ruta in lasning.rutor
-        if ruta not in med_tal and (tal := facit.radens_tal(sida, ruta))
+        if ruta not in avgjorda and (tal := facit.radens_tal(sida, ruta))
     ]
     utanfor = facit.tal_utanfor(sida, lasning.rutor)
     if utanfor:

@@ -120,7 +120,7 @@ Regler för det här repot, utöver MADR:
 | 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |
 | 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted (0112 räknar text snett och upp och ned som text på högkant) |
 | 0104 | [Webbplatsens skript kontrolleras med ESLint och prövas i jsdom mot ögonblicksbilden](0104-webbplatsens-skript-med-eslint-och-jsdom.md) | accepted (0108 låter CI hålla målen, 0117 checkar in `package-lock.json`) |
-| 0105 | [Väg H kalibreras mot textlagersidor innan den får bekräfta tal i poolen](0105-vag-h-kalibreras-mot-textlagersidor.md) | accepted |
+| 0105 | [Väg H kalibreras mot textlagersidor innan den får bekräfta tal i poolen](0105-vag-h-kalibreras-mot-textlagersidor.md) | accepted (0116 bekräftar inte ett o som kan vara en nolla) |
 | 0106 | [Skannade sidor får väg H:s tal när den lagrade texten har just dem](0106-skannade-sidor-far-vag-hs-tal.md) | accepted |
 | 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |
 | 0108 | [CI håller målen i Ren kod för koden, och testerna behåller de högre gränserna](0108-ci-haller-malen-for-koden.md) | accepted |
@@ -133,3 +133,4 @@ Regler för det här repot, utöver MADR:
 | 0115 | [Hämtningen tar bara https och har tak, stora sidor renderas inte, och nattkörningens gren mergas bara när den ändrar data](0115-sakerhetsgranser-for-hamtning-och-nattkorning.md) | accepted (0117 låser de transitiva beroendena, 0118 tar bort skrivrätten från jobben som läser det hämtade) |
 | 0117 | [Hela beroendeträdet installeras ur incheckade låsfiler med hashar: `uv.lock` för Python och `package-lock.json` för npm](0117-transitiva-beroenden-installeras-ur-lasfiler.md) | accepted |
 | 0118 | [Nattkörningens jobb som läser det hämtade har bara läsrätt, och ett eget jobb pushar grenen](0118-nattkorningens-tolkning-utan-skrivratt.md) | accepted |
+| 0116 | [Väg H bekräftar inte en rad med ett o som kan vara en nolla, och facit räknar inte utfyllnad under ett tecken](0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md) | accepted |

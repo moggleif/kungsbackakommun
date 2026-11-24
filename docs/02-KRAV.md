@@ -2518,6 +2518,15 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad.
 
+- **Givet** en rad där `o` eller `O` står utan en bokstav intill i någon
+  av de två läsningarna, som `Årskurs o` för `Årskurs 0` i ett typsnitt
+  med gemena siffror, eller `o-5` och `o,5 %`, men inte `t.o.m.` eller
+  ett `o` först på raden som punkt i en punktlista
+  ([ADR-0116](decisions/0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md))
+- **När** väg H avgör raden
+- **Så** räknas den som en rad som kan ha tal och är aldrig bekräftad,
+  så att sidan får obekräftade tal.
+
 - **Givet** poolens data och ett fast frö
 - **När** `python -m kommunhandlingar.kalibrering <data> <ut>` körs
 - **Så** mäts väg H på 300 sidor med textlager och bekräftade tal, högst
@@ -2538,6 +2547,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **Så** står raden i `rapport.md` med sina läsningar, och kommandot
   avslutas med kod 1, så att arbetsflödet faller.
 
+- **Givet** ett blanksteg i textlagret som börjar inne i ett synligt
+  tecken, som kalkylarkets utfyllnad ovanpå `730`
+- **När** kalibreringen läser radens facit
+- **Så** är det inget mellanrum, och facit är `730`.
+
 - **Givet** en rad som rör en bild på sidan, eller som har en vriden
   eller spegelvänd siffra i textlagret
 - **När** kalibreringen mäter den
@@ -2551,8 +2565,8 @@ byggt står i
 [03-ARKITEKTUR.md](03-ARKITEKTUR.md#väg-h-och-kalibreringen).
 
 - **Givet** en skannad sida vars första läsning med Tesseract når
-  tröskeln utan att sidan läses om, och där väg H bekräftar varje rad med
-  tal och inget tal står utanför raderna
+  tröskeln utan att sidan läses om, och där väg H bekräftar varje rad som
+  kan ha tal (K84) och inget tal står utanför raderna
 - **När** sidan konverteras
 - **Så** är den `ocr`, står inte i `tal_obekraftade`, och dokumentets
   `pipeline` nämner RapidOCR och onnxruntime. Det gäller också en sida
