@@ -1,4 +1,5 @@
-"""Krav: K84 i docs/02-KRAV.md, ADR-0005 och ADR-0105. Test: tests/test_vag_h.py.
+"""Krav: K84 i docs/02-KRAV.md, ADR-0005, ADR-0105 och ADR-0116.
+Test: tests/test_vag_h.py.
 
 Väg H avgör en rad som RapidOCR och Tesseract har läst. Raden är bekräftad
 när två läsningar har samma tal i samma ordning: först de två, annars den
@@ -16,7 +17,14 @@ tal och inte `116-4`.
 
 En rad där en siffra står direkt intill en bokstav i någon av de två
 läsningarna bekräftas aldrig. Där läser båda motorerna gärna en bokstav
-som en siffra på samma sätt, som `Kl.` som `K1.`.
+som en siffra på samma sätt, som `Kl.` som `K1.`. Inte heller en rad där
+`o` eller `O` står utan en bokstav intill i någon av läsningarna
+(`Årskurs o`, `o-5`, `o,5 %`, `(o)`), eftersom nollan i ett typsnitt med
+gemena siffror, som Georgia, ser ut som ett `o`, och båda motorerna läser
+`Årskurs 0` som `Årskurs o`. En sådan rad räknas som en rad som kan ha
+ett tal, så att sidan inte blir bekräftad. Undantagen är ett `o` mellan
+en bokstav och en punkt (`t.o.m.`, `o.s.v.`), och ett `o` först på raden
+med text efter, som är en punktlistas punkt (`o Budgeten`).
 """
 
 import re
@@ -29,6 +37,11 @@ KRING_TANKSTRECK = re.compile(r"(?<=\d)(?: *[–—][-–—]* *| +- +)(?=\d)")
 PROCENT = re.compile(r"(\d) %")
 BOKSTAV_VID_SIFFRA = re.compile(r"[^\W\d_]\d|\d[^\W\d_]")
 KRING_KOLON = re.compile(r"(?<=\d) *: *(?=\d)")
+BOKSTAV = r"[^\W\d_]"
+O_SOM_NOLLA = re.compile(
+    rf"(?<!{BOKSTAV})(?<!{BOKSTAV}\.)[oO]+(?!{BOKSTAV})(?!\.{BOKSTAV})"
+)
+PUNKT = re.compile(r"^\s*[oO]\s+(?=\S)")
 
 
 @dataclass(frozen=True)
@@ -42,9 +55,26 @@ def tal(text: str) -> list[str]:
     return TAL.findall(PROCENT.sub(r"\1%", text))
 
 
-def avgor(rapid: str, tesseract: str, tredje: Callable[[], str]) -> Avgorande:
+def kan_ha_tal(text: str) -> bool:
+    return bool(tal(text)) or o_som_nolla(text)
+
+
+def o_som_nolla(text: str) -> bool:
+    return bool(O_SOM_NOLLA.search(PUNKT.sub("", text)))
+
+
+def aldrig_bekraftad(rapid: str, tesseract: str) -> str | None:
+    """Varför raden inte kan bekräftas, vad läsningarna än säger, eller None."""
     if any(BOKSTAV_VID_SIFFRA.search(t) for t in (rapid, tesseract)):
-        return Avgorande(None, "bokstav-vid-siffra")
+        return "bokstav-vid-siffra"
+    if any(o_som_nolla(t) for t in (rapid, tesseract)):
+        return "o-som-nolla"
+    return None
+
+
+def avgor(rapid: str, tesseract: str, tredje: Callable[[], str]) -> Avgorande:
+    if hur := aldrig_bekraftad(rapid, tesseract):
+        return Avgorande(None, hur)
     forsta, andra = tal(rapid), tal(tesseract)
     if forsta == andra:
         return Avgorande(forsta, "eniga")

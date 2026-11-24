@@ -52,3 +52,6 @@
 # Text som står snett eller upp och ned (ADR-0112) tas ur sidans flöde på
 # varje sida med textlager.
 "0.19.0" = ["alla"]
+# Väg H bekräftar inte en rad med ett o som kan vara en nolla (ADR-0116):
+# bara sidor som läses med OCR.
+"0.20.0" = ["ocr"]

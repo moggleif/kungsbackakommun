@@ -1,8 +1,9 @@
 """Krav: K85 i docs/02-KRAV.md, ADR-0105 och ADR-0106. Test:
 tests/test_bekraftade.py.
 
-En skannad sida får bekräftade tal när väg H bekräftar varje rad med tal
-och inget tal i Tesseracts läsning står utanför raderna (`radlasning`).
+En skannad sida får bekräftade tal när väg H bekräftar varje rad som kan
+ha tal (`vag_h.kan_ha_tal`) och inget tal i Tesseracts läsning står
+utanför raderna (`radlasning`).
 Den lagrade texten är Tesseracts, utom på en rad som RapidOCR och den
 tredje läsningen bekräftat (`tredje-och-rapid`): där ersätts Tesseracts
 ord på raden med RapidOCR:s text. Orden måste stå i följd på en och

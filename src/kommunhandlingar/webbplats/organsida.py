@@ -1,6 +1,6 @@
 """Krav: K18, K26, K36, K37, K39, K54 och K96 i docs/02-KRAV.md, ADR-0023.
-Test: tests/test_webbplats_dokument.py, tests/test_sokdokument.py, tests/test_mal.py, tests/test_lokalbehov.py,
-tests/test_initiativ.py."""
+Test: tests/test_webbplats_dokument.py, tests/test_sokdokument.py, tests/test_mal.py,
+tests/test_lokalbehov.py, tests/test_initiativ.py."""
 
 from collections import defaultdict
 from html import escape
