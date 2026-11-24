@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.6d76bb7f1963d5107e616b38/1744889265
 sha256: d178e2700094e0c15edf559e7c33c9c81fe374c8a409920ab84c1c04752fbf66
 bytes: 323783886
 sidor: 1716
-hamtad: 2026-11-18T13:20:52+00:00
-konverterad: 2026-11-18T13:40:51+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T02:58:12+00:00
+konverterad: 2026-11-24T03:23:38+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ej-konverterad, ocr, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [541, 542, 543, 544, 545, 546, 579, 581, 593, 594, 595, 596, 597, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 776, 777, 1025, 1027, 1029, 1030, 1031, 1032, 1034, 1035, 1037, 1040, 1041, 1084, 1085, 1086, 1090, 1092, 1093, 1160, 1162, 1164, 1165, 1166, 1167, 1169, 1170, 1172, 1175, 1176, 1219, 1220, 1221, 1225, 1227, 1228, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1272, 1273, 1274, 1275, 1276, 1277, 1278, 1279, 1280, 1281, 1282, 1283, 1284, 1285, 1286, 1287, 1288, 1289, 1290, 1291, 1292, 1293, 1294, 1295, 1296, 1297, 1298, 1299, 1300, 1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 1320, 1321, 1322, 1323, 1324, 1325, 1340, 1384, 1471, 1472, 1473, 1474, 1475, 1476, 1481, 1482, 1483, 1484, 1485, 1486, 1487, 1488, 1489, 1672, 1693, 1701, 1716]
-figurer: [553, 554, 555, 568, 569, 570, 571, 572, 573, 575, 576, 577, 578, 579, 580, 591, 593, 594, 595, 596, 597, 599, 603, 606, 609, 612, 613, 614, 615, 616, 617, 618, 619, 620, 622, 630, 633, 639, 641, 648, 649, 650, 651, 652, 654, 655, 656, 657, 658, 659, 666, 667, 668, 670, 672, 676, 677, 678, 679, 680, 686, 694, 696, 697, 699, 701, 702, 703, 704, 705, 706, 709, 710, 712, 713, 718, 720, 722, 723, 725, 726, 727, 728, 730, 735, 950, 972, 974, 976, 988, 990, 992, 1004, 1008, 1020, 1026, 1027, 1028, 1030, 1031, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1055, 1056, 1057, 1058, 1060, 1061, 1062, 1063, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1099, 1109, 1132, 1136, 1155, 1161, 1162, 1163, 1165, 1166, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1178, 1179, 1180, 1181, 1182, 1183, 1184, 1185, 1186, 1187, 1188, 1190, 1191, 1192, 1193, 1195, 1196, 1197, 1198, 1200, 1201, 1202, 1203, 1204, 1205, 1206, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1223, 1224, 1225, 1226, 1227, 1228, 1229, 1230, 1231, 1232, 1234, 1244, 1332, 1333, 1336, 1339, 1340, 1342, 1343, 1344, 1345, 1346, 1351, 1358, 1373, 1374, 1375, 1376, 1383, 1384, 1397, 1398, 1408, 1422, 1431, 1445, 1446, 1447, 1488, 1489, 1496, 1497, 1499, 1504, 1525, 1528, 1545, 1560, 1564, 1565, 1571, 1572, 1577, 1578, 1579, 1580, 1584, 1585, 1588, 1591, 1593, 1594, 1601, 1602, 1604, 1605, 1608, 1611, 1612, 1615, 1616, 1618, 1619, 1620, 1621, 1622, 1623, 1627, 1628, 1629, 1630, 1631, 1633, 1637, 1640, 1641, 1642, 1643, 1644, 1645, 1648, 1649, 1650, 1660, 1693]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ointressant, bild, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [541, 542, 543, 545, 546, 579, 581, 593, 594, 595, 596, 597, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 622, 629, 637, 638, 641, 776, 777, 1025, 1027, 1029, 1034, 1035, 1085, 1086, 1160, 1162, 1164, 1169, 1170, 1220, 1221, 1265, 1266, 1267, 1268, 1269, 1270, 1271, 1274, 1276, 1278, 1280, 1281, 1282, 1283, 1284, 1285, 1286, 1287, 1289, 1290, 1291, 1292, 1293, 1294, 1295, 1296, 1297, 1298, 1299, 1300, 1301, 1302, 1303, 1304, 1306, 1307, 1308, 1309, 1310, 1312, 1320, 1321, 1323, 1324, 1325, 1384, 1471, 1472, 1473, 1475, 1476, 1481, 1482, 1483, 1484, 1485, 1487, 1488, 1489, 1693, 1701, 1716]
+figurer: [543, 545, 546, 553, 554, 555, 568, 569, 570, 571, 572, 573, 575, 576, 577, 578, 579, 580, 591, 593, 594, 595, 596, 597, 599, 603, 606, 609, 612, 613, 614, 615, 616, 617, 618, 619, 620, 622, 623, 624, 625, 628, 629, 630, 631, 633, 634, 635, 636, 637, 638, 639, 641, 648, 649, 650, 651, 652, 654, 655, 656, 657, 658, 659, 666, 667, 668, 670, 672, 676, 677, 678, 679, 680, 686, 694, 696, 697, 699, 701, 702, 703, 704, 705, 706, 709, 710, 712, 713, 718, 720, 722, 723, 725, 726, 727, 728, 730, 735, 950, 972, 974, 976, 988, 990, 992, 1004, 1008, 1020, 1026, 1027, 1028, 1030, 1031, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1043, 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1055, 1056, 1057, 1058, 1060, 1061, 1062, 1063, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1099, 1109, 1132, 1136, 1155, 1161, 1162, 1163, 1165, 1166, 1168, 1169, 1170, 1171, 1172, 1173, 1174, 1175, 1176, 1178, 1179, 1180, 1181, 1182, 1183, 1184, 1185, 1186, 1187, 1188, 1190, 1191, 1192, 1193, 1195, 1196, 1197, 1198, 1200, 1201, 1202, 1203, 1204, 1205, 1206, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1223, 1224, 1225, 1226, 1227, 1228, 1229, 1230, 1231, 1232, 1234, 1244, 1280, 1281, 1282, 1286, 1287, 1288, 1289, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1324, 1332, 1333, 1336, 1339, 1340, 1342, 1343, 1344, 1345, 1346, 1351, 1358, 1373, 1374, 1375, 1376, 1383, 1384, 1397, 1398, 1408, 1422, 1431, 1445, 1446, 1447, 1487, 1488, 1489, 1496, 1497, 1499, 1504, 1525, 1528, 1545, 1560, 1564, 1565, 1571, 1572, 1577, 1578, 1579, 1580, 1584, 1585, 1588, 1591, 1593, 1594, 1601, 1602, 1604, 1605, 1608, 1611, 1612, 1615, 1616, 1618, 1619, 1620, 1621, 1622, 1623, 1627, 1628, 1629, 1630, 1631, 1633, 1637, 1640, 1641, 1642, 1643, 1644, 1645, 1648, 1649, 1650, 1660, 1672, 1693, 1701]
 tolkade: []
 granskad: null
 ---
@@ -11729,9 +11729,9 @@ Ina Hüttenberger
 Cedås Akustik
 (e-post borttagen)
 
-2024 -12 -18 | Bångsbo 4 :1 , Ku llav ik
+2024-12-18 | Bångsbo 4:1, Kullavik
 
-Trafikbu lleru tredn ing
+Trafikbullerutredning
 
 <!-- sida 608 -->
 
@@ -11794,9 +11794,9 @@ Ina Hüttenberger
 Cedås Akustik
 (e-post borttagen)
 
-2024 -12 -18 | Bångsbo 4 :1 , Ku llav ik
+2024-12-18 | Bångsbo 4:1, Kullavik
 
-Trafikbu lleru tredn ing
+Trafikbullerutredning
 
 <!-- sida 610 -->
 
@@ -11887,9 +11887,9 @@ Ina Hüttenberger
 Cedås Akustik
 (e-post borttagen)
 
-2024 -12 -18 | Bångsbo 4 :1 , Ku llav ik
+2024-12-18 | Bångsbo 4:1, Kullavik
 
-Trafikbu lleru tredn ing
+Trafikbullerutredning
 
 <!-- sida 612 -->
 
@@ -12230,6 +12230,8 @@ näringslivet.
 
 <!-- sida 622 -->
 
+Området
+
 <!-- sida 623 -->
 
 Bolsheden Södra
@@ -12391,7 +12393,7 @@ stressnivåer minskar och pulsen sänks.
 
 <!-- sida 631 -->
 
-Ett område med upp till 5024 lägre
+Ett område med upp till 50% lägre
 effektbehov via energigemenskap
 
 Energiförsörjning är och kommer i framtiden vara en central fråga i all
@@ -38954,15 +38956,15 @@ Exploateringsbidraget ska delas utifrån i detaljplanen erhållen byggrätt, enl
 11(15)
 
 Inom delområde 1 fördelas kostnaderna enligt följande:
-55 20 Kungsbacka kommun
+55 % Kungsbacka kommun
 
-31 24 Balder i Kungsbacka AB
+31 % Balder i Kungsbacka AB
 
-14 240 Transportcentrum i Kungsbacka AB
+14 % Transportcentrum i Kungsbacka AB
 
 Inom delområde 2 fördelas kostnaderna enligt följande:
-70 20 Kungsbacka kommun
-30 24 Transportcentrum i Kungsbacka AB
+70 % Kungsbacka kommun
+30 % Transportcentrum i Kungsbacka AB
 
 Gatukostnadsersättning
 
@@ -39221,7 +39223,322 @@ Bilaga G - Karta kommunaltekniska anläggningar som kommunen bygger ut.
 
 <!-- sida 1280 -->
 
+l
+
+ÅNATUR,
+Hoj!
+
+SWEREF 99 A
+
+2 meter 200 Detaljp är baserad på
+1200 och höjdsystemet RH 2000
+Skala 1:2000 i A1, skala 1:4000 i A3
+TECKENFÖRKLARING KARTDATA A : 2022-10-28, höjd
+2148 5 Vägbana
+Liljan Traktnamn, kvartersnamn Bostadshus fasad, resp. tak
+
+Fastighetsgrans
+Gang- och cykelbana
+
+Uthus fasad, resp. tak
+Skarmtak
+
+id 2024-02-05
+
+I
+PLANBESTÄMMELSER
+
+Följande gäller inom omraden med Endast angiven och
+ar tillaten. Dar saknas gäller inom hela omradet.
+
+GRÄNSER
+
+— t— — Planomradesgrans.
+
+Sn Användningsgrans.
+Egenskapsgrans.
+
+so6o6 + + Administrativ gräns.
+
+söt or oo + Egenskaps- och administrativ gräns.
+
+ANVÄNDNING AV MARK
+Allmän med
+
+GATA,
+NATUR = Naturomrade.
+
+Huvudgata.
+
+VÄG = väg.
+
+Kvartersmark
+
+G
+
+Drivmedelsförsäljning.
+
+eller handel med livsmedel.
+
+Verksamheter
+
+\+ Ci ej hotell, eller handel med livsmedel.
+E; Atervinningscentral.
+
+E; Transformatorstation.
+
+E, Pumpstation.
+
+J Industri.
+
+P, Pendelparkering.
+
+VA Verksamheter.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+Mark
+
++0,0 Markens höjd over nollplanet ska vara \<angivet> meter
++37 M — Markens höjd over nollplanet ska vara lagst +37 meter.
+damm — Dagvattendamm.
+
+höjd — Markens höjd över nollplanet tar vara högst +38 meter .
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+
+Mark
++50 Markens höjd över nollplanet ska vara 50 meter.
+n, Upplag far inte finnas.
+n, Markens höjd över nollplanet far vara upp till max +38 meter.
+Omfattning
+
+Marken far inte förses med byggnad.
+
+Högsta nockhöjd är \<angivet> meter över angivet nollplan .
+
+e, Största byggnadsarea är 60 4 per fastighet inom användningsomradet.
+Placering
+Pp, Byggnad ska placeras minst 4 meter från fastighetsgräns. Bestämmelsen gäller
+
+inte om byggnder sammanbyggs i fastighetsgräns. .
+
+I Störningsskydd
+
+m, Fasader som vetter mot väg E6 ska utformas I obrännbart
+material. Luftintag samt entréer och inlastning ska anordnas på
+lämpligt sätt sa att de vetter bort fran vag E6. Minst en utrymningsväg I varje
+byggnad ska vetta bort fran vag E6. Ytor mellan byggnad och väg E6 utformas for
+att inte uppmuntra till stadigvarande vistelse.
+
+m, För bebyggelse för centrumändamål gäller
+ä Fönster och ingaende ska vara E 30 vilket
+innebär att fönster inte kan vara öppningsbara eller endast kan oppnas med
+för Luftintag placeras högt och ska
+vetta bort fran väg E6. Entréer och inlastning ska anordnas pa lämpligt sätt sa att
+de vetter bort fran vag E6. Vid utformning av byggnader ska hänsyn tas till
+dimensionerande explosionslast. Fasad ska vara i obrännbart material. Platser för
+utevistelse far inte anordnas.
+
+Mm. För bebyggelse för centrumandamal gäller:
+kd Luftintag placeras högt pa byggnad och orienteras bort från väg E6.
+
+m, Byggnader och tekniska anläggningar kopplade till hantering av
+brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgräns mot
+kvartersmark. Avvattning av hardgjorda ytor ska
+förses med anläggning för uppsamling av olja. Entréer för byggnader inom 25
+meter från drivmedelsstationen, bör vetta bort fran
+drivmedelsstationen.Byggnader och tekniska anläggningar kopplade till hantering
+av brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgräns mot
+kvartersmark. Avvattning av hardgjorda ytor ska förses med anläggning för
+uppsamling av olja. Entréer för byggnader inom 25 meter från
+drivmedelsstationen, bor vetta bort fran drivmedelsstationen.
+
+m, Obebyggda ytor bör utformas sa att de inte uppmuntrar till
+
+; stadigvarande vistelse.
+
+m Byggnader som uppförs inom 40 meter fran kvartersmark som omfattas av
+
+G
+ska utformas med utrymningsmöjlighet som vetter bort fran
+drivmedelsforsäljningen.
+
+Mm; Stängsel ska finnas längs krön vid bergschakt.
+Mm, ska utföras vid I berget. Atgärden
+kö ska godkännas av sakkunnig bergtekniker,
+m, Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran övriga
+LG byggnader (ej bensinstation).
+I My Avskarande dike för skyfallsled far finnas.
+'Utfart
+ho 0 0 0 dUtfar för utryckningstordon far finnas. Utfart för övriga fordon far inte finnas.
+Utformning
+f Fasad mot vag E6 och vag 158 ska ges en omsorgsfull utformning med hansyn till
+' omradets exponerade läge. Skyltning far endast ske pa fasad och ska placeras
+lägre än takfotshojden. Ljusskyltar eller andra anordningar som kan inverka
+störande pa trafiken pa vag E6 far ej anordnas.
+I f En pylon för skyltandamal får uppföras pa en plats inom
+I a egenskapsomradet med en högsta höjd pa 12 meter. Anordningar som kan
+inverka störande pa trafiken pa vag E6 (exempelvis ljusskyltar med starkt ljus,
+| blinkande ljus eller bildvaxlande skyltar) far ej anordnas.
+| Utförande
+b, Omrade inom vilket bergteknisk atgard ska utföras.
+2 ingen är tillaten. enligt ska foljas.
+b Il [ lig ka följ:
+ADMINISTRATIVA BESTÄMMELSER FÖR ALLMÄN PLATS
+Genomförandetid
+CM Genomförandetiden är 5 ar fran den dag planen vinner laga kraft.
+
+|ADMINISTRATIVA BESTÄMMELSER FÖR KVARTERSMARK
+'Markreservat
+
+u, Markreservat för allmännyttiga underjordiska ledningar.
+
+Villkor för startbesked
+
+I a far inte ges för för vistelse förrän flytt av
+I ' kraftledningen har kommit till stånd.
+a Startbesked far inte ges för byggnader och parkering far inte anläggas förrän flytt
+2
+av kraftledningen har kommit till stand.
+a far inte ges för förran atgarder har kommit
+a
+| till stand.
+| a. far inte ges för förrän dike för i
+
+oster har anlagts.
+
+ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+
+P2 Transformatorstation ska placeras minst 5 meter fran
+
+ORIENTERINGSKARTA
+
+| Genomförandetiden är 15 är fran den dag planen vinner laga kraft. Gäller inte för omrade a4.
+
+Detaljplan för verksamheter i N
+JP Antagandehandling
+Klovsten
+. Instans
+inom Ysby 1:2 med flera Samrad
+i Kungsbacka stad 2019-11-21 |BNS372
+Kungsbacka kommun Kungsbocko | Sg19t1ar |BN§372
+" Antagande
+Upprättad 2025-01-21 ox | KF SR
+Laga kraft
+KO0O(-XX-XX
+Ida Lennartsson Maria Malone Diarenummer | åa e0e
+Å Verksamhetschef Plan Senior Planarkitekt 2018-00007 | Jane
+Del ligt PBL.
+PLANKARTA |2010.800 mod utoat törtarande KBXXX
+
+ape.wosBuualeojdx3 v ebejg
+
 <!-- sida 1281 -->
+
+l
+PLANBESTÄMMELSER Störningsskydd
+
+\- m Fasader som vetter mot vag E6 ska utformas I obrännbart
+i
+
+Följande see llaten ee INeg N I Eda belom ad material. Luftintag samt entréer och inlastning ska anordnas på
+SF UREN OR SKURET inom hela omradet; lämpligt sätt sa att de vetter bort fran väg E6. Minst en utrymningsväg i varje
+a byggnad ska vetta bort från vag E6. Ytor mellan byggnad och väg E6 utformas för
+GRÄNSER H att inte uppmuntra till stadigvarande vistelse.
+\- sr d . i For bebyggelse för centrumändamal gäller:
+TANOMR ssd ma Fönster och ingaende ska vara E 30 vilket
+——— "äte innebär att fönster inte kan vara öppningsbara eller endast kan öppnas med
+PNRDOrIngsQräne; för Luftintag placeras högt och ska
+vetta bort fran vag E6. Entréer och inlastning ska anordnas pa lämpligt sätt sa att
+Egenskapsgrans. de vetter bort fran vag E6. Vid utformning av byggnader ska hänsyn tas till
+dimensionerande explosionslast. Fasad ska vara i obrännbart matenial. Platser för
++o6 6 + + Administrativ gräns. utevistelse far inte anordnas,
+m, För bebyggelse för centrumandamal galler.
+sor os oc + Egenskaps- och administrativ gräns. Luftintag placeras högt på byggnad och onienteras bort fran vag E6.
+m Byggnader och tekniska anläggningar kopplade till hantering av
+ANVÄNDNING AV MARK , brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgräns mot
+kvartersmark. Avvattning av hardgjorda ytor ska
+Allmän med förses med anläggning för uppsamling av olja. Entréer för byggnader inom 25
+GATA, | Huvud, meter fran drivmedelsstationen, bör vetta bort fran
+' uvudgata: och tekniska kopplade till hantering
+av brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+| NATUR = Naturomrade. kvartersmark. Avvattning av hardgjorda ytor ska förses med anläggning för
+RN | uppsamling av olja. Entréer för byggnader inom 25 meter från
+VÄG Väg. drivmedelsstationen, bör vetta bort fran drivmedelsstationen.
+mMm Obebyggda ytor bör utformas sa att de inte uppmuntrar till
+Kvartersmark I dd stadigvarande vistelse.
+fia 0 ed ci ej hotell, eller handel med livsmedel. I m. Byggnader som uppförs gom: 40 meter fran kvartersmark som omfattas av
+(e) I ska utformas med utrymningsmojlighet som vetter bort från
+Drivmedelsförsaljning. drivmedelsförsäljningen.
+vå Zz Verksamheter. Mm; Stängsel ska finnas langs krön vid bergschakt,
+i
+på BD RA ANGE MV OK Mm ska utföras vid I berget. Atgarden
+AN AJA MMA RUNAR SVE MU yta C, ec ej hotell, eller handel med livsmedel. | id ska godkännas av sakkunnig bergtekniker,
+N SEN Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran övriga
+Avg, er LPA «u N I m
+; BV PRATA k E, Atervinningscentral. | : byggnader (ej bensinstation).
+\- SM wo ör Ftansfömatorstation | Mm, Avskärande dike för skyfallsled far finnas.
+E; Pumpstation.
+3 o 0 4 Utfart för utryckningsfordon far finnas. Utfart för övriga fordon far inte finnas.
+Ch '9
+Industri. |
+" I Utformning
+j/  FULe NE NA P, Pendelparkering. I f Fasad mot vag E6 och väg 158 ska ges en omsorgsfull utformning med hänsyn till
+Vi a UPBNAPRA då I ' omradets exponerade lage. Skyltning far endast ske på fasad och ska placeras
+fa BY ) rd Rjärkkarfeter lägre an takfotshojden. Ljusskyltar eller andra anordningar som kan inverka
+RON 4 valg z ERAN R störande pa trafiken pa vag E6 far ej anordnas.
+Na SARGEN AE Min Å N Mu f En pylon för skyltandamal far uppföras pa en plats inom
+/ FY MS ARN oy vg oo EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS R egenskapsomradet med en högsta höjd pa 12 meter. Anordningar som kan [0 v)
+/ CN TR o Mark inverka storande pa trafiken pa vag E6 (exempelvis ljusskyltar med starkt ljus, =
+057 BRA ip, PI TIA p N H blinkande ljus eller bildväxlande skyltar) far ej anordnas. DD
+| MIR RR NA NI Y +0,0 Markens höjd over nollplanet ska vara \<angivet> meter, Utförande [Ce]
+KR a +
+vi är | +37 M —— Markens höjd över nollplanet ska vara lagst +37 meter. b, Omrade inom vilket bergteknisk atgard ska utföras. Vv
+MM OMR .
+AR MOR Re > , ANAR damm — Dagvattendamm. b, Ingen ar tillaten. enligt ska följas. ja
+/ Mö ML ! öl S é
+/ BOENENN  S NINA MD LE NA höjd Markens höjd över nollplanet far vara högst +38 meter . ADMINISTRATIVA BESTÄMMELSER FÖR ALLMÄN PLATS [CE
+SLONKE ÖNA 2 i ; Genomförandetid O
+(ög, RUN VIS SOT R - N EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+NIAN OR "RN GA JR AR || vå 3 N a Ka Mark a 'Genomförandetiden ar 5 ar fran den dag planen vinner laga kraft. 3
+RR hd Xx d Y [OT
+NAFTA ra Me MAN bl a 250 Markens höjd over nollplanet ska vara 50 meter. ADMINISTRATIVA BESTÄMMELSER FÖR KVARTERSMARK OQ
+Sug NIT NG BN ]
+SSA KÄRL de 0 pt Nm Upplag far inte finnas. | Markreservat &
+\+ vm u, Markreservat för allmännyttiga underjordiska ledningar.
+n, Markens höjd over nollplanet far vara upp till max +38 meter.
+. Omifatt Villkor för startbesked
+i Nar miattning a far inte ges för för vistelse förrän flytt av
+(VEGA EN CM ; | Marken far inte förses med byggnad. ' kraftledningen har kommit till stand.
+j n KR > X ( a Startbesked far inte ges for byggnader och parkering far inte anläggas förran flytt
+NM / TT DE Å <> Högsta nockhöjd är \<angivet> meter över angivet nollplan . ' av kraftledningen har kommit till stand.
+an MH TON I far inte ges för förrän atgarder har kommit
+| - Qi d i | . e, Största byggnadsarea är 60 26 per fastighet inom användningsomradet. as till stand.
+d |
+i | Placering a; Age fra ges för förran dike för [0
+K meter 200, D är baserad på SWEREF 99 Pp Byggnad ska placeras minst 4 meter fran fastighetsgräns. Bestammelsen gäller |
+1200 och höjdsystemet RH 2000 i08:om/Ryggnder.eammarikygge: fastiohetegränsr. ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+Skala 1:2000 i A1, skala 1:4000 i A3 N P2 Transtformatorstation ska placeras minst 5 meter fran
+'Genomförandetiden är 15 ar fran den dag planen vinner laga kraft. Gäller inte för område a4.
+TECKENFÖRKLARING KARTDATA = Aktualitetsdatum kartdata: 2022-10-28, kompletterande höjdgrid 2024-02-05
+214 5 d Vagbana ; R K
+Liljan Traktnamn, kvartersnamn £=3 | Bostadshus fasad, resp. tak Detaljplan för verksamheter i Antagandehandlin
+Klovsten 9 g
+Fastighetsgrans i od lod Uthus fasad, resp. tak Vv
+Gang- och cykelbana I Skaärmtak . E Instans
+inom Ysby 1:2 med flera i Sämrad
+i Kungsbacka stad 2019-11-24 |BN 5372
+Granskning
+Kungsbacka kommun Kungsbocka | gig11.07 |BN6372
+Zu Antagande
+Upprättad 2025-01-21 pink semnl fon
+Laga kraft
+KOKK
+Plankostnads-
+Ida Lennartsson Maria Malone Diarenummer | åvan no
+Verksamhetschef Plan Senior Planarkitekt 2018-00007 | Jane;
+Detaljplanen är upprättad enligt PBL
+PLANKARTA |2010.900 mod utokat förfarande KBXXX
 
 <!-- sida 1282 -->
 
@@ -39371,6 +39688,217 @@ Namnförtydligande
 
 <!-- sida 1286 -->
 
+NATUR
+ihogl GA
+
+I ls öl ann Då år baserad på koordinatsystemet SWEREF 99
+1200 och höjdsystemet RH 2000
+Skala 1:2000 i A1, skala 1:4000 i A3
+TECKENFÖRKLARING KARTDATA A : 2022-10-28, höjdgrid 2024-02-05
+VILLE Lu Vagbana
+Liljan Traktnamn, kvartersnamn [era] | Bostadshus fasad, resp. tak
+
+Fastighetsgrans
+'Gang- och cykelbana
+
+| Uthus fasad, resp. tak
+Skarmtak
+
+l
+PLANBESTÄMMELSER
+
+Störningsskydd
+Fasader som vetter mot väg E6 ska utformas i obrännbart
+m
+Följande. SPA OR OVER med K I Endast MAIA of del och ] material. Luftintag samt entréer och inlastning ska anordnas på
+\- ARENA SIRENEN lämpligt sätt sa att de vetter bort fran väg E6. Minst en utrymningsvag i varje
+byggnad ska vetta bort från väg E6. Ytor mellan byggnad och väg E6 utformas för
+GRÄNSER
+
+— :— — Planomradesgrans.
+
+—— — Användningsgräns.
+Egenskapsgräns.
+
++o6 + + + Administrativ gräns.
+
+sök os os os + Egenskaps- och administrativ gräns.
+
+ANVÄNDNING AV MARK
+Allmän med
+
+GATA, = Huvudgata.
+NATUR = Naturomrade.
+VÄG Väg.
+
+Kvartersmark
+
+[el ej hotell,
+
+eller handel med livsmedel.
+
+G Drivmedelsförsaljning.
+
+vå Verksamheter.
+
+6, tu ej hotell, eller handel med livsmedel.
+E, Atervinningscentral,
+
+E; Transtformatorstation.
+
+Ej; Pumpstation.
+
+J Industri.
+
+P, Pendelparkering.
+
+\+
+
+Verksamhete
+
+.SKAPSBES” ELSER FÖR « ÄN PLA”
+
+sk
+
++0,0 Markens höjd over nalle" \<angivet>
+37 m — Marke se NON AR HIAUFFABRIEL Oras.
+
+am Dar damm.
+
+Mar 4 över nollpla: nvögst +38
+
+EGENSKAPSBESTÄMMLLuinR FÖR KVAKIERSMARK
+
+Mark
++50 Markens höjd över nollplanet ska vara 50 meter.
+n, Upplag far inte finnas.
+n, Markens höjd över nollplanet far vara upp till max +38 meter.
+Omfattning
+
+Marken far inte förses med byggnad.
+
+Högsta nockhöjd är \<angivet> meter över angivet nollplan .
+
+e, Största byggnadsarea ar 60 246 per fastighet inom användningsomradet.
+Placering
+Pp Byggnad ska placeras minst 4 meter fran fastighetsgräns. Bestämmelsen gäller
+
+inte om byggnder sammanbyggs i fastighetsgräns. .
+
+[ Transformatorstation ska placeras minst 5 meter fran
+
+att inte uppmuntra till stadigvarande vistelse.
+
+m, För bebyggelse for centrumandamäl galler.
+Fönster och ingaende ska vara E 30 vilket
+innebär att fönster inte kan vara öppningsbara eller endast kan oppnas med
+för Luftintag placeras högt och ska
+vetta bort fran väg E6. Entréer och inlastning ska anordnas pa lämpligt sätt sa att
+de vetter bort fran väg E6. Vid utformning av byggnader ska hänsyn tas till
+Fasad ska vara I material. Platser för
+
+utevistelse far inte anordnas,
+
+mi För bebyggelse för centrumandamal gäller
+1 Luftintag placeras högt pa byggnad och orienteras bort fran väg E6.
+
+m, Byggnader och tekniska anläggningar kopplade till hantering av
+brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+kvartersmark. Avvattning av hardgjorda ytor ska
+förses med anläggning för uppsamling av olja. Entréer för byggnader inom 25
+meter fran drivmedelsstationen, bör vetta bort fran
+drivmedelsstationen.Byggnader och tekniska anläggningar kopplade till hantering
+av brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgräns mot
+kvartersmark, Avvattning av hardgjorda ytor ska förses med anläggning för
+uppsamling av olja. Entréer för byggnader inom 25 meter fran
+drivmedelsstationen, bor vetta bort fran drivmedelsstationen.
+
+m. Obebyggda ytor bör utformas sa att de inte uppmuntrar till
+
+id stadigvarande vistelse.
+
+m, Byggnader som uppförs inom 40 meter fran kvartersmark som omfattas av
+
+ska utformas med utrymningsmojlighet som vetter bort fran
+drivmedelsforsaljningen.
+
+m; Stängsel ska finnas langs krön vid bergschakt.
+Mm ska utföras vid i berget. Atgarden
+\$ ska godkännas av sakkunnig bergtekniker.
+Mm, Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran övriga
+sd byggnader (ej bensinstation).
+My Avskärande dike för skyfallsled far finnas.
+utfart
+
+bo 0 0 04 Utfart för utryckningsfordon far finnas, Utfart för övriga fordon far inte finnas.
+
+uUtfor 1
+Fasad mot väg E6 och vag 158 ska ges en omsorgsfull utformning med hänsyn till
+omradets exponerade läge. Skyltning far endast ske pa fasad och ska placeras
+lägre än takfotshöjden. Ljusskyltar eller andra anordningar som kan inverka
+
+örande pa trafiken pa vag E6 far ej anordnas.
+
+cn pylon för skyltandamal far uppföras pa en plats inom
+egenskapsomradet med en hogsta höjd pa 12 meter. Anordningar som kan
+inverka störande pa trafiken pa väg E6 (exempelvis ljusskyltar med starkt ljus,
+blinkande ljus eller bildväxlande skyltar) far ej anordnas.
+
+I Utför
+
+Ingen ar tillaten. enligt ska följas.
+
+ADM >" TIVA BESTÄMMELSER FÖR ALLMÄN PLATS
+Genori. I
+
+a. Genomförandetiden är 5 ar från den dag planen vinner laga kraft.
+
+ADMINISTRATIVA BESTÄMMELSER FÖR KVARTERSMARK
+Markreservat
+
+uu; för ledningar.
+
+Villkor för startbesked
+
+a far inte ges för
+' kraftledningen har kommit till stånd.
+
+vistelse förrän flytt av
+
+a Startbesked far inte ges för byggnader och parkering far inte anläggas förran flytt
+: av kraftledningen har kommit till stand.
+
+a far inte ges för förran atgärder har kommit
+: till stand.
+
+äv far inte ges för förrän dike för [D
+
+öster har anlagts.
+
+ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+G
+
+| Genomförandetiden är 15 ar fran den dag planen vinner laga kraft. Gäller inte för område a4,
+
+Detaljplan för verksamheter i .
+Klöveten Antagandehandling
+Instans
+inom Ysby 1:2 med flera i  orrad
+i Kungsbacka stad 2019-11-21 |BN\$S372
+ts Kungsbacka kommun Kungsbocka SOISAL BN 372
+” N Antagande
+' Upprättad 2025-01-21 jörbengkonlll LE
+Laga kraft
+KICK
+Plankostnads-
+Ida Lennartsson Maria Malone Diarenummer | aval
+Verksamhetschef Plan Senior Planarkitekt 2018-00007 | Jaej
+PLANKARTA j|cviu.svv mod utokat förfarande KBXXX
+
+BurupliqsiayBiIsej wo asjawuwWoysua.aAo ISeENIN d ebelg
+
+nrtogda Dotaljpla rättad enligt PBL
+
 <!-- sida 1287 -->
 
 Bilaga E — Fastighetsregleringar allmän plats
@@ -39398,6 +39926,116 @@ och regleras till Kungsbacka 2:17
 Bilaga F Befintliga byggnader och anläggningar
 
 <!-- sida 1289 -->
+
+l I
+
+I
+PLANBESTÄMMELSER [Störningsskydd
+
+Fasader som vetter mot väg E6 ska utformas I obrännbart
+
+Följande gäller inom omraden med » Endast angiven och mi material. Luftintag samt entréer och inlastning ska anordnas på
+är tillaten. Dar saknas gäller inom hela omradet. lämpligt satt sa att de vetter bort fran vag E6. Minst en utrymningsväg i varje
+s byggnad ska vetta bort från vag E6. Ytor mellan byggnad och vag E6 utformas for
+GRÄNSER att inte uppmuntra till stadigvarande vistelse.
+. — Planomradesgrans. m, För bebyggelse för centrumändamal gäller:
+Fönster och ingaende ska vara E 30 vilket
+innebär att fönster inte kan vara öppningsbara eller endast kan öppnas med
+— — —'— Anvandningsgrans. Luftintag placeras högt och ska
+vetta bort fran vag E6. Entréer och inlastning ska anordnas pa lämpligt sätt sa att
+Egenskapsgrans. de vetter bort fran väg E6. Vid utformning av byggnader ska hänsyn tas till
+dimensionerande explosionslast. Fasad ska vara i obrännbart material, Platser för
+«6 6 2 > Administrativ gräns. utevistelse far inte anordnas.
+vi För bebyggelse för centrumändamal gäller.
+«cc oc oc + Egenskaps- och administrativ gräns. z Luftintag placeras högt på byggnad och orienteras bort från väg E6.
+\- m, Byggnader och tekniska anläggningar kopplade till hantering av
+ANVÄNDNING AV MARK brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+\- kvartersmark. Avvattning av hardgjorda ytor ska
+Allmän med P förses med anläggning för uppsamling av olja. Entréer för byggnader inom 25
+GATA Huvud meter fran drivmedelsstationen, bör vetta bort fran
+1 | Huvudgata. I drivmedelsstationen.Byggnader och tekniska anlaggningar kopplade till hantering
+N E av brandfarliga vätskor far inte anläggas inom 25 meter fran fastighetsgräns mot
+BRN d| « js fe) ) | NATUR — Naturomrade. kvartersmark. Avvattning av hardgjorda ytor ska förses med anläggning för
+» ” uppsamling av olja. Entréer för byggnader inom 25 meter från
+åta : f f VÄG Väg. drivmedelsstationen, bör vetta bort fran drivmedelsstationen.
+Ro d ; fi m. Obebyggda ytor bör utformas sa att de inte uppmuntrar till
+my Kvartersmark q stadigvarande vistelse.
+NR ci ej hotell. lör Hage ed Ive m. Byggnader som uppförs Inönen meter fran kvartersmark som omfattas av
+
+ska utformas med utrymningsmöjlighet som vetter bort tran
+
+Drivmedelstörsaljning. drivmedelsforsaljningen.
+
+0
+Q
+Vv
+O
+Zz Verksamheter, Mm; Stängsel ska finnas längs krön vid bergschakt. 3
+b äl ska utföras vid i berget. Atgarden 3
+C, [0 ej hotell, eller handel med livsmedel. , ska godkännas av sakkunnig bergtekniker, a
+E i Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran övriga 3
+1 Atervinningscentral, 3 byggnader (ej bensinstation). [OT
+E; Transformatörstation. Mu Avskärande dike för skyfallsled far finnas. Do
+Utfart AA
+Ej; Pumpstation. -
+bo 0 o 0 dUtlfart för utryckningstordon far finnas. Utfart för övriga fordon far inte finnas. FU
+J Industri. P
+Utformning od
+P, Pendelparkering. f Fasad mot väg E6 och vag 158 ska ges en omsorgsfull utformning med hänsyn till Vv
+' områdets exponerade lage. Skyltning far endast ske på fasad och ska placeras [
+lägre än takfotshojden. Ljusskyltar eller andra anordningar som kan inverka
+Zz Metkasmhilter, störande pa trafiken pa väg E6 far ej anordnas. 3
+” - - f En pylon för skyltandamal får uppföras pa en plats inom 0:
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS ” egenskapsomradet med en högsta höjd pa 12 meter. Anordningar som kan [(0]
+Mark inverka störande pa trafiken pa väg E6 (exempelvis ljusskyltar med starkt ljus, ie]
+blinkande ljus eller bildväxlande skyltar) far ej anordnas. rg
++0,0 Markens höjd över nollplanet ska vara \<angivet> meter. I Utförande 3
++37 Mm —— Matkens höjd över nollplanet ska vara lägst +37 meter. b, Omrade inom vilket bergteknisk atgard ska utföras. 9
+damm = Dagvattendamm. by, Ingen är tillaten. enligt ska följas. =
+[Ul
+höjd Markens höjd över nollplanet far vara högst +38 meter . ADMINISTRATIVA BESTÄMMELSER FÖR ALLMÄN PLATS Lo)
+Genomförandetid 3
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+Mark CM Genomförandetiden är 5 ar från den dag planen vinner laga kraft. S
++50 Markens höjd över nollplanet ska vara 50 meter. ADMINISTRATIVA BESTÄMMELSER FÖR KVARTERSMARK 3
+n, Upplag får inte finnas. Markreservat 3
+u, för ledningar. cc
+n, Markens höjd över nollplanet far vara upp till max +38 meter. fa
+omfat Villkor för startbesked M
+mfattnu
+pg | a far inte ges för för vistelse förrän flytt av 3
+Marken far inte förses med byggnad. I H kraftledningen har kommit till stånd. fox
+a Startbesked far inte ges för byggnader och parkering far inte anläggas förran flytt <<
+Högsta nockhöjd är \<angivet> meter över angivet nollplan . 2 av kraftledningen har kommit till stand. GC
+a far inte ges för förrän atgarder har kommit AQ
+e, Största byggnadsarea är 60 6 per fastighet inom användningsomradet. : till stand. mM
+? - j | Placerin å far inte ges för förrän dike för i =
+snor 9g å öster har anlagts. c
+ete' Byggnad ska placeras minst 4 meter fran fastighetsgräns. Bestämmelsen gäller
+0 meter 200 D är baserad på koordinatsystemet SWEREF 99 Pi | a
+: - ; - i 1200 och höjdsystemet RH 2000 Ine:em byggnidarsammenbyggs i fästiohelsafänsi. ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+Skala 1:2000 i A1, skala 1:4000 i A3 P2 Transformatorstation ska placeras minst 5 meter fran
+
+Genomförandetiden ar 15 ar fran den dag planen vinner laga kraft. Gäller inte för omrade a4.
+
+TECKENFÖRKLARING KARTDATA = Aktualitetsdatum kartdata: 2022-10-28, kompletterande höjdgrid 2024-02-05
+
+en” egsternummer Logbana Detaljplan för verksamheter i
+Liljan Traktnamn, kvartersnamn [1] I) Bostadshus fasad, resp. tak ypi Antagandehandling
+Fastighetsgrans + Il) Uthus fasad, resp. tak Klovsten
+'Gang- och cykelbana Fä Skarmtak . Instans
+inom Ysby 1:2 med flera arg
+i Kungsbacka stad 2019-11-24 JENS 372
+Granskning
+Kungsbacka kommun ängen |ENSGr
+Antagande
+Upprättad 2025-01-21 so00esasen: [KF S 00
+Laga kraft
+KKR
+Ida Lennartsson Maria Malone Diarenummer avl AE
+Verksamhetschef Plan Senior Planarkitekt 2018-00007 | Janej
+Detaljplanen är upprättad onligt PBL
+PLANKARTA 201080 mod utokat förfarande KBXXX
 
 <!-- sida 1290 -->
 
@@ -40405,7 +41043,184 @@ Bilaga H — Karta dagvattenledning
 
 <!-- sida 1306 -->
 
+I
+PLANBESTÄMMELSER
+
+Störningsskydd
+Fasader som vetter mot vag E6 ska utformas i obrannbart
+m,
+Foljande galler inom omraden med nedanstaende beteckningar. Endast angiven användning och material. Luftintag samt entréer och inlastning ska anordnas pa
+
+utformning ar tillaten. Dar beteckning saknas galler bestammelsen inom hela omradet. lämpligt satt s3 alt de vetter bort fran vag E6. Minst en utrymningsvag i varje
+
+byggnad ska vetta bort fran vag E6. Ytor mellan byggnad och vag E6 utformas for
+
+GRÄNSER att inte uppmuntra till stadigvarande vistelse.
+—— — Planomrad q Å For bebyggelse for centrumandamal galler
+OARNKeCAegrans Mi Fonster och ingaende ska vara E 30 vilket
+UKN innebar att fonster inte kan vara oppningsbara eller endast kan oppnas med
+== ARVBRONIIGIrENS:; Luftintag placeras hogt och ska
+vetta bort fran vag E6. Entréer och inlastning ska anordnas pa lampligt satt sa att
+Egenskapsgrans. de vetter bort fran vag E6. Vid utformning av byggnader ska hansyn tas till
+dimensionerande explosionslast. Fasad ska vara I obrännbart material. Platser för
+\+ + + + > Administrativ grans. utevistelse far inte anordnas.
+in For bebyggelse for centrumandamal galler.
+++ + + + + Egenskaps- och administrativ grans. 2 Luftintag placeras hogt på byggnad och orienteras bort fran vag E6.
+m Byggnader och tekniska anlaggningar kopplade till hantering av
+ANVÄNDNING AV MARK 3 brandfarliga vatskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+Al GS kvartersmark. Avvattning av hardgjorda ytor ska
+Iman med forses med anlaggning for uppsamling av olja. Entréer for byggnader inom 25
+meter fran drivmedelsstationen, bor vetta bort fran
+GATA,  Huvudgata. och tekniska anlag; kopplade till hantering
+av brandfarliga vatskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+NATUR — Naturomrade. kvartersmark. Avvattning av hardgjorda ytor ska forses med anläggning for
+ESO uppsamling av olja. Entréer for byggnader inom 25 meter fran
+VÄG =:vag. drivmedelsstationen, bor vetta bort fran drivmedelsstationen.
+m. Obebyggda ytor bor utformas sa att de inte uppmuntrar till
+Kvartersmark stadigvarande vistelse.
+EST c ej hotell, eller handel med livsmedel. m, Byggnader som uppförs 0 40 meter fran kvartersmark som omfattas av
+G ska utformas med utrymningsmojlighet som vetter bort fran
+(ÄRR OSN Drivmedelstörsaljning. drivmedelsforsaljningen.
+z Verksamheter. m; Stangsel ska finnas langs kron vid bergschakt
+Bergsaknngsatgarder ska utforas vid sprangning i berget. Atgarden
+C, ec ej hotell, eller handel med livsmedel. Mm ska godkannas av sakkunnig bergtekniker.
+E nm, Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran ovriga
+' Atervinningscentral. d byggnader (ej bensinstation).
+E; Téäöälormärtorötstion. Mo Avskarande dike for skyfallsled far finnas.
+Utfart
+E, Pumpstation.
+bo o oo odUtfar for utryckningsfordon far finnas. Utfart för ovriga fordon far inte finnas.
+J Industri.
+Utformning
+P, Pendelparkering. f Fasad mot vag E6 och vag 158 ska ges en omsorgsfull utformning med hänsyn till
+' omradets exponerade lage. Skyltning far endast ske pa fasad och ska placeras [uvj
+z VASER lagre an takfotshojden. Ljusskyltar eller andra anordningar som kan inverka po
+en storande pa trafiken pa vag E6 far ej anordnas. D
+f. En pylon for skyltandamal far uppforas pa en plats inom [el
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS ” egenskapsomradet med en hogsta hojd pa 12 meter. Anordningar som kan 0
+Mark inverka storande på trafiken pa vag E6 (exempelvis ljusskyltar med starkt ljus,
+blinkande ljus eller bildvaxlande skyltar) far ej anordnas. >
++0,0 Markens hojd over nollplanet ska vara \<angivet> meter. Utforande Mm
+3 SAR +37 m —— Markens hojd over nollplanet ska vara lagst +37 meter. b, Omrade inom vilket bergteknisk atgard ska utföras. xx
+[ damm = Dagvattendamm. b, Ingen ar tillaten. enligt ska följas. Oo
+S y | höjd ——— Markens hojd over nollelanet far vara högst +38 meter . ADMINISTRATIVA BESTÄMMELSER FÖR ALLMÄN PLATS Åh
+V V
+| | | i Genomforandetid e
+N EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK i
+| a Genomforandetiden ar 5 ar fran den dag planen vinner laga kraft. pan |
+3 Mark [Ce]
+| 50 Mrknetöpt ÖS NONIaner Sk var BO eter; ADMINISTRATIVA BESTÄMMELSER FÖR KVARTERSMARK 8
+| Lt n, Upplag far inte finnas. Markreservat 3
+u, för ledningar. a |
+| n; Markens höjd over nollplanet far vara upp till max +38 meter. Do
+\- Av Mu Villkor for startbesked
+. NE Omfattning o
+| Ms RN 2 a, far inte ges for för vistelse forran flytt av Mm
+| I Marken far inte förses med byggnad. kraftledningen har kommit till stand.
+TIN a Startbesked far inte ges for byggnader och parkering far inte anlaggas forran flytt
+j Hogsta nockhojd ar \<angivet> meter over angivet nollplan . z av kraftledningen har kommit till stand.
+| Ng NY a far inte ges for förrän atgärder har kommit
+1 7 S > e, Storsta byggnadsarea ar 60 6 per fastighet inom användningsomradet. 2 till stand.
+Placering a. far inte ges for förran dike för i
+oster har anlagts.
+2 meter 200 Detaljplanen ar baserad på koordinatsystemet SWEREF 99 A Pp; Byggnad ska placeras minst 4 meter fran fastighetsgrans. Bestammelsen galler
+\- - 1200 och hojdsystemet RH 2000 å inte om byggnder sammanbyggs i fastighetsgrans. . ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+Skala 1:2000 i AM, skala 1:4000 i A3 Pa Transformatorstation ska placeras minst 5 meter fran
+
+Genomforandetiden ar 15 ar fran den dag planen vinner laga kraft. Galler inte för omrade a4.
+TECKENFÖRKLARING KARTDATA = Aktualitetsdatum kartdata: 2022-10-28, kompletterande höjdgrid 2024-02-05
+
+d Vagbana
+
+ORIENTERINGSKARTA
+
+Detaljplan för verksamheter i
+
+Antagandehandling
+
+Liljan Traktnamn, kvartersnamn Bostadshus fasad, resp. tak
+\- Fastighetsgrans Uthus fasad, resp. tak
+'Gang- och cykelbana Skarmtak
+
+ma
+or
+gagpeca on
+brinna ( 00)
+
+Klovsten
+Instans
+inom Ysby 1:2 med flera Samiad
+i Kungsbacka stad 2019-11-24 |PNS372
+Kungsbacka kommun Kungsbocka SH BN 372
+Upprättad 2025-01-21 edan [KF 50
+Laga kraft
+0000
+Ida Lennartsson Maria Malone Diarenummer | gud or
+Verksamhetschef Plan Senior 2018-00007 — | JarNej
+Detaljplanen ar upprattad onligt PBL
+PILANKARTA J2010500 moa utekatfortarande KBXXX
+
 <!-- sida 1307 -->
+
+PLANBESTÄMMELSER
+Fasader som vetter mot vag E6 ska utformas I obrannbart
+utformning ar tillaten. Dar beteckning saknas galler jestammelsen inom hela omradet. lämpligt satt sa att de vetter bort fran vag E6. Minst en utrymningsvag I varje
+; byggnad ska vetta bort fran vag E6. Ytor mellan byggnad och vag E6 utformas for
+GRÄNSER att inte uppmuntra till stadigvarande vistelse.
+—. innebar att fönster inte kan vara oppningsbara eller endast kan oppnas med
+vetta bort fran vag E6. Entréer och inlastning ska anordnas pa lampligt satt sa att
+Egenskapsgrans. de vetter bort fran vag E6. Vid utformning av byggnader ska hansyn tas till
+dimensionerande explosionslast. Fasad ska vara I obrännbart material. Platser for
+m. For bebyggelse för centrumandamal galler:
+m Byggnader och tekniska anlaggningar kopplade till hantering av
+ANVÄNDNING AV MARK a brandfarliga vatskor far inte anlaggas inom 25 meter fran fastighetsgrans mot
+At kvartersmark. Avvattning av hardgjorda ytor ska
+Imän med förses med anlaggning for uppsamling av olja. Entréer for byggnader inom 25
+meter fran drivmedelsstationen, bor vetta bort fran
+av brandfarliga vatskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+—-? uppsamling av olja. Entréer for byggnader inom 25 meter fran
+SS m Obebyggda ytor bor utformas sa att de inte uppmuntrar till
+G ska utformas med utrymningsmojlighet som vetter bort fran
+få Verksamheter. m; Stangsel ska finnas langs kron vid bergschakt.
+C, c ej hotell, eller handel med livsmedel. Mi ska godkannas av sakkunnig bergtekniker.
+Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran ovriga
+E; Transformatorstation. Mjo Avskarande dike for skyfallsled far finnas.
+J Industri.
+Utformning
+P, Pendelparkening. f Fasad mot vag E6 och vag 158 ska ges en omsorgsfull utformning med hansyn till
+, omradets exponerade lage. Skyltning far endast ske pa fasad och ska placeras
+lagre an takfotshojden. Ljusskyltar eller andra anordningar som kan inverka
+z Mörksämhöler. storande pa trafiken pa vag E6 far ej anordnas.
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS ” egenskapsomradet med en hogsta hojd pa 12 meter. Anordningar som kan [vul
+Mark inverka storande pa trafiken på väg E6 (exempelvis ljusskyltar med starkt ljus, —-—
+blinkande ljus eller bildväxlande skyltar) far ej anordnas. D
++0,0 Markens hojd over nollplanet ska vara \<angivet> meter. Utforande [Ce]
++37 m = Markens hojd over nollplanet ska vara lagst +37 meter. b, Omrade inom vilket bergteknisk atgard ska utföras. Vv
+Genomforandetid O
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+Mark a Genomforandetiden ar 5 ar fran den dag planen vinner laga kraft. 3
+n, Upplag far inte finnas. Markreservat 2
+n; Markens höjd over nollplanet far vara upp till max +38 meter.
+Villkor for startbesked
+Omfattning
+a far inte ges för for vistelse forran flytt av
+Marken far inte forses med byggnad. kraftledningen har kommit till stand.
+a Startbesked far inte ges for byggnader och parkering far inte anläggas förran flytt
+Hogsta nockhojd ar \<angivet> meter over angivet noliplan . sg av kraftledningen har kommit till stand.
+a. far inte ges for förran atgarder har kommit
+e, Storsta byggnadsarea ar 60 6 per fastighet inom anvandningsomradet. 2 till stand.
+far inte ges for förran dike för i
+Md meter 200 Detaljplanen ar baserad pa koordinatsystemet SWEREF 99 Å På yggnad ska placeras minst 4 meter fran fastighetsgrans. Bestammelsen galler
+N min 1200 och hojdsystemet RH 2000 inte om byggnder sammanbyggs i fastighetsgrans. . ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+Skala 1:2000 i A1, skala 1:4000 i A3 LÄ Transformatorstation ska placeras minst 5 meter fran |
+Genomforandetiden ar 15 ar fran den dag planen vinner laga kratt. Gäller inte for omrade a4.
+TECKENFÖRKLARING KARTDATA A i 2022-10-28, jdgrid 2024-02-05
+Liljan Traktnamn, kvartersnamn = Bostadshus fasad, resp. tak ORIENTERINGSKARTA Detaljplan för verksamheter i Antagandehandling
+Granskning
+Antagande
+Laga kraft
+Verksamhetschef Plan Senior Planarkitekt 2018-00007 | Jae;
+Detaljplanen ar upprattad onligt PBL
 
 <!-- sida 1308 -->
 
@@ -40437,11 +41252,242 @@ och regleras till Kungsbacka 2:17
 
 <!-- sida 1310 -->
 
+Bilaga E Markförläggning av kraftledning
+
+1
+
+0 b
+=S
+
+i; Te d
+
+I + ;
+\|
+| +
+\>»€
+
+Jå
+
+I - 7 "VE N
+Figur 2. Befinliga ledningar. Del av den befintlig 130 kY ledningen XL35 och de två 50 kY
+ledningarna XL41 och OL18 kommer att byggas om.
+
 <!-- sida 1311 -->
 
 Bilaga F Befintliga byggnader och anläggningar
 
 <!-- sida 1312 -->
+
+fö
+
+2
+
+ZCIE6EP
+
+RS | I on
+a BAT
+
+o meter 200
+L n ”
+
+1200 och hojdsystemet RH 2000
+Skala 1:2000 i A1, skala 1:4000 i A3
+
+Detaljplanen ar baserad på koordinatsystemet SWEREF 99
+
+höjdgrid 2024-02-05
+
+TECKENFÖRKLARING KARTDATA = A 2022-10-28,
+2:14 5 Registernummer, Vagbana
+Liljan Traktnamn, kvartersnamn J Bostadshus fasad, resp. tak
+—  ——  Fastighetsgrans Uthus fasad, resp. tak
+'Gang- och cykelbana Skarmtak
+
+i
+PLANBESTAMMELSER
+
+Följande galler inom omraden med
+ar tillaten. Dar
+
+Endast angiven och
+inom hela omradet.
+
+saknas galler
+
+GRÄNSER
+
+— -— — Planomradesgrans.
+
+NRA Anvandningsgrans.
+Egenskapsgrans.
+
+\+ + + + + Administrativ gräns.
+
+++ os + + + Egenskaps- och administrativ grans.
+
+ANVÄNDNING AV MARK
+Allman med
+
+GATA, = Huvudgata.
+NATUR — Naturomrade.
+
+VÄG Vag.
+Kvartersmark
+ej hotell. eller handel med livsmedel.
+AR GG —— Dnvmedelstorsaljning.
+z Verksamheter.
+C, & ej hotell, eller handel med livsmedel.
+E, Atervinningscentral.
+E; Transformatorstation.
+E, Pumpstation.
+J Industri.
+P, Pendelparkening.
+Få Verksamheter.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN PLATS
+Mark
+
++0.0 Markens höjd over nollplanet ska vara \<angivet> meter.
++37 mM = Markens hojd over nollplanet ska vara lagst +37 meter.
+damm = Dagvattendamm.
+
+höjd Markens höjd over nollplanet far vara hogst +38 meter .
+
+EGENSKAPSBESTÄMMELSER FÖR KVARTERSMARK
+
+Mark
++50 Markens höjd over nollplanet ska vara 50 meter.
+n, Upplag far inte finnas.
+n, Markens höjd over nollplanet far vara upp till max +38 meter.
+Omfattning
+
+Marken far inte forses med byggnad.
+
+Hogsta nockhojd ar \<angivet> meter over angivet nollplan .
+
+e, Storsta byggnadsarea ar 60 24 per fastighet inom anvandningsomradet.
+Placering
+Pp Byggnad ska placeras minst 4 meter fran fastighetsgrans. Bestammelsen galler
+
+inte om byggnder sammanbyggs I fastighetsgrans. .
+
+P2 Transformatorstation ska placeras minst 5 meter fran
+
+Störningsskydd
+
+m Fasader som vetter mot vag E6 ska utformas I obrannbart
+' material. Luftintag samt entréer och inlastning ska anordnas på
+lampligt satt sa att de vetter bort fran vag E6. Minst en utrymningsvag I varje
+byggnad ska vetta bort fran vag E6. Ytor mellan byggnad och vag E6 utformas for
+att inte uppmuntra till stadigvarande vistelse.
+
+i For bebyggelse for centrumandamal galler
+= Fonster och ingaende ska vara E 30 vilket
+innebar att fonster inte kan vara oppningsbara eller endast kan oppnas med
+för Luftintag placeras hogt och ska
+vetta bort fran vag E6. Entréer och inlastning ska anordnas pa lämpligt satt sa att
+de vetter bort fran vag E6. Vid utformning av byggnader ska hansyn tas till
+dimensionerande explosionslast. Fasad ska vara I obrannbart material. Platser för
+utevistelse far inte anordnas.
+
+m For bebyggelse for centrumandamal galler.
+? Luftintag placeras hogt pa byggnad och orienteras bort fran vag E6.
+
+m, Byggnader och tekniska anläggningar kopplade till hantering av
+brandfarliga vatskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+kvartersmark. Avvattning av hardgjorda ytor ska
+förses med anläggning för uppsamling av olja. Entréer for byggnader inom 25
+meter fran drivmedelsstationen, bor vetta bort fran
+
+och tekniska kopplade till hantering
+
+av brandfarkga vatskor far inte anläggas inom 25 meter fran fastighetsgrans mot
+kvartersmark. Avvattning av hardgjorda ytor ska förses med anläggning for
+uppsamling av olja. Entréer for byggnader inom 25 meter fran
+dnvmedelsstationen. bor vetta bort fran drivmedelsstationen.
+
+m. Obebyggda ytor bor utformas sa att de inte uppmuntrar till
+' stadigvarande vistelse.
+me Byggnader som uppförs inom 40 meter fran kvartersmark som omfattas av
+G
+
+ska utformas med utrymningsmojlighet som vetter bort fran
+drivmedelstorsaljningen.
+
+m; Stangsel ska finnas langs kron vid bergschakt.
+m Bergsakringsatgarder ska utföras vid sprangning i berget. Atgarden
+\$ ska godkannas av sakkunnig bergtekniker.
+Mm, Pafyllningsanslutning till cisterner ska placeras minst 25 meter fran ovriga
+i byggnader (ej bensinstation).
+LL Avskarande dike for skyfallsled far finnas.
+utfart
+
+bo 0 0 0 dUtfar for utryckningstordon far finnas. Utfart för ovriga fordon far inte finnas.
+
+Utformning
+f Fasad mot vag E6 och vag 158 ska ges en omsorgsfull utformning med hänsyn till
+' omradets exponerade lage. Skyltning far endast ske pa fasad och ska placeras
+lagre an takfotshojden. Ljusskyltar eller andra anordningar som kan inverka
+storande på trafiken på vag E6 far ej anordnas.
+ft En pylon for skyltandamal far uppföras pa en plats inom
+d egenskapsomradet med en högsta hojd pa 12 meter. Anordningar som kan
+inverka storande pa trafiken på vag E6 (exempelvis ljusskyltar med starkt ljus.
+blinkande ljus eller bildvaxlande skyltar) far ej anordnas.
+Utforande
+b, 'Omrade inom vilket bergteknisk atgard ska utföras.
+b, Ingen ar tillaten. enligt ska följas.
+
+ADMINISTRATIVA BESTÄMMELSER FÖR ALLMÄN PLATS
+Genomforandetid
+
+a 'Genomforandetiden ar 5 ar fran den dag planen vinner laga kraft.
+
+ADMINISTRATIVA BESTÄMMELSER FÖR KVARTERSMARK
+
+Markreservat
+u, för ledningar.
+Villkor for startbesked
+a far inte ges for tor vistelse forran flytt av
+id kraftledningen har kommit till stånd.
+\- Startbesked far inte ges for byggnader och parkering far inte anlaggas forran flytt
+: av kraftledningen har kommit till stand.
+a far inte ges for förran atgärder har kommit
+2 till stand.
+a far inte ges for förran dike för i
+3
+
+oster har anlagts.
+
+ADMINISTRATIVA BESTÄMMELSER FÖR PLANOMRÅDET
+
+ORIENTERINGSKARTA
+
+m——
+anette
+Sands
+Aa
+
+Genomforandetiden ar 15 ar fran den dag planen vinner laga kraft. Gäller inte for omrade a4.
+
+Detaljplan för verksamheter i :
+Klov. I ä Antagandehandling
+Instans
+inom Ysby 1:2 med flera a
+DE i Kungsbacka stad 2019-11-21 |PNS372
+Kungsbacka kommun Kungsbocka | So19 ine JBNE372
+Upprättad 2025-01-21 dare [KF 5x0x
+Laga kraft
+0000-300
+Ida Lennartsson Maria Malone Diarenummer | åar nov
+Verksamhetschef Plan Senior 2018-0007 | Samer
+frun uj Må
+PLANKARTA |2010800 med utokat tortarande | KBXXX
+
+Jue eysiuyaleunwuwoy I eBelig
+
+'1uBBe
+
+In Ja65Aq uaunuwoy uwos JeBu
 
 <!-- sida 1313 -->
 
@@ -40782,7 +41828,7 @@ SAMARBETSAVTAL
 1\. Bakgrund.
 
 På förfrågan från Kungsbacka Lastbilscentral har kommunstyrelsen vid
-sammanträde 2005-12-14 (KS 8 278 ), beslutat inta en positiv inställning till att
+sammanträde 2005-12-14 (KS § 278 ), beslutat inta en positiv inställning till att
 del av Klovstensområdet tillfälligt får användas för återvinning och deponi av
 avfall. Kommundirektören fick vid sammanträdet i uppdrag att utarbeta ett
 samarbetsavtal med Lastbilscentralen i syfte att möjliggöra en utveckling av
@@ -41692,7 +42738,7 @@ pade översiktsplanen (FÖP) för Kungsbacka stad som togs fram 2009. I FÖP:en 
 
 8 Planbeskrivning                                                                                                              Planbeskrivning 9
 
-västra stam banan
+västra stambanan
 
 <!-- sida 1341 -->
 
@@ -43900,6 +44946,75 @@ Illustration         Detaljplanen är upprättad enlig PBL KBXXX
 2010:900 med utökat förfarande
 
 <!-- sida 1384 -->
+
+| KUNGSBACKA
+SKALA 1:2000 A1
+TECKENFÖRKLARING
+APELSINEN
+FRAMSTÄLLNING
+Kommungräns
+Trakt-, kvartersgräns
+Fastighetsgräns
+Föreslagen fastighetsgräns
+Gränspunkt
+Traktnamn, kvartersnamn
+Registernummer, tomtnummer
+Bostadshus fasad, resp tak
+Uthus fasad, resp tak
+Skärmtak
+Transformator fasad, resp tak
+Altan
+Höjdpunkt
+Höjdkurva 1 m
+Höjdkurva 5 m
+Järnväg
+Perrong
+Vägkant, matarväg
+Vägkant, större väg
+Vägkant, mindre väg
+Gång- / Cykelväg, infart, stig
+Vägtunnel
+Gatunamn
+Adressnummer
+Trappa
+Strandlinje, åkant
+Dike, mindre bäck >0,8 m
+Dike, mindre bäck <0,8 m
+Vatten
+Bassäng
+Kaj
+Mur
+Räcke
+Släntfot
+Släntkrön
+Stödmur
+Staket
+Häck
+Belysningsmast
+Belysningsstolpe
+Elstolpe, trafiksignal
+Mast
+Luftledning, högspänning
+Ägoslagsgräns
+Ajourföring och kontroll av kartan innanför aktuellt planområde
+är genomförd av Kartavdelningen, Kungsbacka kommun.
+Grundkartan är upprättad genom utdrag ur primärkartverk
+tillhörande Kungsbacka kommun och kompletterad i fält
+med terrestra mätningar.
+Rättigheter redovisas inom detaljplaneområdet.
+Aktualitetsdatum fastighetsgränser 2022-10-28.
+Grundkartan innehåller fastighetsgränser med varierande kvalitét.
+Höjddatan är framtagen från drönarflygning utförd 2022-10-04.
+Grundkarta till detaljplan
+Granskningshandling
+Inom Ysby 1:2 med flera
+i Kungsbacka
+Ajourföringsdatum
+Koordinatsystem
+Kungsbacka kommun Kungsbacka | SWEREF99 12 00
+Upprättad 2022-10-28 Reviderad RH 2000
+Mattias Kinsch Patrik Stenberg Piarenr
+Verksamhetschef Geodataavdelningen Mätningsingenjör 2018-00007
 
 <!-- sida 1385 -->
 
