@@ -31,9 +31,10 @@ jobs:
           if grep -rnP '^\s*(-\s*)?uses:\s*(?!\./)[^@\s]+@(?![0-9a-f]{40}\b)' .github; then exit 1; fi
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - uses: ./.github/actions/installera
+      - id: installera
+        uses: ./.github/actions/installera
         with:
-          flaggor: --extra utveckling
+          utveckling: true
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22"
@@ -67,4 +68,4 @@ jobs:
       - name: Datakontrollerna (K11)
         run: python -m kommunhandlingar.datakontroll data
       - name: Kända sårbarheter i projektets beroenden, ur låsfilen
-        run: pip-audit --disable-pip --require-hashes -r "$RUNNER_TEMP/krav.txt"
+        run: pip-audit --disable-pip --require-hashes -r "${{ steps.installera.outputs.krav }}"

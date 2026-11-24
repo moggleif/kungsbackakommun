@@ -29,7 +29,8 @@ Issue [#482](https://github.com/moggleif/kungsbackakommun/issues/482).
   som går genom CI.
 * Varje fil som installeras prövas mot en hash, inte bara mot ett
   versionsnummer.
-* Dependabot håller låsfilerna uppdaterade utan handpåläggning.
+* Dependabot håller låsfilerna uppdaterade när ett direkt beroende byts
+  eller ett paket i trädet har en känd sårbarhet.
 * Inga personnamn i repot (AGENTS.md), utom där projektägaren gjort
   undantag.
 * Så lite ny kod och nya verktyg som möjligt.
@@ -63,11 +64,17 @@ Dependabot håller uppdaterade själv.
   jobb, webbplatsen och kalibreringen – gör det med den sammansatta
   actionen `.github/actions/installera`: `uv export --locked` skriver
   trädet med hashar till en tillfällig fil, `pip install
-  --require-hashes --no-deps` installerar den, och `pip install --no-deps
-  --no-build-isolation -e .` paketet. `--locked` gör att jobbet faller
+  --require-hashes --no-deps --only-binary :all:` installerar den, bara
+  från hjul, så att inget byggs med byggberoenden utanför låsfilen, och
+  `pip install --no-deps --no-build-isolation -e .` paketet. Actionen ger
+  den exporterade filens sökväg som output. `--locked` gör att jobbet faller
   om `uv.lock` inte stämmer med `pyproject.toml`. uv hämtas med
   `astral-sh/setup-uv`, fäst vid en commit och en fast version av uv,
-  utan cache.
+  utan cache. Dependabot följer också de sammansatta actionerna, så att
+  setup-uv uppdateras; versionen av uv flyttas för hand när Dependabot
+  låser om med en nyare uv och `--locked` därför faller.
+* Kalibreringen av väg H körs också när bara `uv.lock` ändras, eftersom
+  numpy, opencv och de andra paketen som väg H vilar på nu bara byts där.
 * `pip-audit` granskar den exporterade filen, alltså exakt de versioner
   som installerats, i stället för att lösa upp beroendena på nytt.
 * `package-lock.json` checkas in. CI installerar med `npm ci
@@ -77,7 +84,9 @@ Dependabot håller uppdaterade själv.
   installeras ur låsfilen, i stället för med `npm install --global`.
 * Dependabot följer `uv` i stället för `pip`, så att `pyproject.toml` och
   `uv.lock` uppdateras i samma PR. För npm uppdaterar den
-  `package-lock.json`, som den gör när filen finns.
+  `package-lock.json`, som den gör när filen finns. Versionsuppdateringar
+  gäller de direkta beroendena; ett paket längre ner i trädet flyttas när
+  ett direkt beroende kräver det eller när det har en känd sårbarhet.
 * AGENTS.md undantar `package-lock.json` från regeln om personnamn: filen
   återger paketens egen metadata, som `data/` återger källan.
 
@@ -94,11 +103,17 @@ Det här ersätter beslutet i ADR-0104 att inte checka in
   stället för att installera något annat än det som står i repot.
 * Bra, eftersom `pip-audit` granskar det som faktiskt installeras.
 * Dåligt, eftersom ett nytt verktyg, uv, behövs för att skriva och läsa
-  `uv.lock`, och en ny extern action för att hämta det i CI.
+  `uv.lock`, och en ny extern action för att hämta det i CI. Den körs
+  också i nattkörningen, som har skrivrätt, och i webbplatsens jobb, som
+  publicerar på Pages.
+* Dåligt, eftersom paketen längre ner i trädet står still mellan
+  uppdateringarna av de direkta beroendena, utom när en sårbarhet är
+  känd. Det är avsikten, men buggrättningar där kommer senare.
+* Dåligt, eftersom versionen av uv i actionen inte följs av Dependabot.
 * Dåligt, eftersom två låsfiler på tillsammans omkring 400 kB checkas in,
   och Dependabots PR:er blir större.
 * Dåligt, eftersom `package-lock.json` bär konto- och sponsornamn som är
-  personnamn, till exempel paketscopet `@isaacs` och sponsoradresser. Det
+  personnamn, i ett paketscope och i sponsoradresser. Det
   är ett uttryckligt undantag i AGENTS.md.
 * Dåligt, eftersom den som ändrar ett beroende för hand måste köra
   `uv lock` eller `npm install --package-lock-only` och checka in
@@ -167,7 +182,7 @@ byta en hash i den exporterade filen och lägga till ett paket i
 Issue #482 lämnade frågan om npm till projektägaren. AI-agenten
 kontrollerade först om låsfilen gick att rensa från namnen. Sponsorfälten
 (`funding`) går att ta bort, men npm och Dependabot skriver tillbaka dem
-vid nästa uppdatering, och paketscopet `@isaacs` står i själva
+vid nästa uppdatering, och ett paketscope som är ett personnamn står i själva
 paketnamnet och i adressen till paketet, så det går inte att ta bort.
 Agenten lade fram tre alternativ – undantag, datum i `.npmrc` eller
 olåst – och rekommenderade undantaget, eftersom det ger hashar för hela
@@ -185,3 +200,14 @@ uv inte låser byggberoenden, och `--no-build-isolation` gör att pip inte
 hämtar ett eget setuptools vid bygget. En invändning var att setup-uv är
 ännu en extern action; den fästs vid en commit som de andra
 (ADR-0115), och uv själv vid en version.
+
+Den oberoende granskningen (fas 6) föreslog en enklare väg: checka in den
+exporterade filen med hashar, låta alla jobb installera den med pip och
+bara kontrollen pröva den mot `uv.lock` med uv. Då behövs uv i ett jobb i
+stället för fem. Agenten valde bort det, eftersom Dependabot bara
+uppdaterar `pyproject.toml` och `uv.lock`, så varje Dependabot-PR skulle
+falla tills filen exporterats om för hand. Granskningen fann också att
+ADR:en lovade mer av Dependabot än den gör, att kalibreringen inte
+startade på `uv.lock`, att setup-uv inte följdes av Dependabot, att
+pip-audit berodde på actionens interna filnamn och att paket utan hjul
+skulle byggas med olåsta byggberoenden; allt det rättades.

@@ -1985,13 +1985,15 @@ Hur och varför står i
   gruppen `bygg`. Varje jobb installerar med
   `.github/actions/installera`: `uv export --locked` skriver trädet till
   `$RUNNER_TEMP/krav.txt`, pip installerar det med `--require-hashes
-  --no-deps` och sedan paketet utan beroenden och utan byggisolering.
-  Kontrollen ger flaggan `--extra utveckling` och låter `pip-audit`
-  granska samma fil.
+  --no-deps --only-binary :all:` och sedan paketet utan beroenden och utan
+  byggisolering. Kontrollen tar med `utveckling` och låter `pip-audit`
+  granska samma fil, som actionen ger som output `krav`.
 - **npm.** `package-lock.json` låser ESLint, jsdom och markdownlint-cli2
   med deras beroenden, och CI installerar med `npm ci --ignore-scripts`.
 - **Uppdateringar.** Dependabot följer `uv` och `npm` och uppdaterar
-  manifestet och låsfilen i samma PR.
+  manifestet och låsfilen i samma PR. Paketen längre ner i trädet flyttas
+  när ett direkt beroende kräver det eller vid en känd sårbarhet.
+  Kalibreringen av väg H körs också när bara `uv.lock` ändras.
 
 ## Tolkade figurer
 

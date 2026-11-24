@@ -128,5 +128,5 @@ Regler för det här repot, utöver MADR:
 | 0110 | [Diarienumret efter etiketten läses också med förledet två gånger](0110-diarienumret-med-dubblerat-forled.md) | accepted |
 | 0111 | [Ett rutnät som inte går ihop till en tabell märker sidan osäker](0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md) | accepted |
 | 0113 | [Varje sammanträde med kallelse får sin sida, i alla organ och alla år](0113-varje-sammantrade-med-kallelse-far-sin-sida.md) | accepted |
-| 0115 | [Hämtningen tar bara https och har tak, stora sidor renderas inte, och nattkörningens gren mergas bara när den ändrar data](0115-sakerhetsgranser-for-hamtning-och-nattkorning.md) | accepted |
+| 0115 | [Hämtningen tar bara https och har tak, stora sidor renderas inte, och nattkörningens gren mergas bara när den ändrar data](0115-sakerhetsgranser-for-hamtning-och-nattkorning.md) | accepted (0117 låser de transitiva beroendena) |
 | 0117 | [Hela beroendeträdet installeras ur incheckade låsfiler med hashar: `uv.lock` för Python och `package-lock.json` för npm](0117-transitiva-beroenden-installeras-ur-lasfiler.md) | accepted |

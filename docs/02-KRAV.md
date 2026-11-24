@@ -2753,7 +2753,7 @@ inte nå CI eller nattkörningen utan en ändring i repot.
 - **Givet** en ändring av ett beroende i `pyproject.toml` utan en ny
   `uv.lock`, eller i `package.json` utan en ny `package-lock.json`
 - **När** CI kör "Ren kod och tester"
-- **Så** faller den innan något installeras.
+- **Så** faller den innan paketen ur den låsfilen installeras.
 
 - **Givet** npm-paketen för webbplatsens skript och Markdown-lint
 - **När** CI installerar dem

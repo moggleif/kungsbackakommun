@@ -3,9 +3,13 @@
 name: Låsta beroenden
 description: Installerar uv.lock med pip --require-hashes och paketet utan beroenden.
 inputs:
-  flaggor:
-    description: extra flaggor till uv export, till exempel --extra utveckling
-    default: ""
+  utveckling:
+    description: "true tar med ruff, pip-audit och coverage"
+    default: "false"
+outputs:
+  krav:
+    description: det installerade trädet med hashar, som pip-audit granskar
+    value: ${{ runner.temp }}/krav.txt
 runs:
   using: composite
   steps:
@@ -15,13 +19,16 @@ runs:
       with:
         version: "0.13.9"
         enable-cache: false
-    # --locked faller om uv.lock inte stämmer med pyproject.toml.
+    # --locked faller om uv.lock inte stämmer med pyproject.toml. Bara hjul,
+    # så att inget byggs med byggberoenden utanför låsfilen.
     - shell: bash
       env:
-        FLAGGOR: ${{ inputs.flaggor }}
+        UTVECKLING: ${{ inputs.utveckling }}
       run: |
-        read -ra flaggor <<< "$FLAGGOR"
-        uv export --locked --no-emit-project --group bygg "${flaggor[@]}" \
+        extra=()
+        [ "$UTVECKLING" = true ] && extra=(--extra utveckling)
+        uv export --locked --no-emit-project --group bygg "${extra[@]}" \
           -o "$RUNNER_TEMP/krav.txt"
-        pip install --require-hashes --no-deps -r "$RUNNER_TEMP/krav.txt"
+        pip install --require-hashes --no-deps --only-binary :all: \
+          -r "$RUNNER_TEMP/krav.txt"
         pip install --no-deps --no-build-isolation -e .

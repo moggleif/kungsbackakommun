@@ -17,24 +17,23 @@ git clone https://github.com/moggleif/kungsbackakommun.git
 cd kungsbackakommun
 python3 -m venv .venv
 . .venv/bin/activate
-uv export --locked --no-emit-project --group bygg --extra utveckling -o krav.txt
-pip install --require-hashes --no-deps -r krav.txt
+uv export --locked --no-emit-project --group bygg --extra utveckling -o .venv/krav.txt
+pip install --require-hashes --no-deps --only-binary :all: -r .venv/krav.txt
 pip install --no-deps --no-build-isolation -e .
 npm ci --ignore-scripts
 ```
 
+[uv](https://docs.astral.sh/uv/) behövs för att läsa låsfilen.
 Beroendena installeras ur låsfilerna, `uv.lock` och `package-lock.json`,
-med hashar för hela trädet, så som CI gör (K94, ADR-0117).
-`pip install -e .` gör paketet i `src/kommunhandlingar/` importerbart, så
-att testerna når det, och drar in markdown-it-py, som webbplatsen och
-testerna renderar Markdown med, och RapidOCR och onnxruntime för väg H
-(K84, K85). `--extra utveckling` tar med ruff, pip-audit och coverage, i de
-versioner som
-står i `pyproject.toml`, samma som CI installerar, och gruppen `bygg`
-setuptools, som paketet byggs med; ruffs förhandsregler
-kan ändras mellan versioner. Med
-[uv](https://docs.astral.sh/uv/) går samma ruff att köra utan
-installation: `uvx ruff@<versionen i pyproject.toml> check .`.
+med hashar för hela trädet, så som CI gör (K94, ADR-0117). Trädet tar
+med markdown-it-py, som webbplatsen och testerna renderar Markdown med,
+och RapidOCR och onnxruntime för väg H (K84, K85). `--extra utveckling`
+tar med ruff, pip-audit och coverage, och gruppen `bygg` tar med
+setuptools, som paketet byggs med, i de versioner som står i `uv.lock`,
+samma som CI installerar; ruffs förhandsregler kan ändras mellan
+versioner. `pip install -e .` gör sedan paketet i `src/kommunhandlingar/`
+importerbart, så att testerna når det, utan att dra in något mer. Med
+uv går också samma ruff att köra utan installation: `uvx ruff@<versionen i pyproject.toml> check .`.
 Testerna av väg H (`tests/test_radlasning.py` och `tests/test_bekraftade.py`) och
 av skannade sidor kör RapidOCR, som hämtar
 den latinska modellen från nätet första gången och kontrollerar dess
@@ -63,7 +62,7 @@ coverage report --sort=cover
 npx eslint
 npm test
 npx markdownlint-cli2 <ändrade .md-filer>
-pip-audit --disable-pip --require-hashes -r krav.txt
+pip-audit --disable-pip --require-hashes -r .venv/krav.txt
 ```
 
 Testerna körs under `coverage` (K75, ADR-0102): `coverage report` visar
@@ -79,7 +78,7 @@ parametrar, nästling och komplexitet, för koden med `pyproject.toml` och
 för testerna med `tests/ruff.toml`; `scripts/kontrollera_storlek.py`
 kontrollerar rader per funktion och fil, som ruff saknar regler för.
 
-Markdown-lint (ADR-0021) körs med [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+Markdown-lint (ADR-0021) körs med [markdownlint-cli2](https://www.npmjs.com/package/markdownlint-cli2)
 och Node på de `.md` som ändrats, med reglerna i
 `.markdownlint-cli2.jsonc`; hela poolen tar en halvtimme. `pip-audit`
 letar efter kända sårbarheter i projektets beroenden, och Dependabot

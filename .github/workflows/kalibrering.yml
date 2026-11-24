@@ -22,6 +22,7 @@ on:
       - src/kommunhandlingar/konvertering/tesseract.py
       - src/kommunhandlingar/konvertering/tsv.py
       - pyproject.toml
+      - uv.lock
       - src/kommunhandlingar/kalibrering/**
       - .github/workflows/kalibrering.yml
 

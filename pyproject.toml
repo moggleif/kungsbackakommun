@@ -25,7 +25,8 @@ dependencies = [
 # Samma versioner i CI och lokalt; Dependabot håller dem uppdaterade.
 utveckling = ["ruff==0.17.4", "pip-audit==2.10.1", "coverage==7.17.4"]
 
-# Paketet byggs utan isolering, med setuptools ur låsfilen (ADR-0117).
+# Paketet byggs utan isolering, med setuptools ur låsfilen (ADR-0117);
+# golvet i [build-system] gäller bara ett bygge med isolering.
 [dependency-groups]
 bygg = ["setuptools==84.2.1"]
 
