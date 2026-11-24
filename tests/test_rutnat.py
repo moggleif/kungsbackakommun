@@ -13,7 +13,8 @@ from types import SimpleNamespace
 
 from kommunhandlingar.konvertering import kvalitet
 from kommunhandlingar.konvertering.dokument import konvertera
-from kommunhandlingar.konvertering.rutnat import ar_hel, gar_inte_ihop
+from kommunhandlingar.konvertering.rutnat import ar_hel, brutet
+from kommunhandlingar.konvertering.textlagret import olast
 
 PDF = Path(__file__).parent / "fixtures" / "pdf" / "rutnat.pdf"
 RUTNAT = SimpleNamespace(
@@ -22,14 +23,23 @@ RUTNAT = SimpleNamespace(
     rows=[SimpleNamespace(cells=[0, 1]), SimpleNamespace(cells=[2, None])],
 )
 EN_KOLUMN = SimpleNamespace(
-    bbox=(0, 0, 100, 20),
-    cells=[(0, 0, 100, 10), (0, 10, 100, 20)],
+    bbox=(0, 0, 100, 30),
+    cells=[(0, 0, 100, 10), (0, 20, 100, 30)],
     rows=[SimpleNamespace(cells=[0]), SimpleNamespace(cells=[1])],
 )
+BRUTET = (0, 0, 200, 20)
 
 
 def ord_(x: float, y: float) -> dict:
     return {"x0": x - 5, "x1": x + 5, "top": y - 2, "bottom": y + 2}
+
+
+def tecken(text: str, x: float, y: float) -> dict:
+    return {**ord_(x, y), "text": text, "object_type": "char"}
+
+
+def sida(*tecken_: dict) -> SimpleNamespace:
+    return SimpleNamespace(chars=list(tecken_))
 
 
 class TestArHel(unittest.TestCase):
@@ -43,21 +53,36 @@ class TestArHel(unittest.TestCase):
         self.assertFalse(ar_hel(RUTNAT, [ord_(50, 5), ord_(150, 15)]))
 
 
-class TestGarInteIhop(unittest.TestCase):
-    def test_ett_ord_utanfor_cellerna_gar_inte_ihop(self):
-        self.assertTrue(gar_inte_ihop(RUTNAT, [ord_(50, 5), ord_(150, 15)]))
+class TestBrutet(unittest.TestCase):
+    def test_ett_ord_utanfor_cellerna_brutet(self):
+        self.assertTrue(brutet(RUTNAT, [ord_(50, 5), ord_(150, 15)]))
 
     def test_ord_i_cellerna_gar_ihop(self):
-        self.assertFalse(gar_inte_ihop(RUTNAT, [ord_(50, 5), ord_(50, 15)]))
+        self.assertFalse(brutet(RUTNAT, [ord_(50, 5), ord_(50, 15)]))
 
     def test_rutnat_utan_text_gar_ihop(self):
-        self.assertFalse(gar_inte_ihop(RUTNAT, []))
+        self.assertFalse(brutet(RUTNAT, []))
 
     def test_ord_utanfor_ytan_raknas_inte(self):
-        self.assertFalse(gar_inte_ihop(RUTNAT, [ord_(300, 15)]))
+        self.assertFalse(brutet(RUTNAT, [ord_(300, 15)]))
 
     def test_en_kolumn_ar_inget_rutnat(self):
-        self.assertFalse(gar_inte_ihop(EN_KOLUMN, [ord_(150, 15)]))
+        self.assertFalse(brutet(EN_KOLUMN, [ord_(50, 15)]))
+
+
+class TestOlast(unittest.TestCase):
+    def test_text_i_ett_brutet_rutnat_ar_olast(self):
+        self.assertTrue(olast(sida(tecken("N", 150, 15)), [BRUTET], []))
+
+    def test_text_som_lasts_som_tabell_utan_lodrata_linjer_ar_last(self):
+        lasta = [(100, 10, 200, 20)]
+        self.assertFalse(olast(sida(tecken("N", 150, 15)), [BRUTET], lasta))
+
+    def test_blanktecken_ar_ingen_text(self):
+        self.assertFalse(olast(sida(tecken(" ", 150, 15)), [BRUTET], []))
+
+    def test_text_utanfor_rutnatet_raknas_inte(self):
+        self.assertFalse(olast(sida(tecken("N", 300, 15)), [BRUTET], []))
 
 
 class TestRutnatPdf(unittest.TestCase):

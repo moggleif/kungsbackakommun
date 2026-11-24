@@ -3,7 +3,8 @@ ADR-0024, ADR-0028, ADR-0033, ADR-0034, ADR-0036, ADR-0038, ADR-0063,
 ADR-0064, ADR-0103 och ADR-0111.
 Test: tests/test_konvertering.py, tests/test_skarvar.py, tests/test_delade.py,
 tests/test_kvarvarande.py, tests/test_avskurna.py, tests/test_mellanslag.py,
-tests/test_ordning.py, tests/test_spalter.py och tests/test_hogkant.py.
+tests/test_ordning.py, tests/test_spalter.py, tests/test_hogkant.py och
+tests/test_rutnat.py.
 
 En sida läst ur textlagret: tabellerna med och utan linjer, texten utanför
 dem spalt för spalt med text på högkant sist, och skarven för K19, vars
@@ -52,10 +53,10 @@ def textsida(sida: Page) -> Sida:
 
 def lasning(sida: Page) -> Sida:
     sida = utan_mellanslag_i_tal(sida)
-    hittade, rutor, fallda, olast = tabellerna(sida)
+    hittade, rutor, fallda, brutna = tabellerna(sida)
     utanfor = sida.filter(lambda o: not tabeller.i_tabell(o, rutor))
     text, i_texten = sidans_text(utanfor)
-    osaker = i_texten or olast or osakra_tal(sida, fallda, rutor)
+    osaker = i_texten or osakra_tal(sida, fallda, rutor) or olast(sida, brutna, rutor)
     return Sida(
         kvalitet.TABELL_OSAKER if osaker else kvalitet.OK,
         olasliga(sida) > 0 or i_oordning(sida, rutor),
@@ -66,16 +67,15 @@ def lasning(sida: Page) -> Sida:
     )
 
 
-def tabellerna(sida: Page) -> tuple[list[Funnen], list[Ruta], list[Ruta], bool]:
-    """Tabellerna med och utan linjer i sidans ordning, deras rutor,
-    rutorna för de tabeller med linjer som fälldes, och om ett rutnät som
-    inte gick ihop har text som inte lästs i någon tabell."""
+def tabellerna(sida: Page) -> tuple[list[Funnen], list[Ruta], list[Ruta], list[Ruta]]:
+    """Tabellerna med och utan linjer i sidans ordning, deras rutor, och
+    rutorna för de tabeller med linjer som fälldes och de brutna rutnäten."""
     hittade, fallda, brutna = med_linjer(sida)
     rutor = [t.ruta for t in hittade]
     utan_linjer = olinjerade.tabeller(sida, rutor)
     rutor += [t.ruta for t in utan_linjer]
     ordnade = sorted(hittade + utan_linjer, key=lambda t: (round(t.ruta[1]), t.ruta[0]))
-    return ordnade, rutor, fallda, olast_text(sida, brutna, rutor)
+    return ordnade, rutor, fallda, brutna
 
 
 def sidans_text(utanfor: Page) -> tuple[str, bool]:
@@ -88,7 +88,7 @@ def sidans_text(utanfor: Page) -> tuple[str, bool]:
 def med_linjer(sida: Page) -> tuple[list[Funnen], list[Ruta], list[Ruta]]:
     """Tabellerna med linjer, också de som delats (ADR-0028), rutorna
     kring dem som fälldes, också de avskurna (ADR-0034), och rutorna kring
-    de rutnät som inte gick ihop (ADR-0111)."""
+    de brutna rutnäten (ADR-0111)."""
     ord_ = sida.extract_words(return_chars=True)
     sakra, fallda, brutna = tabeller.sakra(sida, ord_)
     hittade = [Funnen(t.bbox, tabeller.rader(t), tabeller.kanter(t)) for t in sakra]
@@ -122,9 +122,9 @@ def olast_siffra(tecken: dict, fallda: list[Ruta], rutor: list[Ruta]) -> bool:
     )
 
 
-def olast_text(sida: Page, brutna: list[Ruta], rutor: list[Ruta]) -> bool:
-    """Text i ett rutnät som inte gick ihop och inte lästs i någon tabell
-    (ADR-0111). Den blir löptext med kolumnerna ihopflätade."""
+def olast(sida: Page, brutna: list[Ruta], rutor: list[Ruta]) -> bool:
+    """Text, inte bara blanktecken, i ett brutet rutnät som inte lästs i
+    någon tabell (ADR-0111). Den blir löptext med kolumnerna ihopflätade."""
     return any(
         c["text"].strip()
         and any(inom(mitt(c), b) for b in brutna)

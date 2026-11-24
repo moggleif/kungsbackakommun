@@ -1,4 +1,4 @@
-"""Krav: K5, ADR-0016 och ADR-0031. Kod: src/kommunhandlingar/konvertering/tabeller.py.
+"""Krav: K5 och ADR-0016. Kod: src/kommunhandlingar/konvertering/tabeller.py.
 
 När en cell i en tabell med linjer rymmer mer än ett tal, och därför inte
 är säker (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet).

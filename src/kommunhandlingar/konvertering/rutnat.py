@@ -17,7 +17,7 @@ def ar_hel(tabell: Table, ord_: list[dict]) -> bool:
     return rutnat(tabell) and bool(inne) and all(i_cell(tabell, p) for p in inne)
 
 
-def gar_inte_ihop(tabell: Table, ord_: list[dict]) -> bool:
+def brutet(tabell: Table, ord_: list[dict]) -> bool:
     inne = inom_ytan(tabell, ord_)
     return rutnat(tabell) and not all(i_cell(tabell, p) for p in inne)
 

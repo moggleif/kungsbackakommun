@@ -14,9 +14,11 @@ yta har sin mittpunkt i en cell
 ([ADR-0031](0031-ett-rutnat-utan-text-ar-ingen-tabell.md)). Går det inte ihop,
 som när en kolumn saknar högerkant under rubrikraden, blir rutnätet
 ingen tabell och texten läses som löptext, med kolumnerna ihopflätade
-rad för rad. Sidan märks ändå `ok`. Bara siffror ur en tabell som
-fällts för att en cell rymmer flera tal märker i dag sidan
-([ADR-0016](0016-tabeller-utan-lodrata-linjer.md)). Så blev riskmatrisen i
+rad för rad. Sidan märks ändå `ok`, så länge ingen annan regel märker
+den: i dag gör siffror ur en tabell som fällts för att en cell rymmer
+flera tal det, och talrader i sidans text
+([ADR-0016](0016-tabeller-utan-lodrata-linjer.md)), men inte text utan
+siffror. Så blev riskmatrisen i
 Nämnden för Miljö & Hälsoskydds handlingar 2025-10-09, sidorna 22–27,
 omärkt löptext där kolumnerna Risk, Sannolikhet, Konsekvens och Till
 plan står om varandra
@@ -66,7 +68,8 @@ poolen rättas när den konverteras om
 ### Consequences
 
 * Bra, eftersom riskmatrisen 2025-10-09 märks `tabell-osaker` på
-  sidorna 22–27, och dokumentet blir `text-utan-tabeller`.
+  sidorna 22–27. Dokumentet var redan `text-utan-tabeller` för andra
+  sidors skull, men nu syns vilka sidor riskmatrisen står på.
 * Bra, eftersom ingen sida som i dag är `ok` och läses rätt ändras i
   stickprovet, och facit står kvar på 16 rätt och 3 osäkra.
 * Dåligt, eftersom en sida där bara en rubrik eller en fotnot råkar stå
@@ -81,7 +84,9 @@ poolen rättas när den konverteras om
 gör det, och sidorna i `tests/fixtures/pdf/rutnat.pdf`: en riskmatris
 där kolumnen Till plan saknar högerkant under rubrikraden blir
 `tabell-osaker`, och samma matris med kanten hela vägen blir en säker
-tabell och `ok`. Facit ska inte bli sämre.
+tabell och `ok`. Med små indata prövas att text som lästs som en tabell
+utan lodräta linjer, blanktecken och text utanför rutnätet inte märker
+sidan. Facit ska inte bli sämre.
 
 ## Pros and Cons of the Options
 

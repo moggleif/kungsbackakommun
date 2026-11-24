@@ -1,6 +1,7 @@
 """Krav: K5, K19, K61 och K89 i docs/02-KRAV.md, ADR-0005, ADR-0009, ADR-0016,
 ADR-0024, ADR-0031, ADR-0087 och ADR-0111.
-Test: tests/test_konvertering.py, tests/test_celler.py och tests/test_rutkanter.py.
+Test: tests/test_konvertering.py, tests/test_celler.py, tests/test_rutkanter.py
+och tests/test_rutnat.py.
 
 En säker tabell är avgränsad av ritade linjer: streck, fyllda rektanglar
 högst 2 punkter breda eller höga och kanten där två bredare möts
@@ -22,7 +23,7 @@ from pdfplumber.table import Table
 from kommunhandlingar.konvertering import rutkanter
 from kommunhandlingar.konvertering.falt import falt, radvis
 from kommunhandlingar.konvertering.geometri import Ruta, inom, mitt
-from kommunhandlingar.konvertering.rutnat import ar_hel, gar_inte_ihop
+from kommunhandlingar.konvertering.rutnat import ar_hel, brutet
 from kommunhandlingar.konvertering.text import TAL
 
 Tabeller = list[Table]
@@ -47,7 +48,7 @@ def sakra(sida: Page, ord_: list[dict]) -> tuple[Tabeller, Tabeller, Tabeller]:
         return [], [], []
     funna = sida.find_tables(bara_linjerna(linjer))
     hela = [t for t in funna if ar_hel(t, ord_)]
-    brutna = [t for t in funna if gar_inte_ihop(t, ord_)]
+    brutna = [t for t in funna if brutet(t, ord_)]
     fallda = [t for t in hela if rymmer_flera_tal(t, ord_)]
     return [t for t in hela if t not in fallda], fallda, brutna
 
