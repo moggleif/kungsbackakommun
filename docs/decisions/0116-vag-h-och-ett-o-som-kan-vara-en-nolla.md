@@ -79,7 +79,7 @@ ovanpå tecknet och inte syns (`kalibrering/facit.py`). Ett blanksteg som
 börjar där tecknet före slutar räknas som förut, också när det är
 bredare än luckan.
 
-Poolens version höjs till 0.18.0, och bara dokument med sidor som läses
+Poolens version höjs till 0.20.0, och bara dokument med sidor som läses
 med OCR konverteras om, eftersom regeln bara rör väg H (ADR-0107).
 
 ### Consequences

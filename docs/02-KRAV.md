@@ -215,6 +215,14 @@ kunna läggas till utan kodändring.
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 
+- **Givet** ett textlager med text som står snett eller upp och ned, som
+  ett gatunamn eller ett mått på en karta (issue
+  [#401](https://github.com/moggleif/kungsbackakommun/issues/401))
+- **När** dokumentet konverteras
+- **Så** räknas den som text på högkant: den står inte inne i sidans
+  text utan sist på sidan, och en siffra i den ger sidan obekräftade
+  tal, så att `73` upp och ned aldrig blir ett bekräftat `37`.
+
 - **Givet** ett textlager med styrtecken, till exempel NUL där en
   punktlistas tecken skulle stå
 - **När** dokumentet konverteras
