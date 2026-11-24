@@ -473,9 +473,23 @@ poolen):
 - **Budgeten och uppföljningen skriver ibland samma fokusområde olika**,
   till exempel "god vård och omsorg" i budgeten och "god omsorg" i
   uppföljningen.
-- **Årsredovisningen 2022 och delårsrapporten 2023** (KF 2023-04-04 och
-  2023-11-07) finns som text i poolen, men PDF:erna bara i webbarkivet,
-  så deras fokusområden står inte med än.
+- **Äldre mål** (kontrollerat 2026-11-24 i poolen, #185): budgeten 2015
+  (KF-handlingarna 2014-06-05) har 16 prioriterade mål och tre direktiv,
+  som målfilen har som kommunmål och direktiv i egna spår.
+  Årsredovisningen 2016 (KF 2017-04-04) har 17 prioriterade mål med en
+  färgad ruta vid varje: grönt "Uppnås", gult "På rätt väg", rött
+  "Uppnås ej" och lila "Kan ej mätas", som målfilen skriver som
+  `ingen`. Tre av dem har ny rubrik och står tolkade i 2015 års grupp.
+  De fem målen med fokusområden började med budgeten 2018 (KF
+  2017-06-15); budgetarna 2019–2021 finns inte i poolen. Budgeten 2018
+  skriver "Ett medskapande samhälle och öppen attityd", de senare
+  dokumenten "… och en öppen attityd" (K91). Budgeten 2023 (KF
+  2022-06-15) står i två spalter som konverteringen blandat, så fem av
+  dess fokusområden står inte sammanhängande och saknas tills dokumentet
+  konverteras om. Den skriver också fokusområdena utan avslutande punkt;
+  de raderna står i gruppen med punkten. Färgerna 2016 och 2020–2023 är
+  lästa ur PDF:erna i webbarkivet. Det enda röda fokusområdet är
+  bostäderna, i årsredovisningarna 2020 och 2021 och delårsrapporten 2021.
 - **Protokollens** paragrafer om årsredovisningen, delårsrapporten och
   uppföljningen per april står i `uppfoljningar/kungsbacka.csv`.
 

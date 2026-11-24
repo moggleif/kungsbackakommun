@@ -2494,12 +2494,11 @@ filen (K26), länkad från organets sida.
   bedömningen är okänd, en rad utan uppföljning har en bedömning eller
   status, en uppföljning saknar
   bedömning, `tolkad` är något annat än tomt eller `ja` i en grupp, samma
-  rubrik har två olika grupper eller huvudmål, två rubriker står i samma
+  rubrik har två olika grupper, två rubriker står i samma
   spår samma år i samma dokument (budgeten och uppföljningen får skriva
   samma mål olika), ett fokusområde saknar huvudmål eller en annan rad
-  har ett, huvudmålet inte står på sidorna eller inte är ett kommunmål
-  utan grupp i filen, en grupp inte är en rubrik i filen utan egen
-  grupp, eller samma spår
+  har ett, huvudmålet inte står på sidorna, en grupp inte är en rubrik i
+  filen utan egen grupp, eller samma spår
   samma år står ur både protokollet och ett annat dokument från samma
   möte. Texten jämförs efter
   att radbrytningar och upprepade mellanslag gjorts till ett mellanslag,
@@ -2510,6 +2509,12 @@ filen (K26), länkad från organets sida.
   tabeller. Versalerna räknas, utom när källan sätter hela texten i
   versaler. En målfil utan kommunfil stoppar också
   bygget.
+  När hela filen är läst stoppas bygget, med fokusområdet och organet i
+  felet men utan rad, om ett huvudmål inte är ett kommunmål i ett
+  kommunmåls spår, eller om ett fokusområdes spår har huvudmål i två
+  kommunmåls spår (K91). Läsningen sätter sedan fokusområdets huvudmål
+  till kommunmålets spår, så att `huvudmal` i minnet är spårets rubrik och
+  inte alltid källans.
 - **Samma rubrik** är samma organ, slag och rubrik utan hänsyn till
   versaler; rubriken visas som den först står. **Ett spår** är samma organ
   och grupp, eller rubrik när gruppen är tom, utan hänsyn till versaler.
@@ -2567,7 +2572,9 @@ filen (K26), länkad från organets sida.
     ett streck för år utan protokoll med text. Ett spår som varit både nämndmål och direktiv står under sitt
     senaste slag, med det andra slaget vid de rubriker som hade det. Ett
     fokusområde står direkt under sitt kommunmål, indraget och märkt
-    "Fokusområde:" för skärmläsare.
+    "Fokusområde:" för skärmläsare. Ett huvudmål kan vara en tidigare
+  rubrik för kommunmålet, som en budget skrev den; fokusområdet står ändå
+  under kommunmålets spår (K91, [ADR-0114](decisions/0114-fokusomraden-under-ett-omdopt-kommunmal.md)).
   - **Korten** (`webbplats/malkort.py`): ett kort per spår, de som gäller
     det senaste året först, sedan efter sista och första år. Kortet har
     slaget, åren, den senaste rubriken, de tidigare rubrikerna med ordet
