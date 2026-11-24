@@ -1,15 +1,19 @@
-"""Krav: K26, K27 och K35 i docs/02-KRAV.md, ADR-0044, ADR-0045 och ADR-0056.
-Test: tests/test_mal.py, tests/test_malgrupper.py och tests/test_fokusomraden.py.
+"""Krav: K26, K27, K35 och K91 i docs/02-KRAV.md, ADR-0044, ADR-0045, ADR-0056
+och ADR-0114.
+Test: tests/test_mal.py, tests/test_malgrupper.py, tests/test_fokusomraden.py och
+tests/test_omdopta_kommunmal.py.
 
 Kontrollerna i målfilen utöver texten på källans sidor: uppföljning och
 bedömning, `tolkad` utanför en grupp, samma mål två gånger ur samma
-källa, en rubrik med två olika grupper eller huvudmål, två rubriker i
-samma spår samma år i samma dokument, en grupp som inte är en rubrik utan
-egen grupp, ett huvudmål som inte är ett kommunmål utan egen grupp, och
-samma mål ur både protokollet och handlingarna från ett möte, där
-protokollet gäller.
+källa, en rubrik med två olika grupper, två rubriker i samma spår samma år
+i samma dokument, en grupp som inte är en rubrik utan egen grupp, ett
+huvudmål som inte är ett kommunmål, ett fokusområde under två olika
+kommunmåls spår, och samma mål ur både protokollet och handlingarna från
+ett möte, där protokollet gäller. Ett huvudmål kan vara ett omdöpt
+kommunmål, och fokusområdet står då under kommunmålets spår (K91).
 """
 
+from dataclasses import replace
 from typing import TYPE_CHECKING
 
 from kommunhandlingar.webbplats.statusikon import IKONER
@@ -23,7 +27,9 @@ if TYPE_CHECKING:
 class Kontroll:
     def __init__(self) -> None:
         self.sedda: set[tuple] = set()
-        self.kopplingar: dict[tuple, tuple[str, str, str]] = {}
+        self.kopplingar: dict[tuple, tuple[str, str]] = {}
+        self.huvudmalen: dict[tuple, set[str]] = {}
+        self.kommunmal: dict[tuple[str, str], str] = {}
         self.moten: dict[tuple, bool] = {}
         self.ar: dict[tuple, tuple] = {}
 
@@ -45,11 +51,13 @@ class Kontroll:
         if (mal.namn, mal.kalla) in self.sedda:
             raise ValueError("målet står redan med samma källa")
         self.sedda.add((mal.namn, mal.kalla))
-        koppling = (mal.grupp, mal.tolkad, mal.huvudmal)
+        koppling = (mal.grupp, mal.tolkad)
         if self.kopplingar.setdefault(mal.namn, koppling) != koppling:
-            raise ValueError(
-                "rubriken har en annan grupp, tolkning eller huvudmål tidigare"
-            )
+            raise ValueError("rubriken har en annan grupp eller tolkning tidigare")
+        if mal.slag == "kommunmål":
+            self.kommunmal[(mal.organ, mal.rubrik.casefold())] = mal.grupp or mal.rubrik
+        if mal.huvudmal:
+            self.huvudmalen.setdefault(mal.spar, set()).add(mal.huvudmal.casefold())
 
     def samma_tillfalle(self, mal: "Mal") -> None:
         # Budgeten och uppföljningen kan skriva samma mål på olika sätt.
@@ -62,25 +70,34 @@ class Kontroll:
                 "möte; bara protokollets rad ska stå med"
             )
 
-    # En grupp är en rubrik i filen som inte själv står i en grupp, och ett
-    # huvudmål ett av kommunmålen.
+    # En grupp är en rubrik i filen som inte själv står i en grupp.
     def grupperna(self) -> None:
-        egna = {(o, r): g for (o, _, r), (g, _, _) in self.kopplingar.items()}
-        kommunmal = self.kommunmalen()
-        for (organ, _, _), (grupp, _, huvudmal) in self.kopplingar.items():
+        egna = {(o, r): g for (o, _, r), (g, _) in self.kopplingar.items()}
+        for (organ, _, _), (grupp, _) in self.kopplingar.items():
             if grupp and egna.get((organ, grupp.casefold()), "x") != "":
                 raise ValueError(
                     f"gruppen {grupp!r} är ingen rubrik i filen utan egen grupp"
                 )
-            if huvudmal and (organ, huvudmal.casefold()) not in kommunmal:
-                raise ValueError(
-                    f"huvudmålet {huvudmal!r} är inget kommunmål i filen utan grupp"
-                )
 
-    # Kommunmålen är de utan grupp.
-    def kommunmalen(self) -> set[tuple[str, str]]:
-        return {
-            (o, r)
-            for (o, s, r), (g, _, _) in self.kopplingar.items()
-            if s == "kommunmål" and not g
-        }
+    # Ett huvudmål är ett kommunmål i ett kommunmåls spår, och ett
+    # fokusområdes spår står alltid under samma kommunmåls spår, också när
+    # kommunmålet bytt rubrik (K91).
+    def huvudmalens_spar(self) -> None:
+        for (organ, fokus), huvudmalen in self.huvudmalen.items():
+            spar = {self.kommunmalets_spar(organ, h) for h in huvudmalen}
+            if "" in spar:
+                raise ValueError(
+                    f"huvudmålet för {fokus!r} i {organ} är inget kommunmål"
+                )
+            if len(spar) > 1:
+                raise ValueError(f"{fokus!r} i {organ} har ett annat huvudmål tidigare")
+
+    def kommunmalets_spar(self, organ: str, huvudmal: str) -> str:
+        spar = self.kommunmal.get((organ, huvudmal), "").casefold()
+        return spar if self.kommunmal.get((organ, spar), "").casefold() == spar else ""
+
+    def under_sparet(self, mal: "Mal") -> "Mal":
+        if not mal.huvudmal:
+            return mal
+        huvudmal = self.kommunmal[(mal.organ, mal.huvudmal.casefold())]
+        return replace(mal, huvudmal=huvudmal)

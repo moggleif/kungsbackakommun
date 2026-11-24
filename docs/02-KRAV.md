@@ -1243,11 +1243,11 @@ och [Mål och direktiv](03-ARKITEKTUR.md#mål-och-direktiv).
   versaler. Annars räknas versalerna.
 - **Givet** ett fokusområde utan huvudmål, ett huvudmål på en rad som
   inte är ett fokusområde, ett huvudmål som inte står på källans sida
-  eller inte är ett kommunmål utan grupp i filen, samma rubrik med två
-  olika huvudmål, eller två rubriker i samma spår samma år i samma
-  dokument
+  eller två rubriker i samma spår samma år i samma dokument
 - **När** webbplatsen byggs
-- **Så** stoppas bygget med raden i felet.
+- **Så** stoppas bygget med raden i felet. Ett huvudmål som inte är ett
+  kommunmål, och samma fokusområde under två kommunmåls spår, stoppar
+  bygget med fokusområdet i felet (K91).
 
 ## K36 — Nämndens lokalbehov steg för steg
 
@@ -2690,6 +2690,26 @@ det prövas står i
 - **När** dokumentet konverteras
 - **Så** märker rutnätet inte sidan, eftersom ingen text ur det står kvar
   i sidans text.
+
+## K91 — Fokusområden under ett kommunmål som bytt rubrik
+
+Issue: [#185](https://github.com/moggleif/kungsbackakommun/issues/185).
+Bygger på K27 och K35. Hur och varför står i
+[ADR-0114](decisions/0114-fokusomraden-under-ett-omdopt-kommunmal.md)
+och [Mål och direktiv](03-ARKITEKTUR.md#mål-och-direktiv).
+
+- **Givet** ett kommunmål som en budget skriver på ett sätt ("Ett
+  medskapande samhälle och öppen attityd") och en uppföljning på ett annat,
+  med budgetens rubrik i den andras grupp, och fokusområden på budgetens
+  sida med budgetens rubrik som huvudmål
+- **När** webbplatsen byggs
+- **Så** står fokusområdena under kommunmålets spår, i tidslinjen och i
+  kortet, och samma fokusområde kan ha båda rubrikerna som huvudmål.
+- **Givet** ett fokusområdes spår med huvudmål i två olika kommunmåls
+  spår, eller ett huvudmål som inte är ett kommunmål i ett kommunmåls spår
+- **När** webbplatsen byggs
+- **Så** stoppas bygget när hela filen är läst, och felet säger vilket
+  fokusområde och organ det gäller.
 
 ## K92 — Det hämtade och nattkörningens gren kan inte ta sig förbi sina gränser
 
