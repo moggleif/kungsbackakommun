@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.3ed5df63198cae4d8001ca6/17557561150
 sha256: 571b817d95c973cbdfb60c52fca76352fbca9c17f0b1c2a7f897122f1513845d
 bytes: 276797708
 sidor: 387
-hamtad: 2026-11-18T22:05:14+00:00
-konverterad: 2026-11-18T22:15:18+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T03:45:44+00:00
+konverterad: 2026-11-24T04:03:29+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ocr, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [17, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 129, 130, 131, 132, 143, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 322, 329, 330, 364, 387]
-figurer: [17, 33, 105, 119, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 149, 150, 162, 167, 168, 171, 172, 197, 200, 201, 203, 204, 206, 232, 238, 239, 253, 260, 267, 271, 272, 273, 278, 279, 281, 288, 290, 293, 294, 295, 296, 297, 298, 300, 302, 303, 304, 305, 306, 307, 314, 320, 328]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ocr, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [56, 57, 59, 60, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 86, 87, 88, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 101, 102, 104, 105, 108, 109, 110, 111, 129, 130, 131, 143, 175, 176, 177, 178, 179, 181, 185, 186, 187, 188, 189, 190, 193, 194, 322, 329, 330, 364, 387]
+figurer: [17, 33, 59, 60, 63, 64, 68, 69, 71, 74, 76, 86, 88, 91, 94, 95, 104, 105, 108, 113, 114, 119, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 143, 149, 150, 162, 167, 168, 171, 172, 180, 181, 182, 186, 190, 191, 192, 197, 200, 201, 203, 204, 206, 232, 238, 239, 253, 260, 267, 271, 272, 273, 278, 279, 281, 288, 290, 293, 294, 295, 296, 297, 298, 300, 302, 303, 304, 305, 306, 307, 314, 320, 322, 328, 329, 330, 387]
 tolkade: []
 granskad: null
 ---
@@ -2176,7 +2176,7 @@ Kolla 5:149) tillgodoser planområdet Kolla Parkstads parkeringsbehov, med
 ett visst överskott. Inga ytterligare parkeringsdäck, garage eller andra parke-
 ringsanläggningar ska/behöver byggas.
 
-305\)
+3(5)
 
 <!-- sida 59 -->
 
@@ -2268,7 +2268,7 @@ Lägenheter 896 st ggr 2,0 platser 1792
 2043
 Avgår tillgång av parkering på kvartersmark 890
 Behov på gata och gemensamma anläggningar 1153
-Avgår 25 2/4 för samnyttjande vid boendekort 288
+Avgår 25 % för samnyttjande vid boendekort 288
 Behov på gata och gemensamma anläggningar vid boendekort 865
 Parkeringsplan
 Gatuparkering i hela exploateringsområdet 520
@@ -2279,7 +2279,7 @@ Markparkering norr om kvarter 15 och 16 35
 Samnyttjande parkering på skola samt utökning
 markparkeringar norr om kv 14, 15 och 16 51
 
-Tillgång på gata och gemensamma anläggningar 86
+Tillgång på gata och gemensamma anläggningar 865
 
 <!-- sida 62 -->
 
@@ -3571,6 +3571,24 @@ stället ger ett överskott på 235 platser.
 
 <!-- sida 88 -->
 
+Bilaga 6
+
+Gångväg från Kolla Parkstad till Kungsbackaskogen - principskiss
+
+Principskiss ny gångväg mellan cirkulationsplatsen vid Onsalavägen — Askvägen och befintliga
+motionsslingor i Kungsbackaskogen.
+
+” ver in
+
+Fd
+
+\>
+0000”
+o
+
+2
+MILK ETTEPEPETT I AG
+
 <!-- sida 89 -->
 
 AVTAL OM PARKERING
@@ -3621,7 +3639,7 @@ helt utbyggt uppskattas det viktade parkeringsbehovet till 0,94 platser/lägenhe
 flerbostadshus och 1,36 platser/småhus, vilket motsvarar ett behov av totalt ca
 1245 platser.
 
-13\)
+1(3)
 
 <!-- sida 90 -->
 
@@ -4118,9 +4136,9 @@ inte i onödan blockera utbyggnaden enligt planerad utbyggnadsordning och tidpla
 Kolla Parkstad
 Ramavtal Kommunen, JM, Aranäs, Exploatören, Eksta
 
-8 8 ANVISNINGSRÄTT
+§ 8 ANVISNINGSRÄTT
 
-Exploatörerna disponerar, var för sig, fritt över ca 70 40 av sina bostäder och har rätt att
+Exploatörerna disponerar, var för sig, fritt över ca 70 % av sina bostäder och har rätt att
 själv utse köpare till dessa. Resterande bostäder skall erbjudas köpare genom
 Kommunens tomtkö. Om Kommunen inte kunnat anvisa köpare till respektive etapp
 inom två månader efter att försäljningsbroschyr med nödvändiga villkor föreligger för
@@ -4150,7 +4168,7 @@ Exploatörernas kvartersmark inom Exploateringsområdet med boendekort.
 Förutsättningarna för och konsekvenserna av upplåtelse med boendekort är följande:
 
 \- Vid beräkning av parkeringsbehovet för boende och besökare kan behovet genom
-samnyttjande reduceras med 25 940 på all parkering som upplåtes med boendekort.
+samnyttjande reduceras med 25 % på all parkering som upplåtes med boendekort.
 Beräkning av behovet framgår av bilaga 6, Parkeringsplan.
 
 \- Kvartersmarken för verksamheter i västra delen av Exploateringsområdet skall inte
@@ -4290,7 +4308,7 @@ projektgrupp, en arbetsgrupp för projektering och produktion samt en byggrupp. 
 varje grupp skall det upprättas en uppdragsbeskrivning. Projektorganisation framgår av
 bilaga 7, Organisationsschema.
 
-8 15 ÖVERLÅTELSE AV AVTAL
+§15 ÖVERLÅTELSE AV AVTAL
 
 Exploatörerna har var och en inte, utan Kommunens skriftliga medgivande, rätt att
 överlåta detta Ramavtal, tillsammans med Överenskommelsen respektive
@@ -4333,7 +4351,7 @@ den nya parten att följa i detta Ramavtal tillämpliga skyldigheter och rättig
 
 gentemot Kommunen, Aranäs, JM och Eksta. a
 
-801
+8(10
 
 <!-- sida 104 -->
 
@@ -4427,6 +4445,16 @@ Bilaga 7 Organisationsschema daterad 2010-01-31 =
 
 <!-- sida 108 -->
 
+ET JM-fastigheten
+EE Aranäsfastigheten
+[HH Exploatörsfastigheten
+KZ Kommunfastigheten
+[33 Skolfastigheten
+
+Ramavtal - Bilaga 3
+Fördelning byggrätter
+2010-01-31
+
 <!-- sida 109 -->
 
 2010-01-31
@@ -4438,6 +4466,74 @@ Etappindelning utbyggnad
 Pasne
 
 <!-- sida 110 -->
+
+Kolla Parkstad - Tidplan
+
+Infrastruktur -projektering
+
+2010
+
+2011
+
+2012
+
+2013
+
+2014
+
+2015
+
+2016
+
+2017
+
+2019
+
+2020
+
+Proj
+
+Infrastruktur-produktion Etapp 1 A
+
+Infrastruktur-produktion Etapp 1 B
+
+Åparken
+
+Byggproduktion Etapp 1 A
+
+Hyresrätt 5 kvarter
+
+Bostadsrätt 3 kvarter
+
+Bostadsrätt kv 11 punkthus
+
+Byggproduktion Etapp 1B BR
+
+Byggproduktion Etapp 1 B ägande
+
+Byggproduktion Skolan
+
+|Byggprod skolan
+
+Infrastruktur - produktion Etapp 2
+
+Centrala Parken
+
+Bygeproduktion Etapp 2 A
+
+Byggproduktion Etapp 2 B
+
+Infrastruktur - produktion Etapp 3
+
+Byggproduktion Etapp 3 A
+
+Byggproduktion Etapp 3 B
+
+TE-TO-0TOZ
+
+peu33Agin uejdpu
+
+S e3ejg jJernewey
 
 <!-- sida 111 -->
 
@@ -5077,7 +5173,7 @@ Samtliga filer ovan finns bifogade i detta dokument, se bifogade filer.
 Kungsbacka kommun | Stadshuset, (adress borttagen), 434 81 Kungsbacka | 0300-83 40 00
 Organisationsnummer: 212000-1256 | infoÅMkungsbacka.se | kungsbacka.se
 
-Ärendenummer: 4202415 | Inskickat av: Datum: 2025-05-02 15:52 Sida 4 av 4
+Ärendenummer: #202415 | Inskickat av: Datum: 2025-05-02 15:52 Sida 4 av 4
 
 <!-- sida 133 -->
 
@@ -5293,6 +5389,15 @@ Säröns nu etablerade kulturmiljö samt vara svår att genomföra på grund av 
 10/10
 
 <!-- sida 143 -->
+
+Godkännande
+SY Som fastighetsägare av Särö 1:57 samt Särö 1:307 medges härmed att ansökan "Begäran om
+FS planbesked gällande Särö 1:57” angående flytt av byggrätt och fastighets reglering görs.
+Underskrift
+7 ägare av Särö 1:57 och Särö 1:307
+Ort, Datum
+Underskrift
+” ägare av Särö 1:57 och Särö 1:307
 
 <!-- sida 144 -->
 
@@ -7032,7 +7137,7 @@ Justerad Tilläggs Tillköp Färdtjänst- Skolkort Tilläggs- Tillköp Korrigera
 Ägar- trafik linjer trafik Ägar-
 ersättning ersättning
 2011 2011
-1429 530 500 124 492 -18 825 -58 000 -1 296 | -90 000 1 386 401
+1 429 530 500 124 492 -18 825 -58 000 -1 296 | -90 000 1 386 401
 
 Inkomstutjämning nuvarande system
 
@@ -7072,7 +7177,7 @@ Västra Götalands län baseras på ägarersättning år 2007.
 Som utjämningssystemet är uppbyggt bör således alla kommuner i ett län ha samma
 nettokostnad (korrigerad för avvikande ambitionsnivå) för kollektivtrafik efter bidrag och
 
-25\)
+2(5)
 
 <!-- sida 185 -->
 
@@ -7493,7 +7598,7 @@ KOMMUNSTYRELSEN
 POSTADRESS 542 86 MARIESTAD
 BESÖKSADRESS Stadshuset, Kyrkogatan 2, MARIESTAD
 TELEFON 0501-75 50 50
-FAX 0501 - 73 50 69
+FAX 0501 - 75 50 69
 HEMSIDA www.mariestad.se
 E-POSTADRESS = info(Qmariestad.se
 
