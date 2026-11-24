@@ -128,5 +128,7 @@ tabeller. Det föll eftersom felet i issuet är just text: kolumnerna
 flätas ihop också när ingen siffra finns. Alternativ C avvisades för att
 den gissar, och poolens grundregel är hellre märka än gissa.
 
-Ett stickprov på slumpvis valda handlingar som 0.16.0 konverterat
-jämförde varje sidas kvalitet före och efter: STICKPROV.
+Ett stickprov på 50 slumpvis valda handlingar från 2023–2026 som 0.16.0
+konverterat, med 1 702 sidor, jämförde varje sidas kvalitet i poolen med
+en ny konvertering. Ingen sida ändrades. I handlingarna 2025-10-09 ändras
+bara sidorna 22–27, från `ok` till `tabell-osaker`.
