@@ -411,8 +411,9 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
 - **Givet** en körning som hämtar längre än 15 minuter
 - **När** en del av steg 2 har gått i 15 minuter
 - **Så** gör den färdigt dokumentet den håller på med, och det klara
-  kontrolleras, checkas in och pushas på körningens gren innan nästa del
-  börjar, så att ett avbrott kostar högst en del
+  kontrolleras och checkas in innan nästa del börjar, så att ett fel
+  kostar högst en del; en runner som går förlorad, eller en körning som
+  avbryts för hand, kostar allt jobbet checkat in (ADR-0118)
   ([ADR-0088](decisions/0088-nattkorningen-sparar-var-femtonde-minut.md)).
 - **Givet** en kandidat som redan provats i en tidigare del av samma
   körning, också om den inte gick att hämta eller konvertera
@@ -427,10 +428,10 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
   den når `main` genom en PR där samma kontroller körs igen
   (ADR-0015).
 
-- **Givet** en körning som har pushat sin gren, i ett repo med en token
+- **Givet** en körning som har checkat in något, i ett repo med en token
   för körningen
-- **När** körningen slutar, också om den fallit efter en sparad del
-- **Så** har den öppnat en PR från grenen som mergas av sig själv när
+- **När** körningen slutar, också om den fallit efter en incheckad del
+- **Så** har den pushat sin gren (K95) och öppnat en PR från grenen som mergas av sig själv när
   kontrollerna gått igenom; utan token säger sammanfattningen att någon
   ska öppna PR:en (ADR-0052,
   [#163](https://github.com/moggleif/kommunhandlingar/issues/163)).
@@ -2742,9 +2743,9 @@ minnet, eller föra in kod i `main`.
 - **Givet** en gren från nattkörningen som ändrar något utanför `data/`
   och `versioner/`, flyttar en fil dit från annat håll, lägger en
   symbolisk länk eller en undermodul där, eller har en merge-commit
-- **När** jobbet som öppnar PR:en körs
-- **Så** öppnas ingen PR, ingen automatisk merge slås på, och jobbet
-  faller med grenens namn i sammanfattningen.
+- **När** jobbet som pushar grenen och öppnar PR:en körs
+- **Så** pushas grenen inte, ingen PR öppnas, ingen automatisk merge slås
+  på, och jobbet faller med grenens namn i sammanfattningen.
 
 - **Givet** en gren från nattkörningen som fått en ny commit efter att
   jobbet prövat den
@@ -2757,3 +2758,32 @@ minnet, eller föra in kod i `main`.
 - **Så** faller den om en PDF är incheckad utanför `tests/fixtures/` eller
   en extern action står på en tagg i stället för en commit, och
   npm-paketen installeras utan sina installationsskript.
+
+## K95 — Jobben som läser det hämtade kan inte pusha
+
+[ADR-0118](decisions/0118-nattkorningens-tolkning-utan-skrivratt.md).
+Issue [#483](https://github.com/moggleif/kungsbackakommun/issues/483).
+Nattkörningens jobb läser PDF:er och sidor från internet med tolkar som
+kan ha fel. En fil som tar över en tolk ska inte kunna skriva i repot.
+
+- **Givet** nattkörningens jobb för mötessidorna eller arkivet
+- **När** det hämtar och konverterar
+- **Så** har det bara läsrätt till repot och ingen token i utcheckningen,
+  och det som checkats in lämnas vidare som en artefakt, inte som en push.
+
+- **Givet** ett av de jobben som checkat in något, också om det fallit
+  efter en incheckad del
+- **När** det slutar
+- **Så** pushar ett eget jobb, på en ny runner som inte kör något ur
+  repot eller ur det hämtade, commitarna på körningens gren, efter
+  prövningen i K92, och öppnar PR:en.
+
+- **Givet** ett grennamn från jobbet som läst det hämtade som inte är
+  den här körningens och delens gren
+- **När** jobbet som pushar körs
+- **Så** pushas ingenting, och jobbet faller.
+
+- **Givet** mötenas jobb som checkat in något
+- **När** arkivets jobb startar
+- **Så** har mötenas gren redan pushats och prövats, och ingenting pushar
+  till den efter att dess PR öppnats.

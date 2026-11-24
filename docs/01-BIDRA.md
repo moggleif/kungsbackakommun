@@ -276,9 +276,9 @@ körningen innan den checkar in, står under "Körning och incheckning" i
 `.github/workflows/nattkorning.yml` går varje natt, och en gång till på
 eftermiddagen tills arkivet är ikapp (ADR-0061), och kan startas för
 hand under Actions. Mötessidorna hämtas först i ett eget jobb och arkivet
-sedan ovanpå (ADR-0077). Varje jobb pushar en gren
-`nattkorning/<datum>-<id>-moten` eller `-arkiv` när något ändrats, öppnar
-en PR från den och slår på automatisk merge, så att GitHub mergar när
+sedan ovanpå (ADR-0077). Varje jobb lämnar sina commitar till ett eget
+PR-jobb, som pushar en gren `nattkorning/<datum>-<id>-<försök>-moten`
+eller `-arkiv` när något ändrats (ADR-0118), öppnar en PR från den och slår på automatisk merge, så att GitHub mergar när
 "Ren kod och tester" gått igenom (ADR-0052). Det kräver
 två saker i repot, som en ägare ordnar en gång:
 
@@ -288,11 +288,18 @@ två saker i repot, som en ägare ordnar en gång:
    under Settings → Secrets and variables → Actions.
 2. *Allow auto-merge* påslaget under Settings → General.
 
-Faller jobbet "PR med automatisk merge" (under `pr-moten` eller
-`pr-arkiv`) har token gått ut, saknar
-behörighet, eller är automatisk merge avslagen; rätta det i
-inställningarna. Grenen är pushad ändå, och står PR:en redan öppen kan
-den mergas för hand.
+Faller jobbet "Gren och PR med automatisk merge" (under `pr-moten` eller
+`pr-arkiv`) efter pushen har token gått ut, saknar behörighet, eller är
+automatisk merge avslagen; rätta det i inställningarna. Grenen är pushad
+ändå, och står PR:en redan öppen kan den mergas för hand. Faller det
+före pushen säger sammanfattningen varför: grenen ändrade annat än data
+(ADR-0115), grennamnet var inte körningens (ADR-0118), eller artefakten
+eller hämtningen föll. Ett tillfälligt fel rättas med *Re-run failed
+jobs*, som kör om PR-jobbet för sig. Annars, och efter en körning som
+avbrutits för hand, ligger det incheckade i sju dagar som artefakt
+med grenens namn i körningen: ladda ner den, pröva den som PR-jobbet gör
+och pusha den med `git fetch gren.bundle HEAD:refs/heads/<gren>` och
+`git push`.
 
 Utan hemligheten öppnar en människa eller agent PR:en från grenen
 (ADR-0015). En PR vars kontroll fallit står kvar omergad tills någon
