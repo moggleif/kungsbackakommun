@@ -10,7 +10,7 @@ consulted: AI-agenten
 ## Context and Problem Statement
 
 pdfminer räknar ett tecken som upprätt (`upright`) när `a·d > 0` och
-`b·c ≤ 0` i dess matris. Text som vridits ett halvt varv, eller snett,
+`b·c ≤ 0` i dess matris (`a·d` gånger den vågräta skalningen). Text som vridits ett halvt varv, eller snett,
 till exempel 45°, räknas därför som upprätt och läses in i sidans flöde
 som vanlig text. Granskningen av
 [ADR-0103](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) visade att
@@ -49,7 +49,7 @@ karta (`41000`, `42000` …) och mått i en sektion (`4,5 m`, `6 m`).
 
 Valt: A, eftersom den följer en regel som redan finns och prövats. Ett
 tecken står rakt när pdfminer räknar det som upprätt och dess baslinje
-lutar högst en halv grad (`konvertering/snett.py`). Allt annat är text
+lutar mindre än en halv grad (`konvertering/snett.py`). Allt annat är text
 på högkant i ADR-0103:s mening:
 
 * det tas ur sidans flöde, och sidans tal blir obekräftade när något av
@@ -65,21 +65,35 @@ halv grad tar text som lutar så lite att den läses ihop med raderna intill
 över en hel sidbredd; ingen sida i stickprovet hade tecken som lutade
 mindre än så.
 
+Avstånden mäts längs baslinjen från där förra tecknet slutar. En
+fjärdedels teckenbredd, inte en femtedel av teckenhöjden som för text på
+högkant, eftersom textlagret inte ger teckenhöjden för text snett;
+med den läses mellanslagen i stickprovets kartetiketter rätt.
+
 Poolens version höjs till 0.18.0 och alla dokument konverteras om, eftersom
-vilka sidor som har text snett inte syns i front matter. Versionen 0.17.0
-tas av en parallell ändring.
+vilka sidor som har text snett inte syns i front matter.
 
 ### Consequences
 
 * Bra, eftersom inget tal snett eller upp och ned räknas som bekräftat.
-  I stickprovet får 4 sidor obekräftade tal som förut var bekräftade, och
-  ingen sida förlorar bekräftade tal.
+  I stickprovet får 4 sidor obekräftade tal som förut var bekräftade,
+  alla med siffror snett, och ingen sida får bekräftade tal som förut var
+  obekräftade.
 * Bra, eftersom gatunamnen på en karta inte längre står inne i sidans
   text utan sist, och läses hela: `Gamla Kläppavägen`, `Åsa
   stationsväg`. Förut stod de bokstav för bokstav där de råkade hamna.
 * Dåligt, eftersom en karta med mått eller koordinater snett får
   obekräftade tal också när de lästs rätt. Det gäller ungefär en sida på
   250 i detaljplanerna och färre i övriga handlingar.
+* Dåligt, eftersom diagram med snedställda axeletiketter med årtal eller
+  månader, och diagonala vattenstämplar med datum, gör alla sidans tal
+  obekräftade. Stickprovet hade inga sådana, men det tog få budget- och
+  uppföljningshandlingar, så andelen kan vara större där.
+* Dåligt, eftersom en siffra snett inne i en tabell står kvar i cellen
+  som den lästs, och tabellen märks inte osäker; bara sidans tal blir
+  obekräftade. Så är det också för text på högkant i en tabell
+  (ADR-0038), och det följs upp i
+  [#479](https://github.com/moggleif/kungsbackakommun/issues/479).
 * Dåligt, eftersom textlagrets ordning bara blir rätt när PDF:en ritar
   tecknen i läsordning. Det gör de i stickprovet, men det går inte att
   lova, och därför bekräftas inga tal ur den texten.

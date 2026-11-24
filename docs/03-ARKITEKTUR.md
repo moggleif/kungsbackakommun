@@ -1633,7 +1633,7 @@ rad på högkant per stycke (`konvertering/hogkant.py`).
   läses likadant utan den
   ([Konvertering och kvalitet](#konvertering-och-kvalitet), ADR-0103).
 - **Snett och upp och ned i textlagret:** ett tecken som pdfminer räknar
-  som upprätt men vars baslinje lutar mer än en halv grad, som ett
+  som upprätt men vars baslinje lutar en halv grad eller mer, som ett
   gatunamn längs en väg eller `73` upp och ned, står inte rakt
   (`konvertering/snett.py`, ADR-0112). Det tas ur sidans flöde som text
   på högkant och räknas på samma sätt för sidans tal. Tecknen skrivs sist,

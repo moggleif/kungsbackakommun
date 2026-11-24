@@ -54,6 +54,9 @@ class TestRiktning(unittest.TestCase):
         kursiv = dict(tecken("A", 0), matrix=(1, 0, 0.2, 1, 0, 0))
         self.assertTrue(snett.rakt(kursiv))
 
+    def test_en_halv_grad_ar_snett(self):
+        self.assertFalse(snett.rakt(tecken("A", 0, 0.5)))
+
     def test_snett_och_upp_och_ned(self):
         for grader in (1, 45, 180, -30):
             self.assertTrue(snett.snett(tecken("A", 0, grader)), grader)
@@ -85,6 +88,10 @@ class TestOrdning(unittest.TestCase):
     def test_siffra_snett_ger_text_i_oordning(self):
         sida = SimpleNamespace(chars=[tecken("A", 0), tecken("7", 50, 180)])
         self.assertTrue(i_oordning(sida, []))
+
+    def test_bokstav_snett_i_en_tabell(self):
+        sida = SimpleNamespace(chars=[tecken("A", 0), tecken("K", 50, 30)])
+        self.assertTrue(i_oordning(sida, [(40, 90, 70, 120)]))
 
     def test_bokstav_snett_ger_inte_text_i_oordning(self):
         sida = SimpleNamespace(chars=[tecken("A", 0), tecken("K", 50, 30)])

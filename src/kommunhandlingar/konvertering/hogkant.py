@@ -1,11 +1,13 @@
-"""Krav: K41 i docs/02-KRAV.md, ADR-0064. Test: tests/test_hogkant.py.
+"""Krav: K41 i docs/02-KRAV.md, ADR-0064, ADR-0112. Test: tests/test_hogkant.py.
 
 Text på högkant, som en stämpel eller ett diarienummer i marginalen, tas
 ur sidans flöde och skrivs sist på sidan, en rad per rad på högkant
-(docs/03-ARKITEKTUR.md#text-på-högkant). I textlagret är det tecknen som
-inte står upprätt, och raden läses i sin riktning: uppåt när texten är
-vriden moturs. I OCR-texten är det de ord som är minst dubbelt så höga
-som breda och har minst fyra tecken; de målas vita och sidan läses om.
+(docs/03-ARKITEKTUR.md#text-på-högkant). Text snett eller upp och ned
+tas ur flödet på samma sätt men läses i `snett.py`. I textlagret är det
+tecknen som pdfminer inte räknar som upprätta, och raden läses i sin
+riktning: uppåt när texten är vriden moturs. I OCR-texten är det de ord
+som är minst dubbelt så höga som breda och har minst fyra tecken; de
+målas vita och sidan läses om.
 """
 
 from collections.abc import Iterable

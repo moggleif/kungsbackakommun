@@ -18,7 +18,7 @@ STYCKESLUCKA = 2
 
 
 def rakt(tecken: dict) -> bool:
-    """Upprätt, med baslinjen högst en halv grad från vågrät."""
+    """Upprätt, med baslinjen mindre än en halv grad från vågrät."""
     a, b = tecken["matrix"][:2]
     vinkel = math.degrees(math.atan2(b, a))
     return tecken["upright"] and abs(vinkel) < TOLERANS
@@ -42,7 +42,8 @@ def textlagret(sida: Page) -> list[str]:
 
 def skiljetecken(fore: dict, tecken: dict) -> str:
     """Mer än en fjärdedels teckenbredd från där det förra tecknet slutar blir
-    ett mellanslag, mer än två teckenbredder en ny rad."""
+    ett mellanslag, mer än två teckenbredder en ny rad. Bredden, eftersom
+    textlagret inte ger höjden för text snett (ADR-0112)."""
     a, b, _, _, e, f = fore["matrix"]
     slut = (e + a * fore["adv"], f + b * fore["adv"])
     lucka = math.dist(slut, tecken["matrix"][4:])

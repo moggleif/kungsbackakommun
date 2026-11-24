@@ -47,6 +47,5 @@
 # Väg H (ADR-0106): bara sidor som läses med OCR.
 "0.16.0" = ["ocr"]
 # Text som står snett eller upp och ned (ADR-0112) tas ur sidans flöde på
-# varje sida med textlager. Versionen 0.17.0 hoppades över i ordningen
-# som parallella ändringar mergades.
+# varje sida med textlager.
 "0.18.0" = ["alla"]

@@ -39,9 +39,10 @@ from kommunhandlingar.konvertering.vag import olasliga
 
 
 def textsida(sida: Page) -> Sida:
-    """Text på högkant utan siffror ger obekräftade tal bara när sidan
-    läses annorlunda utan den: tabellerna, talraderna eller texten
-    (ADR-0103). Prövas bara på sidor med sådan text."""
+    """Text på högkant, snett eller upp och ned, utan siffror ger
+    obekräftade tal bara när sidan läses annorlunda utan den: tabellerna,
+    talraderna eller texten (ADR-0103, ADR-0112). Prövas bara på sidor
+    med sådan text."""
     last = lasning(sida)
     if last.tal_obekraftade or all(snett.rakt(c) for c in sida.chars):
         return last
