@@ -1,9 +1,10 @@
 """Krav: K5, K6, K15, K19 och K41 i docs/02-KRAV.md, ADR-0016, ADR-0017,
 ADR-0024, ADR-0028, ADR-0033, ADR-0034, ADR-0036, ADR-0038, ADR-0063,
-ADR-0064 och ADR-0103.
+ADR-0064, ADR-0103 och ADR-0112.
 Test: tests/test_konvertering.py, tests/test_skarvar.py, tests/test_delade.py,
 tests/test_kvarvarande.py, tests/test_avskurna.py, tests/test_mellanslag.py,
-tests/test_ordning.py, tests/test_spalter.py och tests/test_hogkant.py.
+tests/test_ordning.py, tests/test_spalter.py, tests/test_hogkant.py och
+tests/test_snett.py.
 
 En sida läst ur textlagret: tabellerna med och utan linjer, texten utanför
 dem spalt för spalt med text på högkant sist, och skarven för K19, vars
@@ -22,6 +23,7 @@ from kommunhandlingar.konvertering import (
     kvalitet,
     kvarvarande,
     olinjerade,
+    snett,
     spalter,
     tabeller,
 )
@@ -41,7 +43,7 @@ def textsida(sida: Page) -> Sida:
     läses annorlunda utan den: tabellerna, talraderna eller texten
     (ADR-0103). Prövas bara på sidor med sådan text."""
     last = lasning(sida)
-    if last.tal_obekraftade or all(c["upright"] for c in sida.chars):
+    if last.tal_obekraftade or all(snett.rakt(c) for c in sida.chars):
         return last
     utan = lasning(hogkant.staende(sida))
     andrar = replace(utan, text="") != replace(last, text="")
@@ -79,9 +81,10 @@ def tabellerna(sida: Page) -> tuple[list[Funnen], list[Ruta], list[Ruta]]:
 
 def sidans_text(utanfor: Page) -> tuple[str, bool]:
     """Texten utanför tabellerna, spalt för spalt, med text på högkant
-    sist (K41)."""
+    och snett sist (K41, ADR-0112)."""
     text = spalter.text(hogkant.staende(utanfor))
-    return stycken(hogkant.sist(text, hogkant.textlagret(utanfor)))
+    sist = hogkant.textlagret(utanfor) + snett.textlagret(utanfor)
+    return stycken(hogkant.sist(text, sist))
 
 
 def med_linjer(sida: Page) -> tuple[list[Funnen], list[Ruta]]:

@@ -118,10 +118,11 @@ Regler för det här repot, utöver MADR:
 | 0100 | [Säkra rader läses, och en sida utan text att lagra märks `ointressant`](0100-sakra-rader-lases-och-resten-ar-ointressant.md) | accepted |
 | 0101 | [Statussidan visar andelen känd inläsning](0101-statussidan-visar-kand-inlasning.md) | accepted |
 | 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |
-| 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted |
+| 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted (0112 räknar text snett och upp och ned som text på högkant) |
 | 0104 | [Webbplatsens skript kontrolleras med ESLint och prövas i jsdom mot ögonblicksbilden](0104-webbplatsens-skript-med-eslint-och-jsdom.md) | accepted (0108 låter CI hålla målen) |
 | 0105 | [Väg H kalibreras mot textlagersidor innan den får bekräfta tal i poolen](0105-vag-h-kalibreras-mot-textlagersidor.md) | accepted |
 | 0106 | [Skannade sidor får väg H:s tal när den lagrade texten har just dem](0106-skannade-sidor-far-vag-hs-tal.md) | accepted |
 | 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |
 | 0108 | [CI håller målen i Ren kod för koden, och testerna behåller de högre gränserna](0108-ci-haller-malen-for-koden.md) | accepted |
 | 0109 | [Varje källa upptäcker sitt levande och sitt arkiv bakom samma gränssnitt](0109-kallorna-bakom-ett-gransnitt.md) | accepted |
+| 0112 | [Text snett och upp och ned räknas som text på högkant](0112-snett-och-upp-och-ned-som-hogkant.md) | accepted |

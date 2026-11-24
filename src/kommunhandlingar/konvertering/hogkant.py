@@ -14,6 +14,7 @@ from itertools import pairwise
 from pdfplumber.page import Page
 from PIL import Image, ImageDraw
 
+from kommunhandlingar.konvertering.snett import rakt
 from kommunhandlingar.konvertering.tsv import Ord
 
 MINSTA_ORD = 4
@@ -23,7 +24,8 @@ STYCKESLUCKA = 2
 
 
 def staende(sida: Page) -> Page:
-    return sida.filter(lambda o: o["object_type"] != "char" or o["upright"])
+    """Sidan utan tecken på högkant, snett eller upp och ned (ADR-0112)."""
+    return sida.filter(lambda o: o["object_type"] != "char" or rakt(o))
 
 
 def textlagret(sida: Page) -> list[str]:
