@@ -1,0 +1,19 @@
+name: Tillfällig hämtning
+on:
+  push:
+    branches: [claude/project-thread-pvtbnu]
+    paths: [.github/workflows/tillfallig-hamta.yml]
+permissions:
+  contents: read
+jobs:
+  hamta:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          mkdir ut
+          for i in 1 2 3 4 5; do curl -fsSL -A "kommunhandlingar (kalibrering)" -o ut/fg.pdf 'https://web.archive.org/web/20251213095830id_/https://kungsbacka.se/download/18.200a9a0b18b6aa5b191b0d5/1698645634205/F%C3%B6rskola%20&%20Grundskola%20arbetsutskott%20Handlingar%202023-11-01.pdf' && break; sleep 20; done
+          sha256sum ut/fg.pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: ut/
