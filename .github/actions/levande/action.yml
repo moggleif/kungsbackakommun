@@ -10,6 +10,8 @@ runs:
   using: composite
   steps:
     - shell: bash
+      env:
+        FLAGGOR: ${{ inputs.flaggor }}
       run: |
         for kommunfil in kommuner/*.toml; do
           # Upptäckten skriver inget i data/. Stoppas den av en källa (kod 3)
@@ -23,5 +25,6 @@ runs:
             continue
           fi
           [ "$kod" -eq 0 ] || exit "$kod"
-          .github/nattkorning/hamta_i_delar.sh "$kommunfil" ${{ inputs.flaggor }}
+          read -ra flaggor <<< "$FLAGGOR"
+          .github/nattkorning/hamta_i_delar.sh "$kommunfil" "${flaggor[@]}"
         done

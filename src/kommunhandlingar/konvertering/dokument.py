@@ -2,8 +2,10 @@
 och ADR-0106. Test: tests/test_konvertering.py och tests/test_tidsbudget.py.
 
 Läser en PDF sida för sida och ger Markdown-texten, tabellerna som CSV och
-kvaliteten per sida och för dokumentet. En sida med fler tecken än taket
-läses inte: den blir `ej-konverterad` och märks som figur. Blir läsningen
+kvaliteten per sida och för dokumentet. En sida med fler tecken än taket,
+eller så stor att den i 300 dpi blir en större bild än Pillow släpper
+igenom (K92, ADR-0115), läses inte: den blir `ej-konverterad` och märks
+som figur. Blir läsningen
 inte klar inom dokumentets tidsgräns är dokumentet `ej-konverterad` med
 `fel: tidsgrans`.
 """
@@ -15,6 +17,7 @@ from pathlib import Path
 
 import pdfplumber
 import pypdfium2 as pdfium
+from PIL import Image
 
 from kommunhandlingar import tidsbudget
 from kommunhandlingar.konvertering import kvalitet, rapid, tesseract
@@ -24,6 +27,8 @@ from kommunhandlingar.konvertering.sida import Sida
 VERKTYG = ("pdfplumber", "pdfminer.six")
 PDF_BORJAN = b"%PDF-"
 TECKENTAK = 500_000
+# Pillows gräns för en dekompressionsbomb, i kvadratpunkter i 300 dpi.
+YTTAK = 2 * Image.MAX_IMAGE_PIXELS / (tesseract.DPI / 72) ** 2
 TUNG_SIDA = Sida(kvalitet.EJ_KONVERTERAD, True, figur=True)
 
 
@@ -119,7 +124,8 @@ def las_sidor(pdf: Path) -> list[Sida]:
 
 
 def las_under_taket(sida: pdfplumber.page.Page, rendering: pdfium.PdfPage) -> Sida:
-    if tecken(rendering) > TECKENTAK:
+    bredd, hojd = rendering.get_size()
+    if bredd * hojd > YTTAK or tecken(rendering) > TECKENTAK:
         return TUNG_SIDA
     return las_sida(sida, rendering)
 

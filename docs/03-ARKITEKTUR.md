@@ -123,8 +123,8 @@ två startas står i K11.
   ([ADR-0077](decisions/0077-motessidorna-forst-och-en-versionslogg.md)):
   `moten` kör upptäckten och steg 2 för varje kommunfil i `kommuner/`
   utan omkonvertering (`--utan-omkonvertering`), och checkar in; `arkiv`
-  startar när det är klart, från dess gren eller, utan gren, från `main`.
-  Grenen finns också när `moten` föll efter en sparad del. Det gör upptäckten om och kör steg 2 för de
+  startar när dess gren pushats, från den eller, utan gren, från `main`.
+  Grenen finns också när `moten` föll efter en incheckad del. Det gör upptäckten om och kör steg 2 för de
   levande källorna, som då har omkonverteringen kvar och det som kommit
   sedan mötenas jobb, och sedan detsamma med `--arkiv`. Varje
   jobb checkar in och får sin PR för sig. De levande källornas steg är
@@ -132,18 +132,20 @@ två startas står i K11.
 - **Steg 2 körs i delar om 15 minuter** (`hamta --del 15`,
   `.github/nattkorning/hamta_i_delar.sh`,
   [ADR-0088](decisions/0088-nattkorningen-sparar-var-femtonde-minut.md)).
-  Efter varje del kontrolleras det klara, checkas in och pushas på
-  jobbets gren (`.github/nattkorning/spara.sh`). Steg 2 avslutar med
+  Efter varje del kontrolleras det klara och checkas in
+  (`.github/nattkorning/spara.sh`). Steg 2 avslutar med
   kod 4 när delen tog slut och kandidater väntar inom budgeten; då börjar
   nästa del. En kandidat som provats i en del står i
   `<kommun>[.arkiv].kandidater.provade` bredvid kandidatlistan och tas inte
   om i nästa del, så att ett dokument som inte går att hämta inte äter
-  varje del. Faller en kontroll eller en push stoppar jobbet, och det som
-  sparats står kvar. Arkivets steg får falla utan att stoppa jobbet, så
-  efter det sparas det som kommit sedan den sista delen, också en commit
-  vars push föll. Grenens namn bestäms när jobbet startar och har
-  körningens försök med, så att en omkörning får en egen gren
-  (`.github/actions/grenen` ger den som output när något sparats).
+  varje del. Faller en kontroll stoppar jobbet, och det som checkats in
+  står kvar. Arkivets steg får falla utan att stoppa jobbet, så efter det
+  checkas det in som kommit sedan den sista delen. Grenens namn bestäms
+  när jobbet startar och har körningens försök med, så att en omkörning
+  får en egen gren. `.github/actions/grenen` lägger till sist, också när
+  jobbet fallit, jobbets commitar sedan utcheckningen i en git-bundle i
+  en artefakt med grenens sista led som namn, som sparas i sju dagar, och
+  ger grenens namn och bas som output.
   Stoppas upptäckten i en kommuns levande källor av en källsida (kod 3)
   hoppar jobbet över kommunens levande steg 2, skriver det i
   sammanfattningen och går vidare (ADR-0061); upptäckten skriver inget i
@@ -167,28 +169,43 @@ två startas står i K11.
   omkonvertering av samma original som når gränsen lämnar ett dokument
   med text orört, och nästa körning försöker igen.
   Kommer den hårda gränsen först går den före. Resten av tiden fram till
-  Actions gräns på 6 timmar per jobb är till för kontrollerna och pushen. Budgeten är vår egen och följer
+  Actions gräns på 6 timmar per jobb är till för kontrollerna och artefakten. Budgeten är vår egen och följer
   GitHubs gräns ([Actions limits](https://docs.github.com/en/actions/reference/limits),
   kontrollerat 2026-10-07); ändrar GitHub gränsen ändras budgeten.
-- **Datakontrollerna körs innan något pushas**, och sedan att bara filer
-  under `data/` och `versioner/` har ändrats och att inget av dem är
-  binärt. Faller något pushas ingenting mer.
-- **Varje jobb pushar en egen gren**,
+- **Datakontrollerna körs innan något checkas in**, och sedan att bara
+  filer under `data/` och `versioner/` har ändrats och att inget av dem är
+  binärt. Faller något checkas ingenting mer in.
+- **Varje jobb får en egen gren**,
   `nattkorning/<datum>-<körningens id>-<försök>-moten` och `-arkiv`, och datat
   når `main` genom en PR, där "Ren kod och tester" kör samma
   kontroller. Har körningen inte ändrat något pushas ingen gren. Mergen
   till `main` bygger om webbplatsen. Grenen får sin PR också när jobbet
-  fallit efter en sparad del, eftersom varje sparad del klarat
-  kontrollerna, men inte när körningen avbrutits för hand.
+  fallit efter en incheckad del, eftersom varje incheckad del klarat
+  kontrollerna, men inte när körningen avbrutits för hand: då pushas
+  ingenting, och det incheckade finns bara i artefakten (ADR-0118).
+- **Jobben som läser det hämtade kan inte pusha** (K95,
+  [ADR-0118](decisions/0118-nattkorningens-tolkning-utan-skrivratt.md)).
+  `moten` och `arkiv` har `contents: read` och checkar ut med
+  `persist-credentials: false`. Grenen pushas, och PR:en öppnas, i ett
+  eget jobb på en ny runner, utan utcheckning, som får grenens namn och
+  bas som jobb-output och delen, `moten` eller `arkiv`, från anroparen.
+  Det är ett återanvänt workflow, `.github/workflows/nattkorning-pr.yml`,
+  som båda jobben anropar, och det enda med `contents: write`. Jobbet
+  hämtar `main`s och basens commits och träd utan filinnehåll, och sedan
+  bundlens commitar ur artefakten, och kör ingenting ur repot. Det pushar
+  ingenting om grennamnet inte är körningens och delens, i något försök,
+  eller om grenen
+  ändrar något annat än vanliga filer i `data/` och `versioner/` eller har
+  en merge-commit (K92, ADR-0115). Annars pushar det grenen med jobbets
+  egen token.
 - **Körningen öppnar PR:en själv** när hemligheten `NATTKORNING_TOKEN`
-  finns, och slår på automatisk merge. Det görs i ett eget jobb på en ny
-  runner, utan utcheckning, som får grenens namn som jobb-output; bara det
-  jobbet får hemligheten. Utan hemligheten öppnar en människa eller agent
-  PR:en. Jobbet är ett återanvänt workflow,
-  `.github/workflows/nattkorning-pr.yml`, som båda jobben anropar.
-  Arkivets jobb checkar ut mötenas gren medan dess PR kan mergas; det
-  förutsätter att GitHub inte tar bort grenar efter merge (*Automatically
-  delete head branches* är avslaget).
+  finns, och slår på automatisk merge för den prövade commiten, i samma
+  jobb som pushar; bara det jobbet får hemligheten. Utan hemligheten
+  öppnar en människa eller agent PR:en från den pushade grenen.
+  Arkivets jobb startar när mötenas PR-jobb är klart och checkar ut
+  mötenas gren medan dess PR kan mergas; det förutsätter att GitHub inte
+  tar bort grenar efter merge (*Automatically delete head branches* är
+  avslaget). Ingenting pushar till mötenas gren efter dess PR-jobb.
 
 Datakontrollerna, i körningen och i CI
 (`python -m kommunhandlingar.datakontroll data`, utom binärerna):
@@ -731,6 +748,10 @@ standardbiblioteket.
 | `user_agent` | User-Agent i varje anrop: vem vi är och hur vi nås.             |
 | `intervall`  | Minsta antalet sekunder mellan anrop till samma värd, räknat från slutet av det förra. |
 
+- **Bara https** hämtas, och en sida läses högst 50 MB och en fil högst
+  1 GiB (K92, ADR-0115). En annan adress ger orsaken `inte-https` utan
+  att något hämtas, och en läsning över taket avbryts med orsaken
+  `for-stor`, utan nytt försök.
 - **Intervallet** hålls för varje värd för sig, över alla kommuner i
   körningen; en ny kommun på en ny värd ändrar alltså inte filen.
 - **`robots.txt`** läses en gång per värd och körning, när den gick att
@@ -941,7 +962,7 @@ Varje sida får en kvalitet:
 
 | Sida             | Betyder                                                          |
 | ---------------- | ---------------------------------------------------------------- |
-| `ej-konverterad` | Sidan har fler än 500 000 tecken, eller Tesseract fallerade eller blev inte klar på fem minuter. Ingen text från sidan skrivs. |
+| `ej-konverterad` | Sidan har fler än 500 000 tecken, är för stor att rendera (K92), eller Tesseract fallerade eller blev inte klar på fem minuter. Ingen text från sidan skrivs. |
 | `bild`           | Sidan skulle läsas med OCR, nådde inte tröskeln, gav för få säkra rader och är till största delen ett foto, en karta eller en ritning (K72). Ingen text från sidan skrivs. |
 | `ointressant`    | Sidan skulle läsas med OCR, nådde inte tröskeln och gav för få säkra rader, och är inte en bild eller tom: en ritning, en ljus karta, handskrift, ett omslag eller för liten text (K73). Granskaren kan också sätta den för hand. Ingen text från sidan skrivs. |
 | `ocr`            | Sidan lästes med OCR. Den får inga CSV:er.                       |
@@ -953,6 +974,10 @@ Först räknas sidans tecken med pypdfium2. Har textlagret fler än 500 000
 tecken läses sidan inte: den blir `ej-konverterad` och står i `figurer`
 (K55,
 [ADR-0079](decisions/0079-en-sida-med-fler-an-en-halv-miljon-tecken-lases-inte.md)).
+Detsamma gäller en sida som i 300 dpi skulle bli en större bild än
+Pillows gräns för en dekompressionsbomb, `2 × MAX_IMAGE_PIXELS`, lite mer
+än en A0 (K92,
+[ADR-0115](decisions/0115-sakerhetsgranser-for-hamtning-och-nattkorning.md)).
 Annars prövas
 sidan i den här ordningen, och den första regeln som stämmer gäller:
 
@@ -1969,8 +1994,28 @@ som läser varje fil en gång. Hur och varför skripten kontrolleras står i
   läsare. Klockan är fast. Ett fall som bilden saknar, som ett bytt mål
   eller ett fokusområde, ställs upp genom att sidan ändras före skriptet.
 - **Versionerna** står exakt i `package.json`, som CI installerar med
-  `npm install`. `package-lock.json` checkas inte in (ADR-0104). Paketet
-  som datarepona installerar påverkas inte.
+  `npm ci --ignore-scripts` (ADR-0115) ur den incheckade
+  `package-lock.json` (ADR-0117). Paketet som datarepona installerar påverkas inte.
+
+## Låsta beroenden
+
+Hur och varför står i
+[ADR-0117](decisions/0117-transitiva-beroenden-installeras-ur-lasfiler.md)
+(K94).
+
+- **Python.** `uv.lock` låser hela trädet med hashar, också setuptools i
+  gruppen `bygg`. Varje jobb installerar med
+  `.github/actions/installera`: `uv export --locked` skriver trädet till
+  `$RUNNER_TEMP/krav.txt`, pip installerar det med `--require-hashes
+  --no-deps --only-binary :all:` och sedan paketet utan beroenden och utan
+  byggisolering. Kontrollen tar med `utveckling` och låter `pip-audit`
+  granska samma fil, som actionen ger som output `krav`.
+- **npm.** `package-lock.json` låser ESLint, jsdom och markdownlint-cli2
+  med deras beroenden, och CI installerar med `npm ci --ignore-scripts`.
+- **Uppdateringar.** Dependabot följer `uv` och `npm` och uppdaterar
+  manifestet och låsfilen i samma PR. Paketen längre ner i trädet flyttas
+  när ett direkt beroende kräver det eller vid en känd sårbarhet.
+  Kalibreringen av väg H körs också när bara `uv.lock` ändras.
 
 ## Tolkade figurer
 
@@ -2478,12 +2523,11 @@ filen (K26), länkad från organets sida.
   bedömningen är okänd, en rad utan uppföljning har en bedömning eller
   status, en uppföljning saknar
   bedömning, `tolkad` är något annat än tomt eller `ja` i en grupp, samma
-  rubrik har två olika grupper eller huvudmål, två rubriker står i samma
+  rubrik har två olika grupper, två rubriker står i samma
   spår samma år i samma dokument (budgeten och uppföljningen får skriva
   samma mål olika), ett fokusområde saknar huvudmål eller en annan rad
-  har ett, huvudmålet inte står på sidorna eller inte är ett kommunmål
-  utan grupp i filen, en grupp inte är en rubrik i filen utan egen
-  grupp, eller samma spår
+  har ett, huvudmålet inte står på sidorna, en grupp inte är en rubrik i
+  filen utan egen grupp, eller samma spår
   samma år står ur både protokollet och ett annat dokument från samma
   möte. Texten jämförs efter
   att radbrytningar och upprepade mellanslag gjorts till ett mellanslag,
@@ -2494,6 +2538,12 @@ filen (K26), länkad från organets sida.
   tabeller. Versalerna räknas, utom när källan sätter hela texten i
   versaler. En målfil utan kommunfil stoppar också
   bygget.
+  När hela filen är läst stoppas bygget, med fokusområdet och organet i
+  felet men utan rad, om ett huvudmål inte är ett kommunmål i ett
+  kommunmåls spår, eller om ett fokusområdes spår har huvudmål i två
+  kommunmåls spår (K91). Läsningen sätter sedan fokusområdets huvudmål
+  till kommunmålets spår, så att `huvudmal` i minnet är spårets rubrik och
+  inte alltid källans.
 - **Samma rubrik** är samma organ, slag och rubrik utan hänsyn till
   versaler; rubriken visas som den först står. **Ett spår** är samma organ
   och grupp, eller rubrik när gruppen är tom, utan hänsyn till versaler.
@@ -2551,7 +2601,9 @@ filen (K26), länkad från organets sida.
     ett streck för år utan protokoll med text. Ett spår som varit både nämndmål och direktiv står under sitt
     senaste slag, med det andra slaget vid de rubriker som hade det. Ett
     fokusområde står direkt under sitt kommunmål, indraget och märkt
-    "Fokusområde:" för skärmläsare.
+    "Fokusområde:" för skärmläsare. Ett huvudmål kan vara en tidigare
+  rubrik för kommunmålet, som en budget skrev den; fokusområdet står ändå
+  under kommunmålets spår (K91, [ADR-0114](decisions/0114-fokusomraden-under-ett-omdopt-kommunmal.md)).
   - **Korten** (`webbplats/malkort.py`): ett kort per spår, de som gäller
     det senaste året först, sedan efter sista och första år. Kortet har
     slaget, åren, den senaste rubriken, de tidigare rubrikerna med ordet

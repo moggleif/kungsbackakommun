@@ -1,5 +1,7 @@
-"""Krav: K29, K35, K50 och K60 i docs/02-KRAV.md, ADR-0050, ADR-0056 och ADR-0073.
-Test: tests/test_malkort.py, tests/test_fokusomraden.py och tests/test_malar.py.
+"""Krav: K29, K35, K50, K60 och K91 i docs/02-KRAV.md, ADR-0050, ADR-0056,
+ADR-0073 och ADR-0114.
+Test: tests/test_malkort.py, tests/test_fokusomraden.py, tests/test_malar.py och
+tests/test_omdopta_kommunmal.py.
 
 Det tidslinjen, korten och Ett år i taget alla behöver: underlaget, och om
 ett spår dess rubriker, slag och egenskaper för urvalet, vad som visas för
@@ -65,8 +67,8 @@ def egenskaper(nr: int, malen: list[Mal]) -> str:
     )
 
 
-# Ett fokusområde visas under huvudmålets spår, som kontrollen kräver är
-# ett kommunmål utan grupp, och inte för sig.
+# Ett fokusområde visas under huvudmålets spår, som läsningen sätter som
+# huvudmål också när kommunmålet bytt rubrik (K91), och inte för sig.
 def fristaende(spar: list[list[Mal]]) -> list[tuple[int, list[Mal]]]:
     return [(nr, malen) for nr, malen in enumerate(spar) if not malen[-1].huvudmal]
 

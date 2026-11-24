@@ -22,6 +22,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import pypdfium2 as pdfium
+from PIL import Image
 
 from kommunhandlingar import frontmatter, original, pool
 from kommunhandlingar.fel import Hamtfel
@@ -30,6 +31,9 @@ from kommunhandlingar.hamtning.hamtare import Hamtare
 from kommunhandlingar.hamtning.klient import Klient
 
 SKALA = 2
+# Högst Pillows varningsgräns för en dekompressionsbomb, så att bilden går
+# att öppna, också för en sida över konverteringens yttak (K92, ADR-0115).
+PIXLAR = Image.MAX_IMAGE_PIXELS
 
 
 class AndratOriginal(Exception):
@@ -85,8 +89,14 @@ def original_pdf(md: Path, falt: dict[str, str], klient: Hamtare) -> Iterator[Pa
 
 def spara(dokument: pdfium.PdfDocument, nr: int, katalog: Path) -> Path:
     png = katalog / f"{nr}.png"
-    dokument[nr - 1].render(scale=SKALA).to_pil().save(png)
+    sida = dokument[nr - 1]
+    sida.render(scale=skala(sida)).to_pil().save(png)
     return png
+
+
+def skala(sida: pdfium.PdfPage) -> float:
+    bredd, hojd = sida.get_size()
+    return min(SKALA, (PIXLAR / (bredd * hojd)) ** 0.5)
 
 
 def klient_for(md: Path) -> Klient:

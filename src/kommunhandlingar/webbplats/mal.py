@@ -1,6 +1,7 @@
-"""Krav: K26, K27, K35 och K71 i docs/02-KRAV.md, ADR-0044, ADR-0045, ADR-0056
-och ADR-0098.
-Test: tests/test_mal.py, tests/test_fokusomraden.py och tests/test_regionmal.py.
+"""Krav: K26, K27, K35, K71 och K91 i docs/02-KRAV.md, ADR-0044, ADR-0045,
+ADR-0056, ADR-0098 och ADR-0114.
+Test: tests/test_mal.py, tests/test_fokusomraden.py, tests/test_regionmal.py och
+tests/test_omdopta_kommunmal.py.
 
 Läser `mal/<kommun>.csv` och stoppar bygget med raden när den inte går
 ihop med kommunfilen och poolen (docs/03-ARKITEKTUR.md#mål-och-direktiv).
@@ -81,9 +82,10 @@ def las(fil: Path, kommun: Kommun, data: Path) -> list[Mal]:
     malen = radfil.las(fil, KOLUMNER, tolka_och_prova)
     try:
         kontroll.grupperna()
+        kontroll.huvudmalens_spar()
     except ValueError as fel:
         raise Datafel(f"{fil}: {fel}") from None
-    return malen
+    return [kontroll.under_sparet(m) for m in malen]
 
 
 def tolka(rad: list[str], organ: set[str], sidtext: Sidlasare) -> Mal:

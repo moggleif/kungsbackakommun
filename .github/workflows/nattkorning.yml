@@ -1,9 +1,11 @@
 # Den schemalagda körningen (K11, K53, ADR-0006, ADR-0015, ADR-0052, ADR-0061,
 # ADR-0077 och ADR-0088): först mötessidorna, upptäckt och steg 2 för varje
 # kommun, sedan arkivet (K16, ADR-0018) ovanpå deras gren. Var 15:e minut
-# kontrolleras det klara och pushas på jobbets egen gren, som får en PR som
-# mergas automatiskt, också när jobbet fallit efter en sparad del; inte när
-# körningen avbrutits för hand.
+# kontrolleras det klara och checkas in. Jobben som läser PDF:erna har bara
+# läsrätt och ingen token i utcheckningen; deras commitar går som artefakt
+# till PR-jobbet, som pushar jobbets egen gren och öppnar en PR som mergas
+# automatiskt, också när jobbet fallit efter en incheckad del; inte när
+# körningen avbrutits för hand (K95, ADR-0118).
 name: Nattkörning
 
 on:
@@ -33,9 +35,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
-      contents: write
+      contents: read
     outputs:
       gren: ${{ steps.incheckning.outputs.gren }}
+      bas: ${{ steps.incheckning.outputs.bas }}
     steps:
       - name: Jobbets start, som tidsbudgeten räknas från, och dess gren
         run: |
@@ -44,22 +47,23 @@ jobs:
             echo "DEL=moten"
             echo "GREN=nattkorning/$(date -u +%F)-${{ github.run_id }}-${{ github.run_attempt }}-moten"
           } >> "$GITHUB_ENV"
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
-      - name: Utcheckningens commit, som spara.sh jämför med
+          persist-credentials: false
+      - name: Utcheckningens commit, som jobbets bundle bygger på
         run: echo "BAS=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - run: pip install -e .
+      - uses: ./.github/actions/installera
       - name: Mötessidorna, bara det nya och ändrade
         uses: ./.github/actions/levande
         with:
           flaggor: --utan-omkonvertering
-      # Delarna sparas i steg 2; upptäckten skriver inget i data/.
+      # Delarna checkas in i steg 2; upptäckten skriver inget i data/.
       - id: incheckning
         if: always()
         uses: ./.github/actions/grenen
@@ -75,25 +79,31 @@ jobs:
   pr-moten:
     needs: moten
     if: ${{ !cancelled() && needs.moten.outputs.gren != '' }}
+    permissions:
+      contents: write
     uses: ./.github/workflows/nattkorning-pr.yml
     with:
+      del: moten
       gren: ${{ needs.moten.outputs.gren }}
+      bas: ${{ needs.moten.outputs.bas }}
     secrets:
       NATTKORNING_TOKEN: ${{ secrets.NATTKORNING_TOKEN }}
 
   # Från mötenas gren, så att arkivets PR inte krockar med deras; utan gren
-  # från main. Mötenas gren finns också när jobbet föll efter en sparad del
-  # (ADR-0077, ADR-0088).
+  # från main. Mötenas gren finns också när jobbet föll efter en incheckad
+  # del, och pushas av deras PR-jobb innan arkivet startar (ADR-0077,
+  # ADR-0088, ADR-0118).
   arkiv:
     name: Omkonvertering och arkiv
-    needs: moten
+    needs: pr-moten
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
-      contents: write
+      contents: read
     outputs:
       gren: ${{ steps.incheckning.outputs.gren }}
+      bas: ${{ steps.incheckning.outputs.bas }}
     steps:
       - name: Jobbets start, som tidsbudgeten räknas från, och dess gren
         run: |
@@ -102,17 +112,18 @@ jobs:
             echo "DEL=arkiv"
             echo "GREN=nattkorning/$(date -u +%F)-${{ github.run_id }}-${{ github.run_attempt }}-arkiv"
           } >> "$GITHUB_ENV"
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ needs.moten.outputs.gren || 'main' }}
-      - name: Utcheckningens commit, som spara.sh jämför med
+          ref: ${{ needs.pr-moten.outputs.gren || 'main' }}
+          persist-credentials: false
+      - name: Utcheckningens commit, som jobbets bundle bygger på
         run: echo "BAS=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
       - name: Tesseract med svensk modell (OCR, ADR-0005)
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-swe
-      - run: pip install -e .
+      - uses: ./.github/actions/installera
       # Upptäckten görs om, eftersom kandidatlistan låg på mötenas runner.
       - name: Omkonverteringen, och det som kommit sedan mötenas jobb
         uses: ./.github/actions/levande
@@ -126,9 +137,9 @@ jobs:
             .github/nattkorning/hamta_i_delar.sh "$kommunfil" --arkiv
           done
       # Arkivets steg får falla utan att stoppa jobbet, så det som hämtats
-      # efter dess sista sparade del sparas här.
+      # efter dess sista incheckade del checkas in här.
       - name: Det sista som hämtats
-        run: .github/nattkorning/spara.sh "$GREN" "Nattkörning $(date -u +%F), $DEL, sist"
+        run: .github/nattkorning/spara.sh "Nattkörning $(date -u +%F), $DEL, sist"
       - id: incheckning
         if: always()
         uses: ./.github/actions/grenen
@@ -144,8 +155,12 @@ jobs:
   pr-arkiv:
     needs: arkiv
     if: ${{ !cancelled() && needs.arkiv.outputs.gren != '' }}
+    permissions:
+      contents: write
     uses: ./.github/workflows/nattkorning-pr.yml
     with:
+      del: arkiv
       gren: ${{ needs.arkiv.outputs.gren }}
+      bas: ${{ needs.arkiv.outputs.bas }}
     secrets:
       NATTKORNING_TOKEN: ${{ secrets.NATTKORNING_TOKEN }}
