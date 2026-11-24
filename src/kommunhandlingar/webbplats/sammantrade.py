@@ -81,7 +81,7 @@ def moten(underlag: Underlag) -> list[list[dict]]:
     per_mote = defaultdict(list)
     for d in underlag.dokument:
         per_mote[mappen(d)].append(d)
-    return [m for m in per_mote.values() if har_sida(underlag.kommun, m)]
+    return [m for m in per_mote.values() if har_sida(m)]
 
 
 def mappen(dokument: dict) -> str:
@@ -109,12 +109,9 @@ def adress(dokument: list[dict]) -> str:
     return adresser.sammantrade(d["organ"], PurePosixPath(mappen(d)).name)
 
 
-def har_sida(kommun: Kommun, dokument: list[dict]) -> bool:
-    forsta = dokument[0]
-    organ = next(o for o in kommun.organ if o.id == forsta["organ"])
-    fran = organ.sammantradessidor
-    kallelse = any(d["typ"] == "kallelse" for d in dokument)
-    return fran is not None and frontmatter.ar(forsta) >= fran and kallelse
+# ADR-0113.
+def har_sida(dokument: list[dict]) -> bool:
+    return any(d["typ"] == "kallelse" for d in dokument)
 
 
 def arenden(mote: Mote, underlag: Underlag) -> list[Arende]:

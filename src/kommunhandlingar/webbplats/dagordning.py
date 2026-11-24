@@ -16,9 +16,11 @@ TABELLRAD = re.compile(r"^\| (\d+)\. \| (.*?) \| (.*?) \| (.*?) \|$", re.MULTILI
 LOPTEXT = re.compile(r"^(\d+)\\\. .+? (\d{4}-\d+) ", re.MULTILINE)
 # Föredragandena och föredragningens tid står efter rubriken i samma cell.
 # Klockslaget är ett intervall, så att en fastighetsbeteckning som `5:91 -`
-# inte tas för ett.
+# inte tas för ett. Äldre kallelser skriver `Klockan 13.00-13.30`,
+# `(kl. 14.10-14.20)`, `Tid: 19:30 – 19:45` eller `ca 13.00-15.00`.
 EFTER_RUBRIKEN = re.compile(
-    r"Föredrag(?:ande|are)|(?:Kl\.? )?\d{1,2}[.:]\d{2}\s*[–-]\s*\d{1,2}[.:]\d{2}"
+    r"Föredrag(?:ande|are)"
+    r"|\(?(?i:klockan|kl\.?|tid:|ca)?\s*\d{1,2}[.:]\d{2}\s*[–-]\s*\d{1,2}[.:]\d{2}"
 )
 FOREDRAGANDE = re.compile(r"\s*Föredrag(?:ande|are):.*")
 # Nämndernas kallelser delar numret över raderna i cellen (`GA-2026-` och

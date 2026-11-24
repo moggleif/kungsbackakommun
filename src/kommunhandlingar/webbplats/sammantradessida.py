@@ -27,7 +27,7 @@ def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
         + stil("mal.css", "mote.css")
         + "<h2>Sammanträdets dokument</h2>"
         + dokumentlista(kommun.id, mote.dokument, lankar.rot)
-        + dagordningen(arenden, lankar)
+        + dagordningen(arenden, lankar, mote)
     )
     organ = lankar.organnamn[forsta["organ"]]
     rubrik = f"{organ} {motesnamn(forsta['datum'], forsta['lopnr'])}"
@@ -54,28 +54,39 @@ def vagen(mall: Mall, mote: Mote, lankar: Lankar) -> list[tuple[str, str]]:
     ]
 
 
-def dagordningen(arenden: list[Arende], lankar: Lankar) -> str:
+def dagordningen(arenden: list[Arende], lankar: Lankar, mote: Mote) -> str:
     if not arenden:
-        return (
-            "<h2>Dagordningen</h2><p>Dagordningen gick inte att läsa ur kallelsen.</p>"
-        )
+        return f"<h2>Dagordningen</h2><p>{utan_dagordning(mote)}</p>"
     return (
         f"<h2>Dagordningen, {antal(len(arenden), 'punkt', 'punkter')}</h2>"
-        + forklaring(arenden)
+        + "<p>Varje punkt med förslaget ur kallelsen, handlingens sidor, beslutet "
+        "i protokollet och historiken i alla organ med samma diarienummer, som "
+        f"det står i källan. {om_handlingen(arenden, mote)}</p>"
         + '<div class="malkort punkter">'
         + "".join(punktkort(a, lankar) for a in arenden)
         + "</div>"
     )
 
 
-def forklaring(arenden: list[Arende]) -> str:
+# Tomt är inte noll: ett dokument som inte gick att hämta eller läsa skiljs
+# från ett som inte finns i poolen (ADR-0113).
+def utan_dagordning(mote: Mote) -> str:
+    if forsta(mote, "kallelse")["kvalitet"] == "ej-hamtad":
+        return "Kallelsen gick inte att hämta, så dagordningen saknas."
+    return "Dagordningen gick inte att läsa ur kallelsen."
+
+
+def om_handlingen(arenden: list[Arende], mote: Mote) -> str:
+    if forsta(mote, "handlingar") is None:
+        return "Sammanträdet har inga handlingar i poolen."
+    if not mote.handlingar:
+        return "Handlingarna gick inte att hämta eller läsa."
     hittade = sum(1 for a in arenden if a.handling)
-    return (
-        "<p>Varje punkt med förslaget ur kallelsen, handlingens sidor, beslutet "
-        "i protokollet och historiken i alla organ med samma diarienummer, som "
-        f"det står i källan. Handlingen hittades för {hittade} av "
-        f"{len(arenden)}.</p>"
-    )
+    return f"Handlingen hittades för {hittade} av {len(arenden)}."
+
+
+def forsta(mote: Mote, typ: str) -> dict | None:
+    return next((d for d in ordnade(mote.dokument) if d["typ"] == typ), None)
 
 
 def dokumentlista(kommun_id: str, dokument: list[dict], till_rot: str) -> str:

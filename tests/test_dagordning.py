@@ -3,7 +3,7 @@ Kod: src/kommunhandlingar/webbplats/dagordning.py."""
 
 import unittest
 
-from kommunhandlingar.webbplats.dagordning import Punkt, dagordning
+from kommunhandlingar.webbplats.dagordning import Punkt, dagordning, rubrik
 
 RAD = "| {} | {} | {} | {} |"
 FORSLAG_1 = [
@@ -119,6 +119,19 @@ class TestNamndernasKallelser(unittest.TestCase):
         self.assertEqual(self.punkter[1].rubrik, "Årsrapport")
         self.assertEqual(self.punkter[5].rubrik, "Ärendelista")
         self.assertEqual(self.punkter[6].rubrik, "Information")
+
+    def test_aldre_kallelsers_klockslag_avslutar_rubriken(self):
+        celler = [
+            "Årsredovisning<br>Klockan 13.00-13.30",
+            "Lokalplan<br>(kl. 14.10-14.20)",
+            "Spadtag<br>Tid: 19:30 – 19:45",
+            "Civilt försvar<br>ca 13.00-15.00",
+            "Justering<br>Kl.14.00-14.05",
+        ]
+        self.assertEqual(
+            [rubrik(c) for c in celler],
+            ["Årsredovisning", "Lokalplan", "Spadtag", "Civilt försvar", "Justering"],
+        )
 
     def test_en_fastighetsbeteckning_ar_inget_klockslag(self):
         self.assertEqual(

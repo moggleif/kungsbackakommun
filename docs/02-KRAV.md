@@ -1825,11 +1825,12 @@ och [Versionsloggen](03-ARKITEKTUR.md#versionsloggen).
 Issue: [#277](https://github.com/moggleif/kommunhandlingar/issues/277),
 fortsättning i [#283](https://github.com/moggleif/kommunhandlingar/issues/283).
 Hur och varför står i
-[ADR-0078](decisions/0078-sammantradet-punkt-for-punkt-ur-kallelsen.md)
+[ADR-0078](decisions/0078-sammantradet-punkt-for-punkt-ur-kallelsen.md),
+[ADR-0113](decisions/0113-varje-sammantrade-med-kallelse-far-sin-sida.md)
 och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 
-- **Givet** ett organ med `sammantradessidor` i kommunfilen och ett
-  sammanträde det året eller senare som har en kallelse i poolen
+- **Givet** ett sammanträde i vilket organ och vilket år som helst som
+  har en kallelse i poolen
 - **När** webbplatsen byggs
 - **Så** har sammanträdet en egen sida, och rubriken för sammanträdet på
   organets sida länkar dit. Överst står en rad per dokument från
@@ -1865,6 +1866,32 @@ och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 - **När** dagordningen läses
 - **Så** är punktens diarienummer det hela numret (`GA-2026-00059`), och
   rubriken slutar före föredragandena.
+- **Givet** en tjänsteskrivelse som skriver numret efter `Diarienummer`
+  med förledet två gånger (`VO VO-2026-00191`) eller med mellanslag
+  kring förledets bindestreck (`VO- 2026-00017`, `KS -2025-00357`)
+- **När** handlingens sidor söks
+- **Så** är numret `VO-2026-00191`, `VO-2026-00017` och `KS-2025-00357`,
+  och punkten får
+  sin handling (ADR-0110, issue
+  [#289](https://github.com/moggleif/kommunhandlingar/issues/289)).
+- **Givet** en äldre kallelse där rubriken följs av klockslaget som
+  `Klockan 13.00-13.30`, `(kl. 14.10-14.20)`, `Tid: 19:30 – 19:45`,
+  `ca 13.00-15.00` eller `Kl.14.00-14.05`
+- **När** dagordningen läses
+- **Så** slutar rubriken före klockslaget.
+- **Givet** ett sammanträde med kallelse men utan handlingar i poolen,
+  eller med handlingar som inte gick att hämta eller läsa
+- **När** sidan byggs
+- **Så** säger sidan vilket av dem det är, i stället för hur många
+  punkters handling som hittades.
+- **Givet** ett sammanträde vars kallelse inte gick att hämta
+- **När** sidan byggs
+- **Så** säger sidan det, i stället för att dagordningen inte gick att
+  läsa.
+- **Givet** ett sammanträde utan kallelse i poolen
+- **När** webbplatsen byggs
+- **Så** har det ingen egen sida, och organets sida listar dess dokument
+  som förut.
 - **Givet** en punkt utan diarienummer i kallelsen, som "Val av
   justerare"
 - **När** sidan byggs

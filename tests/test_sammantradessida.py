@@ -6,8 +6,8 @@ import unittest
 from kommunhandlingar.webbplats.bygg import bygg
 from kommunhandlingar.webbplats.dagordning import Punkt
 from kommunhandlingar.webbplats.punktkort import Lankar, punktkort, sammanfattning
-from kommunhandlingar.webbplats.sammantrade import Arende
-from kommunhandlingar.webbplats.sammantradessida import dagordningen
+from kommunhandlingar.webbplats.sammantrade import Arende, Mote
+from kommunhandlingar.webbplats.sammantradessida import dagordningen, om_handlingen
 from tests.test_dokumentindex import Index
 from tests.test_webbplats import REPO, TID, dokument
 
@@ -71,15 +71,6 @@ TIDIGARE = "<!-- sida 1 -->\n\n§ 9 Dnr FSN-2024-00012\nLokalbehovet anmäls\n"
 
 
 class TestSammantradessida(Index):
-    def setUp(self):
-        super().setUp()
-        toml = self.rot / "kommuner" / "exempelby.toml"
-        text = toml.read_text(encoding="utf-8")
-        text = text.replace(
-            'foregangare = ["bun"]', 'foregangare = ["bun"]\nsammantradessidor = 2024'
-        )
-        toml.write_text(text, encoding="utf-8")
-
     def bygg(self) -> str:
         self.spara(
             "kallelse.md", dokument(typ="kallelse", text=KALLELSE, per_sida="[ok]")
@@ -106,6 +97,7 @@ class TestSammantradessida(Index):
             'href="../../../exempelby/fsn/2024/2024-05-02/kallelse.html"', html
         )
         self.assertIn("Dagordningen, 3 punkter", html)
+        self.assertIn("Handlingen hittades för 1 av 3.", html)
         self.assertLess(html.index('id="punkt-1"'), html.index('id="punkt-2"'))
 
     def test_punkten_med_forslag_handling_sammanfattning_och_beslut(self):
@@ -159,21 +151,50 @@ class TestSammantradessida(Index):
             (self.ut / "exempelby" / "fsn" / "2024" / "2024-05-02.html").exists()
         )
 
-    def test_fore_det_forsta_aret_ingen_sida(self):
-        toml = self.rot / "kommuner" / "exempelby.toml"
-        text = toml.read_text(encoding="utf-8")
-        toml.write_text(
-            text.replace("sammantradessidor = 2024", "sammantradessidor = 2025"),
+    def test_ett_aldre_sammantrade_med_kallelse_far_sida(self):
+        tidigare = self.rot / "data" / "exempelby" / "fsn" / "2019" / "2019-05-02"
+        tidigare.mkdir(parents=True)
+        (tidigare / "kallelse.md").write_text(
+            dokument(datum="2019-05-02", typ="kallelse", text=KALLELSE),
             encoding="utf-8",
         )
-        with self.assertRaises(FileNotFoundError):
-            self.bygg()
+        self.bygg()
+        sidan = self.ut / "exempelby" / "fsn" / "2019" / "2019-05-02.html"
+        html = sidan.read_text(encoding="utf-8")
+        self.assertIn("Dagordningen, 3 punkter", html)
+        self.assertIn("Sammanträdet har inga handlingar i poolen.", html)
+
+
+def mote(kallelse: str, handlingar: str | None, sidor: dict) -> Mote:
+    dokument = [{"typ": "kallelse", "namn": "null", "kvalitet": kallelse}]
+    if handlingar:
+        dokument.append({"typ": "handlingar", "namn": "null", "kvalitet": handlingar})
+    return Mote(None, dokument, "", sidor, [])
 
 
 class TestDagordningen(unittest.TestCase):
     def test_utan_punkter_sags_det(self):
-        html = dagordningen([], Lankar("", "", {}))
+        html = dagordningen([], Lankar("", "", {}), mote("ok", None, {}))
         self.assertIn("Dagordningen gick inte att läsa ur kallelsen.", html)
+
+    def test_en_kallelse_som_inte_hamtats_sags(self):
+        html = dagordningen([], Lankar("", "", {}), mote("ej-hamtad", None, {}))
+        self.assertIn("Kallelsen gick inte att hämta, så dagordningen saknas.", html)
+
+    def test_handlingarna_som_saknas_skiljs_fran_de_som_inte_lastes(self):
+        arenden = [Arende(Punkt(1, "A", "", ()), "", range(1, 2), (), None, [], [])]
+        self.assertEqual(
+            om_handlingen(arenden, mote("ok", None, {})),
+            "Sammanträdet har inga handlingar i poolen.",
+        )
+        self.assertEqual(
+            om_handlingen(arenden, mote("ok", "ej-hamtad", {})),
+            "Handlingarna gick inte att hämta eller läsa.",
+        )
+        self.assertEqual(
+            om_handlingen(arenden, mote("ok", "ok", {1: "text"})),
+            "Handlingen hittades för 1 av 1.",
+        )
 
     def test_en_handling_utan_sammanfattning_sags(self):
         self.assertIn(

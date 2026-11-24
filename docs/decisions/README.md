@@ -94,14 +94,14 @@ Regler för det här repot, utöver MADR:
 | 0068 | [Projektsidornas filer blir handlingar under ett eget organ, daterade med dagen de lades upp](0068-projektsidornas-filer-blir-handlingar-under-ett-eget-organ.md) | accepted |
 | 0069 | [Projekten kopplas till detaljplanerna i en fil skriven för hand, och planens kort visar projektsidan och dokumenten](0069-projekten-kopplas-till-detaljplanerna-i-en-fil-skriven-for-hand.md) | accepted |
 | 0070 | [Indexet byggs med webbplatsen som JSON Lines per kommun, med en `llms.txt` som ingång, och checkas inte in](0070-indexet-och-ingangen-byggs-med-webbplatsen.md) | accepted |
-| 0071 | [Protokollen delas per paragraf när webbplatsen byggs, och `arenden` fylls med paragrafernas diarienummer vid konverteringen](0071-protokollen-delas-per-paragraf-vid-bygget.md) | accepted |
+| 0071 | [Protokollen delas per paragraf när webbplatsen byggs, och `arenden` fylls med paragrafernas diarienummer vid konverteringen](0071-protokollen-delas-per-paragraf-vid-bygget.md) | accepted (0110 läser ett dubblerat förled) |
 | 0072 | [Partiernas gruppmöten räknas fram ur kommunstyrelsens datum när kalendern byggs, och visas diskret som en vana](0072-gruppmotena-raknas-fram-ur-kommunstyrelsens-datum.md) | accepted |
 | 0073 | [Målsidan får tre perspektiv att välja mellan – tidslinje, ett år i taget och målkort – och valet står i adressen](0073-malsidan-far-tre-perspektiv-att-valja-mellan.md) | accepted (0086 ger alla sidor kommunens år) |
 | 0074 | [Webbplatsen följer läsarens ljusa eller mörka inställning, med en knapp i övre högra hörnet som minns valet](0074-webbplatsen-har-ljust-och-morkt-tema.md) | accepted |
 | 0075 | [Ett dokument får konverteras i högst 30 minuter och blir annars `ej-konverterad` med `fel: tidsgrans`](0075-ett-dokument-far-en-egen-tidsgrans.md) | accepted |
 | 0076 | [Arkivet konverterar om sina egna dokument från en annan version av poolen, efter luckorna](0076-arkivet-konverterar-om-sina-egna-dokument.md) | accepted |
 | 0077 | [Mötessidorna hämtas först i ett eget jobb, och varje ny version av ett dokument skrivs i en versionslogg](0077-motessidorna-forst-och-en-versionslogg.md) | accepted (0088 låter arkivet börja från mötenas gren också när de fallit, och ersätter incheckningens action med skript) |
-| 0078 | [Sammanträdet visas punkt för punkt ur kallelsens dagordning, med handlingens sidor, beslutet och historiken räknade fram vid bygget](0078-sammantradet-punkt-for-punkt-ur-kallelsen.md) | accepted |
+| 0078 | [Sammanträdet visas punkt för punkt ur kallelsens dagordning, med handlingens sidor, beslutet och historiken räknade fram vid bygget](0078-sammantradet-punkt-for-punkt-ur-kallelsen.md) | accepted (0110 läser tjänsteskrivelsernas dubblerade förled) |
 | 0079 | [En sida med fler än 500 000 tecken läses inte, utan blir `ej-konverterad` och märks som figur](0079-en-sida-med-fler-an-en-halv-miljon-tecken-lases-inte.md) | accepted |
 | 0080 | [Meetings Plus läses mötessida för mötessida, med bilagorna var för sig och det nyaste mötet först](0080-meetings-plus-las-motessidorna-nyast-forst.md) | accepted |
 | 0081 | [Menyn följer projektets gemensamma form och laddar sajtraden från Giffå](0081-menyn-i-projektets-gemensamma-form.md) | accepted |
@@ -125,4 +125,6 @@ Regler för det här repot, utöver MADR:
 | 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |
 | 0108 | [CI håller målen i Ren kod för koden, och testerna behåller de högre gränserna](0108-ci-haller-malen-for-koden.md) | accepted |
 | 0109 | [Varje källa upptäcker sitt levande och sitt arkiv bakom samma gränssnitt](0109-kallorna-bakom-ett-gransnitt.md) | accepted |
+| 0110 | [Diarienumret efter etiketten läses också med förledet två gånger](0110-diarienumret-med-dubblerat-forled.md) | accepted |
 | 0111 | [Ett rutnät som inte går ihop till en tabell märker sidan osäker](0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md) | accepted |
+| 0113 | [Varje sammanträde med kallelse får sin sida, i alla organ och alla år](0113-varje-sammantrade-med-kallelse-far-sin-sida.md) | accepted |

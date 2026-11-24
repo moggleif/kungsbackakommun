@@ -15,7 +15,6 @@ id = "fsn"
 namn = ["Förskole- och skolnämnden"]
 fran = 2023-01-01
 foregangare = ["bun"]
-sammantradessidor = 2024
 
 [[kalla]]
 adapter = "sitevision"
