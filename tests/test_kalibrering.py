@@ -132,6 +132,13 @@ class Facit(unittest.TestCase):
             facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["12%"]
         )
 
+    def test_blanksteg_under_ett_synligt_tecken_ar_inget_mellanrum(self):
+        tecknen = [*self.text("730"), tecken(" ", 62)]
+        tecknen.sort(key=lambda t: t["x0"])
+        self.assertEqual(
+            facit.radens_tal(self.sida(tecken_=tecknen), self.RUTA), ["730"]
+        )
+
     def test_en_rad_som_ror_en_bild_saknar_facit(self):
         bild = (250, 90, 350, 220)
         self.assertIsNone(facit.radens_tal(self.sida([bild]), self.RUTA))

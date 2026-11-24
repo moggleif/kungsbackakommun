@@ -1,4 +1,5 @@
-"""Krav: K84 i docs/02-KRAV.md, ADR-0005 och ADR-0105. Test: tests/test_vag_h.py.
+"""Krav: K84 i docs/02-KRAV.md, ADR-0005, ADR-0105 och ADR-0116.
+Test: tests/test_vag_h.py.
 
 Väg H avgör en rad som RapidOCR och Tesseract har läst. Raden är bekräftad
 när två läsningar har samma tal i samma ordning: först de två, annars den
@@ -16,7 +17,13 @@ tal och inte `116-4`.
 
 En rad där en siffra står direkt intill en bokstav i någon av de två
 läsningarna bekräftas aldrig. Där läser båda motorerna gärna en bokstav
-som en siffra på samma sätt, som `Kl.` som `K1.`.
+som en siffra på samma sätt, som `Kl.` som `K1.`. Inte heller en rad där
+ett fristående `o` eller `O` står efter radens första ord i någon av
+läsningarna, eftersom nollan i en typsnittsfamilj med gemena siffror, som
+Georgia, ser ut som ett `o`, och båda motorerna läser `Årskurs 0` som
+`Årskurs o`. En sådan rad räknas som en rad med tal, så att sidan inte
+blir bekräftad. Radens första ord räknas inte, eftersom en punktlista
+med `o` som punkt är vanlig och en nolla först på raden sällsynt.
 """
 
 import re
@@ -29,6 +36,7 @@ KRING_TANKSTRECK = re.compile(r"(?<=\d)(?: *[–—][-–—]* *| +- +)(?=\d)")
 PROCENT = re.compile(r"(\d) %")
 BOKSTAV_VID_SIFFRA = re.compile(r"[^\W\d_]\d|\d[^\W\d_]")
 KRING_KOLON = re.compile(r"(?<=\d) *: *(?=\d)")
+O_SOM_NOLLA = re.compile(r"[oO]+[.,:]?")
 
 
 @dataclass(frozen=True)
@@ -42,9 +50,26 @@ def tal(text: str) -> list[str]:
     return TAL.findall(PROCENT.sub(r"\1%", text))
 
 
+def kan_ha_tal(text: str) -> bool:
+    return bool(tal(text)) or o_som_nolla(text)
+
+
+def o_som_nolla(text: str) -> bool:
+    return any(O_SOM_NOLLA.fullmatch(o) for o in text.split()[1:])
+
+
+def osaker(texter: tuple[str, str]) -> str | None:
+    """Varför raden inte kan bekräftas, vad läsningarna än säger, eller None."""
+    if any(BOKSTAV_VID_SIFFRA.search(t) for t in texter):
+        return "bokstav-vid-siffra"
+    if any(o_som_nolla(t) for t in texter):
+        return "o-som-nolla"
+    return None
+
+
 def avgor(rapid: str, tesseract: str, tredje: Callable[[], str]) -> Avgorande:
-    if any(BOKSTAV_VID_SIFFRA.search(t) for t in (rapid, tesseract)):
-        return Avgorande(None, "bokstav-vid-siffra")
+    if hur := osaker((rapid, tesseract)):
+        return Avgorande(None, hur)
     forsta, andra = tal(rapid), tal(tesseract)
     if forsta == andra:
         return Avgorande(forsta, "eniga")

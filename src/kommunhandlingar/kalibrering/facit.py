@@ -1,4 +1,4 @@
-"""Krav: K84 i docs/02-KRAV.md och ADR-0105. Test: tests/test_kalibrering.py.
+"""Krav: K84 i docs/02-KRAV.md, ADR-0105 och ADR-0116. Test: tests/test_kalibrering.py.
 
 Facit för en rad som väg H läst på en renderad textlagersida: talen i
 textlagrets tecken vars mittpunkt ligger i radens ruta, från vänster.
@@ -8,7 +8,10 @@ avstånd, eftersom pdfplumbers ord ibland läser ihop det som syns
 åtskilt (`2021-03-2215:33:39`) och en spärrad rad har luft mellan alla
 tecken. Det vanliga avståndet räknas bara när raden har minst fyra
 avstånd mellan tecken intill varandra, så att ett enda synligt mellanrum
-inte blir det vanliga. En rad som rör en bild på sidan har inget facit,
+inte blir det vanliga. Ett blanksteg vars mittpunkt ligger i ett synligt
+tecken är inget mellanrum, eftersom en PDF ur ett kalkylark kan lägga
+cellens utfyllnad ovanpå talet, så att `730` blir `7`, blanksteg, `30`
+från vänster. En rad som rör en bild på sidan har inget facit,
 eftersom ett tal i bilden saknas i textlagret. Inte heller en rad med en
 siffra som är vriden eller spegelvänd, eftersom tecknens ordning från
 vänster då inte är textens (`001 6002` för `100 2006`). Andra vridna
@@ -74,6 +77,7 @@ def rak(tecken: dict) -> bool:
 
 def med_mellanrum(tecken: list[dict]) -> str:
     synliga = [t for t in tecken if not t["text"].isspace()]
+    tecken = [t for t in tecken if not under(t, synliga)]
     avstand = [b["x0"] - a["x1"] for a, b in pairwise(synliga) if intill(a, b)]
     vanligt = max(0, median(avstand)) if len(avstand) >= SPARRAD else 0
     text = [tecken[0]["text"]] if tecken else []
@@ -82,6 +86,11 @@ def med_mellanrum(tecken: list[dict]) -> str:
             text.append(" ")
         text.append(t["text"])
     return "".join(" " if t.isspace() else t for t in text)
+
+
+def under(tecken: dict, synliga: list[dict]) -> bool:
+    mitt = (tecken["x0"] + tecken["x1"]) / 2
+    return tecken["text"].isspace() and any(s["x0"] < mitt < s["x1"] for s in synliga)
 
 
 def har_upphojt(sida: Facitsida, ruta: Ruta) -> bool:

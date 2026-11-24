@@ -49,3 +49,6 @@
 # Ett rutnät som inte går ihop märker sidan `tabell-osaker` (ADR-0111):
 # bara sidor som var `ok`.
 "0.17.0" = ["ok"]
+# Väg H bekräftar inte en rad med ett o som kan vara en nolla (ADR-0116):
+# bara sidor som läses med OCR.
+"0.18.0" = ["ocr"]

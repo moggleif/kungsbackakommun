@@ -1233,14 +1233,20 @@ och [ADR-0106](decisions/0106-skannade-sidor-far-vag-hs-tal.md) (K85).
 gråskala, som en OCR-sida. RapidOCR, med sina förvalda modeller ur
 PP-OCRv6, hittar raderna och läser dem. Tesseract läser hela sidan, och
 varje ord hör till de rader vars ruta har ordets mittpunkt. En rad där
-någon av de två har ett tal avgörs (`vag_h.py`). Talen är det som ser ut som tal
+någon av de två har ett tal, eller ett `o` som kan vara en nolla, avgörs
+(`vag_h.py`). Talen är det som ser ut som tal
 (`2023-00686`, `12,5%`, `11/8`), i ordning, efter att minustecken och
 alla sorters streck blivit bindestreck och mellanslag kring ett
 tankstreck eller kolon mellan två siffror tagits bort, eftersom båda
 motorerna läser `09: 35` som `09:35`. Ett bindestreck med mellanslag på
 båda sidor räknas som ett tankstreck. En rad där en siffra står direkt
 intill en bokstav i någon av läsningarna bekräftas inte, eftersom båda
-motorerna läser `Kl.` som `K1.`. Är de två eniga är raden bekräftad. Annars
+motorerna läser `Kl.` som `K1.`. Inte heller en rad där ett ord efter
+radens första bara är `o` eller `O` i någon av läsningarna, eftersom en
+nolla i ett typsnitt med gemena siffror läses så; en sådan rad räknas
+som en rad med tal, så att sidan inte blir bekräftad
+([ADR-0116](decisions/0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md)).
+Är de två eniga är raden bekräftad. Annars
 läses raden, med 15 pixlar marginal, av den latinska modellen ur
 PP-OCRv5 i RapidOCR, och raden är bekräftad när den har samma tal som en
 av de två, och minst ett.
@@ -1271,6 +1277,8 @@ front matter mäts inte. `facit.py` och `matning.py` jämför varje rad med
 talen i textlagrets tecken vars mittpunkt ligger i radens ruta. Mellan två
 tecken räknas ett mellanslag när textlagret har ett eller när avståndet
 syns, eftersom pdfplumbers ord ibland läser ihop det som står åtskilt.
+Ett blanksteg vars mittpunkt ligger i ett synligt tecken, som ett
+kalkylarks utfyllnad ovanpå talet, är inget mellanrum (ADR-0116).
 En rad med en vriden eller spegelvänd siffra i textlagret har inget
 facit, eftersom tecknens ordning från vänster då inte är textens. Andra
 vridna tecken hoppas över:

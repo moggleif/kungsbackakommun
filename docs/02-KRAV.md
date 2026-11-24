@@ -2507,6 +2507,14 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad.
 
+- **Givet** en rad där ett ord efter radens första i någon av de två
+  läsningarna bara är `o` eller `O`, som `Årskurs o` för `Årskurs 0` i
+  ett typsnitt med gemena siffror
+  ([ADR-0116](decisions/0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md))
+- **När** väg H avgör raden
+- **Så** räknas den som en rad med tal och är aldrig bekräftad, så att
+  sidan får obekräftade tal.
+
 - **Givet** poolens data och ett fast frö
 - **När** `python -m kommunhandlingar.kalibrering <data> <ut>` körs
 - **Så** mäts väg H på 300 sidor med textlager och bekräftade tal, högst
@@ -2526,6 +2534,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **När** kalibreringen är klar
 - **Så** står raden i `rapport.md` med sina läsningar, och kommandot
   avslutas med kod 1, så att arbetsflödet faller.
+
+- **Givet** ett blanksteg i textlagret vars mittpunkt ligger i ett
+  synligt tecken, som kalkylarkets utfyllnad ovanpå `730`
+- **När** kalibreringen läser radens facit
+- **Så** är det inget mellanrum, och facit är `730`.
 
 - **Givet** en rad som rör en bild på sidan, eller som har en vriden
   eller spegelvänd siffra i textlagret
