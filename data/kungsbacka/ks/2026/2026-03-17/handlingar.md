@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.42ce99219cc5b296bd9fc2b/17732983134
 sha256: 90fd974decb7e507e67534217c135cdddf793ea5a616689bfb40a9ba6c52ac7b
 bytes: 54175492
 sidor: 466
-hamtad: 2026-11-18T23:01:27+00:00
-konverterad: 2026-11-18T23:04:18+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T05:22:03+00:00
+konverterad: 2026-11-24T05:26:38+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [11, 136, 158, 159, 160, 176, 200, 217, 218, 219, 220, 221, 222, 223, 224, 225, 231, 232, 235, 236, 237, 238, 239, 240, 241, 242, 430, 431]
-figurer: [15, 16, 17, 21, 26, 29, 31, 34, 35, 36, 37, 39, 45, 46, 49, 51, 53, 55, 57, 59, 66, 67, 75, 76, 77, 78, 79, 80, 81, 82, 83, 86, 91, 93, 117, 135, 136, 169, 170, 171, 176, 185, 196, 205, 206, 208, 209, 210, 211, 217, 218, 219, 248, 257, 260, 333, 420, 448, 452, 455, 457]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, bild, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [11, 158, 159, 160, 217, 218, 219, 220, 221, 222, 223, 224, 225, 231, 232, 235, 236, 237, 238, 239, 241, 430]
+figurer: [11, 15, 16, 17, 21, 26, 29, 31, 34, 35, 36, 37, 39, 45, 46, 49, 51, 53, 55, 57, 59, 66, 67, 75, 76, 77, 78, 79, 80, 81, 82, 83, 86, 91, 93, 117, 135, 136, 158, 169, 170, 171, 185, 196, 205, 206, 208, 209, 210, 211, 217, 218, 219, 220, 221, 222, 223, 224, 225, 231, 232, 239, 240, 241, 248, 257, 260, 333, 420, 448, 452, 455, 457]
 tolkade: []
 granskad: null
 ---
@@ -10861,11 +10861,44 @@ Sida 3 av3
 
 <!-- sida 220 -->
 
+Ärendenummer: 4249722 | Datum: 2025-12-10 14:56 Bilaga 1 sida 1 av 1
+
 <!-- sida 221 -->
+
+Ärendenummer: 4249722 | Datum: 2025-12-10 14:56 Bilaga 2 sida 1 av 1
 
 <!-- sida 222 -->
 
+Ärendenummer: 4249722 | Datum: 2025-12-10 14:56 Bilaga 3 sida 1 av 1
+
+odoadendron cunningham's White
+
+orescens 'Annabelle
+
+'Annabelle
+
+Hydrangea arb
+
+Vidjehortensia
+
+VY EJ SKALENLIG
+
 <!-- sida 223 -->
+
+ododendron cunningham's White
+
+Rh
+
+DD
+
+orescens 'Annabelle
+
+'Annabelle
+
+Hydrangea arb
+Vidjehortensia
+
+VY EJ SKALENLIG
 
 <!-- sida 224 -->
 
@@ -11454,6 +11487,50 @@ Om dokumentet skrivs ut på papper, eller om dokumentet ”skrivs ut' till ett n
 underskrifterna inte med. Endast det elektroniskt underskrivna originaldokumentet går att validera.
 
 <!-- sida 241 -->
+
+PLANBESTÄMMELSER
+GRÄNSER
+ANVÄNDNING AV MARK OCH VATTEN
+Allmän platsmark med kommunalt huvudmannaskap
+för
+Höjd på byggnader.
+Utformning takvinkel
+Skydd mot störningar
+Bebyggandets omfattning
+Lagstöd
+Lagstöd
+Markens anordnande och vegetation
+ADMINISTRATIVA BESTÄMMELSER
+Administrativa bestämmelser Kvartersmark
+Strandskydd
+Välkor för lov
+Administrativa bestämmelser Allmänna platser
+Övrigt
+Lagstöd
+Hela
+| Genomförandetid
+Detaljplanen är baserad på koordnatsystemet Skala 1:2000 i A1, skala 1:4000 i A3
+Detaljplanens syfte
+Syftet med detaljplanen är att möjliggöra ett
+k h råde för portil iv och i viss
+mån störande k h Detaljpl ska vara
+flexibel för att kunna inrymma både höglager och
+ytkrävande såväl som mindre verksamheter.
+ARING A
+Traktnamn, kvartersnamn
+Höjdkurva 5 m
+Uthus fasad, resp tak
+Höjdpunkt
+= Vägkant, mindre väg
+Detaljplan för verksamheter inom
+Antangandehandling
+del av Frillesås-Rya 3:77 m.fl.
+i Frillesås
+K kommun
+Granskning
+Upprättad 2021-12-23, reviderad augusti 2022
+Ida Lennartsson Johanna Vinterhav
+Plan Planarkitekt
 
 <!-- sida 242 -->
 

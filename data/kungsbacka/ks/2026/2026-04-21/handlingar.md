@@ -12,14 +12,14 @@ kalla_url: https://kungsbacka.se/download/18.347aca1d19d8aefb0402806b/1776325537
 sha256: 205ec8a15a387ce5f5df236598aabc1fe43d7048b215d0f0c2f20c3167d013a5
 bytes: 276822424
 sidor: 683
-hamtad: 2026-11-18T23:05:35+00:00
-konverterad: 2026-11-18T23:15:17+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T05:26:38+00:00
+konverterad: 2026-11-24T05:40:22+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ej-konverterad, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tom, tom, tom, tom, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
-tal_obekraftade: [19, 20, 21, 22, 25, 26, 27, 28, 29, 40, 41, 42, 43, 44, 45, 46, 47, 48, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 125, 126, 127, 128, 129, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 401, 441, 467, 468, 469, 470, 471, 472, 473, 474, 526, 618, 619, 635, 683]
-figurer: [94, 95, 96, 97, 98, 99, 100, 103, 107, 109, 110, 112, 113, 114, 115, 117, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 157, 161, 167, 173, 186, 216, 294, 296, 298, 300, 302, 303, 304, 306, 307, 308, 310, 311, 312, 314, 315, 316, 317, 318, 320, 321, 322, 324, 325, 326, 327, 328, 329, 330, 332, 333, 334, 335, 336, 338, 339, 340, 342, 344, 346, 347, 348, 350, 352, 353, 354, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 372, 373, 374, 376, 377, 378, 379, 380, 382, 384, 386, 388, 390, 392, 394, 396, 399, 400, 401, 402, 407, 410, 411, 415, 417, 420, 423, 424, 460, 475, 526, 527, 542, 546, 547, 550, 551, 555, 574, 594, 595]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tom, tom, tom, tom, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr]
+tal_obekraftade: [19, 20, 21, 22, 25, 26, 27, 28, 29, 40, 41, 42, 43, 44, 45, 46, 47, 48, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 80, 82, 83, 84, 85, 125, 126, 127, 128, 129, 135, 136, 137, 138, 139, 141, 142, 143, 144, 146, 147, 149, 150, 151, 152, 401, 467, 526]
+figurer: [21, 22, 46, 67, 69, 70, 71, 72, 73, 74, 75, 78, 82, 94, 95, 96, 97, 98, 99, 100, 103, 107, 109, 110, 112, 113, 114, 115, 117, 119, 120, 121, 122, 123, 125, 126, 127, 128, 129, 144, 146, 147, 151, 152, 157, 161, 167, 173, 186, 216, 294, 296, 298, 300, 302, 303, 304, 306, 307, 308, 310, 311, 312, 314, 315, 316, 317, 318, 320, 321, 322, 324, 325, 326, 327, 328, 329, 330, 332, 333, 334, 335, 336, 338, 339, 340, 342, 344, 346, 347, 348, 350, 352, 353, 354, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 372, 373, 374, 376, 377, 378, 379, 380, 382, 384, 386, 388, 390, 392, 394, 396, 399, 400, 401, 402, 407, 410, 411, 415, 417, 420, 423, 424, 460, 475, 526, 527, 542, 546, 547, 550, 551, 555, 574, 594, 595, 683]
 tolkade: []
 granskad: null
 ---
@@ -653,6 +653,22 @@ Magnus Månsson
 Maria Månsson
 
 <!-- sida 22 -->
+
+UWy,
+
+N
+
+VAN Kartbila
+
+N
+
+ES NA avgränsning av Området mar
+
+Borgmästaregatan
+
+Storgatan
+
+Järnvägsgatan
 
 <!-- sida 23 -->
 
@@ -2849,19 +2865,599 @@ Sign
 
 <!-- sida 69 -->
 
+ANNEBERG
+
+"Välkommen till Anneberg! Här finns bostäder i ett naturnära läge mellan skogsbeklädda kullar och en slingrande
+Kungsbackaoå. Annebergs Centrum är områdets naturliga mötesplats, en länk mellan pendelstationen och
+kringliggande bebyggelse. Här finns möjlighet till marknad och sammankomster, närhandel samt café i bästa solläge.
+Bostäderna är planerade för olika målgrupper och området är omsorgsfullt planerat med stora ytor för odling och
+gemenskop. Gestaltningen är inspirerad av befintligt åkerlandskap och traditionella bondgårdar med dess uthus
+och lador. Här drivs ditt hus av förnybar energi och hållbarhetsperspektivet finns med i alla delar. I Anneberg finns
+förutsättningar för en välmående och hållbar livsstil för alla.”
+
 <!-- sida 70 -->
+
+ANNEBERGS NYA CENTRUM
+
+GESTALTNING
+Området är inspirerat av den befintliga
+åkermarkeni sin planering. Med en modern
+omtolkning av bondgården och dess uthus och
+lador ges området en tydlig identitet. Volymen
+upprepas i olika skala, våningsantal och riktning
+för att ge variation inom ett sammanhållet
+formspråk. Ytterligare variation skapas av att
+trä som fasadmaterial används i olika färger och
+former. De valda kulörerna ger området en unik
+karaktär med en sammanhållen helhet.
+
+HÅLLBARHET & TEKNIK
+
+Som en deli planeringen av ett hållbart Anneberg
+byggs bostäder och lokaler med en prestanda
+motsvarande Boverkets energiklass B. På platsen
+byggs ett internt fjärrvärmenät som hämtar sin
+energi från förnyelsebara energikällor så som
+biobränsle, solenergi och lagrad energi i marken.
+Solenergilösningar för hushållen erbjuds också
+som ettytterligare steg mot ett hållbart område.
+Nya Anneberg centrum välkomnar samtidigt ett
+externt samarbete kring energifrågan med redan
+etablerade aktörer i området.
+
+OMSORG FÖR MILJÖN
+
+Kungsbackaån bevaras och befintlig natur
+förädlas för ökad tillgänglighet. Åkermarken
+utnyttjas varsamt genom att undvika hårdgjorda
+ytor. Annebergs nära förhållande till natur
+möjliggör odling, både i den privata trädgården
+och på de gemensamma ytorna i området. Detta
+bidrar till gemenskap, sprider kundskap och ger
+närproducerad mat.
+
+BLANDADE MÅLGRUPPER
+
+Vi tror på ett område för boende med olika
+bakgrund, idéer och inkomst. Därför är det viktigt
+att hitta rätt mix mellan hyres- och bostadsrätter
+och rätt blandning av aktörer som erbjuder olika
+bostadsformer. Vi tror att framtidens boende i
+Anneberg delar ett intresse för hållbarhet, genom
+ex. odling. Bostäder planeras för unga som söker
+relativt små lägenheter, men även äldre som vill
+hatillgångtill gemensamhetslokaler, men bo i
+
+en vanlig lägenhet. Utöver detta planeras även
+bostäder för barnfamiljer.
+
+HÅLLBARHET GENOM ATT DELA
+
+Sociala ytor såsom återbruksrum samt framtida
+växthus och plats för odling ger kvalitéer
+
+som trygghet och lärande, men skapar även
+resurseffektivitet.
+
+Kvartersgemensamma lokaler minskar behovet
+avytai den egna bostaden, vilket kan hålla nere
+kostnaden för de boende. På gårdarna finns
+många och generösa ytor för grillar, odlingar,
+uteplatser och rum för lek vilket främjar
+sammanhållning och sociala utbyten.
+
+ANNEBERG - MARKANVISNING
+2017.08.25
+2/8
 
 <!-- sida 71 -->
 
+STRUKTUR
+
+OFFENTLIGT
+FEET FIT G
+
+PRIVAT
+frrenonnencnnnna Hi
+
+ÅKERMARKEN SOM INSPIRATION
+
+Området är idag till största delen obebyggt till följd av en
+medveten strategi där åkermark bevarats för framtida ändamål.
+Detta har omprövats och idag bedöms platsen ha en sådan
+strategisk betydelse, med närheten till pendeltågstation samt
+möjligheten att skapa ett nytt centrum, att exploateringens
+fördelar överväger nackdelarna med att bebygga åkermark.
+
+Vårt förslag utgår från övertygelsen att det går att kombinera
+bevarandet av åkermark med ny, modern bostadsbebyggelse.
+Genom att sammanföra och integrera de båda skapar vi en ny
+hybridtypologi för framtiden men med rötterna förankrade i
+platsens historia. Åkermarken bevaras i så stor utsträckning
+som möjligt, dels för fortsatt odling, dels för rekreation vilket
+skapar en hållbar och attraktiv stadsdel i Anneberg.
+
+PRIVATA TRÄDGÅRDAR
+
+I den privata trädgården finns möjlighet till
+avkoppling och umgänge med de närmsta;
+sin familj och sina vänner. Bakom en häck
+eller staket finns generösa ytor för individuell
+frihet.
+
+Här kan även mindre uthus placeras, vilket
+kan möta behovet av extra förråd, sovrum,
+växtrum, cykelskjul eller varför inte en bastu?
+
+GEMENSAMMA GÅRDAR
+
+I området skapas platser för gemensamt
+
+umgånge mellan grannhusen. Från stigar
+mellan häckar och fasader öppnar platser
+
+upp sig som kan erbjuda en variation av
+
+aktiviteter såsom utomhusgym, boulespel
+
+och lekplatser för de minsta. Dessa ytor
+
+blir platser för liv och rörelse med grönska,
+
+lek och lärande i en trygg och bilfri miljö.
+Kopplingar mellan gård och gaturum
+ger också trygghet dygnet runt där
+medmänniskor finns nära till hands.
+
+PUBLIKA MÖTESPLATSER
+
+De sociala aspekterna belyses även genom
+att planera för ett levande område där
+rekreation, naturupplevelser och ett aktivt
+liv underlättas. Vid centrum träffas grannar
+naturligt utanför kvarterets café eller
+matbutik. Inne i området finns ett växthus
+kombinerat med gemensamhetslokal
+
+där möjlighet till födelsdagskalas eller
+föreningsmöte erbjuds. I anslutning finns
+ett seniorboende och en eventuellt framtida
+förskola, vilka båda gynnas av möjligheten
+till utomhusvistelse och gemensamma
+aktiviteter.
+
+GEMENSAM NATUR
+
+Mot Kungsbackaån bevaras marken fri från ny
+bebyggelse. Zonen mellan de nya bostäderna
+och ån är en grön korridor med möjlighet till
+vistelse utomhus i natursköna omgivningar.
+Markens existerande karaktär bevaras och
+förädlas med möjlighet att introducera
+varierad odling eller utomhusgym och
+naturliga lekplatser. Här träffas alla i området,
+även övriga boende och besökare i Anneberg.
+
+Na
+2 Ta
+
+ANNEBERG - MARKANVISNING
+2017.08.25
+3/8
+
 <!-- sida 72 -->
+
+STRÅK & GATURUM
+
+KUNGSBACKAÅN
+
+PY SESTA
+GEN SY
+
+STADSGATAN
+
+SMITVÄGEN
+
+Nya Anneberg har en flexibel och välkomnande struktur med stor valfrihet som
+inbjuder till rörelse. Möjligheten att röra sig bilfritt över stora delar av området ger en
+
+mänsklig skala och ökar den upplevda tryggheten med mycket folk i rörelse. Bilar tillåts
+
+in på kvartersgator för att smidigt angöra bostäder och övriga funktioner.
+
+STADSGATAN
+
+Norra Annebergsvägen och
+Älvsåkersvägen är områdets
+ankomstpunkter och koppling vid
+angöring med bil. Dessa vägar utvecklas
+och blir mer än förbifarter. Här skapas
+möjlighet för snabb angöring för korta
+ärenden till verksamheter eller bostad. En
+trädrad ger styrsel och trivsel till gatan.
+På trottoaren innanför rör sig gående
+och cyklister på generösa ytor. Mot
+bostadshusen utanför centrumdelen
+finns privata trädgårdar. Dessa skapar en
+tydlig gräns mellan det offentliga och det
+privata och är samtidigt ett trevligt inslag
+i gaturummet.
+
+KVARTERSGATAN
+
+Bostäderna försörjs av en mindre
+gatuslinga för bilar. Från denna nås alla
+entréer samt parkeringar som finns inom
+området. Även Storåvägen omformas
+och ges en liknande karaktär.
+
+Här kör bilar långsamt med möjlighet att
+stanna till i anslutning till bostädernas
+entréer.
+
+Utformningen av denna slinga med
+access från Norra Annebergsvägen
+möjliggör att stora delar av det nya
+området blir bilfritt.
+
+KVARTERSGATAN
+
+Ke
+
+4
+Ku
+
+Ta
+
+SMITVÄGEN
+
+Inom området finns ett tätt och intimt
+rutnät av mindre vägar och stigar att
+fritt röra sig längs med på cykel eller
+
+till fots. Mellan samtliga fastigheter
+finns naturliga kopplingar till grannar,
+naturstråket, pendeltågsstationen
+eller vidare ut i Anneberg. Vägarna rör
+sig mellan häckar och fasader, längs
+planteringar och träd och ger möjlighet
+till smidig kommunikation och spontana
+möten.
+
+NATURSTRÅKET
+
+NATURSTRÅKET
+
+Mellan bostadsområdet och
+Kungsbackaån bevaras landskapet och
+förädlas till hela Annebergs naturstråk.
+Här möts människor från Anneberg på
+springturer, promenader med sin hund
+eller på väg till en fiskestund vid ån.
+Gränsen mellan bebyggelsen och naturen
+har en upplöst karaktär där naturen
+bjuds in bland det mer urbana.
+
+KUNGSBACKAÅN
+
+ANNEBERG - MARKANVISNING
+2017.08.25
+4/8
 
 <!-- sida 73 -->
 
+OMRÅDET
+
+Je « REKREATION
+
+Områdets nära förhållande till sin
+omgivning och naturen skapar goda
+förutsättningar för aktivitet för de
+boende. Utöver naturstråket erbjuds
+även platser för lagsport, utegym, yoga
+
+ETT CENTRUM FÖRALLA +=
+
+Vid ankomst till Anneberg möts besökare fick -
+av ett torg inramat av resliga gavlar i en RN
+urban miljö. Bebyggelsen är något högre
+än i övriga området och entrévåningarna
+öppnas upp mot omgivningen och
+planeras för verksamheter.
+
+Detta blir Annebergs självklara nod,
+
+med kopplingar vidare in i Anneberg
+eller åt andra hållet till Göteborg och
+Kungsbacka. Här finns närhandel och NS 2
+café i bästa solläge samt möjlighet gt”
+att arrangera marknader och andra lä >”
+evenemang. I direkt anslutning finns en DE ÄLDSTA & DEYNGSTA
+mindre park med bänkar och växtlighet
+som skyddar mot sol och vind.
+
+Cykelparkeringar finns utplacerade
+inom kort avstånd från samtliga
+bostäder och i anslutning till cykelvägar
+vilket underlättar och uppmuntrar till
+cykling. Varje lägenhet har minst 2 st
+cykelplatser. Plats för lädcykel planeras
+
+i närheten av husen. Lådcyklar kan lånas
+inom området i en gemensam cykelpool.
+
+VÄXTHUS + ODLING
+
+Lokal matproduktion skapar
+synergieffektier som tillit och trygghet;
+social hållbarhet i sin bästa form. I
+Anneberg Centrum finns möjlighet
+
+till olika typer av matproduktion med
+tillgång till växthus, fruktträd, och
+odlingslådor. Här går det att odla
+
+både i sin privata trädgård och på
+
+de gemensamma ytorna. I växthuset
+kan de boende ordna fest och bjuda
+
+på egenproducerad mat och barnen
+
+på en framtida förskola kan dela
+
+matsal tillsammans med de äldre på
+seniorboendet. Områdets odlingar
+planeras på mark där jorden har brukats
+sedan urminnes tider, med förhoppning
+om bördig mark och stora skördar.
+
+\+
+hes - BIL
+
+" Parkeringar finns utplacerade inom
+området nåbara från kvartersgatorna.
+Placeringen gör att de hamnar på
+behagliga avstånd från samtliga
+bostadsentréer samt ger ett sympatiskt
+småskaligt intryck. Elladdare planeras
+inom området på valda platser.
+
+Ett seniorboende med möjlighet till hiss, egen entrébalkong i söderläge samt i
+direkt anslutning till kommunikationer och service på ena sidan och odlingsmark
+med växthus på andra sidan. Här möts generationer i meningsfulla utbyten då
+
+det även finns plats för en förskola, allt inom samma bilfria zon. Gemensamma
+matlagningstillfällen eller sagostunder, liksom spontana möten i utemiljön förgyller
+såväl seniorers som juniorers vardag.
+
+' = KR
+ANNEBERG - MARKANVISNING
+2017.08.25
+5/8
+
 <!-- sida 74 -->
+
+BYGGNADERNA
+
+HÖGA HUS
+
+De effektiva höga husen har endast en vertikal
+kommunikationsdel med hiss vilken ansluter till generösa
+entrébalkonger. Dessa vänds ut mot gatan vilket ger en härlig
+entrébalkong i bästa solläge, samt sovrum vända mot tyst
+sida, Entrébalkongen görs rymlig med en privat zon för varje
+lägenhet. Husen innehåller 1, 2 och 3rok.
+
+VOLYM HÄMTAD FRÅN DÅTID OCH NUTID
+
+Först på senare tid har bostadsbebyggelse introducerats i
+större omfattning i områdets närhet. Med Annebergs Centrum
+kommer nästa chans att utveckla området samtidigt som
+historien tillåts förbli närvarande.
+
+Platsen präglas historiskt av jordbruk och den för jordbruket
+tillhörande hustypologin; traditionella lador med sadeltak.
+Dessa organiserades kring en gård med plats för både det
+privata och det offentliga. På dessa gårdar levde ofta flera
+hushåll tillsammans med gemensamma ytor att dela på.
+
+EN STARK IDENTITET
+
+Med utgångspunkt i denna enkla, välkända volym för alla
+byggnadstyper skapas en identitet i området. Volymen
+upprepas i olika skala, våningsantal och riktning för att skapa
+en variation inom det sammanhållna formspråket. Ytterligare
+variation skapas genom att trä som fasadmaterial används
+
+i olika färger och former. De valda kulörerna blir starkt
+identitetsskapande i området samtidigt som de ger valda
+byggnader deras unika identiteter.
+
+SMAHUS
+Småhusen innehåller 1-4 rok med yteffektiva planlösningar.
+Hiss planeras för hus i 4-5 våningar, men krävs inte om huset
+enbart är 2 våningar. På översta våningen finns möjlighet till loft
+vilket ger attraktiva lägenheter i etage.
+
+RADHUS
+
+Radhusen utgör områdets större bostäder med ytor mellan
+108 och 116 m2. Dessa går att kombinera i varierande antal
+sammanhängande bostäder. Parkering löses inom husvolymen
+alternativ inom tomten.
+
+KOMPLEMENTS HUS
+
+Områdets utformning skapar förutsättningar för de framtida
+boende att addera mindre volymer för extra förvaring,
+gästrum eller kontor. Dessa volymer kan även nyttjas
+
+som områdesgemensam cykelverkstad, kvarterscafé,
+snickarverkstad med verktyg m.m. eller samutnyttjas av
+seniorboendet och förskolan.
+
+ANNEBERG - MARKANVISNING
+2017.08.25
+6/8
 
 <!-- sida 75 -->
 
+SE
+EKE
+
+HÅLLBARHET
+
+NX
+
+FÖRNYBARA
+BYGGNADSMATERIAL
+
+HÅLLBARHET I ANNEBERG
+Kommunens förutsättningar för bebyggelse i Anneberg:
+
+« — Energiprestanda på byggnader ska motsvara Boverkets energiklass B eller bättre.
+
+« — Byggherren ska förhålla sig till "Borgmästaravtalet”, tecknat av Kungsbacka kommun 2016. Visionen är
+minskade koldioxidutsläpp, förnyelsebar energi till alla, ökad energieffektivitet samt krav på åtgärdsplan
+för hållbar energi och hållbart klimat.
+
+VÅR STRATEGI
+
+För att möta ställda krav projekteras husen för att ha en lägre energianvändning och en mindre
+miljöpåverkan än en standardbyggnad enligt BBR. Med bland annat ett klimatskal motsvarande
+passivhusstandard, möjlighet till flertalet miljöcertifieringar och en genomtänkt mät- och
+uppföljningsstrategi säkerställs hållbarhet i både projektering och byggnation men även i drift- och
+förvaltningsskedet.
+
+På platsen byggs ett internt fjärrvärmenät som hämtar sin energi från förnyelsebara energikällor som
+exempelvis solenergi, biobränsle och lagrad energi i marken. Anläggningen byggs och underhålls av SERNEKE
+Fastighet AB vilket gör det enkelt för hyresrätter och bostadsrättsföreningar att köpa lokalt producerad
+energi. För hållbarhet ur ett större perspektiv välkomnas samtidigt ett externt samarbete kring energifrågan
+med redan befintliga aktörer i området.
+
+Befintlig mark förädlas och utnyttjas varsamt genom att undvika hårdgjorda ytor. Dagvatten hanteras aktivt
+utan att döljas, och blir en spännande del av utemiljöns utformning.
+
+Inom området förbereds miljörum med många olika fraktioner, strategiskt placerade för att underlätta
+återvinning. Miljörummen har fönster för ljus och trygghet. Genomtänkta kärl i kök förenklar sortering av
+avfall. I Anneberg kommer vi även bygga återbruksrum, där saker du själv tröttnat på kan leva vidare hos
+någon annan.
+
+Byggnaderna planeras att uppföras med trästomme och synlig träfasad i olika kulörer.
+
+FÖRNYELSEBAR ENERGI
+
+Förnyelsebar energi kommer från energikällor som
+förnyas i takt med, eller snabbare än, de används. Det är
+energiformer som i ett mänskligt perspektiv är oändliga
+och därmed de mest hållbara. För nya Annebergs
+centrum spelar solenergin en central roll vilket är den
+energi som vi kan utvinna direkt från solen antingen
+som solvärme för att värma vatten eller som elektricitet.
+Omfattande användning av solenergi ger området
+
+goda förutsättningar för en låg miljöpåverkan med låga
+koldioxidutsläpp.
+
+DAGVATTENHANTERING / FÖRDRÖJNING
+
+Klimatförändringarna beräknas medföra ökade
+regnmängder vilket leder till ökade dagvattenflöden. Vid
+
+kraftig nederbörd riskerar ledningsnät att översvämmas.
+
+Med hållbar dagvattenhantering avses att man försöker
+fördröja och reducera dagvattenavrinningen från våra
+samhällen så långt som det är möjligt. Därmed minskar
+risk för skador vid översvämningar och utsläpp av
+dagvattenföroreningar. En öppen dagvattenhantering,
+medför en mängd positiva egenskaper på avrinningen
+som naturlig rening, samtidigt som den bidrar till en
+vackrare stadsmiljö där den hårdgjorda ytan minimeras.
+
+BYGGNADER I TRÄ
+
+Trä är förnyelsebart och det byggnadsmaterial som ger
+minst klimatpåverkan vid tillverkning. Virket har under sin
+tillväxtperiod tagit upp koldioxid. Andra fördelar med att
+bygga i trä är ett gott inomhusklimat och att husen får en
+lång livslängd. I Sverige kan trämoduler produceras lokalt
+av svenskt trä för att minska utsläpp från transporter.
+
+ÅTERVINNING / ÅTERBRUK
+
+Varje år slänger hushållen i Sverige 4,2 miljoner ton sopor;
+dvs. 430 kilo sopor per person. Vi vill förebygga mängden
+avfall genom åtgärder såsom återbruksrum där saker
+
+kan få nytt liv hos en ny ägare. Det avfall som trotts allt
+uppkommer ska i första hand återanvändas om det är
+möjligt, i andra hand återvinnas. Planering av återvinning
+och återbruk måste uppmärksammas på ett tidigt
+stadium för att underlätta för de boende.
+
+ANNEBERG - MARKANVISNING
+2017.08.25
+1/8
+
 <!-- sida 76 -->
+
+VISION LÄGRE EXPLOATERING FÖRESLAGEN EXPLOATERING HÖGRE EXPLOATERING
+CA. 120 BOSTÄDER 158 BOSTADER 150-250 BOSTADER
+
+RUSTAT FÖR EN OSÄKER FRAMTID
+
+Strukturen för Annebergs nya centrum har en inbyggd flexibilitet
+med möjlighet att anpassa efter olika förutsättningar och
+förändringar. I förslaget presenteras en lösning med 158 bostäder
+samt centrumfunktioner och förskola. Beroende på kommunens
+förväntningar och mål är strukturen möjlig att anpassa till en lägre
+exploatering med färre bostäder, utan att platsen förlorar sina
+kvalitéer. Enbart genom att byta funktion på en fastighet från
+bostäder till grönytor eller att variera antal våningar är det möjligt att
+landa på rätt mängd bostäder.
+
+Oavsett exploateringsgrad är strukturen även flexibel framåt i tiden,
+med möjlighet att fylla ut mellanrum om behovet av bostäder i
+området skulle öka.
+
+Externa volymer innehållande stödfunktioner såsom soprum och
+cykelfårråd m.m. tillkommer utöver de nedan redovisade areorna.
+
+AREA
+
+KT] BOSTADSRÄTT
+
+Antal - 68st
+BTA - 7257 m2
+BOA - 6023 m2
+
+[HYRESRÄTT
+
+Antal - 57 st
+BTA - 3150 m2
+BOA - 2615m2
+
+[] SENIORBOENDE
+
+Antal - 33st
+BTA = 1890 m2
+BOA - 1568 m2
+TOTALT:
+BOSTÄDER - 158 st
+BTA - 12297 m2
+BOA - 10206 m2 (0.83 nyckeltal) ETAPP 1
+S E a Områdets första etapp inkluderar,
+fe) GEMENSAMT VÄXTHUS - 60 m2 BTA utöver bostäder, det nya centrumet
+RN [C] (Ev. FRAMTIDA FÖRSKOLA s 355 m2) BTA samt seniorboende.
+
+a HANDEL BTA - 463m2 BTA
+\- 384 m2 LOA
+
+ANNEBERG - MARKANVISNING
+2017.08.25
+8/8
 
 <!-- sida 77 -->
 
@@ -16988,6 +17584,79 @@ Värö    station
 
 <!-- sida 401 -->
 
+Översiktsplan för Varbergs kommun
+Fördjupning för Väröbacka
+Mark- och vattenanvändning
+
+Teckenförklaring
+Bebyggelse
+
+Bostäder
+
+Bostäder, lång sikt
+
+Funktionsblandad bebyggelse
+Funktionsblandad bebyggelse, lång sikt
+Besöksanläggning
+
+Kommunal service
+
+Verksamheter och industri
+
+Verksamheter
+Störande verksamheter
+
+Grönområde och park
+Grönstråk, linje
+Grönstråk, yta
+Grönstråk, lång sikt
+Park
+
+Transportinfrastruktur
+
+AM Stationsområde
+Ö  Korsningsåtgärd
+== Övergripande väg- och gatunät (alla trafikslag)
+— = Lokalgata (alla trafikslag)
+See Gång- och cykelväg (separat)
+\- Järnväg
+
+Natur och friluftsliv
+Naturområde
+
+Teknisk anläggning
+Energiförsörjning
+
+Landsbygd
+Odlingsbygd
+
+Areell näring
+Jordbruk
+
+Övrigt
+=== - Plangräns
+
+0 500 1 000 m
+Å | | | | Skala 1:7 500 (A1)
+
+Å
+I
+I
+I
+I
+I
+I
+I
+I
+I
+I
+4
+
+VARBERGS
+KOMMUN
+
+Granskningshandling
+
 <!-- sida 402 -->
 
 Teckenförklaring
@@ -18577,7 +19246,7 @@ Box 517, 301 80 Halmstad
 (e-post borttagen)
 regionhalland.se
 
-Dokum en tin fo rm a tion
+Dokumentinformation
 
 <!-- sida 442 -->
 
@@ -21805,9 +22474,7 @@ tf
 
 1
 
-ls
-
-a
+ls a
 
 e
 
@@ -21839,9 +22506,7 @@ su
 
 J
 
-ty
-
-e
+ty e
 
 \+
 
@@ -21993,9 +22658,7 @@ lu
 
 a v
 
-s
-
-a o
+s a o
 
 \+
 
@@ -22105,9 +22768,7 @@ e
 
 ik
 
-s
-
-a g
+s a g
 
 \+
 
@@ -22533,9 +23194,7 @@ t
 
 n
 
-e
-
-e
+e e
 
 0 0 0 0 0 0 0 0 0 0 0 0 0
 
@@ -22545,9 +23204,7 @@ e
 
 e
 
-v
-
-h nd s
+v h nd s
 
 o
 
@@ -22557,9 +23214,7 @@ a
 
 s
 
-Ö
-
-am äm is
+Ö am äm is
 
 p
 
@@ -22805,9 +23460,7 @@ rs
 
 e
 
-d
-
-s
+d s
 
 0 0 0 0 0 0 0 0 0 0 0 0 0
 
@@ -23521,9 +24174,7 @@ e a ig
 
 v te m
 
-e
-
-t
+e t
 
 K
 
