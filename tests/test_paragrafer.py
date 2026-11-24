@@ -179,6 +179,20 @@ class TestDiarienummer(unittest.TestCase):
         self.assertEqual(i_huvudet("Dnr MH-2021- 3122"), ["MH-2021-3122"])
         self.assertEqual(i_huvudet("Dnr BN 2016–000170"), ["BN-2016-000170"])
 
+    def test_forledet_tva_ganger_och_mellanslag_efter_bindestrecket(self):
+        self.assertEqual(i_huvudet("Diarienummer\nVO VO-2026-00191"), ["VO-2026-00191"])
+        self.assertEqual(i_huvudet("Diarienummer VO- 2026-00017"), ["VO-2026-00017"])
+        self.assertEqual(i_huvudet("Dnr KS -2025-00357"), ["KS-2025-00357"])
+
+    def test_inget_nummer_ur_ett_annat_ord_eller_lost_skiljetecken(self):
+        for text in (
+            "Dnr. III R13 28 69",
+            "Dnr KKL/ 24",
+            "Dnr VO KS-2026-1",
+        ):
+            with self.subTest(text):
+                self.assertEqual(i_huvudet(text), [])
+
     def test_dnr_utan_mellanslag_och_med_gemener(self):
         text = "§ 418\nBygglov\nDnr2017-0782\n\n§ 419\nAnmälan\ndnr 2017-0790\n"
         self.assertEqual(

@@ -200,3 +200,7 @@ rader och läser `Dnr` utan hänsyn till stora och små bokstäver. Granskningen
 förteckningens rad blev en paragraf när paragrafen inte fanns i
 protokollet, och att ett beslut kunde hamna under fel paragraf när ett
 `§` tappats; därför regeln om beslutets första sida.
+
+Tillägg: [ADR-0110](0110-diarienumret-med-dubblerat-forled.md) läser
+också ett förled som står två gånger efter etiketten, `VO VO-2026-00191`,
+och mellanslag kring förledets bindestreck.
