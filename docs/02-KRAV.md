@@ -10,6 +10,22 @@ kommunstyrelsen och samtliga nämnder, så långt bakåt som möjligt, som text
 och tabeller att bygga dataanalyser på. Kungsbacka först; fler kommuner ska
 kunna läggas till utan kodändring.
 
+## Nummer som används av Region Hallands repo
+
+Region Hallands repo
+[moggleif/regionhalland](https://github.com/moggleif/regionhalland) tar
+sina krav ur den här serien. De här numren är upptagna där och används
+inte här. Regionens krav står i dess PR-texter.
+
+| Krav | Används i |
+| ---- | --------- |
+| K98  | [regionhalland PR #74](https://github.com/moggleif/regionhalland/pull/74) |
+| K99  | [regionhalland PR #75](https://github.com/moggleif/regionhalland/pull/75) |
+| K100 | [regionhalland PR #76](https://github.com/moggleif/regionhalland/pull/76) |
+
+Ett nytt krav här tar nästa nummer som varken står i den här filen eller
+i tabellen.
+
 ## K1 — En kommun läggs till med konfiguration
 
 - **Givet** att en kommun publicerar via en plattform som redan har en adapter

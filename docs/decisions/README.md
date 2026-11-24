@@ -23,6 +23,22 @@ Regler för det här repot, utöver MADR:
 - Ändras beslutet skrivs en ny ADR, och den gamla får
   `status: "superseded by ADR-NNNN"`.
 
+## Nummer som används av Region Hallands repo
+
+Region Hallands repo
+[moggleif/regionhalland](https://github.com/moggleif/regionhalland) tar
+sina beslut ur den här serien. De här numren är upptagna där och används
+inte här. Regionens beslut står i dess PR-texter.
+
+| #    | Används i |
+| ---- | --------- |
+| 0121 | [regionhalland PR #74](https://github.com/moggleif/regionhalland/pull/74) |
+| 0122 | [regionhalland PR #75](https://github.com/moggleif/regionhalland/pull/75) |
+| 0123 | [regionhalland PR #76](https://github.com/moggleif/regionhalland/pull/76) |
+
+En ny ADR här tar nästa nummer som varken står i indexet eller i
+tabellen.
+
 ## Index
 
 | #    | Beslut                                                                        | Status   |
