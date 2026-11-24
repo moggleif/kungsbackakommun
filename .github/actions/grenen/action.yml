@@ -1,24 +1,34 @@
-# Jobbets gren som output, om något sparats på den. Körs också när jobbet
-# fallit: varje sparad del har klarat kontrollerna och får sin PR (K11,
-# ADR-0088).
-name: Grenen, om något sparats
-description: Sätter gren när jobbets gren finns i repot.
+# Det jobbet checkat in, som en git-bundle i en artefakt, och grenens namn
+# och bas som output. Körs också när jobbet fallit: varje commit har klarat
+# kontrollerna (K11, ADR-0088). Jobbet som läser PDF:erna kan inte pusha;
+# det gör PR-jobbet, efter att ha prövat bundlen (K95, ADR-0118).
+# Kräver GREN, BAS (utcheckningens commit) och RUNNER_TEMP i miljön.
+name: Grenen, om något checkats in
+description: Lägger commitarna sedan BAS i en artefakt med grenens sista led som namn.
 outputs:
   gren:
-    description: grenen, tom när inget sparats
+    description: grenen, tom när inget checkats in
     value: ${{ steps.grenen.outputs.gren }}
+  bas:
+    description: commiten som bundlen bygger på
+    value: ${{ steps.grenen.outputs.bas }}
 runs:
   using: composite
   steps:
     - id: grenen
       shell: bash
       run: |
-        kod=0
-        git ls-remote --exit-code origin "refs/heads/$GREN" > /dev/null || kod=$?
-        if [ "$kod" -eq 0 ]; then
-          echo "gren=$GREN" >> "$GITHUB_OUTPUT"
-        elif [ "$kod" -eq 2 ]; then
+        if [ "$(git rev-parse HEAD)" = "$BAS" ]; then
           echo "Inget nytt i poolen." >> "$GITHUB_STEP_SUMMARY"
-        else
-          exit "$kod"
+          exit 0
         fi
+        git bundle create "$RUNNER_TEMP/gren.bundle" HEAD "^$BAS"
+        { echo "gren=$GREN"; echo "bas=$BAS"; echo "artefakt=${GREN##*/}"; } >> "$GITHUB_OUTPUT"
+    # Sju dagar, så att datat går att pusha för hand om PR-jobbet inte
+    # gjorde det (01-BIDRA.md).
+    - if: always() && steps.grenen.outputs.gren != ''
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+      with:
+        name: ${{ steps.grenen.outputs.artefakt }}
+        path: ${{ runner.temp }}/gren.bundle
+        retention-days: 7
