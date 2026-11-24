@@ -77,7 +77,7 @@ class TestDeladeSidor(unittest.TestCase):
         with pdfplumber.open(PDF) as pdf:
             sida = pdf.pages[4]
             ord_ = sida.extract_words(return_chars=True)
-            _, (fallen,) = tabeller.sakra(sida, ord_)
+            _, (fallen,), _ = tabeller.sakra(sida, ord_)
             rader, _ = delade.tabell(fallen, ord_)
         rubrik = ["Belopp i tusentals kronor, netto", "2026", "2027"]
         self.assertEqual(rader, [rubrik, INTAKTER, KOSTNADER])
@@ -106,7 +106,7 @@ class TestDeladeSidor(unittest.TestCase):
         with pdfplumber.open(PDF) as pdf:
             sida = pdf.pages[6]
             ord_ = sida.extract_words(return_chars=True)
-            _, (fallen,) = tabeller.sakra(sida, ord_)
+            _, (fallen,), _ = tabeller.sakra(sida, ord_)
             self.assertIsNone(delade.tabell(fallen, ord_))
 
     def test_tal_over_tva_kolumner_blir_ingen_tabell(self):

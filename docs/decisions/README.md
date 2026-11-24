@@ -125,3 +125,4 @@ Regler för det här repot, utöver MADR:
 | 0107 | [Varje version säger vad den kan ändra, och bara de dokument den berör konverteras om](0107-omkonvertering-efter-vad-versionen-kan-andra.md) | accepted |
 | 0108 | [CI håller målen i Ren kod för koden, och testerna behåller de högre gränserna](0108-ci-haller-malen-for-koden.md) | accepted |
 | 0109 | [Varje källa upptäcker sitt levande och sitt arkiv bakom samma gränssnitt](0109-kallorna-bakom-ett-gransnitt.md) | accepted |
+| 0111 | [Ett rutnät som inte går ihop till en tabell märker sidan osäker](0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md) | accepted |
