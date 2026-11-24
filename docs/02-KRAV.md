@@ -1838,8 +1838,9 @@ Hur och varför står i
 [ADR-0113](decisions/0113-varje-sammantrade-med-kallelse-far-sin-sida.md)
 och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 
-- **Givet** ett sammanträde i vilket organ och vilket år som helst som
-  har en kallelse i poolen
+- **Givet** ett sammanträde i vilket organ som helst som har en kallelse
+  i poolen, från året i kommunfilens `sammantradessidor` eller, utan det
+  fältet, vilket år som helst
 - **När** webbplatsen byggs
 - **Så** har sammanträdet en egen sida, och rubriken för sammanträdet på
   organets sida länkar dit. Överst står en rad per dokument från
@@ -1897,7 +1898,8 @@ och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 - **När** sidan byggs
 - **Så** säger sidan det, i stället för att dagordningen inte gick att
   läsa.
-- **Givet** ett sammanträde utan kallelse i poolen
+- **Givet** ett sammanträde utan kallelse i poolen, eller före året i
+  `sammantradessidor`
 - **När** webbplatsen byggs
 - **Så** har det ingen egen sida, och organets sida listar dess dokument
   som förut.

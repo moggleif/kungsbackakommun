@@ -171,6 +171,15 @@ def mote(kallelse: str, handlingar: str | None, sidor: dict) -> Mote:
         dokument.append({"typ": "handlingar", "namn": "null", "kvalitet": handlingar})
     return Mote(None, dokument, "", sidor, [])
 
+    def test_fore_kommunens_forsta_ar_ingen_sida(self):
+        toml = self.rot / "kommuner" / "exempelby.toml"
+        text = toml.read_text(encoding="utf-8")
+        toml.write_text("sammantradessidor = 2025\n" + text, encoding="utf-8")
+        with self.assertRaises(FileNotFoundError):
+            self.bygg()
+        organsida = (self.ut / "exempelby" / "fsn.html").read_text(encoding="utf-8")
+        self.assertNotIn("punkt för punkt", organsida)
+
 
 class TestDagordningen(unittest.TestCase):
     def test_utan_punkter_sags_det(self):

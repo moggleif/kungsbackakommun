@@ -17,6 +17,10 @@ gruppmote = { fore = "ks", veckodag = "måndag", tid = "kväll" }
 # (ADR-0019, ADR-0107).
 omkonvertera = true
 
+# Sammanträdena får en sida punkt för punkt från det här året, inför
+# mötena; äldre år har bara organets lista med dokument (ADR-0113).
+sammantradessidor = 2026
+
 [[organ]]
 id = "ga"
 namn = ["Nämnden för Gymnasium & Arbetsmarknad"]
