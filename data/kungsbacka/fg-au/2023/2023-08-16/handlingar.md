@@ -12,13 +12,13 @@ kalla_url: https://web.archive.org/web/20251216061712id_/https://kungsbacka.se/d
 sha256: a8ede9e503ff64329a4c31b8fbdcb3391d0b554ee28381119d0477e24c086bee
 bytes: 3461935
 sidor: 43
-hamtad: 2026-11-07T10:31:41+00:00
-konverterad: 2026-11-07T10:33:04+00:00
-pipeline: kommunhandlingar 0.10.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.14.0 / tesseract 5.3.4 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T15:29:13+00:00
+konverterad: 2026-11-24T15:29:52+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ej-konverterad, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [12, 14, 32]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [12, 32]
 figurer: [12, 13, 14]
 tolkade: []
 granskad: null
@@ -1185,10 +1185,8 @@ verksamhet samt hemtjänstgrupper att ansöka om intraprenadstart.
 
 Ke mmunfullmäktigeledamöter C) FF ()
 
-) HN) - /) - / Föga | ÅA =
 \- AV 16 Vern KA CL CA YES ESS -
 in Skorit (S)/Shabnam Zåmani (S), Johan Tolinsson (S), Maj-Britt Rane Andersson (S)
-— / i [4
 
 <!-- sida 33 -->
 
