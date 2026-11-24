@@ -1,20 +1,33 @@
-# PR:en från en av nattkörningens grenar, med automatisk merge (ADR-0052).
-# Ett eget jobb på en ny runner, utan utcheckning, så att inget som hämtats
-# kan nå token; båda nattkörningens jobb anropar det (ADR-0077). Grenen
-# mergas bara om den ändrar enbart data/ och versioner/, och bara på den
-# commit som prövats: ett jobb som tagits över av en fil det läst ska inte
-# kunna föra in kod i main (K92, ADR-0115).
-name: Nattkörningens PR
+# Grenen och PR:en från ett av nattkörningens jobb, med automatisk merge
+# (ADR-0052). Ett eget jobb på en ny runner, utan utcheckning: det enda i
+# nattkörningen som har skrivrätt och token, och det kör ingenting ur repot
+# eller ur det hämtade. Båda nattkörningens jobb anropar det (ADR-0077).
+# Commitarna kommer som en git-bundle i en artefakt från jobbet som läst
+# PDF:erna, och pushas bara om de ändrar enbart data/ och versioner/: ett
+# jobb som tagits över av en fil det läst ska varken kunna pusha eller
+# föra in kod i main (K92, K95, ADR-0115, ADR-0118).
+name: Nattkörningens gren och PR
 
 on:
   workflow_call:
     inputs:
+      del:
+        description: moten eller arkiv, ur anroparen och inte ur jobbet
+        type: string
+        required: true
       gren:
+        type: string
+        required: true
+      bas:
         type: string
         required: true
     secrets:
       NATTKORNING_TOKEN:
         required: false
+    outputs:
+      gren:
+        description: grenen, när den pushats
+        value: ${{ jobs.pr.outputs.gren }}
 
 permissions: {}
 
@@ -26,24 +39,47 @@ defaults:
 
 jobs:
   pr:
-    name: PR med automatisk merge
+    name: Gren och PR med automatisk merge
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      gren: ${{ steps.gren.outputs.gren }}
     steps:
-      - env:
-          GH_TOKEN: ${{ secrets.NATTKORNING_TOKEN }}
+      # Namnet och basen kommer ur jobbet som läst PDF:erna. Namnet ska vara
+      # den här körningens och delens gren, i vilket försök som helst, så
+      # att PR-jobbet kan köras om för sig. Basen ska vara en commit och
+      # inte en flagga till git.
+      - id: namnet
+        env:
+          DEL: ${{ inputs.del }}
           GREN: ${{ inputs.gren }}
+          BAS: ${{ inputs.bas }}
         run: |
-          if [ -z "$GH_TOKEN" ]; then
-            echo "Datat ligger på grenen \`$GREN\`; öppna en PR därifrån (ADR-0015)." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
+          MONSTER="^nattkorning/[0-9]{4}-[0-9]{2}-[0-9]{2}-$GITHUB_RUN_ID-[0-9]+-$DEL\$"
+          if ! [[ "$GREN" =~ $MONSTER && "$BAS" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Grenen \`$GREN\` eller basen \`$BAS\` är inte den här körningens; inget pushas (ADR-0118)." \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
-          # Grenens och mains commits och träd, utan att något ur repot körs.
-          # Bara vanliga filer och borttagningar under data/ och versioner/,
-          # inga namnbyten, länkar eller undermoduler, och inga merge-commits,
-          # så att diffen från merge-basen är det som mergas.
-          git init -q granskning && cd granskning
+          echo "artefakt=${GREN##*/}" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ steps.namnet.outputs.artefakt }}
+          path: ${{ runner.temp }}/gren
+      # Utan token: bundlen kommer från jobbet som läst PDF:erna. Bara
+      # vanliga filer och borttagningar under data/ och versioner/, inga
+      # namnbyten, länkar eller undermoduler, och inga merge-commits, så
+      # att diffen från merge-basen är det som mergas (ADR-0115).
+      - id: provning
+        env:
+          GREN: ${{ inputs.gren }}
+          BAS: ${{ inputs.bas }}
+        run: |
+          git init -q "$RUNNER_TEMP/granskning" && cd "$RUNNER_TEMP/granskning"
           git fetch -q --filter=blob:none "https://github.com/$GITHUB_REPOSITORY" \
-            "+refs/heads/main:refs/remotes/main" "+refs/heads/$GREN:refs/remotes/gren"
+            "+refs/heads/main:refs/remotes/main" "$BAS"
+          git -c fetch.fsckObjects=true fetch -q "$RUNNER_TEMP/gren/gren.bundle" "+HEAD:refs/remotes/gren"
           COMMIT=$(git rev-parse refs/remotes/gren)
           MERGES=$(git rev-list --merges refs/remotes/main..refs/remotes/gren)
           ANDRAT=$(git -c core.quotePath=false diff --raw --no-renames --no-abbrev \
@@ -54,12 +90,29 @@ jobs:
             <<< "$ANDRAT" || [ $? -eq 1 ])
           if [ -n "$MERGES$UTANFOR" ]; then
             printf '%s\n' "$MERGES" "$UTANFOR"
-            echo "Grenen \`$GREN\` ändrar annat än filer i data/ och versioner/; den mergas inte (ADR-0115)." \
+            echo "Grenen \`$GREN\` ändrar annat än filer i data/ och versioner/; den pushas inte (ADR-0115)." \
               | tee -a "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
+          echo "commit=$COMMIT" >> "$GITHUB_OUTPUT"
+      - id: gren
+        env:
+          GH_TOKEN: ${{ secrets.NATTKORNING_TOKEN }}
+          SKRIVTOKEN: ${{ github.token }}
+          DEL: ${{ inputs.del }}
+          GREN: ${{ inputs.gren }}
+          COMMIT: ${{ steps.provning.outputs.commit }}
+        run: |
+          cd "$RUNNER_TEMP/granskning"
+          git push -q "https://x-access-token:$SKRIVTOKEN@github.com/$GITHUB_REPOSITORY" \
+            "$COMMIT:refs/heads/$GREN"
+          echo "gren=$GREN" >> "$GITHUB_OUTPUT"
+          if [ -z "$GH_TOKEN" ]; then
+            echo "Datat ligger på grenen \`$GREN\`; öppna en PR därifrån (ADR-0015)." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
           gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$GREN" \
-            --title "Nattkörning ${GREN:12:10}, ${GREN##*-}" \
+            --title "Nattkörning ${GREN:12:10}, $DEL" \
             --body "Datat från nattkörningen; mergas när kontrollen gått igenom (ADR-0052)."
           gh pr merge "$GREN" --repo "$GITHUB_REPOSITORY" --auto --merge --match-head-commit "$COMMIT"
           echo "PR från \`$GREN\` mergas när kontrollen gått igenom (ADR-0052)." >> "$GITHUB_STEP_SUMMARY"

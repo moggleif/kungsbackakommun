@@ -41,7 +41,7 @@ Regler för det här repot, utöver MADR:
 | 0012 | [Webbplatsen byggs ur poolen i GitHub Actions och publiceras på GitHub Pages utan att checkas in](0012-webbplatsen-byggs-i-actions-och-publiceras-pa-pages.md) | accepted (0023 lägger till markdown-it-py för dokumenten, 0032 ett skript för kalendern, 0044 ett skript för målen, 0054 avvikelserna ur issuen, 0074 ett skript för temat, 0101 visar andelen känd inläsning) |
 | 0013 | [Hämtningen görs med standardbiblioteket och en egen läsning av robots.txt, och kandidatlistan skrivs som JSON](0013-artig-hamtning-och-kandidatlistan.md) | accepted (0061 försöker `robots.txt` igen vid tillfälliga fel, 0115 hämtar bara https med tak) |
 | 0014 | [Markdown-texten har en kommentar per sida, uppställningen kvar och de säkra tabellerna efter sidans text](0014-markdown-texten-och-steg-2.md) | accepted (0021 lägger till escapning) |
-| 0015 | [Nattkörningen checkar in på en egen gren, och datat når `main` genom en PR med samma kontroller som all annan ändring](0015-nattkorningen-pa-egen-gren-och-pr.md) | accepted (0052 låter körningen öppna och merga PR:en själv, 0088 sparar var 15:e minut, 0115 mergar bara en gren som ändrar data) |
+| 0015 | [Nattkörningen checkar in på en egen gren, och datat når `main` genom en PR med samma kontroller som all annan ändring](0015-nattkorningen-pa-egen-gren-och-pr.md) | accepted (0052 låter körningen öppna och merga PR:en själv, 0088 sparar var 15:e minut, 0115 mergar bara en gren som ändrar data, 0118 pushar grenen i PR-jobbet) |
 | 0016 | [Tabeller utan lodräta linjer läses ur textlagrets ord och blir CSV bara när talen står i linje](0016-tabeller-utan-lodrata-linjer.md) | accepted (0028 delar tabeller med linjer och flera tal i en cell; 0030 fäller en ombruten etikett; 0035 tar med avsnittsrubriker och årtal; 0040 läser rubriker i kolumnens fack) |
 | 0017 | [Sidor med figurer märks vid konverteringen och tolkas i efterhand av en Claude-session](0017-figurer-marks-och-tolkas-i-efterhand.md) | accepted (0055 behåller tolkningarna i granskade dokument, 0099 märker bildytor på inskannade sidor) |
 | 0018 | [Wayback hämtas sist i nattkörningen, nyast först, och fyller bara luckor](0018-wayback-sist-nyast-forst-och-bara-luckor.md) | accepted (0027 slår på arkivet per organ, 0076 konverterar om arkivets egna dokument) |
@@ -111,7 +111,7 @@ Regler för det här repot, utöver MADR:
 | 0085 | [Lokaler och investeringar, remisser och yttranden och överenskommelser och vårdval blir tre nya slag av spår över tid](0085-lokaler-remisser-och-overenskommelser-som-spar.md) | accepted |
 | 0086 | [Alla sidor över tid visar samma år, från poolens första till innevarande](0086-alla-sidor-over-tid-visar-samma-ar.md) | accepted |
 | 0087 | [Kanten där två fyllda cellrutor möts är en cellgräns](0087-kanten-mellan-tva-cellrutor-ar-en-cellgrans.md) | accepted |
-| 0088 | [Nattkörningen sparar det klara var 15:e minut](0088-nattkorningen-sparar-var-femtonde-minut.md) | accepted |
+| 0088 | [Nattkörningen sparar det klara var 15:e minut](0088-nattkorningen-sparar-var-femtonde-minut.md) | accepted (0118 checkar in delarna lokalt och pushar grenen i PR-jobbet) |
 | 0089 | [Sökindex över protokollens paragrafer, i Giffås format](0089-sokindex-over-protokollens-paragrafer.md) | accepted |
 | 0098 | [Regionens fullmäktigemål är ett eget slag, regionmål](0098-regionmal-ar-ett-eget-slag.md) | accepted |
 | 0099 | [Inskannade bilder märks som bild, bildytor maskas, och vridna sidor vänds](0099-inskannade-bilder-markas-och-vridna-sidor-vands.md) | accepted (0100 läser säkra rader före bild, och en sida som inte är bild eller tom blir `ointressant`; 0107 ersätter undantaget för `full`) |
@@ -128,5 +128,7 @@ Regler för det här repot, utöver MADR:
 | 0110 | [Diarienumret efter etiketten läses också med förledet två gånger](0110-diarienumret-med-dubblerat-forled.md) | accepted |
 | 0111 | [Ett rutnät som inte går ihop till en tabell märker sidan osäker](0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md) | accepted |
 | 0113 | [Varje sammanträde med kallelse får sin sida, i alla organ och alla år](0113-varje-sammantrade-med-kallelse-far-sin-sida.md) | accepted |
-| 0115 | [Hämtningen tar bara https och har tak, stora sidor renderas inte, och nattkörningens gren mergas bara när den ändrar data](0115-sakerhetsgranser-for-hamtning-och-nattkorning.md) | accepted (0117 låser de transitiva beroendena) |
+| 0114 | [Fokusområden står under kommunmålets spår också när budgeten skrev målet på ett annat sätt](0114-fokusomraden-under-ett-omdopt-kommunmal.md) | proposed |
+| 0115 | [Hämtningen tar bara https och har tak, stora sidor renderas inte, och nattkörningens gren mergas bara när den ändrar data](0115-sakerhetsgranser-for-hamtning-och-nattkorning.md) | accepted (0117 låser de transitiva beroendena, 0118 tar bort skrivrätten från jobben som läser det hämtade) |
 | 0117 | [Hela beroendeträdet installeras ur incheckade låsfiler med hashar: `uv.lock` för Python och `package-lock.json` för npm](0117-transitiva-beroenden-installeras-ur-lasfiler.md) | accepted |
+| 0118 | [Nattkörningens jobb som läser det hämtade har bara läsrätt, och ett eget jobb pushar grenen](0118-nattkorningens-tolkning-utan-skrivratt.md) | accepted |

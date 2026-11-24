@@ -16,7 +16,7 @@ att bara de direkta beroendena var låsta. `pip install -e .` och
 `npm install` hämtade beroendenas egna beroenden i den senaste version
 som passade, och setuptools, som paketet byggs med, likaså. En kapad
 eller trasig version av ett transitivt paket kunde därför nå CI och
-nattkörningen, som har skrivrätt, utan att något i repot ändrats.
+nattkörningen, vars gren når `main`, utan att något i repot ändrats.
 `package-lock.json` checkades inte in, eftersom den bär
 tredjepartspaketens konto- och sponsornamn, och en del av dem är
 personnamn ([ADR-0104](0104-webbplatsens-skript-med-eslint-och-jsdom.md)).
@@ -104,8 +104,8 @@ Det här ersätter beslutet i ADR-0104 att inte checka in
 * Bra, eftersom `pip-audit` granskar det som faktiskt installeras.
 * Dåligt, eftersom ett nytt verktyg, uv, behövs för att skriva och läsa
   `uv.lock`, och en ny extern action för att hämta det i CI. Den körs
-  också i nattkörningen, som har skrivrätt, och i webbplatsens jobb, som
-  publicerar på Pages.
+  också i nattkörningen, vars gren når `main`, och i webbplatsens jobb,
+  som publicerar på Pages.
 * Dåligt, eftersom paketen längre ner i trädet står still mellan
   uppdateringarna av de direkta beroendena, utom när en sårbarhet är
   känd. Det är avsikten, men buggrättningar där kommer senare.
