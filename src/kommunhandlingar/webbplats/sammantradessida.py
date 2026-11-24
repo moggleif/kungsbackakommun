@@ -27,7 +27,7 @@ def sammantradessida(mall: Mall, mote: Mote, arenden: list[Arende]) -> str:
         + stil("mal.css", "mote.css")
         + "<h2>Sammanträdets dokument</h2>"
         + dokumentlista(kommun.id, mote.dokument, lankar.rot)
-        + dagordningen(arenden, lankar)
+        + dagordningen(arenden, lankar, bool(mote.handlingar))
     )
     organ = lankar.organnamn[forsta["organ"]]
     rubrik = f"{organ} {motesnamn(forsta['datum'], forsta['lopnr'])}"
@@ -54,27 +54,32 @@ def vagen(mall: Mall, mote: Mote, lankar: Lankar) -> list[tuple[str, str]]:
     ]
 
 
-def dagordningen(arenden: list[Arende], lankar: Lankar) -> str:
+def dagordningen(arenden: list[Arende], lankar: Lankar, handlingar: bool) -> str:
     if not arenden:
         return (
             "<h2>Dagordningen</h2><p>Dagordningen gick inte att läsa ur kallelsen.</p>"
         )
     return (
         f"<h2>Dagordningen, {antal(len(arenden), 'punkt', 'punkter')}</h2>"
-        + forklaring(arenden)
+        + forklaring(arenden, handlingar)
         + '<div class="malkort punkter">'
         + "".join(punktkort(a, lankar) for a in arenden)
         + "</div>"
     )
 
 
-def forklaring(arenden: list[Arende]) -> str:
+# Ett äldre sammanträde kan ha kallelsen men inte handlingarna i poolen.
+def forklaring(arenden: list[Arende], handlingar: bool) -> str:
     hittade = sum(1 for a in arenden if a.handling)
     return (
         "<p>Varje punkt med förslaget ur kallelsen, handlingens sidor, beslutet "
         "i protokollet och historiken i alla organ med samma diarienummer, som "
-        f"det står i källan. Handlingen hittades för {hittade} av "
-        f"{len(arenden)}.</p>"
+        "det står i källan. "
+        + (
+            f"Handlingen hittades för {hittade} av {len(arenden)}.</p>"
+            if handlingar
+            else "Sammanträdet har inga handlingar i poolen.</p>"
+        )
     )
 
 

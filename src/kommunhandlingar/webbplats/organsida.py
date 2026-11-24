@@ -6,7 +6,6 @@ from collections import defaultdict
 from html import escape
 
 from kommunhandlingar import frontmatter
-from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.flikar import SAMMANTRADEN, flikar
 from kommunhandlingar.webbplats.luckor import motesnamn
@@ -26,7 +25,7 @@ def organsida(sammanhang: Sammanhang, rad: Organrad, dokument: list[dict]) -> st
     saknas = {(lucka.datum, lucka.lopnr): lucka.saknas for lucka in rad.luckor}
     ar = defaultdict(list)
     for mote in sorted(moten, key=ordning, reverse=True):
-        rubrik = moterubrik(mote, sammanhang.kommun, moten[mote])
+        rubrik = moterubrik(mote, moten[mote])
         ar[mote[0][:4]].append(motesavsnitt(rubrik, moten[mote], saknas.get(mote, ())))
     adress = adresser.organsida(sammanhang.kommun.id, rad.id)
     innehall = flikar(sammanhang.underlag, rad.id, SAMMANTRADEN) + (
@@ -47,9 +46,9 @@ def dokumentrubrik(d: dict) -> str:
 
 
 # Rubriken länkar till sammanträdets sida när den finns (K54).
-def moterubrik(mote: Mote, kommun: Kommun, dokument: list[dict]) -> str:
+def moterubrik(mote: Mote, dokument: list[dict]) -> str:
     namn = escape(motesnamn(*mote))
-    if not har_sida(kommun, dokument):
+    if not har_sida(dokument):
         return f'<h3 id="{namn}">{namn}</h3>'
     lank = f'<a href="{escape(sammantradets(dokument))}">punkt för punkt</a>'
     return f'<h3 id="{namn}">{namn} – {lank}</h3>'

@@ -178,3 +178,8 @@ Tillägg: [ADR-0110](0110-diarienumret-med-dubblerat-forled.md) läser
 numret i formen `VO VO-2026-00191`, och med mellanslag kring förledets
 bindestreck. Vård & Omsorgs punkter 2026 får då sin handling i 89 fall
 av 175.
+
+Tillägg: [ADR-0113](0113-varje-sammantrade-med-kallelse-far-sin-sida.md)
+ersätter punkten "Vilka sammanträden": varje sammanträde med kallelse
+får sin sida, i alla organ och alla år, och `sammantradessidor` är
+borttaget ur kommunfilen.

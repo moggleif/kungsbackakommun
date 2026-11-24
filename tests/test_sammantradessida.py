@@ -71,15 +71,6 @@ TIDIGARE = "<!-- sida 1 -->\n\n§ 9 Dnr FSN-2024-00012\nLokalbehovet anmäls\n"
 
 
 class TestSammantradessida(Index):
-    def setUp(self):
-        super().setUp()
-        toml = self.rot / "kommuner" / "exempelby.toml"
-        text = toml.read_text(encoding="utf-8")
-        text = text.replace(
-            'foregangare = ["bun"]', 'foregangare = ["bun"]\nsammantradessidor = 2024'
-        )
-        toml.write_text(text, encoding="utf-8")
-
     def bygg(self) -> str:
         self.spara(
             "kallelse.md", dokument(typ="kallelse", text=KALLELSE, per_sida="[ok]")
@@ -159,20 +150,23 @@ class TestSammantradessida(Index):
             (self.ut / "exempelby" / "fsn" / "2024" / "2024-05-02.html").exists()
         )
 
-    def test_fore_det_forsta_aret_ingen_sida(self):
-        toml = self.rot / "kommuner" / "exempelby.toml"
-        text = toml.read_text(encoding="utf-8")
-        toml.write_text(
-            text.replace("sammantradessidor = 2024", "sammantradessidor = 2025"),
+    def test_ett_aldre_sammantrade_med_kallelse_far_sida(self):
+        tidigare = self.rot / "data" / "exempelby" / "fsn" / "2019" / "2019-05-02"
+        tidigare.mkdir(parents=True)
+        (tidigare / "kallelse.md").write_text(
+            dokument(datum="2019-05-02", typ="kallelse", text=KALLELSE),
             encoding="utf-8",
         )
-        with self.assertRaises(FileNotFoundError):
-            self.bygg()
+        self.bygg()
+        sidan = self.ut / "exempelby" / "fsn" / "2019" / "2019-05-02.html"
+        html = sidan.read_text(encoding="utf-8")
+        self.assertIn("Dagordningen, 3 punkter", html)
+        self.assertIn("Sammanträdet har inga handlingar i poolen.", html)
 
 
 class TestDagordningen(unittest.TestCase):
     def test_utan_punkter_sags_det(self):
-        html = dagordningen([], Lankar("", "", {}))
+        html = dagordningen([], Lankar("", "", {}), False)
         self.assertIn("Dagordningen gick inte att läsa ur kallelsen.", html)
 
     def test_en_handling_utan_sammanfattning_sags(self):
