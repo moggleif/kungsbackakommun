@@ -1054,6 +1054,8 @@ nattkörningen checkar inte in något
   texten på högkant, där det som följer inte har några siffror
   ([Text på högkant](#text-på-högkant),
   [ADR-0103](decisions/0103-hogkant-utan-siffror-ger-bekraftade-tal.md)).
+  Text som står snett eller upp och ned räknas som text på högkant
+  ([ADR-0112](decisions/0112-snett-och-upp-och-ned-som-hogkant.md)).
   Övriga tal i ett läst textlager är bekräftade: de är de tal PDF:en
   innehåller. Det säger ingenting om vilken cell de hör
   till; det avgörs av reglerna för tabeller nedan. Talen på en sida som
@@ -1662,6 +1664,15 @@ rad på högkant per stycke (`konvertering/hogkant.py`).
   gör inte talen obekräftade när den saknar siffror och resten av sidan
   läses likadant utan den
   ([Konvertering och kvalitet](#konvertering-och-kvalitet), ADR-0103).
+- **Snett och upp och ned i textlagret:** ett tecken som pdfminer räknar
+  som upprätt men vars baslinje lutar en halv grad eller mer, som ett
+  gatunamn längs en väg eller `73` upp och ned, står inte rakt
+  (`konvertering/snett.py`, ADR-0112). Det tas ur sidans flöde som text
+  på högkant och räknas på samma sätt för sidans tal. Tecknen skrivs sist,
+  efter texten på högkant, i textlagrets ordning: mer än en fjärdedels
+  teckenbredd från där förra tecknet slutar blir ett mellanslag, mer än
+  två teckenbredder en ny rad. Kursiv stil lutar tecknet men inte
+  baslinjen och står rakt.
 - **OCR:** ett ord i Tesseracts TSV med minst fyra tecken som är minst
   dubbelt så högt som brett står på högkant. Hela Tesseract-raden med
   ett sådant ord räknas till stämpeln, så att också korta ord som `Dnr`

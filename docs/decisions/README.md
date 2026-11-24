@@ -118,7 +118,7 @@ Regler för det här repot, utöver MADR:
 | 0100 | [Säkra rader läses, och en sida utan text att lagra märks `ointressant`](0100-sakra-rader-lases-och-resten-ar-ointressant.md) | accepted |
 | 0101 | [Statussidan visar andelen känd inläsning](0101-statussidan-visar-kand-inlasning.md) | accepted |
 | 0102 | [Täckningen mäts i CI med coverage, och kontrollen faller under ett golv](0102-tackningen-mats-i-ci-med-ett-golv.md) | accepted |
-| 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted |
+| 0103 | [Text på högkant utan siffror utanför tabellerna gör inte sidans tal obekräftade](0103-hogkant-utan-siffror-ger-bekraftade-tal.md) | accepted (0112 räknar text snett och upp och ned som text på högkant) |
 | 0104 | [Webbplatsens skript kontrolleras med ESLint och prövas i jsdom mot ögonblicksbilden](0104-webbplatsens-skript-med-eslint-och-jsdom.md) | accepted (0108 låter CI hålla målen, 0117 checkar in `package-lock.json`) |
 | 0105 | [Väg H kalibreras mot textlagersidor innan den får bekräfta tal i poolen](0105-vag-h-kalibreras-mot-textlagersidor.md) | accepted |
 | 0106 | [Skannade sidor får väg H:s tal när den lagrade texten har just dem](0106-skannade-sidor-far-vag-hs-tal.md) | accepted |
@@ -127,6 +127,7 @@ Regler för det här repot, utöver MADR:
 | 0109 | [Varje källa upptäcker sitt levande och sitt arkiv bakom samma gränssnitt](0109-kallorna-bakom-ett-gransnitt.md) | accepted |
 | 0110 | [Diarienumret efter etiketten läses också med förledet två gånger](0110-diarienumret-med-dubblerat-forled.md) | accepted |
 | 0111 | [Ett rutnät som inte går ihop till en tabell märker sidan osäker](0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md) | accepted |
+| 0112 | [Text snett och upp och ned räknas som text på högkant](0112-snett-och-upp-och-ned-som-hogkant.md) | accepted |
 | 0113 | [Varje sammanträde med kallelse får sin sida, i alla organ och alla år](0113-varje-sammantrade-med-kallelse-far-sin-sida.md) | accepted |
 | 0114 | [Fokusområden står under kommunmålets spår också när budgeten skrev målet på ett annat sätt](0114-fokusomraden-under-ett-omdopt-kommunmal.md) | proposed |
 | 0115 | [Hämtningen tar bara https och har tak, stora sidor renderas inte, och nattkörningens gren mergas bara när den ändrar data](0115-sakerhetsgranser-for-hamtning-och-nattkorning.md) | accepted (0117 låser de transitiva beroendena, 0118 tar bort skrivrätten från jobben som läser det hämtade) |

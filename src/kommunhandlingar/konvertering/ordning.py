@@ -1,4 +1,5 @@
-"""Krav: K6 i docs/02-KRAV.md, ADR-0038, ADR-0103. Test: tests/test_ordning.py.
+"""Krav: K6 i docs/02-KRAV.md, ADR-0038, ADR-0103, ADR-0112.
+Test: tests/test_ordning.py.
 
 Text som inte går att läsa i ordning: tecken som står på högkant inne i
 en tabell, eller tecken på samma rad som ritats ovanpå varandra, som en
@@ -7,7 +8,8 @@ kolumn som flyter in i nästa. pdfplumber blandar ihop dem till rader som
 bekräftade (docs/03-ARKITEKTUR.md#konvertering-och-kvalitet). Text på
 högkant utanför tabellerna läses för sig (K41) och räknas här bara när
 den har en siffra (ADR-0103); `textlagret.textsida` prövar att den inte
-ändrar hur resten av sidan läses.
+ändrar hur resten av sidan läses. Text som står snett eller upp och ned
+räknas som text på högkant (ADR-0112).
 """
 
 from collections import defaultdict
@@ -16,16 +18,17 @@ from itertools import pairwise
 from pdfplumber.page import Page
 
 from kommunhandlingar.konvertering.geometri import Ruta
+from kommunhandlingar.konvertering.snett import rakt
 from kommunhandlingar.konvertering.tabeller import i_tabell
 
 
 def i_oordning(sida: Page, rutor: list[Ruta]) -> bool:
     tecken = list(enumerate(c for c in sida.chars if not c["text"].isspace()))
-    pa_hogkant = [c for _, c in tecken if not c["upright"]]
-    if any(c["text"].isnumeric() or i_tabell(c, rutor) for c in pa_hogkant):
+    ej_raka = [c for _, c in tecken if not rakt(c)]
+    if any(c["text"].isnumeric() or i_tabell(c, rutor) for c in ej_raka):
         return True
     rader = defaultdict(list)
-    for i, c in (t for t in tecken if t[1]["upright"]):
+    for i, c in (t for t in tecken if rakt(t[1])):
         rader[round(c["top"])].append((i, c))
     i_lage = [sorted(r, key=lambda t: t[1]["x0"]) for r in rader.values()]
     return any(tacker(a, b) for r in i_lage for a, b in pairwise(r))
