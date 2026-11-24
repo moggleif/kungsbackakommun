@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.5f97773918fa403c6cd16717/1717425329
 sha256: 87af454bce6d5241287f6db041f81b5ed423c012d85aec28589bb175810f9509
 bytes: 8011604
 sidor: 312
-hamtad: 2026-11-22T21:08:28+00:00
-konverterad: 2026-11-22T21:09:17+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-24T23:34:38+00:00
+konverterad: 2026-11-24T23:35:28+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tom, ok, tom, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [44]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tom, ok, tom, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [44, 110, 121, 123, 129]
 figurer: [1, 4, 10, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 93, 101, 104, 109, 110, 123, 124, 125, 128, 134, 135, 156, 169, 170, 171, 272, 309]
 tolkade: []
 granskad: null
@@ -6003,23 +6003,11 @@ innovativa utbildningsinsatser i nära samverkan med arbetsgivare.
 
 enSkolverket publikation
 
-R
-A
-P
-P
-O
-R
-T
-2
-0
-2
-4
-\:
-3
-
 Studieavbrott                   och
 
 genomströmning                          i  sfi
+
+RAPPORT 2024:3
 
 <!-- sida 111 -->
 
@@ -6485,39 +6473,35 @@ betyg. Fördelat på studieväg och totalt.
 
 90%
 80%
-2
-2
-0
-2 70%
-s
-ru
-k 60%
-D-
-trö
+
+70%
+60%
 50%
-ftu
-ls
-m 40%
-o
-s
-le 30%
-d
-n
-A
+
+40%
+30%
 20%
+
 10%
 0%
 1   2   3   4    5   6   7   8   9   10
 Antal studieår
 Totalt      Studieväg 1 Studieväg 2 Studieväg 3
+
 Källa: Skolverket
+
 Genomströmningen    beror på vilken kurs eleven
 startade på
+
 Diagrammet ovan visar genomströmningen för elever som avslutat kurs D utifrån
 vilken studieväg eleven startade på. Tabellen nedan visar spridningen i hur många
+
 studieår som eleverna behövde för att avsluta kurs D utifrån vilken studieväg och
 kurs som eleverna påbörjade sina studier. Elever som startar sina studier på
+
 12  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Andel som slutf ört D-kurs 2022
 
 <!-- sida 122 -->
 
@@ -6575,49 +6559,16 @@ kursen under 2022 med godkänt och utan godkänt betyg fördelat på studieväg 
 450                                        11000
 400                                        10000
 9000
-ram
-m
 350
 8000
-ito
-ra vrä
-n
-la tn
-a tgilttin
-sm1
-2
-2
-3
-5
-0
-0
-5
-0
-0
-0
-0
-4
-5
-6
-7
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0 e ra g
-a tle
-d sruk
-la
-tn A
-o n                                         3000
-eG100
+300
+7000
+250                                        6000
+200                                        5000
+4000
+150
+3000
+100
 2000
 50                                         1000
 0                                          0
@@ -6634,16 +6585,24 @@ Skillnaderna mellan det genomsnittliga antalet närvarotimmar per studieväg och
 kurs tyder på att individens förutsättningar påverkar hur lång en kurs blir. Det tar
 längre tid för elever på studieväg 1 att slutföra sin utbildning eftersom de har kort
 eller ingen studiebakgrund.
+
 Antalet elevtimmar har ökat över tid
+
 Diagrammet nedan visar förändringen i det genomsnittliga antalet elevtimmar det
 tog att avsluta kursen 2022 i jämförelse med 2018. På samtliga kurser inom
 studieväg 1 och 2 har antalet elevtimmar ökat. På studieväg 3 har antalet
+
 elevtimmar minskat. Den största ökningen mellan 2018 och 2022 finns på
 studieväg 1 kurs C där det genomsnittliga antalet elevtimmar för att avsluta
 kursen ökat med 163 timmar. Den största ökningen av antalet elevtimmar per kurs
 sker mellan 2019 och 2021 för att sedan minska något 2022 för samtliga kurser
 och studievägar med undantag för 1C som fortsatt öka.
+
 14  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Antal kursdeltagare
+
+Genomsnittligt antal närvarotimmar
 
 <!-- sida 124 -->
 
@@ -6654,20 +6613,15 @@ Diagram 3. Förändring i det genomsnittliga antalet närvarotimmar per studiev�
 163
 
 150
-r
-a
-m
+
 99
-m                   94
-ito 100 80
-r
-a v                               60
-r
-ä
-n 50
-la
-tn                           16
-A                        1
+94
+100
+80
+60
+50
+16
+1
 0
 -16
 -29
@@ -6682,13 +6636,17 @@ har haft svårt att studera hemma på egen hand. Därför prioriterades
 närundervisning i mindre grupper för dessa elever. Detta ledde till att
 lärarresurserna inte räckte till under denna period och eleverna fick ungefär
 hälften av den reglerade minsta omfattningen av undervisningstiden.15
+
 Elevernas  förutsättningar påverkar
 genomströmningen
+
 Kursplanen för sfi är utformad utifrån att elevers förutsättningar skiljer sig åt när
+
 de påbörjar sfi. Avsikten är att en elev påbörjar sina studier inom den studieväg
 och på den kurs inom studievägen som bäst passar elevens individuella
 förutsättningar. Studieväg 1 vänder sig i första hand till personer med mycket kort
 studiebakgrund och studieväg 3 till dem som är vana att studera.16
+
 Diagram 4 visar antal år eleverna studerat i hemlandet innan de kom till Sverige.
 Endast 16 procent av de elever som har högst tre års studiebakgrund i hemlandet
 avslutade kurs D inom 5 år. För elever som har en studiebakgrund på 13 år eller
@@ -6698,6 +6656,8 @@ mer innan de kom till Sverige är andelen 43 procent.
 16 Skolverkets föreskrifter (SKOLFS 2017:91) om kursplan för kommunal vuxenutbildning i svenska för invandrare.
 
 15  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Antal närvarotimmar
 
 <!-- sida 125 -->
 
@@ -6739,10 +6699,7 @@ Diagram 5. Studieresultat till och med år 2022 för elever som påbörjade stud
 80%
 70%
 60%
-le
-d 50%
-n
-A
+50%
 40%
 30%
 20% 40%  39% 38%  37% 34%
@@ -6758,6 +6715,8 @@ Godkänd i kurs D Godkänd i lägre kurs Utan godkänt betyg
 Källa Skolverket
 
 16  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Andel
 
 <!-- sida 126 -->
 
@@ -6841,19 +6800,15 @@ studierna.
 Diagram 6. Studieresultat till och med år 2022 för elever som påbörjade sin utbildning
 2018 fördelat på kurs och studieväg.
 
-Samtliga   34%      14%  11% 4%     37%
+```osaker-tabell
+ Samtliga   34%      14%  11% 4%     37%
 
 Studieväg 3   44%        14%        42%
 
-g
-ä
-v
-e
-id
-u
-tS
 Studieväg 2 33%      15%    19%       33%
+
 Studieväg 1 12% 11% 23%     24%        31%
+```
 
 0%  10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
 Andel
@@ -6868,6 +6823,8 @@ beviljad ledighet, ska eleven anses ha avbrutit kursen, delkursen, nivån eller 
 om det finns synnerliga skäl.
 
 18  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Studieväg
 
 <!-- sida 128 -->
 
@@ -6901,36 +6858,12 @@ studieväg år 2022.
 
 80%                                        20000
 70%
-e ra
-g a tle
-d sru
-k
-le d n A 4
-5
-6
-0
-0
-0
-%
-%
-%
-1
-1
-0
-5
-0
-0
-0
-0
-0
-0
-e ra
-g a tle
-d sru
-k
-la tn A
+60%                                        15000
+
+50%
 
 ```osaker-tabell
+40%                                        10000
 30%         59%                    57%
         53%      52%
 20% 38%               47% 44%  39%         5000
@@ -6947,9 +6880,15 @@ Av diagrammet framgår att det från samtliga kurser var elever som avbröt sina
 studier under 2022 men att studieavbrotten var vanligast på studieväg 1 kurserna
 B, C och D respektive studieväg 3 kurs C där över hälften av de elever som
 avslutade eller gjorde studieavbrott under året gjorde studieavbrott.
+
 18 Observera att i detta diagram är alla kursdeltagare med som kalenderåret 2022 som avbröt eller avslutade sin kurs
 under samma år. Deltagare som fortsätter kursen efter 2022 ingår inte här.
+
 19  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Antal kursdeltagare
+
+Andel kursdeltagare
 
 <!-- sida 129 -->
 
@@ -6983,10 +6922,9 @@ huvudman.
 
 10%
 0%
-1852963074185296307418529630741852
-12234556778990122344566789901123
-1111111111111122222
+
 Källa: Skolverket
+
 Sett till variationen mellan kommungrupperna varierar inte andelen avbrott i
 samma utsträckning som mellan huvudmännen. Det är svårt att utifrån variationen
 mellan kommungrupperna dra några slutsatser om variationen. Kommungruppen
@@ -7007,6 +6945,74 @@ orsakerna till avbrotten. Eleverna har i dessa fall inte närvarat i undervisnin
 20 Kommungruppsindelningen är gjord av Sveriges Kommuner och Regioner. Se tabell 5 i bilaga 1.
 
 20  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+1
+
+8
+
+15
+
+22
+
+29
+
+36
+
+43
+
+50
+
+57
+
+64
+
+71
+
+78
+
+85
+
+92
+
+99
+
+106
+
+113
+
+120
+
+127
+
+134
+
+141
+
+148
+
+155
+
+162
+
+169
+
+176
+
+183
+
+190
+
+197
+
+204
+
+211
+
+218
+
+225
+
+232
 
 <!-- sida 130 -->
 
@@ -7227,10 +7233,8 @@ studieresultat.
 80%
 70%
 60%
-le
-d 50%                             47%
-n
-A
+50%                             47%
+
 40%    36%
 30%
 28%
@@ -7256,8 +7260,10 @@ D, det vill säga som slutfört utbildningen, studerade däremot i mycket högre
 utsträckning än övriga elever efter två år. Vanligast är att eleverna fortsätter
 studera inom komvux. En annan grupp elever befinner sig däremot varken i
 studier eller i arbete ett par år efter att de lämnat sfi. Detta gäller då framför allt
+
 för elever som har ett betyg i en lägre kurs i sfi eller de som avbröt studierna utan
 något godkänt betyg alls.
+
 Statistiken bekräftar att övergången till ett arbete är ganska hög även för elever
 som inte slutfört den avslutande kursen i sfi. Det är en högre andel män än
 kvinnor i den gruppen och ställningen på arbetsmarknaden för dessa elever
@@ -7272,6 +7278,8 @@ gruppen elever som studerar två år efter sfi.
 
 25  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
 
+Andel
+
 <!-- sida 135 -->
 
 Diagram 10. Etableringsstatus för män och kvinnor 2021 som avslutade sfi 2019.
@@ -7283,10 +7291,8 @@ Diagram 10. Etableringsstatus för män och kvinnor 2021 som avslutade sfi 2019.
 70%
 
 60%
-le
-d 50%
-n
-A
+50%
+
 39%
 40%
 30%
@@ -7306,6 +7312,8 @@ Kvinnor Män
 Källa: Skolverket
 
 26  STUDIEAVBROTT OCH GENOMSTRÖMNING I SFI
+
+Andel
 
 <!-- sida 136 -->
 
