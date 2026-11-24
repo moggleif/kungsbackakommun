@@ -46,35 +46,40 @@ jobs:
     outputs:
       gren: ${{ steps.gren.outputs.gren }}
     steps:
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
-        with:
-          name: gren-${{ inputs.del }}
-          path: ${{ runner.temp }}/gren
-      - id: gren
+      # Namnet och basen kommer ur jobbet som läst PDF:erna. Namnet ska vara
+      # den här körningens och delens gren, i vilket försök som helst, så
+      # att PR-jobbet kan köras om för sig. Basen ska vara en commit och
+      # inte en flagga till git.
+      - id: namnet
         env:
-          GH_TOKEN: ${{ secrets.NATTKORNING_TOKEN }}
-          SKRIVTOKEN: ${{ github.token }}
           DEL: ${{ inputs.del }}
           GREN: ${{ inputs.gren }}
           BAS: ${{ inputs.bas }}
         run: |
-          # Namnet och basen kommer ur jobbet som läst PDF:erna. Namnet ska
-          # vara den här körningens och delens gren, inte en annan gren.
-          MONSTER="^nattkorning/[0-9]{4}-[0-9]{2}-[0-9]{2}-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT-$DEL\$"
+          MONSTER="^nattkorning/[0-9]{4}-[0-9]{2}-[0-9]{2}-$GITHUB_RUN_ID-[0-9]+-$DEL\$"
           if ! [[ "$GREN" =~ $MONSTER && "$BAS" =~ ^[0-9a-f]{40}$ ]]; then
             echo "Grenen \`$GREN\` eller basen \`$BAS\` är inte den här körningens; inget pushas (ADR-0118)." \
               | tee -a "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
-          # Mains och basens commits och träd, utan filinnehåll, och sedan
-          # bundlens commits, utan att något ur repot körs. Bara vanliga
-          # filer och borttagningar under data/ och versioner/, inga
-          # namnbyten, länkar eller undermoduler, och inga merge-commits,
-          # så att diffen från merge-basen är det som mergas.
-          git init -q granskning && cd granskning
+          echo "artefakt=${GREN##*/}" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ steps.namnet.outputs.artefakt }}
+          path: ${{ runner.temp }}/gren
+      # Utan token: bundlen kommer från jobbet som läst PDF:erna. Bara
+      # vanliga filer och borttagningar under data/ och versioner/, inga
+      # namnbyten, länkar eller undermoduler, och inga merge-commits, så
+      # att diffen från merge-basen är det som mergas (ADR-0115).
+      - id: provning
+        env:
+          GREN: ${{ inputs.gren }}
+          BAS: ${{ inputs.bas }}
+        run: |
+          git init -q "$RUNNER_TEMP/granskning" && cd "$RUNNER_TEMP/granskning"
           git fetch -q --filter=blob:none "https://github.com/$GITHUB_REPOSITORY" \
             "+refs/heads/main:refs/remotes/main" "$BAS"
-          git fetch -q "$RUNNER_TEMP/gren/gren.bundle" "+HEAD:refs/remotes/gren"
+          git -c fetch.fsckObjects=true fetch -q "$RUNNER_TEMP/gren/gren.bundle" "+HEAD:refs/remotes/gren"
           COMMIT=$(git rev-parse refs/remotes/gren)
           MERGES=$(git rev-list --merges refs/remotes/main..refs/remotes/gren)
           ANDRAT=$(git -c core.quotePath=false diff --raw --no-renames --no-abbrev \
@@ -89,6 +94,16 @@ jobs:
               | tee -a "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
+          echo "commit=$COMMIT" >> "$GITHUB_OUTPUT"
+      - id: gren
+        env:
+          GH_TOKEN: ${{ secrets.NATTKORNING_TOKEN }}
+          SKRIVTOKEN: ${{ github.token }}
+          DEL: ${{ inputs.del }}
+          GREN: ${{ inputs.gren }}
+          COMMIT: ${{ steps.provning.outputs.commit }}
+        run: |
+          cd "$RUNNER_TEMP/granskning"
           git push -q "https://x-access-token:$SKRIVTOKEN@github.com/$GITHUB_REPOSITORY" \
             "$COMMIT:refs/heads/$GREN"
           echo "gren=$GREN" >> "$GITHUB_OUTPUT"

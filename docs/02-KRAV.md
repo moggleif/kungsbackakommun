@@ -411,8 +411,9 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
 - **Givet** en körning som hämtar längre än 15 minuter
 - **När** en del av steg 2 har gått i 15 minuter
 - **Så** gör den färdigt dokumentet den håller på med, och det klara
-  kontrolleras och checkas in innan nästa del börjar, så att ett avbrott
-  kostar högst en del
+  kontrolleras och checkas in innan nästa del börjar, så att ett fel
+  kostar högst en del; en runner som går förlorad, eller en körning som
+  avbryts för hand, kostar allt jobbet checkat in (ADR-0118)
   ([ADR-0088](decisions/0088-nattkorningen-sparar-var-femtonde-minut.md)).
 - **Givet** en kandidat som redan provats i en tidigare del av samma
   körning, också om den inte gick att hämta eller konvertera
@@ -429,7 +430,7 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
 
 - **Givet** en körning som har checkat in något, i ett repo med en token
   för körningen
-- **När** körningen slutar, också om den fallit efter en sparad del
+- **När** körningen slutar, också om den fallit efter en incheckad del
 - **Så** har den pushat sin gren (K95) och öppnat en PR från grenen som mergas av sig själv när
   kontrollerna gått igenom; utan token säger sammanfattningen att någon
   ska öppna PR:en (ADR-0052,

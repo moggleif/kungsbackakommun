@@ -57,9 +57,9 @@ som läser det hämtade och samtidigt låter körningen fungera som förut.
   `persist-credentials: false`. `spara.sh` kör datakontrollerna och
   checkar in efter varje del, som förut, men pushar inte.
 * **Till sist, också när jobbet fallit**, lägger `.github/actions/grenen`
-  jobbets commitar sedan utcheckningen i en git-bundle i artefakten
-  `gren-moten` eller `gren-arkiv`, och ger grenens namn och bas som
-  output. Inget som inte checkats in följer med, så bara kontrollerade
+  jobbets commitar sedan utcheckningen i en git-bundle i en artefakt med
+  grenens sista led som namn, som sparas i sju dagar, och ger grenens
+  namn och bas som output. Inget som inte checkats in följer med, så bara kontrollerade
   delar når grenen, som förut.
 * **PR-jobbet** (`.github/workflows/nattkorning-pr.yml`) är det enda med
   `contents: write`. Det kör på en ny runner utan utcheckning, hämtar
@@ -67,9 +67,12 @@ som läser det hämtade och samtidigt låter körningen fungera som förut.
   commitar ur artefakten, och kör ingenting ur repot eller ur det
   hämtade. Delen, `moten` eller `arkiv`, kommer från anroparen; grenens
   namn och bas kommer från jobbet som läst, så namnet ska vara
-  `nattkorning/<datum>-<körningens id>-<försök>-<del>`. Annars, eller om
-  grenen ändrar annat än data (ADR-0115), pushas ingenting. Sedan pushar
-  jobbet grenen med sin egen token och öppnar PR:en som förut.
+  `nattkorning/<datum>-<körningens id>-<försök>-<del>`, i vilket försök
+  som helst, så att PR-jobbet kan köras om för sig. Annars, eller om
+  grenen ändrar annat än data (ADR-0115), pushas ingenting. Bundlen
+  hämtas med `fetch.fsckObjects` och prövas i ett steg utan token. Sedan
+  pushar ett eget steg grenen med jobbets token och öppnar PR:en som
+  förut.
 * **Arkivets jobb startar när mötenas PR-jobb är klart**, från den gren
   det pushat, eller från `main` när den inte pushats. Ingenting pushar
   till mötenas gren efter dess PR-jobb, så frågan om
@@ -78,8 +81,9 @@ som läser det hämtade och samtidigt låter körningen fungera som förut.
 ### Consequences
 
 * Good, eftersom en övertagen tolk varken kan pusha en gren eller nå en
-  token som kan det. Det den kan göra är att lämna en annan bundle eller
-  ett annat grennamn, och båda prövas innan något pushas.
+  token som kan det. Det den kan göra är att lämna en annan bundle, ett
+  annat grennamn eller en artefakt under en annan dels namn, och allt
+  prövas innan något pushas.
 * Good, eftersom jobben i övrigt är som förut: delar om 15 minuter,
   datakontroller före varje incheckning, och en PR också när jobbet
   fallit efter en incheckad del.
@@ -87,12 +91,15 @@ som läser det hämtade och samtidigt låter körningen fungera som förut.
   mötenas PR-jobb.
 * Bad, eftersom en runner som försvinner mitt i ett jobb nu tar med sig
   allt jobbet checkat in, inte bara den pågående delen: bundlen laddas
-  upp när jobbet slutar. Ett fel, ett avbrott för hand och Actions gräns
-  på sex timmar kör ändå det sista steget, så det gäller bara när runnern
-  själv går förlorad.
-* Bad, eftersom en grens data nu också ligger som artefakt i körningen,
-  i upp till 90 dagar, som Actions sparar artefakter. Den är bara en kopia
-  av det som står på grenen.
+  upp när jobbet slutar. Ett fel i jobbet kör ändå det sista steget, så
+  ett fel kostar fortfarande högst en del (K11).
+* Bad, eftersom en körning som avbryts för hand inte längre lämnar
+  något på grenen. Förut stod de pushade delarna kvar utan PR; nu hoppas
+  PR-jobbet, som pushar, över. Ett avbrott för hand är en nödbroms
+  (ADR-0088), och det incheckade finns kvar i artefakten i sju dagar och
+  kan pushas för hand ([01-BIDRA.md](../01-BIDRA.md)).
+* Neutral, eftersom datat ligger som artefakt i körningen i sju dagar,
+  som en kopia av grenen.
 
 ### Confirmation
 
@@ -100,8 +107,12 @@ Kedjan prövades lokalt med ett bart repo som remote: en grund utcheckning
 som checkar in två delar, en bundle från basen, `main` som flyttas
 under tiden, och ett nytt repo som hämtar `main` och basen utan
 filinnehåll, hämtar bundlen, prövar diffen och pushar grenen. Grenen
-fick båda delarna, och ett grennamn för en annan del eller körning
-stoppades före pushen. Första riktiga nattkörningen efter mergen visar
+fick båda delarna. Arkivets bundle, byggd på den pushade mötesgrenen,
+pushades på samma sätt. Ett grennamn för en annan del eller gren, en bas
+som inte är en commit och en bundle som ändrar kod stoppades före
+pushen. Granskningen upprepade kedjan med en server som verkligen
+filtrerar bort filinnehållet: git hämtar då deltabaserna för bundlen
+från repot, vilket går eftersom repot är publikt. Första riktiga nattkörningen efter mergen visar
 att `moten`, `pr-moten`, `arkiv` och `pr-arkiv` går igenom och att
 PR:erna mergas automatiskt.
 
@@ -157,12 +168,26 @@ Invändningen att grennamnet kommer från jobbet som läst det hämtade
 besvarades så: namnet prövas mot körningens id, försök och del, och delen
 står i anroparen, så en övertagen tolk i arkivets jobb kan inte få
 PR-jobbet att pusha till mötenas gren eller till någon annan gren.
-Basen används bara för att hämta commits, och en bundle som inte bygger
-på den går inte att hämta.
+Basen används bara för att hämta commits och prövas så att den inte kan
+bli en flagga till git. Vad bundlen bygger på avgör inte prövningen: det
+gör diffen mot merge-basen med `main` och att den saknar merge-commits,
+och en bundle utan gemensam historik med `main` stoppas eftersom diffen
+då inte går att räkna ut.
 
 Ett eget jobb för pushen, skilt från PR-jobbet, vägdes och valdes bort:
 båda kör utan utcheckning och utan något ur det hämtade, och i samma
 jobb prövas grenen en gång, före pushen.
+
+Den oberoende granskningen (fas 6) fann två blockerande fel: K11
+lovade fortfarande att varje avbrott kostar högst en del, och ADR:en
+sade att ett avbrott för hand inte kostar mer än förut. Båda rättades,
+som konsekvenserna ovan. Granskningen visade också att PR-jobbet inte
+gick att köra om för sig, eftersom grennamnet krävde PR-jobbets eget
+försök; nu tas vilket försök som helst, och artefakten heter som grenen.
+Dess förslag om `fetch.fsckObjects`, prövning utan token, nyare versioner
+av artefaktens actions och sju dagars lagring togs med. Förslaget att
+läsa basen ur bundlen i stället för som output vägdes och valdes bort:
+det skulle tolka bundlens huvud med egen kod, och outputen prövas redan.
 
 Projektägaren bad att alla öppna issues körs och godkände på förhand att
 agentens rekommendationer följs och att PR:erna mergas vid grön CI.

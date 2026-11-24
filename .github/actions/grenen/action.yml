@@ -2,8 +2,9 @@
 # och bas som output. Körs också när jobbet fallit: varje commit har klarat
 # kontrollerna (K11, ADR-0088). Jobbet som läser PDF:erna kan inte pusha;
 # det gör PR-jobbet, efter att ha prövat bundlen (K95, ADR-0118).
+# Kräver GREN, BAS (utcheckningens commit) och RUNNER_TEMP i miljön.
 name: Grenen, om något checkats in
-description: Lägger commitarna sedan BAS i artefakten gren-DEL.
+description: Lägger commitarna sedan BAS i en artefakt med grenens sista led som namn.
 outputs:
   gren:
     description: grenen, tom när inget checkats in
@@ -22,10 +23,12 @@ runs:
           exit 0
         fi
         git bundle create "$RUNNER_TEMP/gren.bundle" HEAD "^$BAS"
-        { echo "gren=$GREN"; echo "bas=$BAS"; } >> "$GITHUB_OUTPUT"
-    - if: steps.grenen.outputs.gren != ''
-      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        { echo "gren=$GREN"; echo "bas=$BAS"; echo "artefakt=${GREN##*/}"; } >> "$GITHUB_OUTPUT"
+    # Sju dagar, så att datat går att pusha för hand om PR-jobbet inte
+    # gjorde det (01-BIDRA.md).
+    - if: always() && steps.grenen.outputs.gren != ''
+      uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
       with:
-        name: gren-${{ env.DEL }}
+        name: ${{ steps.grenen.outputs.artefakt }}
         path: ${{ runner.temp }}/gren.bundle
-        if-no-files-found: error
+        retention-days: 7

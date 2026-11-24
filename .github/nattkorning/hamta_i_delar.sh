@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Steg 2 för en kommunfil i delar om 15 minuter. Efter varje del checkas
-# det klara in, så att ett avbrott kostar högst en del (K11, ADR-0088).
+# det klara in, så att ett fel kostar högst en del (K11, ADR-0088,
+# ADR-0118).
 # Steg 2 avslutar med kod 4 (MER_I_NASTA_DEL i hamta.py) när delen tog
 # slut och kandidater väntar inom budgeten; varje annan kod än 0 och 4
 # stoppar körningen.

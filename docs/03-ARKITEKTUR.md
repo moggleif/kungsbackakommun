@@ -124,7 +124,7 @@ två startas står i K11.
   `moten` kör upptäckten och steg 2 för varje kommunfil i `kommuner/`
   utan omkonvertering (`--utan-omkonvertering`), och checkar in; `arkiv`
   startar när dess gren pushats, från den eller, utan gren, från `main`.
-  Grenen finns också när `moten` föll efter en sparad del. Det gör upptäckten om och kör steg 2 för de
+  Grenen finns också när `moten` föll efter en incheckad del. Det gör upptäckten om och kör steg 2 för de
   levande källorna, som då har omkonverteringen kvar och det som kommit
   sedan mötenas jobb, och sedan detsamma med `--arkiv`. Varje
   jobb checkar in och får sin PR för sig. De levande källornas steg är
@@ -144,8 +144,8 @@ två startas står i K11.
   när jobbet startar och har körningens försök med, så att en omkörning
   får en egen gren. `.github/actions/grenen` lägger till sist, också när
   jobbet fallit, jobbets commitar sedan utcheckningen i en git-bundle i
-  artefakten `gren-moten` eller `gren-arkiv`, och ger grenens namn och
-  bas som output.
+  en artefakt med grenens sista led som namn, som sparas i sju dagar, och
+  ger grenens namn och bas som output.
   Stoppas upptäckten i en kommuns levande källor av en källsida (kod 3)
   hoppar jobbet över kommunens levande steg 2, skriver det i
   sammanfattningen och går vidare (ADR-0061); upptäckten skriver inget i
@@ -180,8 +180,9 @@ två startas står i K11.
   når `main` genom en PR, där "Ren kod och tester" kör samma
   kontroller. Har körningen inte ändrat något pushas ingen gren. Mergen
   till `main` bygger om webbplatsen. Grenen får sin PR också när jobbet
-  fallit efter en sparad del, eftersom varje sparad del klarat
-  kontrollerna, men inte när körningen avbrutits för hand.
+  fallit efter en incheckad del, eftersom varje incheckad del klarat
+  kontrollerna, men inte när körningen avbrutits för hand: då pushas
+  ingenting, och det incheckade finns bara i artefakten (ADR-0118).
 - **Jobben som läser det hämtade kan inte pusha** (K95,
   [ADR-0118](decisions/0118-nattkorningens-tolkning-utan-skrivratt.md)).
   `moten` och `arkiv` har `contents: read` och checkar ut med
@@ -192,7 +193,8 @@ två startas står i K11.
   som båda jobben anropar, och det enda med `contents: write`. Jobbet
   hämtar `main`s och basens commits och träd utan filinnehåll, och sedan
   bundlens commitar ur artefakten, och kör ingenting ur repot. Det pushar
-  ingenting om grennamnet inte är körningens och delens, eller om grenen
+  ingenting om grennamnet inte är körningens och delens, i något försök,
+  eller om grenen
   ändrar något annat än vanliga filer i `data/` och `versioner/` eller har
   en merge-commit (K92, ADR-0115). Annars pushar det grenen med jobbets
   egen token.
