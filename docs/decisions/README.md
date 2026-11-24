@@ -36,8 +36,8 @@ inte här. Regionens beslut står i dess PR-texter.
 | 0122 | [regionhalland PR #75](https://github.com/moggleif/regionhalland/pull/75) |
 | 0123 | [regionhalland PR #76](https://github.com/moggleif/regionhalland/pull/76) |
 
-En ny ADR här tar nästa nummer som varken står i indexet eller i
-tabellen.
+Ett nummer i tabellen är upptaget också om PR:en där stängs utan merge.
+En ny ADR här tar numret efter det högsta i indexet och i tabellen.
 
 ## Index
 

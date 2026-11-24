@@ -23,8 +23,9 @@ inte här. Regionens krav står i dess PR-texter.
 | K99  | [regionhalland PR #75](https://github.com/moggleif/regionhalland/pull/75) |
 | K100 | [regionhalland PR #76](https://github.com/moggleif/regionhalland/pull/76) |
 
-Ett nytt krav här tar nästa nummer som varken står i den här filen eller
-i tabellen.
+Ett nummer i tabellen är upptaget också om PR:en där stängs utan merge.
+Ett nytt krav här tar numret efter det högsta i den här filen och i
+tabellen.
 
 ## K1 — En kommun läggs till med konfiguration
 
