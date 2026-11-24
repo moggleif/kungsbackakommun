@@ -2784,6 +2784,7 @@ inte nå CI eller nattkörningen utan en ändring i repot.
 - **Givet** de installerade Python-paketen
 - **När** CI letar efter kända sårbarheter
 - **Så** granskas de versioner som står i `uv.lock`.
+
 ## K95 — Jobben som läser det hämtade kan inte pusha
 
 [ADR-0118](decisions/0118-nattkorningens-tolkning-utan-skrivratt.md).
