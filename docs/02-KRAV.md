@@ -2127,7 +2127,8 @@ och [Paragraferna och ärendena](03-ARKITEKTUR.md#paragraferna-och-ärendena); s
 - **Givet** poolens protokoll
 - **När** webbplatsen byggs
 - **Så** finns `sok.json` i webbplatsens rot med en grupp per kommun,
-  *Protokollen i* och kommunens namn, och en post per paragraf, nyast först, med
+  *Protokollen i* och kommunens namn (dokumentens grupp står i K96), och
+  en post per paragraf, nyast först, med
   paragrafens rubrik, länken till dess sida i protokollet, organet,
   datumet, paragrafens nummer och diarienumren.
 - **Givet** knappen *Sök* i projektets sajtrad
