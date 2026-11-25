@@ -113,9 +113,12 @@ samma form. En egen modul vore värd det först om kommandot ska göra mer
 än att läsa filen, till exempel pröva `hamtning.toml`; det har inget
 datarepo bett om.
 
-Kommandot fångar bara `Konfigurationsfel` och `tomllib.TOMLDecodeError`,
-de två fel som säger att filen inte följer schemat. En fil som inte finns
-ger som förut ett fel från Python.
+Kommandot fångar bara `Konfigurationsfel`, `tomllib.TOMLDecodeError` och
+`UnicodeDecodeError`, felen som säger att filens innehåll inte går att
+läsa som en kommunfil; granskningen visade att en fil i Latin-1 annars gav
+en traceback. En fil som inte finns, en katalog eller ett glob utan träff
+ger som förut ett fel från Python, eftersom det är fel i anropet och inte i
+kommunfilen.
 
 Importen `from kommunhandlingar.konfiguration import las` står kvar i
 gränssnittet. När Region Hallands kontroll använder kommandot importerar

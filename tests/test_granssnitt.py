@@ -73,8 +73,8 @@ class Kommandona(unittest.TestCase):
                 text=True,
                 check=False,
             )  # fmt: skip
+        # Utskriften prövas i tests/test_konfiguration_kommando.py (K110).
         self.assertEqual(kontroll.returncode, 1, kontroll.stderr)
-        self.assertIn("exempelby.toml: Exempelby kommun", kontroll.stdout)
         self.assertIn(f"Stoppad: {trasig}: ", kontroll.stderr)
 
     def test_webbplatsen_ar_ett_kommando(self):

@@ -109,16 +109,16 @@ def kalla_av(post: dict, nummer: int, organ_id: list[str]) -> adaptrarna.Kalla:
     return omslag(tolkning(post, organ_id, var))
 
 
-def kontrollera(kommunfiler: list[str]) -> None:
+def prova_kommunfiler(kommunfiler: list[str]) -> None:
     if not kommunfiler:
         sys.exit("Användning: python -m kommunhandlingar.konfiguration <kommunfil> …")
     for kommunfil in map(Path, kommunfiler):
         try:
             kommun = las(kommunfil)
-        except (Konfigurationsfel, tomllib.TOMLDecodeError) as fel:
+        except (Konfigurationsfel, tomllib.TOMLDecodeError, UnicodeDecodeError) as fel:
             sys.exit(f"Stoppad: {kommunfil}: {fel}")
         print(f"{kommunfil}: {kommun.namn}, {len(kommun.organ)} organ")
 
 
 if __name__ == "__main__":
-    kontrollera(sys.argv[1:])
+    prova_kommunfiler(sys.argv[1:])

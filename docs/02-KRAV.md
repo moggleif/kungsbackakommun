@@ -2907,7 +2907,8 @@ att skriva Python i arbetsflödet.
 - **När** `python -m kommunhandlingar.konfiguration <kommunfil> …` körs
 - **Så** står en rad per fil med filen, kommunens namn och antalet organ,
   och slutkoden är 0.
-- **Givet** en kommunfil som inte följer schemat eller inte är giltig TOML
+- **Givet** en kommunfil som inte följer schemat, inte är giltig TOML eller
+  inte är UTF-8
 - **När** kommandot körs
 - **Så** stoppar det med "Stoppad: ", filen och felet, utan traceback, och
   slutkoden är skild från 0.
