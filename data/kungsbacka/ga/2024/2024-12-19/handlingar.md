@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2eac78ea193953fe280606c8/1734005606
 sha256: 50d76ceb2e4467dcb215ac7bcac88ac35a0071a6d98fabc018664e1e045c1c99
 bytes: 12960305
 sidor: 243
-hamtad: 2026-11-22T21:15:22+00:00
-konverterad: 2026-11-22T21:16:13+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-24T23:42:59+00:00
+konverterad: 2026-11-24T23:43:51+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [221, 222, 223, 224, 225, 226, 232]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [95, 215, 221, 222, 223, 224, 225, 226, 227, 228, 232]
 figurer: [9, 18, 20, 22, 44, 66, 78, 79, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 97, 98, 99, 100, 155, 221, 222, 223, 224, 225, 226, 227]
 tolkade: []
 granskad: null
@@ -3586,48 +3586,17 @@ En utredning våren 2023 föreslog en prototyp med tydlig profilering av skolorn
 ledningsgrupp Gymnasium (LGY), likvärdiga ekonomiska förutsättningar och ändring i
 programplacering.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - - B n
-K
-a e
-u
-t s
-n
-u l
-g
-r u
-s
-v t
-b
-e e
-a
-t t
-c
-e
-k
-b n
-a
-l s e
-k
-k
-o
-v a
-m
-a p
-m
-t s t
-u
-p
-n
-e r r o b g j r u a d m a m te e k t n e ik n p b r a o rt g r p a å m A m ra e n t ä e s n g b y a m rt n p a å s i E et l . o M f L in in s d k ä a l n v d s e g s y ö m kt n r a y s c i k u m fö r o c d h e ssa program
-U    Ekonomi
-K
+Beslutet blev att erbjuda teknikprogrammet enbart på Elof Lindälvs gymnasium och
+naturvetenskapsprogrammet enbart på Aranäsgymnasiet. Minskande söktryck för dessa program
+
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 96 -->
 
@@ -7334,18 +7303,14 @@ FÖRVALTNINGSRÄTTENS  AVGÖRANDE
 
 Förvaltningsrätten avslår ansökan.
 
-5
-7     Besöksadress    Öppettider  Postadress     E-post
-5
-2
-2     Tegeluddsvägen 1 måndag–fredag             (e-post borttagen)
-8
-1                     08:00–16:00 115 76 Stockholm
-d     Telefon                                    Webbplats
-I
-k.    08-561 680 00                              www.domstol.se/forvaltningsratten-i-
-o
-D                                                stockholm/
+Besöksadress    Öppettider  Postadress     E-post
+Tegeluddsvägen 1 måndag–fredag             (e-post borttagen)
+08:00–16:00 115 76 Stockholm
+Telefon                                    Webbplats
+08-561 680 00                              www.domstol.se/forvaltningsratten-i-
+stockholm/
+
+Dok.Id 1822575
 
 <!-- sida 216 -->
 
@@ -7907,13 +7872,13 @@ Hur man  överklagar
 FR-03
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Vill du att beslutet ska ändras i någon del kan ta upp ditt överklagande (läs mer om
-du överklaga. Här får du veta hur det går till. prövningstillstånd längre ner).
+Vill du att beslutet ska ändras i någon del kan
+du överklaga. Här får du veta hur det går till.
 
 Överklaga skriftligt inom 3 veckor
+
 Tiden räknas oftast från den dag som du fick
 del av det skriftliga beslutet. I vissa fall räknas
-
 tiden i stället från beslutets datum. Det gäller
 om beslutet avkunnades vid en muntlig
 förhandling, eller om rätten vid förhandlingen
@@ -7921,11 +7886,32 @@ gav besked om datum för beslutet.
 
 För en part som företräder det allmänna (till
 exempel myndigheter) räknas tiden alltid från
-5 0    den dag domstolen meddelade beslutet.
-0-
-2
-0
-2
+den dag domstolen meddelade beslutet.
+
+Observera att överklagandet måste ha kommit
+in till domstolen när tiden går ut.
+
+Vilken dag går tiden ut?
+Sista dagen för överklagande är samma veckodag
+som tiden börjar räknas. Om du exempelvis fick
+del av beslutet måndagen den 2 mars går tiden ut
+måndagen den 23 mars.
+Om sista dagen infaller på en lördag, söndag eller
+helgdag, midsommarafton, julafton eller nyårs-
+afton, räcker det att överklagandet kommer in
+nästa vardag.
+
+Så här gör du
+
+1\. Skriv förvaltningsrättens namn och
+målnummer.
+
+2\. Förklara varför du tycker att beslutet ska
+ändras. Tala om vilken ändring du vill ha
+och varför du tycker att kammarrätten ska
+
+ta upp ditt överklagande (läs mer om
+prövningstillstånd längre ner).
 
 3\. Tala om vilka bevis du vill hänvisa till.
 Förklara vad du vill visa med varje bevis.
@@ -7936,100 +7922,34 @@ finns i målet.
 organisationsnummer.
 Lämna aktuella och fullständiga uppgifter
 om var domstolen kan nå dig: postadresser,
-
 e-postadresser och telefonnummer.
+
 Om du har ett ombud, lämna också
 ombudets kontaktuppgifter.
 
-g •    Observera att överklagandet måste ha kommit 5. Skicka eller lämna in överklagandet till
-n
-ilk cev in till domstolen när tiden går ut. förvaltningsrätten. Du hittar adressen i
-tu                                          beslutet.
-slo
-tsm
-o       Vilken dag går tiden ut?
-d
-rö
-f
-.d
-Sista dagen för överklagande är samma veckodag Vad händer sedan?
-v A     som tiden börjar räknas. Om du exempelvis fick
-,tek
-del av beslutet måndagen den 2 mars går tiden ut
-Förvaltningsrätten kontrollerar att överklagan-
-rev
-slo     måndagen den 23 mars.             det kommit in i rätt tid. Har det kommit in för
-tsm                                       sent avvisar domstolen överklagandet. Det
-o       Om sista dagen infaller på en lördag, söndag eller
-D                                         innebär att beslutet gäller.
-v       helgdag, midsommarafton, julafton eller nyårs-
-a
-tarecu
-d
-a
-n
-f
-ä
-t
-s
-o
-t
-n
-a
-,
-v
-r
-a
-ä
-r
-c
-d
-k
-a
-e
-g
-r
-.
-det att överklagandet kommer in
-Om överklagandet kommit in i tid, skickar
-o
-rP                                        förvaltningsrätten överklagandet och alla
-T
-•
-handlingar i målet vidare till kammarrätten.
-P
-\-
+5\. Skicka eller lämna in överklagandet till
+förvaltningsrätten. Du hittar adressen i
+beslutet.
 
-v
-3
-d ite  Så här gör du                      Har du tidigare fått brev genom förenklad
-d n                                       delgivning kan även kammarrätten skicka brev
-a g    1. Skriv förvaltningsrättens namn och
-a                                         på detta sätt.
-lk
-re       målnummer.
-v
-Ö
-–
-3 0    2. Förklara varför du tycker att beslutet ska
-R-
-ed
-F        ändras. Tala om vilken ändring du vill ha
-n ag     och varför du tycker att kammarrätten ska
-alk
-rev
-ö
-rö
-g
-ra
-f
-n
-in siv
-n
+Vad händer sedan?
+Förvaltningsrätten kontrollerar att överklagan-
+det kommit in i rätt tid. Har det kommit in för
+sent avvisar domstolen överklagandet. Det
+innebär att beslutet gäller.
+
+Om överklagandet kommit in i tid, skickar
+förvaltningsrätten överklagandet och alla
+handlingar i målet vidare till kammarrätten.
+
+Har du tidigare fått brev genom förenklad
+delgivning kan även kammarrätten skicka brev
+på detta sätt.
+
 Sida 1 av 2
-A
 
 www.domstol.se
+
+Anvisningar för överklagande FR-03 – Överklagandetid 3 v - PT • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2020-05
 
 <!-- sida 228 -->
 
@@ -8060,76 +7980,18 @@ Om du inte får prövningstillstånd gäller det
 överklagade beslutet. Därför är det viktigt att i
 överklagandet ta med allt du vill föra fram.
 
-5 0    Vill du veta mer?
-0-
-2
-0
-g
-2
-•
+Vill du veta mer?
 Ta kontakt med förvaltningsrätten om du har
-n ilk  frågor. Adress och telefonnummer hittar du på
-cev
-tu     första sidan i beslutet.
-slo
-tsm
-o      Mer information finns på www.domstol.se.
-d
-rö
-f
-.d
-v
-A
-,tek
-rev
-slo
-tsm
-o
-D
-v
-arecu
-a
-t
-d
-o
-rP
-T
-•
-P
-v
-\-
-3
-d
-ite
-d
-n
-a
-g
-a
-lk
-re
-v
-Ö
-–
-3
-0
-R-
-F
-ed
-n
-ag
-alk
-rev
-ö
-rö
-f
-rag
-n
-in                                                               Sida 2 av 2
-siv
-n
-A
+frågor. Adress och telefonnummer hittar du på
+första sidan i beslutet.
+
+Mer information finns på www.domstol.se.
+
+Sida 2 av 2
+
 www.domstol.se
+
+Anvisningar för överklagande FR-03 – Överklagandetid 3 v - PT • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2020-05
 
 <!-- sida 229 -->
 

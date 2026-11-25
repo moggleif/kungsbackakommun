@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1587654f19ddca7e89d7c423/1777959573
 sha256: 7ec563aa305bbd0f8e69043e232099b83d7fb9081aa4c19a9734b0640e21395d
 bytes: 7050812
 sidor: 121
-hamtad: 2026-11-22T22:45:44+00:00
-konverterad: 2026-11-22T22:55:31+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T01:27:51+00:00
+konverterad: 2026-11-25T01:37:34+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 5, 9, 11, 12, 16, 18, 19, 20, 21, 23, 28, 29, 31, 37, 39, 47, 48, 50, 52, 53, 54, 55, 60, 64, 69, 70, 74, 78, 81, 88, 93, 96, 104, 107, 110, 111, 112, 113, 114, 116, 118]
+tal_obekraftade: [1, 2, 3, 4, 5, 6, 9, 11, 12, 13, 16, 18, 19, 20, 21, 23, 28, 29, 31, 33, 34, 36, 37, 39, 44, 47, 48, 50, 52, 53, 54, 55, 60, 64, 66, 69, 70, 73, 74, 78, 80, 81, 87, 88, 93, 96, 104, 105, 107, 110, 111, 112, 113, 114, 116, 118]
 figurer: [11, 18, 43, 44, 47, 75, 110, 111, 112, 116, 117, 118]
 tolkade: []
 granskad: null
@@ -312,7 +312,7 @@ www.kungsbacka.se
 KUNGSBACKA KOMMUN
 2 (6)
 
-\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 50% uppskattningsvis, en del av dessa har fått
+\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 5090 uppskattningsvis, en del av dessa har fått
 återkoppling att bli bättre på systematiken kring hot o våld, anpassningar och även andra lokala behov
 
 \- Sveriges lärare och kommunal påtalar att de gärna ser att arbetsgivaren inbjuder till samverkan till de
@@ -670,7 +670,7 @@ www.kungsbacka.se
 KUNGSBACKA KOMMUN
 2 (6)
 
-\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 50% uppskattningsvis, en del av dessa har fått
+\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 5090 uppskattningsvis, en del av dessa har fått
 återkoppling att bli bättre på systematiken kring hot o våld, anpassningar och även andra lokala behov
 
 \- Sveriges lärare och kommunal påtalar att de gärna ser att arbetsgivaren inbjuder till samverkan till de
@@ -2025,7 +2025,7 @@ elever från andra kommuner tas emot i mån av plats.
 För elever som bor växelvis hos vårdnadshavare i olika kommuner är det
 folkbokföringsadressen som avgör bosättningskommun.
 
-Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 2 §
+Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 28
 (asylsökande, papperslösa, fri rörlighet enligt EU/EES, tidsbegränsat
 uppehållstillstånd samt stadigvarande vistas enligt skolförordningen 2011:185) har
 samma rätt till skolplacering och ska likställas med barn som är folkbokförda i
@@ -3432,7 +3432,7 @@ Om elev flyttar eller byter skola
 
 För elever som flyttar eller byter skola så sker en förnyad prövning om rätten till
 skolskjuts som utgår ifrån elevens nya folkbokföringsadress. Vårdnadshavare ska
-göra en ny ansökan. Enligt skollagen 10 kap 38 § har en elev som har tagits emot i
+göra en ny ansökan. Enligt skollagen 10 kap 38 8 har en elev som har tagits emot i
 en kommuns grundskola ett visst läsår rätt att gå kvar hela läsåret, även om de
 förhållanden som låg till grund för mottagandet ändras under läsåret. Om det för
 eleven återstår endast en årskurs, har eleven också rätt att gå kvar sista årskursen.
@@ -4056,7 +4056,7 @@ de extra anpassningar som skolans personal har bedömt att eleverna är i
 behov av. För perioden den 9 februari till den 8 maj 2026 ska rektorn
 redovisa: vilka behov som eleverna som riskerar att inte nå minst betyget
 E har, vilka elever som har behov av extra anpassningar samt vilka
-anpassningar som de har fått. (3 kap. 5 § skollagen).
+anpassningar som de har fått. (3 kap. 5 8 skollagen).
 
 1\. Ange tydligt vilka åtgärder som vidtagits för att avhjälpa respektive
 påtalad brist. Ange följande:
@@ -4074,7 +4074,7 @@ a) Vad som har gjorts och hur det har gjorts
 
 Med anledning av Skolinspektionens beslut har Särö skola 6-9 genomfört ett riktat arbete
 för att säkerställa att elever som är i behov av extra anpassningar identifieras och ges
-sådana inom ramen för ordinarie undervisning, i enlighet med 3 kap. 5 § skollagen samt
+sådana inom ramen för ordinarie undervisning, i enlighet med 3 kap. 5 8 skollagen samt
 Skolverkets allmänna råd.
 
 Arbetet har haft fokus på att skapa en gemensam förståelse i personalgruppen samt

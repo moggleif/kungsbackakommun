@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.664df97b1a13049acff3d770/1792007115
 sha256: e4f7e9ddb5a90ec38b6e0625ed8b2517af741d91a3add8b2c647eb9446295f7a
 bytes: 7088801
 sidor: 292
-hamtad: 2026-11-22T21:37:11+00:00
-konverterad: 2026-11-22T21:37:52+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T00:02:49+00:00
+konverterad: 2026-11-25T00:03:30+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [8, 11, 13, 16, 19, 278]
 figurer: [10, 12, 15, 18, 22, 55, 279, 286]
 tolkade: []
 granskad: null
@@ -222,17 +222,14 @@ En omdisponering ger:
 \- Möjlighet till flexibla lärmiljöer som kan stödja flera program.
 \- Stärkt helhetsfunktion för skolan i linje med Kungsbackas mål om hållbar resursanvändning.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-K ungsbacka kommun
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 9 -->
 
@@ -348,23 +345,16 @@ VAD FÅR NY LOKALFUNKTION FÖR KONSEKVENS  PÅ NUVARANDE  VERKSAMHET?
 Ingen väsentlig - åtgärder kan planeras utan ändrad lokalisering för programmet.
 
 KONCEPTSHANDLINGAR   FINNS ATT TILLGÅ. (JA/NEJ)
+Nej.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-N
-K u
-e
-n
-j.
-g sbacka kommun
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 12 -->
 
@@ -447,17 +437,14 @@ omdisponeras. Salen kan då nyttjas som vanlig teorisal för AGY.
 KONCEPTSHANDLINGAR   FINNS ATT TILLGÅ. (JA/NEJ)
 Nej – behöver tas fram.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-K ungsbacka kommun
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 14 -->
 
@@ -562,39 +549,16 @@ lösningen).
 • Ljudmiljö: Otillräcklig ljudisolering i vissa ytor mellan vägg/tak. Enligt AML 2005:16 skall
 bullernivåer begränsas och särskild hänsyn skall tas vid ljudkänslighet. Enligt BBR så skall
 skollokaler enligt normerna uppnå minst ljudklass C, men för känsliga grupper rekommenderas
+ljudklass B eller A
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-K un
-lj
-g
-u
-s
-d
-ba
-k
-c
-l
-k
-a
-a
-s s
-k o
-B
-m m
-el
-u
-l
-n
-e r A
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 17 -->
 
@@ -723,35 +687,16 @@ VAD ÄR DEN FÖRVÄNTANDE  NYTTAN?
 • Ökad måluppfyllelse och trygghet för eleverna
 
 • Förbättrad arbetsmiljö för personal
+• Minskad risk för avhopp, externa placeringar och kostsamma individuella lösningar
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-K un
-•
-g sba
-M
-cka
-in
-k
-s
-o
-k
-m
-a
-m
-d
-u
-r
-n
-i sk för avhopp, externa placeringar och kostsamma individuella lösningar
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 20 -->
 
@@ -2118,19 +2063,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2           3          4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 4 Hög 5 Medel Totalt: 9
 
 2
+
+Sannolikhet
 
 <!-- sida 56 -->
 
@@ -8732,118 +8675,15 @@ Förvaltningschef har ställt frågan om det finns förutsättningar för att ge
 förändringen fullt ut nu direkt, eller om det behöver göras ”omtag”.
 
 Gymnasium & Arbetsmarknad                                    Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon vx 0300-83 40 00
+Fax 0300-83 41 64
+(e-post borttagen)
+www.kungsbacka.se
 
-v
-001B
-U K
-5002
-,0
-1 5
-.1
-1 2 - -
-gymnasie.vuxenu
-T
-tb
-S
-e
-i
-l
-t
-l
-e
-a
-d
-f
-d
-n
-o
-s
-i
-4
-n
-n
-h
-F
-3
-g
-u
-v
-a
-4
-@
-s
-x
-x
-e
-8
-t
-0
-0
-k
-1
-,
-B
-3
-3
-u
-S
-K
-0
-0
-n
-e
-t
-0
-0
-g
-s
-o
-u ö
-\-
-\-
-s
-r
-n
-8
-8
-b
-g
-k g
-3
-3
-a
-a
-s s a
-c
-t
-b
-4
-4
-a
-d
-k
-a
-1
-n
-0
-r
-a
-c e
-.
-6
-3
-0
-k
-s
-s
-7
-4
-0
-e
-a s
-m
-roF                                                               www.kungsbacka.se
-inu
+uniForm KUB100 v 1.0, 2005-11-25
 
 <!-- sida 279 -->
 

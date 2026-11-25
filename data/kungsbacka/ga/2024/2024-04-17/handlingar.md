@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2f18dd4b18ecb6094451bb/171281514625
 sha256: 8b160f62a894d21d7778e24a5d3fe3fa54f72730b8ae4bd794c5554291f5f47a
 bytes: 11698784
 sidor: 314
-hamtad: 2026-11-22T21:03:23+00:00
-konverterad: 2026-11-22T21:07:15+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-24T23:29:37+00:00
+konverterad: 2026-11-24T23:33:30+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [188, 189, 191, 192, 248, 249, 250, 253, 254, 255, 256, 257, 258, 259, 260, 261, 263, 265, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282]
+tal_obekraftade: [188, 189, 191, 192, 201, 204, 205, 206, 248, 249, 250, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 263, 265, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 297]
 figurer: [16, 17, 18, 19, 20, 31, 184, 186, 187, 204, 206, 210, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 231, 232, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 290, 291, 292, 293, 294, 295, 296, 298]
 tolkade: []
 granskad: null
@@ -6119,18 +6119,14 @@ FÖRVALTNINGSRÄTTENS  AVGÖRANDE
 
 Förvaltningsrätten avslår ansökan.
 
-2
-9     Besöksadress    Öppettider  Postadress     E-post
-6
-6
-8     Tegeluddsvägen 1 måndag–fredag             (e-post borttagen)
-6
-1                     08:00–16:00 115 76 Stockholm
-d     Telefon                                    Webbplats
-I
-k.    08-561 680 00                              www.domstol.se/forvaltningsratten-i-
-o
-D                                                stockholm/
+Besöksadress    Öppettider  Postadress     E-post
+Tegeluddsvägen 1 måndag–fredag             (e-post borttagen)
+08:00–16:00 115 76 Stockholm
+Telefon                                    Webbplats
+08-561 680 00                              www.domstol.se/forvaltningsratten-i-
+stockholm/
+
+Dok.Id 1686692
 
 <!-- sida 202 -->
 
@@ -6235,13 +6231,13 @@ Hur man  överklagar
 FR-03
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Vill du att beslutet ska ändras i någon del kan ta upp ditt överklagande (läs mer om
-du överklaga. Här får du veta hur det går till. prövningstillstånd längre ner).
+Vill du att beslutet ska ändras i någon del kan
+du överklaga. Här får du veta hur det går till.
 
 Överklaga skriftligt inom 3 veckor
+
 Tiden räknas oftast från den dag som du fick
 del av det skriftliga beslutet. I vissa fall räknas
-
 tiden i stället från beslutets datum. Det gäller
 om beslutet avkunnades vid en muntlig
 förhandling, eller om rätten vid förhandlingen
@@ -6249,11 +6245,32 @@ gav besked om datum för beslutet.
 
 För en part som företräder det allmänna (till
 exempel myndigheter) räknas tiden alltid från
-5 0    den dag domstolen meddelade beslutet.
-0-
-2
-0
-2
+den dag domstolen meddelade beslutet.
+
+Observera att överklagandet måste ha kommit
+in till domstolen när tiden går ut.
+
+Vilken dag går tiden ut?
+Sista dagen för överklagande är samma veckodag
+som tiden börjar räknas. Om du exempelvis fick
+del av beslutet måndagen den 2 mars går tiden ut
+måndagen den 23 mars.
+Om sista dagen infaller på en lördag, söndag eller
+helgdag, midsommarafton, julafton eller nyårs-
+afton, räcker det att överklagandet kommer in
+nästa vardag.
+
+Så här gör du
+
+1\. Skriv förvaltningsrättens namn och
+målnummer.
+
+2\. Förklara varför du tycker att beslutet ska
+ändras. Tala om vilken ändring du vill ha
+och varför du tycker att kammarrätten ska
+
+ta upp ditt överklagande (läs mer om
+prövningstillstånd längre ner).
 
 3\. Tala om vilka bevis du vill hänvisa till.
 Förklara vad du vill visa med varje bevis.
@@ -6264,100 +6281,34 @@ finns i målet.
 organisationsnummer.
 Lämna aktuella och fullständiga uppgifter
 om var domstolen kan nå dig: postadresser,
-
 e-postadresser och telefonnummer.
+
 Om du har ett ombud, lämna också
 ombudets kontaktuppgifter.
 
-g •    Observera att överklagandet måste ha kommit 5. Skicka eller lämna in överklagandet till
-n
-ilk cev in till domstolen när tiden går ut. förvaltningsrätten. Du hittar adressen i
-tu                                          beslutet.
-slo
-tsm
-o       Vilken dag går tiden ut?
-d
-rö
-f
-.d
-Sista dagen för överklagande är samma veckodag Vad händer sedan?
-v A     som tiden börjar räknas. Om du exempelvis fick
-,tek
-del av beslutet måndagen den 2 mars går tiden ut
-Förvaltningsrätten kontrollerar att överklagan-
-rev
-slo     måndagen den 23 mars.             det kommit in i rätt tid. Har det kommit in för
-tsm                                       sent avvisar domstolen överklagandet. Det
-o       Om sista dagen infaller på en lördag, söndag eller
-D                                         innebär att beslutet gäller.
-v       helgdag, midsommarafton, julafton eller nyårs-
-a
-tarecu
-d
-a
-n
-f
-ä
-t
-s
-o
-t
-n
-a
-,
-v
-r
-a
-ä
-r
-c
-d
-k
-a
-e
-g
-r
-.
-det att överklagandet kommer in
-Om överklagandet kommit in i tid, skickar
-o
-rP                                        förvaltningsrätten överklagandet och alla
-T
-•
-handlingar i målet vidare till kammarrätten.
-P
-\-
+5\. Skicka eller lämna in överklagandet till
+förvaltningsrätten. Du hittar adressen i
+beslutet.
 
-v
-3
-d ite  Så här gör du                      Har du tidigare fått brev genom förenklad
-d n                                       delgivning kan även kammarrätten skicka brev
-a g    1. Skriv förvaltningsrättens namn och
-a                                         på detta sätt.
-lk
-re       målnummer.
-v
-Ö
-–
-3 0    2. Förklara varför du tycker att beslutet ska
-R-
-ed
-F        ändras. Tala om vilken ändring du vill ha
-n ag     och varför du tycker att kammarrätten ska
-alk
-rev
-ö
-rö
-g
-ra
-f
-n
-in siv
-n
+Vad händer sedan?
+Förvaltningsrätten kontrollerar att överklagan-
+det kommit in i rätt tid. Har det kommit in för
+sent avvisar domstolen överklagandet. Det
+innebär att beslutet gäller.
+
+Om överklagandet kommit in i tid, skickar
+förvaltningsrätten överklagandet och alla
+handlingar i målet vidare till kammarrätten.
+
+Har du tidigare fått brev genom förenklad
+delgivning kan även kammarrätten skicka brev
+på detta sätt.
+
 Sida 1 av 2
-A
 
 www.domstol.se
+
+Anvisningar för överklagande FR-03 – Överklagandetid 3 v - PT • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2020-05
 
 <!-- sida 205 -->
 
@@ -6388,76 +6339,18 @@ Om du inte får prövningstillstånd gäller det
 överklagade beslutet. Därför är det viktigt att i
 överklagandet ta med allt du vill föra fram.
 
-5 0    Vill du veta mer?
-0-
-2
-0
-g
-2
-•
+Vill du veta mer?
 Ta kontakt med förvaltningsrätten om du har
-n ilk  frågor. Adress och telefonnummer hittar du på
-cev
-tu     första sidan i beslutet.
-slo
-tsm
-o      Mer information finns på www.domstol.se.
-d
-rö
-f
-.d
-v
-A
-,tek
-rev
-slo
-tsm
-o
-D
-v
-arecu
-a
-t
-d
-o
-rP
-T
-•
-P
-v
-\-
-3
-d
-ite
-d
-n
-a
-g
-a
-lk
-re
-v
-Ö
-–
-3
-0
-R-
-F
-ed
-n
-ag
-alk
-rev
-ö
-rö
-f
-rag
-n
-in                                                               Sida 2 av 2
-siv
-n
-A
+frågor. Adress och telefonnummer hittar du på
+första sidan i beslutet.
+
+Mer information finns på www.domstol.se.
+
+Sida 2 av 2
+
 www.domstol.se
+
+Anvisningar för överklagande FR-03 – Överklagandetid 3 v - PT • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2020-05
 
 <!-- sida 206 -->
 
@@ -6481,6 +6374,36 @@ en muntlig förhandling, eller om rätten vid
 förhandlingen gav besked om datum för
 beslutet.
 
+För en part som företräder det allmänna (till
+exempel myndigheter) räknas tiden alltid från
+den dag domstolen meddelade beslutet.
+
+Observera att överklagandet måste ha kommit
+in till domstolen senast den dag tiden går ut.
+
+Vilken dag går tiden ut?
+Sista dagen för överklagande är samma veckodag
+som tiden börjar räknas. Om du exempelvis fick del
+av beslutet måndagen den 2 mars går tiden ut
+måndagen den 23 mars.
+Om sista dagen är en lördag, söndag eller helgdag,
+midsommarafton, julafton eller nyårsafton, räcker
+det att överklagandet kommer in nästa vardag.
+
+Prövningstillstånd i
+Högsta förvaltningsdomstolen
+
+Det krävs prövningstillstånd för att Högsta
+förvaltningsdomstolen ska pröva ett över-
+klagande. Högsta förvaltningsdomstolen får
+meddela prövningstillstånd endast om
+
+1\. det är av vikt för ledning av rätts-
+tillämpningen att överklagandet prövas, eller
+
+2\. det finns synnerliga skäl till sådan prövning,
+så som att det finns grund för resning eller
+
 att målets utgång i kammarrätten
 uppenbarligen beror på grovt förbiseende
 eller grovt misstag.
@@ -6496,79 +6419,41 @@ och beslutsdatum.
 2\. Förklara vilken ändring du vill ha och
 varför du tycker att beslutet ska ändras.
 
-För en part som företräder det allmänna (till 3. Förklara varför du anser att Högsta
-exempel myndigheter) räknas tiden alltid från förvaltningsdomstolen ska ta upp ditt
-den dag domstolen meddelade beslutet. överklagande (läs mer om prövnings-
+3\. Förklara varför du anser att Högsta
+förvaltningsdomstolen ska ta upp ditt
+överklagande (läs mer om prövnings-
 tillstånd ovan).
-Observera att överklagandet måste ha kommit
-3                                         4. Tala om vilka bevis du vill hänvisa till.
-4 0 -  in till domstolen senast den dag tiden går ut.
-2 0                                         Förklara vad du vill visa med varje bevis.
-2
-•
-g                                           Bifoga de skriftliga bevis du hänvisar till om
-n
-ilk
-cev
-tu      Vilken dag går tiden ut?
+
+4\. Tala om vilka bevis du vill hänvisa till.
+Förklara vad du vill visa med varje bevis.
+Bifoga de skriftliga bevis du hänvisar till om
 de inte redan finns i målet.
-slo
-tsm     Sista dagen för överklagande är samma veckodag 5. Lämna namn och personnummer eller
-o d     som tiden börjar räknas. Om du exempelvis fick del organisationsnummer. Lämna aktuella och
-rö
-f
-.d
-av beslutet måndagen den 2 mars går tiden ut fullständiga uppgifter om hur domstolen
-v       måndagen den 23 mars.
-A                                           kan nå dig: e-postadresser, postadresser,
-,tek
-rev     Om sista dagen är en lördag, söndag eller helgdag, och telefonnummer. Om du har ett ombud,
-slo     midsommarafton, julafton eller nyårsafton, räcker lämna också ombudets kontaktuppgifter.
-tsm
-det att överklagandet kommer in nästa vardag.
-o
-D                                         6. Skicka eller lämna in överklagandet till
-v
-a
-tarecu                                      kammarrätten. Du hittar adressen i beslutet.
-d o    Prövningstillstånd i
-rP
-T
-•      Högsta förvaltningsdomstolen
+5\. Lämna namn och personnummer eller
+organisationsnummer. Lämna aktuella och
+fullständiga uppgifter om hur domstolen
+kan nå dig: e-postadresser, postadresser,
+och telefonnummer. Om du har ett ombud,
+lämna också ombudets kontaktuppgifter.
+
+6\. Skicka eller lämna in överklagandet till
+kammarrätten. Du hittar adressen i beslutet.
+
 Vad händer sedan?
-P
-v
-3
-–      Det krävs prövningstillstånd för att Högsta
 Kammarrätten kontrollerar att överklagandet
-d      förvaltningsdomstolen ska pröva ett över-
-ite                                       har kommit in i rätt tid. Har det kommit in för
-d n    klagande. Högsta förvaltningsdomstolen får
-a                                         sent avvisar domstolen överklagandet, och då
-g
-a lk re meddela prövningstillstånd endast om står kammarrättens beslut fast.
-v
-Ö
-1 – 0  1. det är av vikt för ledning av rätts- Om överklagandet har kommit in i rätt tid,
-R K -    tillämpningen att överklagandet prövas, eller skickar kammarrätten överklagandet och alla
-ed
-n                                         handlingar i målet vidare till Högsta
-ag
-alk    2. det finns synnerliga skäl till sådan prövning,
+har kommit in i rätt tid. Har det kommit in för
+sent avvisar domstolen överklagandet, och då
+står kammarrättens beslut fast.
+
+Om överklagandet har kommit in i rätt tid,
+skickar kammarrätten överklagandet och alla
+handlingar i målet vidare till Högsta
 förvaltningsdomstolen.
-rev
-så som att det finns grund för resning eller
-ö
-rö
-g
-ra
-f
-n
-in siv
-n
+
 Sida 1 av 2
-A
+
 www.domstol.se
+
+Anvisningar för överklagande KR-01 – Överklagandetid 3 v – PT • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2024-03
 
 <!-- sida 207 -->
 
@@ -7561,15 +7446,12 @@ I matrisen beskriver vi de risker som identifierats i arbetet med riskanalys och
 2      4     6      8
 Kritisk
 2             1 3 4  8 9                Hög
-te              6 7                       Medel
-h k     1      2     3      4             Låg
-ilo
-n 1
-n
-a
-S
+6 7                       Medel
+1      2     3      4             Låg
+1
 1      2     3      4
 Konsekvens
+
 Sannolikhet                   Konsekvens
 4 Mycket vanligt - exempelvis 1 gång per vecka Allvarlig/stor inverkan (så stor att den inte får inträffa)
 3 Vanligt - exempelvis 1 gång per månad Kännbar (uppfattas som besvärande för berörda intressenter och
@@ -7579,6 +7461,8 @@ kommunen)
 1 gång per 10 år
 
 6
+
+Sannolikhet
 
 [Tabell 232-1](handlingar.tabeller/232-1.csv)
 
@@ -10523,76 +10407,16 @@ För revisorerna i Kungsbacka kommun
 Birgitta Litsegård         Hans-Åke Fryklund
 Kommunrevisionens ordförande Vice ordförande kommunrevisionen
 
-v
-001B
-6002
-,0
-0 2
-.1
-1 0 - - K o mmunrevision
-Tele
-K
-fo
-u 4
-n
-n 3
-v
-g 4
-x
-s 8 b
-0
-1 a
-B
-3
-c K
-0
-k
-e
-0
-S
-s
-a u
-ö
-\-
-n
-t
-k
-8
-a
-k
-g o
-d
-3
-s
-s m
-a
-s
-b
-4
-h
-d
-a m
-0
-u
-r
-c
-e
-s
-u
-0
-k
-s
-e
-n
-0
-a
-s
-t
-U                                                                  Fax 0300-83 47 04
-K
-m
-roF                                                          (e-post borttagen)
-inu                                                                www.kungsbacka.se
+Kommunrevision                                               Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset
+Telefon vx 0300-83 40 00
+Fax 0300-83 47 04
+(e-post borttagen)
+www.kungsbacka.se
+
+uniForm KUB100 v 1.0, 2006-10-02
 
 <!-- sida 298 -->
 

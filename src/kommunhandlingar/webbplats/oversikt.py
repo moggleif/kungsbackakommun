@@ -1,4 +1,5 @@
-"""Krav: K39 i docs/02-KRAV.md, ADR-0060. Test: tests/test_navigering.py.
+"""Krav: K39 och K96 i docs/02-KRAV.md, ADR-0060 och ADR-0119.
+Test: tests/test_navigering.py.
 
 Kommunens sida: en rad per organ med antalet sammanträden och en kolumn
 per sida över tid som något av kommunens organ har (K59), så att det syns
@@ -6,13 +7,16 @@ vilka organ som har vilka sidor. Ett
 utskott står direkt under organet det hör till, och organen står i
 kommunfilens grupper när den har några. En webbplats med en enda kommun
 börjar på kommunens sida, som då heter "Handlingar och protokoll" i stället för
-sajtens namn (K58, ADR-0082).
+sajtens namn (K58, ADR-0082). Överst länkar sidan till GitHubs sökning
+i hela texten i kommunens mapp, som inte söker i filer över 350 kB
+(K96, ADR-0119).
 """
 
 from collections.abc import Callable
 from dataclasses import dataclass
 from functools import cached_property, partial
 from html import escape
+from urllib.parse import quote_plus
 
 from kommunhandlingar.konfiguration import Kommun, Organ
 from kommunhandlingar.webbplats import adresser
@@ -22,6 +26,7 @@ from kommunhandlingar.webbplats.organordning import grupperade
 from kommunhandlingar.webbplats.rakning import Organrad
 from kommunhandlingar.webbplats.sammanhang import Sammanhang
 
+GITHUB = "https://github.com/"
 TOM = '<td class="tom">–<span class="dold"> saknas</span></td>'
 
 
@@ -41,8 +46,16 @@ def oversikt(
     )
     grupper = "".join(tabellen.grupp(namn, o) for namn, o in grupperade(kommun))
     return (
-        inledning(dokument) + '<div class="tabell"><table class="oversikt"><thead><tr>'
-        f'<th scope="col">Organ</th><th scope="col">Sammanträden</th>{tabellen.huvud()}'
+        inledning(dokument)
+        + fulltext(sammanhang.mall.repo, kommun.id)
+        + tabell(tabellen.huvud(), grupper)
+    )
+
+
+def tabell(huvud: str, grupper: str) -> str:
+    return (
+        '<div class="tabell"><table class="oversikt"><thead><tr>'
+        f'<th scope="col">Organ</th><th scope="col">Sammanträden</th>{huvud}'
         f"</tr></thead>{grupper}</table></div>"
     )
 
@@ -85,6 +98,16 @@ def inledning(dokument: list[dict]) -> str:
         f"<p>{antal} dokument från {escape(datum[0])} till {escape(datum[-1])}. "
         "Välj ett organ, eller gå direkt till en av dess sidor över tid. "
         "Ett streck betyder att organet inte har sidan.</p>"
+    )
+
+
+def fulltext(repo: str, kommun_id: str) -> str:
+    fraga = quote_plus(f"repo:{repo.removeprefix(GITHUB)} path:data/{kommun_id}/")
+    adress = escape(f"{GITHUB}search?q={fraga}&type=code")
+    return (
+        f'<p><a href="{adress}">Sök i hela texten på GitHub</a> '
+        "(kräver inloggning på GitHub, och de största handlingarna, filer "
+        "över 350 kB, söks inte).</p>"
     )
 
 

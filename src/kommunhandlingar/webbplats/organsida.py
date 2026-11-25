@@ -1,11 +1,12 @@
-"""Krav: K18, K26, K36, K37, K39 och K54 i docs/02-KRAV.md, ADR-0023.
-Test: tests/test_webbplats_dokument.py, tests/test_mal.py, tests/test_lokalbehov.py,
-tests/test_initiativ.py."""
+"""Krav: K18, K26, K36, K37, K39, K54 och K96 i docs/02-KRAV.md, ADR-0023.
+Test: tests/test_webbplats_dokument.py, tests/test_sokdokument.py, tests/test_mal.py,
+tests/test_lokalbehov.py, tests/test_initiativ.py."""
 
 from collections import defaultdict
 from html import escape
 
 from kommunhandlingar import frontmatter
+from kommunhandlingar.konfiguration import Kommun
 from kommunhandlingar.webbplats import adresser
 from kommunhandlingar.webbplats.flikar import SAMMANTRADEN, flikar
 from kommunhandlingar.webbplats.luckor import motesnamn
@@ -25,7 +26,7 @@ def organsida(sammanhang: Sammanhang, rad: Organrad, dokument: list[dict]) -> st
     saknas = {(lucka.datum, lucka.lopnr): lucka.saknas for lucka in rad.luckor}
     ar = defaultdict(list)
     for mote in sorted(moten, key=ordning, reverse=True):
-        rubrik = moterubrik(mote, moten[mote])
+        rubrik = moterubrik(mote, sammanhang.kommun, moten[mote])
         ar[mote[0][:4]].append(motesavsnitt(rubrik, moten[mote], saknas.get(mote, ())))
     adress = adresser.organsida(sammanhang.kommun.id, rad.id)
     innehall = flikar(sammanhang.underlag, rad.id, SAMMANTRADEN) + (
@@ -45,10 +46,24 @@ def dokumentrubrik(d: dict) -> str:
     return d["typ"] + ("" if frontmatter.saknas(d["namn"]) else f" – {d['namn']}")
 
 
+# Kvaliteten som organets sida och sökindexet (K96) skriver den.
+def kvaliteten(d: dict) -> list[str]:
+    obekraftade = len(frontmatter.lista(d["tal_obekraftade"]))
+    tabeller = frontmatter.lista(d["kvalitet_per_sida"]).count("tabell-osaker")
+    return [f"kvalitet {d['kvalitet']}"] + [
+        f"{vad} på {antal} {'sida' if antal == 1 else 'sidor'}"
+        for vad, antal in (
+            ("obekräftade tal", obekraftade),
+            ("osäkra tabeller", tabeller),
+        )
+        if antal
+    ]
+
+
 # Rubriken länkar till sammanträdets sida när den finns (K54).
-def moterubrik(mote: Mote, dokument: list[dict]) -> str:
+def moterubrik(mote: Mote, kommun: Kommun, dokument: list[dict]) -> str:
     namn = escape(motesnamn(*mote))
-    if not har_sida(dokument):
+    if not har_sida(kommun, dokument):
         return f'<h3 id="{namn}">{namn}</h3>'
     lank = f'<a href="{escape(sammantradets(dokument))}">punkt för punkt</a>'
     return f'<h3 id="{namn}">{namn} – {lank}</h3>'
@@ -62,11 +77,8 @@ def motesavsnitt(rubrik: str, dokument: list[dict], saknas: tuple[str, ...]) -> 
 
 
 def dokumentpost(d: dict) -> str:
-    rader = [f"kvalitet {d['kvalitet']}"]
-    if obekraftade := len(frontmatter.lista(d["tal_obekraftade"])):
-        rader.append(f"obekräftade tal på {obekraftade} sidor")
     post = f'<a href="{escape(d["adress"])}">{escape(dokumentrubrik(d))}</a>: '
-    post += escape(", ".join(rader))
+    post += escape(", ".join(kvaliteten(d)))
     if not frontmatter.saknas(d["fel"]):
         post += f", fel {escape(d['fel'])}, " + lank(
             frontmatter.adresser(d["kalla_url"])[0], "källan"

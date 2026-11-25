@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1932ec3d19329b835ff852b4/1732526617
 sha256: f6b225dff36c81ebfd040d7e5eefa4e84ee4f7611e0f77bebe51779590046f60
 bytes: 16362850
 sidor: 274
-hamtad: 2026-11-22T22:30:57+00:00
-konverterad: 2026-11-22T22:33:09+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T01:13:08+00:00
+konverterad: 2026-11-25T01:15:24+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, bild, ok, ok, ok, ok, ok, ok, tabell-osaker, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [128, 130, 131, 139, 197, 198, 199, 200, 201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213]
+tal_obekraftade: [128, 130, 131, 139, 197, 198, 199, 200, 201, 203, 204, 205, 206, 207, 208, 209, 210, 211, 213, 272]
 figurer: [16, 18, 19, 20, 35, 39, 43, 45, 49, 51, 52, 69, 71, 73, 87, 88, 89, 90, 91, 92, 93, 94, 96, 97, 98, 125, 126, 128, 129, 130, 131, 132, 133, 135, 138, 139, 144, 145, 147, 149, 150, 151, 152, 153, 154, 155, 156, 157, 159, 160, 168, 170, 171, 176, 182, 194, 221, 224, 239]
 tolkade: []
 granskad: null
@@ -5462,19 +5462,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 4 Hög 2 Medel Totalt: 6
 
 9
+
+Sannolikhet
 
 <!-- sida 183 -->
 
@@ -8576,85 +8574,16 @@ november
 2024-11-21
 Nya ärenden
 
-3102
-,0.2v
-,1001B
-2 6 0 2 - - F F ö ri r d s a k o B l y a r & ste G n rundskola
-St
-T
-a
-K
-d
-el
-s
-u 4
-e
-h
-n 3
-f
-u
-o
-g 4
-s
-n
-s
-e
-8 b
-t
-0
-1 a
-,
-B
-3
-c
-S
-K
-0
-e
-k
-t
-0
-o
-s
-a u
-ö
-r
-\-
-n k
-8
-g
-k
-g o
-3
-a
-s
-s m
-t
-a
-b
-a
-4
-d
-a
-n
-m
-0
-r
-c
-e
-3
-u
-0
-k
-s
-7
-n
-0
-a
-s
-U K                                                                 Fax 0300-83 41 64
+Förskola & Grundskola                                        Kungsbacka kommun
+Frida Byrsten                                                 434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon 0300-83 40 00
+Fax 0300-83 41 64
 (e-post borttagen)
 www.kungsbacka.se
+
+KUB1001, v2.0, 2013-02-26
 
 [Tabell 272-1](handlingar.tabeller/272-1.csv)
 

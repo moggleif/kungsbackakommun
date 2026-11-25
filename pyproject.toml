@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kommunhandlingar"
-version = "0.16.0"
+version = "0.20.0"
 requires-python = ">=3.12"
 # Konverteringen (ADR-0005, ADR-0014). pdfminer.six och Pillow används också
 # direkt och låses därför här, på de versioner pdfplumber drar in.
@@ -24,6 +24,11 @@ dependencies = [
 [project.optional-dependencies]
 # Samma versioner i CI och lokalt; Dependabot håller dem uppdaterade.
 utveckling = ["ruff==0.17.4", "pip-audit==2.10.1", "coverage==7.17.4"]
+
+# Paketet byggs utan isolering, med setuptools ur låsfilen (ADR-0117);
+# golvet i [build-system] gäller bara ett bygge med isolering.
+[dependency-groups]
+bygg = ["setuptools==84.2.1"]
 
 # Webbplatsens skript och stilar följer med paketet, så att ett datarepo som
 # installerar en fast version kan bygga sidorna (ADR-0080).

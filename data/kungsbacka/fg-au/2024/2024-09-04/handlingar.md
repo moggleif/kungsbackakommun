@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.6582e5c2191974ffda77d2e/17252525113
 sha256: 100d3a7c9a2122aed21f18f88d8c4ed034ace34e025a4daa0a64707653970f8f
 bytes: 3242855
 sidor: 68
-hamtad: 2026-11-22T22:30:02+00:00
-konverterad: 2026-11-22T22:30:24+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T01:12:01+00:00
+konverterad: 2026-11-25T01:12:23+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [61, 62]
+tal_obekraftade: [61, 62, 66]
 figurer: []
 tolkade: []
 granskad: null
@@ -2691,85 +2691,16 @@ Datum
 2024-08-28
 Nya ärenden
 
-3102
-,0.2v
-,1001B
-2 6 0 2 - - F F ö ri r d s a k o B l y a r & ste G n rundskola
-St
-T
-a
-K
-d
-el
-s
-u 4
-e
-h
-n 3
-f
-u
-o
-g 4
-s
-n
-s
-e
-8 b
-t
-0
-1 a
-,
-B
-3
-c
-S
-K
-0
-e
-k
-t
-0
-o
-s
-a u
-ö
-r
-\-
-n k
-8
-g
-k
-g o
-3
-a
-s
-s m
-t
-a
-b
-a
-4
-d
-a
-n
-m
-0
-r
-c
-e
-3
-u
-0
-k
-s
-7
-n
-0
-a
-s
-U K                                                                 Fax 0300-83 41 64
+Förskola & Grundskola                                        Kungsbacka kommun
+Frida Byrsten                                                 434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon 0300-83 40 00
+Fax 0300-83 41 64
 (e-post borttagen)
 www.kungsbacka.se
+
+KUB1001, v2.0, 2013-02-26
 
 [Tabell 66-1](handlingar.tabeller/66-1.csv)
 

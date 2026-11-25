@@ -173,6 +173,16 @@ class TestNavigering(unittest.TestCase):
         html = self.oversikt(exempelby(), [rad("bun", 0), rad("fsn", 0)], dokument)
         self.assertIn("<p>1 200 dokument från 2013-08-13 till 2024-05-02.", html)
 
+    def test_oversikten_lankar_till_hela_texten_pa_github(self):
+        html = self.oversikt(exempelby(), [rad("bun", 0), rad("fsn", 0)], [])
+        self.assertIn(
+            '<a href="https://github.com/search?q=repo%3Aexempel%2Fkommunhandlingar'
+            '+path%3Adata%2Fexempelby%2F&amp;type=code">',
+            html,
+        )
+        self.assertIn("kräver inloggning", html)
+        self.assertIn("över 350 kB, söks inte", html)
+
     def test_organen_star_i_kommunfilens_grupper(self):
         kommun = kommun_med_utskott()
         bun, fsn, utskott = kommun.organ

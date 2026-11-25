@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.69662c5a18d8755e10818641/1708079935
 sha256: 231995e00fd64dc3b95063909311347309fcf8fef03bfa38deec3966f4cf5c2b
 bytes: 1467743
 sidor: 67
-hamtad: 2026-11-22T22:58:34+00:00
-konverterad: 2026-11-22T22:58:53+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T01:50:16+00:00
+konverterad: 2026-11-25T01:50:34+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -2392,17 +2392,13 @@ Uppföljningsrapport intern kontroll 2023
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
 Konsekvens
+
 3 Hög 8 Medel Totalt: 11
+
 Kritisk        Sannolikhet           Konsekvens
 Hög
 4 Mycket vanligt - exempelvis 1 gång per Allvarlig/stor inverkan (så stor att den inte
@@ -2416,6 +2412,8 @@ intressenter och kommunen)
 obefintlig) - exempelvis 1 gång per 10 år intressenter och kommunen)
 
 6
+
+Sannolikhet
 
 <!-- sida 56 -->
 

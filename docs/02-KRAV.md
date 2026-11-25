@@ -10,6 +10,23 @@ kommunstyrelsen och samtliga nämnder, så långt bakåt som möjligt, som text
 och tabeller att bygga dataanalyser på. Kungsbacka först; fler kommuner ska
 kunna läggas till utan kodändring.
 
+## Nummer som används av Region Hallands repo
+
+Region Hallands repo
+[moggleif/regionhalland](https://github.com/moggleif/regionhalland) tar
+sina krav ur den här serien. De här numren är upptagna där och används
+inte här. Regionens krav står i dess PR-texter.
+
+| Krav | Används i |
+| ---- | --------- |
+| K98  | [regionhalland PR #74](https://github.com/moggleif/regionhalland/pull/74) |
+| K99  | [regionhalland PR #75](https://github.com/moggleif/regionhalland/pull/75) |
+| K100 | [regionhalland PR #76](https://github.com/moggleif/regionhalland/pull/76) |
+
+Ett nummer i tabellen är upptaget också om PR:en där stängs utan merge.
+Ett nytt krav här tar numret efter det högsta i den här filen och i
+tabellen.
+
 ## K1 — En kommun läggs till med konfiguration
 
 - **Givet** att en kommun publicerar via en plattform som redan har en adapter
@@ -215,6 +232,14 @@ kunna läggas till utan kodändring.
 - **När** dokumentet konverteras
 - **Så** står sidan bland sidorna med obekräftade tal.
 
+- **Givet** ett textlager med text som står snett eller upp och ned, som
+  ett gatunamn eller ett mått på en karta (issue
+  [#401](https://github.com/moggleif/kungsbackakommun/issues/401))
+- **När** dokumentet konverteras
+- **Så** räknas den som text på högkant: den står inte inne i sidans
+  text utan sist på sidan, och en siffra i den ger sidan obekräftade
+  tal, så att `73` upp och ned aldrig blir ett bekräftat `37`.
+
 - **Givet** ett textlager med styrtecken, till exempel NUL där en
   punktlistas tecken skulle stå
 - **När** dokumentet konverteras
@@ -411,8 +436,9 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
 - **Givet** en körning som hämtar längre än 15 minuter
 - **När** en del av steg 2 har gått i 15 minuter
 - **Så** gör den färdigt dokumentet den håller på med, och det klara
-  kontrolleras, checkas in och pushas på körningens gren innan nästa del
-  börjar, så att ett avbrott kostar högst en del
+  kontrolleras och checkas in innan nästa del börjar, så att ett fel
+  kostar högst en del; en runner som går förlorad, eller en körning som
+  avbryts för hand, kostar allt jobbet checkat in (ADR-0118)
   ([ADR-0088](decisions/0088-nattkorningen-sparar-var-femtonde-minut.md)).
 - **Givet** en kandidat som redan provats i en tidigare del av samma
   körning, också om den inte gick att hämta eller konvertera
@@ -427,10 +453,10 @@ Luckorna räknas fram ur poolen när webbplatsen byggs och lagras inte
   den når `main` genom en PR där samma kontroller körs igen
   (ADR-0015).
 
-- **Givet** en körning som har pushat sin gren, i ett repo med en token
+- **Givet** en körning som har checkat in något, i ett repo med en token
   för körningen
-- **När** körningen slutar, också om den fallit efter en sparad del
-- **Så** har den öppnat en PR från grenen som mergas av sig själv när
+- **När** körningen slutar, också om den fallit efter en incheckad del
+- **Så** har den pushat sin gren (K95) och öppnat en PR från grenen som mergas av sig själv när
   kontrollerna gått igenom; utan token säger sammanfattningen att någon
   ska öppna PR:en (ADR-0052,
   [#163](https://github.com/moggleif/kommunhandlingar/issues/163)).
@@ -1243,11 +1269,11 @@ och [Mål och direktiv](03-ARKITEKTUR.md#mål-och-direktiv).
   versaler. Annars räknas versalerna.
 - **Givet** ett fokusområde utan huvudmål, ett huvudmål på en rad som
   inte är ett fokusområde, ett huvudmål som inte står på källans sida
-  eller inte är ett kommunmål utan grupp i filen, samma rubrik med två
-  olika huvudmål, eller två rubriker i samma spår samma år i samma
-  dokument
+  eller två rubriker i samma spår samma år i samma dokument
 - **När** webbplatsen byggs
-- **Så** stoppas bygget med raden i felet.
+- **Så** stoppas bygget med raden i felet. Ett huvudmål som inte är ett
+  kommunmål, och samma fokusområde under två kommunmåls spår, stoppar
+  bygget med fokusområdet i felet (K91).
 
 ## K36 — Nämndens lokalbehov steg för steg
 
@@ -1829,8 +1855,9 @@ Hur och varför står i
 [ADR-0113](decisions/0113-varje-sammantrade-med-kallelse-far-sin-sida.md)
 och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 
-- **Givet** ett sammanträde i vilket organ och vilket år som helst som
-  har en kallelse i poolen
+- **Givet** ett sammanträde i vilket organ som helst som har en kallelse
+  i poolen, från året i kommunfilens `sammantradessidor` eller, utan det
+  fältet, vilket år som helst
 - **När** webbplatsen byggs
 - **Så** har sammanträdet en egen sida, och rubriken för sammanträdet på
   organets sida länkar dit. Överst står en rad per dokument från
@@ -1888,7 +1915,8 @@ och [Sammanträdets sida](03-ARKITEKTUR.md#sammanträdets-sida).
 - **När** sidan byggs
 - **Så** säger sidan det, i stället för att dagordningen inte gick att
   läsa.
-- **Givet** ett sammanträde utan kallelse i poolen
+- **Givet** ett sammanträde utan kallelse i poolen, eller före året i
+  `sammantradessidor`
 - **När** webbplatsen byggs
 - **Så** har det ingen egen sida, och organets sida listar dess dokument
   som förut.
@@ -2116,7 +2144,8 @@ och [Paragraferna och ärendena](03-ARKITEKTUR.md#paragraferna-och-ärendena); s
 - **Givet** poolens protokoll
 - **När** webbplatsen byggs
 - **Så** finns `sok.json` i webbplatsens rot med en grupp per kommun,
-  *Protokollen i* och kommunens namn, och en post per paragraf, nyast först, med
+  *Protokollen i* och kommunens namn (dokumentens grupp står i K96), och
+  en post per paragraf, nyast först, med
   paragrafens rubrik, länken till dess sida i protokollet, organet,
   datumet, paragrafens nummer och diarienumren.
 - **Givet** knappen *Sök* i projektets sajtrad
@@ -2507,6 +2536,15 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **När** väg H avgör raden
 - **Så** är raden aldrig bekräftad.
 
+- **Givet** en rad där `o` eller `O` står utan en bokstav intill i någon
+  av de två läsningarna, som `Årskurs o` för `Årskurs 0` i ett typsnitt
+  med gemena siffror, eller `o-5` och `o,5 %`, men inte `t.o.m.` eller
+  ett `o` först på raden som punkt i en punktlista
+  ([ADR-0116](decisions/0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md))
+- **När** väg H avgör raden
+- **Så** räknas den som en rad som kan ha tal och är aldrig bekräftad,
+  så att sidan får obekräftade tal.
+
 - **Givet** poolens data och ett fast frö
 - **När** `python -m kommunhandlingar.kalibrering <data> <ut>` körs
 - **Så** mäts väg H på 300 sidor med textlager och bekräftade tal, högst
@@ -2527,6 +2565,11 @@ Issue [#411](https://github.com/moggleif/kungsbackakommun/issues/411).
 - **Så** står raden i `rapport.md` med sina läsningar, och kommandot
   avslutas med kod 1, så att arbetsflödet faller.
 
+- **Givet** ett blanksteg i textlagret som börjar inne i ett synligt
+  tecken, som kalkylarkets utfyllnad ovanpå `730`
+- **När** kalibreringen läser radens facit
+- **Så** är det inget mellanrum, och facit är `730`.
+
 - **Givet** en rad som rör en bild på sidan, eller som har en vriden
   eller spegelvänd siffra i textlagret
 - **När** kalibreringen mäter den
@@ -2540,8 +2583,8 @@ byggt står i
 [03-ARKITEKTUR.md](03-ARKITEKTUR.md#väg-h-och-kalibreringen).
 
 - **Givet** en skannad sida vars första läsning med Tesseract når
-  tröskeln utan att sidan läses om, och där väg H bekräftar varje rad med
-  tal och inget tal står utanför raderna
+  tröskeln utan att sidan läses om, och där väg H bekräftar varje rad som
+  kan ha tal (K84) och inget tal står utanför raderna
 - **När** sidan konverteras
 - **Så** är den `ocr`, står inte i `tal_obekraftade`, och dokumentets
   `pipeline` nämner RapidOCR och onnxruntime. Det gäller också en sida
@@ -2668,3 +2711,176 @@ fil jämförs med mötessidorna i samma Sitevision-källa.
   inspelade svar och för arkivet med testernas fixturer
 - **Så** blir kandidatlistorna och sammanfattningarna identiska, och
   kommunfilernas format är oförändrat.
+
+## K89 — Ett rutnät som inte går ihop till en tabell märker sidan osäker
+
+[ADR-0111](decisions/0111-rutnat-som-inte-gar-ihop-marker-sidan-osaker.md).
+Issue [#319](https://github.com/moggleif/kungsbackakommun/issues/319). Hur
+det prövas står i
+[Konvertering och kvalitet](03-ARKITEKTUR.md#konvertering-och-kvalitet).
+
+- **Givet** ett rutnät av linjer med minst två rader och två kolumner,
+  där ett ord inom rutnätets yta inte står i någon cell, till exempel en
+  riskmatris där en kolumn saknar högerkant under rubrikraden
+- **När** dokumentet konverteras
+- **Så** blir rutnätet ingen CSV, texten står kvar i sidans text, och
+  sidan märks `tabell-osaker`, också när texten inte har några siffror.
+- **Givet** samma rutnät där varje ord står i en cell
+- **När** dokumentet konverteras
+- **Så** blir det en säker tabell, och sidan kan vara `ok`, som förut.
+- **Givet** ett rutnät som inte går ihop, där texten ändå läses som en
+  tabell utan lodräta linjer
+- **När** dokumentet konverteras
+- **Så** märker rutnätet inte sidan, eftersom ingen text ur det står kvar
+  i sidans text.
+
+## K91 — Fokusområden under ett kommunmål som bytt rubrik
+
+Issue: [#185](https://github.com/moggleif/kungsbackakommun/issues/185).
+Bygger på K27 och K35. Hur och varför står i
+[ADR-0114](decisions/0114-fokusomraden-under-ett-omdopt-kommunmal.md)
+och [Mål och direktiv](03-ARKITEKTUR.md#mål-och-direktiv).
+
+- **Givet** ett kommunmål som en budget skriver på ett sätt ("Ett
+  medskapande samhälle och öppen attityd") och en uppföljning på ett annat,
+  med budgetens rubrik i den andras grupp, och fokusområden på budgetens
+  sida med budgetens rubrik som huvudmål
+- **När** webbplatsen byggs
+- **Så** står fokusområdena under kommunmålets spår, i tidslinjen och i
+  kortet, och samma fokusområde kan ha båda rubrikerna som huvudmål.
+- **Givet** ett fokusområdes spår med huvudmål i två olika kommunmåls
+  spår, eller ett huvudmål som inte är ett kommunmål i ett kommunmåls spår
+- **När** webbplatsen byggs
+- **Så** stoppas bygget när hela filen är läst, och felet säger vilket
+  fokusområde och organ det gäller.
+
+## K92 — Det hämtade och nattkörningens gren kan inte ta sig förbi sina gränser
+
+[ADR-0115](decisions/0115-sakerhetsgranser-for-hamtning-och-nattkorning.md).
+Issue [#348](https://github.com/moggleif/kungsbackakommun/issues/348).
+Poolen läser filer och sidor från internet med tolkar som kan ha fel.
+Det som hämtas ska inte kunna läsa lokala filer, fylla disken eller
+minnet, eller föra in kod i `main`.
+
+- **Givet** en adress som inte börjar med `https://`, till exempel
+  `http:`, `file:` eller `ftp:`
+- **När** den ska hämtas
+- **Så** hämtas ingenting, inte heller `robots.txt`, och orsaken är
+  `inte-https`.
+
+- **Givet** en sida större än 50 MB eller en fil större än 1 GiB
+- **När** den hämtas
+- **Så** avbryts läsningen vid taket, inget nytt försök görs, och
+  orsaken är `for-stor`.
+
+- **Givet** en PDF-sida som i 300 dpi skulle bli en större bild än
+  Pillows gräns för en dekompressionsbomb (dubbla `MAX_IMAGE_PIXELS`,
+  lite mer än en A0)
+- **När** dokumentet konverteras
+- **Så** renderas sidan inte: den blir `ej-konverterad` och står i
+  `figurer`, och dokumentets övriga sidor läses som vanligt. Tolkningen
+  av figurer renderar den i en så liten skala att bilden håller sig under
+  Pillows varningsgräns.
+
+- **Givet** en gren från nattkörningen som ändrar något utanför `data/`
+  och `versioner/`, flyttar en fil dit från annat håll, lägger en
+  symbolisk länk eller en undermodul där, eller har en merge-commit
+- **När** jobbet som pushar grenen och öppnar PR:en körs
+- **Så** pushas grenen inte, ingen PR öppnas, ingen automatisk merge slås
+  på, och jobbet faller med grenens namn i sammanfattningen.
+
+- **Givet** en gren från nattkörningen som fått en ny commit efter att
+  jobbet prövat den
+- **När** GitHub ska merga PR:en automatiskt
+- **Så** mergas den inte, eftersom mergen bara gäller den prövade
+  commiten.
+
+- **Givet** en ändring i en PR
+- **När** CI kör "Ren kod och tester"
+- **Så** faller den om en PDF är incheckad utanför `tests/fixtures/` eller
+  en extern action står på en tagg i stället för en commit, och
+  npm-paketen installeras utan sina installationsskript.
+
+## K94 — Beroendenas egna beroenden installeras i låsta versioner
+
+[ADR-0117](decisions/0117-transitiva-beroenden-installeras-ur-lasfiler.md).
+Issue [#482](https://github.com/moggleif/kungsbackakommun/issues/482).
+En ny version av ett paket som projektet bara använder genom ett annat ska
+inte nå CI eller nattkörningen utan en ändring i repot.
+
+- **Givet** ett jobb i CI, nattkörningen, webbplatsen eller kalibreringen
+- **När** det installerar projektets Python-paket
+- **Så** installeras varje paket i trädet, också setuptools som paketet
+  byggs med, i versionen i `uv.lock`, och varje fil prövas mot sin hash.
+
+- **Givet** en ändring av ett beroende i `pyproject.toml` utan en ny
+  `uv.lock`, eller i `package.json` utan en ny `package-lock.json`
+- **När** CI kör "Ren kod och tester"
+- **Så** faller den innan paketen ur den låsfilen installeras.
+
+- **Givet** npm-paketen för webbplatsens skript och Markdown-lint
+- **När** CI installerar dem
+- **Så** installeras de ur `package-lock.json`, och varje paket prövas mot
+  sin `integrity`.
+
+- **Givet** de installerade Python-paketen
+- **När** CI letar efter kända sårbarheter
+- **Så** granskas de versioner som står i `uv.lock`.
+
+## K95 — Jobben som läser det hämtade kan inte pusha
+
+[ADR-0118](decisions/0118-nattkorningens-tolkning-utan-skrivratt.md).
+Issue [#483](https://github.com/moggleif/kungsbackakommun/issues/483).
+Nattkörningens jobb läser PDF:er och sidor från internet med tolkar som
+kan ha fel. En fil som tar över en tolk ska inte kunna skriva i repot.
+
+- **Givet** nattkörningens jobb för mötessidorna eller arkivet
+- **När** det hämtar och konverterar
+- **Så** har det bara läsrätt till repot och ingen token i utcheckningen,
+  och det som checkats in lämnas vidare som en artefakt, inte som en push.
+
+- **Givet** ett av de jobben som checkat in något, också om det fallit
+  efter en incheckad del
+- **När** det slutar
+- **Så** pushar ett eget jobb, på en ny runner som inte kör något ur
+  repot eller ur det hämtade, commitarna på körningens gren, efter
+  prövningen i K92, och öppnar PR:en.
+
+- **Givet** ett grennamn från jobbet som läst det hämtade som inte är
+  den här körningens och delens gren
+- **När** jobbet som pushar körs
+- **Så** pushas ingenting, och jobbet faller.
+
+- **Givet** mötenas jobb som checkat in något
+- **När** arkivets jobb startar
+- **Så** har mötenas gren redan pushats och prövats, och ingenting pushar
+  till den efter att dess PR öppnats.
+
+## K96 — Poolens dokument går att söka från sajtraden, och hela texten på GitHub
+
+Hur och varför står i
+[ADR-0119](decisions/0119-dokumenten-i-sokindexet-och-texten-pa-github.md)
+och [Paragraferna och ärendena](03-ARKITEKTUR.md#paragraferna-och-ärendena).
+Issue [#67](https://github.com/moggleif/kungsbackakommun/issues/67).
+Sökningen i K62 hittar bara protokollens paragrafer. Den som söker ska
+också hitta dokumenten, och se om de är osäkra innan de öppnas.
+
+- **Givet** poolens dokument
+- **När** webbplatsen byggs
+- **Så** har `sok.json` för varje kommun också en grupp *Dokumenten i*
+  och kommunens namn, med en post per dokument, nyast först, med
+  dokumentets typ och namn, länken till dokumentets sida, organet,
+  datumet och kvaliteten.
+- **Givet** ett dokument med obekräftade tal eller osäkra tabeller
+- **När** det står bland träffarna
+- **Så** säger posten, som dokumentets rad på organets sida, på hur
+  många sidor talen är obekräftade och tabellerna osäkra.
+- **Givet** knappen *Sök* i projektets sajtrad
+- **När** någon söker på ett ord i dokumentets namn, dess typ, organet
+  eller datumet i klartext
+- **Så** står dokumentet bland träffarna under poolens namn.
+- **Givet** kommunens översikt
+- **När** den visas
+- **Så** länkar den till en sökning i hela texten i kommunens mapp i
+  repot på GitHub, och säger att den kräver inloggning och inte söker i
+  de största filerna.

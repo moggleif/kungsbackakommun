@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.90ecece1927166f56ae1d4b/17291744095
 sha256: 0b29c5bfa761ea449ef94fb66faff815d4d4f2f6faca8e54965c6332319cd6ba
 bytes: 24790514
 sidor: 226
-hamtad: 2026-11-22T21:10:21+00:00
-konverterad: 2026-11-22T21:11:32+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-24T23:36:53+00:00
+konverterad: 2026-11-24T23:37:59+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]
+tal_obekraftade: [52, 61, 70, 80, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 150]
 figurer: [13, 23, 26, 45, 46, 53, 54, 56, 60, 62, 63, 64, 69, 74, 75, 79, 80, 81, 85, 86, 87, 88, 89, 90, 91, 93, 94, 95, 96, 97, 98, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115]
 tolkade: []
 granskad: null
@@ -1908,42 +1908,16 @@ anpassad för 380 elever och schema för lunch är mellan kl. 10:30 – 13:30.
 Idrottshall;
 Aranäsgymnasiet nyttjar Kungsbacka Sporthall mellan kl. 08:00 – 17:00 måndag – fredag och den är i
 nuläget även samutnyttjad med Engelska Skolan. Det är mer eller mindre fullbokat i idrottshallen och
+det upplevs som svårt att vara flexibel utifrån att det även samsas med Engelska Skolan. Utöver det så
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-d
-K
-e
-u
-t
-n
-u
-gs
-p
-b
-p
-a
-l
-c
-e
-k
-v
-a
-s
-k o
-s
-m
-om
-mu n
-sv årt att vara flexibel utifrån att det även samsas med Engelska Skolan. Utöver det så
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 53 -->
 
@@ -2297,17 +2271,14 @@ taget så runt 60 personer vistas där samtidigt, och innebär att man delar av 
 lokalen finns också en spegelsal och en rehabsal som lärare kan nyttja för att bedriva
 idrottsundervisning.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 62 -->
 
@@ -2649,17 +2620,14 @@ utbildningar/inskrivningar/bokade möten m.m.
 Utöver vardagliga ärenden i receptionen finns också 4 stationer och en skrivare på den öppna ytan för
 hjälp och service för besökare. Två i personalen från Enheten för Etablering hjälper invånare i
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 71 -->
 
@@ -3037,17 +3005,14 @@ läser en 1-årig VUX-utbildning.
 Av dessa 62 elever så vistas ca 65% av dessa dagligen på skolan. Resterande är olika former av
 lärlingsutbildning och vistas en del ute på lärlingsplatser.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 81 -->
 
@@ -3303,28 +3268,37 @@ UPPEHÅLL
 SKYLT
 PARKERING
 SITTMÖJLIGHET
-STRÅK
-TRÄDRAD                     SIKT
 PARKERING
 STRÅK
 PRINCIP
-BARRIÄR
-K
-SIKT
-Å       BARRIÄR
-För att skapa en bra utemiljö krävs det en bra balans                                    R
-T                                    SIKT
-S
+För att skapa en bra utemiljö krävs det en bra balans
 mellan låg, mellan och hög
+
 \- LÅG     markmaterial, låg växtlighet
-T
-\- MELLAN  buskar, sittmöjligheter, uppehåll                                K
-I
-S
+\- MELLAN  buskar, sittmöjligheter, uppehåll
 \- HÖG     träd, pergola, regnskydd, skärmtak
+
 3 / 6
 
 © Semrén & Månsson 2023
+
+STRÅK
+
+BARRIÄR
+
+BARRIÄR
+
+SIKT
+
+SIKT
+
+SIKT
+
+SIKT
+
+TRÄDRAD
+
+STRÅK
 
 STRÅK
 
@@ -5516,16 +5490,16 @@ Förvaltningschef                   Kvalitets- och utvecklingschef
 <!-- sida 150 -->
 
 Erinran om sekretess och straffansvar
-
 Jag, XX, deltar i arbetet med Analytics i Kungsbacka kommun. För att kunna utföra mina
 arbetsuppgifter inom ramen för uppdraget får jag tillgång till \<förvaltningens> uppgifter som
 finns lagrade i de system som data hämtas ifrån för beredning alternativt lagring i
-kommunens datalager för Analyticslösningen.
 
+kommunens datalager för Analyticslösningen.
 Genom arbetet med Analytics deltar jag i \<förvaltningens> verksamhet på liknande grund
 som anställning eller uppdrag, i enlighet med 2 kap 1 § 3 p. i offentlighets- och
 sekretesslagen (2009:400). Det innebär att jag omfattas av offentlighets- och sekretesslagens
 bestämmelser om sekretess.
+
 De system jag har tillgång till innehåller uppgifter som omfattas av olika grader av sekretess.
 Såväl kvalificerad sekretess som stark sekretess kan förekomma. Sekretess kan gälla till
 skydd för såväl allmänna som enskilda intressen.
@@ -5533,9 +5507,9 @@ skydd för såväl allmänna som enskilda intressen.
 Jag förstår att det är förbjudet för mig att röja eller utnyttja sekretessbelagda uppgifter som
 jag får kännedom om. Det gäller oavsett om röjandet sker muntligen, skriftligen eller på
 något annat sätt. Det gäller under uppdragstiden och även för tiden därefter.
-
 Jag är medveten om att om jag bryter mot offentlighets- och sekretesslagens bestämmelser
 om tystnadsplikt kan det leda till att jag döms för brott enligt 20 kap 3 § brottsbalken.
+
 Jag förstår att uppgifter jag får tillgång till endast får användas för att fullgöra mina
 arbetsuppgifter inom uppdraget. Om jag bereder mig tillgång till uppgifter utöver mitt
 uppdrag kan jag göra mig skyldig till dataintrång enligt 4 kap 9c § brottsbalken.
@@ -5547,15 +5521,7 @@ Kungsbacka den \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 Personnummer: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
 Underskrift och namnförtydligande
-
-2102
-,0.2v
-,0001B
-5 3 0 2 - -
-U
-K
 
 Kungsbacka kommun
 434 81 Kungsbacka
@@ -5565,6 +5531,8 @@ Telefon 0300-83 40 00
 Fax 0300-83 47 04
 (e-post borttagen)
 www.kungsbacka.se
+
+KUB1000, v2.0, 2012-05-23
 
 <!-- sida 151 -->
 

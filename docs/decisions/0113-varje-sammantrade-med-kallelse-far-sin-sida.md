@@ -103,3 +103,15 @@ gemensam fil behövs inte än.
 Ett kommande sammanträde utan kallelse i poolen får ingen tom sida.
 Kalendern länkar då som förut till kommunens mötessida, som har mer, och
 nattkörningen hämtar kallelsen när den kommer (K56).
+
+Tillägg 2026-11-24, samma dag som PR:en mergades: projektägaren såg
+sidorna och valde att bara 2026 och framåt ska ha dem. De äldre sidorna
+var ofta ofullständiga, och historiken på en aktuell punkt når de gamla
+paragraferna ändå, eftersom den länkar till protokollen och inte till de
+gamla sammanträdessidorna. Kommunfilen fick därför fältet
+`sammantradessidor` igen, men en gång för hela kommunen i stället för per
+organ: Kungsbacka har `sammantradessidor = 2026`, och en kommun utan
+fältet får sidan för alla år enligt beslutet ovan. Webbplatsen har då
+omkring 170 sammanträdessidor. Resten av beslutet gäller: varje
+sammanträde med kallelse från det året, i alla organ, och sidans sätt att
+säga vad som saknas.

@@ -114,7 +114,8 @@ Skriv aldrig om ett annat dokuments fakta – länka till dem.
   `data/` återger källan och är också undantaget; där maskas bara
   identifierare (ADR-0022). Det gäller också versionsloggen i
   `versioner/<kommun>.csv`, som citerar dokumentens front matter
-  (ADR-0077).
+  (ADR-0077), och låsfilen `package-lock.json`, som återger
+  npm-paketens egen metadata (ADR-0117).
 
 ## Arbetsflöde
 

@@ -13,6 +13,10 @@ grupper = ["Kommunfullmäktige och kommunstyrelsen", "Nämnderna", "Övriga"]
 # Det är en vana, inget beslutat sammanträde; kalendern räknar fram det (K49).
 gruppmote = { fore = "ks", veckodag = "måndag", tid = "kväll" }
 
+# Sammanträdena får en sida punkt för punkt från det här året, inför
+# mötena; äldre år har bara organets lista med dokument (ADR-0113).
+sammantradessidor = 2026
+
 [[organ]]
 id = "ga"
 namn = ["Nämnden för Gymnasium & Arbetsmarknad"]

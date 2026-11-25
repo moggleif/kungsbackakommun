@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.4e78245d19a7bafa93ffcdd/17631034981
 sha256: 3707638dcec12ee5dc98a990f96c288590178510b20fcf6ea7888584513ac3cb
 bytes: 20797685
 sidor: 117
-hamtad: 2026-11-22T23:00:38+00:00
-konverterad: 2026-11-22T23:01:31+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T01:53:43+00:00
+konverterad: 2026-11-25T01:54:43+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -405,19 +405,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 1 Hög 2 Medel Totalt: 3
 
 9
+
+Sannolikhet
 
 <!-- sida 11 -->
 
@@ -1168,14 +1166,14 @@ Hedeleden
 Detaljplan för
 Tölö ängar 3
 
-planområdet
-
 I fördjupad översiktsplan för
 Kungsbacka stad, 2009 är Tölö
 4:148 markerad som område
 för bostadsutbyggnad.
 
 6 Planbeskrivning                                        Planbeskrivning 7
+
+planområdet
 
 <!-- sida 33 -->
 
@@ -1214,51 +1212,30 @@ födosökande fåglar. Vissa av värdeelementen är biotopskyddade men inte i de
 växningen har pågått under lång tid. Många fågelarter använder flertalet av de biotoper som
 ingår i aktuellt landskapsobjekt såsom öppna marker och brynmiljöer men även intilliggande
 skogsområden och vattendrag.
-d
-d
-ky
-ds
-n
-ns
-för
-stra
-Grä
-c
-k
-ä
-åkerholme,
-a
-b
-fornlämning
-o
-k
-r
-mning B
-s
-t
-fornlä
-e
-n
-m
-u r åk
-s
-e
-t
-r
-e
-h
-n
-o
-m
-l m
-u
-e
-r S ö
-derå n
+
 Områden med områ-
 desskydd inom plan-
 området.
+
 8 Planbeskrivning                                                                                                              Planbeskrivning 9
+
+åkerholme,
+
+fornlämning
+
+Brokabäck
+
+fornlämning
+
+Söderån
+
+åkerholme
+
+stenmur
+
+stenmur
+
+Gräns för strandskydd
 
 <!-- sida 34 -->
 
@@ -1761,29 +1738,21 @@ Tvärgatan i väster planeras inom allmän plats (GATA ) och möjliggör för en
 2
 ling till angränsande område i väster. Gatan innefattar körbana samt gångbanor på båda si-
 dor om gatan, se sektion på nästa sida. Söder om torget finns en allmän plats (GATA ) som
-H                       2
-möjliggör vändning av driftfordon på (GATA )a.v I övrigt ligger Tvärgatan på kvartersmark
-1 to
-rn
-s
-v
-ä
-g
-e
-n
-A
-rn
-o
-Oxelvägen
-ia
-v
-ä
-g
-e
-n
-Hällingsjövägen
+2
+möjliggör vändning av driftfordon på (GATA ). I övrigt ligger Tvärgatan på kvartersmark
+1
+
 Gatustruktur inom planområdet.
+
 18 Planbeskrivning                                      Planbeskrivning 19
+
+Arnoiavägen
+
+Havtornsvägen
+
+Oxelvägen
+
+Hällingsjövägen
 
 <!-- sida 45 -->
 

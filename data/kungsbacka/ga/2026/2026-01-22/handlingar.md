@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2d8c151a19bc22c303820a1c/1768561005
 sha256: a520a5e8d5626e035d0920c6eb67059e48193ad16bd77bdf7b148cb7481b78dc
 bytes: 3972415
 sidor: 92
-hamtad: 2026-11-22T21:24:43+00:00
-konverterad: 2026-11-22T21:25:07+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-24T23:50:40+00:00
+konverterad: 2026-11-24T23:51:03+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]
+tal_obekraftade: [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
 figurer: [20, 21, 24, 25, 26, 28, 29, 30, 32, 36, 37, 38, 39, 40, 42, 43, 44, 45, 46]
 tolkade: []
 granskad: null
@@ -2797,118 +2797,15 @@ Sent på onsdag kväll fattades beslut om att stänga båda gymnasieskolorna tor
 8 januari. Måndagen den 12 januari höll Elof Lindälv dessutom stängt på grund av att
 
 Gymnasium & Arbetsmarknad                                    Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon vx 0300-83 40 00
+Fax 0300-83 41 64
+(e-post borttagen)
+www.kungsbacka.se
 
-v
-001B
-U K
-5002
-,0
-1 5
-.1
-1 2 - -
-gymnasie.vuxenu
-T
-tb
-S
-e
-i
-l
-t
-l
-e
-a
-d
-f
-d
-n
-o
-s
-i
-4
-n
-n
-h
-F
-3
-g
-u
-v
-a
-4
-@
-s
-x
-x
-e
-8
-t
-0
-0
-k
-1
-,
-B
-3
-3
-u
-S
-K
-0
-0
-n
-e
-t
-0
-0
-g
-s
-o
-u ö
-\-
-\-
-s
-r
-n
-8
-8
-b
-g
-k g
-3
-3
-a
-a
-s s a
-c
-t
-b
-4
-4
-a
-d
-k
-a
-1
-n
-0
-r
-a
-c e
-.
-6
-3
-0
-k
-s
-s
-7
-4
-0
-e
-a s
-m
-roF                                                               www.kungsbacka.se
-inu
+uniForm KUB100 v 1.0, 2005-11-25
 
 <!-- sida 48 -->
 

@@ -28,6 +28,7 @@ def tecken(text: str, x0: float, bredd: float = 5.6, upright: bool = True) -> di
         "top": 134,
         "bottom": 140,
         "upright": upright,
+        "matrix": (1, 0, 0, 1, x0, 700),
     }
 
 

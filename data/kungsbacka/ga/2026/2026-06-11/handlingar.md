@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.342d4f8619eb49a8271f17/178116242972
 sha256: 0a2e45c1010883a47da85ac83041ed1e7038716a2e84af68d9434047fb2dca85
 bytes: 10542103
 sidor: 215
-hamtad: 2026-11-22T21:34:51+00:00
-konverterad: 2026-11-22T21:35:32+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T00:00:34+00:00
+konverterad: 2026-11-25T00:01:15+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+tal_obekraftade: [92, 105, 208, 209, 210]
 figurer: [17, 18, 19, 93, 121, 122, 123, 124, 125, 126, 131, 132, 138, 139, 140, 142, 143, 144, 146, 147, 148, 149, 150, 151, 152, 154, 155, 156, 158, 159, 160, 161, 162, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 175, 176, 177, 183, 186, 189, 196, 198, 208, 213]
 tolkade: []
 granskad: null
@@ -3679,91 +3679,15 @@ angående en uppföljning av resultatet av den gymnasieutredning, och efterfölj
 förändringar, som genomfördes för några år sedan.
 
 Gymnasium & Arbetsmarknad                                    Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon vx 0300-83 40 00
+Fax 0300-83 41 64
+(e-post borttagen)
+www.kungsbacka.se
 
-v
-001B
-U
-5002
-,0
-1 5
-.1
-1 2 - -
-T
-S
-el
-t
-e
-a
-f
-d
-o
-s
-4
-n
-h
-F
-3
-u
-v
-a
-4
-s
-x
-x
-e
-8
-t
-0
-0
-1
-,
-B
-3
-3
-S
-K
-0
-0
-e
-t
-0
-0
-o
-s u ö
-\-
-\-
-r
-n
-8
-8
-g
-k g
-3
-3
-a
-s s
-t
-a b
-4
-a
-4
-d a
-n
-0
-1
-r c e
-3
-0
-6
-k s
-7
-0
-4
-a s
-K                                                      (e-post borttagen)
-m
-roF                                                               www.kungsbacka.se
-inu
+uniForm KUB100 v 1.0, 2005-11-25
 
 <!-- sida 93 -->
 
@@ -4370,18 +4294,15 @@ Bifogade handlingar: aktbilaga 165 samt 69–163 som skickas i separat e-post.
 Kopia till: Advokat Lars Arrhed, Advokat Pontus Etéus, Advokat Reid Lindell
 Sida 1 (av 2)
 
-0
 Om domstolens behandling av personuppgifter, se www.domstol.se/personuppgifter. Kontakta oss för information på annat sätt.
-5
-9
-7 5    Besöksadress    Öppettider  Postadress     E-post
-3
-3      Ullevigatan 15  måndag–fredag              (e-post borttagen)
-d
-I                      08:00–16:00 404 83 Göteborg
-k.     Telefon                                    Webbplats
-o
-D      031-743 60 00                              www.goteborgstingsratt.domstol.se
+
+Besöksadress    Öppettider  Postadress     E-post
+Ullevigatan 15  måndag–fredag              (e-post borttagen)
+08:00–16:00 404 83 Göteborg
+Telefon                                    Webbplats
+031-743 60 00                              www.goteborgstingsratt.domstol.se
+
+Dok.Id 3375950
 
 <!-- sida 106 -->
 
@@ -8940,6 +8861,21 @@ skicka in:
 
 • övriga handlingar i pågående mål
 
+Genom att använda e-tjänsten behöver du inte
+längre skicka sådana handlingar som ska vara
+undertecknade med post.
+
+Om det är en ansökan eller fullmakt som
+behöver signeras kan flera personer använda e-
+tjänsten och signera handlingen.
+För att kunna signera och skicka in fullmakt
+via e-tjänsten krävs att det är fullmaktsgivaren
+
+som använder e-tjänsten.
+Om det är en ansökan som skickas in kan
+eventuell ansökningsavgift samtidigt betalas
+med kort i e-tjänsten.
+
 Dokumenten måste vara av PDF-format och
 får inte sammanlagt överstiga 20 MB.
 
@@ -8950,68 +8886,19 @@ dokument du vill skicka in.
 När du skickat in handlingarna får du en
 bekräftelse till den e-postadress du angett.
 
-Genom att använda e-tjänsten behöver du inte
-längre skicka sådana handlingar som ska vara
-undertecknade med post.
-9
-0
-4-
-2
-0 2    Om det är en ansökan eller fullmakt som
-•
-g n    behöver signeras kan flera personer använda e-
-ilk
-cev    tjänsten och signera handlingen.
-tu
-slo
-tsm    För att kunna signera och skicka in fullmakt
-o
-d rö   via e-tjänsten krävs att det är fullmaktsgivaren
-f
-.d     som använder e-tjänsten.
-v
-A
-,tek
-rev    Om det är en ansökan som skickas in kan
-slo
-tsm    eventuell ansökningsavgift samtidigt betalas
-o D    med kort i e-tjänsten.
-v
-a
-tarecu
-d
-o      Hur gör jag?
-rP
-tlatig
-•
+Hur gör jag?
 Du når tjänsten via www.domstol.se och det
-id
-rag
 krävs e-legitimation för att kunna använda den.
-n
-ild
-n ah   Det är bra att ha förberett och sparat ner de
-ak     dokument du vill skicka in via e-tjänsten på din
-cik
-s h    dator innan du loggar in. Detta eftersom du
-co
-aren   har en begränsad tid på dig att bli klar med ditt
-is
-tta
-rö
-g      ärende.
-tsn
-f
-E
-äj
--t
-n :
-o
-itam
-ro
-fn
-I
+
+Det är bra att ha förberett och sparat ner de
+dokument du vill skicka in via e-tjänsten på din
+dator innan du loggar in. Detta eftersom du
+har en begränsad tid på dig att bli klar med ditt
+ärende.
+
 www.domstol.se
+
+Information: E-tjänst för att signera och skicka handlingar digitalt • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2024-09
 
 <!-- sida 209 -->
 
@@ -9051,52 +8938,25 @@ Exempel:
 Mars            Mars           Mars
 1              2              15
 …
-1               Handlingarna som du ska Eventuellt kontrollmeddelande Du är delgiven den 15 mars.
-3
-1
-\-               delges skickas den 1 mars. skickas nästa arbetsdag, den 2 mars. Tiden räknas från den dagen.
-2
-0
-2
-•
-te
-k
-re
-v slo     Tänk på detta så länge målet pågår
-tsm
-o         • Meddela domstolen om du ändrar adress.
-D
-v
-a
-ta re     • Kontrollera din post eller motsvarande regelbundet, minst varannan vecka.
-c
-u d         Detta för att inte missa något viktigt, till exempel en tid för att svara eller överklaga. Meddela
-o
-g
-rP
-•           domstolen i förväg om du under någon period inte kan kontrollera din post.
-n
-in
-v ig      • Du kan få brev med förenklad delgivning så länge målet pågår. Om målet överklagas kan även
-le
-d           högre instanser använda förenklad delgivning.
-d
-a
-lk
-e n       • Det kan förekomma att domstolen skickar handlingar på annat sätt, till exempel tillsammans
-r
-ö
-f m         med ett delgivningskvitto eller helt utan delgivning.
-o
-n
-o
-ita
-m
-r
-o
-fn
-I
+Handlingarna som du ska Eventuellt kontrollmeddelande Du är delgiven den 15 mars.
+delges skickas den 1 mars. skickas nästa arbetsdag, den 2 mars. Tiden räknas från den dagen.
+
+Tänk på detta så länge målet pågår
+
+• Meddela domstolen om du ändrar adress.
+• Kontrollera din post eller motsvarande regelbundet, minst varannan vecka.
+
+Detta för att inte missa något viktigt, till exempel en tid för att svara eller överklaga. Meddela
+domstolen i förväg om du under någon period inte kan kontrollera din post.
+• Du kan få brev med förenklad delgivning så länge målet pågår. Om målet överklagas kan även
+högre instanser använda förenklad delgivning.
+
+• Det kan förekomma att domstolen skickar handlingar på annat sätt, till exempel tillsammans
+med ett delgivningskvitto eller helt utan delgivning.
+
 www.domstol.se
+
+Information om förneklad delgivning • Producerat av Domstolsverket • 2023-11
 
 <!-- sida 210 -->
 
@@ -9140,118 +9000,15 @@ fredagen den 5 juni, är det dags för avgångseleverna från Elof Lindälvs gym
 Utspringen startar klockan 13 båda dagarna.
 
 Gymnasium & Arbetsmarknad                                    Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon vx 0300-83 40 00
+Fax 0300-83 41 64
+(e-post borttagen)
+www.kungsbacka.se
 
-v
-001B
-U K
-5002
-,0
-1 5
-.1
-1 2 - -
-gymnasie.vuxenu
-T
-tb
-S
-e
-i
-l
-t
-l
-e
-a
-d
-f
-d
-n
-o
-s
-i
-4
-n
-n
-h
-F
-3
-g
-u
-v
-a
-4
-@
-s
-x
-x
-e
-8
-t
-0
-0
-k
-1
-,
-B
-3
-3
-u
-S
-K
-0
-0
-n
-e
-t
-0
-0
-g
-s
-o
-u ö
-\-
-\-
-s
-r
-n
-8
-8
-b
-g
-k g
-3
-3
-a
-a
-s s a
-c
-t
-b
-4
-4
-a
-d
-k
-a
-1
-n
-0
-r
-a
-c e
-.
-6
-3
-0
-k
-s
-s
-7
-4
-0
-e
-a s
-m
-roF                                                               www.kungsbacka.se
-inu
+uniForm KUB100 v 1.0, 2005-11-25
 
 <!-- sida 211 -->
 

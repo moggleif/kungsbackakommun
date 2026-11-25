@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.2b49f86518ecb777ac8a5fb/17131681386
 sha256: d4ee4016ccaa3e1c8e4e69235fdc83c17ba7a376f1bb158ee8e31b7e22b6c6f8
 bytes: 5015007
 sidor: 125
-hamtad: 2026-11-22T21:46:07+00:00
-konverterad: 2026-11-22T21:46:29+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T00:19:46+00:00
+konverterad: 2026-11-25T00:20:07+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -4240,11 +4240,15 @@ Ansökan undertecknas av medarbetare och skolledning genom skolledningen.
 
 Malevik dag som ovan
 
-�          if-     · ::::----..\_\_/
-
 Peter Jonsson, rektor åk 4-9
 
 1
+
+�
+
+if-·
+
+::::----..\_\_/
 
 <!-- sida 110 -->
 

@@ -1,5 +1,5 @@
 """Krav: K1, K18, K22, K23, K49, K57 och K88 i docs/02-KRAV.md, ADR-0019, ADR-0032,
-ADR-0039, ADR-0072, ADR-0080 och ADR-0109.
+ADR-0039, ADR-0072, ADR-0080, ADR-0109 och ADR-0113.
 Test: tests/test_konfiguration.py, tests/test_gruppmoten.py och
 tests/test_meetingsplus.py."""
 
@@ -22,6 +22,7 @@ KOMMUNFALT = {
     "grupper",
     "gruppmote",
     "sidor_med_text",
+    "sammantradessidor",
 }
 
 
@@ -39,6 +40,9 @@ class Kommun:
     gruppmote: Gruppmote | None = None
     # Typerna som visar texten på dokumentets sida; None är alla (K18).
     sidor_med_text: tuple[str, ...] | None = None
+    # Första året sammanträdena får en sida punkt för punkt; None är alla
+    # år (K54).
+    sammantradessidor: int | None = None
 
     def organnamn(self, organ_id: str) -> str:
         return next(o.namn[0] for o in self.organ if o.id == organ_id)
@@ -71,6 +75,7 @@ def tolka(kommun_id: str, data: dict) -> Kommun:  # undantag: följden avgör fe
         grupper=grupper,
         gruppmote=None if gruppmote is None else gruppmote_av(gruppmote, organ_id),
         sidor_med_text=sidor_med_text_av(data),
+        sammantradessidor=schema.valfritt(data, "sammantradessidor", int, "kommunen"),
     )
 
 

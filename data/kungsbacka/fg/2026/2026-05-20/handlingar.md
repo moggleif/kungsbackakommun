@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1c3413919e1001c0e6be5ea/17791028853
 sha256: 332df88529c080618c29581ce787e8cd24a3b571f9891896bf729884a94701cd
 bytes: 6563751
 sidor: 120
-hamtad: 2026-11-22T22:04:57+00:00
-konverterad: 2026-11-22T22:14:40+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T00:38:28+00:00
+konverterad: 2026-11-25T00:48:13+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr]
-tal_obekraftade: [1, 2, 3, 4, 8, 10, 11, 12, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 31, 36, 37, 38, 40, 46, 47, 49, 57, 58, 60, 68, 69, 71, 72, 74, 75, 76, 77, 78, 83, 87, 92, 93, 97, 101, 102, 105, 106, 107, 108, 109, 110, 112, 113, 115, 116, 117, 118]
+tal_obekraftade: [1, 2, 3, 4, 5, 8, 10, 11, 12, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 31, 36, 37, 38, 40, 42, 43, 46, 47, 49, 54, 57, 58, 60, 65, 68, 69, 71, 72, 74, 75, 76, 77, 78, 83, 87, 89, 92, 93, 96, 97, 101, 102, 105, 106, 107, 108, 109, 110, 112, 113, 115, 116, 117, 118]
 figurer: [10, 15, 24, 26, 27, 53, 54, 57, 64, 65, 68, 98, 105, 106, 107, 113, 114, 115]
 tolkade: []
 granskad: null
@@ -323,7 +323,7 @@ www.kungsbacka.se
 KUNGSBACKA KOMMUN
 2 (6)
 
-\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 50% uppskattningsvis, en del av dessa har fått
+\- Inspektion från Arbetsmiljöverket enhetsnivå, ca 5090 uppskattningsvis, en del av dessa har fått
 återkoppling att bli bättre på systematiken kring hot o våld, anpassningar och även andra lokala behov
 
 \- Sveriges lärare och kommunal påtalar att de gärna ser att arbetsgivaren inbjuder till samverkan till de
@@ -2505,7 +2505,7 @@ elever från andra kommuner tas emot i mån av plats.
 För elever som bor växelvis hos vårdnadshavare i olika kommuner är det
 folkbokföringsadressen som avgör bosättningskommun.
 
-Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 2 §
+Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 28
 (asylsökande, papperslösa, fri rörlighet enligt EU/EES, tidsbegränsat
 uppehållstillstånd samt stadigvarande vistas enligt skolförordningen 2011:185) har
 samma rätt till skolplacering och ska likställas med barn som är folkbokförda i
@@ -2917,7 +2917,7 @@ elever från andra kommuner tas emot i mån av plats.
 För elever som bor växelvis hos vårdnadshavare i olika kommuner är det
 folkbokföringsadressen som avgör bosättningskommun.
 
-Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 2 §
+Barn som är bosatta i Kungsbacka kommun enligt skollagen 29 kap. 28
 (asylsökande, papperslösa, fri rörlighet enligt EU/EES, tidsbegränsat
 uppehållstillstånd samt stadigvarande vistas enligt skolförordningen 2011:185) har
 samma rätt till skolplacering och ska likställas med barn som är folkbokförda i
@@ -4422,7 +4422,7 @@ Om elev flyttar eller byter skola
 
 För elever som flyttar eller byter skola så sker en förnyad prövning om rätten till
 skolskjuts som utgår ifrån elevens nya folkbokföringsadress. Vårdnadshavare ska
-göra en ny ansökan. Enligt skollagen 10 kap 38 § har en elev som har tagits emot i
+göra en ny ansökan. Enligt skollagen 10 kap 38 8 har en elev som har tagits emot i
 en kommuns grundskola ett visst läsår rätt att gå kvar hela läsåret, även om de
 förhållanden som låg till grund för mottagandet ändras under läsåret. Om det för
 eleven återstår endast en årskurs, har eleven också rätt att gå kvar sista årskursen.

@@ -1,4 +1,5 @@
-"""Krav: K6, K41, ADR-0103. Skapar PDF:erna för tests/test_ordning.py.
+"""Krav: K6, K41, ADR-0103, ADR-0112. Skapar PDF:erna för
+tests/test_ordning.py och tests/test_snett.py.
 
 Körs för hand, bara med standardbiblioteket:
 `python tests/fixtures/pdf/skapa_hogkant_ute.py`.
@@ -12,6 +13,11 @@ Körs för hand, bara med standardbiblioteket:
   radens sista tal.
 - `axeltitel.pdf`: sex rader löptext med tal och en axeltitel utan
   siffror på högkant, vriden moturs, i vänstra marginalen.
+- `upp-och-ned.pdf`: sex rader löptext utan tal och `73` upp och ned
+  mitt i en rad, där det ser ut att stå `Belopp 73 kronor`.
+- `snett.pdf`: sex rader löptext och `98765` i 45° över stycket.
+- `gatunamn.pdf`: sex rader löptext med tal och gatunamnet
+  `Kungsgatan` i 30° under stycket.
 """
 
 from pathlib import Path
@@ -95,3 +101,12 @@ pdf("talrad-hogkant.pdf", [*talrader(), medurs(329, 709.5, "Not")])
 TAL = "Kommunen hade 84 512 invanare den 31 december 2023, rad {}."
 tal = [text(60, 700 - 14 * i, TAL.format(i)) for i in range(6)]
 pdf("axeltitel.pdf", [*tal, text(40, 560, "Antal invanare", "0 1 -1 0")])
+
+
+UPP_OCH_NED = "-1 0 0 -1"
+SNETT_45 = "0.7071 0.7071 -0.7071 0.7071"
+SNETT_30 = "0.866 0.5 -0.5 0.866"
+belopp = [*rader[:2], text(60, 672, "Belopp"), text(110, 672, "kronor"), *rader[3:]]
+pdf("upp-och-ned.pdf", [*belopp, text(106, 676, "73", UPP_OCH_NED)])
+pdf("snett.pdf", [*rader, text(150, 640, "98765", SNETT_45)])
+pdf("gatunamn.pdf", [*tal, text(100, 560, "Kungsgatan", SNETT_30)])

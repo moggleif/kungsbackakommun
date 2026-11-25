@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.560286bd190a2659b0a30d0d/1723444891
 sha256: 710321ee3811b822b04ef7fde5f07b17b5c929e32b6bf6782bd147d4617a649b
 bytes: 8922222
 sidor: 118
-hamtad: 2026-11-22T22:29:14+00:00
-konverterad: 2026-11-22T22:30:02+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T01:11:15+00:00
+konverterad: 2026-11-25T01:12:01+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [18, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 57, 58, 59, 107, 108, 109]
+tal_obekraftade: [10, 18, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 57, 58, 59, 102, 107, 108, 109]
 figurer: [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 66, 115]
 tolkade: []
 granskad: null
@@ -339,18 +339,15 @@ Bifogade handlingar: aktbilaga 87
 
 Sida 1 (av 1)
 
-8
 Om domstolens behandling av personuppgifter, se www.domstol.se/personuppgifter. Kontakta oss för information på annat sätt.
-4
-5
-0 4    Besöksadress    Öppettider  Postadress     E-post
-0
-1      Sten Sturegatan 14 måndag–fredag Box 53197 (e-post borttagen)
-d
-I                      08:00–16:00 400 15 Göteborg
-k.     Telefon                                    Webbplats
-o
-D      031 - 732 70 00                            www.forvaltningsrattenigoteborg.domstol.se
+
+Besöksadress    Öppettider  Postadress     E-post
+Sten Sturegatan 14 måndag–fredag Box 53197 (e-post borttagen)
+08:00–16:00 400 15 Göteborg
+Telefon                                    Webbplats
+031 - 732 70 00                            www.forvaltningsrattenigoteborg.domstol.se
+
+Dok.Id 1004548
 
 <!-- sida 11 -->
 
@@ -4209,85 +4206,16 @@ Datum
 2024-08-06
 Nya ärenden
 
-3102
-,0.2v
-,1001B
-2 6 0 2 - - F F ö ri r d s a k o B l y a r & ste G n rundskola
-St
-T
-a
-K
-d
-el
-s
-u 4
-e
-h
-n 3
-f
-u
-o
-g 4
-s
-n
-s
-e
-8 b
-t
-0
-1 a
-,
-B
-3
-c
-S
-K
-0
-e
-k
-t
-0
-o
-s
-a u
-ö
-r
-\-
-n k
-8
-g
-k
-g o
-3
-a
-s
-s m
-t
-a
-b
-a
-4
-d
-a
-n
-m
-0
-r
-c
-e
-3
-u
-0
-k
-s
-7
-n
-0
-a
-s
-U K                                                                 Fax 0300-83 41 64
+Förskola & Grundskola                                        Kungsbacka kommun
+Frida Byrsten                                                 434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon 0300-83 40 00
+Fax 0300-83 41 64
 (e-post borttagen)
 www.kungsbacka.se
+
+KUB1001, v2.0, 2013-02-26
 
 [Tabell 102-1](handlingar.tabeller/102-1.csv)
 

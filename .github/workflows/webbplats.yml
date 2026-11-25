@@ -29,11 +29,11 @@ jobs:
       || contains(github.event.issue.labels.*.name, 'avvikelse')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
-      - run: pip install -e .
+      - uses: ./.github/actions/installera
       # Bara issues från projektets egna konton, så att ingen utomstående
       # kan lägga ut text på webbplatsen (ADR-0054).
       - name: De öppna avvikelserna i källan, ett issue per rad
@@ -50,7 +50,7 @@ jobs:
           python -m kommunhandlingar.webbplats _site
           "${{ github.server_url }}/${{ github.repository }}"
           "$RUNNER_TEMP/avvikelser.jsonl"
-      - uses: actions/upload-pages-artifact@v5
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
 
   publicera:
     name: Publicera på GitHub Pages
@@ -64,4 +64,4 @@ jobs:
       url: ${{ steps.publicering.outputs.page_url }}
     steps:
       - id: publicering
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
