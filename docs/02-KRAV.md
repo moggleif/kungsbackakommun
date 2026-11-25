@@ -2893,3 +2893,24 @@ också hitta dokumenten, och se om de är osäkra innan de öppnas.
 - **Så** länkar den till en sökning i hela texten i kommunens mapp i
   repot på GitHub, och säger att den kräver inloggning och inte söker i
   de största filerna.
+
+## K110 — En kommunfil prövas med ett kommando
+
+Hur och varför står i
+[ADR-0133](decisions/0133-kommunfilen-provas-med-ett-kommando.md) och
+[Gränssnittet mot datarepon](03-ARKITEKTUR.md#gränssnittet-mot-datarepon).
+Issue [#516](https://github.com/moggleif/kungsbackakommun/issues/516).
+Ett datarepo ska kunna pröva sin kommunfil i kontrollen på varje PR utan
+att skriva Python i arbetsflödet.
+
+- **Givet** en eller flera kommunfiler som följer schemat (K1)
+- **När** `python -m kommunhandlingar.konfiguration <kommunfil> …` körs
+- **Så** står en rad per fil med filen, kommunens namn och antalet organ,
+  och slutkoden är 0.
+- **Givet** en kommunfil som inte följer schemat eller inte är giltig TOML
+- **När** kommandot körs
+- **Så** stoppar det med "Stoppad: ", filen och felet, utan traceback, och
+  slutkoden är skild från 0.
+- **Givet** inga kommunfiler
+- **När** kommandot körs
+- **Så** stoppar det med användningstexten.
