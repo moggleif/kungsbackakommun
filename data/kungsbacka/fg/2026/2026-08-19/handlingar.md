@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.27cf452819fe1d375f5dd6aa/1786968064
 sha256: 014263ad413b70e9ce941123ec01b5a6d1453da67af575c9f5eb2740d2f1eee4
 bytes: 11967957
 sidor: 506
-hamtad: 2026-11-22T22:16:01+00:00
-konverterad: 2026-11-22T22:19:26+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T00:49:42+00:00
+konverterad: 2026-11-25T00:53:09+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+kvalitet_per_sida: [ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [40, 59]
 figurer: [27, 28, 29, 33, 34, 41, 59, 69]
 tolkade: []
 granskad: null
@@ -1408,76 +1408,16 @@ För revisorerna i Kungsbacka kommun
 Birgitta Litsegård                  Hans-Åke Fryklund
 Kommunrevisionens ordförande        Kontaktrevisor
 
-v
-001B
-6002
-,0
-0 2
-.1
-1 0 - - K o mmunrevision
-Tele
-K
-fo
-u 4
-n
-n 3
-v
-g 4
-x
-s 8 b
-0
-1 a
-B
-3
-c K
-0
-k
-e
-0
-S
-s
-a u
-ö
-\-
-n
-t
-k
-8
-a
-k
-g o
-d
-3
-s
-s m
-a
-s
-b
-4
-h
-d
-a m
-0
-u
-r
-c
-e
-s
-u
-0
-k
-s
-e
-n
-0
-a
-s
-t
-U                                                                  Fax 0300-83 47 04
-K
-m
-roF                                                          (e-post borttagen)
-inu                                                                www.kungsbacka.se
+Kommunrevision                                               Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset
+Telefon vx 0300-83 40 00
+Fax 0300-83 47 04
+(e-post borttagen)
+www.kungsbacka.se
+
+uniForm KUB100 v 1.0, 2006-10-02
 
 <!-- sida 41 -->
 
@@ -2189,109 +2129,64 @@ som under 2025 mottagit minst respektive mest strukturbidrag.
 Strukturbidrag - Elever per lärare
 
 16000                                             20
-r
-o n 14000          17,9                             18 e r
-o                                                   16 a
-r k
-i v e le 1
-1
-8 0
-2
-0
-0
-00 0
-0
-0
-0
-0    12,2 13,2    12,7 12,8 11,8    10,9
-14,2
-1 1
-1
-0 2
-4 r ä l
-r e p r
-r e p
-g a r d ib 2 4
+14000            17,9                             18
+16
+12000
+14,2  14
+10000   12,2 13,2    12,7 12,8 11,8               12
+10,9
+8000                                              10
+8,9
+6000                                              8
 6
-0 0
-0
-0 0
-0
-0 0
-0                                            8,9
-2 4
-6 8 e v e le
-la t n A
-r u  0                                              0
-t
-k
-u
-r
-t
-S
+4000
+4
+2000                                              2
+0                                              0
+
 Strukturbidrag i kr per elev Elever per lärare
 Tabell 1: Tilldelning av strukturbidrag per elev i kronor jämfört med antal elever per lärare. Källa: Skolverket
 samt kommunens egen sammanställning.
+
 I nedan tabell 2 redovisas mottaget strukturbidrag samt betyg i årskurs 6 för de skolor med
 en årskurs 6 och som mottagit minst respektive mest strukturbidrag. Betygsdata saknas för
+
 vissa skolor på grund av att elevunderlaget varit för litet för att Skolverket ska publicera
 data.
 Strukturbidrag -Godkänt i alla ämnen i åk 6, %
+
+```osaker-tabell
 12000                                             90
-r                                                     %
-o n
-o r k
-i v e
-10
-8
-0
-0
-0
-0
-0
-0
-71,4
-78,8
-75,5         65
-6
-7
-8
-0
-0
-0
-,
-6 k å
-i n
-le
-r e 6000                             46,8
-50
-4
-5
-0
-0 e
-n m
-p                                                     ä
-g 4000                                              30 a
-a
-r d
-ib
-r u
+                     78,8                         80
+10000                     75,5
+                 71,4                             70
+```
+
+65
+8000                                              60
+50 50
+6000                               46,8
+40
+4000                                              30
+20
 2000
-1
-2
-0
-0
-lla
-i t
-n ä
-t k 0                                               0 k d
-u                                                     o
-r t                                                   G
-S
+10
+0                                               0
+
 Strukturbidrag Godkänt i alla ämnen i åk 6
+
 Tabell 2: Tilldelning av strukturbidrag per elev i kronor jämfört med andelen (%) elever som uppnår godkänt i alla
 ämnen i åk 6. Källa: Skolverket samt kommunens egen sammanställning.
+
 18
+
+Antal elever per lärare
+
+Strukturbidrag per elev i kronor
+
+Godkänt i alla ämnen i åk 6 ,%
+
+Strukturbidrag per elev i kronor
 
 <!-- sida 60 -->
 

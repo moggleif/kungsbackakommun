@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.74782bfe1a1a1a6a2656e4de/1794231115
 sha256: 8fb1b164974c6a8e1416e17920bab834eaffb7b635539076e8246f014947e378
 bytes: 12069784
 sidor: 398
-hamtad: 2026-11-22T22:22:19+00:00
-konverterad: 2026-11-22T22:23:20+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T00:55:56+00:00
+konverterad: 2026-11-25T00:56:58+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, tom, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -2601,42 +2601,21 @@ Sannolikhet        Konsekvens
 2    4    6     8
 2            1 4  3       4 Mycket vanligt - exempelvis 1 gång Allvarlig/stor inverkan (så stor att
 per vecka          den inte får inträffa)
-te
 5
 3 Vanligt - exempelvis 1 gång per Kännbar (uppfattas som
-h k    1    2     3     4    månad              besvärande för berörda intressenter
-ilo
-n n 1                      2 Mindre vanligt - exempelvis 1 gång
-o
-L
-c
-in
-h
-d
-k
-ri
-o
-g
-m
-(u
-m
-p
-u
-p
-n
-fa
-e
-t
-n
-ta
-)
-s som liten av
-a S                          per år             berörda intressenter och
+1    2     3     4    månad              besvärande för berörda intressenter
+och kommunen)
+1
+2 Mindre vanligt - exempelvis 1 gång Lindrig (uppfattas som liten av
+per år             berörda intressenter och
 1     2    3     4                          kommunen)
 1 Osannolik (risken är praktiskt taget Försumbar (obetydlig för berörda
 Konsekvens                 obefintlig) - exempelvis 1 gång per intressenter och kommunen)
 10 år
+
 6
+
+Sannolikhet
 
 [Tabell 67-1](handlingar.tabeller/67-1.csv)
 
@@ -3007,19 +2986,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2           3          4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 2 Hög 5 Medel Totalt: 7
 
 7
+
+Sannolikhet
 
 <!-- sida 80 -->
 
