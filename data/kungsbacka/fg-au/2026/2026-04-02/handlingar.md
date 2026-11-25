@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1b24984919d24cef920956fb/1774935112
 sha256: 406aae961040ea9389f61a144b4bc1b520f1b9dffed889cd138b124827084cc4
 bytes: 18008096
 sidor: 125
-hamtad: 2026-11-22T22:43:29+00:00
-konverterad: 2026-11-22T22:45:44+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T01:25:36+00:00
+konverterad: 2026-11-25T01:27:51+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [13, 14, 15, 16, 17, 18, 23, 26, 27]
+tal_obekraftade: [12, 13, 14, 15, 16, 17, 18, 21, 23, 26, 27]
 figurer: [7, 11, 32, 35, 36, 37, 40, 41, 42, 44, 46, 47, 49, 51, 52, 54, 56, 58, 60, 61, 63, 65, 125]
 tolkade: []
 granskad: null
@@ -462,7 +462,7 @@ Stadshuset
 434 81 Kungsbacka
 
 Inkommen ansökan kommer diarieföras och blir en allmän handling som kan komma att lämnas ut efter
-sekretessprövning. 1 (16)
+sekretessprövning. 1 [6 6)
 
 Information
 
@@ -473,7 +473,7 @@ förvärvat insikt i de föreskrifter som gäller för verksamheten, har ekonomi
 som gäller för verksamheten och i övrigt har förutsättningar att följa de föreskrifter som gäller för utbildningen.
 
 Vidare krävs att den enskilde i övrigt bedöms lämplig. I fråga om en juridisk person krävs att samtliga som anges i
-2 kap. 5 a § skollagen bedöms lämpliga. Vid lämplighetsbedömningen ska viljan och förmågan att fullgöra sina
+2 kap. 5 a 8 skollagen bedöms lämpliga. Vid lämplighetsbedömningen ska viljan och förmågan att fullgöra sina
 skyldigheter mot det allmänna, laglydnad i övrigt och andra omständigheter av betydelse beaktas. Ett
 godkännande ska avse viss utbildning vid en viss förskole-enhet och, i förekommande fall, att utbildningen har en
 konfessionell inriktning.
@@ -948,7 +948,7 @@ KUNGSBACKA KOMMUN
 
 För utbildningen ska det finnas lokaler och utrustning som behövs för att syftet med utbildningen ska kunna uppfyllas.
 
-Huvudmannen ska se till att barnen erbjuds en god miljö (2 kap. 35 § och 8 kap. 8 § skollagen). 10 (16)
+Huvudmannen ska se till att barnen erbjuds en god miljö (2 kap. 35 § och 8 kap. 8 § skollagen). 10 (18)
 
 Förskolan ska erbjuda barnen en god miljö. Miljön ska vara tillgänglig för alla barn och inspirera dem att samspela och att
 utforska omvärlden samt stödja barnens utveckling, lärande, lek och kommunikation. Barnen ska kunna växla mellan olika
