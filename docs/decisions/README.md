@@ -160,3 +160,4 @@ En ny ADR här tar numret efter det högsta i indexet och i tabellen.
 | 0118 | [Nattkörningens jobb som läser det hämtade har bara läsrätt, och ett eget jobb pushar grenen](0118-nattkorningens-tolkning-utan-skrivratt.md) | accepted |
 | 0116 | [Väg H bekräftar inte en rad med ett o som kan vara en nolla, och facit räknar inte utfyllnad under ett tecken](0116-vag-h-och-ett-o-som-kan-vara-en-nolla.md) | accepted |
 | 0119 | [Dokumenten i sökindexet, och hela texten söks på GitHub](0119-dokumenten-i-sokindexet-och-texten-pa-github.md) | accepted |
+| 0133 | [Kommunfilen prövas med kommandot `python -m kommunhandlingar.konfiguration`](0133-kommunfilen-provas-med-ett-kommando.md) | accepted |

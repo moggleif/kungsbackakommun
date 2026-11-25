@@ -254,6 +254,10 @@ namn (K74):
 - `python -m kommunhandlingar.webbplats <utkatalog> <repoadress> <avvikelsefil>`,
   körd i repots rot; argumenten låses i `tests/test_webbplats_kommando.py`
   (K82).
+- `python -m kommunhandlingar.konfiguration <kommunfil> …`, som läser
+  varje kommunfil med `las` och stoppar med "Stoppad: ", filen och felet
+  när en inte följer schemat (K110,
+  [ADR-0133](decisions/0133-kommunfilen-provas-med-ett-kommando.md)).
 - `from kommunhandlingar.konfiguration import las`.
 - Katalogerna: kommunfilen ligger i en katalog i repots rot, och
   `hamtning.toml` och `data/` ligger i roten.
@@ -329,7 +333,7 @@ Kommun ── Organ (KF, KS, nämnd, utskott)    giltighetsperiod, föregångare
 
 ```text
 src/kommunhandlingar/
-  konfiguration.py kommunfilen läses och kontrolleras
+  konfiguration.py kommunfilen läses och kontrolleras, också som kommando (K110)
   organ.py         organen i kommunfilen och deras kontroller
   schema.py        kontrollerna av fält och värden i kommunfilen
   fel.py           konfigurationsfel och "ingen kandidat"

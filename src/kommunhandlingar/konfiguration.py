@@ -1,8 +1,13 @@
-"""Krav: K1, K18, K22, K23, K49, K57 och K88 i docs/02-KRAV.md, ADR-0019, ADR-0032,
-ADR-0039, ADR-0072, ADR-0080, ADR-0109 och ADR-0113.
-Test: tests/test_konfiguration.py, tests/test_gruppmoten.py och
-tests/test_meetingsplus.py."""
+"""Krav: K1, K18, K22, K23, K49, K57, K88 och K110 i docs/02-KRAV.md, ADR-0019,
+ADR-0032, ADR-0039, ADR-0072, ADR-0080, ADR-0109, ADR-0113 och ADR-0133.
+Test: tests/test_konfiguration.py, tests/test_konfiguration_kommando.py,
+tests/test_gruppmoten.py och tests/test_meetingsplus.py.
 
+`python -m kommunhandlingar.konfiguration <kommunfil> …` läser varje
+kommunfil och stoppar vid den första som inte följer schemat.
+"""
+
+import sys
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
@@ -102,3 +107,18 @@ def kalla_av(post: dict, nummer: int, organ_id: list[str]) -> adaptrarna.Kalla:
         raise Konfigurationsfel(f"{var}: okänd adapter {adapter!r}")
     tolkning, omslag = adaptrarna.ADAPTRAR[adapter]
     return omslag(tolkning(post, organ_id, var))
+
+
+def prova_kommunfiler(kommunfiler: list[str]) -> None:
+    if not kommunfiler:
+        sys.exit("Användning: python -m kommunhandlingar.konfiguration <kommunfil> …")
+    for kommunfil in map(Path, kommunfiler):
+        try:
+            kommun = las(kommunfil)
+        except (Konfigurationsfel, tomllib.TOMLDecodeError, UnicodeDecodeError) as fel:
+            sys.exit(f"Stoppad: {kommunfil}: {fel}")
+        print(f"{kommunfil}: {kommun.namn}, {len(kommun.organ)} organ")
+
+
+if __name__ == "__main__":
+    prova_kommunfiler(sys.argv[1:])
