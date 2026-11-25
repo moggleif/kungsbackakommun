@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.509c10ba18f0f738b09bb84/17143687032
 sha256: 3e1b82f669a5843a89d75d5454f629d85611168f8fe663489373ea977af7887d
 bytes: 6755205
 sidor: 45
-hamtad: 2026-11-22T22:28:41+00:00
-konverterad: 2026-11-22T22:28:58+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T01:10:45+00:00
+konverterad: 2026-11-25T01:11:01+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -1610,7 +1610,7 @@ SAMM,�NTRÄDESIPROTOKOU
 Sammanträdesdatum
 Förskole-och grundskolenämnden     1999-05-20                  4
 
-§ 94                 70-99-61
+70-99-61
 
 Ansökan om att få starta "I Ur och Skur"-förskola i Anneberg/Älvsåker
 
@@ -1668,6 +1668,8 @@ At �
 8:'
 /1/c:f
 21 012 315 • \<D Co11yrigi,t KoM,\IENTLS 131.,\NKITrrn 97-01
+
+§ 94
 
 <!-- sida 39 -->
 
