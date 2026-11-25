@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.5c2b30eb196b02d62da5f55e/1747059805
 sha256: f81d50a2d04a5e9a443ba22006648f1e10425f1eeca02e2b01c1dfb4ebcf4969
 bytes: 17404169
 sidor: 284
-hamtad: 2026-11-23T00:18:54+00:00
-konverterad: 2026-11-23T00:19:47+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T03:36:44+00:00
+konverterad: 2026-11-25T03:37:39+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok]
@@ -9973,39 +9973,18 @@ kostnaden 70 öre/år per PE ansluten till reningsverket. För Hammargård har s
 reningsverk tidigare räknats in i den anslutna belastningen, eftersom slammet har
 behandlats där. Detta kommer nu att försvinna från Hammargårds avgift så den totala
 årsavgiften kommer att ligga kvar på samma nivå som tidigare.
-X C       •  Baserat på årsmedelvärden från de tre senaste åren håller samtliga slam Revaqkvalitet.
-O
-D
-.
-kiva    Ansökan:
-llu
-K h       •  Innan ansökan skickas in behöver utöver detta även tre månadsprover tas ut och en
-co
-sä           ledningens genomgång hållas samt tekniska nämnden behöver ha beslutat om certifieringen.
-n
-a m       •  Till ansökan behöver även en handlingsplan och prioritering av spårämnen samt en
-lÖ
-va           uppdaterad kvalitetspolicy tas fram. Allt detta finns för Hammargård med behöver
-g
-n ire        uppdateras och anpassas utifrån Ölmanäs och Kullaviks förutsättningar. Arbete med att ta
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+•  Baserat på årsmedelvärden från de tre senaste åren håller samtliga slam Revaqkvalitet.
+
+Ansökan:
+•  Innan ansökan skickas in behöver utöver detta även tre månadsprover tas ut och en
+ledningens genomgång hållas samt tekniska nämnden behöver ha beslutat om certifieringen.
+•  Till ansökan behöver även en handlingsplan och prioritering av spårämnen samt en
+uppdaterad kvalitetspolicy tas fram. Allt detta finns för Hammargård med behöver
+uppdateras och anpassas utifrån Ölmanäs och Kullaviks förutsättningar. Arbete med att ta
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 251 -->
 
@@ -10048,44 +10027,13 @@ specifika för det aktuella reningsverket.
 Utöver detta tillkommer de delar av uppströms- och nedströmsarbetet som utförs redan idag
 som en del av Hammargårds Revaqarbete, och som inte kommer att förändras.
 
-X       3.  Genomgång  av relevanta punkter i Revaqreglerna
-C
-O
-D
-.
-kiva
+3\.  Genomgång  av relevanta punkter i Revaqreglerna
+
 Ansökan om Revaq-certifiering ska innehålla följande:
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 252 -->
 
@@ -10108,43 +10056,9 @@ Fyra veckor efter att certifikatet har utfärdats kan slammet som därefter prod
 Före certifieringsrevisionen behöver alltså kraven i kapitel 3 uppfyllas. Dessa krav omfattar
 följande:
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 253 -->
 
@@ -10162,43 +10076,10 @@ Rutiner för att beskriva ledning och organisation, person som ansvarar för upp
 med ansvar för kontroll av slampartier och person med ansvar för kontroll av produkter finns redan
 för Hammargård, och kan kopieras rakt av. Det kommer innebära visst extra arbete för personerna
 med ansvar för kontroll av slampartier.
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 254 -->
 
@@ -10209,84 +10090,20 @@ gemensam genomgång för alla reningsverken, som då kommer behöva utökas någ
 igenom handlingsplaner, resultat och mätningar för mer än ett reningsverk. Även förberedelserna
 kommer att ta något längre, uppskattningsvis en extra arbetsdag per nytt reningsverk.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 255 -->
 
 Sida 6 av 20
 
-X C     Krav på utbildning uppfylls redan idag. Vid ev. upphandling av ny slamentreprenör är det viktigt att
-O
-D .
-kiva
+Krav på utbildning uppfylls redan idag. Vid ev. upphandling av ny slamentreprenör är det viktigt att
 utbildningskravet regleras och kontrolleras.
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 256 -->
 
@@ -10301,43 +10118,9 @@ uppfyllas som finns för Hammargård bör kunna användas även för nycertifier
 Rutiner finns redan för Hammargård och eftersom de yttre reningsverken ingår i Hammargårds
 Revaqcertifikat idag så tillämpas de redan.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 257 -->
 
@@ -10350,43 +10133,9 @@ samarbete, och alla Kungsbackas reningsverk revideras vid ett tillfälle, då m�
 Kungsbacka kommer vara gemensamma för alla reningsverken, men det behöver förankras med
 övriga inblandade parter, då revisionen blir mer omfattande.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 258 -->
 
@@ -10397,43 +10146,12 @@ Så länge inte olika underleverantörer handlas upp för de olika reningsverken
 Revaqcertifierade reningsverk.
 
 En extern revision, genomförd av ett ackrediterat organ, kommer att behöva ske årligen för varje
-X
-C
-O       Revaqcertifierat verk. En revision pågår normalt en heldag, med tillkommande efterarbete för att
-D
-.
-kiva    åtgärda eventuella anmärkningar och avvikelser.
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+Revaqcertifierat verk. En revision pågår normalt en heldag, med tillkommande efterarbete för att
+åtgärda eventuella anmärkningar och avvikelser.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 259 -->
 
@@ -10445,126 +10163,35 @@ reningsverk.
 Inga förändringar jämfört med idag, eftersom de yttre reningsverken idag ingår i Hammargårds
 uppströmsarbete.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
 Inga större förändringar behöver göras, då de yttre reningsverken redan idag ingår i Hammargårds
-cq
-a v     uppströmsarbete. Vissa beräkningar och sammanställningar som genomförs för alla reningsverken
-e
-R
-rö      idag kommer att behöva delas upp, uppskattningsvis innebär detta 1–2 arbetsdagar extra arbete
-f
-ra
-gn      jämfört med idag.
-in
-ttä
-stu
-rö
-F
-M
-P
+uppströmsarbete. Vissa beräkningar och sammanställningar som genomförs för alla reningsverken
+idag kommer att behöva delas upp, uppskattningsvis innebär detta 1–2 arbetsdagar extra arbete
+jämfört med idag.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 260 -->
 
 Sida 11 av 20
 
-X
-C
-O
-D
-.
-kiva
-llu     Det enda externa slammet eller materialet som kommer att tillföras något av de yttre reningsverken
-K
-h co    är slam från Lerkil som kan komma att tillföras Kullavik. Eftersom det redan idag tillförs
-sä      Hammargård finns all nödvändig dokumentation på plats, och det utgör alltså inget tillkommande
-n
-a
-m
-lÖ      arbete.
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+Det enda externa slammet eller materialet som kommer att tillföras något av de yttre reningsverken
+är slam från Lerkil som kan komma att tillföras Kullavik. Eftersom det redan idag tillförs
+Hammargård finns all nödvändig dokumentation på plats, och det utgör alltså inget tillkommande
+arbete.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 261 -->
 
 Sida 12 av 20
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 262 -->
 
@@ -10590,43 +10217,12 @@ Beräkning av prioriterade spårämnen, trender för prioriterade spårelement, 
 beräkningar till följd av 3.3.1.4 uppskattas ta ca. 2–3 arbetsdagar per certifierat reningsverk. Mallar
 för detta finns för Hammargård, men dessa behöver anpassas till de yttre reningsverken.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a       Analys av PFAS4 och PFAS22 behöver göras en gång per år, normalt i samband med årsprovet, och
-v
-e
-R
-rö      vid höga halter en gång per kvartal.
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+Analys av PFAS4 och PFAS22 behöver göras en gång per år, normalt i samband med årsprovet, och
+vid höga halter en gång per kvartal.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 263 -->
 
@@ -10636,43 +10232,12 @@ De yttre reningsverken ingår idag i Hammargårds handlingsplan. Separata handli
 tas fram och följas upp för de reningsverk som ska certifieras. Uppskattningsvis tar detta 1–2
 arbetsdagar per år.
 
-X
-C
-O       Detta är krav som ska ingå i ordinarie egenkontroll, så innebär inget extra arbete utöver vad som
-D
-.
-kiva    ska ske idag. Det behöver dock ses över inför en certifieringsrevision.
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+Detta är krav som ska ingå i ordinarie egenkontroll, så innebär inget extra arbete utöver vad som
+ska ske idag. Det behöver dock ses över inför en certifieringsrevision.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 264 -->
 
@@ -10684,43 +10249,11 @@ pilotanläggning på Kullaviks ARV) kan inte kombineras med Revaqcertifiering.
 
 Samma rutiner som idag finns för Hammargård kan användas.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in      Samma rutiner som idag finns för Hammargård kan användas.
-ttä
-stu
-rö
-F
-M
-P
+Samma rutiner som idag finns för Hammargård kan användas.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 265 -->
 
@@ -10732,43 +10265,12 @@ arbete.
 Samma rutiner som idag finns för Hammargård kan användas. Kontroll av slampartier kommer
 medföra visst extraarbete för den som är ansvarig för detta i och med att fler slampartier kommer
 behöva kontrolleras.
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra      Samma rutiner som idag finns för Hammargård kan användas.
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+
+Samma rutiner som idag finns för Hammargård kan användas.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 266 -->
 
@@ -10778,42 +10280,13 @@ Samma rutiner som idag finns för Hammargård kan användas.
 
 Samma rutiner som idag finns för Hammargård kan användas.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co      Samma rutiner som idag finns för Hammargård kan användas.
-sä
-n
-a m     Inga direkta kostnader, men slamentreprenörer behöver följa regler för lagring vilket kan göra
-lÖ
-va      hanteringen mer kostsam för dem.
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
+Samma rutiner som idag finns för Hammargård kan användas.
+Inga direkta kostnader, men slamentreprenörer behöver följa regler för lagring vilket kan göra
+hanteringen mer kostsam för dem.
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 267 -->
 
@@ -10835,56 +10308,23 @@ används för att kontrollera slamkvaliteten på ett slamparti före spridning. 
 tre åren för samtliga reningsverk. I alla fall utom för Kullavik 2023 skulle fosfor begränsa givan. För
 Kullavik 2023 är det i stället Kadmium som skulle vara begränsande.
 
-X       5.  Tidplan
-C
-O
-D
-.
-kiva
-llu
-E
-fö
-n
-l j
-r
-a
-im
-nd
-li
-e
-g
-\:
-tidplan för att erhålla Revaqcertifiering på Ölmanäs och Kullavik skulle kunna se ut enligt
-K
-h
-co        •  1 maj – 31 juli: Provtagning av slam, tre månadsprover. Under denna period tas de
-sä
-n a          dokument som krävs för ansökan fram.
-m
-lÖ
-va
+5\.  Tidplan
+
+En rimlig tidplan för att erhålla Revaqcertifiering på Ölmanäs och Kullavik skulle kunna se ut enligt
+följande:
+•  1 maj – 31 juli: Provtagning av slam, tre månadsprover. Under denna period tas de
+dokument som krävs för ansökan fram.
 •  1–15 augusti: Analystid hos labb, om tiden är kritisk bör det sista provet skickas in med
-g n          prioriterad hantering
-ire
-ifitre    •  Mitten av augusti: ansökan om certifiering inskickad
-cq        •  Slutet av augusti: svar på ansökan
-a
-v
-e R       •  Andra halvan av september: Certifieringsrevision. Detta bör om möjligt bokas in i god tid.
-rö
-f
-ra
+prioriterad hantering
+•  Mitten av augusti: ansökan om certifiering inskickad
+•  Slutet av augusti: svar på ansökan
+•  Andra halvan av september: Certifieringsrevision. Detta bör om möjligt bokas in i god tid.
 Vid denna tidpunkt behöver ett komplett kvalitetssystem enligt Revaqs modell vara på
-gn
 plats.
-in
-ttä
-stu
-rö
-F
-M
-P
+
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 [Tabell 267-1](handlingar.tabeller/267-1.csv)
 
@@ -10919,43 +10359,9 @@ Uppströmsarbetet enligt bilaga 4 är en av de viktigaste delarna av Revaqs rege
 tar mycket tid i anspråk. Eftersom reningsverken idag omfattas av Hammargårds Revaqcertifikat så
 påverkas inte detta arbete i någon större omfattning.
 
-X
-C
-O
-D
-.
-kiva
-llu
-K
-h
-co
-sä
-n
-a
-m
-lÖ
-va
-g
-n
-ire
-ifitre
-cq
-a
-v
-e
-R
-rö
-f
-ra
-gn
-in
-ttä
-stu
-rö
-F
-M
-P
 Mölndalsväge 91 • Göteborg • www.envidan.se • Organisationsnummer 556666-5468
+
+PM Förutsättningar för Revaqcertifiering av Ölmanäs och Kullavik .DOCX
 
 <!-- sida 269 -->
 

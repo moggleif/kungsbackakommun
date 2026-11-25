@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.311aaa10199f64f29ee7d8e5/1761134606
 sha256: da3a04f73075e139c4a49a8188a55002929df2682426be7c9f639a1b418d93cc
 bytes: 585869
 sidor: 26
-hamtad: 2026-11-22T23:31:07+00:00
-konverterad: 2026-11-22T23:31:11+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T02:38:06+00:00
+konverterad: 2026-11-25T02:38:17+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok]
 tal_obekraftade: []
 figurer: [9, 18]
 tolkade: []
@@ -353,19 +353,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 1 Hög 2 Medel Totalt: 3
 
 9
+
+Sannolikhet
 
 <!-- sida 10 -->
 
@@ -577,17 +575,15 @@ Risker till plan samt risker ej till plan (bruttolista)
 
 1         2          3         4
 
-te
-h  1
-k
-ilo
-n
-n
-a
-S
+1
+
 1         2          3         4
+
 Konsekvens
+
 3 Hög16 Medel Totalt: 19
+
+Sannolikhet
 
 <!-- sida 19 -->
 

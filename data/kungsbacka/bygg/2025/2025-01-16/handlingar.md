@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.7a86dc02194401f5c32407b1/1736501540
 sha256: 3d9ac84be7f6086e0fd8e121d7cef8bf17c9f9701bfbde16027cdf796fad83fa
 bytes: 1082283
 sidor: 24
-hamtad: 2026-11-23T10:20:40+00:00
-konverterad: 2026-11-23T10:20:48+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T01:51:43+00:00
+konverterad: 2026-11-25T01:51:50+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: full
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+tal_obekraftade: [23]
 figurer: []
 tolkade: []
 granskad: null
@@ -823,40 +823,16 @@ b. Driftskostnader för service och underhåll av mätinstrument. Troligtvis nå
 dagens kostnader där vi saknar avtal.
 
 SAMORDNINGSBEHOV
+Inga kända samordningsbehov.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-K
-I n
-u
-g
-ng
-a
-s
-k
-ba
-ä
-c
-n
-k
-d
-a
-a
-k o
-s
-m
-am
-mu
-o
-n
-r dningsbehov.
-U K  Ekonomi
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04  www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 24 -->
 

@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.7d495738199c8fe75281b0dc/1760095325
 sha256: d5b496b9df24682123bd92be27f8cd0c1ee35ac101ed972de4317d2a5ee9e5a2
 bytes: 11756247
 sidor: 190
-hamtad: 2026-11-22T21:21:54+00:00
-konverterad: 2026-11-22T21:22:43+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-24T23:48:03+00:00
+konverterad: 2026-11-24T23:48:48+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [114, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184]
+tal_obekraftade: [29, 32, 35, 38, 41, 44, 47, 50, 53, 114, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184]
 figurer: [7, 22, 28, 31, 34, 37, 40, 43, 46, 49, 52, 55, 114, 115, 116, 117, 163, 164, 165, 166, 167, 169, 170, 173, 174, 175, 176, 177, 178, 180, 181, 182, 183, 184]
 tolkade: []
 granskad: null
@@ -1059,85 +1059,17 @@ Uteblivna åtgärder innebär att säkerhetsbristerna i dagens lokaler kvarstår
 möten och bemötandesituationer. Bristen på säkra samtalsrum och kontrollerade flöden skapar otrygghet
 för både personal och invånare, och påverkar verksamhetens arbetsmiljö och effektivitet. Därtill
 begränsar avsaknaden av flexibla ytor möjligheten att snabbt växla mellan individuella samtal, digitala
+möten och gruppinsatser. Konsekvensen blir försämrad tillgänglighet, lägre kvalitet och längre väg till
+självförsörjning för målgruppen.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-m
-s
-K
-jä
-u
-ö
-l
-n
-t
-v
-g
-e
-f
-s
-n
-ö
-b a
-r
-o
-s
-c
-c
-ö
-k
-h
-a
-r j
-k
-g
-n
-o
-r
-i
-m
-u
-n
-m
-p
-g
-p
-u
-f
-n
-i
-ö
-n
-r
-s a
-m
-ts
-å
-e
-l
-r
-g
-.
-r u
-K
-p
-o
-p
-n
-e
-s
-n
-e
-.
-k vensen blir försämrad tillgänglighet, lägre kvalitet och längre väg till
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 30 -->
 
@@ -1255,47 +1187,17 @@ helhetsgrepp med lugn grundpalett, taktila inslag och tydligare orienterbarhet i
 VAD ÄR DEN FÖRVÄNTANDE  NYTTAN?
 • Ökad trivsel, studiero och orienterbarhet via lugn grundpalett, taktila inslag (trä) och
 accentfärger/skyltning för både personal och elever.
+• Stärkt attraktionskraft i konkurrens med närliggande gymnasier (elevrekrytering och
+personalförsörjning).
 
-2102
-,0.2
-,0006B
-5 3 0 2 - - • p
-K
-e S
-u
-r
-n
-t s ä
-g
-o r
-s
-n k
-b
-a t
-a c
-l a f
-k
-t ö
-a
-t r r
-k
-s a
-o
-ö k
-m
-r t
-m
-j i n o
-u
-i n
-n
-n s g k ) r . a ft i konkurrens med närliggande gymnasier (elevrekrytering och
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 33 -->
 
@@ -1406,17 +1308,14 @@ lösningen).
 • Ljudmiljö: Otillräcklig ljudisolering i vissa ytor mellan vägg/tak. Enligt AML 2005:16 skall
 bullernivåer begränsas och särskild hänsyn skall tas vid ljudkänslighet. Enligt BBR så skall
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 36 -->
 
@@ -1549,17 +1448,14 @@ VAD FÅR NY LOKALFUNKTION FÖR KONSEKVENS  PÅ NUVARANDE  VERKSAMHET?
 När verkstadssalen etableras behöver nuvarande användning av slöjdsal (I26) och förråd upphöra eller
 omdisponeras. Inventarier flyttas/ersätts enligt inventarielista.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 39 -->
 
@@ -1662,39 +1558,16 @@ En satsning på lokalerna skapar:
 \- Högre måluppfyllelse genom realistiska övningsmiljöer.
 \- Större söktryck som bidrar till ekonomisk balans.
 \- Möjligheter till samutnyttjande för fortbildning av kommunens personal.
+\- Högre kvalitet i utbildningen och starkare koppling till arbetslivet.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - - -
-K
-H
-un
-ö
-g
-g
-sb
-re
-ac
-k
-ka
-v a
-ko
-li
-m
-te
-m
-t
-u
-i
-n
-u tbildningen och starkare koppling till arbetslivet.
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 42 -->
 
@@ -1813,32 +1686,16 @@ lösningar är tillfälliga och otillräckliga.
 VAD ÄR DEN FÖRVÄNTANDE  NYTTAN?
 • Utökning till 180 elevplatser möter det ökade behovet och bidrar till kommunens
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-Kungsba
-k
-ck
-o
-a
-m
-ko
-p
-m
-et
-m
-e
-u
-n
-n
-s försörjning.
-U    Ekonomi
-K
+kompetensförsörjning.
+
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 45 -->
 
@@ -1957,129 +1814,17 @@ Syftet är att optimera nyttjandet av befintliga ytor inom Elof Lindälvs gymnas
 En omdisponering ger:
 \- Effektivare lokalutnyttjande – fler elever och verksamheter kan använda ytorna.
 \- Ekonomisk balans genom att minska outnyttjade speciallokaler.
+\- Möjlighet till flexibla lärmiljöer som kan stödja flera program.
+\- Stärkt helhetsfunktion för skolan i linje med Kungsbackas mål om hållbar resursanvändning.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-\-
-\-
-K
-M
-S
-un
-tä
-ö
-g
-r
-s
-j
-k
-l
-b
-i
-t
-a
-g
-c
-h
-h
-k
-e
-e
-a
-l
-t
-k
-h
-o
-t
-e
-i
-m
-l
-t
-l
-s
-m
-f
-f
-u
-u
-l
-n
-e
-n
-x
-k
-i
-t
-b
-io
-la
-n
-l
-f
-ä
-ö
-rm
-r s
-i
-k
-lj
-o
-ö
-l
-e
-a
-r
-n
-s
-i
-o
-l
-m
-in j
-k
-e
-a n
-m
-s
-e
-t
-d
-ö d
-K
-ja
-u n
-fl
-g
-e
-s
-r
-b
-a
-a
-p
-c
-r
-k
-o
-a
-g
-s
-r
-m
-am
-ål
-.
-om hållbar resursanvändning.
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 48 -->
 
@@ -2191,123 +1936,17 @@ Pedagogiska begränsningar: Svårt att genomföra varierad undervisning och indi
 ytorna inte medger säkra förflyttningar/grupparbeten
 Otillräckliga grupprum försvårar anpassningar och särskilt stöd.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-V
-I
-K
-n
-A
-u
-g
-n
-e
-D
-g
-n
-s b
-F
-v
-a
-Å
-ä
-ck
-s
-R
-a
-e n
-k
-N
-o
-tl
-m
-i
-Y
-g
-m u
-L
-\-
-n
-å
-O
-tg
-K
-ä
-A
-rd
-L
-e
-F
-r
-U
-ka
-N
-n
-K
-p
-T
-la
-I
-n
-O
-e
-N
-ra s
-F
-u
-Ö
-ta
-R
-n
-K
-än
-O
-d
-N
-ra
-S
-d
-E
-lo
-K
-k
-V
-al
-E
-is
-N
-er
-S
-in
-P
-g
-Å
-fö r
-N
-p
-U
-ro
-V
-g
-A
-ra
-R
-m
-A
-m
-N
-e
-D
-t.
-E VERKSAMHET?
-U    Ekonomi
-K
+VAD FÅR NY LOKALFUNKTION FÖR KONSEKVENS  PÅ NUVARANDE  VERKSAMHET?
+Ingen väsentlig - åtgärder kan planeras utan ändrad lokalisering för programmet.
+
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 51 -->
 
@@ -2396,178 +2035,17 @@ lokaler.
 
 Arbetsmarknaden för yrkesförare är stark, och enligt Transportföretagen beräknas det behövas omkring
 150 000 nya förare fram till år 2035. Samtidigt pågår stora förändringar inom elektrifiering,
+automatisering och digitalisering. Dessa utvecklingsområden ställer nya krav på utbildningen och dess
+lokaler, vilket ytterligare motiverar behovet av en anpassning till framtidens förutsättningar.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
-a
-l
-K
-o
-u
-u
-k
-t
-n
-o
-a
-g
-m
-l
-s
-e
-b
-r
-a
-a
-,
-t
-c
-i
-v
-k
-s
-i
-a
-e
-l
-r
-k
-k
-i
-o
-e
-n
-m
-t
-g
-m
-y
-o
-t
-u
-t
-c
-n
-e
-h
-r l
-d
-ig
-ig
-ar
-it
-e
-a
-m
-lis
-o
-e
-t
-r
-i
-i
-v
-n
-e
-g
-r
-.
-a
-D
-r b
-e
-e
-ss
-h
-a
-o v
-u
-e
-tv
-t
-e
-a
-c
-v
-k
-e
-li
-n
-n g
-a
-s
-n
-o
-p
-m
-as
-r
-s
-å
-n
-d
-i
-e
-n
-n
-g
-s
-t
-t
-i
-ä
-ll
-l l
-f
-e
-r
-r
-a m
-ny
-ti
-a
-d
-k
-en
-ra
-s
-v
-f ö
-p
-r
-å
-u
-u
-ts
-t
-ä
-b
-t
-i
-t
-l
-n
-d
-i
-n
-n
-i
-g
-n
-a
-g
-r
-e
-.
-n och dess
-U    Ekonomi
-K
+Kungsbacka kommun
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 54 -->
 

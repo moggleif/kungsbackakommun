@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.74cc8c0e19a55b65f7f7cfc4/1762933243
 sha256: b80e70553ede9857ad735a9ac3dcfc0d962f95dd848c8bf73027ba2167bd4858
 bytes: 15828624
 sidor: 366
-hamtad: 2026-11-22T23:31:11+00:00
-konverterad: 2026-11-22T23:33:13+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:38:17+00:00
+konverterad: 2026-11-25T02:40:22+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [255]
+tal_obekraftade: [253, 254, 255]
 figurer: [7, 10, 11, 15, 16, 20, 24, 26, 38, 43, 49, 50, 63, 75, 79, 82, 83, 84, 92, 97, 101, 102, 103, 104, 105, 106, 107, 108, 110, 113, 114, 115, 116, 118, 119, 122, 123, 124, 126, 129, 130, 146, 179, 181, 185, 186, 189, 192, 193, 196, 197, 201, 207, 210, 211, 217, 221, 222, 223, 224, 226, 227, 228, 229, 233, 234, 235, 236, 237, 238, 239, 252, 253, 254, 255, 256, 273, 280, 287, 294, 296, 302, 303, 304, 307, 311, 317, 326, 329, 334, 336, 341, 343, 344, 352, 360]
 tolkade: []
 granskad: null
@@ -10352,182 +10352,69 @@ PLANKARTA            Detaljplanen är upprättad enligt PBL
 
 1:59
 ILLUSTRATION
-5
-1
+
 1:44
-1
-8
-11::5588               1:39
+1:39
 scenario                1
-1
-1:43       5
+1:43
 6:13
-1:40
-2
-0
-1
-7
-6:12
-7
-2                                          1:41
-1
-9                             1:3
-5
-4                    6:15
-5 8                                                       1:42
-6:14 e n
-g
-ä
-v
-s
-e
-d
-mi
-S
-9              Tölö Smedjans äldreboende          1:34
+
+1:41
+
+6:15
+1:42
+6:14
+
 TÖLÖ
-25
-1:6
-2
-3
+
 1:10
-2
-1
-1
-9
+
 1:11
-1:9
-1
-7
+
 20
-5 1
-32
-AN
-3
-GÖ
-\:
-6
-1
-R I
-K
-N
-O
-G
-RTTIDS-P
-GNIRÖGN A
-ål
-e
-d
-e
-n
-3 0                                                                                                      er
-d
-Sjukstugegatan
-ANGÖRING                                                                                                                                                                  S
-ö
-A N G Ö R IN G A N G Ö R IN G                                                   1 8                            48                                                                                            TÖLÖ
-S
-U
-H
+
 7:10
-3 1
-3
-K O R T T                                                                                                    56                                                      P
-\-
-ID                                                                                                       0
-S -P                                                                             7:8                    5
-11
-G a
-m la
-G
+56
+
 VÄNDZON
-5
+
+4                            7:9
 1
-U d d
-as
-2
-ti g e n
-5
-4
-5 2                                                                                                    1:2
-ö
-te
-b
-o
-rg
-s v ä                                                             4         1 6                7:9
-Tölövägen
-g e                                                                                                                  1:2                  1:30
-n                                                                                1
-Folktandvård                                                           3:1            1 8                                                                       1:31
 
-```osaker-tabell
-                                                               3                       14   2
-5                                                                                          12      KRÄFTAN
-                                                                             9                                                               2
-```
+1:31
+3                            2
 
-1:24     1
-0      1                        3
-2                   7
-n
-a v ä
-g e
-MUSSLAN
-10
-3
+1:24
+1                        3
 1:32
-d                                                                     1
-HUMMERN          U d                        5
-SÅGEN
-T
-öl öv ä g e n 1  2 4
-22 2
-1 1
+
+1:33
+SÅGEN                                                                1                                2
 5
-2                                                         11
-10
-8            1:33
-9                         1:23
-OSTRONET
-27 F
-6
+1:23
+
+4
 7
-45
-72
-4                 3:1
-7
-Lilla
-G ård
-6
-skullav
-3                                                                                              5       4
-27 G                                 4
+
+3
+27 G
+
 15
-43       70
-29                 8
+8
 9
-2
-27 H
-1
-3:10                  28                     2
+
+3:10
 3:22
-10
-28                                                                                                                                 TECKENFÖRKLARING
-27
-J                          TÖLÖGRÄNS
+TECKENFÖRKLARING
+
 27                                                                                                                                             Befintliga byggnader              Grönområde
-n
-at a                         11
-g
-or
-St
-Östr a
-2 6                    12
+
 Möjliga nya byggnader             Träd
 Illustrationsplan upprättad av Region Halland / White Arkitekter
 Entré                             Torrdamm
-3:1                  13                                                                                                                                                                                                Detaljplan för sjukhus inom                 Antagandehandling
+Antagandehandling
+Detaljplan för sjukhus inom
+
 Detaljplanen är baserad på koordinatsystemet   Skala 1:1000 i A1, 1:2000 i A3                                                                                       TECKENFÖRKLARING GRUNDKARTA                                                                                                 Beslutsdatum Instans
 Tölöberg  2 och Tölö 1:17
 SWEREF 991200                                  0  10  20  30  40  50                100 m                                                                                                                                                                                                       Samrådsbeslut
@@ -10547,197 +10434,299 @@ Verksamhetschef Plan     Planarkitekt              2018-00033 Ja
 ILLUSTRATION              Detaljplanen är upprättad enligt
 PBL 2010:900 med standardförfarande
 
+18
+
+9
+
+18
+
+11
+
+11
+
+7
+
+27 J
+
+14
+
+19
+
+13
+
+4
+
+20
+
+15
+
+9
+
+32
+
+4
+
+2
+
+27
+
+24
+
+52
+
+15
+
+6
+
+43
+
+48
+
+21
+
+27 F
+
+50
+
+10
+
+21
+
+23
+
+18
+
+5
+
+25
+
+9
+
+10
+
+1
+
+70
+
+26
+
+5
+
+45
+
+16
+
+54
+
+2
+
+17
+
+6
+
+15
+
+17
+
+7
+
+58
+
+20
+
+12
+
+5
+
+28
+
+19
+
+22
+
+13
+
+27 H
+
+12
+
+30
+
+8
+
+72
+
+54
+
+Folktandvård
+
+Tölö Smedjans äldreboende
+
+1:34
+
+1:40
+
+7:8
+
+2
+
+OSTRONET
+
+KRÄFTAN
+
+3:1
+
+5
+
+11
+
+3:1
+
+3:1
+
+12
+
+13
+
+29
+
+1:30
+
+3:1
+
+MUSSLAN
+
+1:9
+
+1:6
+
+1:2
+
+1:58
+
+TÖLÖGRÄNS
+
+11
+
+28
+
+10
+
+1:3
+
+HUMMERN
+
+1:2
+
+1:58
+
+6:12
+
+TÖLÖ
+
+Tölövägen
+
+Sjukstugegatan
+
+Östra Storgatan
+
+Smidesvägen
+
+Uddavägen
+
+Uddastigen
+
+Gamla Göteborgsvägen
+
+Söderåleden
+
+Tölövägen
+
+Lilla Gårdskullav
+
+ANGÖRING
+
+P-HUS
+
+ANGÖRING
+
+ANGÖRING
+
+3 KORTTIDS-P
+
+ANGÖRING
+
+ANGÖRING
+
+6 KORTTIDS-P
+
 <!-- sida 254 -->
 
 1:59
 ILLUSTRATION
-5
-1
+
 1:44
-1
-8
-11::5588               1:39
+1:39
 scenario                2
-1
-1:43       5
+1:43
 6:13
-1:40
-2
-0
-1
-7
-6:12
-7
-2                                          1:41
-1
-9                             1:3
-5
-4                    6:15
-5 8                                                       1:42
-6:14 e n
-g
-ä
-v
-s
-e
-d
-mi
-S
-9              Tölö Smedjans äldreboende          1:34
+
+1:41
+
+6:15
+1:42
+6:14
+
 TÖLÖ
-25
-1:6
-2
-3
+
 1:10
-2
-1
-1
-9
+
 1:11
-1 7
-1:9
-4
-KO
-1
-R
-2
-T
-K
-T
-O
-ID
-R
-S
-T
-\-
-T
-P
-IDS-P
-ANGÖRING
+
 20
-1
-5
-32
-AN
-3
-GÖ
-:1
-RING
-GNIRÖGN A
-ål
-e
-d
-e
-n
-3 0                                                                                                      er
-d
-Sjukstugegatan
-ANGÖRING                                                                                                                                                                  S
-ö
-A N G Ö R IN G A N G Ö R IN G                                                   1 8                            48                                                                                            TÖLÖ
-S
-U
-H
+
 7:10
-3 1
-3
-K O R T T                                                                                                    56                                                      P
-\-
-ID                                                                                                       0
-S -P                                                                             7:8                    5
-11
-G a
-m la
-G
+56
+
 VÄNDZON
-5
+
+4                            7:9
 1
-U d d
-as
-2
-ti g e n
-5
-4
-5 2                                                                                                    1:2
-ö
-te
-b
-o
-rg
-s v ä                                                             4         1 6                7:9
-Tölövägen
-g e                                                                                                                  1:2                  1:30
-n                                                                                1
-Folktandvård                                                           3:1            1 8                                                                       1:31
 
-```osaker-tabell
-                                                               3                       14   2
-5                                                                                          12      KRÄFTAN
-                                                                             9                                                               2
-```
+1:31
+3                            2
 
-1:24     1
-0      1                        3
-2                   7
-n
-a v ä
-g e
-MUSSLAN
-10
-3
+1:24
+1                        3
 1:32
-d                                                                     1
-HUMMERN          U d                        5
-SÅGEN
-T
-öl öv ä g e n 1  2 4
-22 2
-1 1
+
+1:33
+SÅGEN                                                                1                                2
 5
-2                                                         11
-10
-8            1:33
-9                         1:23
-OSTRONET
-27 F
-6
+1:23
+
+4
 7
-45
-72
-4                 3:1
-7
-Lilla
-G ård
-6
-skullav
-3                                                                                              5       4
-27 G                                 4
+
+3
+27 G
+
 15
-43       70
-29                 8
+8
 9
-2
-27 H
-1
-3:10                  28                     2
+
+3:10
 3:22
-10
-28                                                                                                                                 TECKENFÖRKLARING
-27
-J                          TÖLÖGRÄNS
+TECKENFÖRKLARING
+
 27                                                                                                                                             Befintliga byggnader              Grönområde
-n
-at a                         11
-g
-or
-St
-Östr a
-2 6                    12
+
 Möjliga nya byggnader             Träd
 Illustrationsplan upprättad av Region Halland / White Arkitekter
 Entré                             Torrdamm
-3:1                  13                                                                                                                                                                                                Detaljplan för sjukhus inom                 Antagandehandling
+Antagandehandling
+Detaljplan för sjukhus inom
+
 Detaljplanen är baserad på koordinatsystemet   Skala 1:1000 i A1, 1:2000 i A3                                                                                       TECKENFÖRKLARING GRUNDKARTA                                                                                                 Beslutsdatum Instans
 Tölöberg  2 och Tölö 1:17
 SWEREF 991200                                  0  10  20  30  40  50                100 m                                                                                                                                                                                                       Samrådsbeslut
@@ -10755,6 +10744,236 @@ Ida Lennartsson          Emma Johansson                      avtal
 Verksamhetschef Plan     Planarkitekt              2018-00033 Ja
 ILLUSTRATION              Detaljplanen är upprättad enligt
 PBL 2010:900 med standardförfarande
+
+18
+
+9
+
+18
+
+11
+
+11
+
+7
+
+27 J
+
+14
+
+19
+
+13
+
+4
+
+20
+
+15
+
+9
+
+32
+
+4
+
+2
+
+27
+
+24
+
+52
+
+15
+
+6
+
+43
+
+48
+
+21
+
+27 F
+
+50
+
+10
+
+21
+
+23
+
+18
+
+5
+
+25
+
+9
+
+10
+
+1
+
+70
+
+26
+
+5
+
+45
+
+16
+
+54
+
+2
+
+17
+
+6
+
+15
+
+17
+
+7
+
+58
+
+20
+
+12
+
+5
+
+28
+
+19
+
+22
+
+13
+
+27 H
+
+12
+
+30
+
+8
+
+72
+
+54
+
+Folktandvård
+
+Tölö Smedjans äldreboende
+
+1:34
+
+1:40
+
+7:8
+
+2
+
+OSTRONET
+
+KRÄFTAN
+
+3:1
+
+5
+
+11
+
+3:1
+
+3:1
+
+12
+
+13
+
+29
+
+1:30
+
+3:1
+
+MUSSLAN
+
+1:9
+
+1:6
+
+1:2
+
+1:58
+
+TÖLÖGRÄNS
+
+11
+
+28
+
+10
+
+1:3
+
+HUMMERN
+
+1:2
+
+1:58
+
+6:12
+
+TÖLÖ
+
+Tölövägen
+
+Sjukstugegatan
+
+Östra Storgatan
+
+Smidesvägen
+
+Uddavägen
+
+Uddastigen
+
+Gamla Göteborgsvägen
+
+Söderåleden
+
+Tölövägen
+
+Lilla Gårdskullav
+
+ANGÖRING
+
+ANGÖRING
+
+ANGÖRING
+
+3 KORTTIDS-P
+
+ANGÖRING
+
+ANGÖRING
+
+P-HUS
+
+ANGÖRING
+
+4 KORTTIDS-P
+
+12 KORTTIDS-P
 
 <!-- sida 255 -->
 

@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2f7af2ed1989780f80d68f62/1755162693
 sha256: e4f0c849159d9ef272cb8bc19e88871f94a496d5ca73fb72b622118897e2dec5
 bytes: 15347371
 sidor: 168
-hamtad: 2026-11-22T21:20:06+00:00
-konverterad: 2026-11-22T21:21:13+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-24T23:46:19+00:00
+konverterad: 2026-11-24T23:47:24+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ocr, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok]
-tal_obekraftade: [41, 42, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 91, 98, 103, 112, 113, 114, 115, 116, 117, 134, 142, 144, 146, 148, 149, 151, 152, 164]
+tal_obekraftade: [41, 42, 76, 77, 78, 80, 81, 82, 83, 84, 85, 86, 91, 98, 103, 112, 113, 114, 115, 116, 117, 134, 138, 142, 143, 144, 145, 146, 148, 149, 151, 152, 163, 164]
 figurer: [9, 11, 12, 13, 14, 24, 36, 141, 146, 148, 149, 150, 151, 152, 165]
 tolkade: []
 granskad: null
@@ -5475,130 +5475,397 @@ Kungsbacka kommun            Lokala ordningsföreskrifter        8 (8)
 
 <!-- sida 134 -->
 
+Kungsbacka kommun            Lokala ordningsföreskrifter       9 (20)
+
 I
+
 I
-0
+
 Li//emosse
+
+Varlaberg
+
+0
+
+()
+
+0
+
+•
+
+O()fJ
+
+0
+
+övrekolla
+
+\_\_ ,
+
+\~
+
+rv1 G,ehus
+
+g; 1r
+
+\_
+
+,
+
+Cl\~ \~ □F
+
+✓
+
+·appp
+
+\~\~\~\~\~\~
+
+\ \o
+
+" •\\\ .---··
+
+\~c
+
+Teckenförklaring
+
+Tillfällig (ambulerande) försäljning ·-\~
+
+0
+
+D
+
+Förtäring av alkohol
+
+Cl
+
+0
 
 Tölöberg
 
-Varlaberg
 +·
 
+<)
+
 ,r
-e,< ) It'
+
+e,
+
+It'
+
 <;
-l      Sjukhus (!,, \<!! (J 'i)• f (),
-f      a ..., •C/!; ., \~ <) ,;,• • !l\~;..
-(!J.i ◊ \~;;.,.
-c \~ - .. < \~ C 6 ':: J - \ ,. b ,: O . , : , : ' t < ' ) s \~ \~ " (! # ) 0 ' (; , .' itl ' . i } ? • [! r ;, - -G " 9 I 3 , ) ; , O
-aC'. !c o [ O i . n\~ • I \~ \~ " . \~ \~ O .. stra yiµ , asta .. den J
-0Ro[} I O •   \~
-\~ e, C 0 D C \~ ., ' -c & , '< ' ) I ,: . ", \$ . '( ) ' <>!> • . i , T ,.. . ◊ / 0
-\~:J'5 0 "' ,0 . ,.::. (;,,
-\~ [7 < . o P, ' - f I 0 ) /
-0
-0 J l ö : 1 1
-o
-i 0 ' Q O
-c i
-\-
-"
-l 1
-i
-. .
-\:
-l ,
-\:
-\-
-,
-j I
-\~
-\- J l ) L 1
-•
-1 l ,
-\~
-?' V / . - ) c? (
-<
-;,
+
+Sjukhus
+
+(!,, \<!!
+
+(J 'i)•
+
+f (),
+
 l
-(
-o
-)
-.
+
+a ...,
+
+•C/!; ., \~ <)
+
+,;,• •
+
+!l;..
+
+f
+
+(!J.i ◊ \~;;.,.
+
 \~
-.
-\~
-1 f f l / , ! " 1 1' \~ , IQ 0 " [ • t b !J \~ \~ C \~ " : J G6\<r \~ l l!tJ"G \~ G' \~ \~ \~ ,f) t ) - • / ; I I
-Kung.\iac\~O•ro \~, a q \~ • \~ .
-. \~ 'ti·,o \~-\~ I] • • 'v\<v
-\<f''oO ,:,'o il 'o 61◊
+
+\\
+
+.::t'
+
+\~ 0 (;.'
+
+'i? r;,
+
+I)
+
 \-
-% "
+
+\~-
+
+,:,,' <)
+
+(!)
+
+itl}•
+
+,;,O
+
+\~ C'::J
+
+O
+
+\~"
+
+[!
+
+"
+
+c..
+
+<6
+
+,. b s #' ,. --G93
+
+o.n\~
+
+\~"
+
+..
+
+C'.!c [i
+
+•
+
 \~
-,. "
-\~
-: o '? \~ >
-,:
-, \~
+
+..
+
 ,
-\ \ ' \~
-. <
-'i
-v
-if
-.
-c
-)
-' . \~
-[ Q ]
-D
-,i C . l o
-<
-O < : (
-s
+
+J
+
+a
+
+O
+
 I
-\>
-: lf
+
+\~. \~
+
+Ostra yiµastaden
+
+0 Ro[}
+
+I
+
+O
+
+•
+
+\~
+
+e,
+
+0\~' -c, ' I.\$
+
+'
+
+<>!>
+
+iT./
+
+\~
+
+CD C.,
+
+&'<),:",. '()
+
+•
+
+.,,..◊
+
+0
+
+0
+
+,0
+
+.
+
+,.::.
+
+(;,,
+
+\~:J'5"' 0
+
 o
-,
-\~• " > < . Ä ·-e ':> ?\~ \~-- · . . ,, O ,,, ..,,,. -
-,
-/ ....-,,. . ,?
-xo ••
-(} (}
-\~?
-d
-c:;
-0
-0
+
+ci"i::,\~
+
+•
+
+\~ \<lo..
+
+'
+
+Q-1-IJ
+
+/)
+
 \~
+
+[7.
+
+I)
+
+l:10'
+
+.,j-l)
+
+V-
+
 \~
-0                                                             \\
-\_\_
-• () O()f0 J
-övrekolla
-c\~,
-0
+
+\~ o,-0Jöi O l.l
+
+11
+
+?' .c? (;,()
+
+fl
+
+\<Pf/01 "b\~: Ll,
+
+\~ t) •
+
+;
+
 ,
-\~  rv1G,ehus
-g; 1 r \_ ,
-Cl\~ \~□F " ✓
-·appp \~\~\~\~\~\~ \ \o
-.---··
-•\\\\
-\~c
-Kungsbacka kommun            Lokala ordningsföreskrifter       9 (20)
-Teckenförk  laring
-,'
-, 'G.
-0
-Tillfällig (ambulerande) försäljning ·-\~                                       I
-) /
+
+"1'
+
+,0 •
+
+C"J
+
+\~ \~,f)
+
 /
+
+I
+
+1f/!1\~ IQ
+
+[t!J\~\~
+
+G6\<rl
+
+l!tJ"G
+
+\~ G' \~
+
+\-
+
+I
+
+Kung.\i ac\~O•ro \~,
+
+a
+
+q \~ •
+
+\~
+
+.
+
+.
+
+\~ 'ti·,o
+
+\~-\~
+
+I] •
+
+•
+
+'v\<v
+
+\<f''oO
+
+,:,'o
+
+il
+
+'o 61◊
+
+"
+
+"o\~,\\'
+
+c.
+
 D
-Förtäring av alkohol
-Cl
+
+< s>
+
+o
+
+%,. :'?>\~\ \~'iif'\~ Q
+
+Cl O (:lf
+
+,
+
+-\~\~ ,:,
+
+. \<v.)
+
+[]
+
+,i.o<:I
+
+\~•><Ä ':>
+
+?
+
+·.O
+
+" . ·-e
+
+\~\~--.,,,,,..,,,.
+
+,
+
+\-
+
+/
+
+...-,.
+
+,?
+
+.,.
+
+xo ••
+
+c:;
+
+0
+
+0
+
+\\
+
+c\~,
+
+(} (}
+
+\~?
+
+d
+
+\~
+
+\~
+
+,'
+
+, 'G.
+
+I
+
+/
+
+)/
 
 <!-- sida 135 -->
 
@@ -5715,44 +5982,97 @@ Kungsbacka kommun            Lokala ordningsföreskrifter       12 (20)
 
 <!-- sida 138 -->
 
-•
-\ 9
-•           Pir; I v{; ,1,
-.    .                                     •         8jl 1 aga s
-.. ..
-•••• . . .... .
-• • • · • • •                            (I, • •
-202□·01-21
-AyrOO
-I
-•
+Kungsbacka kommun            Lokala ordningsföreskrifter       13 (20)
+
+•••• . .. ..
 
 .
+
+• • ••
+
+. •· ..
+
+•
+
+AyrOO
+
+I
+
 .!:I
-l-lede
+
+.
 
 Vsd\~befg
-.. · ·, .. -
+
+.. · · , . . -
+
 Graitlä.lr
+
 "
-,. R
+
+,.
+
+R
+
 •
 
 ••
+
 ! ••
+
 •I
-' I ■        TlnQb8t'QCl                                             Fors
+
+I
+
+■
+
+'
+
+TlnQb8t'QCl
+
 ..
+
 •
 
 'V vrnaslådB
 
-Kungsbacka kommun            Lokala ordningsföreskrifter       13 (20)
+D
+
+Yltrekolla.
+
+[l
+
+•
+
+l-lede
 
 Börs&ib.
-D
-Yltrekolla.
-[l
+
+•
+
+.. ..
+
+(I,
+
+•
+
+•
+
+\\
+
+9
+
+•
+
+Pi r ; I v{; , 1 ,
+
+8jl 1 aga s
+
+202□·01-21
+
+•
+
+Fors
 
 <!-- sida 139 -->
 
@@ -5895,249 +6215,619 @@ j) •
 
 <!-- sida 142 -->
 
-'
+Kungsbacka kommun            Lokala ordningsföreskrifter       17 (20)
+
 0
+
 r
 
-I
-
-Vårdcentral    I
+'
 
 \\/
+
 Oro
-FJärås
-0
-Il
-\\
-Il                       0
-\\
-'&)               \\
-I JÖ'\~
-R
+
+Vårdcentral
+
 I
+
+I
+
+Il
+
+0
+
+FJärås
+
+Il
+
+\\
+
+'&)
+
+\\
+
+0
+
+\\
+
+R
+
+JÖ'\~
+
+I
+
+I
+
 "
+
+0
+
+D 11
+
 ,,
-0
-D
-11
+
 [J
+
 0
-Il   ll •
-t
-J
+
+Il
+
+ll •
+
 fl
-n       D
--aD ,
+
+n
+
+t
+
+aD
+
 CJ
-•
-\\
-•                                                             \_.
-0                                                     \   ...
-'t>
-[I                       tO
-f                          tl
-G
-I "I"         l
-f
+
+D
+
 J
-c;    ..
-t)
-\\\               \~
-"''"'D'Gfi, 11<\J
-\\
+
+-,
+
 •
-Kungsbacka kommun            Lokala ordningsföreskrifter       17 (20)
-\$ervice111..
-11
-s•
-0          ""\~
+
+0
+
+[I
+
+'t>
+
+I
+
+f
+
+"I"
+
+f
+
+tO
+
+\ \_.
+
+•
+
+c;
+
+J
+
+l
+
+tl
+
+G
+
+\\
+
+...
+
+..
+
+"''"'D'Gfi, 11<\J
+
+t)
+
+\\\\
+
+0
+
+•
+
+\\
+
+\~
+
+""\~
+
+\$ervice111.. 11 s•
+
 OOa
 
 <!-- sida 143 -->
 
-\~
-\#
-i
+Kungsb acka kommun           Lokala ordningsföreskrifter       18 (20)
 
-,a
-I
+\#\~
+
 •
 
-' ID
-l.
-/\_J
+i
+
+'
+
+ID
+
+, a
+
+I
+
 JQ
-14
-i
+
+/\_J
+
+l.
+
 0
-u
-tJ
-u
-n                \~
-11\.
-lt
-I
-\\
-\~
-I
-z
-111
-\  l                    )'
-r
-?
-6
-Tll'.LIV\~-d,,JH"'
-u
-Q FriUea4s
-Yäxtl}lJ, s-
-4
-\                                            I
-{
-I    \~,                                              -==
-1\1
-i      . t\ (
-•
-u
-•
-}                                1\\\\\8\~\~
-4      J   fo                           \~
-Kung
-FriJ
-,
-fe s
-\-
-1
+
+14
+
+n
+
 i
-e! ,
+
+l t
+
+\~
+
+tJ
+
 u
-•;                        A
-k
-•
-4               ftl/al.J.s
-\~)                                I
-CJ                                                       -
-'4,n,g\~\~
-.,,                      Il,                            C
+
+u
+
 \\
+
+11\.
+
+r
+
+\\
+
 l
-!
-(J             ·,       .\~  •
-\\
-•    •
--0
-\\
-\\
-[j
-t
-Kungsb acka kommun           Lokala o0r dningsföreskrifter     18 (20)
-l'
-\~                              \\
+
+111
+
+\~ I
+
 I
-l·                                           i
-,., f] I! 0
+
 u
+
+6
+
+?
+
+z
+
+Tll' .LIV\~-d,,JH"'
+
+Q
+
+)'
+
+FriUea4s
+
+4
+
+Yäxtl}lJ, s-
+
+I
+
+\~, \\
+
+11
+
+{
+
+\ i
+
+. t
+
+(
+
+I
+
+•
+
+\ }
+
+4
+
+J
+
+1
+
+Kung FriJfes fo
+
+• -==
+
+\~ 1\\\\\8\~\~
+
+u
+
+,
+
+\-
+
+u
+
+i
+
+•;
+
+e,
+
+•
+
+4
+
+!
+
+CJ
+
+A
+
+f tl/al.J.s \~)
+
+.,,
+
+l
+
+I
+
+k
+
+Il,
+
+' 4,n,g\~\~
+
+\\
+
+(J
+
+\-
+
+·,
+
+\\
+
+C
+
+-0
+
+. \~
+
+!
+
+•
+
+•
+
+•
+
+[j
+
+t
+
+0
+
+\\
+
+l·
+
+\\
+
+,.,
+
+f] I!
+
+0
+
+I
+
+\~ l'
+
+i
+
+u
+
+\\
+
 r,
 
 <!-- sida 144 -->
 
+Kungsbacka kommun            Lokala ordningsföreskrifter       19 (20)
+
 0
+
 ) ol
 
-S P_gJt
-• F, b  .
-.....\_\_ Ku >l•lii l!J lllU/J.111
+• F,
 
-.Kullavik
+b
 
-·.r   'l,,'CJ  :-... 11 ' ..
-\-
-. . . . • • • "9 • I •
 .
-. -\~
-.
-Rönnaråcke
-...
-. . .'· . . . .                • t ■ I
-.
-.
-.         .
-.                   ..
-.                               ,,.
-.
-.
-.
-I p I t " .. . .. . .. . ' . . . " ... . . . .
-..                                                        .
-..         .
-'
-0                                                .
-Kungsbacka kommun            Lokala ordningsföreskrifter . ..
-..
-• • • • . • .l lIl i . 19 (20)
-D                                      •,.
-.
-o
-.
-l •
-\-
-.
-..
-I
-..
-W. t . • . . • •• I
-....
-..
-.. .. ..
-.
-.
-. .
-.
-.
-. .         . . . .
--......      ..
-...
-I t, t ■ &. . ..
 
-<!-- sida 145 -->
+SP_gJt
+
+Ku >l •lii l!J lllU/J.111
+
+.....\_\_
+
+. Kullavik
+
+·.r
+
+'l,,'CJ
+
+..
+
+0
 
 D
-[
 
-.
-.
-.
-
-\_;:-;;;;.
-\~ \~-==
-\=-
+:- ... 11
 
 '
-\\
-{?
-\\
-tl
-\\
-t
-..
-I
-onsa\a
 
-\\
+.
 
-l
+.
 
-I
-l
+'·
+
+...
+
+. . .
+
+.
+
+.
+
+.
+
+...
+
+.
 
 •
 
-tJ I
-R
+•
+
+"9
+
+•
+
+I
+
+•
+
+•
+
+. .
+
+. -\~
+
+. . -
+
+. .
+
+I
+
+p
+
+I
+
+t
+
+"
+
+•,. ol
+
+•
+
+I
+
+-......
+
+.
+
+.
+
+. . .
+
+.
+
+.
+
+\-
+
+. . . .. . .. . ' .
+
+W t
+
+•
+
+•
+
+•• I
+
+. . . ..
+
+.
+
+. .
+
+....
+
+.
+
+..
+
+..
+
+. .
+
+Rönnaråcke
+
+... •
+
+t
+
+■ I
+
+,,.
+
+..
+
+.
+
+•
+
+•
+
+•
+
+llli.
+
+• •
+
+I
+
+..
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+. .....
+
+.
+
+. .
+
+. " ...
+
+.
+
+. .
+
+.
+
+.
+
+I
+
+t, t
+
+■ &.
+
+..
+
+. ...
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+' .
+
+<!-- sida 145 -->
+
 Kungsbacka kommun            Lokala ordningsföreskrifter       20 (20)
 
-a  D
+' \\
+
+•
+
+\\
+
+\\
+
+t
+
+I
+
+.
+
+.
+
+.
+
+onsa\a
+
+.
+
+.
+
+D
+
+[
+
+\_;:-;;;;.
+
+\~
+
+\~-==
+
+\=-
+
+{?
+
+tl
+
+a
+
+D
 
 0
+
+\\
+
+l
+
+I
+
+l
+
+tJ I
+
+R
 
 <!-- sida 146 -->
 
@@ -6229,9 +6919,6 @@ Fjärås/Hjälm
 /  li:-/M( \\,,- - ..,
 11\.
 
-r  )(
-11
-
 ···········�
 ·
 ···
@@ -6239,7 +6926,6 @@ r  )(
 ,
 Össlöv;
 
-•.·•
 •·.
 .
 .
@@ -6249,6 +6935,10 @@ r
 D
 ·
 --,
+
+11 r )(
+
+•. ·•
 
 <!-- sida 152 -->
 
@@ -6735,7 +7425,7 @@ För att motverka missbruket av lustgas och skydda våra invånare, särskilt
 ungdomar, föreslår Sverigedemokraterna ett lokalt förbud mot användning
 av lustgas i berusningssyfte inom specifika offentliga områden i
 Kungsbacka kommun. Förbudet ska utformas enligt Ordningslagen 3 kap
-12 § och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
+12 8 och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
 alkoholförtäring redan är förbjuden, vilket skulle ge polisen ett tydligt
 mandat att ingripa och förhindra missbruk på offentliga platser.
 

@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.b7a004018f378e8f28e32d/171517970388
 sha256: 2bdf901fe88ebd491917b1a05e2c719c89919ae1cbd65bcd599855373a35caa0
 bytes: 10895562
 sidor: 277
-hamtad: 2026-11-22T21:07:15+00:00
-konverterad: 2026-11-22T21:08:28+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-24T23:33:30+00:00
+konverterad: 2026-11-24T23:34:38+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom]
+kvalitet_per_sida: [ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ocr, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ocr, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom]
 tal_obekraftade: [74, 80, 91, 92, 93, 94, 95, 109, 110, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 138, 150, 151, 152, 153]
 figurer: [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 53, 55, 56, 65, 69, 72, 73, 74, 77, 78, 85, 86, 88, 91, 92, 93, 95, 96, 99, 100, 103, 104, 105, 108, 110, 117, 118, 119, 121, 122, 126, 127, 128, 129, 130, 131, 132, 133, 134, 137, 139, 142, 144, 152, 153, 227]
 tolkade: []
@@ -5377,7 +5377,7 @@ placerat ett utropstecken vid målet. Utropstecknet
 innebär att det inom målet finns trender som vi behöver
 vara uppmärksamma på, eller områden där Kungsbacka
 
-sticker ut negativt jämfört med andra !
+sticker ut negativt jämfört med andra
 jämförbara kommuner. Det kan också
 handla om områden där vi behöver göra
 mer för att kunna nå en hållbar utveck-
@@ -5404,7 +5404,7 @@ VAD GÖR VI BRA? Vi fasar ut farliga kemikalier och arbetar drogförebyggande i 
 kan med krögare. Vi stimulerar barns ökade rörelse och förebygger utsatthet på nätet. Vi
 ligger i framkant med vårt suicidpreventiva arbete och stärker samverkan runt tidiga insat-
 ser för barn och unga.
-!  UTMANINGAR? Den psykiska ohälsan är ett stort samhällsproblem, framförallt hos barn
+UTMANINGAR? Den psykiska ohälsan är ett stort samhällsproblem, framförallt hos barn
 och unga. Vi ser även hälsoskillnader mellan könen och mellan olika orter och inkomst-
 grupper. Den digitala utsattheten är en relativt ny utmaning där vi fortfarande saknar
 mycket kunskap.
@@ -5419,6 +5419,10 @@ ningar.
 
 44 Kungsbacka kommuns årsredovisning 2023
 
+!
+
+!
+
 <!-- sida 112 -->
 
 FÖRVALTNINGSBERÄTTELSE
@@ -5427,7 +5431,7 @@ VAD GÖR VI BRA? En handlingsplan mot våld i nära relation hjälper oss att bl
 på att upptäcka och motverka våld i nära relation. Heltid som norm där vi ser att antalet
 heltidsanställda ökar.
 UTMANINGAR? Våld i nära relation är ett betydande samhällsproblem. Vidare ser vi att
-!  Kungsbacka sticker ut inom flera jämställdhetsaspekter. Det handlar om att lönegapet i
+Kungsbacka sticker ut inom flera jämställdhetsaspekter. Det handlar om att lönegapet i
 befolkningen är relativt stort mellan könen och att kvinnor tar ut mycket mer vård av barn
 (VAB). Gällande förtroendevalda med ordförandeposter i kommunen är kvinnor under-
 representerade.
@@ -5453,7 +5457,6 @@ VAD GÖR VI BRA? Kommunen har en god ekonomi, ett attraktivt läge och en fortsa
 arbetslöshet. Vi har en robust branschbredd inom näringslivet, skapar mötesplatser för
 näringslivet och ställer arbetsrättsliga krav vid upphandling.
 UTMANINGAR? Som många andra kommuner har vi en ökande andel äldre och en
-!
 begränsad andel av befolkningen som är i arbetsför ålder, vilket innebär att färre behöver
 försörja fler. Det leder bland annat till utmaningar inom kompetensförsörjning.
 ! Kompetensförsörjning inom välfärden, långsiktig budgetering
@@ -5462,7 +5465,6 @@ VAD GÖR VI BRA? Tillgången till bredband ökar stadigt, vi arbetar med projekt
 rätt för att förbättra näringslivsklimatet och vi räknas bland de bästa kommuner gällande
 kommunal teknik.
 UTMANINGAR? Vi bedömer att företagare är nöjdare med vår service men det finns fort-
-!
 farande arbete att göra. I transportinfrastruktur är vi beroende av regionala och statliga
 parter för vår utveckling. Det är även en utmaning med vår framtida kapacitet för vatten,
 avlopp och energi.
@@ -5470,6 +5472,12 @@ avlopp och energi.
 avgörande för kommunens utveckling.
 
 Kungsbacka kommuns årsredovisning 2023 45
+
+!
+
+!
+
+!
 
 <!-- sida 113 -->
 
@@ -5479,7 +5487,7 @@ VAD GÖR VI BRA? Vi är en kommun med goda socioekonomiska förutsättningar. Vi
 genomfört utbildningar inom icke-diskriminerande bemötande och HBTQI+ för kommunens
 medarbetare. Vi har en e-tjänst där tjänstepersoner inom kommunen kan prova barnets
 bästa inför beslut. Vi utvecklar arbetet med brukardelaktighet och arbetar med ökad del-
-!   aktighet inom socialtjänsten.
+aktighet inom socialtjänsten.
 UTMANINGAR? Trots goda förutsättningar finns skillnader i individers hälsa och inkomst
 som bland annat är kopplat till boendeort. Undersökningar från Folkhälsomyndigheten
 visar att tilliten till andra människor minskar i kommunen och de senaste årens utmaningar
@@ -5508,7 +5516,6 @@ VAD GÖR VI BRA? Vi minskar successivt utsläppen av koldioxid i flera olika del
 verksamhet, från inköp till transporter. Tillsammans med företag i kommunen fasar vi ut
 köldmedier som står för stora utsläpp.
 UTMANINGAR? I kommunen som geografiskt område är transport det område där det
-!
 finns störst potential att minska utsläppen av koldioxid och att påverka detta är ett stort
 och komplext arbete med många involverade aktörer. En annan stor utsläppspost är från
 konsumtion, även det en komplex fråga som kommunen inte råder över.
@@ -5518,6 +5525,10 @@ Oroväckande global utveckling när det gäller utsläpp av växthusgaser.
 
 46 Kungsbacka kommuns årsredovisning 2023
 
+!
+
+!
+
 <!-- sida 114 -->
 
 FÖRVALTNINGSBERÄTTELSE
@@ -5526,7 +5537,7 @@ VAD GÖR VI BRA? Vår tillsynsverksamhet leder till konkreta åtgärder för min
 belastning i vattendragen. Vårt deltagande i projektet LEVA-Halland är en viktig kanal för
 samverkan med lantbrukare kring våtmarksanläggning. Vi uppgraderar våra pumpstationer
 och sätter ut granulatfällor som minskar utsläppen av mikroplast från konstgräsplaner.
-!  UTMANINGAR? Då kommunen har begränsade möjligheter att påverka de stora ut -
+UTMANINGAR? Då kommunen har begränsade möjligheter att påverka de stora ut -
 släppen behöver vi samarbeta för att finna bra lösningar. Samtidigt är det avgörande för
 oss att vi har god vattenkvalitet och fungerande havsekosystem.
 Negativ trend för djurlivet på Kungsbackafjordens bottnar. Utfiskade fiskbestånd
@@ -5537,7 +5548,7 @@ VAD GÖR VI BRA? Medvetenheten om biologisk mångfald ökar i kommunorganisation
 och vi blir bättre på att utforma och sköta utemiljöer för att främja växt- och djurlivet.
 UTMANINGAR? Det största hotet mot den biologiska mångfalden är förlorade och för-
 sämrade livsmiljöer.
-!
+
 ! Överlag en låg nivå av biologisk mångfald i kommunen. Stora problem med invasiva
 arter. Kritiskt tillstånd för kommunens ansvarsart havsnejonöga.
 
@@ -5546,7 +5557,7 @@ pande i många verksamheter. Vi genomför trygghetsskapande åtgärder, har en k
 sation och ingår i nätverket Företag mot Brott. Vi har satsat stort på politikerutbildning vid
 starten av den nya mandatperioden.
 UTMANINGAR? Den uppleva tryggheten minskar, anmälda brott där unga är gärningsman
-!  ökar och antalet orosanmälningar som rör barn har ökat. Omvärldstrender visar att demo-
+ökar och antalet orosanmälningar som rör barn har ökat. Omvärldstrender visar att demo-
 kratin hotas globalt och valdeltagandet minskade också något i Kungsbacka i valet 2022. I
 vår omvärld ser vi även desinformation och en ökande polarisering i samhället.
 Minskad tillit, omvärldstrend med ökande polarisering, ökande
@@ -5562,6 +5573,12 @@ utforskar nya sätt att arbeta är det också en utmaning att återkoppla till v
 samt att samordna olika expeditioner för att undvika dubbelarbete.
 
 Kungsbacka kommuns årsredovisning 2023 47
+
+!
+
+!
+
+!
 
 <!-- sida 115 -->
 

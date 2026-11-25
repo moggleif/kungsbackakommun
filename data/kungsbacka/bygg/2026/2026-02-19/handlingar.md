@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.46db326b19c4795e008550ee/1770968657
 sha256: 6573aa9c30986186c4b437ea897115c106f86cccab9e2fb4dd42d5472452d937
 bytes: 30954002
 sidor: 134
-hamtad: 2026-11-22T23:10:08+00:00
-konverterad: 2026-11-22T23:11:29+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:04:50+00:00
+konverterad: 2026-11-25T02:06:08+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [84, 85]
+tal_obekraftade: [71, 84, 85]
 figurer: [7, 60, 84, 85, 86, 90, 93, 94, 95, 96, 97, 111, 116, 117, 118, 119, 120, 121, 122, 123, 128, 130, 131, 134]
 tolkade: []
 granskad: null
@@ -2544,17 +2544,13 @@ Internkontrollrapport 2025
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
 Konsekvens
+
 2 Hög 2 Medel Totalt: 4
+
 Kritisk        Sannolikhet           Konsekvens
 Hög
 4 Mycket vanligt - exempelvis 1 gång per Allvarlig/stor inverkan (så stor att den inte
@@ -2568,6 +2564,8 @@ intressenter och kommunen)
 obefintlig) - exempelvis 1 gång per 10 år intressenter och kommunen)
 
 6
+
+Sannolikhet
 
 <!-- sida 61 -->
 
@@ -3028,49 +3026,15 @@ Kungsbacka den 9 januari 2026
 
 Byggnadsnämnden i Kungsbacka kommun
 
-v
-001R
-6002
-,0
-7 3
-.1
-0 0 - -
-B ygg- och miljöförvaltningen                                Ku
-4
-n
-3
-g
-4
-s
-8
-b
-1
-ac
-K
-ka
-u n
-k
-g
-o
-s
-m
-ba
-m
-c
-u
-k
-n
-a
-M
-\_B                                                                      Besöksadress
-U
-K
-m
+Bygg- och miljöförvaltningen                                 Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
 Stadshuset, Storgatan 37
-roF
-inu                                                                 Telefon 0300-83 40 00
+Telefon 0300-83 40 00
 (e-post borttagen)
 www.kungsbacka.se
+
+uniForm KUB_MR100 v 1.0, 2006-07-03
 
 <!-- sida 72 -->
 

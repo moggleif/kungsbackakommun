@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.663576d1a1156c4d3b1ecc7/17914575208
 sha256: 62e11e6360cf6153821ec5188be3c62f19adfae6c770d920ca8d469060d98975
 bytes: 41316939
 sidor: 182
-hamtad: 2026-11-22T23:40:56+00:00
-konverterad: 2026-11-22T23:45:39+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:49:33+00:00
+konverterad: 2026-11-25T02:54:17+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ocr, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ointressant, ointressant, ocr, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok]
@@ -4895,8 +4895,6 @@ www.norconsult.se
 
 <!-- sida 119 -->
 
-noitavelE
-
 Bilaga 3:1
 
 Color Name
@@ -5059,9 +5057,9 @@ Senast redigerad: 2025-07-18, 10:37:56
 
 Skapad av: Elham Sokhango
 
-<!-- sida 120 -->
+Elevation
 
-noitavelE
+<!-- sida 120 -->
 
 Bilaga 3:2
 
@@ -5233,9 +5231,9 @@ Skala (A4): 1:300
 
 Skapad av: Elham Sokhango
 
-<!-- sida 121 -->
+Elevation
 
-noitavelE
+<!-- sida 121 -->
 
 Bilaga 3:3
 
@@ -5399,9 +5397,9 @@ Senast redigerad: 2025-07-18, 16:15:30
 
 Skapad av: Elham Sokhango
 
-<!-- sida 122 -->
+Elevation
 
-noitavelE
+<!-- sida 122 -->
 
 Bilaga 3:4
 
@@ -5561,9 +5559,9 @@ Senast redigerad: 2025-07-18, 16:15:30
 
 Skapad av: Elham Sokhango
 
-<!-- sida 123 -->
+Elevation
 
-noitavelE
+<!-- sida 123 -->
 
 Bilaga 3:5
 
@@ -5771,9 +5769,9 @@ Skala (A4): 1:300
 
 Skapad av: Elham Sokhango
 
-<!-- sida 124 -->
+Elevation
 
-noitavelE
+<!-- sida 124 -->
 
 Bilaga 3:6
 
@@ -5985,9 +5983,9 @@ Senast redigerad: 2025-07-18, 08:46:59
 
 Skapad av: Elham Sokhango
 
-<!-- sida 125 -->
+Elevation
 
-noitavelE
+<!-- sida 125 -->
 
 Bilaga 3:7
 
@@ -6149,9 +6147,9 @@ Skala (A4): 1:300
 
 Skapad av: Elham Sokhango
 
-<!-- sida 126 -->
+Elevation
 
-noitavelE
+<!-- sida 126 -->
 
 Bilaga 3:8
 
@@ -6307,9 +6305,9 @@ Senast redigerad: 2025-07-18, 14:45:59
 
 Skapad av: Elham Sokhango
 
-<!-- sida 127 -->
+Elevation
 
-noitavelE
+<!-- sida 127 -->
 
 Bilaga 3:9
 
@@ -6477,9 +6475,9 @@ Skala (A4): 1:300
 
 Skapad av: Elham Sokhango
 
-<!-- sida 128 -->
+Elevation
 
-noitavelE
+<!-- sida 128 -->
 
 Bilaga 3:10
 
@@ -6647,9 +6645,9 @@ Senast redigerad: 2025-07-18, 09:34:29
 
 Skapad av: Elham Sokhango
 
-<!-- sida 129 -->
+Elevation
 
-noitavelE
+<!-- sida 129 -->
 
 Bilaga 4:1
 
@@ -6815,9 +6813,9 @@ Senast redigerad: 2025-07-18, 10:37:56
 
 Skapad av: Elham Sokhango
 
-<!-- sida 130 -->
+Elevation
 
-noitavelE
+<!-- sida 130 -->
 
 Bilaga 4:2
 
@@ -6987,9 +6985,9 @@ Senast redigerad: 2025-07-18, 10:37:56
 
 Skapad av: Elham Sokhango
 
-<!-- sida 131 -->
+Elevation
 
-noitavelE
+<!-- sida 131 -->
 
 Bilaga 4:3
 
@@ -7151,9 +7149,9 @@ Senast redigerad: 2025-07-18, 16:23:26
 
 Skapad av: Elham Sokhango
 
-<!-- sida 132 -->
+Elevation
 
-noitavelE
+<!-- sida 132 -->
 
 Bilaga 4:4
 
@@ -7311,9 +7309,9 @@ Senast redigerad: 2025-07-18, 16:23:26
 
 Skapad av: Elham Sokhango
 
-<!-- sida 133 -->
+Elevation
 
-noitavelE
+<!-- sida 133 -->
 
 Bilaga 4:5
 
@@ -7497,9 +7495,9 @@ Senast redigerad: 2025-07-18, 08:46:59
 
 Skapad av: Elham Sokhango
 
-<!-- sida 134 -->
+Elevation
 
-noitavelE
+<!-- sida 134 -->
 
 Bilaga 4:6
 
@@ -7703,9 +7701,9 @@ Senast redigerad: 2025-07-18, 08:46:59
 
 Skapad av: Elham Sokhango
 
-<!-- sida 135 -->
+Elevation
 
-noitavelE
+<!-- sida 135 -->
 
 Bilaga 4:7
 
@@ -7883,9 +7881,9 @@ Senast redigerad: 2026-05-16, 10:04:28
 
 Skapad av: Elham Sokhango
 
-<!-- sida 136 -->
+Elevation
 
-noitavelE
+<!-- sida 136 -->
 
 Bilaga 4:8
 
@@ -8049,9 +8047,9 @@ Senast redigerad: 2026-05-16, 10:04:28
 
 Skapad av: Elham Sokhango
 
-<!-- sida 137 -->
+Elevation
 
-noitavelE
+<!-- sida 137 -->
 
 Bilaga 5:1
 
@@ -8143,9 +8141,9 @@ Senast redigerad: 2025-07-18, 10:37:56
 
 Skapad av: Elham Sokhango
 
-<!-- sida 138 -->
+Elevation
 
-noitavelE
+<!-- sida 138 -->
 
 Bilaga 5:2
 
@@ -8339,9 +8337,9 @@ Senast redigerad: 2025-07-18, 10:37:56
 
 Skapad av: Elham Sokhango
 
-<!-- sida 139 -->
+Elevation
 
-noitavelE
+<!-- sida 139 -->
 
 Bilaga 5:3
 
@@ -8513,9 +8511,9 @@ Senast redigerad: 2026-05-16, 08:54:00
 
 Skapad av: Elham Sokhango
 
-<!-- sida 140 -->
+Elevation
 
-noitavelE
+<!-- sida 140 -->
 
 Bilaga 5:4
 
@@ -8687,9 +8685,9 @@ Senast redigerad: 2026-05-16, 08:54:00
 
 Skapad av: Elham Sokhango
 
-<!-- sida 141 -->
+Elevation
 
-noitavelE
+<!-- sida 141 -->
 
 Bilaga 5:5
 
@@ -8851,9 +8849,9 @@ Senast redigerad: 2025-07-18, 16:23:26
 
 Skapad av: Elham Sokhango
 
-<!-- sida 142 -->
+Elevation
 
-noitavelE
+<!-- sida 142 -->
 
 Bilaga 5:6
 
@@ -9013,9 +9011,9 @@ Senast redigerad: 2025-07-18, 16:23:26
 
 Skapad av: Elham Sokhango
 
-<!-- sida 143 -->
+Elevation
 
-noitavelE
+<!-- sida 143 -->
 
 Bilaga 5:7
 
@@ -9227,9 +9225,9 @@ Senast redigerad: 2025-07-18, 08:46:59
 
 Skapad av: Elham Sokhango
 
-<!-- sida 144 -->
+Elevation
 
-noitavelE
+<!-- sida 144 -->
 
 Bilaga 5:8
 
@@ -9435,9 +9433,9 @@ Senast redigerad: 2025-07-18, 08:46:59
 
 Skapad av: Elham Sokhango
 
-<!-- sida 145 -->
+Elevation
 
-noitavelE
+<!-- sida 145 -->
 
 Bilaga 5:9
 
@@ -9615,9 +9613,9 @@ Senast redigerad: 2026-05-16, 09:52:15
 
 Skapad av: Elham Sokhango
 
-<!-- sida 146 -->
+Elevation
 
-noitavelE
+<!-- sida 146 -->
 
 Bilaga 5:10
 
@@ -9775,9 +9773,9 @@ Senast redigerad: 2026-05-16, 09:52:15
 
 Skapad av: Elham Sokhango
 
-<!-- sida 147 -->
+Elevation
 
-noitavelE
+<!-- sida 147 -->
 
 Bilaga 6:1
 
@@ -9967,9 +9965,9 @@ Skala (A4): 1:300
 
 Skapad av: Elham Sokhango
 
-<!-- sida 148 -->
+Elevation
 
-noitavelE
+<!-- sida 148 -->
 
 Bilaga 6:2
 
@@ -10135,6 +10133,8 @@ Senast redigerad: 2026-04-01, 08:23:05
 
 Skapad av: Elham Sokhango
 
+Elevation
+
 <!-- sida 149 -->
 
 Bilaga 7:1
@@ -10146,72 +10146,11 @@ Bilaga 7:1
 
 <!-- sida 150 -->
 
-2                               3A
-3C
-2
-2C    6D       D01      14D      18C
-6C       10C
-2B
-B6       10B      14B
-B81
-23             2A     6A       10A      A41      18A  4
-21               4A 4B 4C 8A 8B 8C 12A 12B 12C 16A 16B 16C
-(1)
-19
-3
+4B         8C                16C
 
-3A
 1
-17                                            5
-1A
-HF
-H-A51                      3B                  Brandstation
-GE
-D
-C
-B
-A
-32
-3
-F
-13
-30
-C
-A11
-A C-DBA 1 B 4
-28 32
-5 7
-24                                                           2
-1A               1                                         4
-1B-G                                                        6
-B-A
-2
-2                                      8
-3
-3
-4
-3                                         01
-5                                                           21
-5
-6   8
-2 4
-Polis
-9
-41
-7
-01
-A71Drottning
-Blank
-g
-a
-y
-s mnasium
-17C
-B71
-17
-P-hus
-Linden
-5
+
+Brandstation
 
 14C
 
@@ -10222,75 +10161,222 @@ Tfn +46 10 141 80 00
 Box 8774, 402 76 Göteborg
 
 www.norconsult.se
+
+13
+
+6
+
+5
+
+(1)
+
+2
+
+A
+
+12C
+
+3
+
+10A
+
+6C
+
+14A
+
+8A
+
+10C
+
+12B
+
+4
+
+18A
+
+2A
+
+4C
+
+14
+
+32
+
+18B
+
+15A-H
+
+12A
+
+30
+
+9
+
+28
+
+A
+
+11
+
+5
+
+17C
+
+17B
+
+17
+
+5
+
+H
+
+17
+
+3
+
+10
+
+G
+
+E
+
+3
+
+6B
+
+16A
+
+C
+
+F
+
+10D
+
+19
+
+D
+
+8
+
+2
+
+4A
+
+2
+
+A
+
+B
+
+A
+
+F
+
+17A
+
+14
+
+1A
+
+B
+
+4
+
+1 B-G
+
+3A
+
+10
+
+7
+
+32
+
+B
+
+1A
+
+24
+
+8
+
+2
+
+C
+
+1
+
+10B
+
+5
+
+18C
+
+4
+
+14D
+
+6A
+
+5
+
+16B
+
+2C
+
+3A
+
+C-D
+
+6
+
+21
+
+2 A-B
+
+3
+
+12
+
+23
+
+14B
+
+3
+
+3C
+
+6D
+
+3B
+
+4
+
+7
+
+2
+
+2B
+
+8B
+
+Drottning Blankas
+
+gymnasium
+
+Polis
+
+P-hus
+
+Linden
 
 <!-- sida 151 -->
 
-2                               3A
-3C
-2
-2C    6D       D01      14D      18C
-6C       10C
-2B
-B6       10B      14B
-B81
-23             2A     6A       10A      A41      18A  4
-21               4A 4B 4C 8A 8B 8C 12A 12B 12C 16A 16B 16C
-(1)
-19
-3
+4B         8C                16C
 
-3A
 1
-17                                            5
-1A
-HF
-H-A51                      3B                  Brandstation
-GE
-D
-C
-B
-A
-32
-3
-F
-13
-30
-C
-A11
-A C-DBA 1 B 4
-28 32
-5 7
-24                                                           2
-1A               1                                         4
-1B-G                                                        6
-B-A
-2
-2                                      8
-3
-3
-4
-3                                         01
-5                                                           21
-5
-6   8
-2 4
-Polis
-9
-41
-7
-01
-A71Drottning
-Blank
-g
-a
-y
-s mnasium
-17C
-B71
-17
-P-hus
-Linden
-5
+
+Brandstation
 
 14C
 
@@ -10301,6 +10387,214 @@ Tfn +46 10 141 80 00
 Box 8774, 402 76 Göteborg
 
 www.norconsult.se
+
+13
+
+6
+
+5
+
+(1)
+
+2
+
+A
+
+12C
+
+3
+
+10A
+
+6C
+
+14A
+
+8A
+
+10C
+
+12B
+
+4
+
+18A
+
+2A
+
+4C
+
+14
+
+32
+
+18B
+
+15A-H
+
+12A
+
+30
+
+9
+
+28
+
+A
+
+11
+
+5
+
+17C
+
+17B
+
+17
+
+5
+
+H
+
+17
+
+3
+
+10
+
+G
+
+E
+
+3
+
+6B
+
+16A
+
+C
+
+F
+
+10D
+
+19
+
+D
+
+8
+
+2
+
+4A
+
+2
+
+A
+
+B
+
+A
+
+F
+
+17A
+
+14
+
+1A
+
+B
+
+4
+
+1 B-G
+
+3A
+
+10
+
+7
+
+32
+
+B
+
+1A
+
+24
+
+8
+
+2
+
+C
+
+1
+
+10B
+
+5
+
+18C
+
+4
+
+14D
+
+6A
+
+5
+
+16B
+
+2C
+
+3A
+
+C-D
+
+6
+
+21
+
+2 A-B
+
+3
+
+12
+
+23
+
+14B
+
+3
+
+3C
+
+6D
+
+3B
+
+4
+
+7
+
+2
+
+2B
+
+8B
+
+Drottning Blankas
+
+gymnasium
+
+Polis
+
+P-hus
+
+Linden
 
 <!-- sida 152 -->
 
@@ -10831,8 +11125,6 @@ LUDVIGSON EX VÄSTRA REGIONEN | JÄRNVÄGSBRO ÖVER HANTVERKSGATAN
 
 <!-- sida 171 -->
 
-noitavelE
-
 Bilaga 3:1
 
 Color Name
@@ -11117,9 +11409,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 172 -->
+Elevation
 
-noitavelE
+<!-- sida 172 -->
 
 Bilaga 3:2
 
@@ -11413,9 +11705,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 173 -->
+Elevation
 
-noitavelE
+<!-- sida 173 -->
 
 Bilaga 4:1
 
@@ -11691,9 +11983,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 174 -->
+Elevation
 
-noitavelE
+<!-- sida 174 -->
 
 Bilaga 4:2
 
@@ -11959,9 +12251,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 175 -->
+Elevation
 
-noitavelE
+<!-- sida 175 -->
 
 Bilaga 4:3
 
@@ -12235,9 +12527,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 176 -->
+Elevation
 
-noitavelE
+<!-- sida 176 -->
 
 Bilaga 4:4
 
@@ -12501,9 +12793,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 177 -->
+Elevation
 
-noitavelE
+<!-- sida 177 -->
 
 Bilaga 4:5
 
@@ -12745,9 +13037,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 178 -->
+Elevation
 
-noitavelE
+<!-- sida 178 -->
 
 Bilaga 4:6
 
@@ -13013,9 +13305,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 179 -->
+Elevation
 
-noitavelE
+<!-- sida 179 -->
 
 Bilaga 4:7
 
@@ -13257,9 +13549,9 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
-<!-- sida 180 -->
+Elevation
 
-noitavelE
+<!-- sida 180 -->
 
 Bilaga 4:8
 
@@ -13525,74 +13817,15 @@ Skala (A4): 1:400
 
 Skapad av: Elham Sokhango
 
+Elevation
+
 <!-- sida 181 -->
 
-2                               3A
-3C
-2
-2C    6D       D01      14D      18C
-6C       10C
-2B
-B6       10B      14B
-B81
-23             2A     6A       10A      A41      18A  4
-21               4A 4B 4C 8A 8B 8C 12A 12B 12C 16A 16B 16C
-(1)
-19
-3
+4B         8C                16C
 
-3A
 1
-17                                            5
-1A
-HF
-H-A51                      3B                  Brandstation
-GE
-D
-C
-B
-A
-32
-3
-F
-13
-30
-C
-A11
-A C-DBA 1 B 4
-28 32
-5 7
-24                                                           2
-1A               1                                         4
-1B-G                                                        6
-B-A
-2
-2                                      8
-3
-3
-4
-3                                         01
-5                                                           21
-5
-6   8
-2 4
-Polis
-9
-41
-7
-01
-A71Drottning
-Blank
-g
-a
-y
-s mnasium
-17C
-B71
-17
-P-hus
-Linden
-5
+
+Brandstation
 
 14C
 
@@ -13603,6 +13836,214 @@ Tfn +46 10 141 80 00
 Box 8774, 402 76 Göteborg
 
 www.norconsult.se
+
+13
+
+6
+
+5
+
+(1)
+
+2
+
+A
+
+12C
+
+3
+
+10A
+
+6C
+
+14A
+
+8A
+
+10C
+
+12B
+
+4
+
+18A
+
+2A
+
+4C
+
+14
+
+32
+
+18B
+
+15A-H
+
+12A
+
+30
+
+9
+
+28
+
+A
+
+11
+
+5
+
+17C
+
+17B
+
+17
+
+5
+
+H
+
+17
+
+3
+
+10
+
+G
+
+E
+
+3
+
+6B
+
+16A
+
+C
+
+F
+
+10D
+
+19
+
+D
+
+8
+
+2
+
+4A
+
+2
+
+A
+
+B
+
+A
+
+F
+
+17A
+
+14
+
+1A
+
+B
+
+4
+
+1 B-G
+
+3A
+
+10
+
+7
+
+32
+
+B
+
+1A
+
+24
+
+8
+
+2
+
+C
+
+1
+
+10B
+
+5
+
+18C
+
+4
+
+14D
+
+6A
+
+5
+
+16B
+
+2C
+
+3A
+
+C-D
+
+6
+
+21
+
+2 A-B
+
+3
+
+12
+
+23
+
+14B
+
+3
+
+3C
+
+6D
+
+3B
+
+4
+
+7
+
+2
+
+2B
+
+8B
+
+Drottning Blankas
+
+gymnasium
+
+Polis
+
+P-hus
+
+Linden
 
 <!-- sida 182 -->
 

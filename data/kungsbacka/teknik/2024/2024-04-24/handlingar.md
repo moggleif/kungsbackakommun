@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2b8a29c818ecba375e913d1e/1713531349
 sha256: ad8a95adb634a217fa3515277fb16042343b58ed224e6f09c2c7f754f462cbc3
 bytes: 31102782
 sidor: 402
-hamtad: 2026-11-22T23:53:12+00:00
-konverterad: 2026-11-22T23:56:59+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T03:09:39+00:00
+konverterad: 2026-11-25T03:13:24+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok]
-tal_obekraftade: [39, 48, 84, 85, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 317, 318, 319, 371, 379, 381, 383, 385, 390, 395]
+kvalitet_per_sida: [ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok]
+tal_obekraftade: [39, 48, 84, 85, 115, 127, 132, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 315, 317, 318, 319, 371, 379, 381, 383, 385, 390, 395]
 figurer: [1, 26, 28, 30, 33, 37, 38, 40, 41, 42, 43, 44, 45, 48, 49, 50, 54, 55, 56, 57, 58, 59, 61, 66, 67, 68, 69, 70, 72, 84, 85, 89, 102, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 142, 163, 198, 199, 203, 204, 212, 213, 218, 223, 224, 262, 263, 282, 290, 295, 300, 326, 327, 330, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 347, 351, 353]
 tolkade: []
 granskad: null
@@ -4443,43 +4443,52 @@ www.envidan.se • Organisationsnummer 556666-5468
 <!-- sida 109 -->
 
 Bilaga 1 – Underlag från SWOT-analys
+
 Detta är en sammanställning av resultatet från SWOT-analysen som genomfördes 2023-10-09. Materialet är inte bearbetat utan är en
 digitaliserad version av resultatet.
 
+Styrkor
+Tidsbegränsning, flexibilitet för "köparen"
+En som äger och en som betalar
+
+Snabbare process för en anläggning
+Halmstad bestämmer
+Energi fördela storskalighet
+
+Snabbare beslut
+"Enkelt" att skriva avtal
+
 Avtalssamverkan
 
-Styrkor                               Svagheter
-Tidsbegränsning, flexibilitet för "köparen" Ägaren kan bli kvarlämnad med överdimensionerad anläggning
-En som äger och en som betalar    Långsiktig trygghet för Halmstad
-Snabbare process för en anläggning Risk för anläggningsägare
+Svagheter
+Ägaren kan bli kvarlämnad med överdimensionerad anläggning
+Långsiktig trygghet för Halmstad
 
-Halmstad bestämmer                Svårt att få till ett avtal som alla är nöjda med på sikt
-a
-n
-r
-Energi fördela storskalighet      Svårt för Kungsbacka att känna ett ägandeskap
-e
-t n                                    Känsla av "vi mot dem" om övriga kommuner inte är nöjda med
-I
-Snabbare beslut                   Halmstads beslut
-"Enkelt" att skriva avtal         Lbva behöver förankra/övertyga om ett samarbete
+Risk för anläggningsägare
+Svårt att få till ett avtal som alla är nöjda med på sikt
+Svårt för Kungsbacka att känna ett ägandeskap
+Känsla av "vi mot dem" om övriga kommuner inte är nöjda med
+Halmstads beslut
+Lbva behöver förankra/övertyga om ett samarbete
+
 Förändring i kostnader gynnar/gynnar inte avtalsparter på olika sätt
 Möjligheter                               Hot
+
 Regional hantering/efterbehandling Upphandling/LOU
 "Snabb" väg framåt                Avstånd mellan beslutsfattare
 Teckna avtal med fler             Förändrade lagkrav påverkar anläggningsägare
-a
-n
-r
 Lättare för andra kommuner att ansluta Insyn/påverkansmöjlighet från avtalsparterna
-e
-t x                                    Risk för att Kungsbacka står utan slamhantering vid förändrade
-E
+Risk för att Kungsbacka står utan slamhantering vid förändrade
 förutsättningar
 Framtiden är oviss
+
 Vad händer om någon hoppar av
 
 www.envidan.se • Organisationsnummer 556666-5468
+
+Interna
+
+Externa
 
 <!-- sida 110 -->
 
@@ -4489,28 +4498,19 @@ Styrkor                               Svagheter
 Kompetensdrivande                 Finns det tillräckligt med politiska frågor
 Energieffektivt                   Nämnd svagare styrning
 
-a
-n
-r
-e
-t
-n
-I
 Möjligheter                               Hot
+
 Beslutsproblem
 Politik
 En part har större risk som ägare av anläggning
-a
-n
-r
 Förändrade lagkrav
-e
-t
-x
 Stelbent
-E
 
 www.envidan.se • Organisationsnummer 556666-5468
+
+Interna
+
+Externa
 
 <!-- sida 111 -->
 
@@ -4520,35 +4520,48 @@ Kommunalt     bolag
 
 Styrkor                               Svagheter
 
-Fokus på slamhantering            Behöver bygga en egen organisation+tekniska system
-Fokus på att förädla gas+slammet  Viljan till bolagsform
+Fokus på slamhantering
+Fokus på att förädla gas+slammet
 Kärnverksamheten i bolaget är slamhanteringen,
-a   kan locka kompetens               Längre tidplan, politiken, miljötillstånd etc.
-n
-r e Långsiktighet för båda parter     Måste ha en egen likviditet
-t
-n
-I
-Känsla av delaktighet för alla parter Två lika stora ägare
+kan locka kompetens
+
+Långsiktighet för båda parter
+Känsla av delaktighet för alla parter
 Proportionerlig påverkan. Kan kännas "rättvist" och
-som att alla är lika viktiga och delaktiga Fler beslut i samband med det ekonomiska läget
-Samarbete om Revaq i gemensamt bolag Kanske otryggt att bilda bolag
+som att alla är lika viktiga och delaktiga
+Samarbete om Revaq i gemensamt bolag
 Kompetensdrivande
-Möjligheter                               Hot
-Proportionellt ägande             Privata aktörer motsätter sig ett bolag
-Egna upphandlingar                Opinion?
-Del av en större helhet - slam, matavfall, gas osv Hur hanteras fler/nya intressenter
-a
-n
-r
-Kan starta andra affärer          Tung eller svår administration (it, ekonomi etc.)
-e
-t
-x
+
+Möjligheter
+Proportionellt ägande
+Egna upphandlingar
+Del av en större helhet - slam, matavfall, gas osv
+Kan starta andra affärer
+
 Flexibelt för förändring, "äger frågan"
-E
+
+Behöver bygga en egen organisation+tekniska system
+Viljan till bolagsform
+
+Längre tidplan, politiken, miljötillstånd etc.
+
+Måste ha en egen likviditet
+Två lika stora ägare
+
+Fler beslut i samband med det ekonomiska läget
+Kanske otryggt att bilda bolag
+
+Hot
+Privata aktörer motsätter sig ett bolag
+Opinion?
+Hur hanteras fler/nya intressenter
+Tung eller svår administration (it, ekonomi etc.)
 
 www.envidan.se • Organisationsnummer 556666-5468
+
+Interna
+
+Externa
 
 <!-- sida 112 -->
 
@@ -4561,26 +4574,18 @@ Styrkor                               Svagheter
 Känsla av delaktighet för alla parter Stor politisk överbyggnad
 Politiskt inflytande ökar intresset För stort politiskt inflytande
 Långsiktighet för båda parter     Behöver egen likviditet
-a
-n    Kompetensdrivande
-r
-e
-t
-n
-I
+Kompetensdrivande
+
 Möjligheter                               Hot
 Långsiktighet
 
 Svårare att kommunicera och för utomstående att förstå
-a
-n
-r
-e
-t
-x
-E
 
 www.envidan.se • Organisationsnummer 556666-5468
+
+Interna
+
+Externa
 
 <!-- sida 113 -->
 
@@ -4610,19 +4615,9 @@ www.envidan.se • Organisationsnummer 556666-5468
 
 <!-- sida 115 -->
 
-6:27
-
-21
-
 AGS
 
-Panncentral
-
 SLAMHANTERINGSBYGGNAD
-
-1:7
-
-1:2
 
 PYROLYSBYGGNAD
 
@@ -4652,6 +4647,16 @@ A1
 
 P-00-0-002             -
 1:500
+
+21
+
+Panncentral
+
+1:2
+
+6:27
+
+1:7
 
 <!-- sida 116 -->
 
@@ -4864,88 +4869,27 @@ NYA  BYGGNADER
 BYGG-GRÄNS
 
 +40,0   +77,0
-m
-1
-m
-4
-m
-6
-mörhålevägen
-S
+m  m   m
+1  4   6
+
 6:27
-KEMTANKAR
-\+
-DOSERING
-P
-ER
-7:1                             INLOPPSBYGGNAD                       S O
-N
-A
-LB
+
 n
 3
-Y
-SA B N Y D G F G IL N T A E D R-                   G G N A D 20
+
 +30,0
-EL- OCH
-VENTRUM
-VERKSTAD,
-DRIFT, M.M.
-KUNGSBACKA
-SLAMHANTERINGSBYGGNAD
-G
-SANDFILTERBYGGNAD
-LÄKEMEDELSRENING
-FÖRSEDIMENTERING B
-\+
-I O
-S
-\-
-S
-P
-H
-GR
-S
-O G
-A
-V A
-N
-R L
-D
-E L
-F
-N E
-Å
-R IN
-N
-, G
-G
-,
-A
-T
-A
-REGNBASSÄNG
+
 n
-1:2
+1                                         6:27
 n
+2
 m
-1
 2
-MELLANSEDIMENTERINGSBASSÄNGER 6:27
-2
-B
-L
-Å
-S
-M
-A    +40,0
-S
-K
-IN
-QUATTRO-DENIPHO H
-U
-S
+
++40,0
+
 +77,0
+
 m                                                 m
 5                                                 1
 m
@@ -4954,8 +4898,6 @@ n
 3
 +40,0
 +77,0
-21
-AGS
 m
 6
 m
@@ -4966,22 +4908,17 @@ BET ÄNDRINGEN AVSER        DATUM  SIGN
 \-
 m
 3
-SLAMHANTERINGSBYGGNAD
-1:1
 GRANSKNINGSHANDLING
-1:7
 N
-1:2
-RÖTKAMMARE
-GASUPP-
-MO + D E G R A S S T F A L T A I K ON GRADERING
-GASKLOCKA
-GASFACKLA
+
 n  n
 1 2
 ORIENTERINGSFIGUR
+
 2592303   O. HELD      J. CARLBAUM
+
 2024-02-02 K. HÅKANSSON
+
 HAMMARGÅRD  ARV
 SKALA 1:1000
 ÖVERSIKTSLAYOUT
@@ -4989,8 +4926,93 @@ SKALA 1:1000
 0  10  20          50                 100
 METER                                                                                                                                    SITUATIONSPLAN               FAS   0
 A1
+
 P-00-0-003            -
 1:1000
+
+20
+
+21
+
+KUNGSBACKA
+
+1:2
+
+1:2
+
+7:1
+
+1:7
+
+1:1
+
+Smörhålevägen
+
+GATA
+
+MELLANSEDIMENTERINGSBASSÄNGER
+
+QUATTRO-DENIPHO
+
+INLOPPSBYGGNAD
+
+SANDFILTER-
+
+BYGGNAD
+
+AGS
+
+SLAMHANTERINGSBYGGNAD
+
+RÖTKAMMARE
+
+GASUPP-
+
+GRADERING
+
+MODERSTATION
+
+\+ GASFLAK
+
+GASKLOCKA
+
+GASFACKLA
+
+LÄKEMEDELSRENING
+
+FÖRSEDIMENTERING
+
+GROVRENING,
+
+GALLER,
+
+SANDFÅNG
+
+PERSONALBYGGNAD
+
+VERKSTAD, DRIFT, M.M.
+
+KEMTANKAR
+
+\+
+
+DOSERING
+
+SANDFILTERBYGGNAD
+
+SLAMHANTERINGSBYGGNAD
+
+REGNBASSÄNG
+
+BIO-P
+
+\+ SSH
+
+EL- OCH
+
+VENTRUM
+
+BLÅSMASKINHUS
 
 <!-- sida 128 -->
 
@@ -5166,88 +5188,27 @@ NYA  BYGGNADER
 BYGG-GRÄNS
 
 +40,0   +77,0
-m
-1
-m
-4
-m
-6
-mörhålevägen
-S
+m  m   m
+1  4   6
+
 6:27
-KEMTANKAR
-\+
-DOSERING
-P
-ER
-7:1                             INLOPPSBYGGNAD                       S O
-N
-A
-LB
+
 n
 3
-Y
-SA B N Y D G F G IL N T A E D R-                   G G N A D 20
+
 +30,0
-EL- OCH
-VENTRUM
-VERKSTAD,
-DRIFT, M.M.
-KUNGSBACKA
-SLAMHANTERINGSBYGGNAD
-G
-SANDFILTERBYGGNAD
-LÄKEMEDELSRENING
-FÖRSEDIMENTERING B
-\+
-I O
-S
-\-
-S
-P
-H
-GR
-S
-O G
-A
-V A
-N
-R L
-D
-E L
-F
-N E
-Å
-R IN
-N
-, G
-G
-,
-A
-T
-A
-REGNBASSÄNG
+
 n
-1:2
+1                                         6:27
 n
+2
 m
-1
 2
-MELLANSEDIMENTERINGSBASSÄNGER 6:27
-2
-B
-L
-Å
-S
-M
-A    +40,0
-S
-K
-IN
-QUATTRO-DENIPHO H
-U
-S
+
++40,0
+
 +77,0
+
 m                                                 m
 5                                                 1
 m
@@ -5256,8 +5217,6 @@ n
 3
 +40,0
 +77,0
-21
-AGS
 m
 6
 m
@@ -5268,22 +5227,17 @@ BET ÄNDRINGEN AVSER        DATUM  SIGN
 \-
 m
 3
-SLAMHANTERINGSBYGGNAD
-1:1
 GRANSKNINGSHANDLING
-1:7
 N
-1:2
-RÖTKAMMARE
-GASUPP-
-MO + D E G R A S S T F A L T A I K ON GRADERING
-GASKLOCKA
-GASFACKLA
+
 n  n
 1 2
 ORIENTERINGSFIGUR
+
 2592303   O. HELD      J. CARLBAUM
+
 2024-02-02 K. HÅKANSSON
+
 HAMMARGÅRD  ARV
 SKALA 1:1000
 ÖVERSIKTSLAYOUT
@@ -5291,8 +5245,93 @@ SKALA 1:1000
 0  10  20          50                 100
 METER                                                                                                                                    SITUATIONSPLAN               FAS   0
 A1
+
 P-00-0-003            -
 1:1000
+
+20
+
+21
+
+KUNGSBACKA
+
+1:2
+
+1:2
+
+7:1
+
+1:7
+
+1:1
+
+Smörhålevägen
+
+GATA
+
+MELLANSEDIMENTERINGSBASSÄNGER
+
+QUATTRO-DENIPHO
+
+INLOPPSBYGGNAD
+
+SANDFILTER-
+
+BYGGNAD
+
+AGS
+
+SLAMHANTERINGSBYGGNAD
+
+RÖTKAMMARE
+
+GASUPP-
+
+GRADERING
+
+MODERSTATION
+
+\+ GASFLAK
+
+GASKLOCKA
+
+GASFACKLA
+
+LÄKEMEDELSRENING
+
+FÖRSEDIMENTERING
+
+GROVRENING,
+
+GALLER,
+
+SANDFÅNG
+
+PERSONALBYGGNAD
+
+VERKSTAD, DRIFT, M.M.
+
+KEMTANKAR
+
+\+
+
+DOSERING
+
+SANDFILTERBYGGNAD
+
+SLAMHANTERINGSBYGGNAD
+
+REGNBASSÄNG
+
+BIO-P
+
+\+ SSH
+
+EL- OCH
+
+VENTRUM
+
+BLÅSMASKINHUS
 
 <!-- sida 133 -->
 
@@ -13113,7 +13152,7 @@ för personal, administration, utrustning m.m.).
 
 Beställningscentralen är upphandlad och kommunen betalar en summa per bokad
 resa. För 2013 är bedömningen att bokning av färdtjänstresor kommer kosta cirka 1,3
-mkr. Systemkostnaden uppgår till cirka 1 mkr. Systemkostnaden är likvärdig i de två
+mkr. Systemkostnaden uppgår till cirka I mkr. Systemkostnaden är likvärdig i de två
 olika alternativen. |
 
 Kostnadsjämförelse tkr
@@ -14070,11 +14109,9 @@ Göteborg
 Härryda
 300
 Mölndal
-r o250
-n
-o                                         Hallands läns kommuner utom
-r
-K200                                      Kba (ovägt medel)
+250
+Hallands läns kommuner utom
+200                                      Kba (ovägt medel)
 Halmstad
 150
 Varberg
@@ -14088,6 +14125,8 @@ I tabellen visas antal beviljade tillstånd per typ av aktivitet och unika kunde
 tillstånd för olika typer av aktiviteter (resor). Statistiken visar genomsnitt under året.
 
 Figur 8 Genomsnittligt antal beviljade tillstånd inom respektive aktivitet under året
+
+Kronor
 
 <!-- sida 335 -->
 
@@ -14118,22 +14157,19 @@ ersättningar till de transportörer som utförde färdtjänstkörningar.
 90000                                       92865
 85000
 86465
-R
-O S 80000  82704      84437
-E
-R 75000
-L
-A
-T 70000
-N
-A
+80000    82704      84437
+75000
+70000
 65000
 60000
 55000
 50000
 2015        2016        2017       2018        2019
 Resetuveckling/år
+
 Figur 11 Reseutveckling – antal resor per år
+
+ANTAL RESOR
 
 <!-- sida 336 -->
 
@@ -14283,12 +14319,9 @@ Göteborg
 Härryda
 5 000
 Mölndal
-r
-o   4 000
-n
-o                                                   Hallands läns kommuner
-r
-K                                                   utom Kba (ovägt medel)
+4 000
+Hallands läns kommuner
+utom Kba (ovägt medel)
 3 000
 Halmstad
 2 000
@@ -14303,6 +14336,8 @@ Figur 24 Nettokostnad skolskjuts grundskola åk 1-9, kr/elev, enligt rättning i
 Nedanstående tabell visar på kostnader för busskort för Kungsbackas skolpliktiga elever (F-klass till åk 9) i
 både kommunala och fristående skolor. Skolskjuts genomförs både med skolbuss och linjetrafik samt i vissa
 fall med taxi. För elever som reser med skolbuss utfärdar respektive skola färdbevis. De elever som reser
+
+Kronor
 
 [Tabell 341-1](handlingar.tabeller/341-1.csv)
 

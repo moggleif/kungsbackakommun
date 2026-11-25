@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.1e6538661929de083d2536df/1729507792
 sha256: fe4bc39d67c92cf56f29ad94656af52952e499b69325add79c77a6cd6c8d27fc
 bytes: 10596381
 sidor: 162
-hamtad: 2026-11-22T21:49:35+00:00
-konverterad: 2026-11-22T21:50:04+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T00:23:07+00:00
+konverterad: 2026-11-25T00:23:36+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ointressant, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+tal_obekraftade: [109, 112, 115, 118]
 figurer: [12, 22, 33, 34, 37, 39, 62, 63, 69, 75, 76, 77, 78, 80, 82, 83, 84, 87, 89, 90, 91, 92, 93, 95, 96, 97, 98, 99, 100, 101, 111, 114, 117, 119, 121, 124, 125, 126, 127, 128, 132, 134, 136, 137, 138, 139, 140, 154, 155, 158, 159]
 tolkade: []
 granskad: null
@@ -3556,17 +3556,14 @@ Brist på solskydd i en förskola och dess utemiljö kan leda till flera allvarl
 solskador och hudcancer ökar vid överexponering av sol. Utan skugga kan utemiljön bli överhettad,
 vilket gör det obekvämt och potentiellt farligt för barnen. En utemiljö med solskydd i form av träd,
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 110 -->
 
@@ -3698,17 +3695,14 @@ vilket gör det obekvämt och potentiellt farligt för barnen. En skolgård med 
 buskar och monterad utrustning, ökar elevernas trivsel och gör den mer attraktiv för lek. Att begränsa
 möjligheterna för utelek påverkar eleverna fysiska och sociala utveckling.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 113 -->
 
@@ -3834,17 +3828,14 @@ VAD BLIR KONSEKVENSEN  AV UTEBLIVEN FUNKTION?
 
 \- Skolenhet/skolenheter med ändamålsenliga lokaler.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 116 -->
 
@@ -3942,17 +3933,14 @@ Sammanfattningsvis är behovet kopplat till två anledningar; (1) befolkningspro
 på ökat antal barn i området samt (2) osäkerhet kring ändamålsenligheten i flera av de befintliga
 lokalerna i området, både egenägda och inhyrda.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Förskola och grundskola
-K
+Förskola och grundskola
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 119 -->
 

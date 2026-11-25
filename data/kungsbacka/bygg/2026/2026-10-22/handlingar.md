@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.19326c8b1a1302ccbfb7b783/1792140041
 sha256: c2b3d9bfd73480c292030bc0e32fb49bb6d86ff90a7dad0f1289bd93622a6c4f
 bytes: 63956656
 sidor: 656
-hamtad: 2026-11-22T23:17:34+00:00
-konverterad: 2026-11-22T23:26:58+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:10:43+00:00
+konverterad: 2026-11-25T02:20:04+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ocr, ocr, ocr, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ocr, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [150, 332, 356, 417, 418, 419, 461, 462, 472, 481, 482, 487, 565, 566, 567, 622, 623, 624, 625, 626, 627, 628, 629, 630, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648]
+tal_obekraftade: [150, 332, 356, 417, 418, 419, 430, 461, 462, 472, 481, 482, 487, 488, 489, 565, 566, 567, 596, 622, 623, 624, 625, 626, 627, 628, 629, 630, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648]
 figurer: [16, 63, 159, 160, 161, 164, 169, 170, 171, 181, 188, 190, 191, 193, 194, 195, 199, 200, 203, 204, 205, 206, 207, 209, 210, 246, 293, 298, 312, 313, 314, 318, 329, 332, 333, 335, 338, 339, 344, 346, 348, 350, 356, 357, 358, 359, 362, 365, 366, 367, 368, 375, 377, 378, 379, 380, 381, 399, 405, 407, 409, 410, 411, 412, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 433, 435, 437, 438, 439, 441, 442, 444, 447, 448, 449, 450, 451, 452, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 493, 497, 498, 499, 500, 504, 506, 509, 510, 511, 512, 517, 518, 519, 520, 521, 523, 529, 533, 534, 543, 544, 563, 568, 596, 597, 629, 635, 637, 649]
 tolkade: []
 granskad: null
@@ -10935,104 +10935,49 @@ ILLUSTRATION
 
 In-/utfart
 
-S
-Bukärrsvägen
-
-n
-gs
-pl
-atser     Miljö
 I
-hus
-ä rö
-b a n
-a
-n
-keri
-Par
+Miljöhus
+
 II
 Miljöhus            IIv
-C
-a
-r
-p
-IIv      o
-r
-t
-a
-IIv                 r
-Miljöhus                                              m
-II                             II      e d
-f
-ö
-r
-r
-IIv                  å
-d
+
 IIv
+
+Miljöhus
 II
-II
-IIv
-d                   IIv                  I
-å       IIv
-r
-r
-ö
-f
-d
-e
-m r
-a
-t
-r
-II
-II
-I    Bukärrsvägen  I    Säröbanan
-o
-p
-r                                         II
-a
-C                                             IIv
-II
-IIv
-IIv
-II                 II
-IIv
-IIv   IIv      II      II
-IIv    IIv          I
-II
+
 I
+
+I                  I
+
 II
+IIv
+
+IIv
+II
+
+I
+
+I
+
 Dagvatten-
-g
 damm
-II       gsti
-n
-å
-g
-g
-ntli
-fi
-e
-B
-n
-å
-a
-all
-v
-ör
-k
-S
-Skörvallaån
+
 TECKENFÖRKLARING
+
 Plangräns
+
 Bostadshus
+
 Gemensamhetsbyggnad
 Komplementbyggnader
 Befintliga byggnader
+
 Mötesplats (t.ex. grillplats, boule-
 bana, sittplats eller utegym)
+
 Detaljplan för seniorbostäder inom Antagandehandling
+
 Beslutsdatum Instans
 Skörvalla 1:116           Samrådsbeslut
 i Särö                G:\SBK\Begränsad\Samhällsplanering\7_Arbetsstöd\Mallar\Kungsbacka-logga\600px_kba_logo18_4-farg.jpg 2025-08-21 BN §135
@@ -11048,6 +10993,74 @@ och höjdsystemet Rh 2000                                               Ida Lenn
 Verksamhetschef Plan Planarkitekt 2023-00211 Ja
 Illustrationskarta av Okidoki Arkitekter                               ILLUSTRATION Detaljplanen är upprättad enligt
 PBL 2010:900 med standardförfarande
+
+Bukärrsvägen
+
+Säröbanan
+
+Skörvallaån
+
+IIv
+
+IIv
+
+II
+
+II
+
+IIv
+
+IIv
+
+II
+
+II
+
+II
+
+II
+
+IIv
+
+IIv
+
+Parkeringsplatser
+
+Befintlig gångstig
+
+Carportar med förråd
+
+Carportar med förråd
+
+Bukärrsvägen
+
+Säröbanan
+
+Skörvallaån
+
+IIv
+
+IIv
+
+II
+
+II
+
+IIv
+
+IIv
+
+II
+
+II
+
+II
+
+II
+
+IIv
+
+IIv
 
 <!-- sida 211 -->
 
@@ -17707,525 +17720,58 @@ Samhällsbyggnadschef               Verksamhetschef plan
 
 <!-- sida 356 -->
 
-U
-KBG4
-D
-3Aayet
-T4groU d
-t8g
-Mad
-1- r
-na
-a
-ostK
-a
-cg
-auah
-knv
-tmgdu
-u
-se
-ia
-lbr
-ljlnöia
-t ifep
-ncö
-tkgrr
-voaei
-acnm
-lh
-t
-n
-nä
-i
-no
-gr
-g
-ek
-g
-nra
-a
-nr
-nt
-ha
-e
-n
-t
-k
-a
-n
-v
-a
-r
-i
-e
-r
-a
-6.9
-7.5     6.3
-7.3     2 6:.94  6.1
+HFO  Expansion                                                                                                                                   2026-09-08
+
 1
-4
-7.5      7.5     6.3
-7.5     7.2      7.0     6.1
-7.4     7.0     7.4      6.3
-7.5     7.2     7.1     7.1      6.1
-7.1     27.0 :4  6.9     7.1      7.2     7.2     7.2     7.2
-3
 2
-2
-7.0     6.6      6.8     6.9     6.9 2    7.0     7.0     6.7     6.6
-:1
+
 9
-2
-6.8     6.5     6.8      6.6     6.7    8 6.7     6.9 12  26.8:4  6.6      6.6
-:4                                                              3
-6\. 2 51 6.6
-6.4     6.7     6.8
-4
-6.8     6.4      5.4
-6.5
-6.3
-6.5     6.5      6.7     6.6
-6.3     6.4      6.4     6.3
-6.5
-6.3
-6.4     6.5              6.4
-5.8     6.2     6.3     6.4      6.3     6.3     6.4
-2
-6.3     6.1
-6.3
-:4
-6.0
-6.1     6.0      6.1     6.0     5.8
+7
+
 3
-0     5.8     6.2
-6.4      6.2     6.2
-5.7              5.9     5.9     6.1                      6.1              5.8                      6.2     6.2     6.1     6.0      6.0 2 :4 2 6.0
-HFO  Expansion                                                                                                                                   2026-09-08     3
-6.1      6.0     6.0
-5.9      5.9 83  5.9     25. : 7 1
-9
-KUNGSPARKSVäGEN
-1
-Kungspark
-5.5
-svägen
-5.4     5.4
+
+14,0
+
+7             8,4
+
 8
-5.7
-2
-5.8     5.4      5.5     5.7     5.6
-9                                                                 80
-4.7
-7                                                                                                     4.5     4.5      4.8             5.3
-3
-4.5
-4.7
-4.6     5.1     5.1
-N
-E                                                                                                                                                                        H
-4.7         S V Ä G                                    14,0                                                                                                                       4.9 e d e b 5.1 5.0
-A
-L                                                                                                                                                                          ro
-A R E N D                                      7             8,4                                                                          4.8     4.8              4.7     4.7 v ä g e n 5.0 4.9
-8
-4.8              4.4     4.7     4.9      4.8
 Basic Wall [4484841]
+
 BBBaaasssiiiccc WWWaaallllll [[[444444888444888444111]]]
-4.6
-4.8     4.9     4.7
-30
-8                                                                                                             4.6              4.3     4.4     4.7     4.8
-242 PARKING SPACES PER LEVEL 2,6                                    4.4              4.6              4.4     4.4     4.8     4.3
-H
-e
-d
-8                                                                                           e F
-a
-4.4      4.3     4.4     4.6      3.9     4.1
-s
+
+8
+
+242 PARKING SPACES PER LEVEL 2,6
+
+8
 4
-6                                                                                           4.3
-h io
-n O u  4.4             4.1      4.3     4.6     4.3      4.2     4.6
-tle
-t
-2 :4 4.3            4.3             4.1      4.5     4.7     4.4      4.6     4.3
-1
-2
-4.2
-UP                                                                                   4.1      4.3     4.6     4.6     4.4      4.2     3.2
-ARENDALSLEDEN                                       8
-4.0     4.1      4.2     4.1     3.8      3.9     4.6     4.5     4.0      3.0
+6
+
+UP
+8
+
 8
 5
-4.0     3.6      4.2     4.6     3.7      2.5
+
 10
-4.1             3.7     4.0      2.9     4.9     3.0
-4.1     4.3     4.2              3.9     4.2      3.8     3.5     5.4
-N
-ILLUSTRATIONSPLAN                                                                                                                     G E                    4.0                      3.6     3.7      3.5     3.6
-Ä
-V
-S
-R K                                             3.8     3.5     3.4      3.6
-A
-1\. Befintlig fastighetsgräns                        1. EXIS 8 T . ING R P e R g O n P v ER ä T x Y t b B ä O d U 4 N . d 4 DARY V A 4.3 4.2 4.1 4.3 4.5 4.1 2.7 G S P 3.5 3.9                     s
-2
-4
-3
-5
-.
-.
-.
-. 0
-S C F B
-N
-P
-A ö
-o
-e
-y
-r fi
-t
-L
-1
-e
-i
-e
-n
-n
-0
-E s
-n
-t
-\-
-l l a
-t
-o
-i
-i
-g g
-e
-1
-c
-e :
-l
-h
-p
-l
-1
-2
-n
-f
-0 l
-u
-0
-a
-r
-n
-a
-0
-t
-c
-m
-f
-y e 0
-a
-r f
-r
-t
-i a
-t
-i
-n
-d
-s g t
-a
-i g a
-u
-h v
-t
-e
-f
-b
-a
-t u
-r
-s
-t
-g s s
-t
-r
-i
-h ä
-ll
-n å
-5 A
-l s l
-0 r
-p
-e
-l
-n
-at
-d
-s
-a
-.
-l
-F
-s
-l
-l
-y
-e
-t
-d
-ta
-e
-s
-n
-till Kungsparksv
-1
-ä
-0
-g
-0
-en.
-2
-3
-4
-5 6
-.
-.
-. .
-.
-M
-P
-P
-P Z
-N
-O
-R
-R
-O O
-E
-V
-W
-O
-E
-T N
-9 1E V
-P
-E E
-D . 0
-N
-I
-O
-E
-O .
-F T
-N
-S
-T U
-O I
-T
-E
-P PO
-A
-S
-R
-D
-R
-r l
-L
-a K o
-A
-L
-E
-N
-U n
-F
-O
-N
-A
-j
-E
-Ne
-U
-C
-C
-S
-t
-W
-G A
-T
-E
-e k
-E
-S
-U
-T
-M
-4 t r .4
-A
-P
-P
-R
-g I i
-E
-O n
-R
-C
-A
-E N
-r N
-C
-O
-g Rä
-T
-E
-E
-P
-K O n a
-S
-X
-E
-S F r
-S
-s
-I
-R
-O T
-V ,
-T
-N
-T p ä
-Y
-T
-H G l
-S O
-E a E
-H
-B
-N n B
-A A
-O
-. k U
-U
-R R
-S
-N
-E E
-o
-N D
-D
-S c
-D
-A
-T
-P
-h
-A
-R
-O
-A L
-Y
-P s
-R S
-e .
-K L E
-T
-I
-r
-N
-R
-v
-D
-H
-G
-L
-E
-i IS c
-N
-A e W g IL å L4.4 r d BE
-4.4
-4.3
-4.4
-4.2
-4.3
-4.3
-4.3
-4.5
-4.4
-4.7
-4.8
-K U
-N
-3.1
-3.8 A R E N
-3.5
-D
-ALS
-3.8
-LEDE 3.8N
-4.0
-3.9
-4.0
-3.9
-3.9
-3.9
-3.8
-3.7
-2\.
-3
-8
-.5
-2.8
-1\.
-3
-1
-.0
-1.5
-1.2
+
+ILLUSTRATIONSPLAN
+
+1\. EXISTING PROPERTY BOUNDARY
+1\. Befintlig fastighetsgräns                           8. Regnväxtbädd
+2\. PROPOSED NEW PROPERTY BOUNDARY
+2\. Föreslagen ny fastighetsgräns                       9. Planteringar, plank och servicegård
+SCALE 1:1000                                       3. PREVIOUS LOCATION OF THE BUS STOP. THIS WILL BE
+3\. Befintlig placering av busshållplats. Flyttas till Kungsparksvägen. MOV1ED0 . TPO rKoUjNeGkStPgArRäKnSsVäGEN.
+4\. Ny in- och utfart                                4. NEW ENTRANCE ACCESS
+0  10  20          50                 100          5. POTENTIAL FUTURE EXIT TO ARENDALSLEDEN
+5\. Potentiell framtida utfart till Arendalsleden
+6\. ZONE FOR EASEMENT ON SHARED PARKING
 6.M EOTmEråRdSe för servitut för gemensam parkering 7. CANTILEVERED CANOPY                                  SKALA 1:1000 @A3
-4    7. Utkragande skärmtak                              8 9 . . R LA A N IN D S B C E A D PE PLANTINGS, FENCE AND SERVICE YARD 4.5 4.4 4.4 (m) 0 4 .2 10 20 4.4 4.7 50 4.1 3.4 100 4.0 3.8 3.5 2.5 0.8
+(m)
+7\. Utkragande skärmtak                              8. RAIN BED
+4                                                        9. LANDSCAPE PLANTINGS, FENCE AND SERVICE YARD          0   10  20          50                 100
 10\. PROJECT BOUNDARY
-4.1      4.4     4.5     4.5     4.3      4.6     4.7     2.4      3.8     3.2     2.1      0.8
-2
-4.2     4.3
-4.4     4.5      4.6     4.7
-:1
-9 8 4.9     3.5      3.2     0.9     1.6
-4.1
-3
-4.0
-4.3     4.4      4.4     4.6     5.2     2.6      0.9     3.1
-1
-4.0     4.2                     22 ::334.1
-88
-22
-4.5      4.2     4.3     1.6      1.0     3.6
-4.0     4.3      4.3     4.1     4.4     4.5      3.5     0.9     5.3      3.6
-2
-0 2        4.4     4.3      4.3     4.4     4.3     3.1      0.8     2.3     5.3
-2                     22
-\- 0                4.4
-::33
-88 33 4.2    4.3     2.1      0.9     2.1     3.6
-4
-\- 0                4.3      4.4     1.7     1.3      3.1     3.7
-4
-2
-4.5        :1 9  1.3     1.7     3.7      3.8
-8
-4.0      1.0     2.0     3.7     3.2
-1.8      1.9     3.5     3.6
-1.1      3.3     4.2
-2.2      3.5
-3.3
 
 40 PARKING SPACES
 
@@ -18246,6 +17792,842 @@ BBBaaasssiiiccc WWWaaallllll [[[444444888444888444111]]]
 BBaassiicc WWaallll [[44448844884411]]
 
 NWOD
+
+Utdrag ur primärkartan
+
+Kartans aktualitet och noggrannhet kan variera
+
+DATUM
+
+Bygg- och miljöförvaltningen
+
+Geodataavdelningen
+
+43481 Kungsbacka
+
+2022-04-04
+
+Kungsparksvägen
+
+Hedebrovägen
+
+2
+
+31
+
+83
+
+80
+
+30
+
+12
+
+VARLA
+
+2:383
+
+2:198
+
+2:198
+
+2:383
+
+s
+
+2:432
+
+2:198
+
+2:198
+
+2:434
+
+2:414
+
+2:412
+
+2:382
+
+2:382
+
+2:430
+
+2:421
+
+2:423
+
+Hede Fashion Outlet
+
+6.9
+
+6.3
+
+6.1
+
+7.2
+
+6.6
+
+6.6
+
+5.4
+
+6.2
+
+6.0
+
+6.0
+
+5.7
+
+5.7
+
+5.6
+
+5.3
+
+5.1
+
+5.0
+
+4.9
+
+4.8
+
+4.1
+
+4.6
+
+4.3
+
+3.2
+
+7.5
+
+6.9
+
+6.3
+
+6.1
+
+7.2
+
+6.7
+
+6.6
+
+6.4
+
+6.2
+
+6.0
+
+6.0
+
+5.9
+
+5.4
+
+5.7
+
+5.1
+
+5.1
+
+5.0
+
+4.9
+
+4.7
+
+4.8
+
+4.3
+
+3.9
+
+4.2
+
+4.6
+
+4.2
+
+3.0
+
+7.3
+
+7.5
+
+7.0
+
+6.3
+
+6.1
+
+7.2
+
+7.0
+
+6.8
+
+6.8
+
+6.4
+
+6.0
+
+6.1
+
+5.9
+
+5.4
+
+5.5
+
+4.8
+
+4.6
+
+4.9
+
+4.7
+
+4.7
+
+4.9
+
+4.7
+
+4.8
+
+4.6
+
+4.3
+
+4.4
+
+4.4
+
+4.0
+
+2.5
+
+7.5
+
+7.2
+
+7.4
+
+7.1
+
+7.2
+
+7.0
+
+6.9
+
+6.6
+
+6.3
+
+6.1
+
+5.9
+
+5.5
+
+5.4
+
+4.5
+
+4.7
+
+4.4
+
+4.8
+
+4.4
+
+4.4
+
+4.4
+
+4.6
+
+4.7
+
+4.6
+
+4.5
+
+3.7
+
+3.0
+
+7.5
+
+7.0
+
+7.1
+
+7.1
+
+6.9
+
+6.7
+
+6.8
+
+6.7
+
+6.4
+
+6.4
+
+6.3
+
+6.2
+
+5.8
+
+4.5
+
+4.3
+
+4.4
+
+4.3
+
+4.3
+
+4.5
+
+4.6
+
+4.6
+
+4.6
+
+4.9
+
+5.4
+
+7.4
+
+7.2
+
+6.9
+
+6.9
+
+6.7
+
+6.7
+
+6.5
+
+6.5
+
+6.4
+
+6.2
+
+4.7
+
+4.8
+
+4.8
+
+4.4
+
+4.1
+
+4.1
+
+4.3
+
+3.9
+
+4.2
+
+2.9
+
+3.5
+
+3.6
+
+7.5
+
+7.0
+
+6.8
+
+6.6
+
+6.4
+
+6.5
+
+6.3
+
+6.5
+
+4.8
+
+4.6
+
+4.6
+
+4.1
+
+3.8
+
+3.6
+
+4.0
+
+3.8
+
+3.5
+
+3.6
+
+7.1
+
+6.6
+
+6.8
+
+6.4
+
+6.1
+
+6.2
+
+4.6
+
+4.4
+
+4.3
+
+4.1
+
+4.0
+
+3.7
+
+4.2
+
+3.7
+
+3.4
+
+1.2
+
+7.0
+
+6.5
+
+6.3
+
+5.8
+
+5.8
+
+4.4
+
+4.2
+
+3.9
+
+3.6
+
+3.5
+
+3.0
+
+1.5
+
+6.8
+
+6.6
+
+6.4
+
+5.8
+
+4.3
+
+4.3
+
+4.1
+
+4.1
+
+3.8
+
+3.5
+
+2.8
+
+1.1
+
+6.5
+
+6.3
+
+6.3
+
+6.0
+
+6.1
+
+4.2
+
+4.0
+
+4.2
+
+3.7
+
+2.8
+
+0.8
+
+6.3
+
+6.3
+
+6.1
+
+4.3
+
+4.0
+
+3.9
+
+3.8
+
+2.5
+
+0.8
+
+6.4
+
+6.0
+
+4.1
+
+3.9
+
+3.9
+
+3.5
+
+2.1
+
+1.6
+
+6.3
+
+6.1
+
+6.1
+
+3.9
+
+4.0
+
+3.8
+
+3.2
+
+0.9
+
+3.1
+
+6.5
+
+6.2
+
+5.9
+
+3.9
+
+3.8
+
+4.0
+
+4.0
+
+3.8
+
+3.2
+
+0.9
+
+3.6
+
+5.8
+
+5.9
+
+3.5
+
+3.5
+
+3.8
+
+3.4
+
+2.4
+
+3.5
+
+2.6
+
+1.0
+
+3.6
+
+6.0
+
+2.7
+
+3.1
+
+3.8
+
+4.1
+
+4.7
+
+4.9
+
+5.2
+
+1.6
+
+5.3
+
+5.3
+
+5.7
+
+4.1
+
+4.7
+
+4.8
+
+4.7
+
+4.6
+
+4.7
+
+4.6
+
+4.3
+
+0.9
+
+2.3
+
+3.6
+
+4.5
+
+4.5
+
+4.4
+
+4.4
+
+4.3
+
+4.6
+
+4.4
+
+4.2
+
+3.5
+
+0.8
+
+2.1
+
+3.7
+
+4.3
+
+4.3
+
+4.3
+
+4.2
+
+4.5
+
+4.5
+
+4.4
+
+4.5
+
+4.5
+
+3.1
+
+0.9
+
+3.1
+
+3.8
+
+4.1
+
+4.2
+
+4.3
+
+4.4
+
+4.5
+
+4.4
+
+4.3
+
+4.1
+
+4.4
+
+4.3
+
+2.1
+
+1.3
+
+3.7
+
+3.2
+
+4.2
+
+4.3
+
+4.4
+
+4.4
+
+4.4
+
+4.1
+
+4.4
+
+4.3
+
+1.7
+
+1.7
+
+3.7
+
+3.6
+
+4.3
+
+4.4
+
+4.4
+
+4.5
+
+4.1
+
+4.3
+
+4.3
+
+4.2
+
+4.4
+
+1.3
+
+2.0
+
+3.5
+
+4.2
+
+4.7
+
+4.4
+
+4.3
+
+4.0
+
+4.2
+
+4.3
+
+4.3
+
+4.4
+
+4.3
+
+1.0
+
+1.9
+
+3.3
+
+3.5
+
+4.5
+
+4.7
+
+4.4
+
+4.2
+
+4.1
+
+4.0
+
+4.0
+
+4.4
+
+4.5
+
+4.0
+
+1.8
+
+1.1
+
+2.2
+
+3.3
+
+KUNGSPARKSVäGEN
+
+ARENDALSLEDEN
+
+ARENDALSVÄGEN
+
+K U N G S P A R K S V Ä G E N
+
+A R E N D A L S L E D E N
 
 <!-- sida 357 -->
 
@@ -21329,142 +21711,228 @@ Elevation
 
 <!-- sida 430 -->
 
-A
-A
-5                C
--D 1
-1
-B
-7               A                                            3
-1 4 B  C F
-H        1
-G           7
-10
-C
-D
-E
-F
-2
-A-B                                            13
-A
-B
-15A-H
-4                          24
-19
-21
-23
-30
-1                                                32
-5                1
-B
-A
-3          -G
-2
-A
-7
-1
-1
-Dr
-g
-o
-y
-tt
-m
-ni
-n
-n
-a
-g
-s
-B
-iu
-l
-m
-ankas
-A
-1
-17 B                                                                                                                                                                                     2A       2B      2C
-4
-A
-1
-7
-1                                                                                                4
-B
-3
-4
-1                                                                                                                                                                          C
-7
-C
-5
-2
-6A    6B    6C    6D
-3
-A
-Polis
-3B
-8
-A
-8
-B
-8
-C
-10A   10B   10C   10D
-P-hus
-Linden
-1
-2
-A
-1
-2
-B
-3
-2                                                                                                                            1
-2
-C
-14A    14B   14C  14D
-3
-4                                                                                                                                                                  C
-7
-3
-1                                       A
-6
-A
-5
-2
-8
-1
-6
-B
-B
-ra
-n
-d
-s
-3                                ta
-2                                tio                                     1
-n                                       6
-C
-K
-o
-k
-18A      18B     18C                o s
-n
-ö
-te
-n
-s
-fs
+14C  14D
+
+18B
+
 Norconsult AB       Tfn +46 10 141 80 00
-6                                                                                                                                                                     Box 8774, 402 76 Göteborg www.norconsult.se
-9
-4
-8
-3                                                                                                        (1)
+Box 8774, 402 76 Göteborg www.norconsult.se
+
+13
+
+6
+
 5
+
+(1)
+
 2
-6    4
-8                                                                                                                                        2
-14          12 10
+
+A
+
+12C
+
+3
+
+10A
+
+8C
+
+6C
+
+14A
+
+8A
+
+10C
+
+12B
+
+4
+
+18A
+
+2A
+
+4C
+
+14
+
+32
+
+15A-H
+
+12A
+
+30
+
+9
+
+28
+
+A
+
+11
+
+5
+
+17C
+
+17B
+
+17
+
+5
+
+H
+
+17
+
+3
+
+10
+
+G
+
+E
+
+3
+
+6B
+
+16A
+
+C
+
+F
+
+10D
+
+19
+
+D
+
+8
+
+2
+
+4A
+
+2
+
+A
+
+16C
+
+B
+
+A
+
+F
+
+17A
+
+14
+
+1A
+
+B
+
+4
+
+1 B-G
+
+3A
+
+10
+
+4B
+
+7
+
+32
+
+B
+
+1A
+
+24
+
+8
+
+2
+
+C
+
+1
+
+10B
+
+5
+
+18C
+
+4
+
+6A
+
+5
+
+16B
+
+2C
+
+3A
+
+C-D
+
+6
+
+21
+
+2 A-B
+
+3
+
+12
+
+23
+
+1
+
+14B
+
+3
+
+3C
+
+6D
+
+3B
+
+4
+
+7
+
+2
+
+2B
+
+8B
+
+Drottning Blankas
+
+gymnasium
+
+Kokosnötens fs
+
+Polis
+
+Brandstation
+
+P-hus
+
+Linden
 
 <!-- sida 431 -->
 
@@ -23547,281 +24015,453 @@ N | SPILLVATTEN BRUNN NIVÅ FRÅN -55.0 Cuk = 70 kPa RE (BROTTGRÄNS) PP 8028461
 
 <!-- sida 488 -->
 
-A
-A
-5                C
--D 1
-1
-B
-7               A                                            3
-1 4 B  C F
-H        1
-G           7
-10
-C
-D
-E
-F
-2
-A-B                                            13
-A
-B
-15A-H
-4                          24
-19
-21
-23
-30
-1                                                32
-5                1
-B
-A
-3          -G
-2
-A
-7
-1
-1
-Dr
-g
-o
-y
-tt
-m
-ni
-n
-n
-a
-g
-s
-B
-iu
-l
-m
-ankas
-A
-1
-17 B                                                                                                                                                                                     2A       2B      2C
-4
-A
-1
-7
-1                                                                                                4
-B
-3
-4
-1                                                                                                                                                                          C
-7
-C
-5
-2
-6A    6B    6C    6D
-3
-A
-Polis
-3B
-8
-A
-8
-B
-8
-C
-10A   10B   10C   10D
-P-hus
-Linden
-1
-2
-A
-1
-2
-B
-3
-2                                                                                                                            1
-2
-C
-14A    14B   14C  14D
-3
-4                                                                                                                                                                  C
-7
-3
-1                                       A
-6
-A
-5
-2
-8
-1
-6
-B
-B
-ra
-n
-d
-s
-3                                ta
-2                                tio                                     1
-n                                       6
-C
-K
-o
-k
-18A      18B     18C                o s
-n
-ö
-te
-n
-s
-fs
+14C  14D
+
+18B
+
 Norconsult AB       Tfn +46 10 141 80 00
-6                                                                                                                                                                     Box 8774, 402 76 Göteborg www.norconsult.se
-9
-4
-8
-3                                                                                                        (1)
+Box 8774, 402 76 Göteborg www.norconsult.se
+
+13
+
+6
+
 5
+
+(1)
+
 2
-6    4
-8                                                                                                                                        2
-14          12 10
+
+A
+
+12C
+
+3
+
+10A
+
+8C
+
+6C
+
+14A
+
+8A
+
+10C
+
+12B
+
+4
+
+18A
+
+2A
+
+4C
+
+14
+
+32
+
+15A-H
+
+12A
+
+30
+
+9
+
+28
+
+A
+
+11
+
+5
+
+17C
+
+17B
+
+17
+
+5
+
+H
+
+17
+
+3
+
+10
+
+G
+
+E
+
+3
+
+6B
+
+16A
+
+C
+
+F
+
+10D
+
+19
+
+D
+
+8
+
+2
+
+4A
+
+2
+
+A
+
+16C
+
+B
+
+A
+
+F
+
+17A
+
+14
+
+1A
+
+B
+
+4
+
+1 B-G
+
+3A
+
+10
+
+4B
+
+7
+
+32
+
+B
+
+1A
+
+24
+
+8
+
+2
+
+C
+
+1
+
+10B
+
+5
+
+18C
+
+4
+
+6A
+
+5
+
+16B
+
+2C
+
+3A
+
+C-D
+
+6
+
+21
+
+2 A-B
+
+3
+
+12
+
+23
+
+1
+
+14B
+
+3
+
+3C
+
+6D
+
+3B
+
+4
+
+7
+
+2
+
+2B
+
+8B
+
+Drottning Blankas
+
+gymnasium
+
+Kokosnötens fs
+
+Polis
+
+Brandstation
+
+P-hus
+
+Linden
 
 <!-- sida 489 -->
 
-A
-A
-5                C
--D 1
-1
-B
-7               A                                            3
-1 4 B  C F
-H        1
-G           7
-10
-C
-D
-E
-F
-2
-A-B                                            13
-A
-B
-15A-H
-4                          24
-19
-21
-23
-30
-1                                                32
-5                1
-B
-A
-3          -G
-2
-A
-7
-1
-1
-Dr
-g
-o
-y
-tt
-m
-ni
-n
-n
-a
-g
-s
-B
-iu
-l
-m
-ankas
-A
-1
-17 B                                                                                                                                                                                     2A       2B      2C
-4
-A
-1
-7
-1                                                                                                4
-B
-3
-4
-1                                                                                                                                                                          C
-7
-C
-5
-2
-6A    6B    6C    6D
-3
-A
-Polis
-3B
-8
-A
-8
-B
-8
-C
-10A   10B   10C   10D
-P-hus
-Linden
-1
-2
-A
-1
-2
-B
-3
-2                                                                                                                            1
-2
-C
-14A    14B   14C  14D
-3
-4                                                                                                                                                                  C
-7
-3
-1                                       A
-6
-A
-5
-2
-8
-1
-6
-B
-B
-ra
-n
-d
-s
-3                                ta
-2                                tio                                     1
-n                                       6
-C
-K
-o
-k
-18A      18B     18C                o s
-n
-ö
-te
-n
-s
-fs
+14C  14D
+
+18B
+
 Norconsult AB       Tfn +46 10 141 80 00
-6                                                                                                                                                                     Box 8774, 402 76 Göteborg www.norconsult.se
-9
-4
-8
-3                                                                                                        (1)
+Box 8774, 402 76 Göteborg www.norconsult.se
+
+13
+
+6
+
 5
+
+(1)
+
 2
-6    4
-8                                                                                                                                        2
-14          12 10
+
+A
+
+12C
+
+3
+
+10A
+
+8C
+
+6C
+
+14A
+
+8A
+
+10C
+
+12B
+
+4
+
+18A
+
+2A
+
+4C
+
+14
+
+32
+
+15A-H
+
+12A
+
+30
+
+9
+
+28
+
+A
+
+11
+
+5
+
+17C
+
+17B
+
+17
+
+5
+
+H
+
+17
+
+3
+
+10
+
+G
+
+E
+
+3
+
+6B
+
+16A
+
+C
+
+F
+
+10D
+
+19
+
+D
+
+8
+
+2
+
+4A
+
+2
+
+A
+
+16C
+
+B
+
+A
+
+F
+
+17A
+
+14
+
+1A
+
+B
+
+4
+
+1 B-G
+
+3A
+
+10
+
+4B
+
+7
+
+32
+
+B
+
+1A
+
+24
+
+8
+
+2
+
+C
+
+1
+
+10B
+
+5
+
+18C
+
+4
+
+6A
+
+5
+
+16B
+
+2C
+
+3A
+
+C-D
+
+6
+
+21
+
+2 A-B
+
+3
+
+12
+
+23
+
+1
+
+14B
+
+3
+
+3C
+
+6D
+
+3B
+
+4
+
+7
+
+2
+
+2B
+
+8B
+
+Drottning Blankas
+
+gymnasium
+
+Kokosnötens fs
+
+Polis
+
+Brandstation
+
+P-hus
+
+Linden
 
 <!-- sida 490 -->
 
@@ -28508,117 +29148,182 @@ Verksamhetschef plan               Planarkitekt
 
 ILLUSTRATIONSPLAN
 
-SÖDERÅLEDEN
-
-NORRA
-PARKEN
-
-VII
-KV
-1.1
-VI
-VI
-S
-YR
-V        V                               É N
-GÅNGTUNNEL                                                   G A
-TA
-N
-P-
-V
-H
-I
-US N
-VII    KV
-V
-1
-I
-.2 LOKALGATA 1
-KV 2
-V
-.
-I
-1
-I
 P      P
-V
-VI
+
 GYMNASIESKOLA
-VI     BOST P A A D R S K N E Ä N RA V
-POLISHUSET K
-V 2
-.2
-V   LOKALGATA 2 KV
-V I
-3
+
+P                     P
+
+P  VII
+
 VII
-VI
-BUSSHÅLLPLATS
-KV 4
-VI
-ATAGSRETRAVK
-II
-V
-V
-V
-A
-VI                         R B
-E
-IV
-V LOKALGATA 3
-KV 5
-VI
-PORTIK VII
-VI
-R G S V
-Ä
-G
-E N
-BRANDSTATION
-KV 6
-VI
-ATAGSRETRAVK
-IV
-V
-LA
+
 N
-VI
-V
-TM
-A N
-N
-A
-G
-A TA
-IV   V
-P P
-LOKALGATA 4
-IV
-I
-XIV
-N
-VI
-ATAGSRETRAVK
-P
-V
-KV 7
-IV
-P
-KV 9
-P
-V
-KV 8
-VI
-HANTVERKSGATAN
-P-HUS SÖDRA P VII
-VI
-VII
-SKOLGATAN
-N
+
 PROJEKT        PARTNER        DATUM           SKALA
 BALDER         2025-09-16 / SN JÅ A3 1:2000
 KUNGSBACKA SÖC
 18041 KUNGSBACKA SÖC
+
+KVARTERSGATA
+
+VI
+
+II
+
+VI
+
+IV
+
+VI
+
+IV
+
+VI
+
+IV
+
+IV
+
+I
+
+XIV
+
+V
+
+IV
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SKOLGATAN
+
+SÖDERÅLEDEN
+
+POLISHUSET
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+GÅNGTUNNEL
+
+V
+
+VI
+
+V
+
+VI
+
+V
+
+V
+
+VI
+
+VII
+
+V
+
+VI
+
+V
+
+VI
+
+VII
+
+VI
+
+V
+
+V
+
+BOSTADSNÄRA
+
+PARKEN
+
+VI
+
+LOKALGATA 2
+
+P
+
+LOKALGATA 4
+
+VI
+
+V
+
+VII
+
+VII
+
+VI
+
+V
+
+V
+
+VI
+
+VI
+
+V
+
+VI
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+NORRA PARKEN
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+VI
+
+PORTIK
+
+VII
+
+KV 1.1
+
+KV 1.2
+
+KV 2.1
+
+KV 2.2
+
+KV 3
+
+KV 4
+
+KV 5
+
+KV 6
+
+KV 7
+
+KV 8
 
 <!-- sida 597 -->
 

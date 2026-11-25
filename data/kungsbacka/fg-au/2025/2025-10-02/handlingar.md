@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.25533da21997c87c744d6474/1759213508
 sha256: faba97efea9cd887bc9998e720b4e51091e6678dea818be4882e8d67ae487f53
 bytes: 12159688
 sidor: 225
-hamtad: 2026-11-22T22:37:57+00:00
-konverterad: 2026-11-22T22:38:36+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T01:18:58+00:00
+konverterad: 2026-11-25T01:19:37+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ointressant, ointressant, ointressant, ok, ok, ok, ok, ok, ok, ok, tom, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, ok, ok, ointressant, ointressant, ointressant, ok, ok, ok, ok, tom, tom, tom, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, ointressant, ointressant, ointressant, tabell-osaker, ok, ok, ok, ok, ok, ok, tom, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ointressant, ointressant, ointressant, ok, ok, ok, ok, tom, tom, tom, tom, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [20, 48, 52, 55, 59]
 figurer: [40, 41, 44, 45, 46, 47, 49, 51, 54, 56, 58, 59, 62, 72, 75, 81, 83, 85, 86, 88, 89, 93, 94, 97, 99, 119, 123, 187, 188, 189, 194, 195, 196, 197, 204, 205, 206, 207, 208, 210, 211, 212, 213, 214, 215, 217, 218, 219, 221, 222, 223, 224]
 tolkade: []
 granskad: null
@@ -758,85 +758,16 @@ Datum
 2025-09-23
 Nya ärenden
 
-3102
-,0.2v
-,1001B
-2 6 0 2 - - F F ö ri r d s a k o B l y a r & ste G n rundskola
-St
-T
-a
-K
-d
-el
-s
-u 4
-e
-h
-n 3
-f
-u
-o
-g 4
-s
-n
-s
-e
-8 b
-t
-0
-1 a
-,
-B
-3
-c
-S
-K
-0
-e
-k
-t
-0
-o
-s
-a u
-ö
-r
-\-
-n k
-8
-g
-k
-g o
-3
-a
-s
-s m
-t
-a
-b
-a
-4
-d
-a
-n
-m
-0
-r
-c
-e
-3
-u
-0
-k
-s
-7
-n
-0
-a
-s
-U K                                                                 Fax 0300-83 41 64
+Förskola & Grundskola                                        Kungsbacka kommun
+Frida Byrsten                                                 434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon 0300-83 40 00
+Fax 0300-83 41 64
 (e-post borttagen)
 www.kungsbacka.se
+
+KUB1001, v2.0, 2013-02-26
 
 [Tabell 20-1](handlingar.tabeller/20-1.csv)
 
@@ -1890,17 +1821,14 @@ Detta skulle innebära en organisation omfattande totalt 1500 elevplatser för �
 kapacitet på 1500 elevplatser motsvarar en sex parallellig organisation, vilket bedöms skapa en stabil
 och långsiktig struktur för Onsalaområdets förskolor och skolor.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 49 -->
 
@@ -2039,17 +1967,14 @@ undervisningens kvalitet och försvåra för verksamheten att uppfylla kraven i 
 schemaläggning vid ett för litet antal salar vilket kan skapa en ojämn arbetsmiljö för både elever och
 personal.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 53 -->
 
@@ -2169,17 +2094,14 @@ ytterligare förstärker behovet av fler platser. En utökning av förskoleplats
 att säkerställa en stabil och långsiktig försörjning av barnomsorg i området, minska belastningen på
 angränsande stadsdelar och ge familjer möjlighet till förskoleplacering nära bostaden.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 56 -->
 
@@ -2283,17 +2205,14 @@ komma att omfatta årskurs 1-10 innebär en utökning med en årskurs, då förs
 anpassade skolgången idag. Ytterligare behovspåverkan är att färre elever väljer att läsa sin anpassade
 skolgång integrerat kan leda till ökat tryck på anpassad grundskola.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 60 -->
 

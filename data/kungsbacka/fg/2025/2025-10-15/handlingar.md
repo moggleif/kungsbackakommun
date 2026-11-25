@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.4bf8b95b199c910f57c67b06/1760336846
 sha256: 625248399300a82b01a64c9653b2da56cc63b653f202c4b9800b9896323528b0
 bytes: 10770426
 sidor: 178
-hamtad: 2026-11-22T21:59:03+00:00
-konverterad: 2026-11-22T21:59:33+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T00:31:12+00:00
+konverterad: 2026-11-25T00:31:42+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+tal_obekraftade: [80, 84, 88, 91]
 figurer: [34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 47, 48, 49, 51, 52, 53, 54, 58, 64, 65, 66, 67, 80, 83, 85, 87, 90, 92, 94, 98, 99, 102, 103, 104, 105, 117, 120, 126, 128, 130, 131, 133, 134, 138, 139, 142, 144, 153, 154, 155, 156, 165, 166, 167]
 tolkade: []
 granskad: null
@@ -2663,17 +2663,14 @@ komma att omfatta årskurs 1-10 innebär en utökning med en årskurs, då förs
 anpassade skolgången idag. Ytterligare behovspåverkan är att färre elever väljer att läsa sin anpassade
 skolgång integrerat kan leda till ökat tryck på anpassad grundskola.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 81 -->
 
@@ -2807,17 +2804,14 @@ ytterligare förstärker behovet av fler platser. En utökning av förskoleplats
 att säkerställa en stabil och långsiktig försörjning av barnomsorg i området, minska belastningen på
 angränsande stadsdelar och ge familjer möjlighet till förskoleplacering nära bostaden.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 85 -->
 
@@ -2937,17 +2931,14 @@ undervisningens kvalitet och försvåra för verksamheten att uppfylla kraven i 
 schemaläggning vid ett för litet antal salar vilket kan skapa en ojämn arbetsmiljö för både elever och
 personal.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 89 -->
 
@@ -3075,17 +3066,14 @@ Detta skulle innebära en organisation omfattande totalt 1500 elevplatser för �
 kapacitet på 1500 elevplatser motsvarar en sex parallellig organisation, vilket bedöms skapa en stabil
 och långsiktig struktur för Onsalaområdets förskolor och skolor.
 
-2102
-,0.2
-,0006B
-5 3 0 2 - -
 Kungsbacka kommun
-U    Ekonomi
-K
+Ekonomi
 Besöksadress    Telefon
 434 81 Kungsbacka Vägmästaren, Syréngatan 1 0300-83 40 00 (e-post borttagen)
 Fax
 0300-83 47 04 www.kungsbacka.se
+
+KUB6000, 2.0, 2012-05-23
 
 <!-- sida 92 -->
 

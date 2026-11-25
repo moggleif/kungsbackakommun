@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2da4b3f51a0864b91543b215/1789112180
 sha256: 66fc5635f329adfd9fb606836b9cb2dcf9544ae948f6a1d0b30493ae7a37889a
 bytes: 31211465
 sidor: 258
-hamtad: 2026-11-22T23:16:11+00:00
-konverterad: 2026-11-22T23:17:34+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:09:27+00:00
+konverterad: 2026-11-25T02:10:43+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [3]
+tal_obekraftade: [3, 81, 92, 94, 104]
 figurer: [3, 39, 43, 77, 104, 110, 115, 117, 118, 119, 120, 121, 122, 123, 124, 125, 133, 135, 138, 142, 145, 148, 157, 165, 175, 176, 179, 182, 185, 187, 191, 198, 204, 211, 213, 219, 221, 224, 241, 244, 248, 255]
 tolkade: []
 granskad: null
@@ -3441,18 +3441,15 @@ Bifogade handlingar: aktbilaga 1, 8-9
 
 Sida 1 (av 1)
 Om domstolens behandling av personuppgifter, se www.domstol.se/personuppgifter. Kontakta oss för information på annat sätt.
-8
-3      Besöksadress    Öppettider  Postadress     E-post
-8
-8 6    Birger Jarls Torg 16 måndag–fredag Box 2290 (e-post borttagen)
-3
-2                      08:00–16:30 103 17 Stockholm
-d
+
+Besöksadress    Öppettider  Postadress     E-post
+Birger Jarls Torg 16 måndag–fredag Box 2290 (e-post borttagen)
+08:00–16:30 103 17 Stockholm
 Telefon                                    Webbplats
-I
-.k     08-561 670 00                              www.svea.se
-o
-D      08-561 675 50
+08-561 670 00                              www.svea.se
+08-561 675 50
+
+Dok.Id 2368838
 
 <!-- sida 82 -->
 
@@ -3948,19 +3945,15 @@ SAKEN
 Ändring av del av detaljplan K35 och T16 inom Spoven 1 i Kungsbacka kommun; nu
 fråga om prövningstillstånd
 
-2
 Avgörandet är elektroniskt undertecknat
-5    Besöksadress    Öppettider  Postadress      E-post
-1
-8
-6    Birger Jarls Torg 16 måndag–fredag Box 2290 (e-post borttagen)
-3
-2                    08:00–16:30 103 17 Stockholm
-d    Telefon                                     Webbplats
-I
-.k   08-561 670 00                               www.svea.se
-o
-D    08-561 675 50
+Besöksadress    Öppettider  Postadress      E-post
+Birger Jarls Torg 16 måndag–fredag Box 2290 (e-post borttagen)
+08:00–16:30 103 17 Stockholm
+Telefon                                     Webbplats
+08-561 670 00                               www.svea.se
+08-561 675 50
+
+Dok.Id 2368152
 
 <!-- sida 93 -->
 
@@ -4033,16 +4026,13 @@ Mark- och miljödomstolen avslår överklagandena från övriga.
 
 Avgörandet är elektroniskt undertecknat
 
-9
-6 1 Besöksadress   Öppettider   Postadress     E-post
-2
-5   Hamngatan 6    måndag–fredag Box 1070      (e-post borttagen)
-7
-d                  08:00–16:00  462 28 Vänersborg
-I   Telefon                                    Webbplats
-k.
-o   0521-27 02 00                              www.domstol.se/vanersborgs-tingsratt/
-D
+Besöksadress   Öppettider   Postadress     E-post
+Hamngatan 6    måndag–fredag Box 1070      (e-post borttagen)
+08:00–16:00  462 28 Vänersborg
+Telefon                                    Webbplats
+0521-27 02 00                              www.domstol.se/vanersborgs-tingsratt/
+
+Dok.Id 752619
 
 <!-- sida 95 -->
 
@@ -4495,256 +4485,105 @@ Transaktionsidentitet: 6A516EA42A1E20C31ADB5DB2AA1D8FCCEA82ACA15D
 
 <!-- sida 104 -->
 
-Bilaga 2
-
 Hur man  överklagar
-MMD-02
 
 Vill du att domen ska ändras i någon del kan du
 överklaga. Här får du veta hur det går till.
 
 Överklaga skriftligt inom 3 veckor
+
 Ditt överklagande ska ha kommit in till domstolen
 inom 3 veckor från domens datum. Sista datum
 för överklagande finns på sista sidan i domen.
+
+Så här gör du
+
+1\. Skriv mark- och miljödomstolens namn och
+målnummer.
+
+2\. Förklara varför du tycker att domen ska ändras.
+Tala om vilken ändring du vill ha och varför
+du tycker att Mark- och miljööverdomstolen
+ska ta upp ditt överklagande (läs mer om
+prövningstillstånd längre ner).
+3\. Tala om vilka bevis du vill hänvisa till. Förklara
+vad du vill visa med varje bevis. Skicka med
+skriftliga bevis som inte redan finns i målet.
+
+4\. Lämna namn samt aktuella och fullständiga
+uppgifter om var domstolen kan nå dig:
+postadresser, e-postadresser och telefon-
+nummer.
+
+Om du har ett ombud, lämna också ombudets
+kontaktuppgifter.
+5\. Skriv under överklagandet själv eller låt ditt
+ombud göra det.
+
+6\. Skicka eller lämna in överklagandet till mark-
+och miljödomstolen. Du hittar adressen i
+domen.
+
+Vad händer sedan?
+Mark- och miljödomstolen kontrollerar att
+överklagandet kommit in i rätt tid. Har det
+kommit in för sent avvisar domstolen över-
+klagandet. Det innebär att domen gäller.
+
+www.domstol.se
+
+Bilaga 2
+
+MMD-02
 
 Om överklagandet kommit in i tid, skickar mark-
 och miljödomstolen överklagandet och alla hand-
 lingar i målet vidare till Mark- och miljööver-
 domstolen.
-
 Har du tidigare fått brev genom förenklad
 delgivning, kan även Mark- och miljö-
 överdomstolen skicka brev på detta sätt.
 
 Prövningstillstånd i Mark- och miljö-
-Så här gör du
 överdomstolen
-1\. Skriv mark- och miljödomstolens namn och
+
 När överklagandet kommer in till Mark- och
-målnummer.
 miljööverdomstolen tar domstolen först ställning
 till om målet ska tas upp till prövning.
-2\. Förklara varför du tycker att domen ska ändras.
-Tala om vilken ändring du vill ha och varför
 Mark- och miljööverdomstolen ger prövnings-
-du tycker att Mark- och miljööverdomstolen
 tillstånd i fyra olika fall.
-ska ta upp ditt överklagande (läs mer om
-prövningstillstånd längre ner).
+
  Domstolen bedömer att det finns anledning att
 tvivla på att mark- och miljödomstolen dömt
-3\. Tala om vilka bevis du vill hänvisa till. Förklara
 rätt.
-ör       vad du vill visa med varje bevis. Skicka med
-d.
-f
-skriftliga bevis som inte redan finns i målet.
-A v                                        Domstolen anser att det inte går att bedöma
-ver
-ket,
-4\. Lämna namn samt aktuella och fullständiga
+
+ Domstolen anser att det inte går att bedöma
 om mark- och miljödomstolen har dömt rätt
-mst
-ols
-uppgifter om var domstolen kan nå dig:
 utan att ta upp målet.
-o        postadresser, e-postadresser och telefon-
-D
-d
-ucerat
-a v      n
-O
-u
-m
-m m
-du
-e r
-h
-.
-ar ett ombud, lämna också ombudets
- D
-a
-ti
-n
-ll
-o
-d
-ä
-m
-m
-ra
-s
-p
-d
-t
-n
-o
-o
-i
-l
-n
-m
-en
-g
-s
-e
-t
-b
-n
-o
-e
-.
-l
-h
-ar
-ö v
-v
-e
-äg
-r
-l
-t
-e
-a
-d
-u
-n
-p
-in
-p
-g
-m
-i r
-å
-ä
-le
-tt
-t
-s
-f
-\-
-ör att ge
-o
-Pr       kontaktuppgifter.
-•
-m
-ål
+
+ Domstolen behöver ta upp målet för att ge
+andra domstolar vägledning i rätts-
+tillämpningen.
+
  Domstolen bedömer att det finns synnerliga
-vit
-es     5. Skriv under överklagandet själv eller låt ditt
 skäl att ta upp målet av någon annan anledning.
-h        ombud göra det.
-c
-o
-ål                                        Om du inte får prövningstillstånd gäller den
-m
-d e    6. Skicka eller lämna in överklagandet till mark- överklagade domen. Därför är det viktigt att i
-a
-g        och miljödomstolen. Du hittar adressen i
-a                                         överklagandet ta med allt du vill föra fram.
-kl
-er       domen.
-v
-ö
-i
-m
-o
-D                                         Vill du veta mer?
-\- 2    Vad händer sedan?
-0                                         Ta kontakt med mark- och miljödomstolen om du
--D
-M      Mark- och miljödomstolen kontrollerar att har frågor. Adress och telefonnummer finns på
-M
-de 1 1 överklagandet kommit in i rätt tid. Har det första sidan i domen.
-A n
-vis ni
-n
-gar
-f
-ör
-ö
-ver
-kla ga n
-d
-•
-\-
-o
-2
-m
-0 1
-s
-8
-t
-ols
-ut
-vec
-kli n
-g
-k
-k
-o
-la
-m
-ga
-m
-nd
-it
-e
-i
-t
-n
-. D
-fö
-e
-r
-t
-s
-i
-e
-n
-n
-n
-t
-e
-a
-b
-v
-ä
-v
-r
-i
-a
-s
-t
-a
-t
-r
-d
-d
-o
-o
-m
-m
-e
-s
-n
-to
-g
-le
-ä
-n
-lle
-ö
-r.
-v er-
-Mer information finns på www.domstol.s
-S
-e
-id
-.
-a 1 av 1
-www.domstol.se
+
+Om du inte får prövningstillstånd gäller den
+överklagade domen. Därför är det viktigt att i
+överklagandet ta med allt du vill föra fram.
+
+Vill du veta mer?
+
+Ta kontakt med mark- och miljödomstolen om du
+har frågor. Adress och telefonnummer finns på
+första sidan i domen.
+Mer information finns på www.domstol.se.
+
+Sida 1 av 1
+
+Anvisningar för överklagande MMD-02 - Dom i överklagade mål och vitesmål • Producerat av Domstolsverket, Avd. för
+
+domstolsutveckling • 2018-11
 
 <!-- sida 105 -->
 

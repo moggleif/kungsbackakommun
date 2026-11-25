@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.52f0a12a19e103e1053be7d7/1779106840
 sha256: c9d1fc9348ffb494ab04cef0a07560c125aa2a63397b804267ada826230061c5
 bytes: 13254418
 sidor: 244
-hamtad: 2026-11-22T21:32:00+00:00
-konverterad: 2026-11-22T21:33:32+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-24T23:57:44+00:00
+konverterad: 2026-11-24T23:59:17+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [79, 83, 86, 108, 111, 123, 124, 125, 126, 157]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, bild, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [79, 83, 86, 108, 111, 123, 124, 125, 126, 127, 157]
 figurer: [5, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 128, 157, 158, 161, 162, 163, 167, 172, 175, 177, 180, 181, 182, 183, 185, 191, 192, 195, 197, 199, 201, 203, 205, 212, 213, 215, 221, 222, 223, 224, 225, 226, 227, 228, 229, 232, 237, 239]
 tolkade: []
 granskad: null
@@ -4974,76 +4974,16 @@ För revisorerna i Kungsbacka kommun
 Birgitta Litsegård
 Kommunrevisionens ordförande
 
-v
-001B
-6002
-,0
-0 2
-.1
-1 0 - - K o mmunrevision
-Tele
-K
-fo
-u 4
-n
-n 3
-v
-g 4
-x
-s 8 b
-0
-1 a
-B
-3
-c K
-0
-k
-e
-0
-S
-s
-a u
-ö
-\-
-n
-t
-k
-8
-a
-k
-g o
-d
-3
-s
-s m
-a
-s
-b
-4
-h
-d
-a m
-0
-u
-r
-c
-e
-s
-u
-0
-k
-s
-e
-n
-0
-a
-s
-t
-U                                                                  Fax 0300-83 47 04
-K
-m
-roF                                                          (e-post borttagen)
-inu                                                                www.kungsbacka.se
+Kommunrevision                                               Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset
+Telefon vx 0300-83 40 00
+Fax 0300-83 47 04
+(e-post borttagen)
+www.kungsbacka.se
+
+uniForm KUB100 v 1.0, 2006-10-02
 
 <!-- sida 128 -->
 
@@ -9522,7 +9462,6 @@ tecknet innebär att det inom målet finns trender som vi
 
 behöver vara extra uppmärksamma på,
 eller områden där Kungsbacka sticker ut
-!
 negativt jämfört med andra kommuner.
 Det kan också handla om områden där
 vi behöver göra mer för att kunna nå en
@@ -9550,7 +9489,6 @@ FÖRFLYTTNINGAR
 Vi har skalat upp arbetet med Trygg digital uppväxt och intresset från andra kommuner att ta efter är stort.
 Vi har utvecklat vandringsleden Hallandsleden och cykelleden Kattegattleden, samt genomfört projekt för
 att främja rörelse i för- och grundskolan.
-!
 UTMANINGAR
 Den psykiska ohälsan är ett stort samhällsproblem, framför allt hos tjejer och kvinnor. Vi ser även hälso-
 skillnader mellan olika orter inom kommunen. Den digitala utsattheten är en relativt ny utmaning där vi
@@ -9565,6 +9503,10 @@ kommunens goda förutsättningar borde det vara bättre.
 
 50 Kungsbacka kommuns årsredovisning 2025
 
+!
+
+!
+
 <!-- sida 207 -->
 
 FÖRVALTNINGSBERÄTTELSE
@@ -9573,7 +9515,7 @@ FÖRFLYTTNINGAR Arbetet utifrån kommungemensam handlingsplan mot våld i nära 
 framför allt genom ytterligare utbildningsinsatser ur arbetsgivarperspektivet.
 UTMANINGAR Lönegapet mellan könen är relativt stort i kommunen som geografiskt område och kvinnor
 tar ut mer vård av barn än män i Kungsbacka. Gällande politiskt förtroendevalda med ordförandeposter i
-!  kommunen är kvinnor underrepresenterade.
+kommunen är kvinnor underrepresenterade.
 ! Relativt stort inkomstgap mellan könen i befolkningen. Kvinnor underrepresenterade bland förtroende-
 valda med ordförandeposter.
 
@@ -9596,7 +9538,6 @@ Syftet är att nå egenförsörjning. Digitala besök inom vård och omsorg skap
 minskad restid för medarbetare, samt ett tryggt och självständigt liv för omsorgstagare. Kommunen har
 ingått en avsiktsförklaring för etableringen av Dagabs logistikcenter i Frillesås, vilket kommer skapa många
 nya arbetstillfällen och bidra till attraktionskraften i vårt geografiska område.
-!
 UTMANINGAR Som många andra kommuner har vi en begränsad andel av befolkningen som är i arbetsför
 ålder, vilket innebär att färre behöver försörja fler. Det leder bland annat till utmaningar med att ställa om
 kompetensförsörjningen inom välfärden.
@@ -9606,9 +9547,15 @@ FÖRFLYTTNINGAR Vi har påbörjat utbyggnaden av Hammargårds reningsverk, ett a
 infrastrukturprojekten i Kungsbackas historia.
 UTMANINGAR I en växande kommun står vi inför utmaningar med vår framtida kapacitet för vatten, avlopp,
 energi och transportinfrastruktur.
-!   ! Framtida kapacitet för vatten, avlopp, energi och transportinfrastruktur.
+! Framtida kapacitet för vatten, avlopp, energi och transportinfrastruktur.
 
 Kungsbacka kommuns årsredovisning 2025 51
+
+!
+
+!
+
+!
 
 <!-- sida 208 -->
 
@@ -9639,11 +9586,12 @@ byggt ut cykelvägen mellan orterna.
 UTMANINGAR I kommunen som geografiskt område är transport det område där det finns störst potential
 att minska utsläppen av koldioxid. Det är ett stort och komplext arbete påverka detta, med många invol-
 verade aktörer. En annan stor utsläppspost är från konsumtion, även det en komplex fråga som kommunen
-!
 inte råder över.
 ! Hög nivå av konsumtionsbaserade utsläpp jämfört med Sveriges övriga kommuner.
 
 52 Kungsbacka kommuns årsredovisning 2025
+
+!
 
 <!-- sida 209 -->
 
@@ -9654,18 +9602,18 @@ Vi har utfört en tillsynsinsats med fokus på strandskydd i syfte att bevara dj
 säkerställa allmänhetens tillgång till stränder. Vi har också genomfört en tillsynsinsats av vattenskydds-
 område. Det arbetet har delvis utförts med hjälp av drönare vilket gjort det möjligt att nå större och mer
 svårtillgängliga områden.
-!
 UTMANINGAR
 Då en stor del av negativ påverkan på havsmiljön är sådan som kommunen inte råder över behöver vi
 samarbeta för att få till förbättring. Samtidigt är det avgörande för fortsatt utveckling att vi har god
 vattenkvalitet och fungerande havsekosystem.
 ! Sammantagna effekter av svaga fiskbestånd, fysisk påverkan på grunda bottnar, föroreningar och buller
 påverkar hela ekosystemet.
+
 FÖRFLYTTNINGAR
 I ett samarbete med förskolor har vi tagit fram pedagogiskt material om sårbara arter som är typiska för
 naturlandskapet i kommunen.
 UTMANINGAR
-!  Generellt finns en brist på livsmiljöer för hotade arter i landskapet. Därtill är invasiva arter är ett problem
+Generellt finns en brist på livsmiljöer för hotade arter i landskapet. Därtill är invasiva arter är ett problem
 som uppmärksammats under senare år och som ökat i omfattning på grund av spridning.
 ! Problem med invasiva arter. Brist på livsmiljöer i landskapet minskar biologisk mångfald.
 
@@ -9674,7 +9622,6 @@ Vi har stärkt det lokala Brottsförebyggande Rådet med en större styrgrupp, e
 tagit fram aktuella lägesbilder för olika geografiska områden. Vi har för första gången anordnat Rättighets-
 veckorna, en stor satsning för att öka kunskaper om allas lika värde. Vi har avsatt 50 miljoner kronor under
 en treårsperiod för att få nödvändiga samhällsfunktioner att fungera även vid kriser.
-!
 UTMANINGAR
 Förändringar i hur information produceras, sprids och konsumeras kan innebära påfrestningar på den lokala
 demokratin. Trend av ökat antal orosanmälningar som rör barn och unga som riskerar att dras in i kriminali-
@@ -9688,6 +9635,12 @@ UTMANINGAR Det är fortsatt en utmaning att integrera hållbarhet i allt arbete.
 arbeta är det också en utmaning att samordna olika initiativ för att undvika dubbelarbete.
 
 Kungsbacka kommuns årsredovisning 2025 53
+
+!
+
+!
+
+!
 
 <!-- sida 210 -->
 

@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.7fe6ac921a1a19543f9b23ad/1794383110
 sha256: 6babd7fdb843c091b265d134e93724ded8c5331fd9d09491bb4670522f209c3f
 bytes: 41834031
 sidor: 305
-hamtad: 2026-11-22T23:47:08+00:00
-konverterad: 2026-11-22T23:50:05+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:55:46+00:00
+konverterad: 2026-11-25T02:58:44+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok]
-tal_obekraftade: [4, 5, 6, 7, 10, 11, 12, 13, 14, 16, 17, 18, 19, 21, 37, 104]
+tal_obekraftade: [4, 5, 6, 7, 10, 11, 12, 13, 14, 16, 17, 18, 19, 21, 35, 37, 104]
 figurer: [24, 26, 27, 29, 30, 31, 35, 36, 37, 38, 42, 43, 44, 48, 49, 53, 56, 57, 59, 62, 77, 84, 85, 86, 87, 88, 89, 90, 91, 97, 98, 99, 100, 102, 104, 112, 128, 136, 137, 141, 145, 146, 167, 168, 170, 171, 172, 173, 176, 178, 179, 182, 185, 186, 187, 192, 195, 196, 197, 199, 203, 204, 247, 249, 293]
 tolkade: []
 granskad: null
@@ -1609,33 +1609,44 @@ Sida 2 av 2
 
 <!-- sida 35 -->
 
+Principer för nybyggnad och tillbyggnad utom
+
+detaljplan i Kungsbacka kommun
+
+Att utgå från platsen är grundläggande oavsett vad eller var man
+bygger. Även om det vid ny-och tillbyggnad utom detaljplan inte finns
+några planbestämmelser att hålla sig till, finns det flera förhållanden
+som ger en ram för huset bör se ut. I plan- och bygglagen (PBL) finns
+
+bestämmelser om att bebyggelse ska utformas och placeras med hänsyn
+till landskapsbilden, natur- och kulturvärden samt en god
+helhetsverkan. Det finns även krav på att byggnader ska ha en god
+form-, färg- och materialverkan samt anpassas till omgivningens
+
+förutsättningar. Kommunen harettarkitekturprogram somger närmare
+råd om placering, utformning och utförande.
+
 Antagen av BN 20XX-XX-XX, §X
 
 Jämför med omgivande detaljplaner
+Där det finns detaljplaner i angränsande områden är det lämpligt att
 
-Principer för nybyggnad och tillbyggnad utom        Där det finns detaljplaner i angränsande områden är det lämpligt att
 jämföra med bestämmelserna i dessa. För fastigheten bör ungefär
-detaljplan i Kungsbacka kommun
 samma byggrätt gälla som den som medges i de omgivande
 detaljplanerna.
-Att utgå från platsen är grundläggande oavsett vad eller var man
-bygger. Även om det vid ny-och tillbyggnad utom detaljplan inte finns
+
 Antal hus
-några planbestämmelser att hålla sig till, finns det flera förhållanden
-På varje fastighet tillåts vanligtvis en m
-som ger en ram för huset bör se ut. I plan- och bygglagen (PBL) finns                      0
-huvudbyggnad och en bygglovspliktig m  ,4  gata
-bestämmelser om att bebyggelse ska utformas och placeras med hänsyn                    6   n
-komplementbyggnad.                 n   im
-till landskapsbilden, natur- och kulturvärden samt en god                              mi
-helhetsverkan. Det finns även krav på att byggnader ska ha en god                min 2m
+På varje fastighet tillåts vanligtvis en
+
+huvudbyggnad och en bygglovspliktig        gata
+komplementbyggnad.
+
+min 2m
 min 4.0m
 Avstånd till gräns och gata
-form-, färg- och materialverkan samt anpassas till omgivningens
 Bilden till höger anger avstånd som
-förutsättningar. Kommunen harettarkitekturprogram somger närmare
 i de flesta fall är bra att följa.
-råd om placering, utformning och utförande.
+
 Program för
 Arkitekturprogram – Handlar
 Kungsbacka
@@ -1652,6 +1663,10 @@ finns på kommunens                                                       För g
 hemsida.                                                                 råden somVallda
 Heberg finns råd
 och riktlinjer.
+
+min 4,0 m
+
+min 6 m
 
 <!-- sida 36 -->
 
