@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.72983aaa19bfbeb14703ba6a/1769593944
 sha256: d4bcb465e1247efaeb826d3e31e0c1cb3e231a05e1b97be0fdb3e6d282bea045
 bytes: 29849849
 sidor: 112
-hamtad: 2026-11-22T23:34:34+00:00
-konverterad: 2026-11-22T23:35:51+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T02:41:46+00:00
+konverterad: 2026-11-25T02:43:04+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [52, 53]
+tal_obekraftade: [52, 53, 103]
 figurer: [3, 7, 10, 11, 12, 13, 14, 28, 33, 34, 35, 36, 37, 38, 39, 40, 45, 47, 48, 51, 52, 53, 93]
 tolkade: []
 granskad: null
@@ -3968,17 +3968,13 @@ Internkontrollrapport 2025
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
 Konsekvens
+
 2 Hög 2 Medel Totalt: 4
+
 Kritisk        Sannolikhet           Konsekvens
 Hög
 4 Mycket vanligt - exempelvis 1 gång per Allvarlig/stor inverkan (så stor att den inte
@@ -3992,6 +3988,8 @@ intressenter och kommunen)
 obefintlig) - exempelvis 1 gång per 10 år intressenter och kommunen)
 
 6
+
+Sannolikhet
 
 <!-- sida 94 -->
 
@@ -4401,49 +4399,15 @@ Kungsbacka den 9 januari 2026
 
 Byggnadsnämnden i Kungsbacka kommun
 
-v
-001R
-6002
-,0
-7 3
-.1
-0 0 - -
-B ygg- och miljöförvaltningen                                Ku
-4
-n
-3
-g
-4
-s
-8
-b
-1
-ac
-K
-ka
-u n
-k
-g
-o
-s
-m
-ba
-m
-c
-u
-k
-n
-a
-M
-\_B                                                                      Besöksadress
-U
-K
-m
+Bygg- och miljöförvaltningen                                 Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
 Stadshuset, Storgatan 37
-roF
-inu                                                                 Telefon 0300-83 40 00
+Telefon 0300-83 40 00
 (e-post borttagen)
 www.kungsbacka.se
+
+uniForm KUB_MR100 v 1.0, 2006-07-03
 
 <!-- sida 104 -->
 
