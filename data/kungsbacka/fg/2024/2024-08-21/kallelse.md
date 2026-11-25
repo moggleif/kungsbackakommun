@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.708627c5190a253b1da40632/1724048879
 sha256: 72d203fed0c73dd21acd24c49beb5266e11a094444d68fb00aa67d41574f76d6
 bytes: 10374383
 sidor: 152
-hamtad: 2026-11-22T21:44:14+00:00
-konverterad: 2026-11-22T21:45:11+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T00:13:59+00:00
+konverterad: 2026-11-25T00:14:53+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [52, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 91, 92, 93, 139, 140, 141]
+tal_obekraftade: [44, 52, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 91, 92, 93, 139, 140, 141]
 figurer: [14, 17, 19, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 101, 146]
 tolkade: []
 granskad: null
@@ -1646,18 +1646,15 @@ Bifogade handlingar: aktbilaga 87
 
 Sida 1 (av 1)
 
-8
 Om domstolens behandling av personuppgifter, se www.domstol.se/personuppgifter. Kontakta oss för information på annat sätt.
-4
-5
-0 4    Besöksadress    Öppettider  Postadress     E-post
-0
-1      Sten Sturegatan 14 måndag–fredag Box 53197 (e-post borttagen)
-d
-I                      08:00–16:00 400 15 Göteborg
-k.     Telefon                                    Webbplats
-o
-D      031 - 732 70 00                            www.forvaltningsrattenigoteborg.domstol.se
+
+Besöksadress    Öppettider  Postadress     E-post
+Sten Sturegatan 14 måndag–fredag Box 53197 (e-post borttagen)
+08:00–16:00 400 15 Göteborg
+Telefon                                    Webbplats
+031 - 732 70 00                            www.forvaltningsrattenigoteborg.domstol.se
+
+Dok.Id 1004548
 
 <!-- sida 45 -->
 
