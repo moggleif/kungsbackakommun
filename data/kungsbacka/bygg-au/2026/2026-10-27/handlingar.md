@@ -12,12 +12,12 @@ kalla_url: https://kungsbacka.se/download/18.2de5b8831a1587eab7143f7/17924979384
 sha256: 536dcb099d4aa24dcf530d038ac24c37833a21f36c97b4ddb6de4a92a0643833
 bytes: 746103
 sidor: 42
-hamtad: 2026-11-22T23:46:58+00:00
-konverterad: 2026-11-22T23:47:08+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T02:55:34+00:00
+konverterad: 2026-11-25T02:55:46+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
 tal_obekraftade: [6, 19, 20, 21, 22, 23, 31, 36, 41]
 figurer: [19]
 tolkade: []
@@ -789,8 +789,6 @@ internkontrollrapporten. Självskattningen görs årligen i förvaltningens ledn
 
 <!-- sida 19 -->
 
-tehkilonnaS
-
 Riskanalys - 2027 Byggnadsnämnden och nämnden för Miljö & Hälsoskydd
 
 Risker till plan och ej till plan (bruttolista)
@@ -860,6 +858,8 @@ Fördelning av risker efter sannolikhet och konsekvens
 4
 
 Konsekvens
+
+Sannolikhet
 
 <!-- sida 20 -->
 

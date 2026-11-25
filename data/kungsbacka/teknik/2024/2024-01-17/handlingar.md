@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.227417af18c8af9fa1e32a69/1705067329
 sha256: 776b4b4f0118b043a00adc36f12ee8d91ffee071bed8dee2efdbd394efcfc5b4
 bytes: 9496923
 sidor: 168
-hamtad: 2026-11-22T23:50:58+00:00
-konverterad: 2026-11-22T23:51:51+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T03:07:29+00:00
+konverterad: 2026-11-25T03:08:20+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker]
@@ -1633,11 +1633,9 @@ Göteborg
 Härryda
 300
 Mölndal
-r o250
-n
-o                                         Hallands läns kommuner utom
-r
-K200                                      Kba (ovägt medel)
+250
+Hallands läns kommuner utom
+200                                      Kba (ovägt medel)
 Halmstad
 150
 Varberg
@@ -1651,6 +1649,8 @@ I tabellen visas antal beviljade tillstånd per typ av aktivitet och unika kunde
 tillstånd för olika typer av aktiviteter (resor). Statistiken visar genomsnitt under året.
 
 Figur 8 Genomsnittligt antal beviljade tillstånd inom respektive aktivitet under året
+
+Kronor
 
 <!-- sida 38 -->
 
@@ -1681,22 +1681,19 @@ ersättningar till de transportörer som utförde färdtjänstkörningar.
 90000                                       92865
 85000
 86465
-R
-O S 80000  82704      84437
-E
-R 75000
-L
-A
-T 70000
-N
-A
+80000    82704      84437
+75000
+70000
 65000
 60000
 55000
 50000
 2015        2016        2017       2018        2019
 Resetuveckling/år
+
 Figur 11 Reseutveckling – antal resor per år
+
+ANTAL RESOR
 
 <!-- sida 39 -->
 
@@ -1846,12 +1843,9 @@ Göteborg
 Härryda
 5 000
 Mölndal
-r
-o   4 000
-n
-o                                                   Hallands läns kommuner
-r
-K                                                   utom Kba (ovägt medel)
+4 000
+Hallands läns kommuner
+utom Kba (ovägt medel)
 3 000
 Halmstad
 2 000
@@ -1866,6 +1860,8 @@ Figur 24 Nettokostnad skolskjuts grundskola åk 1-9, kr/elev, enligt rättning i
 Nedanstående tabell visar på kostnader för busskort för Kungsbackas skolpliktiga elever (F-klass till åk 9) i
 både kommunala och fristående skolor. Skolskjuts genomförs både med skolbuss och linjetrafik samt i vissa
 fall med taxi. För elever som reser med skolbuss utfärdar respektive skola färdbevis. De elever som reser
+
+Kronor
 
 [Tabell 44-1](handlingar.tabeller/44-1.csv)
 
