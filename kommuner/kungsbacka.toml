@@ -13,10 +13,6 @@ grupper = ["Kommunfullmäktige och kommunstyrelsen", "Nämnderna", "Övriga"]
 # Det är en vana, inget beslutat sammanträde; kalendern räknar fram det (K49).
 gruppmote = { fore = "ks", veckodag = "måndag", tid = "kväll" }
 
-# Dokument som en senare version av poolen kan ändra konverteras om
-# (ADR-0019, ADR-0107).
-omkonvertera = true
-
 [[organ]]
 id = "ga"
 namn = ["Nämnden för Gymnasium & Arbetsmarknad"]
