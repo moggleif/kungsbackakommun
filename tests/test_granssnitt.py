@@ -62,6 +62,21 @@ class Kommandona(unittest.TestCase):
         self.assertEqual(kontroll.returncode, 1, kontroll.stderr)
         self.assertIn("kvar.tmp", kontroll.stdout)
 
+    def test_kommunfilen_provas_som_datarepona_anropar_kommandot(self):
+        with tempfile.TemporaryDirectory() as katalog:
+            trasig = Path(katalog) / "trasig.toml"
+            trasig.write_text('namn = "Trasig"\n', encoding="utf-8")
+            kontroll = subprocess.run(
+                [sys.executable, "-m", "kommunhandlingar.konfiguration",
+                 str(FIXTURER / "exempelby.toml"), str(trasig)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )  # fmt: skip
+        self.assertEqual(kontroll.returncode, 1, kontroll.stderr)
+        self.assertIn("exempelby.toml: Exempelby kommun", kontroll.stdout)
+        self.assertIn(f"Stoppad: {trasig}: ", kontroll.stderr)
+
     def test_webbplatsen_ar_ett_kommando(self):
         # Argumenten och hur kommandot körs låses i
         # tests/test_webbplats_kommando.py (K82).
