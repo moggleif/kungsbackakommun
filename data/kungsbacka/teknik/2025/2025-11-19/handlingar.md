@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.6b3c9de619a7bbdb14110676/1763109230
 sha256: 46eb0cb58df4d1e43f9b04866ce8b19a022f7862fe2258c4fe4211dcedd34935
 bytes: 80181392
 sidor: 594
-hamtad: 2026-11-23T00:29:59+00:00
-konverterad: 2026-11-23T00:45:38+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T03:46:21+00:00
+konverterad: 2026-11-25T04:01:48+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ocr, ointressant, ocr, ointressant, ocr, ointressant, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, tabell-osaker, ok]
-tal_obekraftade: [190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 206, 209, 211, 213, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 233, 234, 235, 236, 237, 238, 240, 241, 242, 244, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 262, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 342, 373, 374, 375, 376, 570, 580]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ointressant, ointressant, ocr, ointressant, ointressant, ocr, ointressant, ocr, ointressant, ocr, ointressant, ocr, ocr, ocr, ocr, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ok, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, tabell-osaker, ok]
+tal_obekraftade: [55, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 206, 209, 211, 213, 215, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 233, 234, 235, 236, 237, 238, 240, 241, 242, 244, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 262, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 342, 373, 374, 375, 376, 408, 570, 580]
 figurer: [4, 47, 55, 57, 59, 79, 100, 109, 111, 112, 113, 128, 133, 134, 135, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 221, 247, 278, 287, 291, 295, 296, 298, 306, 307, 308, 309, 310, 311, 312, 313, 318, 326, 370, 371, 372, 373, 374, 375, 376, 377, 379, 380, 381, 383, 384, 386, 387, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 407, 408, 409, 410, 419, 420, 421, 427, 429, 431, 433, 434, 435, 438, 439, 440, 442, 443, 444, 445, 447, 448, 449, 450, 451, 453, 454, 456, 458, 459, 460, 462, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 479, 480, 482, 483, 484, 485, 486, 489, 492, 499, 500, 514, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570]
 tolkade: []
 granskad: null
@@ -1871,19 +1871,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2          3           4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 1 Hög 4 Medel Totalt: 5
 
 9
+
+Sannolikhet
 
 <!-- sida 48 -->
 
@@ -2100,52 +2098,44 @@ Förvaltningschef                   Verksamhetschef, Kund och Verksamhetsstöd
 
 <!-- sida 55 -->
 
-BLOCK   4
-ä
-g
-e n
-v
-e
-ål
-h
-r
-ö
-m
-A04                               S
+A04
+
 E01
-BLOCK    1
 A16
+
 E02
-3
-A05                                                    K
-A01                                                                      C
-O
-L
-B
+
+A05
+A01
+
 Kungsbacka 6:27-2
+
 B13
+
 B14
+
 B06
 B15
+
 30                                                      B12
 B03
+
 B04
-J                                                                             FÖRKLARINGAR
-ä
-r
-n
-v                                                                           ÖÖVVEERRSSIIKKTT HHAAMMMMAARRGGÅÅRRDDSS AARRVV
-ä                                                                           Blivande utseende.
-g
+FÖRKLARINGAR
+
+ÖÖVVEERRSSIIKKTT HHAAMMMMAARRGGÅÅRRDDSS AARRVV
+Blivande utseende.
 B02
 FFÖÖRRKKLLAARRIINNGGAARR::
+
 B01
 BEFINTLIGT
-BLOCK
-3
+
 NYBYGGNATION
+
 Hammargård 1:7 (Statkraft)
 RENOVERAS
+
 BASSÄNGER
 21
 DETALJPLANEGRÄNS
@@ -2157,12 +2147,12 @@ BBYYGGGGNNAADDSSBBEETTEECCKKNNIINNGGAARR::
 
 A01 - Inlopps- /sandfilterbyggnad och EDN-bassäng
 A04 - Personalbyggnad
-BLOCK
-2
 A05 - El-byggnad, Kulvert
 A16 - Skärmtak över trappa och utkikspunkt
+
 B01 - Quattro Denipho
 B02 - Blåsmaskinhus
+
 B03 - Mellansedimenteringsbassäng 1
 B04 - Mellansedimenteringsbassäng 2
 B06 - Returslam- och EDN-pumpstation
@@ -2188,6 +2178,20 @@ DATUM    RITAD/KONSTR. AV SKALA
 96
 
 141
+
+Smörhålevägen
+
+Järnväg
+
+BLOCK 1
+
+BLOCK 2
+
+BLOCK 4
+
+BLOCK 3
+
+BLOCK 3
 
 <!-- sida 56 -->
 
@@ -14945,74 +14949,129 @@ www.bo31u vier.se
 
 <!-- sida 408 -->
 
-Borgåsvägen
+50000092
+
+AAA111333222211--RF
 
 Arendalsvägen
+
+Arendalsleden
+
+vägen
+
+Borgåsvägen
+
+Hallabäcksvägen
+
+Göteborgsvägen
+
+Borgås Gårdsväg
+
+Magasinsgatan
 
 Hedebrovägen
 
-Kungsparksvägen
-
-Göteborgsvägen
-
-50000092
-
-Borgås Gårdsväg
-150 -
-150/
-450
-50- 50 /
-200
-Arendalsleden
-40 - 40 / 180
-Kungsparksvägen
-
-40 - 40 / 180
-Borgås
-Gårdsväg                                                                                Arendalsleden
-Göteborgsvägen
-Arendalsvägen
+Varlavägen
 
 Magasinsgatan
 
-Borgås
-Gårdsväg    Kungsparksvägen
+Göteborgsvägen
+
+Kungsparksvägen
+
+Kungsparksvägen
+
+Borgås Gårdsväg
+
+Arendalsleden
 
 Borgåsliden
 
+Arendalsleden
+
+Arendalsvägen
+
 Kungsparksvägen
+
+Kungsparksvägen
+
+Arendalsleden
+
 Transportgatan
 
-Arendalsleden
-
-Magasinsgatan
-Hallabäcksvägen
-
-vägen
-Arendalsleden
-200/ 355 AAA111333222211--RF
-
 Magasinsgatan
 
-Varlavägen
+Borgås Gårdsväg
 
 E
-E    E
+
 E
-E    E
-E    E
+
 E
-E          E   E
-E        E
-E        E
-E   E    E   E
+
 E
-E                 E
+
 E
-E         E
-E         E
+
 E
+
 E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+E
+
+50 - 50 / 200
+
+40 - 40 / 180
+
+40 - 40 / 180
+
+150 - 150 / 450
+
+200 / 355
 
 <!-- sida 409 -->
 

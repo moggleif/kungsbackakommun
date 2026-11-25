@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.4a1683f319957f8b68c4024a/1758263545
 sha256: 6998a3ff1f34913c984908eff01ed12be9be74d7b4563b4ee117197bea96cfbf
 bytes: 145383386
 sidor: 607
-hamtad: 2026-11-23T00:23:16+00:00
-konverterad: 2026-11-23T00:28:29+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T03:41:07+00:00
+konverterad: 2026-11-25T03:46:14+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, tom, ok, ok, ok, tom, ok, tom, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tom, ok, tom, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok]
-tal_obekraftade: [304, 452, 471, 472]
+tal_obekraftade: [304, 432, 433, 434, 435, 436, 437, 438, 439, 452, 457, 461, 465, 471, 472, 474, 477, 479, 502, 503]
 figurer: [5, 6, 55, 56, 256, 267, 268, 275, 276, 277, 278, 279, 281, 282, 283, 284, 400, 432, 433, 434, 435, 436, 437, 438, 439, 447, 450, 451, 452, 453, 456, 457, 458, 459, 461, 462, 463, 464, 465, 466, 467, 468, 469, 471, 472, 473, 474, 475, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 503, 504, 505, 508, 509, 510, 511, 515, 520, 521, 522, 523, 528, 529, 530, 531, 532, 534, 540, 544, 552, 553, 567]
 tolkade: []
 granskad: null
@@ -17616,39 +17616,24 @@ Följande definitioner och begrepp används i detta avtal:
 
 Bevakningsuppdrag: Trafikverkets bevakning av annan parts arbete som sker i närhet
 till eller inom Trafikverkets anläggning.
-0
-.1   Bevakande projektledare-Bevakande projektledare är samordnare för Trafikverkets
-s
+
+Bevakande projektledare-Bevakande projektledare är samordnare för Trafikverkets
 funktioner. Bevakande projektledare är också projektets kontaktväg till Trafikverket
-n
-a    (t.ex. Underhåll, olika expertfunktioner o.s.v.). Bevakande projektledare sköter
-n
-ifm  kravhantering gentemot kommunen (utifrån bl.a. VGU vägars och gators utformning).
-a
-S
-e-
-s
-le
-m
-m
-o
-k       §3 Syfte och bakgrund
-s
-n
-e    Syftet med detta avtal är att reglera respektive parts åtagande och finansiella ansvar för
-re
-v    åtgärden.
-Ö
-9
-3    Avtalet avser rivning av belysning samt byggnation av ny belysning i på väg 955, del av, i
-7
-0
-L
+(t.ex. Underhåll, olika expertfunktioner o.s.v.). Bevakande projektledare sköter
+kravhantering gentemot kommunen (utifrån bl.a. VGU vägars och gators utformning).
+
+§3 Syfte och bakgrund
+Syftet med detta avtal är att reglera respektive parts åtagande och finansiella ansvar för
+åtgärden.
+
+Avtalet avser rivning av belysning samt byggnation av ny belysning i på väg 955, del av, i
 Särö, Kungsbacka kommun.
-L
-A
-M
-T
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 [Tabell 432-1](handlingar.tabeller/432-1.csv)
 
@@ -17671,39 +17656,14 @@ Sidor
 Bild 1: Översiktlig bild av området med belysning. Blå markering markerar befintlig belysning
 som ska rivas. Översänd från: Kungsbacka kommun.
 
-0
-.1
-s
-n
-a
-n
-ifm
-a
-S
-e-
-s
-le
-m
-m
-o
-k
-s
-n
-e
-re
-v
-Ö
-9
-3
-7
-0
-L
-L
-A
-M
-T
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 434 -->
 
@@ -17717,39 +17677,14 @@ Sidor
 Bild 2: Översiktlig bild av området med belysning. Röd markering markerar ny belysning som
 ska byggas. Översänd från: Kungsbacka kommun.
 
-0
-.1
-s
-n
-a
-n
-ifm
-a
-S
-e-
-s
-le
-m
-m
-o
-k
-s
-n
-e
-re
-v
-Ö
-9
-3
-7
-0
-L
-L
-A
-M
-T
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 435 -->
 
@@ -17771,40 +17706,26 @@ behov av reinvestering.
 Bevakningsavtalet är upprättat då kommunen river och bygger ny belysningsanläggning
 på väg 955, del av. Då åtgärden är klar övertar Trafikverket belysningsanläggningen den
 dag då den är slutbesiktad och godkänd utan kvarstående restpunkter samt att all
-0
-.1   dokumnentation är framtagen och levererad inklusive provningsprotokoll. Den nu
-s
+dokumnentation är framtagen och levererad inklusive provningsprotokoll. Den nu
 aktuella anläggningen kopplas då över till det statliga belysningsnätet som redan finns i
-n a  Trafikplats Särö väg 158/955, bild 3 ovan.
-n
-ifm
-a    Avtalet gäller den del på väg 955 från där den idag statliga belysningsanläggningen finns
-S
-e-   i Trafikplats Särö och övertagandet gäller väster ut till strax norr om korsning
-s
-le
+Trafikplats Särö väg 158/955, bild 3 ovan.
+Avtalet gäller den del på väg 955 från där den idag statliga belysningsanläggningen finns
+i Trafikplats Särö och övertagandet gäller väster ut till strax norr om korsning
 Nötegången/Lysholmsvägen/Solberga allé.
-m
-m
-o
-k
-s
-n
-e    §4   Tidigare avsiktsförklaring eller avtal avseende medfinansiering och
-re
-v Ö       samverkan för åtgärden
-9
+
+§4   Tidigare avsiktsförklaring eller avtal avseende medfinansiering och
+samverkan för åtgärden
 Parterna har inte tidigare tecknat avsiktsförklaring eller avtal om medfinansiering av
-3
-7    åtgärden.
-0
-L
-L
-A
-M
-T
+åtgärden.
+
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 436 -->
 
@@ -17848,40 +17769,33 @@ myndighetsbeslut iakttas de åtgärderna som Trafikverket ansvarar för.
 fungera som kontaktperson vid frågor.
 4\. Trafikverket blir efter godkänt färdigställande och överlämning av den nya
 belysningen ägare och ansvarig för drift och underhåll av den nya belysningen.
-0
-.1   Kommunens ansvar
-s
+
+Kommunens ansvar
 1\. Ska utföra åtgärd 1 som omfattas av detta avtal §§5 och 6.
-n
-a    2. Ansvarar för att tillämpliga lagar och andra författningar samt myndighetsbeslut
-n
-ifm     iakttas för åtgärderna som Kungsbacka ansvarar för.
-a
-S    3. Ska tillhandahålla den mark som behövs för projektets genomförande.
-e s - 4. Ansvarar för att den bevakande projektledaren kallas till erforderliga möten och får
-le
-m       ta del av erforderligt material för genomförande av uppgifterna enligt §5.
-m
+2\. Ansvarar för att tillämpliga lagar och andra författningar samt myndighetsbeslut
+iakttas för åtgärderna som Kungsbacka ansvarar för.
+3\. Ska tillhandahålla den mark som behövs för projektets genomförande.
+4\. Ansvarar för att den bevakande projektledaren kallas till erforderliga möten och får
+ta del av erforderligt material för genomförande av uppgifterna enligt §5.
 5\. Ska informera bevakningsledare om det uppkommer en risk att åtgärd kan påverka
-o
-k
-s       Trafikverkets anläggning på något sätt.
-n
-e re 6. Kungsbacka kommun svarar för all hantering av ledningsarbeten och där
-v Ö     tillkommande ansökning, samordning m.m. Information och ansökan görs via:
-9       https://www.Trafikverket.se / sökord ”Ledningsärenden” Ledningsärendet skall
-3
-7       vara godkänt innan ansökan om TA-plan skickas in.
-0
-L    7. Ledningstillstånd har erhållits av kommunen, ärende nummer TRV 2025/4623.
-L
-A
-M
-T    8. Kungsbacka kommun ansvarar för säkerhetsföreskrifter, Ta-planer,
+Trafikverkets anläggning på något sätt.
+6\. Kungsbacka kommun svarar för all hantering av ledningsarbeten och där
+tillkommande ansökning, samordning m.m. Information och ansökan görs via:
+https://www.Trafikverket.se / sökord ”Ledningsärenden” Ledningsärendet skall
+vara godkänt innan ansökan om TA-plan skickas in.
+7\. Ledningstillstånd har erhållits av kommunen, ärende nummer TRV 2025/4623.
+8\. Kungsbacka kommun ansvarar för säkerhetsföreskrifter, Ta-planer,
 trafikavstängningar, ersättningsvägar. Kungsbacka kommun ska ta fram en TA-plan
 som Trafikverket ska godkänna. Innan ansökan om Ta-plan görs skall eventuella
+
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 437 -->
 
@@ -17926,44 +17840,30 @@ system, Chaos före överlämnande av anläggningen till Trafikverket.
 12\. Kungsbacka kommun ansvarar för garantiåtagandet.
 13\. Kungsbacka kommun ansvarar för att anläggningen utformas enligt VGU 2024
 https://www.trafikverket.se/ / sökord ”VGU”.
-0
-.1
-s       §8 Hantering av kostnadsförändringar
-n
-a
-n
-ifm
+
+§8 Hantering av kostnadsförändringar
+
 I de fall projektet avbryts står kommunen för de kostnader som dittills nedlagts.
-a
-e
-S
-\-
-s le Kungsbacka kommun ska stå för samtliga kostnader för åtgärd 1 och 2.
-m
-m
-o k     §9 Betalning
-s
-n
-e
-re
-v    Trafikverket har rätt att löpande fakturera Kungsbacka kommun för upparbetade
-Ö
+Kungsbacka kommun ska stå för samtliga kostnader för åtgärd 1 och 2.
+
+§9 Betalning
+
+Trafikverket har rätt att löpande fakturera Kungsbacka kommun för upparbetade
 kostnader avseende bevakning. Trafikverket kommer att fakturera Kungsbacka kommun
-9
-3    för den i bevakningsuppdraget nedlagda tiden avseende projektledare samt eventuell tid
-7
-0
-L
+för den i bevakningsuppdraget nedlagda tiden avseende projektledare samt eventuell tid
 för specialister, utifrån Trafikverkets interna tidredovisningssystem
-L
-A
-M
 Faktura ska sändas till utbetalarens fakturaadress och märkas på rätt sätt så att den
-T
 hamnar rätt i leverantörssystem. Det åligger Kungsbacka kommun att informera
 Trafikverket om dessa uppgifter ändras.
+
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 438 -->
 
@@ -18007,41 +17907,30 @@ under förutsättning av:
 kraft
 \-  att eventulla ytterligare åtgärder i den statliga anläggningen ansöks om i särskilt
 ärende/avtal
-0
-.1
-s
-n
-a       §13   Övrigt
-n
-ifm
+
+§13   Övrigt
 Ändringar eller tillägg till detta avtal ska vara skriftliga och undertecknas av båda parter
-a
-S    för att vara giltiga.
-e-
-s
-le
-m    Kungsbacka kommun får inte överlåta sina rättigheter och skyldigheter enligt detta avtal
-m
-o    på någon annan, utan Trafikverkets skriftliga medgivande.
-k
-s
-n
-e
-re   Trafikverket ska ha rätt att på samma grund som Kungsbacka såsom byggherre, stoppa
-v
-Ö    pågående entreprenad om företrädare för Trafikverket (projektledare eller byggledare)
-9    vid tillsyn upptäcker brister i utförandet som kan medföra risk för skada eller olycka.
-3
-7    Denna rättighet ska Kungsbacka kommun i kontrakt eller på annat sätt meddela utsedd
-0
-L    entreprenör innan arbeten påbörjas.
-L
-A
-M
-T    Risk och hantering av skador ska regleras mellan parterna och krav ska ställas på att
+för att vara giltiga.
+
+Kungsbacka kommun får inte överlåta sina rättigheter och skyldigheter enligt detta avtal
+på någon annan, utan Trafikverkets skriftliga medgivande.
+
+Trafikverket ska ha rätt att på samma grund som Kungsbacka såsom byggherre, stoppa
+pågående entreprenad om företrädare för Trafikverket (projektledare eller byggledare)
+vid tillsyn upptäcker brister i utförandet som kan medföra risk för skada eller olycka.
+Denna rättighet ska Kungsbacka kommun i kontrakt eller på annat sätt meddela utsedd
+entreprenör innan arbeten påbörjas.
+Risk och hantering av skador ska regleras mellan parterna och krav ska ställas på att
 entreprenören uppfyller en minimiomfattning av försäkringsskydd.
+
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 439 -->
 
@@ -18067,39 +17956,14 @@ Hanna Jonsson Enhetschef       Ulrika Granfors Enhetschef
 Infrastrukturplanering Väg      Förvaltningschef för Teknik
 Trafikverket Västra regionen    Kungsbacka kommun
 
-0
-.1
-s
-n
-a
-n
-ifm
-a
-S
-e-
-s
-le
-m
-m
-o
-k
-s
-n
-e
-re
-v
-Ö
-9
-3
-7
-0
-L
-L
-A
-M
-T
 Bevakningsavtal – Belysningsanläggning Särö vid väg 955, del av, rivning och byggnation
 av ny belysning, Kungsbacka kommun, Hallands län
+
+TMALL 0739
+
+Överenskommelse-Samfinans
+
+1.0
 
 <!-- sida 440 -->
 
@@ -18704,186 +18568,72 @@ KVARTERSSTRUKTUR
 
 TORG                                                           Den nya stadsdelen utgörs av en
 kvartersstruktur med 8 separata kvarter och två
-SÖDERÅLEDEN
+
 parkeringshus i norr respektive söder.
 
-NORRA
-PARKEN
 Dessa kvarteren omfamnar olika typer
 av innergårdar och öppna offentliga ytor.
-S    Kvarterens olika byggnadshöjder skapar fina
-Y
-R
-É
-N   ljusförhållanden i både lägenheter, lokaler och
-LOKALGATA 1             G
-A
-T
-A
-N
+Kvarterens olika byggnadshöjder skapar fina
+
+ljusförhållanden i både lägenheter, lokaler och
 öppna ytor.
-POLISHUSET BOST P A A D R S K N E Ä N
-RA
+
+POLISHUSET
 Mellan kvarteren sträcker sig lokalgator som
-LOKALGATA 2
-V
-A
-R B
-f
-n
-r
-y
-ä
-a
-m
-s
-j
-t
-a
-a
-r
-d
-g
-sd
-ån
-el
-g
-e n
-o c
-l
-h
-u g
-c
-n
-y
-,
-k
-b
-e
-u
-lt
-l
-r
-l
-a
-e
-n
-rf
-s
-r
-p
-i
-o
-o
-r
-c
-t
-h
-o
-t
-c
-r
-h
-y g
-g
-g
-ö
-.
-r den
-TAGSR
-L
-ETRA
-O VKA KALGATA 3
-E
-R
-G
-S V Ä G E N B R A N D S Kvarteren delas upp i olika enheter som
-T
-A T varierar i höjd och materialitet. Detta skapar en
-IO
-N
-L A                        stadsdel med rytm som kommer upplevas när
-N T
-M
-A
-N
-N
-LOKALGATA 4
+främjar gång och cykeltransport och gör den
+
+nya stadsdelen lugn, bullerfri och trygg.
+
+Kvarteren delas upp i olika enheter som
+
+varierar i höjd och materialitet. Detta skapar en
+stadsdel med rytm som kommer upplevas när
+
 man rör sig längs med gatorna.
-A
-G
-A
-T
-A N     HANTVERKSGATAN  K
-gä
-v
-l
-a
-la
-r
-n
-te
-d
-r
-e
-e n
-s
-s
-o l
-o
-o
-li
-c
-k
-h
-a
-d
-h
-a
-ö
-g
-jd
-sl
-e
-ju
-r
-s
-b
-f
-e
-ö
-st
-r
-ä
-a
-m
-tt
-s
-t
-a
-il
-v
-l s
-f
-a
-a
-m
-kt
-m
-or
-a
-e
-n
-r
-s
+
+Kvarterens olika höjder bestäms av faktorer
+
+gällande sol och dagsljus för att tillsammans
 skapa så ljusa och behagliga stadsrum som
 möjligt.
 SKOLGATAN
+
 DEN NYA STASDSDELEN FRÅN NORR                                                    ÖVERSIKT OMRÅDET
+
 12
 Gestaltningsprogram Sydöstra centrum
 
 GYMNASIESKOLA
+
+KVARTERSGAT
+
+A
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SÖDERÅLEDEN
+
+BRANDSTATION
+
+BOSTADSNÄRA
+
+PARKEN
+
+LOKALGATA 2
+
+LOKALGATA 4
+
+NORRA PARKEN
 
 <!-- sida 458 -->
 
@@ -18978,249 +18728,121 @@ Gestaltningsprogram Sydöstra centrum
 <!-- sida 461 -->
 
 STRÅK    OCH   GATOR
-SÖDERÅLEDEN
 
-NORRA
-PARKEN
 I arbetet med detaljplanen har stort fokus legat
+
 på att möjliggöra för grönska i gaturummet.
 Det finns många konfliktpunkter med
-KV
-1.1                                                                     ledningar, angöringsplatser och siktzoner att
+ledningar, angöringsplatser och siktzoner att
+
 ta hänsyn till. Men där det är möjligt ska
-S
-YR
-É
-N                                gatugrönska prioriteras.
-GÅNGTUNNEL                                                    G
-A
-TA
-P-HUS N
-KV
-1.2
-LOKALGATA 1
-KV
-2.1
-N
+gatugrönska prioriteras.
+
 Varbergsvägen, Hantverksgatan och
 P     P                                                                                  Lantmannagatan ramar in planområdet och
+
 på de två första kommer det att finnas stora
 GYMNASIESKOLA
-BOST P A A D R S K N E Ä N
-RA
-t o r c a h fi k d m e l ä ä n n g g d s e g r å . e P n å d d e e k t v v a ä r r t g er å s e g n a d to e r l n o a k a in lg n a e t orna
-POLISHUSET K
-V
-2
-.2
-LOKALGATA 2 KV 3
-BUSSHÅLLPLATS
-i
-h
-o
-as
-m
-ti
-r
-g
-å
-h
-d
-e
-e
-t
-t
-e r
-ä
-n
-r
-a
-t r
-l
-a
-ä
-fi
-g
-k
-re
-m
-o
-ä
-c
-n
-h
-g d
-d
-e
-e
-r
-t
-m
-fin
-in
-n
-d
-s
-r
-m
-e
-ö
-o
-j
-c
-li
-h
-g het
+trafikmängder. På de tvärgående lokalgatorna
+och de längsgående kvartersgatorna inne
+i området är trafikmängder mindre och
+hastigheterna lägre och det finns möjlighet
+
 att utforma gatorna på gåendes villkor. Här
-MÖJLIG PLACERING GÅNGBRO
-KV 4
-ATAGSRETRAVK
-V A
-ä
-o
-r
-m
-y
-s
-t
-o
-sk
-rg
-ik
-o
-te
-m
-n
-u
-g
-t
-ä
-f
-r
-o
-n
-r
-a
-m
-s
-n
-te
-in
-n
-g
-la
-o
-g
-c
-d
-h
-a
-d
-m
-e
-e
-ta
-d
-l j
-e
-e
-n
-r f
-g
-ö
-o
-r
-d
-a tt
-R
-B
-LOKALGATA 3
-KV 5
-PORTIK E R G S
-V
-Ä
-G E N
-BRANDSTATION                 f
-s
-å
-ty
-e
-r
-n
-m
-m
-o
-ä
-to
-n
-r
-s
-f
-k
-o
-l
-r
-ig
-d o
-s
-n
-k a
-p
-la
-å
-o
-et
-c
-t
-h
-t r
-e
-y
-n
-g
-m
-gt
-i l
-s
-j
-ä
-ö
-t t
-s
-.
-o
-H
-m
-e
-o
-la
-c kså
+är ytskikten gärna stenlagda med en god
+omsorg om utformning och detaljer för att
+
+få en mänsklig skala och en miljö som också
+styr motorfordon på ett tryggt sätt. Hela
+
 gaturummet är i samma nivå och bildar ett
-KV 6
-ATAGSRETRAVK
 enhetligt golv. Grönska samt olika former av
 möblering präglar de inre gaturummen.
-LA
-N
-TM
-A N
-N
-A
-G
-LOKALGATA 4
-A TA     P  P
-N
-KV 7
-ATAGSRETRAVK
+
 P
-KV 9
+
 P
-KV 8  HANTVERKSGATAN
-P-HUS SÖDRA P
+
 P
-SKOLGATAN
+
 16
 Gestaltningsprogram Sydöstra centrum
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SKOLGATAN
+
+SÖDERÅLEDEN
+
+POLISHUSET
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+BOSTADSNÄRA
+
+PARKEN
+
+LOKALGATA 2
+
+P
+
+LOKALGATA 4
+
+NORRA PARKEN
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+KV 1.1
+
+KV 1.2
+
+KV 2.1
+
+KV 2.2
+
+KV 3
+
+KV 4
+
+KV 5
+
+KV 6
+
+KV 7
+
+KV 8
 
 <!-- sida 462 -->
 
@@ -19323,171 +18945,114 @@ FASADLIV
 
 <!-- sida 465 -->
 
-N
-E
-D
-E
-ÅL
-R
-E
-D
-Ö
-S
-N
-E
-K
-R
-A
-P
-A
-R
-R
-O
-N
-V
-1.1
-K
-S
-Y
-R
-É
-N
-GÅNGTUNNEL                                                                                                                 G
-A
-T
-A
-N
-2
-V
-1\.
-K
-A
-1
-G
-AT     2.1
-P-HUS N                           K AL    K V
-O
-L
 P
 P
 GYMNASIESKOLA
-A
-R
-Ä
-N
-S
-D
-B O
-ST A
-A R K
-E N
-P
-POLISHUSET          K
-V
-2
-B
-U
-S
-. 2                                              S H
-AT A 2     K V 3                   Å L L P
-G                                    L
-AL                                     A T
-K                                        S
-O
-L
-MÖJLIG PLACERING GÅNGBRO
-A
-T
-A
-4              G
-K V               S R E
-T
-R
-A
-V
-K                                  V
-A
-R
-B
-E
-O
-K
-AL
-G AT
-A
-3
-V
-5
-P O
-R
-T IK
-R G
-S
-V
-Ä
-G
-BRA N
-DSTATI O N
-L         K                           E
-N
+
 KORSNINGEN       LANTMANNAGATAN           - HANTVERKSGATAN
-A
-T
-A
-G
-I korsningen Lantmannagatan/Hantverksgatan finns en platsbildning                                                  S R
-E
-som är strategiskt placerad i blickfånget när man kommer från                                 K V
-6                   T R
-A V
-K
+
+I korsningen Lantmannagatan/Hantverksgatan finns en platsbildning
+
+som är strategiskt placerad i blickfånget när man kommer från
 centrum. Även om man kommer österifrån på Hantverksgatan syns
 platsbildningen. Det är härifrån som man kommer in i området om man
-L
-färdas med bil. Platsen ska signalera det gröna intryck som ska prägla                  A
-N
-T
-stadsdelen och få en omsorgsfull gestaltning. En bra grund finns redan                   M
-A                                 A 4
-genom de fyra befintliga avenbokarna. En serveringsyta för verksamhet i                   N                              G AT
-N                            AL
-A                           K
-intilliggande lokal kan försiktigt smygas in och ska ha en karaktär av att                  G                        L O
-A                 P
-”sitta på gräset”. Framför byggnadens avkapade hörn finns en yta som                         T                     P
-A
-N
+
+färdas med bil. Platsen ska signalera det gröna intryck som ska prägla
+stadsdelen och få en omsorgsfull gestaltning. En bra grund finns redan
+
+genom de fyra befintliga avenbokarna. En serveringsyta för verksamhet i
+intilliggande lokal kan försiktigt smygas in och ska ha en karaktär av att
+”sitta på gräset”. Framför byggnadens avkapade hörn finns en yta som
+
 gärna kan få något identitetsskapande element som till exempel någon
-V
-7
-K
-speciell belysning.                                                                                                             A T
-A
-G
-S
-R E   P
-T
-R
-A
-V
-K
-N
-8                   A
-V                    AT
-K                   G
-S
-P                                          R K
-E
-V
-NT
-KV 9                                                                    A
-H
-P-HUS SÖDRA P
+speciell belysning.
+
 P
-SKOLGATAN
+
+P
+
+P
+
 N
+
 20
 Gestaltningsprogram Sydöstra centrum
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SKOLGATAN
+
+SÖDERÅLEDEN
+
+POLISHUSET
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+BOSTADSNÄRA
+
+PARKEN
+
+LOKALGATA 2
+
+P
+
+LOKALGATA 4
+
+NORRA PARKEN
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+KV 1.1
+
+KV 1.2
+
+KV 2.1
+
+KV 2.2
+
+KV 3
+
+KV 4
+
+KV 5
+
+KV 6
+
+KV 7
+
+KV 8
 
 <!-- sida 466 -->
 
@@ -19580,122 +19145,96 @@ målpunkter för en bredare allmänhet.
 
 Centralt ligger den bostadsnära parken som kommer vara den gröna oasen för de boende i området men också en bra
 plats att stanna till på vid promenad till och från innerstaden.
-G
-Å N                                                                                      SÖDERÅLEDEN
-G
+
+SÖDERÅLEDEN
 Entrén till området från innerstaden, om man rör sig till fots eller med cykel, är den norra parken med leken. Här finns
-TU
-N
-N
-E
-en tydlig platsbildning med gradänger åt söder som markerar var tvärståkGet genom Sydöstra Centrum börjar. Jämfört L
-YM
-N
-med idag blir parkytan mindre då den norra delen av kvarteret och en förlängninAgS av Lantmannagatan mot Söderåleden
-IE
-S
-K
-sträcker sig in på befintlig parkyta. Parken påverkas också av att en teknikbyggnad kommOer att placeras här. Den
-LA
+en tydlig platsbildning med gradänger åt söder som markerar var tvärståket genom Sydöstra Centrum börjar. Jämfört
+
+med idag blir parkytan mindre då den norra delen av kvarteret och en förlängning av Lantmannagatan mot Söderåleden
+sträcker sig in på befintlig parkyta. Parken påverkas också av att en teknikbyggnad kommer att placeras här. Den
 KV 1.1
 befintliga lekplatsen upprustas till en områdeslekplats.
-P
-Efter att ha passerat gradängerna söderut kommer man upp till en platsbildning framför det nya parkeringshuset med P-H
-U
+
+Efter att ha passerat gradängerna söderut kommer man upp till en platsbildning framför det nya parkeringshuset med
+
 kontor. Här ska man mötas av en välkomnande gestaltning som också markerar att här fortsätter stråket genom området
-S
-N
-så att det blir lätt att hitta vidare. Utformningen av denna plats behöver studeras vidare vid genomförande av projektet. P
+så att det blir lätt att hitta vidare. Utformningen av denna plats behöver studeras vidare vid genomförande av projektet.
+
 KV 1.2
+
 LOKALGATA 1
-P O                                          KV 2.1
-LIS
-H
-M                             U S
-Ö                              E
-JLIG                         T
-P
-LA
-C
-E
-R
-IN                             K
-G
-G                           V
-Å
-N                        2           BOSTADSNÄRA
-G                       .
-B                     2
-R O                                  PARKEN
-S
-Y
-R
-É
-N
-G
-A
-LOKALGATA 2                                                                      T
-A
-N
+
+KV 2.1
+
+BOSTADSNÄRA
+PARKEN
+
+LOKALGATA 2
+
 N
 KV 4                       KV 3
-A
-T
-G A                             B U
-S                               S
-R                               S
-E                               H
-T
-R                               Å
-A                               L        26
-K V                   GestaltningsprogramL P L Sydöstra centrum
-A
-T
-S
+
+26
+Gestaltningsprogram Sydöstra centrum
+
 LOKALGATA 3
-KV 6                       KV 5        P
-O
-R            V
-A L                                            KI T         A
-R
-N                            A
-T                              B
-T                            A                              E
-M                            S G                            R
-A                            R                              G
-E
-N                            T                              S
-R
-N                            A                              V
-A                            K V                            Ä
-G                                                           G
-A                                                           E
-N
-K                                        T
-V                                       A
-9                                     N
-P-H
-P                  U S
-S
-Ö
-D
-R
-A                                                P
-P                                                  LOKALGATA 4
-BRANDSTATION
+
+KV 6                       KV 5
+
 P
+LOKALGATA 4
 P
-A
-SKOLGATAN
-R
-S
-G
-A T
-KV 8           T E       KV 7
-R
-V A  P
-K
+
+KV 8                     KV 7
+P
+
 HANTVERKSGATAN
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+SYRÉNGATAN
+
+SKOLGATAN
+
+POLISHUSET
+
+GYMNASIESKOLA
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+P
+
+P
+
+P
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+KV 2.2
 
 <!-- sida 472 -->
 
@@ -19709,126 +19248,95 @@ sittplatser och grillplats. Parken ska ha en karaktär av grön oas med plats f�
 till picknick eller bollspel i liten skala. På gräsytan får det gärna finnas något samlande element som till exempel en
 trippelhängmatta som ger möjlighet till både aktivitet och vila.
 
-G
-I parkens kantzon finns en robust rabatt med både träd- och buskskikt som ger plats för ett varierat växt- och djurliv och en Å N                                     SÖDERÅLEDEN
-G
-TU
-liten smygstig av ömsom trampsten och träflis. Tvärgående stigar genom rabatten ger möjlighet att smidigt röra sig mellan N
-N
-E
-G                                        L
-gångvägen utmed bostadshusen och parkytan. Eventuellt kan någon mindreY
-M
-yta planteras med perenner men odling kan
-N
-A
-också vara ett alternativ om det finns efterfrågan. Träd som behöver flyttas från anSdIr
-E
-a delar av detaljplanens område kan med
-S
-K
-O
-fördel flyttas hit för att bland annat tillföra skugga. LA
+I parkens kantzon finns en robust rabatt med både träd- och buskskikt som ger plats för ett varierat växt- och djurliv och en                                         SÖDERÅLEDEN
+liten smygstig av ömsom trampsten och träflis. Tvärgående stigar genom rabatten ger möjlighet att smidigt röra sig mellan
+gångvägen utmed bostadshusen och parkytan. Eventuellt kan någon mindre yta planteras med perenner men odling kan
+
+också vara ett alternativ om det finns efterfrågan. Träd som behöver flyttas från andra delar av detaljplanens område kan med
+fördel flyttas hit för att bland annat tillföra skugga.
 KV 1.1
+
 Stråket som går genom parkytan är en del av tvärståket genom hela Sydöstra centrum och är avsett för gångtrafik. Särskild
-P
-omsorg om gestaltningen behöver göras vid den norra ingången till kvarteret/parken för att tydliggöra detta och styra P-H
-U
-S
-N
+omsorg om gestaltningen behöver göras vid den norra ingången till kvarteret/parken för att tydliggöra detta och styra
+
 cyklister till att använda lokalgatorna.
-P
 Det är viktigt att parken etableras i ett tidigt skede i byggprocessen och att den blir en del av det tvärstråk som ska gå genom
 Sydöstra centrum och lyfter boendekvaliteten i områdets mitt.                                                   KV 1.2
+
 VY FRÅN LOKALGATA 1 GENOM PARKEN
+
 LOKALGATA 1
-P O                                          KV 2.1
-LIS
-H
-M                             U S
-Ö                              E
-JLIG                         T
-P
-LA
-C
-E
-R
-IN                             K
-G
-G                           V
-Å
-N                        2           BOSTADSNÄRA
-G                       .
-B                     2
-R O                                  PARKEN
-S
-Y
-R
-É
-N
-G
-A
-LOKALGATA 2                                                                      T
-A
-N
+
+KV 2.1
+
+BOSTADSNÄRA
+PARKEN
+
+LOKALGATA 2
+
 N                                                            KV 4                       KV 3
-A
-T
-G A                             B U
-S                               S
-R                               S
-E                               H
-T
-R                               Å
-A                               L
-K V                   Gestaltningsprogram L P L Sydöstra centrum 27
-A
-T
-S
+
+27
+Gestaltningsprogram Sydöstra centrum
+
 LOKALGATA 3
-KV 6                       KV 5        P
-O
-R            V
-A L                                            KI T         A
-R
-N                            A
-T                              B
-T                            A                              E
-M                            S G                            R
-A                            R                              G
-E
-N                            T                              S
-R
-N                            A                              V
-A                            K V                            Ä
-G                                                           G
-A                                                           E
-N
-K                                        T
-V                                       A
-9                                     N
-P-H
-P                  U S
-S
-Ö
-D
-R
-A                                                P
-P                                                  LOKALGATA 4
-BRANDSTATION
+
+KV 6                       KV 5
+
 P
+LOKALGATA 4
 P
-A
-SKOLGATAN
-R
-S
-G
-A T
-KV 8           T E       KV 7
-R
-V A  P
-K
+
+KV 8                     KV 7
+P
+
 HANTVERKSGATAN
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+SYRÉNGATAN
+
+SKOLGATAN
+
+POLISHUSET
+
+GYMNASIESKOLA
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+P
+
+P
+
+P
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+KV 2.2
 
 <!-- sida 473 -->
 
@@ -19864,132 +19372,101 @@ För att uppmärksamma gående och cyklister på att här börjar tvärstråket 
 bostadsområdena anläggs en platsbildning på ömse sidor om gång- och cykelstråket med platneringar och sittmöligheter och
 genomtänkt belysning. Eventuellt kan platsen också markeras med med avvikande beläggning som tvärstråk över gång- och
 cykelstråket.
-G
-Å N                                                                                      SÖDERÅLEDEN
-G
-TU
-N
-Mellan det nya parkeringshuset och järnvägen finns en yta som inte lämpar sig för vistelse men som en plats i innerstaden där N
-E
-G                                        L
-mycket av miljön består av hårda material får den en gottgörande roll för klimatanpa Y sMsning och biologisk mångfald. Den får
-N
-A
-S
-ha ett lite vilt uttryck med en naturlig utveckling som endast kräver periodiska skötselinsatseIEr. S
-K
-O
-LA
+SÖDERÅLEDEN
+
+Mellan det nya parkeringshuset och järnvägen finns en yta som inte lämpar sig för vistelse men som en plats i innerstaden där
+mycket av miljön består av hårda material får den en gottgörande roll för klimatanpassning och biologisk mångfald. Den får
+
+ha ett lite vilt uttryck med en naturlig utveckling som endast kräver periodiska skötselinsatser.
+
 KV 1.1
 Norra parken utgörs idag av klippta gräsytor med träd, gångar samt yta för lek. Förslaget innebär en ny gestaltning som ger
 fler lekkvalitéer, plats för vila, kompletterad växtlighet bland annat för skugga och biologisk mångfald. Ett utegym skulle
-P
-P-H
-vara ett bra komplement för att bredda platsens attraktivitet och befolka platsen ytterligare. Träd som behöver flyttas från U
-S
-N
+vara ett bra komplement för att bredda platsens attraktivitet och befolka platsen ytterligare. Träd som behöver flyttas från
+
 andra delar av detaljplanens område kan med fördel flyttas hit för att ge skugga och skapa öar mellan lekfunktionerna. För att
-P
 dämpa känslan av buller och trafik kan en grönskande ridå i form av exempelvis friväxande häck placeras i strategiska lägen.
 KV 1.2
+
 Förslagsvis kan Leken få temat blomsteräng, för att på ett lekfullt sätt ge ökad förståelse för vad vår natur ger oss. Här kan
 man gunga, klättra, rutscha eller kanske krypa upp i en trädkoja för att få avskildhet. Lekfulla gångar i trämaterial binder ihop
+
 och avgränsar parkens olika ytor och funktioner. I brynet mot ån föreslås lockande stigar med fågelholkar, insektshotell och
 LOKALGATA 1
 balanslek som inbjuder till naturlek.
-P O
-LIS
 KV 2.1
-H
-Genom belysning kan den lekfulla miljön förstärkas, till exempel genom passande mönster och färger elleMr spotlights riktade U S
-Ö                             E
-mot spännande detaljer. Belysning kan också integreras i enskilda lekredskap, som i lekskulpturen formad som
-JL
-e
-IGxempelvis
-en
-T
-P
-LA
-C                                                                      NORRA PARKEN
-Tordyvel.                                                               E
-R
-IN                             K
-G
-G                           V
-Å
-N                        2            BOSTADSNÄRA
-G                       .
-B                      2
-R O                                  PARKEN
-S
-Y
-R
-É
-N
-Gestaltningsprogram Sydöstra centrum 29                    G
-A
-LOKALGATA 2                                                                      T
-A
-N
+Genom belysning kan den lekfulla miljön förstärkas, till exempel genom passande mönster och färger eller spotlights riktade
+mot spännande detaljer. Belysning kan också integreras i enskilda lekredskap, som i lekskulpturen formad som exempelvis en
+NORRA PARKEN
+Tordyvel.
+
+BOSTADSNÄRA
+PARKEN
+
+29
+Gestaltningsprogram Sydöstra centrum
+LOKALGATA 2
+
 KV 4                       KV 3
-A
-T
-G A                             B U
-S                               S
-R                               S
-E                               H
-T
-R                               Å
-A                               L
-K V                             L P L
-A
-T
-S
+
 LOKALGATA 3
-KV 6                       KV 5       P
-O
-R            V
-A L                                            KI T         A
-R
-N                            A
-T                              B
-T                            A                              E
-M                            S G                            R
-A                            R                              G
-E
-N                            T                              S
-R
-N                            A                              V
-A                            K V                            Ä
-G                                                           G
-A                                                           E
-N
-K                                       T
-V                                      A
-9                                     N
-P-H
-P                  U S
-S
-Ö
-D
-R
-A                                                P
-P                                                  LOKALGATA 4
-BRANDSTATION
+
+KV 6                       KV 5
+
 P
+LOKALGATA 4
 P
-A
-SKOLGATAN
-R
-S
-G
-A T
-KV 8           T E       KV 7
-R
-V A  P
-K
+
+KV 8                     KV 7
+P
+
 HANTVERKSGATAN
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+SYRÉNGATAN
+
+SKOLGATAN
+
+POLISHUSET
+
+GYMNASIESKOLA
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+P
+
+P
+
+P
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+KV 2.2
 
 <!-- sida 475 -->
 
@@ -20015,109 +19492,108 @@ Gestaltningsprogram Sydöstra centrum
 <!-- sida 477 -->
 
 STADSDELENS        ENTRÉER
-SÖDERÅLEDEN
-
-NORRA
-PARKEN
 
 VIKTIG ENTRÉ TILL STADSDEL
 
 VIKTIG HÖRN FÖR ORIENTERING
-KV 1.1                               S YR
-É
-N
-GÅNGTUNNEL                                                   G
-A
-TA
-KV
-1.2                                    N
-P-HUS N
-LOKALGATA 1
-P      P               KV 2.1
+
+P      P
+
 GYMNASIESKOLA
-K V 2 .2 BOST P A A D R S K N E Ä N
-RA
-POLISHUSET
-LOKALGATA 2
-BUSSHÅLLPLATS
+
 En indragen entré kan vara en blickpunkt i en viktig Tak på viktiga hörnpunkter kan vara särskilt
-MÖJLIG PLACERING GÅNGBRO
-ATAGSRETRAVK
-KV 3
-V
-stadsdelsentré. (Foto: Pilestredet Reiulf Ramstad). m
-av
-a
-ru
-rk
-n
-e
-d
-r
-a
-a
-d
-t.
-e
-F
-. (
-a
-F
-sa
-o
-d
-to
-er
-: E
-på
-n t
-h
-a
-ö
-s
-r
-is
-n
-) .
-kan vara fasade eller                               KV 4
-LOKALGATA 3 PORTIK
-A R B
-E R G S
-V
-Ä
-G
-E
-N
-BRANDSTATION
-KV 5
-ATAGSRETRAVK
-LA
-KV 6
-N
-TM
-A N
-N
-A G
-A TA     P
-LOKALGATA 4
-KV 7
-N
+
+stadsdelsentré. (Foto: Pilestredet Reiulf Ramstad). markerat. Fasader på hörn kan vara fasade eller
+avrundade. (Foto: Entasis).
+
 P
-KV 8
-ATAGSRETRAVK
 P
-KV 9
+
 P
-HANTVERKSGATAN
-P-HUS SÖDRA P
-P
+
 Fönster över hörn kan utgöra markör. Balkonger kan framhäva ett hörn.
-SKOLGATAN
 N
 (Foto: Sarnen Durrer)          (Foto: Simone Hutsch).
+
 1:2000 0 10    50       100M
 32
 Gestaltningsprogram Sydöstra centrum
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SKOLGATAN
+
+SÖDERÅLEDEN
+
+POLISHUSET
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+BOSTADSNÄRA
+
+PARKEN
+
+LOKALGATA 2
+
+P
+
+LOKALGATA 4
+
+NORRA PARKEN
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+KV 3
+
+KV 4
+
+KV 5
+
+KV 6
+
+KV 7
+
+KV 8
+
+KV 2.1
+
+KV 2.2
+
+KV 1.1
+
+KV 1.2
+
+P-HUS N
 
 <!-- sida 478 -->
 
@@ -20227,74 +19703,105 @@ Gestaltningsprogram Sydöstra centrum
 MÖJLIGA
 
 LOKALPLACERINGAR
-SÖDERÅLEDEN
 
-NORRA
-PARKEN
 LOKALPLACERING
 
 KONTOR
 
-KV 1.1                               S YR
-É
-P  PARKERING                                                                                                  N
-GÅNGTUNNEL                                                   G
-A
-TA
-KV
-1.2                                    N
+P  PARKERING
+
 HK PARKERING
-P-HUS N
-LOKALGATA 1
-P      P               KV 2.1
+
+P      P
 GYMNASIESKOLA
-K V 2 .2 BOST P A A D R S K N E Ä N
-RA
-POLISHUSET
-LOKALGATA 2
-BUSSHÅLLPLATS
-MÖJLIG PLACERING GÅNGBRO
-ATAGSRETRAVK
-KV 3
-V
-A
-KV 4
-LOKALGATA 3 PORTIK
-R B
-E R G S
-V
-Ä
-G
-E
-N
-BRANDSTATION
-KV 5
-ATAGSRETRAVK
-LA
-KV 6
-N
-TM
-A N
-N
-A G
-A TA     P
-LOKALGATA 4
-KV 7
-N
+
 P
-KV 8
-ATAGSRETRAVK
+
 P
-KV 9
+
 P
-HANTVERKSGATAN
-P-HUS SÖDRA P
-P
-SKOLGATAN
+
 N
+
 1:2000 0 10    50       100M
 34
 Gestaltningsprogram Sydöstra centrum
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SKOLGATAN
+
+SÖDERÅLEDEN
+
+POLISHUSET
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+BOSTADSNÄRA
+
+PARKEN
+
+LOKALGATA 2
+
+P
+
+LOKALGATA 4
+
+NORRA PARKEN
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+KV 3
+
+KV 4
+
+KV 5
+
+KV 6
+
+KV 7
+
+KV 8
+
+KV 2.1
+
+KV 2.2
+
+KV 1.1
+
+KV 1.2
+
+P-HUS N
 
 <!-- sida 480 -->
 
@@ -20728,120 +20235,185 @@ Arkitektbyrån Design.
 
 ILLUSTRATIONSPLAN
 
-SÖDERÅLEDEN
-
-NORRA
-PARKEN
-
-VII
-KV
-1.1
-VI
-VI
-S
-YR
-V        V                               É N
-GÅNGTUNNEL                                                   G A
-TA
-N
-P-
-V
-H
-I
-US N
-VII    KV
-V
-1
-I
-.2 LOKALGATA 1
-KV 2
-V
-.
-I
-1
-I
 P      P
-V
-VI
+
 GYMNASIESKOLA
-VI
-BOST P A A D R S K N E Ä N
-RA    V
-POLISHUSET K
-V 2
-.2
-V   LOKALGATA 2 KV
-V I
-3
-VII
-VI
-BUSSHÅLLPLATS
-MÖJLIG PLACERING GÅNGBRO
-KV 4
-VI
-ATAGSRETRAVK
-II
-V
-V
-V
-A
-VI                         R B
-E
-IV
-V LOKALGATA 3
-KV 5
-VI
-PORTIK VII
-VI
-R G S V
-Ä
-G
-E N
-BRANDSTATION
-KV 6
-VI
-ATAGSRETRAVK
-IV
-V
-LA
-N
-VI
-V
-TM
-A N
-N
-A
-G
-A TA
-IV   V
-P P
-LOKALGATA 4
-IV
-I
-XIV
-N
-VI
-ATAGSRETRAVK
+
 P
-V
-KV 7
-IV
-KV 9
-P
-V
-KV 8
-VI
-HANTVERKSGATAN
-P-HUS SÖDRA P VII
-VI
+
+P  VII
+
 VII
 P
-SKOLGATAN
+
 N
+
 PROJEKT        PARTNER        DATUM           SKALA
 BALDER         2025-03-17 / SN JÅ A3 1:2000
 KUNGSBACKA SÖC
 18041 KUNGSBACKA SÖC
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+KVARTERSGATA
+
+PORTIK
+
+VI
+
+II
+
+VI
+
+IV
+
+VI
+
+IV
+
+VI
+
+IV
+
+IV
+
+I
+
+XIV
+
+V
+
+IV
+
+LOKALGATA 3
+
+VARBERGSVÄGEN
+
+LANTMANNAGATAN
+
+LOKALGATA 1
+
+SYRÉNGATAN
+
+HANTVERKSGATAN
+
+SKOLGATAN
+
+SÖDERÅLEDEN
+
+POLISHUSET
+
+BRANDSTATION
+
+BUSSHÅLLPLATS
+
+MÖJLIG PLACERING GÅNGBRO
+
+GÅNGTUNNEL
+
+V
+
+VI
+
+V
+
+VI
+
+V
+
+V
+
+VI
+
+VII
+
+V
+
+VI
+
+V
+
+VI
+
+VII
+
+VI
+
+V
+
+V
+
+BOSTADSNÄRA
+
+PARKEN
+
+VI
+
+LOKALGATA 2
+
+P
+
+LOKALGATA 4
+
+VI
+
+V
+
+VII
+
+VII
+
+VI
+
+V
+
+V
+
+VI
+
+VI
+
+V
+
+VI
+
+NORRA PARKEN
+
+P
+
+P
+
+P-HUS SÖDRA
+
+KV 9
+
+P-HUS N
+
+VI
+
+VII
+
+KV 1.1
+
+KV 1.2
+
+KV 2.1
+
+KV 2.2
+
+KV 3
+
+KV 4
+
+KV 5
+
+KV 6
+
+KV 7
+
+KV 8
 
 <!-- sida 504 -->
 
