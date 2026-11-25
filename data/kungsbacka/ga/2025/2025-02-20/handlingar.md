@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.6725411a194d849cc4beb87a/1739522774
 sha256: 7389b22671b5a3fa393c00fe0ff00512d442296da2e4be57b75e3fd1523451be
 bytes: 9958667
 sidor: 173
-hamtad: 2026-11-22T21:17:43+00:00
-konverterad: 2026-11-22T21:18:41+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-24T23:44:01+00:00
+konverterad: 2026-11-24T23:44:57+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ocr, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [88, 111]
+tal_obekraftade: [88, 111, 116]
 figurer: [6, 7, 20, 28, 32, 40, 88, 96, 130, 131, 134, 135, 141, 144, 145, 146, 156, 157, 158]
 tolkade: []
 granskad: null
@@ -4099,17 +4099,13 @@ Uppföljningsrapport intern kontroll 2024
 1          2          3           4
 4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
 Konsekvens
+
 3 Hög 4 Medel Totalt: 7
+
 Kritisk        Sannolikhet           Konsekvens
 Hög
 4 Mycket vanligt - exempelvis 1 gång per Allvarlig/stor inverkan (så stor att den inte
@@ -4123,6 +4119,8 @@ intressenter och kommunen)
 obefintlig) - exempelvis 1 gång per 10 år intressenter och kommunen)
 
 6
+
+Sannolikhet
 
 <!-- sida 97 -->
 
@@ -5705,10 +5703,7 @@ mäns medianlöner i alla befattningar med fler än 10 månadsanställda.
 30 000
 25 000
 20 000
-e d ä rtiB e r a d r å v la k o L e r a d e lg ä v e c iv r e S r ö ta rts in im d A e r a te b r a k r a P tn e ts is s a lo k S tn e ts is s a e lo k s r ö F e d ä rtib d ö tS e d ä rtib d r å V e d ä r tib s d itlå M tro p p u s re k in k e t- T I e r a jd ö ts e d n e o B r o ta n id ro o K tlu s n o k e n ö L e r a d e lg ä v s llä h m a S k c o K r e k in k e ts te h g its a F r ö ta rts in im d A e r a d e ls d itirF tn e ts is s a g iln o s r e P tn e ts is s a v e lE e r a tö k s n r a B tn e ts is s a d ö tS a k s r e tö k s re d n U lo k s e r a d e ld n a H re k in k e ts ta lp s tto r d I k ö K e r a d e ls te b rA g o g a d e p s g n ire v itk A g o g a d e p d ö tS r e k in k e ttfirD r ö jn e g n is g n in tä M lå m s r e d o M e r a rä L e r a tla v r ö fm e ts y S e r a g g ä ld n a h s v o lg g e r a lk c e v tU tn e lu s n o k s m o d g n U r o ta n id ro o K n a lo k s r u tlu K e r a rä L
 
-y
-B
 A A B B B B B B B B C C C C C C C C C C C C C C D D D D D D E E E E E E E E
 Median heltidslön kvinnor Median heltidslön män
 
@@ -5722,103 +5717,181 @@ Median heltidslön kvinnor Median heltidslön män
 30 000
 25 000
 20 000
-e
-ra lk c e v tu m e ts y S
-rö
-tk e p s n is d a n g g y B
-tk
-e tik ra n a lP
-e
-ra ld n a h p p U
-e
-ra g g ä ld n a h s te h g id n y M
-g
-n in tla v rö f rö ta k in u m m o
-rk
-e s s d a n k ra m s te b rA
-g
-n in tla v rö F m o n o k E
-n
-in tla v rö f ts ila re n e g -R H
-e
-ra re te rk e s la ic o S
-e
-ra d e lg ä v s e k ry o e id u tS
-p
-s n is d d y k s o s lä H o ö jliM
-e
-ira k e to ilb iB
-tu
-e p a re to is y F
-g
-o g a d e p s d itirF
-e
-ra g g ä ld n a h s d n å ts iB
-a
-k s re tö k s lo k S
-tu
-e p a re ts te b rA
-e
-ra ld n a h e b e jlim a F
-k
-s ite ts e /k s itk a rp e ra rä L
-a
-k s re tö k s k u jS
-m
-e h s d itirf e ra rä L
-rå
-e ra n e s e ra rä L
-rå
-e ra g id it e ra rä L
-a
-lo k s d n u rg e ra rä L
-a
-lo k s rö F e ra rä L
-a
-k s re tö k s k u js ts ila ic e p S
-T
-I e ra lk c e v tU
-e
-ra lk c e v tu d o te M
-e
-ra d e ltk e jo rP
-k
-s ite ts e /k s itk a rp e ra rä L
-ro
-ta ru k lo k S
-e
-ra rä lla ic e p S
-n
-e n m ä s e k ry e ra rä L
-M
-V L /U V L rk e s la ic o S
-e
-ra lk c e v tU
-g
-o g a d e p la ic e p S
-e
-ra rä le ts rö F
-n
-e n m ä a n n ä m lla e ra rä L
-e
-ts rö f e ra re te rk e s la ic o S
-g
-g y B e ra d e ltk e jo rP
-g
-o lo k y s P
-e
-ra d e ls g n ilk c e v tU
-fe
-h c s te h n E
-ro
-tk e R
-fe
-h c s te h n E
-K
+
 F F F F F F F F F F F F F F F F F F F F F F F F F F G G G G G G G G G G G G G H H H H I J J
 Median heltidslön kvinnor Median heltidslön män
+
 (Från BI, Daterad: 241030)
+
 Kungsbacka kommun   Lönekartläggning och Handlingsplan, 2024   11
+
+Biträde
+
+Lokalvårdare
+
+Servicevägledare
+
+Administratör
+
+Parkarbetare
+
+Skolassistent
+
+Förskoleassistent
+
+Stödbiträde
+
+Vårdbiträde
+
+Måltidsbiträde
+
+IT-tekniker support
+
+Boendestödjare
+
+Koordinator
+
+Lönekonsult
+
+Samhällsvägledare
+
+Kock
+
+Fastighetstekniker
+
+Administratör
+
+Fritidsledare
+
+Personlig assistent
+
+Elevassistent
+
+Barnskötare
+
+Stödassistent
+
+Undersköterska
+
+Handledare skol
+
+Idrottsplatstekniker
+
+Arbetsledare Kök
+
+Aktiveringspedagog
+
+Stödpedagog
+
+Drifttekniker
+
+Mätningsingenjör
+
+Lärare Modersmål
+
+Systemförvaltare
+
+Bygglovshandläggare
+
+Utvecklare
+
+Ungdomskonsulent
+
+Koordinator
+
+Lärare Kulturskolan
+
+Systemutvecklare
+
+Byggnadsinspektör
+
+Planarkitekt
+
+Upphandlare
+
+Myndighetshandläggare
+
+Kommunikatör förvaltning
+
+Arbetsmarknadssekr
+
+Ekonom Förvaltning
+
+HR-generalist förvaltnin
+
+Socialsekreterare
+
+Studie o yrkesvägledare
+
+Miljö o Hälsoskyddsinsp
+
+Bibliotekarie
+
+Fysioterapeut
+
+Fritidspedagog
+
+Biståndshandläggare
+
+Skolsköterska
+
+Arbetsterapeut
+
+Familjebehandlare
+
+Lärare praktisk/estetisk
+
+Sjuksköterska
+
+Lärare fritidshem
+
+Lärare senare år
+
+Lärare tidigare år
+
+Lärare grundskola
+
+Lärare Förskola
+
+Specialistsjuksköterska
+
+Utvecklare IT
+
+Metodutvecklare
+
+Projektledare
+
+Lärare praktisk/estetisk
+
+Skolkurator
+
+Speciallärare
+
+Lärare yrkesämnen
+
+Socialsekr LVU/LVM
+
+Utvecklare
+
+Specialpedagog
+
+Förstelärare
+
+Lärare allmänna ämnen
+
+Socialsekreterare förste
+
+Projektledare Bygg
+
+Psykolog
+
+Utvecklingsledare
+
+Enhetschef
+
+Rektor
+
+Enhetschef
 
 <!-- sida 135 -->
 

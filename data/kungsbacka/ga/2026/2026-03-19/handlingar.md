@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.5deddcf719cc8cfc836d6c17/1773655708
 sha256: baebddecf9f30aa070e8536408f0940cb2210245e5c604224fa83a7b43513cb0
 bytes: 11083508
 sidor: 344
-hamtad: 2026-11-22T21:27:07+00:00
-konverterad: 2026-11-22T21:28:49+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-24T23:52:59+00:00
+konverterad: 2026-11-24T23:54:39+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: []
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [286, 317]
 figurer: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 54, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 156, 157, 226, 287, 300, 301, 304, 305, 307, 311, 331, 335]
 tolkade: []
 granskad: null
@@ -12065,118 +12065,15 @@ säkerhetsarbete och stabsläge. Det finns förväntningar på skolledare i kris
 dessa behöver tydliggöras, samtidigt som skolledare behöver få möjlighet till övning och
 
 Gymnasium & Arbetsmarknad                                    Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon vx 0300-83 40 00
+Fax 0300-83 41 64
+(e-post borttagen)
+www.kungsbacka.se
 
-v
-001B
-U K
-5002
-,0
-1 5
-.1
-1 2 - -
-gymnasie.vuxenu
-T
-tb
-S
-e
-i
-l
-t
-l
-e
-a
-d
-f
-d
-n
-o
-s
-i
-4
-n
-n
-h
-F
-3
-g
-u
-v
-a
-4
-@
-s
-x
-x
-e
-8
-t
-0
-0
-k
-1
-,
-B
-3
-3
-u
-S
-K
-0
-0
-n
-e
-t
-0
-0
-g
-s
-o
-u ö
-\-
-\-
-s
-r
-n
-8
-8
-b
-g
-k g
-3
-3
-a
-a
-s s a
-c
-t
-b
-4
-4
-a
-d
-k
-a
-1
-n
-0
-r
-a
-c e
-.
-6
-3
-0
-k
-s
-s
-7
-4
-0
-e
-a s
-m
-roF                                                               www.kungsbacka.se
-inu
+uniForm KUB100 v 1.0, 2005-11-25
 
 <!-- sida 287 -->
 
@@ -12933,197 +12830,200 @@ varierar mellan befattningar och yrkesområden. I de flesta fall ligger skillnad
 
 25 000
 20 000
-e
-d ä rtiB
-e
-ra d rå v la k o L
-tn
-e ts is s a lo k S
-tn
-e ts is s a e lo k s rö F
-e
-d ä rtib d rå V
-e
-d ä rtib d ö tS
-e
-d ä rtib s d itlå M
-e
-ra te b ra k ra P
-rö
-ta rts in im d A
-e
-ra tö k s n ra B
-tn
-e ts is s a g iln o s re P
-tn
-e ts is s a v e lE
-re
-k in k e ts te h g its a F
-tn
-e ts is s a d ö tS
-e
-ra d e ls d itirF
-a
-k s re tö k s re d n U
-e
-ra d e lg ä v s llä h m a S
-k
-c o K
-tro
-p p u s re k in k e t-T I
-e
-ra jd ö ts e d n e o B
-tlu
-s n o k e n ö L
-rö
-ta rts in im d A
-re
-k in k e ttfirD
-g
-o g a d e p d ö tS
-k
-ö K e ra d e ls te b rA
-ro
-ta n id ro o k s g n in n a m
-g
-o g a d e p s g n ire v itk A
-lo
-k s e ra d e ld n a H
-e
-ra re n a lp s ta s n I
-re
-k in k e ts llå h re d n U
-tn
-e lu s n o k s m o d g n U
-lå
-m s re d o M e ra rä L
-a
-lo k S e ira k e to ilb iB
-n
-a lo k s ru tlu K e ra rä L
-ro
-ta n id ro o K
-e
-ra lk c e v tU
-e
-ra tla v rö fm e ts y S
-e
-ra g g ä ld n a h s v o lg g y
-rö
-jn e g n is g n in tä M
-B
-e
-B
+
 A A B B B B B B B C C C C C C C C C C C C C D D D D D D D D E E E E E E E E E
 Medianlön kvinnor Medianlön män
+
 65 000
 60 000
 55 000
+
 50 000
 45 000
 40 000
 35 000
 30 000
 25 000
+
 20 000
-e
-ira k e to ilb iB
-g
-o g a d e p s d itirF
-e
-ra d e lg ä v s e k ry o e id u tS
-a
-lo k s rö F e ra rä L
-rk
-e s s d a n k ra m s te b rA
-rö
-ta k in u m m o K
-e
-ra g g ä ld n a h s d n å ts iB
-m
-e h s d itirf e ra rä L
-tu
-e p a re ts te b rA
-m
-o n o k E
-tu
-e p a re to is y F
-e
-ra g g ä ld n a h s te h g id n y M
-e
-ra re te rk e s la ic o S
-a
-k s re tö k s k u jS
-e
-ra lk c e v tu d o te M
-g
-n in tla v rö f rö ta k in u m m o
-e
-ra ld n a h e b e jlim a F
-a
-lo k s d n u rg e ra rä L
-rö
-tk e p s n is d a n g g y B
-rå
-e ra g id it e ra rä L
-p
-s n is d d y k s o s lä H o ö jliM
-k
-s ite ts e /k s itk a rp e ra rä L
-g
-n in tla v rö F m o n o k E
-n
-in tla v rö f ts ila re n e g -R H
-e
-ra lk c e v tU
-rå
-e ra n e s e ra rä L
-a
-k s re tö k s lo k S
-e
-ra ld n a h p p U
-e
-ra tla v rö fs te h g its a F
-k
-s ite ts e /k s itk a rp e ra rä L
-M
-V L /U V L rk e s la ic o S
-ro
-ta ru k lo k S
-n
-e n m ä a n n ä m lla e ra rä L
-n
-e n m ä s e k ry e ra rä L
-e
-ra lk c e v tu m e ts y S
-a
-k s re tö k s k u js ts ila ic e p S
-e
-ra rä lla ic e p S
-g
-o g a d e p la ic e p S
-e
-ra rä le ts rö F
-e
-ra d e ltk e jo rP
-e
-ra d e ls g n ilk c e v tU
-e
-ts rö f e ra re te rk e s la ic o S
-g
-o lo k y s P
-fe
-h c s te h n E
-fe
-h c s te h n E
-ro
-tk e R
-K
+
 F F F F F F F F F F F F F F F F F F F F F F F F F F F F F G G G G G G G G G G G G H H I J J
 Medianlön kvinnor Medianlön män
+
 Bild: två graferna; en med BAS A-E och en med BAS F-J. Graferna visar på kvinnor och mäns medianlöner i
 alla befattningar med fler än 10 månadsanställda. Från BI, Daterad: 251104.
+
 Kungsbacka kommun   Lönekartläggning och Handlingsplan, 2025   12
+
+Biträde
+
+Lokalvårdare
+
+Skolassistent
+
+Förskoleassistent
+
+Vårdbiträde
+
+Stödbiträde
+
+Måltidsbiträde
+
+Parkarbetare
+
+Administratör
+
+Barnskötare
+
+Personlig assistent
+
+Elevassistent
+
+Fastighetstekniker
+
+Stödassistent
+
+Fritidsledare
+
+Undersköterska
+
+Samhällsvägledare
+
+Kock
+
+IT-tekniker support
+
+Boendestödjare
+
+Lönekonsult
+
+Administratör
+
+Drifttekniker
+
+Stödpedagog
+
+Arbetsledare Kök
+
+Bemanningskoordinator
+
+Aktiveringspedagog
+
+Handledare skol
+
+Insatsplanerare
+
+Underhållstekniker
+
+Ungdomskonsulent
+
+Lärare Modersmål
+
+Bibliotekarie Skola
+
+Lärare Kulturskolan
+
+Koordinator
+
+Utvecklare
+
+Systemförvaltare
+
+Bygglovshandläggare
+
+Mätningsingenjör
+
+Bibliotekarie
+
+Fritidspedagog
+
+Studie o yrkesvägledare
+
+Lärare Förskola
+
+Arbetsmarknadssekr
+
+Kommunikatör
+
+Biståndshandläggare
+
+Lärare fritidshem
+
+Arbetsterapeut
+
+Ekonom
+
+Fysioterapeut
+
+Myndighetshandläggare
+
+Socialsekreterare
+
+Sjuksköterska
+
+Metodutvecklare
+
+Kommunikatör förvaltning
+
+Familjebehandlare
+
+Lärare grundskola
+
+Byggnadsinspektör
+
+Lärare tidigare år
+
+Miljö o Hälsoskyddsinsp
+
+Lärare praktisk/estetisk
+
+Ekonom Förvaltning
+
+HR-generalist förvaltnin
+
+Utvecklare
+
+Lärare senare år
+
+Skolsköterska
+
+Upphandlare
+
+Fastighetsförvaltare
+
+Lärare praktisk/estetisk
+
+Socialsekr LVU/LVM
+
+Skolkurator
+
+Lärare allmänna ämnen
+
+Lärare yrkesämnen
+
+Systemutvecklare
+
+Specialistsjuksköterska
+
+Speciallärare
+
+Specialpedagog
+
+Förstelärare
+
+Projektledare
+
+Utvecklingsledare
+
+Socialsekreterare förste
+
+Psykolog
+
+Enhetschef
+
+Enhetschef
+
+Rektor
 
 <!-- sida 305 -->
 
@@ -13739,91 +13639,15 @@ ekonomichefer. Temat för dagen var anti-krångel. En intressant dag, med gäste
 Halmstads kommun och SKR.
 
 Gymnasium & Arbetsmarknad                                    Kungsbacka kommun
+434 81 Kungsbacka
+Besöksadress
+Stadshuset, Storgatan 37
+Telefon vx 0300-83 40 00
+Fax 0300-83 41 64
+(e-post borttagen)
+www.kungsbacka.se
 
-v
-001B
-U
-5002
-,0
-1 5
-.1
-1 2 - -
-T
-S
-el
-t
-e
-a
-f
-d
-o
-s
-4
-n
-h
-F
-3
-u
-v
-a
-4
-s
-x
-x
-e
-8
-t
-0
-0
-1
-,
-B
-3
-3
-S
-K
-0
-0
-e
-t
-0
-0
-o
-s u ö
-\-
-\-
-r
-n
-8
-8
-g
-k g
-3
-3
-a
-s s
-t
-a b
-4
-a
-4
-d a
-n
-0
-1
-r c e
-3
-0
-6
-k s
-7
-0
-4
-a s
-K                                                      (e-post borttagen)
-m
-roF                                                               www.kungsbacka.se
-inu
+uniForm KUB100 v 1.0, 2005-11-25
 
 <!-- sida 318 -->
 
