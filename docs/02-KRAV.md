@@ -22,6 +22,7 @@ inte här. Regionens krav står i dess PR-texter.
 | K98  | [regionhalland PR #74](https://github.com/moggleif/regionhalland/pull/74) |
 | K99  | [regionhalland PR #75](https://github.com/moggleif/regionhalland/pull/75) |
 | K100 | [regionhalland PR #76](https://github.com/moggleif/regionhalland/pull/76) |
+| K101 | [regionhalland PR #77](https://github.com/moggleif/regionhalland/pull/77) |
 
 Ett nummer i tabellen är upptaget också om PR:en där stängs utan merge.
 Ett nytt krav här tar numret efter det högsta i den här filen och i
