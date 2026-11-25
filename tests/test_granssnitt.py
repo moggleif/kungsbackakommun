@@ -1,4 +1,4 @@
-"""Krav: K74 i docs/02-KRAV.md. Gränssnittet mot ett datarepo står under
+"""Krav: K74 och K110 i docs/02-KRAV.md. Gränssnittet mot ett datarepo står under
 "Gränssnittet mot datarepon" i docs/03-ARKITEKTUR.md."""
 
 import importlib.util

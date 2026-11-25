@@ -118,4 +118,7 @@ de två fel som säger att filen inte följer schemat. En fil som inte finns
 ger som förut ett fel från Python.
 
 Importen `from kommunhandlingar.konfiguration import las` står kvar i
-gränssnittet; den används av andra än Region Hallands kontroll.
+gränssnittet. När Region Hallands kontroll använder kommandot importerar
+inget känt datarepo `las` direkt längre. Om importen ska tas bort ur
+gränssnittet avgörs för sig, eftersom ett datarepo med en äldre
+kodversion kan använda den.
