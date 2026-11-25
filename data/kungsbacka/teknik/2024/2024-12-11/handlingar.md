@@ -12,13 +12,13 @@ kalla_url: https://kungsbacka.se/download/18.2eac78ea193953fe2801239c/1733495158
 sha256: c13b4f8c7037a64c8686b0f6bb278ee56d7cc697bb7d9944a935b52102212fad
 bytes: 13668961
 sidor: 226
-hamtad: 2026-11-23T00:11:56+00:00
-konverterad: 2026-11-23T00:12:48+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+hamtad: 2026-11-25T03:28:20+00:00
+konverterad: 2026-11-25T03:29:11+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok]
-tal_obekraftade: [8, 10, 12, 17, 18, 68, 69, 169, 218]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, tabell-osaker, ok, ok, ok, ok, tabell-osaker, ok, ok, tabell-osaker, tabell-osaker, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, ok]
+tal_obekraftade: [8, 10, 12, 17, 18, 68, 69, 169, 217, 218]
 figurer: [3, 9, 10, 11, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 38, 39, 40, 41, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 82, 92, 107, 111, 166, 167, 168, 169, 170, 171, 174, 194, 198, 199, 201, 205, 207]
 tolkade: []
 granskad: null
@@ -9037,16 +9037,12 @@ Kullaviks ARV
 
 500                                               50%
 400                                               40%
-```
 
-m
-%
-m
-
-```osaker-tabell
 300                                               30%
+
 200                                               20%
 100                                               10%
+
  0                                                0%
 ```
 
@@ -9080,6 +9076,10 @@ stängas och åns flöde pumpas då över barriären.
 översvämningsproblematiken för Kungsbackaåns övre delar.
 
 Kungsbacka kommun              Styrande dokument               30 (36)
+
+%
+
+mm
 
 <!-- sida 206 -->
 
@@ -9590,7 +9590,7 @@ För att motverka missbruket av lustgas och skydda våra invånare, särskilt
 ungdomar, föreslår Sverigedemokraterna ett lokalt förbud mot användning
 av lustgas i berusningssyfte inom specifika offentliga områden i
 Kungsbacka kommun. Förbudet ska utformas enligt Ordningslagen 3 kap
-12 § och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
+12 8 och anmälas till Länsstyrelsen. Det bör omfatta samma områden där
 alkoholförtäring redan är förbjuden, vilket skulle ge polisen ett tydligt
 mandat att ingripa och förhindra missbruk på offentliga platser.
 
