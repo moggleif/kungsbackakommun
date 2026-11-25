@@ -12,9 +12,9 @@ kalla_url: https://kungsbacka.se/download/18.dbbdae71a1ce2dff4c1a5a6/17945604359
 sha256: 57500e9ef16b19ef7f1ad07f859b446414c03688e79ef65873ed2404428d126e
 bytes: 3446939
 sidor: 103
-hamtad: 2026-11-22T23:26:58+00:00
-konverterad: 2026-11-22T23:27:18+00:00
-pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
+hamtad: 2026-11-25T02:21:20+00:00
+konverterad: 2026-11-25T02:21:45+00:00
+pipeline: kommunhandlingar 0.20.0 / pdfplumber 0.11.10 / pdfminer.six 20260107
 kvalitet: text-utan-tabeller
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok]
@@ -431,19 +431,17 @@ Siffrorna 1-16 längst ner i varje ruta indikerar riskvärde = sannolikhet x kon
 
 1          2           3          4
 
-te 1
-h
-k
-ilo
-n
-n
-a
-S
+1
+
 1           2          3          4
+
 Konsekvens
+
 1 Hög 4 Medel Totalt: 5
 
 8
+
+Sannolikhet
 
 <!-- sida 12 -->
 
@@ -657,17 +655,13 @@ Fördelning av risker efter sannolikhet och konsekvens
 
 1         2          3         4
 
-te
 1
-h
-k
-ilo
-n
-n
-a
-S
+
 1         2          3         4
+
 Konsekvens
+
+Sannolikhet
 
 <!-- sida 20 -->
 
