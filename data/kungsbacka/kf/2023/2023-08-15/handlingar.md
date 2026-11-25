@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20240901060637id_/https://kungsbacka.se/d
 sha256: 532e0969aca27b97c5f7f4ebb2da054bc57129b071e7ef234f8139e4df4381db
 bytes: 79484314
 sidor: 461
-hamtad: 2026-10-20T09:37:26+00:00
-konverterad: 2026-10-20T09:43:52+00:00
-pipeline: kommunhandlingar 0.8.10 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.14.0 / tesseract 5.3.4 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T15:30:49+00:00
+konverterad: 2026-11-24T15:43:56+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok]
-tal_obekraftade: [9, 10, 26, 27, 28, 122, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 157, 158, 159, 160, 161, 184, 185, 186, 187, 189, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 285, 293, 342, 343, 366, 367, 378, 379, 395, 396, 402, 403, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 447, 448, 449, 450, 452]
-figurer: [26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 122, 134, 136, 138, 141, 142, 143, 144, 145, 150, 162, 163, 164, 167, 170, 177, 178, 179, 180, 181, 187, 188, 189, 190, 307, 316, 317, 318, 319, 320, 321, 323, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 450]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok]
+tal_obekraftade: [9, 10, 26, 27, 28, 122, 130, 131, 132, 133, 134, 135, 136, 137, 138, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 157, 158, 159, 160, 161, 184, 186, 187, 189, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 235, 237, 238, 239, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 273, 274, 275, 285, 293, 342, 366, 378, 402, 403, 415, 416, 417, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 452]
+figurer: [26, 27, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 122, 131, 134, 136, 138, 139, 140, 141, 142, 143, 144, 145, 150, 157, 162, 163, 164, 167, 170, 177, 178, 179, 180, 181, 187, 188, 189, 190, 225, 226, 227, 230, 231, 239, 247, 248, 266, 267, 268, 285, 307, 316, 317, 318, 319, 320, 321, 323, 367, 396, 414, 415, 416, 417, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 448, 450]
 tolkade: []
 granskad: null
 ---
@@ -942,79 +942,103 @@ Revisionsberättelse
 Till styrelsen i Stiftelsen Tjolöholm, org.nr 849400–4578
 
 Rapport om årsredovisningen
-
 Uttalanden
-Vi har utfört en revision av årsredovisningen för Stiftelsen Som del av en revision enligt ISA använder vi professionellt
-Tjolöholm för år 2022.           omdöme och har en professionellt skeptisk inställning under
-hela revisionen. Dessutom:
+
+Vi har utfört en revision av årsredovisningen för Stiftelsen
+Tjolöholm för år 2022.
 Enligt vår uppfattning har årsredovisningen upprättats i enlig-
-het med årsredovisningslagen och ger en i alla väsentliga avse- • identifierar och bedömer vi riskerna för väsentliga felaktig-
-enden rättvisande bild av stiftelsens finansiella ställning per heter i årsredovisningen, vare sig dessa beror på oegent-
-den 31 december 2022 och av dess finansiella resultat för året ligheter eller misstag, utformar och utför gransknings-
-enligt årsredovisningslagen. Förvaltningsberättelsen är åtgärder bland annat utifrån dessa risker och inhämtar
-förenlig med årsredovisningens övriga delar. revisionsbevis som är tillräckliga och ändamålsenliga för
-att utgöra en grund för våra uttalanden. Risken för att inte
+het med årsredovisningslagen och ger en i alla väsentliga avse-
+enden rättvisande bild av stiftelsens finansiella ställning per
+den 31 december 2022 och av dess finansiella resultat för året
+enligt årsredovisningslagen. Förvaltningsberättelsen är
+förenlig med årsredovisningens övriga delar.
 Grund för uttalanden
-upptäcka en väsentlig felaktighet till följd av oegentlig-
-Vi har utfört revisionen enligt International Standards on heter är högre än för en väsentlig felaktighet som beror på
-Auditing (ISA) och god revisionssed i Sverige. Vårt ansvar misstag, eftersom oegentligheter kan innefatta agerande i
-enligt dessa standarder beskrivs närmare i avsnittet Revisorns maskopi, förfalskning, avsiktliga utelämnanden, felaktig
-ansvar. Vi är oberoende i förhållande till stiftelsen enligt god information eller åsidosättande av intern kontroll.
+Vi har utfört revisionen enligt International Standards on
+Auditing (ISA) och god revisionssed i Sverige. Vårt ansvar
+enligt dessa standarder beskrivs närmare i avsnittet Revisorns
+ansvar. Vi är oberoende i förhållande till stiftelsen enligt god
 revisorssed i Sverige och har i övrigt fullgjort vårt yrkesetiska
-• skaffar vi oss en förståelse av den del av stiftelsens interna
 ansvar enligt dessa krav.
-kontroll som har betydelse för vår revision för att utforma
-Vi anser att de revisionsbevis vi har inhämtat är tillräckliga och granskningsåtgärder som är lämpliga med hänsyn till om-
-ändamålsenliga som grund för våra uttalanden. ständigheterna, men inte för att uttala oss om effekti-
-viteten i den interna kontrollen.
+Vi anser att de revisionsbevis vi har inhämtat är tillräckliga och
+ändamålsenliga som grund för våra uttalanden.
 Styrelsens ansvar
-• utvärderar vi lämpligheten i de redovisningsprinciper som
 Det är styrelsen som har ansvaret för att årsredovisningen
-används och rimligheten i styrelsens uppskattningar i
 upprättas och att den ger en rättvisande bild enligt årsredovis-
-redovisningen och tillhörande upplysningar.
 ningslagen. Styrelsen ansvarar även för den interna kontroll
-som de bedömer är nödvändig för att upprätta en årsredovis- • drar vi en slutsats om lämpligheten i att styrelsen använder
-ning som inte innehåller några väsentliga felaktigheter, vare antagandet om fortsatt drift vid upprättandet av årsredo-
-sig dessa beror på oegentligheter eller misstag. visningen. Vi drar också en slutsats, med grund i de in-
-hämtade revisionsbevisen, om det finns någon väsentlig
+som de bedömer är nödvändig för att upprätta en årsredovis-
+ning som inte innehåller några väsentliga felaktigheter, vare
+sig dessa beror på oegentligheter eller misstag.
 Vid upprättandet av årsredovisningen ansvarar styrelsen för
-osäkerhetsfaktor som avser sådana händelser eller för-
 bedömningen av stiftelsens förmåga att fortsätta verksam-
-hållanden som kan leda till betydande tvivel om stiftelsens
 heten. Den upplyser, när så är tillämpligt, om förhållanden som
-förmåga att fortsätta verksamheten. Om vi drar slutsatsen
 kan påverka förmågan att fortsätta verksamheten och att
-att det finns en väsentlig osäkerhetsfaktor, måste vi i revi-
 använda antagandet om fortsatt drift. Antagandet om fortsatt
-sionsberättelsen fästa uppmärksamheten på upplys-
 drift tillämpas dock inte om beslut har fattats om att upphöra
-ningarna i årsredovisningen om den väsentliga osäker-
 med verksamheten.
-hetsfaktorn eller, om sådana upplysningar är otillräckliga,
-Revisorns ansvar                   modifiera uttalandet om årsredovisningen. Våra slutsatser
-baseras på de revisionsbevis som inhämtas fram till
+Revisorns ansvar
 Våra mål är att uppnå en rimlig grad av säkerhet om att
-datumet för revisionsberättelsen. Dock kan framtida
 årsredovisningen som helhet inte innehåller några väsentliga
-händelser eller förhållanden göra att en stiftelse inte
 felaktigheter, vare sig dessa beror på oegentligheter eller
-längre kan fortsätta verksamheten.
 misstag, och att lämna en revisionsberättelse som innehåller
-våra uttalanden. Rimlig säkerhet är en hög grad av säkerhet, • utvärderar vi den övergripande presentationen, strukturen
-men är ingen garanti för att en revision som utförs enligt ISA och innehållet i årsredovisningen, däribland upplys-
-och god revisionssed i Sverige alltid kommer att upptäcka en ningarna, och om årsredovisningen återger de under-
-väsentlig felaktighet om en sådan finns. Felaktigheter kan liggande transaktionerna och händelserna på ett sätt som
-uppstå på grund av oegentligheter eller misstag och anses vara ger en rättvisande bild.
+våra uttalanden. Rimlig säkerhet är en hög grad av säkerhet,
+men är ingen garanti för att en revision som utförs enligt ISA
+och god revisionssed i Sverige alltid kommer att upptäcka en
+väsentlig felaktighet om en sådan finns. Felaktigheter kan
+uppstå på grund av oegentligheter eller misstag och anses vara
 väsentliga om de enskilt eller tillsammans rimligen kan för-
-väntas påverka de ekonomiska beslut som användare fattar Vi måste informera styrelsen om bland annat revisionens
-med grund i årsredovisningen.    planerade omfattning och inriktning samt tidpunkten för den.
+väntas påverka de ekonomiska beslut som användare fattar
+med grund i årsredovisningen.
+
+Som del av en revision enligt ISA använder vi professionellt
+omdöme och har en professionellt skeptisk inställning under
+hela revisionen. Dessutom:
+• identifierar och bedömer vi riskerna för väsentliga felaktig-
+heter i årsredovisningen, vare sig dessa beror på oegent-
+ligheter eller misstag, utformar och utför gransknings-
+åtgärder bland annat utifrån dessa risker och inhämtar
+revisionsbevis som är tillräckliga och ändamålsenliga för
+att utgöra en grund för våra uttalanden. Risken för att inte
+upptäcka en väsentlig felaktighet till följd av oegentlig-
+heter är högre än för en väsentlig felaktighet som beror på
+misstag, eftersom oegentligheter kan innefatta agerande i
+maskopi, förfalskning, avsiktliga utelämnanden, felaktig
+information eller åsidosättande av intern kontroll.
+• skaffar vi oss en förståelse av den del av stiftelsens interna
+kontroll som har betydelse för vår revision för att utforma
+granskningsåtgärder som är lämpliga med hänsyn till om-
+ständigheterna, men inte för att uttala oss om effekti-
+viteten i den interna kontrollen.
+• utvärderar vi lämpligheten i de redovisningsprinciper som
+används och rimligheten i styrelsens uppskattningar i
+redovisningen och tillhörande upplysningar.
+• drar vi en slutsats om lämpligheten i att styrelsen använder
+antagandet om fortsatt drift vid upprättandet av årsredo-
+visningen. Vi drar också en slutsats, med grund i de in-
+hämtade revisionsbevisen, om det finns någon väsentlig
+osäkerhetsfaktor som avser sådana händelser eller för-
+hållanden som kan leda till betydande tvivel om stiftelsens
+förmåga att fortsätta verksamheten. Om vi drar slutsatsen
+att det finns en väsentlig osäkerhetsfaktor, måste vi i revi-
+sionsberättelsen fästa uppmärksamheten på upplys-
+ningarna i årsredovisningen om den väsentliga osäker-
+hetsfaktorn eller, om sådana upplysningar är otillräckliga,
+modifiera uttalandet om årsredovisningen. Våra slutsatser
+baseras på de revisionsbevis som inhämtas fram till
+datumet för revisionsberättelsen. Dock kan framtida
+händelser eller förhållanden göra att en stiftelse inte
+längre kan fortsätta verksamheten.
+• utvärderar vi den övergripande presentationen, strukturen
+och innehållet i årsredovisningen, däribland upplys-
+ningarna, och om årsredovisningen återger de under-
+liggande transaktionerna och händelserna på ett sätt som
+ger en rättvisande bild.
+Vi måste informera styrelsen om bland annat revisionens
+planerade omfattning och inriktning samt tidpunkten för den.
 Vi måste också informera om betydelsefulla iakttagelser under
 revisionen, däribland de eventuella betydande brister i den
 interna kontrollen som vi identifierat.
-PVMAW-WNHL2-EANI2-NIZVY-OFEBE-F3L7E
-:lekcyntnemukod
-oenneP
+
+Penneo dokumentnyckel: E7L3F-EBEFO-YVZIN-2INAE-2LHNW-WAMVP
 
 <!-- sida 27 -->
 
@@ -1071,9 +1095,8 @@ Ernst & Young AB
 Maria Strandberg
 Auktoriserad revisor
 2 (2)
-PVMAW-WNHL2-EANI2-NIZVY-OFEBE-F3L7E
-:lekcyntnemukod
-oenneP
+
+Penneo dokumentnyckel: E7L3F-EBEFO-YVZIN-2INAE-2LHNW-WAMVP
 
 <!-- sida 28 -->
 
@@ -1113,9 +1136,8 @@ utsedd lekmannarevisor     utsedd lekmannarevisor
 Rolf-Arne Ullaeus
 Av kommunfullmäktige
 utsedd lekmannarevisor
-5YMBN-K0251-BH7EF-8WI2A-H3FUZ-6TJ04
-:lekcyntnemukod
-oenneP
+
+Penneo dokumentnyckel: 40JT6-ZUF3H-A2IW8-FE7HB-1520K-NBMY5
 
 <!-- sida 29 -->
 
@@ -4037,7 +4059,7 @@ Motion till Kommunfullmäktige . Den 1 april 2021
 Demokratidag
 
 För ett hundra år sedan, den 26 januari 1921, togs det slutgiltiga beslutet i riksdagens
-andrtakammarsal som innebar att kvinnor och män nu kunde rösta tillsammans för första gången.
+andrakammarsal som innebar att kvinnor och män nu kunde rösta tillsammans för första gången.
 Vi kan idag glädja oss åt att vårt demokratiska styrelseskick fyller ett sekel men det är en kort tid i
 vår känsliga världshistoria. Demokratin är ung och demokratin är skör.
 
@@ -4384,9 +4406,7 @@ Redovisning av kommunalt partistöd
 
 Partiuppgifter
 Parti Organisationsnummer Kontonummer
-Kungsbackaborna a
 Utdelningsadress E-postadress
-äfotgkuingsbockabarness
 Postnummer Postort Telefonnummer
 Kungsbacka
 
@@ -4672,8 +4692,6 @@ uppgifterna. Min bedömningÅår atf redovisningen ger en rättvisande bild av h
 
 Datum 2623 -OY- IT
 
-ÅA
-
 Granskningsrapport
 
 Alternativ 2 (använd antingen alternativ 1 eller 2)
@@ -4829,7 +4847,7 @@ Summa utgifter för aktiviteter under perioden = 288 os
 
 <!-- sida 139 -->
 
-23\)
+2(3)
 
 C Tjänsteutbyte till delar av partiorganisationen utanför kommunen
 
@@ -5046,7 +5064,6 @@ Granskares anteckningar
 —LL RTR 7
 
 Överföring till Motprestation | Kronor
-Miljöpartiet de Gröna riks | RTR Ta rn sationsstöd, information, | 5 830:-
 ——  —— —  X—-—  .z:  !MWDLADS0s Oc nätver ga
 TI
 I
@@ -5118,8 +5135,6 @@ f
 
 / /
 
-TA / sia oh Ö / fe,
-VAD: Ku / / bk Kd / MipdJÖOL LE
 Få
 
 Utdelpingsadress
@@ -5155,8 +5170,6 @@ Kommunikation — webb
 23 622
 
 Kommunikation — annonsering
-
-é é OSS
 
 Kommunikation — trycksaker
 
@@ -5223,7 +5236,6 @@ Ri ; I 7 Å ?
 / ,
 ( 77 EM 7Å £ 33
 Nargnförtydligande — A Datum r A 2
-Eg z a /5” Kå Vr, Fars A / ; a za 9 K ÅÄ (6
 z SAR ODOLLTET JANDE EEE
 
 Granskningsrapport
@@ -5337,8 +5349,6 @@ med summa tillgångar per 2022-12-31 på 310114,45 kr.
 Visby 2023-01-16
 
 <!-- sida 149 -->
-
-TE Sverigedemokraterna
 
 Redovisning av hur kommunalt partistöd har använts och
 
@@ -5727,7 +5737,7 @@ Styrelsesammanträde 2023-05-03
 TJOLÖHOLMS
 SLOTT
 
-Plats och tid Tjolöholms slott/Digitalt via Teams 16.00-16.30
+Plats och tid Tjolöholms slott/Digitalt via Teams 16.00-1 6.30
 
 Beslutande Tedamöter
 Berit Bergström (M), ordförande
@@ -5753,7 +5763,7 @@ Stadshuset 2023-05-08
 
 Plats och tid
 
-Underskrifter Sekreterare \$ 19-20
+Underskrifter Sekreterare § 19-20
 
 (Eljsabeth Elfströl
 
@@ -5794,7 +5804,7 @@ Sammanträdesdatum
 
 Styrelsesammanträde 2023-05-03
 
-\$19
+§19
 
 Finansiering av Manegens ombyggnation
 
@@ -5838,7 +5848,7 @@ Sammanträdesdatum
 
 Styrelsesammanträde 2023-05-03
 
-\$20
+§20
 
 Nästa sammanträde
 
@@ -6118,36 +6128,60 @@ Magasinet och konsertområden bemannas  utifrån behov med fast- alt. timanstäl
 
 <!-- sida 176 -->
 
-Åtgärder      Manegen:        940    kvm     ombyggnad          och   ca  50   kvm     tillbyggnad
+Åtgärder      Manegen:         940    kvm    ombyggnad          och    ca  50   kvm    tillbyggnad
 
-•  Dagens innanmäte rivs, konstruktion och byggnadens       •  Varuintag och distribution ut till besöksmålets serveringar
+•  Dagens innanmäte rivs, konstruktion och byggnadens
 
-form bibehålls.                                             sker i byggnadens norra gavel.
+form bibehålls.
 
-•  Golvet sänks omkring 50 cm, vilket ökar                  •  Byggnaden  isoleras (värme och ljud) och ges ett nytt, mer
+•  Golvet sänks omkring 50 cm, vilket ökar
 
-tillgängligheten till byggnaden.                            effektivt, värmesystem.
+tillgängligheten till byggnaden.
 
-•  Entrén flyttas och placeras på västra respektive östra   •  Nya ventilationssystem för att serva personalutrymmen,
+•  Entrén flyttas och placeras på västra respektive östra
 
-långsidan, mot gården mellan Magasinet och                  servering och kök.
+långsidan, mot gården mellan Magasinet och
 
 Manegen  och mot vägen mellan byn och slottet.
-•  Besökstoaletter till serveringen byggs.
+
 •  I byggnaden blir halva lokalen avsatt för ett
-•  Nytt restaurangkök för att serva hela besöksmålet byggs.
+
 produktions- och förädlingskök med
-•  Utvändigt läggs taket om, fasadpanelen byts, nya fönster-
+
 förvaringsutrymmen, denna del får även en
-och dörrpartier installeras.
+
 övervåning med personal- och teknikutrymmen.
-•  På långsidan mot Magasinet förläggs en tillbyggnad som
+
 •  I byggnadens södra halva blir servering med full
-fungerar som en kiosk och bar för evenemangsområdet.
+
 takhöjd och sittplatser för omkring 150 personer.
 Stora glaspartier (delvis öppningsbara) monteras mot
 
 vagnsmuseet och slottet.
+
+•  Varuintag och distribution ut till besöksmålets serveringar
+
+sker i byggnadens norra gavel.
+
+•  Byggnaden isoleras (värme och ljud) och ges ett nytt, mer
+
+effektivt, värmesystem.
+
+•  Nya ventilationssystem för att serva personalutrymmen,
+
+servering och kök.
+
+•  Besökstoaletter till serveringen byggs.
+
+•  Nytt restaurangkök för att serva hela besöksmålet byggs.
+
+•  Utvändigt läggs taket om, fasadpanelen byts, nya fönster-
+
+och dörrpartier installeras.
+
+•  På långsidan mot Magasinet förläggs en tillbyggnad som
+
+fungerar som en kiosk och bar för evenemangsområdet.
 
 <!-- sida 177 -->
 
@@ -6209,62 +6243,84 @@ Kalkylen bygger på enkla material. Kostnaden för kök minskar då vi inte köp
 
 <!-- sida 183 -->
 
-Konsekvenser       och   kostnader     för  att  driva  affärsområdet        Mat   och   Dryck
+Konsekvenser        och  kostnader      för  att driva   affärsområdet       Mat    och  Dryck
 
-som   står  för  46  %  av  besöksomsättningen
+som    står för  46  %  av  besöksomsättningen
 
-Följa lagkraven- och underhållsplan 17,5 milj kr           Ombyggnationen  34,1 milj kr
+Följa lagkraven- och underhållsplan 17,5 milj kr
 
-Omfattande renoveringar och investeringar     Vi uppfyller arbetsmiljö-, livsmedels-och alkohollagen
+Omfattande renoveringar och investeringar
+
 i tre kök krävs för att uppfylla arbetsmiljö-, livsmedels-och
-alkohollagen ca 9 miljkr                   Minskade personalkostnader 1 917 000 kr/år
+alkohollagen ca 9 miljkr
 
-Underhållsbehovet Manegen är 8,5 miljkr              Effektiv produktion -tre kök blir ett
+Underhållsbehovet Manegen är 8,5 miljkr
 på fem år oavsett
-Tillväxt genom grupper över 90 personer upptill 1 000
-Lönsamhetsutmaning                    personer på området. Även catering utanför Tjolöholm kan
 
-erbjudas.
+Lönsamhetsutmaning
+
 Ineffektiv produktion, höga lagerkostnader
-och logistikproblem                    Kapacitetsökning i Manegen från 78 sittplatser till 150
-sittplatser + 80 sittplatser på andra våning.
-Höga drifts-och ökade personalkostnader
-Tydlig organisation där vi kan mäta och spåra lönsamheten
-Ingen tillväxt –vi kan inte leverera mat och dryck till grupper och produktiviteten
-som är fler än 90 personer/tillfälle
-Tillgänglighets-och energianpassade lokaler
-Otydlig organisation utan mätbarhet på lönsamhet och
 
-produktivitet                      Flexibilitet –kan öppna vid behov eftersom vi alltid är på
-plats i lokalerna -funktionell arbetsplats
+och logistikproblem
+
+Höga drifts-och ökade personalkostnader
+
+Ingen tillväxt –vi kan inte leverera mat och dryck till grupper
+som är fler än 90 personer/tillfälle
+
+Otydlig organisation utan mätbarhet på lönsamhet och
+produktivitet
+
 Risk för sjukskrivning och hög personalomsättning
+
+Ombyggnationen  34,1 milj kr
+
+Vi uppfyller arbetsmiljö-, livsmedels-och alkohollagen
+
+Minskade personalkostnader 1 917 000 kr/år
+
+Effektiv produktion -tre kök blir ett
+
+Tillväxt genom grupper över 90 personer upptill 1 000
+personer på området. Även catering utanför Tjolöholm kan
+erbjudas.
+
+Kapacitetsökning i Manegen från 78 sittplatser till 150
+sittplatser + 80 sittplatser på andra våning.
+
+Tydlig organisation där vi kan mäta och spåra lönsamheten
+och produktiviteten
+
+Tillgänglighets-och energianpassade lokaler
+
+Flexibilitet –kan öppna vid behov eftersom vi alltid är på
+plats i lokalerna -funktionell arbetsplats
+
 Minskade transporter på hela området
 
 Skapar utveckling av besöksmålet
 
 <!-- sida 184 -->
 
-uniForm KUB301 v 1.0, 2005-11-25
-
 Stadgar för Stiftelsen Tjolöholm
 
-Godkända av kommunfullmäktige i Kungsbacka 1996-10-10, KF \$ 187/96 samt
+Godkända av kommunfullmäktige i Kungsbacka 1996-10-10, KF § 187/96 samt
 permutation genom Kammarkollegiets beslut 1997-12-22, dnr 430-6320-97 med
 omprövningsbeslut 1998-02-03, dnr 438-454-98 (lagakraftvunna genom regeringens
 beslut 1998-09-03, Ku98/216/Ka).
 
 Beslut om ändring 2007-08-28. Ändring godkänd av kommunfullmäktige i
-Kungsbacka 2007-06-14, \$ 109 samt permutation genom Kammarkollegiets beslut
+Kungsbacka 2007-06-14, § 109 samt permutation genom Kammarkollegiets beslut
 2007-12-03, dnr 430-18971-07
 
-\$1
+§1
 
 Stiftelsen, vars benämning (firma) är Stiftelsen Tjolöholm, har till ändamål att äga
 och förvalta Tjolöholms egendom i Kungsbacka kommun och där utveckla för
 Västsverige värdefulla verksamheter inom kulturområdet och för turismen och
 friluftslivet.
 
-\$2
+§2
 
 Stiftelsens huvudman är Kungsbacka kommun.
 
@@ -6275,7 +6331,7 @@ Huvudman för stiftelsen skall tillskjuta för stiftelsens verksamhet erforderli
 
 Stiftelsekapitalet uppgår till 10,5 miljoner kronor, varav Kungsbacka kommun har
 tillskjutit 8,5 miljoner kronor och Västkuststiftelsen 2 miljoner kronor. Kapitalet
-skall användas för förvärv av egendom enligt \$ 1.
+skall användas för förvärv av egendom enligt § 1.
 
 1 (3)
 
@@ -6292,32 +6348,34 @@ Fax 0300-54 41 66
 info(tjoloholm.se
 www.tjoloholm.se
 
+uniForm KUB301 v 1.0, 2005-11-25
+
 <!-- sida 185 -->
 
 Enligt särskilt avtal mellan Kungsbacka kommun och Västkuststiftelsen skall 2 (3)
 Västkuststiftelsen svara för åtgärder för friluftsliv och naturvård inom egendomen
 med årligt bidrag från Västkuststiftelsen.
 
-84
+§4
 Till stiftelsen inflytande medel skall bilda stiftelsens fond.
 
 Fondmedel, som icke placerats i stiftelsen tillhörig fast egendom, skall insättas på
 bankräkning.
 
-85
+§5
 
 Stiftelsen äger mottaga gåva, donation, legat eller motsvarande under förutsättning
 att därvid inte föreskrivits villkor, som strider mot stiftelsens stadgar och att villkoren
 kan godkännas av styrelsen.
 
-86
+§6
 
 Stiftelsens angelägenheter handhas av en styrelse, som har sitt säte i Kungsbacka.
 Styrelsen ska ha lägst fem och högst nio ordinarie ledamöter med lägst fem och högst
 sju suppleanter.
 
 Styrelsen utses av kommunfullmäktige i Kungsbacka kommun för en tid av fyra år
-och mandattiden skall sammanfalla med den tid, som anges i 6 kap 12 \$
+och mandattiden skall sammanfalla med den tid, som anges i 6 kap 12 §
 kommunallagen. Kommunfullmäktige bestämmer i vilken ordning utsedda
 suppleanter inträder i tjänstgöring vid förfall för ordinarie ledamöter.
 
@@ -6330,7 +6388,7 @@ och vid lika röstetal den mening, som biträds av ordföranden.
 Stiftelsen äger företräda stiftelsen och själv eller genom ombud föra dess talan vid
 som utom domstol.
 
-87
+§7
 Styrelsen sammanträder på kallelse av ordföranden eller — vid förfall av denne — av
 vice ordförande.
 
@@ -6339,7 +6397,7 @@ sammanträde.
 
 Kallelse till sammanträde skall utgå minst tio dagar före sammanträdet.
 
-\$8
+§8
 Stiftelsens firma tecknas, förutom av styrelsen, av den eller de personer inom eller
 utom styrelsen, som styrelsen därtill utser.
 
@@ -6519,7 +6577,7 @@ För kommunens helägda bolag eller helägda stiftelser, utgår en marknads-
 mässig årlig borgensavgift på utnyttjad borgen, baserad på bolagets/stiftelsens
 bedömda villkor att erhålla krediter i marknaden utan kommunal borgen.
 
-erg KungsbackaSäröFjäråsAsaFrillesåsOnsalaKullavik Vallda Anneberg KungsbackaSäröFjäråsAsaFrillesåsOnsalaKullavik!
+erg KungsbackaSäröFjäråsAsaFrillesåsOnsalaKullavikValldaAnneberg KungsbackaSäröFjäråsAsaFrillesåsOnsalaKullavik!
 
 Kungsbacka kommun » 434 81 Kungsbacka « 0300-83 40 00
 infoQkungsbacka.se « www.kungsbacka.se
@@ -7353,7 +7411,7 @@ Kommunen har tagit fram förslag till Detaljplan. Förslaget har varit utställt
 mellan 2022-05-03 och 2022-05-31. Granskning genomfördes mellan 2023-02-28 och
 2023-03-21.
 
-Ett Principavtal (KS/2021-05-25, \$ 150), Principavtalet, har tecknats mellan
+Ett Principavtal (KS/2021-05-25, § 150), Principavtalet, har tecknats mellan
 Kommunen, Exploatören och Köparen. Principavtalet föreskriver att ett
 Genomförandeavtal, Avtalet, ska upprättas innan Detaljplanen kan antas av
 Byggnadsnämnden.
@@ -7827,7 +7885,6 @@ av Exploatörens respektive Köparens eller dennes entreprenörers verksamhet in
 Planområdet. Kommunen svarar, efter samråd med Exploatören och Köparen, för
 återställandet på Exploatörens respektive Köparens bekostnad och Kommunen
 fakturerar Exploatören respektive Köparen efter utfört arbete.
-.. MN
 
 <!-- sida 218 -->
 
@@ -8278,7 +8335,6 @@ tillämpningen av detta avtal ska avgöras av allmän domstol.
 
 Detta avtal är upprättat i tre likalydande exemplar varav Parterna tagit ett vardera.
 
-Ont: bak207\$
 2023-23 —a
 för Kungsbacka Gjutaren 2 AB, C/O Riksbyggen ekonomisk förening
 
@@ -8326,13 +8382,6 @@ Sign.
 <!-- sida 226 -->
 
 Bilaga A
-
-FEN ng
-SÄTE
-MN
-FOR.
-dn Hig
-JENNA
 
 Wise
 0 We
@@ -8388,7 +8437,7 @@ Enheten för befolkningsskydd
 
 Anders Johannesson Malin Olsson
 
-Överklagande: Detta beslut får enligt 9 kap. 2 \$ lagen om skyddsrum inte överklagas,
+Överklagande: Detta beslut får enligt 9 kap. 2 § lagen om skyddsrum inte överklagas,
 
 Beslut tillfällig begränsning 2019:1
 
@@ -8401,13 +8450,205 @@ Postadress: Telefon: 0771-240 240 registratoramsb.se Org.nr: 202100-5984
 
 <!-- sida 230 -->
 
+Bilaga E
+
 <!-- sida 231 -->
+
+PLANBESTÄMMELSER
+Följande gäller inom områden med nedanstående
+beteckningar. Endast angiven användning och utformning
+är tillåten. Där beteckning saknas gäller bestämmelsen
+inom hela området.
+GRÄNSER
+Användningsgräns.
+ANVÄNDNING AV MARK
+Allmän platsmark
+GATA 'Gata.
+| Gata upp till en höjd av 2,7 meter ovan mark.
+VÄG, ! Väg upp till en höjd av 2,7 meter ovan mark.
+Kvartersmark
+B Bostäder.
+ovan mark där balkonger och burspråk är
+tillåtna att kraga ut över allmän plats.
+P, Parkeringsgarage får uppföras under skolgård
+— "samt byggnad.
+Pa Parkeringsgarage får uppföras under
+Ps Parkeringsgarage får uppföras i markplan.
+al nt ska dnas i
+sockelvåning med ett djup om minst fem
+meter mot angränsande gata.
+Beteckningar inom parentes
+(X) ; Beteckning i kartan som omgärdas av
+parentes anger bestämmelse i annat plan än
+markplan.
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN
+PLATS
+Avgränsad via egenskapsgräns och
+användningsgräns
+Stängsel, utfart och annan utgång
+Utformning av allmän plats
+beläggning Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt.
+ge-väg, Gång-och cykelväg.
+parkering, Parkeringsplats får ej anordnas.
+plantering, Plantering som exempelvis växtbädder, träd
+och buskar ska finnas längs gatan.
+Trädet får endast fällas om det är sjukt eller
+utgör en säkerhetsrisk.
+EGENSKAPSBESTÄMMELSER FÖR
+KVARTERSMARK
+träd,
+I Avgränsad via egenskapsgräns och
+användningsgräns
++" « Marken får inte förses med byggnad. Murar
+I "upp till en meters höjd får uppföras.
+komplementbyggnad.
+| Markens anordnande och vegetation
+n, Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt.
+na Plantering som exempelvis växtbäddar, träd
+i och buskar ska finnas längs gatan.
+Markreservat för allmännyttiga ändamål
+I U, Markreservat för allmännyttiga underjordiska
+| ledningar.
+iPlacering
+| 5, Byggnad ska placeras minst en meter från
+I användningsgräns eller angränsande
+angöringsgata.
+1 Pa Minst två passager/släpp om minst tre meters
+| bredd vardera ska finnas inom området som
+I binder samman GATA och GCVÄG.
+i Skydd mot störningar
+m, Om ekvivalent ljudnivå vid bostadens fasad är
+\>60 dBA ska minst hälften av bostadsrummen
+| vara vända mot ljuddämpad sida,
+I För små bostäder med boarea max 35 kvm
+| gäller istället att minst hälften av
+I bostadsrummen ska vara vända mot
+ljuddämpad sida om
+H ekvivalent ljudnivå vid bostadens fasad är >65
+Med ljuddämpad sida menas fasad som har
+en ekvivalent ljudnivå på högst 55 dBA och
+| maximal ljudnivå nattetid påhögst 70 dBA.
+Högsta tillätna ekvivalenta bullernivå för
+I skolgård som är avsedd förlek, vila och
+| pedagogisk verksamhet är 50 dBA och
+I maximal ljudnivå är 70 dBA. För övriga
+i vistelseytor inom skolgården är högsta tillåtna
+I ekvivalenta ljudnivå 55 dBA och maximal
+ljudnivå är 70 dBA.
+Högsta nockhöjd är \<angivet> meter över
+angivet nollplan .
+<> Högsta nockhöjd är \<angivet> meter för
+| huvudbyggnad och 4 meter för
+f, Endast småhus får uppföras.
+| Utformning
+Byggnad ska uppföras sammanbyggd mot
+Varlavägen.
+fa Komplementbyggnader om en högsta BYA
+om 200 kvm får uppföras till en högsta
+nockhöjd om 4 meter. Taken ska vara
+vegetationsklädda där högst 50 96 av taken
+får utformas som terrass.
+fa Komp bygg ska upp
+vegetationsklädda tak.
+fs Högsta höjd mellan ovansida bjälklag på
+första bostadsvåning/marknivå på
+byggnaden för angränsande gata får inte vara
+merän 1,5 meter.
+4 Högsta höjd mellan ovansida bjälklag på
+första våning/marknivå på skolgård och
+medelmarknivå
+vid byggnaden för angränsande gata får inte
+vara mer än 1,5
+meter.
+f; Balkong får kraga ut maximalt en meter över
+plusmark. Skärmtak för uppföras intill entréer.
+Trappor och ramp får uppföras.
+med
+tj Vind får endast inredas med teknikutrymmen
+samt hisschakt och/eller trapphus.
+fy, Byggnad får inrymma högst fyra
+I (4) våningar exklusive parkeringsgarage. För
+I vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+| motsvarande 3096 av fasadens längd.
+i fy Byggnad får inrymma högst fem
+| (5) våningar exklusive parkeringsgarage. För
+| vind får takkupor, hisstoppar och
+| frontespiser anordnas till en längd
+4 motsvarande 3096 av fasadens längd.
+fa Byggnad får inrymma högst sex
+(6) våningar exklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+få Byggnad får inrymma högst fyra
+(4) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+fu Byggnad får inrymma högst fem
+I (5) våningar inklusive parkeringsgarage. För
+I vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+Tr Byggnad fär inrymma högst sex
+(6) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+Utförande
+b, Minst 4096 av bostadsgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av
+kor byggnad får till äknas.
+placeras mot Varlavägen.
+ba Ytan inom egenskapsområdet ska delvis
+utformas som entrétorg för
+utbildningslokalerna med inslag av en annan
+markbeläggning än asfalt och där inslag av
+grönska ska finnas.
+ba Minst 4096 av skolgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av
+dagvatten. Vegetationsklädda tak på
+komplementbyggnad får tillgodoräknas.
+Passage för gående och cyklister ska hållas
+öppen mellan Industrigatan och Varlavägen.
+Utnyttjandegrad
+| es Största byggnadsarea är 90 m? per bostad,
+Huvudbyggnad får sammanbyggas i
+inklusive komplementbyggnad.
+| fastighetsgräns.
+användningsområdet.
+es Minst 80 26 av fasadens längd i markplan som
+| vetter mot TORG ska inrymma centrumlokaler
+om minst 180 kvm.
+a. Startbesked får inte ges för byggnation förrän
+markförorening ner till känslig användning har
+avhjälpts från platsen.
+: Ändrad lovplikt
+I a, Bygglov krävs även för åtgärd som utförs i
+| Huvudmannaskap
+I Kommunalt huvudmannaskap för allmän plats.
+Bilaga F
+Skala 1:1000 I A1, skala 12000 iA3
+TECKENFÖRKLARING GRUNDKARTA
+SWEREF 99
+är baserad på
+Höjdkurva 5 m
+gatunamn
+Höjdpunkt
+-- Gång-/ cykelväg, infart, stig
+\- — Höjdkurva I m
+Detaljplan för stadsutveckling inom | Granskningshandling
+Kunasbacka kommun 2022-04-21
+andardförfarande
 
 <!-- sida 232 -->
 
 <!-- sida 233 -->
 
-Beslut Bilaga H 4 (8)
+Beslut Bilaga H 1 (8)
 
 dy ön
 ”. Datum Diarienummer
@@ -8434,11 +8675,11 @@ kraft.
 
 Beslutet förenas med följande villkor:
 
-1\) Avverkning av alléträden får endast ske mellan I september och 30
+1\) Avverkning av alléträden får endast ske mellan 1 september och 30
 april.
 
 2\) Träden ska återplanteras i enlighet med ansökan och punkterna a-d
-nedan och så att definitionen av en allé uppfylls i enlighet med bilaga I
+nedan och så att definitionen av en allé uppfylls i enlighet med bilaga 1
 till förordningen (1998:1252) om områdesskydd enligt miljöbalken
 m.m.
 
@@ -8571,32 +8812,32 @@ Länsstyrelsen Hallands län Beslut 4 (8)
 
 Bestämmelser som beslutet grundas på
 
-9 \$ förordning (1998:1252) om områdesskydd enligt miljöbalken
+5 § förordning (1998:1252) om områdesskydd enligt miljöbalken
 (MB) m.m.
 
-Alléer med vuxna lövträd omfattas av biotopskydd enligt 7 kap. 11 \$
+Alléer med vuxna lövträd omfattas av biotopskydd enligt 7 kap. 11 §
 MB. Med vuxna träd avses, enligt Naturvårdsverkets vägledning för
 alléer, träd som uppnått åldern 30 år eller med en diameter om minst 20
 cm i brösthöjd.
 
-7 kap. 11 8 MB
+7 kap. 11 § MB
 
 Syftet med biotopskyddet är att mindre mark- och vattenområden som
 utgör livsmiljö för hotade djur- och växtarter eller som annars särskilt
-skyddsvärda ska bevaras. Enligt 7 kap. 11 \$ MB får inte verksamheter
+skyddsvärda ska bevaras. Enligt 7 kap. 11 § MB får inte verksamheter
 eller åtgärder vidtas som kan skada naturmiljön i ett
 biotopskyddsområde. Om det finns särskilda skäl, får dispens från
 förbudet ges i det enskilda fallet. Bedömningen av om det föreligger
 särskilda skäl sker efter avvägning mellan skadans betydelse och tyngd i
 skälet att göra intrång i biotopen.
 
-Dispens får, enligt 7 kap. 26 \$ MB, endast meddelas om det är förenligt
+Dispens får, enligt 7 kap. 26 § MB, endast meddelas om det är förenligt
 med förbudets syfte. Enligt 7 kap. 25 & MB ska vid prövning enligt
 biotopskyddsbestämmelserna hänsyn även tas till enskilda intressen. En
 inskränkning i en enskilds rätt att använda mark eller vatten får inte gå
 längre än vad som krävs för att syftet med skyddet ska tillgodoses.
 
-16 kap. 2 och 9 88 MB
+16 kap. 2 och 9 §§ MB
 
 Tillstånd, godkännande eller dispens enligt MB eller enligt föreskrifterna
 som har meddelats med stöd av MB, får ges för begränsad tid och får
@@ -9441,7 +9682,7 @@ Sida 2 av 3 2023-03-21
 
 <!-- sida 251 -->
 
-Metria FastighetSök - Kungsbacka Gjutaren I
+Metria FastighetSök - Kungsbacka Gjutaren 1
 
 a
 
@@ -10356,7 +10597,7 @@ Sida 11 av 12 2023-04-13
 
 <!-- sida 263 -->
 
-Metria FastighetSokK - Kungsbacka Kungsbacka VANA
+Metria FastighetSoK - Kungsbacka Kungsbacka VANA
 
 Åtgärd
 Fastighetsrättsliga åtgärder
@@ -10600,6 +10841,358 @@ Kommundirektör
 3(3)
 
 <!-- sida 267 -->
+
+PLANBESTÄMMELSER
+
+Följande gäller inom områden med nedanstående
+beteckningar. Endast angiven användning och utformning
+är tillåten. Där beteckning saknas gäller bestämmelsen
+inom hela området.
+
+GRÄNSER
+
+» Planområdesgräns.
+
+Användningsgräns.
+fota Egenskapsgräns.
+
+\- Illustrationsgräns.
+
+ANVÄNDNING AV MARK
+Allmän platsmark
+GATA Gata.
+
+2 |
+GATA, | Gata upp till en höjd av 2,7 meter ovan mark. |
+
+[GC VÄG] Gång- och cykelväg.
+
+PARK — Park.
+TORG Torg.
+VÄG iväg.
+VÄG, T Väg upp till en höjd av 2,7 meter ovan mark.
+Kvartersmark
+[ B = ' Bostäder.
+(a Transformatorstation. |
+
+SO Skola.
+
+B. Bostäder från och med en höjd av 2,7 meter
+— — — pvan mark där balkonger och burspråk är
+tillåtna att kraga ut över allmän plats.
+C, | Centrumverksamhet fär finnas i bottenplan.
+P,  |Parkeringsgarage får uppföras under skolgård
+—— samt byggnad.
+| P. Parkeringsgarage får uppföras under
+—— —-  bostadsgård samt byggnad.
+| P, Parkeringsgarage får uppföras i markplan.
+
+Lokalyta för centrumändamål, bostäder och
+
+bostadskomplement ska anordnas i
+
+sockelvåning med ett djup om minst fem
+
+meter mot angränsande gata.
+Beteckningar inom parentes
+
+CO
+
+Beteckning i kartan som omgärdas av
+parentes anger bestämmelse i annat plan än
+markplan.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN |
+PLATS
+Avgränsad via egenskaps- och användningsgräns
+
+Stängsel, utfart och annan utgång
+pb O- - Og Utfartsförbud.
+Utformning av allmän plats
+beläggning Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt. |
+ge-väg, Gång-och cykelväg.
+parkering, Parkeringsplats får ej anordnas.
+
+plantering, Plantering som exempelvis växtbäddar, träd
+och buskar ska finnas längs gatan,
+
+Skydd mot störningar
+
+EGENSKAPSBESTÄMMELSER FÖR |
+KVARTERSMARK
+Avgränsad via egenskaps- och användningsgräns |
+
+Begränsning av markens utnyttjande
+
+Marken får inte förses med byggnad. Murar
+upp till en meters höjd får uppföras.
+
+Marken får endast förses med
+"= komplementbyggnad.
+
+Markens anordnande och vegetation
+
+Nn, Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt.
+
+re retad
+++
+
+Plantering som exempelvis växtbäddar, träd
+
+na
+och buskar ska finnas längs gatan.
+
+Placering
+
+På Byggnad ska placeras minst en meter från
+
+användningsgräns eller angränsande
+angöringsgata.
+
+Minst två passager/släpp om minst tre meters |
+bredd vardera ska finnas inom området som |
+binder samman GATA och GCVÄG.
+
+P2
+
+Om ekvivalent ljudnivå vid bostadens fasad är
+\>60 dBA ska minst hälften av bostadsrummen
+vara vända mot ljuddämpad sida.
+
+För små bostäder med boarea max 35 kvm
+gäller istället att minst hälften av
+bostadsrummen ska vara vända mot
+ljuddämpad sida om
+
+ekvivalent ljudnivå vid bostadens fasad är >65
+dBA.
+
+Med ljuddämpad sida menas fasad som har
+en ekvivalent ljudnivå på högst 55 dBA och
+maximal ljudnivå nattetid påhögst 70 dBA.
+
+mm;
+
+Högsta tillåtna ekvivalenta bullernivå för
+skolgård som är avsedd för lek, vila och
+pedagogisk verksamhet är 50 dBA och
+maximal ljudnivå är 70 dBA. För övriga
+vistelseytor inom skolgården är högsta tillåtna
+ekvivalenta ljudnivå 55 dBA och maximal
+ljudnivå är 70 dBA.
+
+Utformning
+
+=S
+
+mMm2
+
+Högsta nockhöjd är \<angivet> meter över
+angivet nollplan .
+
+Högsta nockhöjd är \<angivet> meter för
+huvudbyggnad och 4 meter för
+komplementbyggnad. .
+
+uu Endast småhus får uppföras.
+
+fa Byggnad ska uppföras sammanbyggd mot
+
+Varlavägen.
+
+Komplementbyggnader om en högsta BYA
+om 200 kvm får uppföras till en högsta
+nockhöjd om 4 meter. Taken ska vara
+vegetationsklädda där högst 50 26 av taken
+får utformas som terrass.
+
+Komplementbyggnader ska uppföras med
+vegetationsklädda tak.
+
+Högsta höjd mellan ovansida bjälklag på
+första bostadsvåning/marknivå på
+bostadsgård och medelmarknivå vid
+byggnaden för angränsande gata får inte vara
+mer än 1,5 meter.
+
+Högsta höjd mellan ovansida bjälklag på
+första våning/marknivå på skolgård och
+medelmarknivå
+
+fa
+
+Le
+fs
+
+fs
+
+träd,
+
+Trädet får endast fällas om det är sjukt eller
+utgör en säkerhetsrisk.
+
+vid byggnaden för angränsande gata får inte
+vara mer än 1,5
+meter.
+
+f, Balkong får kraga ut maximalt en meter över
+plusmark. Skärmtak för uppföras intill entréer.
+
+Trappor och ramp får uppföras.
+
+Vind får endast inredas med teknikutrymmen
+samt hisschakt och/eller trapphus.
+
+Byggnad får inrymma högst fyra
+
+(4) våningar exklusive parkeringsgarage. För |
+vind får takkupor, hisstoppar och
+
+frontespiser anordnas till en längd
+motsvarande 30746 av fasadens längd.
+
+Byggnad får inrymma högst fem
+
+(5) våningar exklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3076 av fasadens längd.
+Byggnad får inrymma högst sex
+
+(6) våningar exklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 30246 av fasadens längd.
+Byggnad får inrymma högst fyra
+
+(4) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+Byggnad får inrymma högst fem
+
+(5) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 30246 av fasadens längd.
+
+Byggnad får inrymma högst sex
+
+(6) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 30960 av fasadens längd.
+
+Utförande
+
+b, Minst 4094 av bostadsgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av
+dagvatten. Vegetationsklädda tak på
+
+komplementbyggnad får tillgodoräknas.
+
+Minst 2 entréer/genomgående trapphus ska
+placeras mot Varlavägen.
+
+Ytan inom egenskapsområdet ska delvis
+utformas som entrétorg för
+utbildningslokalerna med inslag av en annan
+markbeläggning än asfalt och där inslag av
+grönska ska finnas.
+
+Minst 4024 av skolgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av |
+dagvatten. Vegetationsklädda tak på
+komplementbyggnad får tillgodoräknas.
+Passage för gående och cyklister ska hållas
+öppen mellan Industrigatan och Varlavägen.
+
+Utnyttjandegrad
+
+bz2
+ba
+
+bs
+
+bs
+
+e, Största byggnadsarea är \<angivet> m?.
+
+e, Minsta fastighetsstorlek är 200 kvm.
+
+[AN Största byggnadsarea är 90 m? per bostad,
+inklusive komplementbyggnad.
+Huvudbyggnad får sammanbyggas i
+fastighetsgräns.
+
+e, Största byggnadsarea är 1500 m? inom
+användningsområdet.
+
+es, Minst 80 9 av fasadens längd i markplan som |
+
+vetter mot TORG ska inrymma centrumlokaler
+om minst 180 kvm.
+Villkor för startbesked
+a Startbesked får inte ges för byggnation förrän
+markförorening ner till känslig användning har
+avhjälpts från platsen.
+Ändrad lovplikt
+
+a, Bygglov krävs även för åtgärd som utförs i
+enlighet med PBL 9:4a och 9:4c.
+
+GENOMFÖRANDETID
+Genomförandetiden är 10 år.
+
+Huvudmannaskap
+Kommunalt huvudmannaskap för allmän plats.
+
+Bilaga A
+
+NN 1
+
+TEM,
+
+0
+
+Skala 1:1000 i A1, skala 1:2000 i A3
+
+TECKENFÖRKLARING GRUNDKARTA
+
+Detaljplanen är baserad på koordinatsystemet SWEREF 99
+
+N
+
+1200 och höjdsystemet RH 2000
+
+Aktualitetsdatum grundkarta: 2023-01-20
+
+21 Registernummer, tomtnummer Vägkant, mindre väg
+Af Höjdpunkt a — Vägkant, störe väg
+tj Traktnamn, kvartersnamn — — Vägkant, matargata
+— — Fastighetsgräns = Bostadshus fasad, resp, tak
+\- Gång-/ cykelväg, Infart, stig = == Uthus fasad, resp, fasad
+Höjdkurva 1 m Skärmtak
+Höjdkurva 5 m
+A 4 a - - år |. .
+i Detaljplan för stadsutveckling INOM | Granskningshandling
+rr kvarteret Gjutaren och Liljan
+| i enar
+| oe
+ME un Liljan 1 och 2, Gjutaren 1 och 2 m.fl. EE] |sosutsdatum | instans
+mn [G) Wer i Kungsbacka stad, Samråd PRE
+| No non JA Kunasbacka kommun 2022-04-21
+'d v e Fr a
+i ,. Å.. v Upprättad 2023-02-16 0000-000 | BNI §0X
+| I AR RAR EI
+hh Laga kraft
+| AX | Seal ORON
+[ d i KL Ida Lennartsson Magnus Björned Diarenummer. | Plankostnads-
+I a os Verksamhetschef Plan Planarkitekt 2020-00024 |A
+å SAN MN Yr Detaljplanen är upprättad enligt
+& = HE PLANKARTA |Par2oiosoomes
 
 <!-- sida 268 -->
 
@@ -11736,7 +12329,6 @@ Justerare                         Expedierat/bestyrkt
 
 KUNGSBACKA KOMMUN
 KOMMUNSTYRELSE
-2021 -04- 0 9
 DD Kungsbackaborna
 DV vsssssssönsoneversunsonenen nt RON
 Motion till KF möte 2021-04-13 2021-04-07
@@ -15577,7 +16169,7 @@ Motion
 Närvarorätt för personalföreträdare i politiska nämnder
 
 Bestämmelserna om närvarorätt för företrädare för de anställda i kommunen
-finns i kommunallagen 7 kapitlet 8-17 \$\$. Grundläggande är att närvarorätten
+finns i kommunallagen 7 kapitlet 8-17 §§. Grundläggande är att närvarorätten
 gäller vid sammanträden med andra nämnder än kommunstyrelsen. Med
 nämnder avses organ som har förvaltnings- och verkställighetsuppgifter.
 Närvarorätten gäller inte i utskott, revision, förtroendenämnder, valnämnd
@@ -16640,7 +17232,7 @@ KUNGSBACKA KOMMUN
 Kommunfullmäktige SAMMANTRÄDESPROTOKOLL 24 (54)
 Sammanträdesdatum
 2012-08-14
-\$ 168 KS10-00215/00
+§ 168 KS10-00215/00
 
 Slutrapport och förslag till fortsatt arbete med Invånardialog
 samt upphörande av arbetsordning för Kommunala
@@ -16655,9 +17247,9 @@ Kommunstyrelsen får i uppdrag att under 2012 inarbeta projektet Invånardialog 
 Kungsbacka kommuns styrmodell.
 
 Arbetsordning för Kommunala handikapprådet — KHR — i Kungsbacka, antagen av
-KF \$ 146/2001, upphör härmed att gälla.
+KF § 146/2001, upphör härmed att gälla.
 
-Arbetsordning för Pensionärsrådet i Kungsbacka, antagen av KF \$ 10/1989, upphör
+Arbetsordning för Pensionärsrådet i Kungsbacka, antagen av KF § 10/1989, upphör
 härmed att gälla.
 
 Nämnden för Aldreomsorg och nämnden för Funktionsstöd får i uppdrag att, minst
@@ -16680,7 +17272,7 @@ Slutrapport Invånardialog i Kungsbacka, daterad juni 2012, godkänns och
 
 Sammanfattning
 
-Kommunstyrelsen beslutade 2010-12-14, \$ 269, att Kommunala Handikapprådet och
+Kommunstyrelsen beslutade 2010-12-14, § 269, att Kommunala Handikapprådet och
 Kommunala pensionärsrådet skulle ersättas med pilotprojektet Medborgardialog,
 (senare ersatt med Invånardialog). Förslag till nytt arbetssätt/organisation skulle
 återrapporteras senast juni 2012.
@@ -16700,7 +17292,7 @@ KUNGSBACKA KOMMUN
 Kommunfullmäktige SAMMANTRÄDESPROTOKOLL 25 (54)
 Sammanträdesdatum
 2012-08-14
-\$ 168 KS10-002157/00
+§ 168 KS10-002157/00
 
 Projektet har, som övergripande syfte, fokuserat på att skapa ökad transparens och
 engagemang för de gemensamma frågorna i kommunen bland invånarna och på att
@@ -16724,9 +17316,9 @@ Beslutsunderlag
 Skrivelse från styrgruppsledaren för projektet 2012-06-07, med slutrapport och
 handbok för invånardialog.
 
-Kommunstyrelsens arbetsutskott 2012-06-12, \$ 223
+Kommunstyrelsens arbetsutskott 2012-06-12, § 223
 
-Kommunstyrelsen 2012-06-19, \$ 149
+Kommunstyrelsen 2012-06-19, § 149
 
 Anförande
 
@@ -17262,7 +17854,7 @@ KUNGSBACKA KOMMUN
 Kommunfullmäktige SAMMANTRÄDESPROTOKOLL 28 (58)
 Sammanträdesdatum
 2012-03-13
-\$ 53 KS10-00039/3
+§ 53 KS10-00039/3
 
 Förslag till förändring av tomt- och småhuskön
 
@@ -17320,7 +17912,7 @@ KUNGSBACKA KOMMUN
 Kommuntfullmäktige SAMMANTRÄDESPROTOKOLL 29 (58)
 Sammanträdesdatum
 2012-03-13
-\$ 53 fortsättning KS10-00039/3
+§ 53 fortsättning KS10-00039/3
 
 Kommunen har idag fem (5) exploateringsavtal kvar som reglerar försäljning av
 tomtmark respektive småhus med bostadsrätt. I normalfallet skall 30 procent av
@@ -17335,12 +17927,12 @@ Beslutsunderlag
 
 Kommunstyrelsens förvaltning, skrivelse 2011-12-07
 
-Kommunstyrelsens arbetsutskott 2011-12-13, \$ 433 — Ärendet återremitteras
+Kommunstyrelsens arbetsutskott 2011-12-13, § 433 — Ärendet återremitteras
 Kommunstyrelsens förvaltning, skrivelse 2012-01-18
 
-Kommunstyrelsens arbetsutskott 2012-01-31, \$ 35
+Kommunstyrelsens arbetsutskott 2012-01-31, § 35
 
-Kommunstyrelsen 2012-02-21, \$ 47
+Kommunstyrelsen 2012-02-21, § 47
 
 Proposition
 Ordföranden ställer proposition på kommunstyrelsens förslag och finner det bifallet.
@@ -18692,7 +19284,7 @@ Vid frågor ber jag er kontakta undertecknad.
 (Joakim Hurtig
 Chefsadministratör
 
-Box 121, 432 23 Varberg » Besöksadress: Östra Långgatan 7 » Telefon: 0340-62 84 00 » Fax: 0340-67 71 96 » varbergs.tingsrattedom.se »
+Box 121, 432 23 Varberg » Besöksadress: Östra Långgatan 7 » Telefon: 0340-62 84 00 » Fax: 0340-67 71 96 » varbergs.tingsrattQedom.se »
 www.varbergstingsratt.domstol.se
 Expeditionstid: Måndag- fredag 08.00-16.30
 

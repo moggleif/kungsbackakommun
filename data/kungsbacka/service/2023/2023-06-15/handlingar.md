@@ -12,13 +12,13 @@ kalla_url: https://web.archive.org/web/20250802180147id_/https://kungsbacka.se/d
 sha256: a102f10d7f59a0b9cc8c97cc436ad7a9410a788f723b62da2ac51cc5c308fb4b
 bytes: 9248329
 sidor: 135
-hamtad: 2026-11-17T01:35:53+00:00
-konverterad: 2026-11-17T01:36:48+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-24T16:13:07+00:00
+konverterad: 2026-11-24T16:14:59+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ocr, ok, ocr, ok, ocr, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, tabell-osaker, ok, ok, ok]
-tal_obekraftade: [5, 6, 17, 18, 19, 20, 21, 38, 43, 112, 114, 116, 117, 118, 119, 129]
+tal_obekraftade: [5, 17, 18, 19, 20, 38, 43, 112, 114, 116, 117, 118, 119, 129]
 figurer: [5, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
 tolkade: []
 granskad: null
@@ -1043,7 +1043,7 @@ Thord Brynielsson (SD) | Vk Xx
 Dag Windefjord (-) Ök X
 
 Mattias From (-) Ök X
-SUMMA: | 20 | 30 1 0 0
+SUMMA: | 20 | 30 11 0 0
 
 Justeringsmännens signatur:
 
@@ -1051,7 +1051,7 @@ UKETETESTETTTEEEEPEEPEPEEPEEEEPPEEE
 
 Sida 1 av 1
 
-KF 8122/13
+KF §122/13
 
 Bilaga B
 

@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20241127094532id_/https://kungsbacka.se/d
 sha256: 04abb3f7f0554cc8f945260745e485eac6379acf7f085bb8961bc257bfb935a2
 bytes: 26473603
 sidor: 272
-hamtad: 2026-11-17T01:30:23+00:00
-konverterad: 2026-11-17T01:34:57+00:00
-pipeline: kommunhandlingar 0.11.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
-kvalitet: delvis
+hamtad: 2026-11-24T15:57:52+00:00
+konverterad: 2026-11-24T16:07:51+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
+kvalitet: ocr
 fel: null
-kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ej-konverterad, ej-konverterad, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr]
-tal_obekraftade: [14, 15, 16, 108, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 139, 140, 141, 142, 143, 166, 167, 168, 169, 171, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 271, 272]
-figurer: [14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 108, 118, 120, 122, 125, 126, 127, 128, 129, 134, 144, 145, 146, 149, 152, 159, 160, 161, 162, 163, 169, 170, 171, 172]
+kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, tabell-osaker, tabell-osaker, ok, tabell-osaker, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ointressant, ocr, ocr, ointressant, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, bild, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr]
+tal_obekraftade: [14, 15, 16, 108, 114, 115, 116, 117, 118, 119, 120, 121, 122, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 139, 140, 141, 142, 143, 166, 168, 169, 171, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 208, 209, 213, 215, 216, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 251, 252, 253]
+figurer: [14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 108, 115, 118, 120, 122, 123, 124, 125, 126, 127, 128, 129, 134, 139, 144, 145, 146, 149, 152, 159, 160, 161, 162, 163, 169, 170, 171, 172, 203, 204, 205, 208, 209, 217, 225, 226, 244, 245, 246, 272]
 tolkade: []
 granskad: null
 ---
@@ -4325,7 +4325,7 @@ Summa utgifter för aktiviteter under perioden = 288 os
 
 <!-- sida 123 -->
 
-23\)
+2(3)
 
 C Tjänsteutbyte till delar av partiorganisationen utanför kommunen
 
@@ -5755,7 +5755,7 @@ untoms KUS301 v 1.0, 2005-11-25
 
 <!-- sida 167 -->
 
-Enligt särskilt avtal mellan Kungsbacka kommun och Västkuststiftelsen skall 23)
+Enligt särskilt avtal mellan Kungsbacka kommun och Västkuststiftelsen skall 2(3)
 Västkuststiftelsen svara för åtgärder för friluftsliv och naturvård inom egendomen
 med årligt bidrag från Västkuststiftelsen.
 
@@ -5765,7 +5765,7 @@ Till stiftelsen inflytande medel skall bilda stiftelsens fond.
 Fondmedel, som icke placerats i stiftelsen tillhörig fast egendom, skall insättas på
 bankräkning.
 
-85
+§5
 
 Stiftelsen äger mottaga gåva, donation, legat eller motsvarande under förutsättning
 att därvid inte föreskrivits villkor, som strider mot stiftelsens stadgar och att villkoren
@@ -7684,13 +7684,205 @@ Postadress: Telefon: 0771-240 240 registratoramsb.se Org.nr: 202100-5984
 
 <!-- sida 208 -->
 
+Bilaga E
+
 <!-- sida 209 -->
+
+PLANBESTÄMMELSER
+Följande gäller inom områden med nedanstående
+beteckningar. Endast angiven användning och utformning
+är tillåten. Där beteckning saknas gäller bestämmelsen
+inom hela området.
+GRÄNSER
+Användningsgräns.
+ANVÄNDNING AV MARK
+Allmän platsmark
+GATA 'Gata.
+| Gata upp till en höjd av 2,7 meter ovan mark.
+VÄG, ! Väg upp till en höjd av 2,7 meter ovan mark.
+Kvartersmark
+B Bostäder.
+ovan mark där balkonger och burspråk är
+tillåtna att kraga ut över allmän plats.
+P, Parkeringsgarage får uppföras under skolgård
+— "samt byggnad.
+Pa Parkeringsgarage får uppföras under
+Ps Parkeringsgarage får uppföras i markplan.
+al nt ska dnas i
+sockelvåning med ett djup om minst fem
+meter mot angränsande gata.
+Beteckningar inom parentes
+(X) ; Beteckning i kartan som omgärdas av
+parentes anger bestämmelse i annat plan än
+markplan.
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN
+PLATS
+Avgränsad via egenskapsgräns och
+användningsgräns
+Stängsel, utfart och annan utgång
+Utformning av allmän plats
+beläggning Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt.
+ge-väg, Gång-och cykelväg.
+parkering, Parkeringsplats får ej anordnas.
+plantering, Plantering som exempelvis växtbädder, träd
+och buskar ska finnas längs gatan.
+Trädet får endast fällas om det är sjukt eller
+utgör en säkerhetsrisk.
+EGENSKAPSBESTÄMMELSER FÖR
+KVARTERSMARK
+träd,
+I Avgränsad via egenskapsgräns och
+användningsgräns
++" « Marken får inte förses med byggnad. Murar
+I "upp till en meters höjd får uppföras.
+komplementbyggnad.
+| Markens anordnande och vegetation
+n, Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt.
+na Plantering som exempelvis växtbäddar, träd
+i och buskar ska finnas längs gatan.
+Markreservat för allmännyttiga ändamål
+I U, Markreservat för allmännyttiga underjordiska
+| ledningar.
+iPlacering
+| 5, Byggnad ska placeras minst en meter från
+I användningsgräns eller angränsande
+angöringsgata.
+1 Pa Minst två passager/släpp om minst tre meters
+| bredd vardera ska finnas inom området som
+I binder samman GATA och GCVÄG.
+i Skydd mot störningar
+m, Om ekvivalent ljudnivå vid bostadens fasad är
+\>60 dBA ska minst hälften av bostadsrummen
+| vara vända mot ljuddämpad sida,
+I För små bostäder med boarea max 35 kvm
+| gäller istället att minst hälften av
+I bostadsrummen ska vara vända mot
+ljuddämpad sida om
+H ekvivalent ljudnivå vid bostadens fasad är >65
+Med ljuddämpad sida menas fasad som har
+en ekvivalent ljudnivå på högst 55 dBA och
+| maximal ljudnivå nattetid påhögst 70 dBA.
+Högsta tillätna ekvivalenta bullernivå för
+I skolgård som är avsedd förlek, vila och
+| pedagogisk verksamhet är 50 dBA och
+I maximal ljudnivå är 70 dBA. För övriga
+i vistelseytor inom skolgården är högsta tillåtna
+I ekvivalenta ljudnivå 55 dBA och maximal
+ljudnivå är 70 dBA.
+Högsta nockhöjd är \<angivet> meter över
+angivet nollplan .
+<> Högsta nockhöjd är \<angivet> meter för
+| huvudbyggnad och 4 meter för
+f, Endast småhus får uppföras.
+| Utformning
+Byggnad ska uppföras sammanbyggd mot
+Varlavägen.
+fa Komplementbyggnader om en högsta BYA
+om 200 kvm får uppföras till en högsta
+nockhöjd om 4 meter. Taken ska vara
+vegetationsklädda där högst 50 96 av taken
+får utformas som terrass.
+fa Komp bygg ska upp
+vegetationsklädda tak.
+fs Högsta höjd mellan ovansida bjälklag på
+första bostadsvåning/marknivå på
+byggnaden för angränsande gata får inte vara
+merän 1,5 meter.
+4 Högsta höjd mellan ovansida bjälklag på
+första våning/marknivå på skolgård och
+medelmarknivå
+vid byggnaden för angränsande gata får inte
+vara mer än 1,5
+meter.
+f; Balkong får kraga ut maximalt en meter över
+plusmark. Skärmtak för uppföras intill entréer.
+Trappor och ramp får uppföras.
+med
+tj Vind får endast inredas med teknikutrymmen
+samt hisschakt och/eller trapphus.
+fy, Byggnad får inrymma högst fyra
+I (4) våningar exklusive parkeringsgarage. För
+I vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+| motsvarande 3096 av fasadens längd.
+i fy Byggnad får inrymma högst fem
+| (5) våningar exklusive parkeringsgarage. För
+| vind får takkupor, hisstoppar och
+| frontespiser anordnas till en längd
+4 motsvarande 3096 av fasadens längd.
+fa Byggnad får inrymma högst sex
+(6) våningar exklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+få Byggnad får inrymma högst fyra
+(4) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+fu Byggnad får inrymma högst fem
+I (5) våningar inklusive parkeringsgarage. För
+I vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+Tr Byggnad fär inrymma högst sex
+(6) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+Utförande
+b, Minst 4096 av bostadsgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av
+kor byggnad får till äknas.
+placeras mot Varlavägen.
+ba Ytan inom egenskapsområdet ska delvis
+utformas som entrétorg för
+utbildningslokalerna med inslag av en annan
+markbeläggning än asfalt och där inslag av
+grönska ska finnas.
+ba Minst 4096 av skolgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av
+dagvatten. Vegetationsklädda tak på
+komplementbyggnad får tillgodoräknas.
+Passage för gående och cyklister ska hållas
+öppen mellan Industrigatan och Varlavägen.
+Utnyttjandegrad
+| es Största byggnadsarea är 90 m? per bostad,
+Huvudbyggnad får sammanbyggas i
+inklusive komplementbyggnad.
+| fastighetsgräns.
+användningsområdet.
+es Minst 80 26 av fasadens längd i markplan som
+| vetter mot TORG ska inrymma centrumlokaler
+om minst 180 kvm.
+a. Startbesked får inte ges för byggnation förrän
+markförorening ner till känslig användning har
+avhjälpts från platsen.
+: Ändrad lovplikt
+I a, Bygglov krävs även för åtgärd som utförs i
+| Huvudmannaskap
+I Kommunalt huvudmannaskap för allmän plats.
+Bilaga F
+Skala 1:1000 I A1, skala 12000 iA3
+TECKENFÖRKLARING GRUNDKARTA
+SWEREF 99
+är baserad på
+Höjdkurva 5 m
+gatunamn
+Höjdpunkt
+-- Gång-/ cykelväg, infart, stig
+\- — Höjdkurva I m
+Detaljplan för stadsutveckling inom | Granskningshandling
+Kunasbacka kommun 2022-04-21
+andardförfarande
 
 <!-- sida 210 -->
 
 <!-- sida 211 -->
 
-Beslut Bilaga H 4 (8)
+Beslut Bilaga H 1 (8)
 
 dy ön
 ”. Datum Diarienummer
@@ -7717,11 +7909,11 @@ kraft.
 
 Beslutet förenas med följande villkor:
 
-1\) Avverkning av alléträden får endast ske mellan I september och 30
+1\) Avverkning av alléträden får endast ske mellan 1 september och 30
 april.
 
 2\) Träden ska återplanteras i enlighet med ansökan och punkterna a-d
-nedan och så att definitionen av en allé uppfylls i enlighet med bilaga I
+nedan och så att definitionen av en allé uppfylls i enlighet med bilaga 1
 till förordningen (1998:1252) om områdesskydd enligt miljöbalken
 m.m.
 
@@ -7854,7 +8046,7 @@ Länsstyrelsen Hallands län Beslut 4 (8)
 
 Bestämmelser som beslutet grundas på
 
-9 § förordning (1998:1252) om områdesskydd enligt miljöbalken
+5 § förordning (1998:1252) om områdesskydd enligt miljöbalken
 (MB) m.m.
 
 Alléer med vuxna lövträd omfattas av biotopskydd enligt 7 kap. 11 §
@@ -7862,7 +8054,7 @@ MB. Med vuxna träd avses, enligt Naturvårdsverkets vägledning för
 alléer, träd som uppnått åldern 30 år eller med en diameter om minst 20
 cm i brösthöjd.
 
-7 kap. 11 8 MB
+7 kap. 11 § MB
 
 Syftet med biotopskyddet är att mindre mark- och vattenområden som
 utgör livsmiljö för hotade djur- och växtarter eller som annars särskilt
@@ -7879,7 +8071,7 @@ biotopskyddsbestämmelserna hänsyn även tas till enskilda intressen. En
 inskränkning i en enskilds rätt att använda mark eller vatten får inte gå
 längre än vad som krävs för att syftet med skyddet ska tillgodoses.
 
-16 kap. 2 och 9 88 MB
+16 kap. 2 och 9 §§ MB
 
 Tillstånd, godkännande eller dispens enligt MB eller enligt föreskrifterna
 som har meddelats med stöd av MB, får ges för begränsad tid och får
@@ -8724,7 +8916,7 @@ Sida 2 av 3 2023-03-21
 
 <!-- sida 229 -->
 
-Metria FastighetSök - Kungsbacka Gjutaren I
+Metria FastighetSök - Kungsbacka Gjutaren 1
 
 a
 
@@ -9883,6 +10075,358 @@ Kommundirektör
 3(3)
 
 <!-- sida 245 -->
+
+PLANBESTÄMMELSER
+
+Följande gäller inom områden med nedanstående
+beteckningar. Endast angiven användning och utformning
+är tillåten. Där beteckning saknas gäller bestämmelsen
+inom hela området.
+
+GRÄNSER
+
+» Planområdesgräns.
+
+Användningsgräns.
+fota Egenskapsgräns.
+
+\- Illustrationsgräns.
+
+ANVÄNDNING AV MARK
+Allmän platsmark
+GATA Gata.
+
+2 |
+GATA, | Gata upp till en höjd av 2,7 meter ovan mark. |
+
+[GC VÄG] Gång- och cykelväg.
+
+PARK — Park.
+TORG Torg.
+VÄG iväg.
+VÄG, T Väg upp till en höjd av 2,7 meter ovan mark.
+Kvartersmark
+[ B = ' Bostäder.
+(a Transformatorstation. |
+
+SO Skola.
+
+B. Bostäder från och med en höjd av 2,7 meter
+— — — pvan mark där balkonger och burspråk är
+tillåtna att kraga ut över allmän plats.
+C, | Centrumverksamhet fär finnas i bottenplan.
+P,  |Parkeringsgarage får uppföras under skolgård
+—— samt byggnad.
+| P. Parkeringsgarage får uppföras under
+—— —-  bostadsgård samt byggnad.
+| P, Parkeringsgarage får uppföras i markplan.
+
+Lokalyta för centrumändamål, bostäder och
+
+bostadskomplement ska anordnas i
+
+sockelvåning med ett djup om minst fem
+
+meter mot angränsande gata.
+Beteckningar inom parentes
+
+CO
+
+Beteckning i kartan som omgärdas av
+parentes anger bestämmelse i annat plan än
+markplan.
+
+EGENSKAPSBESTÄMMELSER FÖR ALLMÄN |
+PLATS
+Avgränsad via egenskaps- och användningsgräns
+
+Stängsel, utfart och annan utgång
+pb O- - Og Utfartsförbud.
+Utformning av allmän plats
+beläggning Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt. |
+ge-väg, Gång-och cykelväg.
+parkering, Parkeringsplats får ej anordnas.
+
+plantering, Plantering som exempelvis växtbäddar, träd
+och buskar ska finnas längs gatan,
+
+Skydd mot störningar
+
+EGENSKAPSBESTÄMMELSER FÖR |
+KVARTERSMARK
+Avgränsad via egenskaps- och användningsgräns |
+
+Begränsning av markens utnyttjande
+
+Marken får inte förses med byggnad. Murar
+upp till en meters höjd får uppföras.
+
+Marken får endast förses med
+"= komplementbyggnad.
+
+Markens anordnande och vegetation
+
+Nn, Marken ska beläggas med en
+markbeläggning som i huvudsak inte är asfalt.
+
+re retad
+++
+
+Plantering som exempelvis växtbäddar, träd
+
+na
+och buskar ska finnas längs gatan.
+
+Placering
+
+På Byggnad ska placeras minst en meter från
+
+användningsgräns eller angränsande
+angöringsgata.
+
+Minst två passager/släpp om minst tre meters |
+bredd vardera ska finnas inom området som |
+binder samman GATA och GCVÄG.
+
+P2
+
+Om ekvivalent ljudnivå vid bostadens fasad är
+\>60 dBA ska minst hälften av bostadsrummen
+vara vända mot ljuddämpad sida.
+
+För små bostäder med boarea max 35 kvm
+gäller istället att minst hälften av
+bostadsrummen ska vara vända mot
+ljuddämpad sida om
+
+ekvivalent ljudnivå vid bostadens fasad är >65
+dBA.
+
+Med ljuddämpad sida menas fasad som har
+en ekvivalent ljudnivå på högst 55 dBA och
+maximal ljudnivå nattetid påhögst 70 dBA.
+
+mm;
+
+Högsta tillåtna ekvivalenta bullernivå för
+skolgård som är avsedd för lek, vila och
+pedagogisk verksamhet är 50 dBA och
+maximal ljudnivå är 70 dBA. För övriga
+vistelseytor inom skolgården är högsta tillåtna
+ekvivalenta ljudnivå 55 dBA och maximal
+ljudnivå är 70 dBA.
+
+Utformning
+
+=S
+
+mMm2
+
+Högsta nockhöjd är \<angivet> meter över
+angivet nollplan .
+
+Högsta nockhöjd är \<angivet> meter för
+huvudbyggnad och 4 meter för
+komplementbyggnad. .
+
+uu Endast småhus får uppföras.
+
+fa Byggnad ska uppföras sammanbyggd mot
+
+Varlavägen.
+
+Komplementbyggnader om en högsta BYA
+om 200 kvm får uppföras till en högsta
+nockhöjd om 4 meter. Taken ska vara
+vegetationsklädda där högst 50 26 av taken
+får utformas som terrass.
+
+Komplementbyggnader ska uppföras med
+vegetationsklädda tak.
+
+Högsta höjd mellan ovansida bjälklag på
+första bostadsvåning/marknivå på
+bostadsgård och medelmarknivå vid
+byggnaden för angränsande gata får inte vara
+mer än 1,5 meter.
+
+Högsta höjd mellan ovansida bjälklag på
+första våning/marknivå på skolgård och
+medelmarknivå
+
+fa
+
+Le
+fs
+
+fs
+
+träd,
+
+Trädet får endast fällas om det är sjukt eller
+utgör en säkerhetsrisk.
+
+vid byggnaden för angränsande gata får inte
+vara mer än 1,5
+meter.
+
+f, Balkong får kraga ut maximalt en meter över
+plusmark. Skärmtak för uppföras intill entréer.
+
+Trappor och ramp får uppföras.
+
+Vind får endast inredas med teknikutrymmen
+samt hisschakt och/eller trapphus.
+
+Byggnad får inrymma högst fyra
+
+(4) våningar exklusive parkeringsgarage. För |
+vind får takkupor, hisstoppar och
+
+frontespiser anordnas till en längd
+motsvarande 30746 av fasadens längd.
+
+Byggnad får inrymma högst fem
+
+(5) våningar exklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3076 av fasadens längd.
+Byggnad får inrymma högst sex
+
+(6) våningar exklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 30246 av fasadens längd.
+Byggnad får inrymma högst fyra
+
+(4) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 3096 av fasadens längd.
+Byggnad får inrymma högst fem
+
+(5) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 30246 av fasadens längd.
+
+Byggnad får inrymma högst sex
+
+(6) våningar inklusive parkeringsgarage. För
+vind får takkupor, hisstoppar och
+frontespiser anordnas till en längd
+motsvarande 30960 av fasadens längd.
+
+Utförande
+
+b, Minst 4094 av bostadsgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av
+dagvatten. Vegetationsklädda tak på
+
+komplementbyggnad får tillgodoräknas.
+
+Minst 2 entréer/genomgående trapphus ska
+placeras mot Varlavägen.
+
+Ytan inom egenskapsområdet ska delvis
+utformas som entrétorg för
+utbildningslokalerna med inslag av en annan
+markbeläggning än asfalt och där inslag av
+grönska ska finnas.
+
+Minst 4024 av skolgården ska bestå av
+grönska eller infiltrerbara ytor för hantering av |
+dagvatten. Vegetationsklädda tak på
+komplementbyggnad får tillgodoräknas.
+Passage för gående och cyklister ska hållas
+öppen mellan Industrigatan och Varlavägen.
+
+Utnyttjandegrad
+
+bz2
+ba
+
+bs
+
+bs
+
+e, Största byggnadsarea är \<angivet> m?.
+
+e, Minsta fastighetsstorlek är 200 kvm.
+
+[AN Största byggnadsarea är 90 m? per bostad,
+inklusive komplementbyggnad.
+Huvudbyggnad får sammanbyggas i
+fastighetsgräns.
+
+e, Största byggnadsarea är 1500 m? inom
+användningsområdet.
+
+es, Minst 80 9 av fasadens längd i markplan som |
+
+vetter mot TORG ska inrymma centrumlokaler
+om minst 180 kvm.
+Villkor för startbesked
+a Startbesked får inte ges för byggnation förrän
+markförorening ner till känslig användning har
+avhjälpts från platsen.
+Ändrad lovplikt
+
+a, Bygglov krävs även för åtgärd som utförs i
+enlighet med PBL 9:4a och 9:4c.
+
+GENOMFÖRANDETID
+Genomförandetiden är 10 år.
+
+Huvudmannaskap
+Kommunalt huvudmannaskap för allmän plats.
+
+Bilaga A
+
+NN 1
+
+TEM,
+
+0
+
+Skala 1:1000 i A1, skala 1:2000 i A3
+
+TECKENFÖRKLARING GRUNDKARTA
+
+Detaljplanen är baserad på koordinatsystemet SWEREF 99
+
+N
+
+1200 och höjdsystemet RH 2000
+
+Aktualitetsdatum grundkarta: 2023-01-20
+
+21 Registernummer, tomtnummer Vägkant, mindre väg
+Af Höjdpunkt a — Vägkant, störe väg
+tj Traktnamn, kvartersnamn — — Vägkant, matargata
+— — Fastighetsgräns = Bostadshus fasad, resp, tak
+\- Gång-/ cykelväg, Infart, stig = == Uthus fasad, resp, fasad
+Höjdkurva 1 m Skärmtak
+Höjdkurva 5 m
+A 4 a - - år |. .
+i Detaljplan för stadsutveckling INOM | Granskningshandling
+rr kvarteret Gjutaren och Liljan
+| i enar
+| oe
+ME un Liljan 1 och 2, Gjutaren 1 och 2 m.fl. EE] |sosutsdatum | instans
+mn [G) Wer i Kungsbacka stad, Samråd PRE
+| No non JA Kunasbacka kommun 2022-04-21
+'d v e Fr a
+i ,. Å.. v Upprättad 2023-02-16 0000-000 | BNI §0X
+| I AR RAR EI
+hh Laga kraft
+| AX | Seal ORON
+[ d i KL Ida Lennartsson Magnus Björned Diarenummer. | Plankostnads-
+I a os Verksamhetschef Plan Planarkitekt 2020-00024 |A
+å SAN MN Yr Detaljplanen är upprättad enligt
+& = HE PLANKARTA |Par2oiosoomes
 
 <!-- sida 246 -->
 

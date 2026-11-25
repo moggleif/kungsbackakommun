@@ -12,13 +12,13 @@ kalla_url: https://web.archive.org/web/20240902145951id_/https://kungsbacka.se/d
 sha256: 497a55b26a26e28a46d8dd4751a330859866f95b5f38a1fe8a5b10df1ff6d2ba
 bytes: 16120064
 sidor: 521
-hamtad: 2026-11-19T13:38:19+00:00
-konverterad: 2026-11-19T13:40:13+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-24T13:59:34+00:00
+konverterad: 2026-11-24T14:02:03+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, tabell-osaker, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ok, ok, ok]
-tal_obekraftade: [11, 65, 66, 517, 518]
+tal_obekraftade: [11]
 figurer: [65, 66, 119, 351, 407, 409, 425]
 tolkade: []
 granskad: null
@@ -2456,7 +2456,7 @@ utgör inte en gemensam medlem utan varje kommun är en medlem i ett
 samordningsförbund och tillsammans bildar de en part. Det innebär att varje kommun och
 region som är medlem i ett samordningsförbund måste välja minst en ledamot och en
 ersättare till styrelsen i sina respektive fullmäktige. När en kommun/en region väljer
-ledamöter och ersättare till styrelsen gäller valbarhetskraven i 12 8 andra st i Finsamlagen.
+ledamöter och ersättare till styrelsen gäller valbarhetskraven i 12 § andra st i Finsamlagen.
 Det innebär att en kommun får till ledamot eller ersättare i förbundsstyrelsen bara utse
 någon som är ledamot eller ersättare i kommunfullmäktige i den egna kommunen. Samma
 gäller för regioner.
@@ -2467,7 +2467,7 @@ Felaktig tolkning av lagen
 
 I den tidigare förbundsordningsmallen under paragrafen som handlar om
 samordningsförbundens styrelse finns två kommentarer som inte överensstämmer med
-lagstiftningen. Nationella rådet har tolkat FinsamL 10 8 felaktigt, vilket inneburit att en
+lagstiftningen. Nationella rådet har tolkat FinsamL 10 § felaktigt, vilket inneburit att en
 kommun kunnat representera en annan kommun samt att en ledamot kunnat ha flera
 ersättare. Det här innebär att dessa skrivningar tagits bort i den nya förbundsordningsmallen
 och har ersatts med texter som stämmer överens med lagstiftningen.

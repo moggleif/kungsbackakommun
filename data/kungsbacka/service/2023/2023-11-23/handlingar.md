@@ -12,14 +12,14 @@ kalla_url: https://web.archive.org/web/20250803102025id_/https://kungsbacka.se/d
 sha256: 48defe1b5fec9abd0e086bc83c2fd54b8abe4d9b42a25ffc3329138c746dd76d
 bytes: 8607694
 sidor: 68
-hamtad: 2026-11-19T14:07:11+00:00
-konverterad: 2026-11-19T14:08:06+00:00
-pipeline: kommunhandlingar 0.12.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0
+hamtad: 2026-11-24T14:21:14+00:00
+konverterad: 2026-11-24T14:23:04+00:00
+pipeline: kommunhandlingar 0.16.0 / pdfplumber 0.11.10 / pdfminer.six 20260107 / pypdfium2 5.15.0 / tesseract 5.5.0 swe 4.1.0 / rapidocr 3.10.0 / onnxruntime 1.32.0
 kvalitet: ocr
 fel: null
 kvalitet_per_sida: [ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ocr, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ocr, ok, ocr, ocr, ocr, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ok, ok, ok, ok, ocr, ok, ok, ocr, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ok, ocr, ok, ocr, ok, ok]
-tal_obekraftade: [12, 13, 14, 15, 16, 17, 18, 19, 25, 27, 29, 31, 32, 33, 40, 42, 43, 48, 49, 51, 52, 64, 66]
-figurer: [3, 5, 22, 38, 39, 56]
+tal_obekraftade: [12, 13, 14, 15, 16, 17, 18, 19, 25, 27, 29, 31, 33, 40, 42, 43, 48, 49, 51, 52, 64, 66]
+figurer: [3, 5, 22, 38, 39, 48, 51, 56]
 tolkade: []
 granskad: null
 ---
@@ -1741,15 +1741,15 @@ Beslutande paragraf/År
 
 Informationssäkerhet, riktlinjer
 
-KS 2020-04-21 8 31
+KS 2020-04-21 § 81
 
 Flaggning
 
-KS 2023-02-21 8 32
+KS 2023-02-21 § 32
 
 Personuppgifter; Regler för interna personuppgiftsbiträdesförhållanden
 
-KS 2021-11-09 8 142
+KS 2021-11-09 § 142
 
 Varumärkesarkitektur och särprofilering
 
@@ -1769,77 +1769,77 @@ Beslutande paragraf/År
 
 Arkvinbeskrivning nämnden för Service 2021
 
-NSE 2021-04-29 8 35
+NSE 2021-04-29 § 35
 
 Delegeringsförteckning nämnden för Service 2023
 
-NSE 2023-04-26 8 45
+NSE 2023-04-26 § 45
 
 Intern kontrollplan 2023
 
-NSE 2022-11-24 8 108
+NSE 2022-11-24 § 108
 
 Investeringsplan Service 2024-2028
 
-NSE 2023-01-188 5
+NSE 2023-01-18§ 5
 
 Klassificeringsstruktur Service
 
-NSE 2020-03-19 8 24
+NSE 2020-03-19 § 24
 
 Konceptlokal BMSS
 
-NSE 2021-05-20 8 47
+NSE 2021-05-20 § 47
 
 Koncept för utbildningslokaler
 
-NSE 2018-01-24 8 4
+NSE 2018-01-24 § 4
 
 Koncept idrottshall
 
-NSE 2023-05-16 8 48
+NSE 2023-05-16 § 48
 
 Koncept för vård-och omsorgsboende
 
-NSE 2018-01-24 85
+NSE 2018-01-24 § 5
 
 Målbild 2027
 
-NSE 2023-08-24 8 77
+NSE 2023-08-24 § 77
 
 Nämndbudget 2023
 
-NSE 2022-11-24 8 106
+NSE 2022-11-24 § 106
 
 Policy och riktlinjer för inköpsverksamheten i Kungsbacka kommun
 
-NSE 2020-12-21 8 116
+NSE 2020-12-21 § 116
 
 Policy och riktlinjer för kommungemensam hantering av fordon och
 
 arbetsmaskiner, Kungsbacka kommun
 
-NSE 2023-06-15 8 64
+NSE 2023-06-15 § 64
 
 Reglemente för Nämnden för Service
 
-NSE 2020-04-29 8 33
+NSE 2020-04-29 § 33
 
 Revidering riktlinjer för internhyra av lokaler
 
-NSE 2019-10-10 8 92
+NSE 2019-10-10 § 92
 
 Riktlinjer för inköp av livsmedel
 
-NSE 2020-04-29 8 32
+NSE 2020-04-29 § 32
 
 Service Informationshanteringsplan 2023
 
-NSE 2023-09-19 8 90
+NSE 2023-09-19 § 90
 
 Service Lokalbehov 2024-2028, nämnden för Service
 
-NSE 2022-10-20 8 99
+NSE 2022-10-20 § 99
 
 30
 
